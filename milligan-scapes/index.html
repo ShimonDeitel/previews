@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milligan Scapes Landscaping and Lawn Care | Albuquerque, NM</title>
+<style>
+  :root{
+    --green-900:#10241b;
+    --green-800:#153826;
+    --green-700:#1f4d33;
+    --green-600:#2c6b43;
+    --green-500:#3f8a57;
+    --lime:#8bc34a;
+    --cream:#f7f6f1;
+    --ink:#12180f;
+    --gray:#5a6259;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Sticky call bar */
+  .callbar{
+    position:sticky;top:0;z-index:50;
+    background:var(--green-900);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 16px;
+    font-size:14px;
+  }
+  .callbar .brand{font-weight:700;letter-spacing:.2px;}
+  .callbar .cta{
+    background:var(--lime);color:var(--green-900);
+    font-weight:700;padding:9px 16px;border-radius:999px;
+    display:flex;align-items:center;gap:6px;font-size:14px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    background:radial-gradient(1200px 600px at 80% -10%, var(--green-700), var(--green-900) 60%);
+    color:#fff;
+    padding:56px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 10% 90%, rgba(139,195,74,.18), transparent 40%),
+      radial-gradient(circle at 95% 20%, rgba(139,195,74,.15), transparent 45%);
+    pointer-events:none;
+  }
+  .badge-row{
+    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;
+  }
+  .pill{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 12px;border-radius:999px;
+    font-size:12.5px;font-weight:600;
+    display:flex;align-items:center;gap:6px;
+  }
+  .hero h1{
+    font-size:clamp(30px,7vw,54px);
+    font-weight:800;
+    line-height:1.08;
+    letter-spacing:-.02px;
+    max-width:14ch;
+  }
+  .hero .accent{color:var(--lime);}
+  .hero p.tagline{
+    margin-top:16px;
+    font-size:clamp(16px,3vw,19px);
+    color:rgba(255,255,255,.85);
+    max-width:46ch;
+  }
+  .hero-actions{
+    margin-top:30px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .btn-call{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--lime);
+    color:var(--green-900);
+    font-weight:800;
+    font-size:20px;
+    padding:20px 24px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(139,195,74,.35);
+    width:100%;
+    max-width:420px;
+  }
+  .btn-call small{display:block;font-weight:600;font-size:12.5px;color:var(--green-800);}
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.4);
+    color:#fff;font-weight:700;
+    padding:16px 22px;border-radius:16px;
+    width:100%;max-width:420px;
+  }
+  .hero-meta{
+    margin-top:28px;
+    display:flex;flex-wrap:wrap;gap:20px;
+    font-size:13.5px;
+    color:rgba(255,255,255,.75);
+  }
+  .hero-meta div{display:flex;align-items:center;gap:8px;}
+
+  /* Section shared */
+  section{padding:56px 0;}
+  .eyebrow{
+    font-size:12.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--green-600);
+    margin-bottom:8px;
+  }
+  h2{
+    font-size:clamp(24px,5vw,34px);
+    font-weight:800;
+    color:var(--green-900);
+    letter-spacing:-.01px;
+  }
+  .section-sub{color:var(--gray);margin-top:10px;max-width:60ch;font-size:15.5px;}
+
+  /* Services grid */
+  .services{background:#fff;}
+  .grid{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  @media(min-width:640px){ .grid{grid-template-columns:1fr 1fr;} }
+  @media(min-width:960px){ .grid{grid-template-columns:1fr 1fr 1fr;} }
+  .card{
+    background:var(--cream);
+    border:1px solid #e7e4d9;
+    border-radius:18px;
+    padding:22px;
+    transition:transform .15s ease;
+  }
+  .card .icon-wrap{
+    width:48px;height:48px;
+    border-radius:12px;
+    background:var(--green-700);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .card .icon-wrap svg{width:26px;height:26px;stroke:var(--lime);}
+  .card h3{font-size:17px;font-weight:700;color:var(--green-900);margin-bottom:6px;}
+  .card p{font-size:14px;color:var(--gray);}
+
+  /* Why choose us */
+  .why{background:var(--green-900);color:#fff;}
+  .why .grid{grid-template-columns:1fr;}
+  @media(min-width:640px){ .why .grid{grid-template-columns:1fr 1fr;} }
+  @media(min-width:960px){ .why .grid{grid-template-columns:repeat(4,1fr);} }
+  .why h2{color:#fff;}
+  .why-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    padding:20px;
+  }
+  .why-card .icon-wrap{
+    width:44px;height:44px;border-radius:10px;
+    background:var(--lime);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+  }
+  .why-card .icon-wrap svg{width:24px;height:24px;stroke:var(--green-900);}
+  .why-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .why-card p{font-size:13.5px;color:rgba(255,255,255,.7);}
+
+  /* Service area */
+  .area{background:#fff;}
+  .area-list{
+    margin-top:24px;
+    display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .area-chip{
+    background:var(--cream);
+    border:1px solid #e2dfd2;
+    padding:10px 16px;
+    border-radius:999px;
+    font-size:14px;font-weight:600;
+    color:var(--green-800);
+    display:flex;align-items:center;gap:8px;
+  }
+  .area-chip svg{width:15px;height:15px;stroke:var(--green-600);}
+
+  /* Contact / CTA */
+  .contact{
+    background:linear-gradient(180deg,var(--green-800),var(--green-900));
+    color:#fff;
+  }
+  .contact-wrap{
+    display:grid;gap:24px;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:800px){ .contact-wrap{grid-template-columns:1.1fr .9fr;} }
+  .contact-card{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:26px;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .icon-wrap{
+    width:40px;height:40px;flex:none;border-radius:10px;
+    background:var(--lime);display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row .icon-wrap svg{width:20px;height:20px;stroke:var(--green-900);}
+  .contact-row .label{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.6);font-weight:700;}
+  .contact-row .value{font-size:16px;font-weight:700;}
+  .big-call{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    background:var(--lime);
+    color:var(--green-900);
+    border-radius:20px;
+    padding:34px 24px;
+    height:100%;
+  }
+  .big-call svg{width:40px;height:40px;stroke:var(--green-900);margin-bottom:12px;}
+  .big-call .num{font-size:clamp(26px,6vw,32px);font-weight:800;margin:6px 0 14px;}
+  .big-call .hint{font-size:13px;font-weight:600;color:var(--green-800);}
+
+  footer{
+    background:var(--green-900);
+    color:rgba(255,255,255,.55);
+    text-align:center;
+    padding:26px 0;
+    font-size:13px;
+  }
+  footer .flic{color:rgba(255,255,255,.8);font-weight:700;}
+</style>
+</head>
+<body>
+
+  <div class="callbar">
+    <span class="brand">Milligan Scapes</span>
+    <a class="cta" href="tel:15056045104">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.2 21 12 17.4 5.8 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+          Voted #1 Landscaper — ABQ & Rio Rancho, 2019
+        </span>
+        <span class="pill">Licensed NM #352636 · Insured &amp; Bonded</span>
+      </div>
+
+      <h1>New Mexico's <span class="accent">Premier</span> Landscaping &amp; Lawn Care Specialist</h1>
+      <p class="tagline">Design, install, and maintain — from pavers and retaining walls to sprinklers and synthetic turf. Serving Albuquerque and the surrounding metro.</p>
+
+      <div class="hero-actions">
+        <a class="btn-call" href="tel:15056045104">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-900)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(505) 604-5104<small>Tap to call for a free estimate</small></span>
+        </a>
+        <a class="btn-secondary" href="#contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 8l9 6 9-6"/><path d="M3 8v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8l-9 6-9-6z"/></svg>
+          Request a Free Estimate
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          10306 2nd St NW, Albuquerque, NM 87114
+        </div>
+        <div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Mon–Fri, 9am–5pm
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="services">
+    <div class="container">
+      <div class="eyebrow">What We Do</div>
+      <h2>Full-Service Landscaping &amp; Lawn Care</h2>
+      <p class="section-sub">From first design sketch to year-round upkeep, Milligan Scapes handles every part of your outdoor space.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+          <h3>Landscape Design</h3>
+          <p>Custom outdoor plans tailored to your property, style, and budget.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <h3>Pavers &amp; Flagstone</h3>
+          <p>Patios, walkways, and driveways built to last in the New Mexico climate.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M4 20V10l4-3 4 3v10"/><path d="M12 20V7l4-3 4 3v13"/></svg></div>
+          <h3>Concrete &amp; Retaining Walls</h3>
+          <p>Structural and decorative concrete work, including retaining walls.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.75V16h8v-1.25A7 7 0 0 0 12 2z"/></svg></div>
+          <h3>Low Voltage Lighting</h3>
+          <p>Highlight your landscape and boost safety with designed lighting.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-4 5-6 8-6 11a6 6 0 0 0 12 0c0-3-2-6-6-11z"/></svg></div>
+          <h3>Synthetic Lawn Installation</h3>
+          <p>Low-maintenance, water-wise turf that stays green year-round.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+          <h3>Planting &amp; Sodding</h3>
+          <p>Healthy plant selections and sod installation suited to our high desert.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 18v4M16.24 16.24l2.83 2.83M18 12h4M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3>Sprinkler Install &amp; Repair</h3>
+          <p>New irrigation systems and fast repairs to keep your lawn watered right.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h2l2-4 3 8 3-12 3 8 2-4h5"/></svg></div>
+          <h3>Ponds &amp; Waterfalls</h3>
+          <p>Water features designed and installed for a calming backyard escape.</p>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9 4 9-4-9-4-9 4z"/><path d="M3 6v12l9 4 9-4V6"/><path d="M12 10v10"/></svg></div>
+          <h3>Property Maintenance &amp; Snow Removal</h3>
+          <p>Year-round upkeep — including winter snow removal — for homes and businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--lime)">Why Milligan Scapes</div>
+      <h2>Built On Trust, Backed By Results</h2>
+      <div class="grid">
+        <div class="why-card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+          <h3>Award-Winning</h3>
+          <p>Voted #1 landscaper in Albuquerque &amp; Rio Rancho, Albuquerque Journal Readers' Choice, 2019.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+          <h3>Licensed &amp; Insured</h3>
+          <p>NM License #352636. Fully licensed, insured, and bonded for your protection.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Owner-Led Team</h3>
+          <p>Run by Gary Milligan (President) and Harold Halleson (VP) — locally owned and operated.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <h3>Fast, Reliable Response</h3>
+          <p>Every inquiry gets a reply within 24–48 hours — or just call for the fastest answer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area">
+    <div class="container">
+      <div class="eyebrow">Where We Work</div>
+      <h2>Proudly Serving the Albuquerque Metro</h2>
+      <p class="section-sub">Based at 10306 2nd St NW, Albuquerque — serving residential and commercial properties throughout central New Mexico.</p>
+      <div class="area-list">
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Albuquerque</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Rio Rancho</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Santa Fe</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Belen</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Los Lunas</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>East Mountains</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--lime)">Get In Touch</div>
+      <h2 style="color:#fff">Ready to Transform Your Yard?</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.75)">Call now or send your details — we typically respond within 24–48 hours.</p>
+
+      <div class="contact-wrap" style="margin-top:28px;">
+        <div class="contact-card">
+          <div class="contact-row">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="label">Address</div><div class="value">10306 2nd St NW, Albuquerque, NM 87114</div></div>
+          </div>
+          <div class="contact-row">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div><div class="label">Hours</div><div class="value">Monday – Friday, 9am – 5pm</div></div>
+          </div>
+          <div class="contact-row">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 8l9 6 9-6"/><path d="M3 8v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8l-9 6-9-6z"/></svg></div>
+            <div><div class="label">Response Time</div><div class="value">24–48 hours on all inquiries</div></div>
+          </div>
+          <div class="contact-row">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+            <div><div class="label">Credentials</div><div class="value">NM License #352636 · Insured &amp; Bonded</div></div>
+          </div>
+        </div>
+
+        <a class="big-call" href="tel:15056045104">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div class="num">(505) 604-5104</div>
+          <div class="hint">Tap to call &middot; Free Estimates</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><span class="flic">Milligan Scapes Landscaping and Lawn Care LLC</span> &middot; Albuquerque, NM &middot; NM License #352636</p>
+      <p style="margin-top:6px;">Prototype homepage concept — built by Ship48</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark J. Puharic Plumbing & Heating, Inc. | Pittsburgh Plumber Since 1983</title>
+<meta name="description" content="Pittsburgh's leading professional plumbing service since 1983. Sewer line repair, drain cleaning, water heaters & more. Certified Master Plumber. Call 412-231-5868.">
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-dark:#081b34;
+    --blue:#1565c0;
+    --blue-light:#e8f1fb;
+    --orange:#e8621f;
+    --gray:#5b6b7c;
+    --light:#f5f7fa;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy);
+    background:var(--white);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1140px;margin:0 auto;padding:0 20px;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cdd8e6;
+    font-size:13px;
+    padding:6px 0;
+  }
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+  .topbar a{color:#cdd8e6;}
+  .topbar strong{color:#fff;}
+
+  /* ---------- HEADER / NAV ---------- */
+  header{
+    background:var(--white);
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 1px 8px rgba(11,37,69,0.08);
+  }
+  nav.container{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--navy);}
+  .brand svg{width:34px;height:34px;flex-shrink:0;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text small{font-weight:500;font-size:11px;color:var(--gray);letter-spacing:.03em;}
+  .nav-links{display:none;gap:28px;font-weight:600;font-size:15px;}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-cta{
+    display:flex;align-items:center;gap:8px;
+    background:var(--orange);color:#fff;font-weight:700;
+    padding:10px 18px;border-radius:8px;font-size:15px;
+    white-space:nowrap;
+  }
+  .nav-cta svg{width:18px;height:18px;}
+  @media(min-width:860px){
+    .nav-links{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:56px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-120px;top:-120px;
+    width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(21,101,192,0.35) 0%,transparent 70%);
+  }
+  .hero .container{position:relative;z-index:2;}
+  .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:600;
+    color:#e8f1fb;
+  }
+  .badge svg{width:14px;height:14px;}
+  .hero h1{
+    font-size:34px;font-weight:800;line-height:1.15;
+    margin-bottom:14px;letter-spacing:-0.02em;
+  }
+  .hero h1 span{color:#ffb385;}
+  .hero p.tagline{
+    font-size:18px;color:#c9d6e6;margin-bottom:28px;max-width:560px;
+  }
+  .hero-actions{display:flex;flex-direction:column;gap:12px;max-width:420px;}
+  .btn-call{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--orange);color:#fff;font-weight:800;font-size:19px;
+    padding:18px 22px;border-radius:12px;
+    box-shadow:0 8px 24px rgba(232,98,31,0.4);
+    transition:transform .15s ease;
+  }
+  .btn-call:active{transform:scale(0.97);}
+  .btn-call svg{width:24px;height:24px;flex-shrink:0;}
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:transparent;border:1.5px solid rgba(255,255,255,0.4);
+    color:#fff;font-weight:700;font-size:15px;padding:14px 20px;border-radius:12px;
+  }
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.15);
+  }
+  .hero-stats .stat-num{font-size:26px;font-weight:800;color:#fff;}
+  .hero-stats .stat-label{font-size:12px;color:#a9bcd2;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+
+  /* ---------- STICKY MOBILE CALL BAR ---------- */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--orange);color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px;font-weight:800;font-size:16px;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.2);
+  }
+  .sticky-call svg{width:20px;height:20px;}
+  body{padding-bottom:64px;}
+  @media(min-width:860px){
+    .sticky-call{display:none;}
+    body{padding-bottom:0;}
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section{padding:56px 0;}
+  .section-alt{background:var(--light);}
+  .eyebrow{
+    color:var(--blue);font-weight:700;font-size:13px;text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:8px;display:block;
+  }
+  .section h2{font-size:28px;font-weight:800;margin-bottom:14px;letter-spacing:-0.01em;}
+  .section p.lead{color:var(--gray);font-size:16px;max-width:600px;margin-bottom:34px;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;
+  }
+  @media(min-width:600px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr);}}
+  .service-card{
+    background:#fff;border:1px solid #e5eaf1;border-radius:14px;
+    padding:24px;transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .service-card:hover{box-shadow:0 12px 28px rgba(11,37,69,0.08);transform:translateY(-2px);}
+  .service-icon{
+    width:48px;height:48px;border-radius:10px;
+    background:var(--blue-light);display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .service-icon svg{width:26px;height:26px;color:var(--blue);}
+  .service-card h3{font-size:17px;font-weight:700;margin-bottom:8px;}
+  .service-card p{font-size:14px;color:var(--gray);}
+
+  /* ---------- WHY CHOOSE US ---------- */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  @media(min-width:700px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  .why-item{display:flex;gap:16px;align-items:flex-start;}
+  .why-icon{
+    width:44px;height:44px;border-radius:50%;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .why-icon svg{width:22px;height:22px;color:#fff;}
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* ---------- SEWER SPECIALTY BANNER ---------- */
+  .specialty{
+    background:var(--navy);color:#fff;border-radius:18px;
+    padding:32px 24px;margin-top:44px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .specialty h3{font-size:20px;font-weight:800;}
+  .specialty p{color:#c9d6e6;font-size:15px;}
+  .specialty-badge{
+    display:inline-flex;align-self:flex-start;background:var(--orange);
+    color:#fff;font-weight:800;font-size:12.5px;padding:6px 14px;border-radius:999px;
+    letter-spacing:.03em;
+  }
+
+  /* ---------- SERVICE AREA ---------- */
+  .area-wrap{display:flex;flex-direction:column;gap:28px;}
+  @media(min-width:800px){.area-wrap{flex-direction:row;align-items:center;}}
+  .area-map{
+    flex:1;background:var(--blue-light);border-radius:16px;
+    padding:30px;display:flex;align-items:center;justify-content:center;
+  }
+  .area-map svg{width:100%;max-width:280px;color:var(--blue);}
+  .area-list{flex:1;}
+  .area-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+  .chip{
+    background:#fff;border:1px solid #dbe3ee;padding:8px 14px;border-radius:999px;
+    font-size:13.5px;font-weight:600;color:var(--navy);
+  }
+
+  /* ---------- HOURS + CONTACT ---------- */
+  .contact-section{background:var(--navy);color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:32px;}
+  @media(min-width:800px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-card{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+    border-radius:16px;padding:28px;
+  }
+  .contact-card h3{font-size:18px;font-weight:700;margin-bottom:18px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:14.5px;}
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:first-child{color:#c9d6e6;}
+  .hours-row span:last-child{font-weight:700;}
+  .contact-list a, .contact-list div{
+    display:flex;align-items:center;gap:12px;padding:12px 0;font-size:15px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .contact-list a:last-child, .contact-list div:last-child{border-bottom:none;}
+  .contact-list svg{width:20px;height:20px;color:var(--orange);flex-shrink:0;}
+  .big-call-cta{
+    margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--orange);color:#fff;font-weight:800;font-size:18px;
+    padding:16px;border-radius:12px;
+  }
+  .big-call-cta svg{width:22px;height:22px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-dark);color:#8fa3bc;padding:28px 0;font-size:13px;text-align:center;}
+  footer strong{color:#cdd8e6;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Licensed &bull; Bonded &bull; Insured &mdash; Certified Master Plumber</span>
+    <span><strong>24-Hour Emergency Service</strong> Available</span>
+  </div>
+</div>
+
+<header>
+  <nav class="container">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="24" fill="#0b2545"/>
+        <path d="M16 30V20a4 4 0 014-4h4l6-6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 30a6 6 0 006 6h8a4 4 0 000-8h-2" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="30" cy="10" r="2.5" fill="#e8621f"/>
+      </svg>
+      <div class="brand-text">
+        Mark J. Puharic
+        <small>PLUMBING &amp; HEATING, INC.</small>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="tel:4122315868">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge-row">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+        Certified Master Plumber
+      </span>
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
+        Since 1983
+      </span>
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        BBB A+ Rated
+      </span>
+    </div>
+    <h1>Pittsburgh's Leading Professional Plumbing Service <span>Since 1983</span></h1>
+    <p class="tagline">Mark J. Puharic Plumbing &amp; Heating, Inc. &mdash; trusted sewer, drain, and plumbing experts serving Allegheny County for over 35 years. Licensed, bonded, and insured.</p>
+    <div class="hero-actions">
+      <a href="tel:4122315868" class="btn-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 412-231-5868
+      </a>
+      <a href="mailto:puharic.plumbing@gmail.com" class="btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" stroke="none"/><path d="M22 6l-10 7L2 6M4 4h16v16H4V4z"/></svg>
+        Email for a Quote
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">35+</div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div>
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Emergency Service</div>
+      </div>
+      <div>
+        <div class="stat-num">A+</div>
+        <div class="stat-label">BBB Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <span class="eyebrow">What We Do</span>
+    <h2>Full-Service Plumbing &amp; Sewer Solutions</h2>
+    <p class="lead">From clogged drains to full sewer line replacement, Mark J. Puharic Plumbing &amp; Heating handles it all for homeowners across Allegheny County.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0116 0M4 12a8 8 0 008 8m-8-8h16m-8 8a8 8 0 008-8"/></svg>
+        </div>
+        <h3>Sewer Line Repair &amp; Replacement</h3>
+        <p>Full-scale sewer line repair, replacement, and excavation for homes throughout the Pittsburgh area.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </div>
+        <h3>Sewer &amp; Drain Cleaning</h3>
+        <p>Fast, thorough cleaning to clear clogged drains and keep your sewer lines flowing.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2M7 14h.01M12 14h.01M17 14h.01"/></svg>
+        </div>
+        <h3>Camera Inspection &amp; Dye Testing</h3>
+        <p>Pinpoint the exact source of a problem with in-line camera inspections and dye testing.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/></svg>
+        </div>
+        <h3>Water Service Line Repair</h3>
+        <p>Repair and replacement of water service lines to keep clean water running to your home.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h2"/></svg>
+        </div>
+        <h3>Water Heaters &amp; Tankless Units</h3>
+        <p>Installation and replacement of standard and tankless water heaters.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-2 7-5.5 7-10a7 7 0 10-14 0c0 4.5 3 8 7 10z"/><circle cx="12" cy="11" r="2"/></svg>
+        </div>
+        <h3>Faucet &amp; Toilet Repair</h3>
+        <p>Repair and replacement of faucets, toilets, and hose bibb installation.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12a2 2 0 01-2-2V8a2 2 0 012-2h16a2 2 0 012 2v2a2 2 0 01-2 2M4 12a2 2 0 00-2 2v2a2 2 0 002 2h16a2 2 0 002-2v-2a2 2 0 00-2-2"/></svg>
+        </div>
+        <h3>Backflow Prevention</h3>
+        <p>Backflow prevention testing and installation to protect your home's water supply.</p>
+      </div>
+
+    </div>
+
+    <div class="specialty">
+      <span class="specialty-badge">Local Specialty</span>
+      <h3>Allegheny County's Sewer Line Experts</h3>
+      <p>Mark J. Puharic Plumbing &amp; Heating specializes in sewer line diagnosis and repair &mdash; known locally as the area's dedicated sewer line specialists, backed by 35+ years of hands-on experience.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="why-us">
+  <div class="container">
+    <span class="eyebrow">Why Choose Us</span>
+    <h2>Experience You Can Trust</h2>
+    <p class="lead">Four decades of straightforward, reliable plumbing work for Pittsburgh homeowners.</p>
+    <div class="why-grid">
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <div>
+          <h3>Certified Master Plumber</h3>
+          <p>Work performed by a certified Master Plumber, fully licensed, bonded, and insured.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
+        </div>
+        <div>
+          <h3>Serving Pittsburgh Since 1983</h3>
+          <p>Over 35 years of dedicated service to homeowners across Allegheny County.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <h3>BBB A+ Rated</h3>
+          <p>A trusted Better Business Bureau member with an A+ rating.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
+        </div>
+        <div>
+          <h3>24-Hour Emergency Service</h3>
+          <p>Plumbing emergencies don't wait for business hours &mdash; and neither do we.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="area">
+  <div class="container">
+    <span class="eyebrow">Service Area</span>
+    <h2>Proudly Serving Pittsburgh &amp; Allegheny County</h2>
+    <div class="area-wrap">
+      <div class="area-map">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 30 L45 15 L70 25 L85 45 L75 75 L45 90 L20 65 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="50" cy="50" r="5" fill="currentColor"/>
+          <path d="M50 20 v10 M50 70 v10 M20 50 h10 M70 50 h10" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="area-list">
+        <p class="lead" style="margin-bottom:0;">Mark J. Puharic Plumbing &amp; Heating, Inc. provides plumbing, sewer, and heating services to homeowners throughout Pittsburgh and Allegheny County, Pennsylvania.</p>
+        <div class="area-chips">
+          <span class="chip">Pittsburgh</span>
+          <span class="chip">Allegheny County</span>
+          <span class="chip">Surrounding Communities</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <span class="eyebrow" style="color:#ffb385;">Get In Touch</span>
+    <h2>Contact Mark J. Puharic Plumbing &amp; Heating</h2>
+    <p class="lead" style="color:#c9d6e6;">Call now for fast, dependable service &mdash; emergency service available 24 hours a day.</p>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Business Hours</h3>
+        <div class="hours-row"><span>Monday &ndash; Friday</span><span>8:00 AM &ndash; 6:00 PM</span></div>
+        <div class="hours-row"><span>Saturday</span><span>9:00 AM &ndash; 5:00 PM</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        <div class="hours-row"><span>Emergencies</span><span>24 Hours</span></div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Contact Details</h3>
+        <div class="contact-list">
+          <a href="tel:4122315868">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            412-231-5868
+          </a>
+          <a href="mailto:puharic.plumbing@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6M4 4h16v16H4V4z"/></svg>
+            puharic.plumbing@gmail.com
+          </a>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Pittsburgh, PA (Allegheny County)
+          </div>
+        </div>
+        <a href="tel:4122315868" class="big-call-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call 412-231-5868 Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><strong>Mark J. Puharic Plumbing &amp; Heating, Inc.</strong> &mdash; Pittsburgh, PA &bull; Serving Allegheny County Since 1983</p>
+    <p style="margin-top:6px;">Certified Master Plumber &bull; Licensed, Bonded &amp; Insured &bull; BBB A+ Rated</p>
+  </div>
+</footer>
+
+<a href="tel:4122315868" class="sticky-call">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  Tap to Call 412-231-5868
+</a>
+
+</body>
+</html>
