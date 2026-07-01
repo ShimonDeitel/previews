@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penn Wynne Plumbing &amp; Heating Co. — Plumbing, Heating &amp; Air Conditioning Since 1968</title>
+<meta name="description" content="Penn Wynne Plumbing &amp; Heating Co. — your plumbing, heating &amp; air conditioning specialist since 1968. Serving Delaware, Chester &amp; Montgomery County, PA. Call 610-359-9590.">
+<style>
+  :root{
+    --navy:#0e2a3f;
+    --navy-deep:#091d2c;
+    --navy-soft:#16374f;
+    --accent:#e8792e;
+    --accent-dark:#cf6117;
+    --ice:#f4f7f9;
+    --line:#e2e8ee;
+    --ink:#1c2b36;
+    --muted:#5a6d7c;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.55;
+  }
+  img,svg{display:block;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- Top emergency bar ---------- */
+  .topbar{
+    background:var(--navy-deep);
+    color:#c8d6e0;
+    font-size:13px;
+    padding:8px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .topbar strong{color:var(--white);font-weight:600;}
+  .topbar a{color:var(--accent);font-weight:700;white-space:nowrap;}
+  .topbar-area{display:none;}
+  @media(min-width:640px){.topbar-area{display:block;}}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0;}
+  .brand-mark{
+    width:42px;height:42px;flex:0 0 42px;border-radius:9px;
+    background:var(--navy);display:flex;align-items:center;justify-content:center;
+  }
+  .brand-name{font-weight:800;font-size:16px;line-height:1.15;color:var(--navy);letter-spacing:-.2px;}
+  .brand-sub{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.4px;text-transform:uppercase;}
+  .hdr-call{
+    display:flex;align-items:center;gap:8px;
+    background:var(--accent);color:var(--white);
+    font-weight:700;font-size:14px;
+    padding:10px 14px;border-radius:8px;white-space:nowrap;
+    box-shadow:0 2px 8px rgba(232,121,46,.35);
+  }
+  .hdr-call:active{background:var(--accent-dark);}
+  .hdr-call span.num{display:none;}
+  @media(min-width:520px){.hdr-call span.num{display:inline;} .hdr-call span.cta{display:none;}}
+  @media(max-width:519px){.hdr-call span.cta{display:inline;}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(232,121,46,.16), transparent 60%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--white);
+    padding:56px 0 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:6px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);
+    color:#ffd9b8;font-weight:700;font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;
+    padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(30px,7.4vw,54px);
+    line-height:1.08;font-weight:800;letter-spacing:-1px;
+    max-width:760px;
+  }
+  .hero h1 em{font-style:normal;color:var(--accent);}
+  .hero p.lead{
+    margin-top:16px;font-size:clamp(15px,4vw,19px);color:#bfd0dc;max-width:620px;
+  }
+  .hero-ctas{margin-top:28px;display:flex;flex-direction:column;gap:12px;}
+  @media(min-width:560px){.hero-ctas{flex-direction:row;align-items:center;}}
+  .btn-call{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--accent);color:var(--white);
+    font-size:20px;font-weight:800;letter-spacing:.3px;
+    padding:18px 28px;border-radius:12px;
+    box-shadow:0 6px 20px rgba(232,121,46,.45);
+  }
+  .btn-call:active{background:var(--accent-dark);transform:translateY(1px);}
+  .btn-call small{display:block;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;opacity:.9;}
+  .btn-ghost{
+    display:flex;align-items:center;justify-content:center;
+    border:1.5px solid rgba(255,255,255,.35);color:var(--white);
+    font-size:15px;font-weight:700;padding:16px 24px;border-radius:12px;
+  }
+  .btn-ghost:active{background:rgba(255,255,255,.08);}
+  .hero-points{
+    margin-top:36px;display:grid;grid-template-columns:1fr;gap:10px;
+    border-top:1px solid rgba(255,255,255,.14);padding-top:24px;
+  }
+  @media(min-width:640px){.hero-points{grid-template-columns:repeat(3,1fr);gap:18px;}}
+  .hero-point{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#cfdde7;}
+  .hero-point svg{flex:0 0 20px;margin-top:1px;}
+  .hero-point strong{color:var(--white);display:block;font-size:15px;}
+
+  /* ---------- Section scaffolding ---------- */
+  section{padding:56px 0;}
+  .kicker{
+    color:var(--accent-dark);font-weight:800;font-size:12.5px;
+    letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{font-size:clamp(24px,5.4vw,36px);font-weight:800;letter-spacing:-.6px;color:var(--navy);line-height:1.15;}
+  .section-intro{margin-top:12px;color:var(--muted);font-size:16px;max-width:640px;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--ice);}
+  .svc-grid{margin-top:32px;display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:600px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:900px){.svc-grid{grid-template-columns:repeat(3,1fr);}}
+  .svc{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:24px;display:flex;flex-direction:column;gap:12px;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .svc:hover{box-shadow:0 10px 28px rgba(14,42,63,.10);transform:translateY(-2px);}
+  .svc-icon{
+    width:52px;height:52px;border-radius:12px;
+    background:linear-gradient(150deg,var(--navy) 0%,var(--navy-soft) 100%);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .svc h3{font-size:18px;font-weight:800;color:var(--navy);}
+  .svc ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .svc li{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:var(--muted);}
+  .svc li svg{flex:0 0 15px;margin-top:4px;}
+  .svc.emergency{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    border-color:var(--navy);
+  }
+  .svc.emergency h3{color:var(--white);}
+  .svc.emergency li{color:#bfd0dc;}
+  .svc.emergency .svc-icon{background:var(--accent);}
+  .svc.emergency .svc-call{
+    margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--accent);color:var(--white);font-weight:800;font-size:16px;
+    padding:13px;border-radius:10px;
+  }
+
+  /* ---------- Why choose us ---------- */
+  .why-grid{margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media(min-width:720px){.why-grid{grid-template-columns:repeat(3,1fr);gap:16px;}}
+  .why{
+    border:1px solid var(--line);border-radius:12px;padding:18px 16px;
+    display:flex;flex-direction:column;gap:8px;background:var(--white);
+  }
+  .why svg{flex:0 0 24px;}
+  .why strong{font-size:15px;color:var(--navy);font-weight:800;}
+  .why-note{
+    margin-top:24px;background:var(--ice);border-left:4px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:16px 18px;color:var(--muted);font-size:15px;
+  }
+  .why-note b{color:var(--navy);}
+
+  /* ---------- Testimonials ---------- */
+  .quotes{background:var(--navy);color:var(--white);}
+  .quotes .kicker{color:var(--accent);}
+  .quotes h2{color:var(--white);}
+  .quote-grid{margin-top:32px;display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:720px){.quote-grid{grid-template-columns:1fr 1fr;}}
+  .quote{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px;
+  }
+  .quote p{font-size:16.5px;line-height:1.6;color:#e4edf3;}
+  .quote footer{font-size:13.5px;font-weight:700;color:var(--accent);letter-spacing:.3px;}
+  .quotes .fineprint{margin-top:18px;font-size:12px;color:#8aa2b3;}
+
+  /* ---------- Brands ---------- */
+  .brands h2{font-size:clamp(20px,4.6vw,28px);}
+  .brand-strip{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;}
+  .brand-chip{
+    border:1px solid var(--line);background:var(--ice);color:var(--navy);
+    font-weight:700;font-size:13.5px;letter-spacing:.3px;
+    padding:9px 16px;border-radius:999px;
+  }
+
+  /* ---------- Service area ---------- */
+  .area{background:var(--ice);}
+  .area-flex{margin-top:28px;display:grid;grid-template-columns:1fr;gap:20px;}
+  @media(min-width:760px){.area-flex{grid-template-columns:1.1fr .9fr;align-items:center;}}
+  .county-list{display:flex;flex-direction:column;gap:12px;}
+  .county{
+    display:flex;align-items:center;gap:14px;background:var(--white);
+    border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  }
+  .county strong{font-size:16px;color:var(--navy);}
+  .county span{font-size:13px;color:var(--muted);display:block;}
+  .area-card{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:var(--white);border-radius:16px;padding:30px 26px;text-align:center;
+  }
+  .area-card h3{font-size:20px;font-weight:800;margin-bottom:8px;}
+  .area-card p{color:#bfd0dc;font-size:14.5px;margin-bottom:20px;}
+  .area-card .btn-call{width:100%;font-size:18px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{margin-top:32px;display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:720px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-card{
+    border:1px solid var(--line);border-radius:14px;padding:26px;
+    display:flex;flex-direction:column;gap:10px;background:var(--white);
+  }
+  .contact-card .cc-icon{
+    width:46px;height:46px;border-radius:11px;background:var(--ice);
+    display:flex;align-items:center;justify-content:center;margin-bottom:4px;
+  }
+  .contact-card h3{font-size:17px;font-weight:800;color:var(--navy);}
+  .contact-card p{font-size:14.5px;color:var(--muted);}
+  .contact-card a.big{
+    font-size:24px;font-weight:800;color:var(--accent-dark);letter-spacing:.3px;
+  }
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--accent);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 -4px 16px rgba(9,29,44,.25);
+  }
+  .callbar a{color:var(--white);font-weight:800;font-size:17px;display:flex;align-items:center;gap:10px;}
+  @media(min-width:760px){.callbar{display:none;}}
+  body{padding-bottom:64px;}
+  @media(min-width:760px){body{padding-bottom:0;}}
+
+  /* ---------- Footer ---------- */
+  .site-footer{
+    background:var(--navy-deep);color:#8aa2b3;padding:36px 0 30px;font-size:13.5px;
+  }
+  .site-footer .f-brand{color:var(--white);font-weight:800;font-size:16px;margin-bottom:6px;}
+  .site-footer .f-tag{margin-bottom:14px;}
+  .site-footer a{color:var(--accent);font-weight:700;}
+  .site-footer .f-row{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+  .site-footer .f-legal{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;font-size:12px;}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-area"><strong>Serving Delaware, Chester &amp; Montgomery County, PA</strong></div>
+    <div>Emergency service &mdash; <a href="tel:16103599590">Call 610-359-9590</a></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="wrap hdr">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- wrench/flame mark -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6.4 5.6L3 17.2V21h3.8l5.3-5.3a4.5 4.5 0 0 0 5.6-6.4l-3 3-2.6-.4-.4-2.6 3-3z"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">Penn Wynne Plumbing &amp; Heating Co.</span><br>
+        <span class="brand-sub">Since 1968</span>
+      </span>
+    </a>
+    <a class="hdr-call" href="tel:16103599590" aria-label="Call Penn Wynne Plumbing and Heating at 610-359-9590">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      <span class="num">610-359-9590</span><span class="cta">Call Now</span>
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffd9b8"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+      Trusted since 1968
+    </span>
+    <h1>Plumbing, Heating &amp; Air&nbsp;Conditioning <em>done right</em> &mdash; since 1968.</h1>
+    <p class="lead">Penn Wynne Plumbing &amp; Heating Co. is a full-service plumbing and HVAC contractor, also specializing in bathroom remodeling &mdash; serving Delaware, Chester &amp; Montgomery County, Pennsylvania.</p>
+    <div class="hero-ctas">
+      <a class="btn-call" href="tel:16103599590">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span><small>Tap to call</small>610-359-9590</span>
+      </a>
+      <a class="btn-ghost" href="#services">See our services</a>
+    </div>
+    <div class="hero-points">
+      <div class="hero-point">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><strong>Since 1968</strong>Decades of plumbing &amp; HVAC experience</div>
+      </div>
+      <div class="hero-point">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><strong>Full service</strong>Plumbing, heating, AC &amp; bathrooms</div>
+      </div>
+      <div class="hero-point">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><strong>Local to you</strong>Delaware, Chester &amp; Montgomery County, PA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2>Full-service plumbing, HVAC &amp; bathroom remodeling</h2>
+    <p class="section-intro">One call covers it all &mdash; from a dripping faucet to a complete heating system installation or a brand-new master bathroom.</p>
+    <div class="svc-grid">
+
+      <div class="svc">
+        <span class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6.4 5.6L3 17.2V21h3.8l5.3-5.3a4.5 4.5 0 0 0 5.6-6.4l-3 3-2.6-.4-.4-2.6 3-3z"/></svg>
+        </span>
+        <h3>Plumbing</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Drain &amp; sewer cleaning</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Leak location &amp; repairs</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>New plumbing installations</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Faucets &amp; fixtures</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <span class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 4-4 5.5-2.5 9.5C10.5 14 13 14 13 14s-1-3 1.5-5C17 11.5 19 14 19 17a7 7 0 0 1-14 0c0-3 1.5-5 3-7 1-1.4 2.5-3.5 4-8z"/></svg>
+        </span>
+        <h3>Heating</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Oil &amp; gas heat installations</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>High-efficiency boilers</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Forced hot air heating</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Service &amp; troubleshooting</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <span class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5.6 5.6l12.8 12.8M3 12h18M5.6 18.4L18.4 5.6"/><circle cx="12" cy="12" r="3.2" fill="#0e2a3f"/></svg>
+        </span>
+        <h3>Air Conditioning</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>AC installation &amp; repair</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Unit installation &amp; service</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Troubleshooting</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <span class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12V5a2 2 0 0 1 2-2h2v4M4 12v3a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-3M9 21l-1-2m8 2 1-2"/></svg>
+        </span>
+        <h3>Bathroom Remodeling</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Custom showers &amp; shower kits</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Heated flooring &amp; tile work</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vanities, sinks &amp; tubs</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Toilets, fixtures &amp; lighting</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <span class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21V8a5 5 0 0 1 10 0v1"/><path d="M4 21h6M14 9h6M17 9v4a3 3 0 0 1-3 3"/></svg>
+        </span>
+        <h3>Water Heaters</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Hot water heater installation</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Water heater repair</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Failure emergencies handled</li>
+        </ul>
+      </div>
+
+      <div class="svc emergency">
+        <span class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+        </span>
+        <h3>Emergency Service</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Water leaks</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Drain stoppages</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Heat or AC failures</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Water heater failures</li>
+        </ul>
+        <a class="svc-call" href="tel:16103599590">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+          610-359-9590
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why choose us -->
+<section id="why">
+  <div class="wrap">
+    <div class="kicker">Why Penn Wynne</div>
+    <h2>The values we work by</h2>
+    <p class="section-intro">These aren't marketing words &mdash; they're the standards every job is held to.</p>
+    <div class="why-grid">
+      <div class="why">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <strong>Accountability</strong>
+      </div>
+      <div class="why">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <strong>Honesty</strong>
+      </div>
+      <div class="why">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.9 17 22l-5-3-5 3 1.5-8.1"/></svg>
+        <strong>Quality</strong>
+      </div>
+      <div class="why">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22l1.5-5.5L18 3a2.1 2.1 0 0 1 3 3L7.5 19.5 2 21"/><path d="M14.5 6.5l3 3"/></svg>
+        <strong>Cleanliness</strong>
+      </div>
+      <div class="why">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></svg>
+        <strong>Professionalism</strong>
+      </div>
+      <div class="why">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <strong>Integrity</strong>
+      </div>
+    </div>
+    <div class="why-note">
+      <b>A full-service shop since 1968.</b> Penn Wynne Plumbing &amp; Heating Co. handles plumbing, heating, air conditioning and bathroom remodeling &mdash; so you deal with one trusted contractor, not three.
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials (from the current site) -->
+<section class="quotes">
+  <div class="wrap">
+    <div class="kicker">Customer words</div>
+    <h2>What customers say</h2>
+    <div class="quote-grid">
+      <blockquote class="quote">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#e8792e"><path d="M10 8H6a4 4 0 0 0-4 4v6h6v-6H5a3 3 0 0 1 3-3h2V8zm12 0h-4a4 4 0 0 0-4 4v6h6v-6h-3a3 3 0 0 1 3-3h2V8z"/></svg>
+        <p>&ldquo;Our basement was filled with sewage on a Saturday night. Mark responded quickly and made sure the job was done before our party on Sunday morning. Great service.&rdquo;</p>
+        <footer>&mdash; Janet Singleton, 2012</footer>
+      </blockquote>
+      <blockquote class="quote">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#e8792e"><path d="M10 8H6a4 4 0 0 0-4 4v6h6v-6H5a3 3 0 0 1 3-3h2V8zm12 0h-4a4 4 0 0 0-4 4v6h6v-6h-3a3 3 0 0 1 3-3h2V8z"/></svg>
+        <p>&ldquo;We were so happy to have an unbelievable master bathroom for a reasonable price.&rdquo;</p>
+        <footer>&mdash; Joe Pierce, 2014</footer>
+      </blockquote>
+    </div>
+    <p class="fineprint">Testimonials as published on the current Penn Wynne Plumbing &amp; Heating website.</p>
+  </div>
+</section>
+
+<!-- Brands -->
+<section class="brands">
+  <div class="wrap">
+    <div class="kicker">Products we work with</div>
+    <h2>Trusted names, professionally installed</h2>
+    <div class="brand-strip">
+      <span class="brand-chip">Bradford White</span>
+      <span class="brand-chip">Lennox</span>
+      <span class="brand-chip">Carrier</span>
+      <span class="brand-chip">A.O. Smith</span>
+      <span class="brand-chip">Weil-McLain</span>
+      <span class="brand-chip">Moen</span>
+      <span class="brand-chip">Delta</span>
+      <span class="brand-chip">American Standard</span>
+      <span class="brand-chip">Toto</span>
+      <span class="brand-chip">Grohe</span>
+    </div>
+  </div>
+</section>
+
+<!-- Service area -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="kicker">Where we work</div>
+    <h2>Proudly serving the Philadelphia suburbs</h2>
+    <div class="area-flex">
+      <div class="county-list">
+        <div class="county">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><strong>Delaware County, PA</strong><span>Plumbing, HVAC &amp; bathroom remodeling</span></div>
+        </div>
+        <div class="county">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><strong>Chester County, PA</strong><span>Plumbing, HVAC &amp; bathroom remodeling</span></div>
+        </div>
+        <div class="county">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8792e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><strong>Montgomery County, PA</strong><span>Plumbing, HVAC &amp; bathroom remodeling</span></div>
+        </div>
+      </div>
+      <div class="area-card">
+        <h3>In our service area?</h3>
+        <p>One call takes care of your plumbing, heating, air conditioning or bathroom project.</p>
+        <a class="btn-call" href="tel:16103599590">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+          <span><small>Tap to call</small>610-359-9590</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="wrap">
+    <div class="kicker">Get in touch</div>
+    <h2>Talk to a real plumber today</h2>
+    <p class="section-intro">Emergencies, estimates or questions &mdash; the fastest way to reach us is a phone call.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="cc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e2a3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        </span>
+        <h3>Call us</h3>
+        <a class="big" href="tel:16103599590">610-359-9590</a>
+        <p>For emergencies &mdash; water leaks, drain stoppages, heat or AC failures and water heater failures &mdash; call any time.</p>
+      </div>
+      <div class="contact-card">
+        <span class="cc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e2a3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <h3>Service area</h3>
+        <p><strong style="color:var(--navy)">Delaware, Chester &amp; Montgomery County, Pennsylvania</strong></p>
+        <p>A full-service plumbing and HVAC company serving the western Philadelphia suburbs since 1968.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-brand">Penn Wynne Plumbing &amp; Heating Co.</div>
+    <div class="f-tag">Your plumbing, heating &amp; air conditioning specialist since 1968.</div>
+    <div class="f-row">
+      <span>Phone: <a href="tel:16103599590">610-359-9590</a></span>
+      <span>Serving Delaware, Chester &amp; Montgomery County, Pennsylvania</span>
+    </div>
+    <div class="f-legal">&copy; 2026 Penn Wynne Plumbing &amp; Heating Co. &middot; Website concept by Ship48 &mdash; design prototype.</div>
+  </div>
+</footer>
+
+<!-- Sticky mobile call bar -->
+<div class="callbar">
+  <a href="tel:16103599590" aria-label="Call now: 610-359-9590">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+    Call Now &mdash; 610-359-9590
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAV Electrical Contracting, Inc. — Master Licensed Electrical Service &amp; Design | Syracuse, NY</title>
+<meta name="description" content="AAV Electrical Contracting, Inc. — Master licensed electrical service &amp; design in Syracuse, NY since 1990. Commercial, residential and design services. Fully insured. Call 315.413.9000.">
+<style>
+  :root{
+    --navy:#0e1a2b;
+    --navy-2:#15263d;
+    --navy-3:#1d3352;
+    --amber:#f7a600;
+    --amber-dark:#d98f00;
+    --ink:#1b2431;
+    --slate:#54627a;
+    --line:#e4e9f1;
+    --paper:#f6f8fb;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;min-width:0;}
+  .brand .bolt{
+    width:38px;height:38px;flex:0 0 38px;border-radius:9px;
+    background:var(--amber);display:flex;align-items:center;justify-content:center;
+  }
+  .brand .bolt svg{width:22px;height:22px;}
+  .brand-name{color:var(--white);font-weight:800;font-size:17px;line-height:1.15;letter-spacing:.2px;white-space:nowrap;}
+  .brand-sub{color:#8fa3c0;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap;}
+  .nav-call{
+    display:flex;align-items:center;gap:8px;
+    background:var(--amber);color:var(--navy);
+    font-weight:800;font-size:15px;
+    padding:10px 16px;border-radius:10px;white-space:nowrap;
+  }
+  .nav-call svg{width:16px;height:16px;flex:0 0 16px;}
+  .nav-call:active{background:var(--amber-dark);}
+  @media (max-width:430px){
+    .brand-sub{display:none;}
+    .nav-call span.num{display:none;}
+    .nav-call{padding:11px 14px;}
+    .nav-call span.cta{display:inline;}
+  }
+  @media (min-width:431px){ .nav-call span.cta{display:none;} }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(247,166,0,.16), transparent 60%),
+      linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:var(--white);
+    padding:56px 0 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .circuit{
+    position:absolute;right:-60px;top:20px;width:340px;height:340px;opacity:.07;pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(247,166,0,.12);
+    border:1px solid rgba(247,166,0,.35);
+    color:var(--amber);
+    font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+    padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .eyebrow svg{width:13px;height:13px;}
+  h1{
+    font-size:clamp(34px,8vw,58px);
+    line-height:1.05;font-weight:900;letter-spacing:-.5px;
+    max-width:15ch;
+  }
+  h1 .accent{color:var(--amber);}
+  .hero p.lede{
+    margin-top:18px;max-width:52ch;
+    font-size:clamp(16px,4.2vw,19px);color:#c3cfe2;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+  .btn-call{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--amber);color:var(--navy);
+    font-size:clamp(18px,5vw,22px);font-weight:900;letter-spacing:.2px;
+    padding:18px 28px;border-radius:14px;
+    width:100%;max-width:420px;
+    box-shadow:0 10px 26px rgba(247,166,0,.28);
+  }
+  .btn-call:active{background:var(--amber-dark);transform:translateY(1px);}
+  .btn-call svg{width:24px;height:24px;flex:0 0 24px;}
+  .btn-call small{display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.75;}
+  .btn-ghost{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    border:1.5px solid rgba(255,255,255,.28);color:var(--white);
+    font-size:16px;font-weight:700;
+    padding:16px 24px;border-radius:14px;
+    width:100%;max-width:420px;
+  }
+  .btn-ghost:active{background:rgba(255,255,255,.08);}
+  @media (min-width:640px){
+    .btn-call,.btn-ghost{width:auto;}
+  }
+  .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;}
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    color:#dbe4f2;font-size:12.5px;font-weight:600;
+    padding:7px 12px;border-radius:999px;
+  }
+  .chip svg{width:13px;height:13px;flex:0 0 13px;}
+
+  /* ---------- stat bar ---------- */
+  .stats{background:var(--navy-3);color:var(--white);}
+  .stats .wrap{
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:1px;background:rgba(255,255,255,.08);
+  }
+  .stat{background:var(--navy-3);padding:20px 14px;text-align:center;}
+  .stat b{display:block;font-size:clamp(20px,5vw,26px);font-weight:900;color:var(--amber);letter-spacing:-.3px;}
+  .stat span{font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:#9fb1cc;}
+  @media (min-width:700px){ .stats .wrap{grid-template-columns:repeat(4,1fr);} }
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0;}
+  .kicker{
+    color:var(--amber-dark);font-size:12px;font-weight:800;
+    letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{font-size:clamp(26px,6vw,38px);font-weight:900;letter-spacing:-.4px;line-height:1.12;}
+  .sub{margin-top:12px;color:var(--slate);font-size:16px;max-width:60ch;}
+
+  /* services */
+  #services{background:var(--paper);}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:32px;}
+  @media (min-width:820px){ .svc-grid{grid-template-columns:repeat(3,1fr);} }
+  .svc{
+    background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:26px 22px;
+    box-shadow:0 2px 10px rgba(14,26,43,.05);
+    display:flex;flex-direction:column;
+  }
+  .svc .icon{
+    width:52px;height:52px;border-radius:13px;
+    background:var(--navy);display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .svc .icon svg{width:27px;height:27px;}
+  .svc h3{font-size:20px;font-weight:800;letter-spacing:-.2px;}
+  .svc p.tag{color:var(--slate);font-size:14px;margin-top:6px;}
+  .svc ul{list-style:none;margin-top:16px;display:grid;gap:9px;}
+  .svc li{
+    display:flex;gap:9px;align-items:flex-start;
+    font-size:14.5px;color:var(--ink);font-weight:500;
+  }
+  .svc li svg{width:15px;height:15px;flex:0 0 15px;margin-top:3px;}
+
+  /* why */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px;}
+  @media (min-width:640px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (min-width:960px){ .why-grid{grid-template-columns:repeat(3,1fr);} }
+  .why{
+    border:1px solid var(--line);border-radius:14px;padding:20px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .why .wicon{
+    width:42px;height:42px;flex:0 0 42px;border-radius:10px;
+    background:#fff4dd;display:flex;align-items:center;justify-content:center;
+  }
+  .why .wicon svg{width:22px;height:22px;}
+  .why b{display:block;font-size:15.5px;font-weight:800;}
+  .why span{font-size:13.5px;color:var(--slate);}
+
+  /* area */
+  #area{background:var(--navy);color:var(--white);}
+  #area .kicker{color:var(--amber);}
+  #area .sub{color:#b9c6dc;}
+  .area-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px;}
+  @media (min-width:700px){ .area-grid{grid-template-columns:repeat(3,1fr);} }
+  .area-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;padding:22px 20px;
+  }
+  .area-card .pin{
+    width:40px;height:40px;border-radius:10px;background:rgba(247,166,0,.14);
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+  .area-card .pin svg{width:21px;height:21px;}
+  .area-card b{display:block;font-size:17px;font-weight:800;}
+  .area-card span{font-size:13.5px;color:#a7b6cf;}
+
+  /* about strip */
+  .about-card{
+    margin-top:32px;
+    border:1px solid var(--line);border-left:5px solid var(--amber);
+    border-radius:14px;padding:24px 22px;background:var(--paper);
+  }
+  .about-card p{font-size:16.5px;color:var(--ink);}
+  .about-card .who{margin-top:14px;display:flex;align-items:center;gap:12px;}
+  .about-card .who .av{
+    width:42px;height:42px;border-radius:50%;background:var(--navy);
+    color:var(--amber);display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:15px;letter-spacing:.5px;
+  }
+  .about-card .who b{display:block;font-size:15px;}
+  .about-card .who span{font-size:13px;color:var(--slate);}
+
+  /* contact */
+  #contact{background:var(--paper);}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:32px;}
+  @media (min-width:860px){ .contact-grid{grid-template-columns:1.1fr .9fr;} }
+  .contact-card{
+    background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 22px;
+  }
+  .c-row{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:14px 0;border-bottom:1px solid var(--line);
+  }
+  .c-row:last-child{border-bottom:none;}
+  .c-row .cicon{
+    width:40px;height:40px;flex:0 0 40px;border-radius:10px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .c-row .cicon svg{width:20px;height:20px;}
+  .c-row b{display:block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--slate);}
+  .c-row a.val,.c-row span.val{font-size:17px;font-weight:700;color:var(--ink);word-break:break-word;}
+  .c-row a.val{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(247,166,0,.6);text-underline-offset:3px;}
+  .hours{
+    background:var(--navy);color:var(--white);border-radius:16px;padding:26px 22px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .hours h3{font-size:19px;font-weight:800;}
+  .hours .hrow{
+    display:flex;justify-content:space-between;gap:10px;
+    font-size:15px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .hours .hrow span:first-child{color:#a7b6cf;font-weight:600;}
+  .hours .hrow span:last-child{font-weight:800;}
+  .hours .btn-call{max-width:none;width:100%;font-size:19px;}
+  .lic-note{font-size:12.5px;color:#8fa3c0;line-height:1.5;}
+
+  /* footer */
+  footer{background:var(--navy-2);color:#8fa3c0;padding:28px 0 34px;}
+  footer .wrap{display:flex;flex-direction:column;gap:8px;}
+  footer .fbrand{color:var(--white);font-weight:800;font-size:15px;}
+  footer p{font-size:12.5px;line-height:1.6;}
+  footer a{color:#c3cfe2;text-decoration:underline;text-underline-offset:3px;}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="AAV Electrical Contracting, Inc.">
+      <span class="bolt">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z" fill="#0e1a2b"/>
+        </svg>
+      </span>
+      <span>
+        <span class="brand-name">AAV Electrical</span><br>
+        <span class="brand-sub">Contracting, Inc. &middot; Syracuse, NY</span>
+      </span>
+    </a>
+    <a class="nav-call" href="tel:+13154139000" aria-label="Call AAV Electrical at 315.413.9000">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6.6 3h2.9l1.4 4.2-2 1.5a13.6 13.6 0 0 0 6.4 6.4l1.5-2 4.2 1.4v2.9c0 1-.8 1.9-1.9 1.9C10.6 19.3 4.7 13.4 4.7 4.9 4.7 3.8 5.6 3 6.6 3Z" fill="#0e1a2b"/>
+      </svg>
+      <span class="num">315.413.9000</span>
+      <span class="cta">Call</span>
+    </a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <svg class="circuit" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 100h40l15-30h30l15 60h30l15-30h25" stroke="#fff" stroke-width="3"/>
+    <circle cx="60" cy="100" r="6" fill="#fff"/>
+    <circle cx="105" cy="70" r="6" fill="#fff"/>
+    <circle cx="150" cy="130" r="6" fill="#fff"/>
+    <path d="M100 10v40M100 150v40M10 40l30 30M160 40l-30 30" stroke="#fff" stroke-width="3"/>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2 3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4Z" stroke="#f7a600" stroke-width="2" fill="none"/>
+        <path d="m8.5 12 2.5 2.5 4.5-5" stroke="#f7a600" stroke-width="2" fill="none"/>
+      </svg>
+      Master Licensed &middot; Established 1990
+    </span>
+    <h1>Master licensed electrical service <span class="accent">&amp; design</span> in Syracuse.</h1>
+    <p class="lede">AAV Electrical Contracting, Inc. — prompt, reliable commercial, residential and design services from knowledgeable, courteous service technicians at a reasonable price. Fully insured.</p>
+    <div class="hero-actions">
+      <a class="btn-call" href="tel:+13154139000">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6.6 3h2.9l1.4 4.2-2 1.5a13.6 13.6 0 0 0 6.4 6.4l1.5-2 4.2 1.4v2.9c0 1-.8 1.9-1.9 1.9C10.6 19.3 4.7 13.4 4.7 4.9 4.7 3.8 5.6 3 6.6 3Z" fill="#0e1a2b"/>
+        </svg>
+        <span>315.413.9000<small>Tap to call &middot; phone estimates</small></span>
+      </a>
+      <a class="btn-ghost" href="#services">See our services</a>
+    </div>
+    <div class="hero-chips">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2 3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4Z" stroke="#f7a600" stroke-width="2"/></svg>
+        Fully Insured
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="#f7a600" stroke-width="2" stroke-linecap="round"/></svg>
+        NYS Dept. of State Lic. #12000214208
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="9" r="5" stroke="#f7a600" stroke-width="2"/><path d="m9 13-2 8 5-3 5 3-2-8" stroke="#f7a600" stroke-width="2" stroke-linejoin="round"/></svg>
+        IAEI Certified
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4" stroke="#f7a600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Payment Terms Available
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<div class="stats" role="list" aria-label="Company facts">
+  <div class="wrap">
+    <div class="stat" role="listitem"><b>1990</b><span>Incorporated</span></div>
+    <div class="stat" role="listitem"><b>1988</b><span>Master License Earned</span></div>
+    <div class="stat" role="listitem"><b>35+</b><span>Years in Business</span></div>
+    <div class="stat" role="listitem"><b>3</b><span>Service Divisions</span></div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2>Commercial. Residential. Design.</h2>
+    <p class="sub">Three full service divisions under one master license — from new construction and service upgrades to complete electrical system design.</p>
+
+    <div class="svc-grid">
+      <!-- Commercial -->
+      <article class="svc">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16" stroke="#f7a600" stroke-width="2"/>
+            <path d="M14 9h5a1 1 0 0 1 1 1v11" stroke="#f7a600" stroke-width="2"/>
+            <path d="M7 8h2M7 12h2M7 16h2M17 13h1M17 17h1M2 21h20" stroke="#f7a600" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Commercial Services</h3>
+        <p class="tag">Keep your building safe, compliant and efficient.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>New &amp; existing construction</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Office buildouts &amp; service upgrades</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Commercial inspections</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>OSHA violations corrected</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Security / fire-alarm certification installation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Voice &amp; data cabling</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Sub-metering equipment</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Lightning protection &amp; energy-saving lighting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance &amp; repair</li>
+        </ul>
+      </article>
+
+      <!-- Residential -->
+      <article class="svc">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="m3 11 9-8 9 8" stroke="#f7a600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 10v10h14V10" stroke="#f7a600" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12.5 11.5 10 15h4l-2.5 3.5" stroke="#f7a600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Residential Services</h3>
+        <p class="tag">Your home wired right — safe, bright and up to code.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>New &amp; existing construction</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Service upgrades</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Residential inspections</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom, outdoor &amp; landscape lighting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Energy-saving lighting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Security / fire-alarm certification installation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Voice &amp; data cabling</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Lightning protection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance &amp; repair</li>
+        </ul>
+      </article>
+
+      <!-- Design -->
+      <article class="svc">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 20 14 4l3 5-8 11H4v0Z" stroke="#f7a600" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M13.5 6.5 16 8M11.5 9.5 14 11M9.5 12.5 12 14M7.5 15.5 10 17" stroke="#f7a600" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="19" cy="18" r="2.5" stroke="#f7a600" stroke-width="2"/>
+          </svg>
+        </span>
+        <h3>Design &amp; Engineering</h3>
+        <p class="tag">Design-build consulting for systems that perform.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Interior lighting systems — color, energy savings &amp; increased output</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fire alarm systems</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Building electrical load requirements &amp; capacity</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>New equipment load requirements</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Parking lot lighting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5 12 5 5 9-10" stroke="#d98f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Design-build consulting</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="kicker">Why AAV</div>
+    <h2>Special attention to customer service and excellent workmanship.</h2>
+    <p class="sub">That's how this company was built — and how it has prospered since 1990.</p>
+
+    <div class="why-grid">
+      <div class="why">
+        <span class="wicon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="9" r="5" stroke="#d98f00" stroke-width="2"/><path d="m9 13-2 8 5-3 5 3-2-8" stroke="#d98f00" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <div><b>Master licensed since 1988</b><span>Master License, State of NY License, plus City of Rochester and City of Fulton, NY licenses.</span></div>
+      </div>
+      <div class="why">
+        <span class="wicon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2 3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4Z" stroke="#d98f00" stroke-width="2"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#d98f00" stroke-width="2"/></svg>
+        </span>
+        <div><b>Fully insured &amp; IAEI certified</b><span>Licensed by the N.Y.S. Department of State, #12000214208.</span></div>
+      </div>
+      <div class="why">
+        <span class="wicon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#d98f00" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="#d98f00" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <div><b>35+ years in business</b><span>Incorporated in January 1990 and serving Central New York ever since.</span></div>
+      </div>
+      <div class="why">
+        <span class="wicon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.6 3h2.9l1.4 4.2-2 1.5a13.6 13.6 0 0 0 6.4 6.4l1.5-2 4.2 1.4v2.9c0 1-.8 1.9-1.9 1.9C10.6 19.3 4.7 13.4 4.7 4.9 4.7 3.8 5.6 3 6.6 3Z" stroke="#d98f00" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <div><b>Phone estimates</b><span>Call 315.413.9000 — get an estimate without waiting for a site visit.</span></div>
+      </div>
+      <div class="why">
+        <span class="wicon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2" stroke="#d98f00" stroke-width="2"/><path d="M3 10h18M7 15h4" stroke="#d98f00" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <div><b>Payment terms available</b><span>Reasonable prices with flexible payment options.</span></div>
+      </div>
+      <div class="why">
+        <span class="wicon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z" stroke="#d98f00" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <div><b>Prompt, reliable service</b><span>Knowledgeable, courteous service technicians — Monday to Friday, 7am to 5pm.</span></div>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <p>&ldquo;In August of 1988 I earned a Masters license to work in the City of Syracuse, NY. In January of 1990 I incorporated this company and called it AAV Electrical Contracting, Inc. &hellip; We are committed to giving our customers the highest quality service and value.&rdquo;</p>
+      <div class="who">
+        <span class="av">AV</span>
+        <div>
+          <b>Angelo A. Vecchio</b>
+          <span>President, AAV Electrical Contracting, Inc.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE AREA ================= -->
+<section id="area">
+  <div class="wrap">
+    <div class="kicker">Where we work</div>
+    <h2>Based in Syracuse. Licensed across Central NY.</h2>
+    <p class="sub">Headquartered at 110 Managers Place, Syracuse — holding a Master License for the City of Syracuse plus City of Rochester and City of Fulton, NY licenses.</p>
+    <div class="area-grid">
+      <div class="area-card">
+        <span class="pin">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" stroke="#f7a600" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#f7a600" stroke-width="2"/></svg>
+        </span>
+        <b>Syracuse, NY</b>
+        <span>Home base — Master licensed in the City of Syracuse since 1988.</span>
+      </div>
+      <div class="area-card">
+        <span class="pin">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" stroke="#f7a600" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#f7a600" stroke-width="2"/></svg>
+        </span>
+        <b>Rochester, NY</b>
+        <span>City of Rochester, NY licensed.</span>
+      </div>
+      <div class="area-card">
+        <span class="pin">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" stroke="#f7a600" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#f7a600" stroke-width="2"/></svg>
+        </span>
+        <b>Fulton, NY</b>
+        <span>City of Fulton, NY licensed.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="kicker">Get in touch</div>
+    <h2>Ready when you are.</h2>
+    <p class="sub">Call for a phone estimate, or reach Angelo directly by email.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="c-row">
+          <span class="cicon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.6 3h2.9l1.4 4.2-2 1.5a13.6 13.6 0 0 0 6.4 6.4l1.5-2 4.2 1.4v2.9c0 1-.8 1.9-1.9 1.9C10.6 19.3 4.7 13.4 4.7 4.9 4.7 3.8 5.6 3 6.6 3Z" fill="#f7a600"/></svg>
+          </span>
+          <div><b>Phone</b><a class="val" href="tel:+13154139000">315.413.9000</a></div>
+        </div>
+        <div class="c-row">
+          <span class="cicon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="3" width="14" height="8" rx="1" stroke="#f7a600" stroke-width="2"/><rect x="3" y="11" width="18" height="8" rx="2" stroke="#f7a600" stroke-width="2"/><path d="M8 15h5" stroke="#f7a600" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <div><b>Fax</b><span class="val">315.461.9074</span></div>
+        </div>
+        <div class="c-row">
+          <span class="cicon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#f7a600" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="#f7a600" stroke-width="2" stroke-linejoin="round"/></svg>
+          </span>
+          <div><b>Email</b><a class="val" href="mailto:angelo@aavelectrical.com">angelo@aavelectrical.com</a></div>
+        </div>
+        <div class="c-row">
+          <span class="cicon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" stroke="#f7a600" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#f7a600" stroke-width="2"/></svg>
+          </span>
+          <div><b>Address</b><span class="val">110 Managers Place, Syracuse, NY 13209</span></div>
+        </div>
+        <div class="c-row">
+          <span class="cicon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="9" cy="8" r="4" stroke="#f7a600" stroke-width="2"/><path d="M2.5 20c.8-3.3 3.4-5 6.5-5s5.7 1.7 6.5 5" stroke="#f7a600" stroke-width="2" stroke-linecap="round"/><path d="M16 4.5c1.5.6 2.5 2 2.5 3.5S17.5 10.9 16 11.5M18.5 15.5c1.9.8 3 2.4 3.5 4.5" stroke="#f7a600" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <div><b>Contact</b><span class="val">Angelo A. Vecchio, President</span></div>
+        </div>
+      </div>
+
+      <div class="hours">
+        <h3>Service hours</h3>
+        <div>
+          <div class="hrow"><span>Monday &ndash; Friday</span><span>7:00am &ndash; 5:00pm</span></div>
+          <div class="hrow"><span>Saturday &ndash; Sunday</span><span>Closed</span></div>
+        </div>
+        <a class="btn-call" href="tel:+13154139000">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.6 3h2.9l1.4 4.2-2 1.5a13.6 13.6 0 0 0 6.4 6.4l1.5-2 4.2 1.4v2.9c0 1-.8 1.9-1.9 1.9C10.6 19.3 4.7 13.4 4.7 4.9 4.7 3.8 5.6 3 6.6 3Z" fill="#0e1a2b"/></svg>
+          <span>Call 315.413.9000<small>Phone estimates available</small></span>
+        </a>
+        <p class="lic-note">Licensed by the N.Y.S. Department of State #12000214208 &middot; Master License &middot; State of NY License &middot; IAEI Certification &middot; Fully Insured</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <span class="fbrand">AAV Electrical Contracting, Inc.</span>
+    <p>110 Managers Place, Syracuse, NY 13209 &middot; <a href="tel:+13154139000">315.413.9000</a> &middot; Fax 315.461.9074 &middot; <a href="mailto:angelo@aavelectrical.com">angelo@aavelectrical.com</a></p>
+    <p>Master Licensed Electrical Service &amp; Design &middot; Established 1990 &middot; Licensed by the N.Y.S. Department of State #12000214208</p>
+    <p>&copy; 2026 AAV Electrical Contracting, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
