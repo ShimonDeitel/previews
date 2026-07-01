@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matthew Kandefer Plumbing &amp; Heating Inc. | Tonawanda, NY</title>
+<style>
+  :root{
+    --navy:#0b2540;
+    --navy-dark:#081b30;
+    --blue:#1c5d99;
+    --accent:#e8622c;
+    --accent-dark:#c94f1e;
+    --ink:#0b2540;
+    --gray:#5a6b7a;
+    --paper:#f6f8fa;
+    --white:#ffffff;
+    --line:#e2e8ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cfe0f0;
+    font-size:13px;
+    padding:7px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+  .topbar a{color:#cfe0f0;}
+  .topbar .emergency{color:var(--accent);font-weight:700;}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--navy);
+    color:var(--white);
+    padding:16px 0;
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-icon{width:38px;height:38px;flex-shrink:0;}
+  .brand-text{line-height:1.15;}
+  .brand-text strong{display:block;font-size:16px;letter-spacing:.2px;}
+  .brand-text span{display:block;font-size:11px;color:#a9c2da;letter-spacing:.5px;text-transform:uppercase;}
+  .call-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--accent);
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    padding:10px 18px;
+    border-radius:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:18px;height:18px;flex-shrink:0;}
+  .call-btn:active{background:var(--accent-dark);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:56px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;
+    background:radial-gradient(circle,rgba(232,98,44,0.18) 0%,rgba(232,98,44,0) 70%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .badge{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    color:#dce8f4;
+    font-size:12.5px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:999px;
+    display:flex;align-items:center;gap:6px;
+  }
+  .badge svg{width:14px;height:14px;}
+  h1{
+    font-size:38px;
+    line-height:1.12;
+    font-weight:800;
+    letter-spacing:-0.5px;
+    max-width:640px;
+  }
+  h1 em{font-style:normal;color:var(--accent);}
+  .tagline{
+    margin-top:14px;
+    font-size:18px;
+    color:#c7d9ea;
+    max-width:520px;
+    font-weight:500;
+  }
+  .hero-ctas{
+    margin-top:30px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    font-weight:800;
+    font-size:17px;
+    padding:16px 26px;
+    border-radius:10px;
+    display:flex;align-items:center;gap:10px;
+    box-shadow:0 8px 20px rgba(232,98,44,0.35);
+  }
+  .btn-primary svg{width:22px;height:22px;}
+  .btn-secondary{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.3);
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    padding:16px 24px;
+    border-radius:10px;
+  }
+  .hero-sub{margin-top:22px;font-size:13.5px;color:#9db6cc;}
+
+  /* ---------- Section shells ---------- */
+  section{padding:64px 0;}
+  .section-label{
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:12.5px;
+    font-weight:800;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  h2{
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:-0.3px;
+    color:var(--navy);
+    max-width:600px;
+  }
+  .section-intro{color:var(--gray);font-size:15.5px;margin-top:10px;max-width:560px;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--paper);}
+  .grid-4{
+    margin-top:34px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 18px;
+  }
+  .card .icon-wrap{
+    width:46px;height:46px;
+    border-radius:10px;
+    background:rgba(28,93,153,0.1);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .card .icon-wrap svg{width:24px;height:24px;stroke:var(--blue);}
+  .card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .card p{font-size:13.8px;color:var(--gray);}
+
+  /* ---------- Why choose us ---------- */
+  .why{background:var(--white);}
+  .why-list{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .icon-wrap{
+    width:44px;height:44px;flex-shrink:0;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .icon-wrap svg{width:22px;height:22px;stroke:var(--accent);}
+  .why-item h3{font-size:16.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* ---------- Service area ---------- */
+  .area{
+    background:var(--navy);
+    color:#fff;
+  }
+  .area h2{color:#fff;}
+  .area .section-intro{color:#b9cde2;}
+  .area-grid{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .town{
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.15);
+    padding:9px 16px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    display:flex;align-items:center;gap:8px;
+  }
+  .town svg{width:14px;height:14px;stroke:var(--accent);flex-shrink:0;}
+  .area-note{margin-top:22px;font-size:14px;color:#9db6cc;}
+
+  /* ---------- Emergency banner ---------- */
+  .emergency-banner{
+    background:var(--accent);
+    color:#fff;
+    padding:26px 0;
+  }
+  .emergency-banner .wrap{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  .emergency-banner .txt{display:flex;align-items:center;gap:14px;}
+  .emergency-banner .txt svg{width:34px;height:34px;flex-shrink:0;}
+  .emergency-banner h3{font-size:19px;font-weight:800;}
+  .emergency-banner p{font-size:13.5px;opacity:.92;}
+  .emergency-banner .call-btn{background:#fff;color:var(--accent-dark);}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--paper);}
+  .contact-grid{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .contact-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:24px 20px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .contact-card .icon-wrap{
+    width:44px;height:44px;flex-shrink:0;
+    border-radius:10px;
+    background:rgba(232,98,44,0.1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-card .icon-wrap svg{width:22px;height:22px;stroke:var(--accent);}
+  .contact-card h3{font-size:14px;color:var(--gray);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
+  .contact-card a, .contact-card p{font-size:16.5px;font-weight:700;color:var(--navy);}
+  .contact-card .sub{font-size:13.5px;color:var(--gray);font-weight:500;margin-top:3px;}
+
+  .cta-final{
+    margin-top:36px;
+    text-align:center;
+    background:var(--navy);
+    border-radius:16px;
+    padding:40px 24px;
+    color:#fff;
+  }
+  .cta-final h3{font-size:22px;font-weight:800;margin-bottom:10px;}
+  .cta-final p{color:#c7d9ea;font-size:14.5px;margin-bottom:22px;}
+  .cta-final .btn-primary{margin:0 auto;justify-content:center;max-width:320px;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-dark);
+    color:#8fa8bf;
+    padding:28px 0;
+    font-size:13px;
+  }
+  footer .wrap{display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;}
+  footer strong{color:#cfe0f0;}
+
+  /* ---------- Responsive ---------- */
+  @media (min-width:640px){
+    h1{font-size:46px;}
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .why-list{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+  @media (min-width:860px){
+    .grid-4{grid-template-columns:repeat(4,1fr);}
+    h1{font-size:52px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>79 Fillmore Ave, Tonawanda, NY 14150</span>
+    <span class="emergency">24/7 Emergency Service &mdash; Call (716) 893-8376</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="23" fill="#e8622c"/>
+        <path d="M16 30V22a4 4 0 0 1 4-4h4v-4h4v4h4a4 4 0 0 1 4 4v8" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 30h20a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2v0a2 2 0 0 1 2-2z" fill="#fff"/>
+      </svg>
+      <div class="brand-text">
+        <strong>Matthew Kandefer</strong>
+        <span>Plumbing &amp; Heating Inc.</span>
+      </div>
+    </div>
+    <a href="tel:7168938376" class="call-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      716-893-8376
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8622c" stroke-width="2.4"><path d="M12 2l3 6 6 1-4.5 4.5L17.5 21 12 17.5 6.5 21l1-7.5L3 9l6-1 3-6z"/></svg>
+        Over 46 Years in Business
+      </span>
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8622c" stroke-width="2.4"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
+        Family Owned &amp; Local
+      </span>
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8622c" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        24/7 Emergencies
+      </span>
+    </div>
+    <h1>Buffalo&rsquo;s Trusted Plumbing &amp; Heating Pros &mdash; <em>Flush Out The Competition.</em></h1>
+    <p class="tagline">Residential &amp; commercial plumbing, heating, air conditioning and generator service for Tonawanda and the whole Buffalo metro. Straight answers, fair pricing, no surprises.</p>
+    <div class="hero-ctas">
+      <a href="tel:7168938376" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Tap to Call: 716-893-8376
+      </a>
+      <a href="#contact" class="btn-secondary">Get a Free Estimate</a>
+    </div>
+    <p class="hero-sub">Mon&ndash;Fri 8:00am&ndash;4:30pm &middot; Emergency service available 24/7 &middot; mattkinc@gmail.com</p>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-label">What We Do</div>
+    <h2>Full-Service Plumbing, Heating &amp; Generators</h2>
+    <p class="section-intro">From a running toilet to a full system overhaul or new construction, we handle it &mdash; residential and commercial, big jobs and small.</p>
+    <div class="grid-4">
+      <div class="card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 12h4l2-4 4 8 2-4h4"/></svg></div>
+        <h3>Residential Plumbing</h3>
+        <p>Everything from stubborn clogs and leaks to complete system replacements and new construction plumbing.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Commercial Plumbing</h3>
+        <p>Reliable plumbing service and repair for Buffalo-area businesses, with minimal disruption to your operation.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+        <h3>Heating &amp; Air Conditioning</h3>
+        <p>HVAC maintenance, installation, and repair to keep your home comfortable through every Buffalo season.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <h3>Generator Service</h3>
+        <p>Residential generator installation, service, and repair &mdash; so a Buffalo winter never leaves you in the dark.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-label">Why Choose Us</div>
+    <h2>Local Roots. Honest Work. Real Answers.</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L17.5 21 12 17.5 6.5 21l1-7.5L3 9l6-1 3-6z"/></svg></div>
+        <div>
+          <h3>46+ Years Serving Buffalo</h3>
+          <p>Decades of hands-on experience across residential and commercial jobs of every size.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg></div>
+        <div>
+          <h3>We're Buffalo Residents Too</h3>
+          <p>We live here, we deal with the same winters and old housing stock &mdash; and we treat every job like it's our own home.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
+        <div>
+          <h3>Transparent Pricing</h3>
+          <p>Clear, upfront pricing before we start &mdash; no bait-and-switch, no hidden fees.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div>
+          <h3>24/7 Emergency Service</h3>
+          <p>Burst pipe at midnight? Furnace out on a Buffalo January morning? We answer around the clock.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-label">Service Area</div>
+    <h2>Proudly Serving Buffalo &amp; the Surrounding Area</h2>
+    <p class="section-intro">Based in Tonawanda, we cover Buffalo, NY and the surrounding communities.</p>
+    <div class="area-grid">
+      <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Tonawanda</span>
+      <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Tonawanda Town</span>
+      <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Buffalo</span>
+      <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Surrounding Buffalo Metro</span>
+    </div>
+    <p class="area-note">Not sure if you're in our range? Call us &mdash; if we can't help, we'll tell you straight.</p>
+  </div>
+</section>
+
+<div class="emergency-banner">
+  <div class="wrap">
+    <div class="txt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+      <div>
+        <h3>Plumbing or Heating Emergency?</h3>
+        <p>We offer 24/7 emergency service &mdash; call any time, day or night.</p>
+      </div>
+    </div>
+    <a href="tel:7168938376" class="call-btn">Call Now: 716-893-8376</a>
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-label">Get In Touch</div>
+    <h2>Ready When You Are</h2>
+    <p class="section-intro">Reach out for a free estimate or same-day service.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="#e8622c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div>
+          <h3>Phone</h3>
+          <a href="tel:7168938376">716-893-8376</a>
+          <p class="sub">24/7 for emergencies</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="#e8622c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg></div>
+        <div>
+          <h3>Email</h3>
+          <a href="mailto:mattkinc@gmail.com">mattkinc@gmail.com</a>
+          <p class="sub">We reply promptly</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="#e8622c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div>
+          <h3>Address</h3>
+          <p>79 Fillmore Ave<br>Tonawanda, NY 14150</p>
+          <p class="sub">Mon&ndash;Fri 8:00am&ndash;4:30pm</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-final">
+      <h3>Flush Out The Competition &mdash; Call Matthew Kandefer Plumbing &amp; Heating</h3>
+      <p>46+ years serving Buffalo and Tonawanda with honest, dependable plumbing and heating work.</p>
+      <a href="tel:7168938376" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        716-893-8376
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Matthew Kandefer Plumbing &amp; Heating Inc.</strong>
+    <span>79 Fillmore Ave, Tonawanda, NY 14150 &middot; 716-893-8376 &middot; mattkinc@gmail.com</span>
+    <span>&copy; 2026 Matthew Kandefer Plumbing &amp; Heating Inc. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

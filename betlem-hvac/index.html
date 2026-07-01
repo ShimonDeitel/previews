@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betlem Residential Heating &amp; Air Conditioning | Rochester, NY | Since 1923</title>
+<style>
+  :root{
+    --navy:#0f2a3f;
+    --navy-dark:#0a1d2c;
+    --blue:#1c5d8c;
+    --blue-bright:#2f7dc0;
+    --orange:#e0632a;
+    --orange-dark:#c14f1c;
+    --ink:#14232f;
+    --gray:#5b6b76;
+    --line:#e2e8ec;
+    --bg:#f7f9fa;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cfe1ee;
+    font-size:13px;
+    padding:7px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+  .topbar a{color:#fff;font-weight:600;}
+  .topbar .est{color:#8fb3cc;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .site-header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:42px;height:42px;flex:none;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text .name{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:.2px;}
+  .brand-text .sub{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;}
+  nav.desktop-nav{display:flex;gap:26px;font-size:14px;font-weight:600;color:var(--navy);}
+  nav.desktop-nav a:hover{color:var(--orange);}
+  .header-cta{
+    display:flex;align-items:center;gap:10px;
+  }
+  .call-pill{
+    display:flex;align-items:center;gap:8px;
+    background:var(--orange);color:#fff;font-weight:800;
+    padding:10px 18px;border-radius:999px;font-size:15px;white-space:nowrap;
+    box-shadow:0 4px 14px rgba(224,99,42,.35);
+  }
+  .call-pill svg{width:18px;height:18px;flex:none;}
+
+  @media (max-width:860px){
+    nav.desktop-nav{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      linear-gradient(160deg, rgba(15,42,63,.94), rgba(10,29,44,.97)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,.03) 0 2px, transparent 2px 40px);
+    color:#fff;
+    padding:56px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 14px;border-radius:999px;
+    font-size:12.5px;font-weight:700;letter-spacing:.03em;
+    color:#ffd9ba;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(30px,7vw,52px);
+    font-weight:800;
+    line-height:1.08;
+    letter-spacing:-.01em;
+    max-width:820px;
+  }
+  .hero h1 span{color:var(--orange);}
+  .hero p.tagline{
+    margin-top:16px;
+    font-size:clamp(16px,3.2vw,20px);
+    color:#c9dbe9;
+    max-width:600px;
+    font-weight:500;
+  }
+  .hero-actions{
+    margin-top:30px;
+    display:flex;flex-wrap:wrap;gap:14px;
+  }
+  .btn-call-big{
+    display:flex;align-items:center;gap:12px;
+    background:var(--orange);
+    color:#fff;font-weight:800;font-size:19px;
+    padding:18px 28px;border-radius:14px;
+    box-shadow:0 8px 24px rgba(224,99,42,.4);
+    border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-call-big:active{transform:scale(.97);}
+  .btn-call-big svg{width:24px;height:24px;flex:none;}
+  .btn-call-big .lines{display:flex;flex-direction:column;line-height:1.15;}
+  .btn-call-big .lines small{font-size:12px;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.05em;}
+  .btn-call-big .lines strong{font-size:20px;}
+  .btn-secondary{
+    display:flex;align-items:center;gap:10px;
+    background:transparent;
+    border:2px solid rgba(255,255,255,.35);
+    color:#fff;font-weight:700;font-size:15px;
+    padding:16px 22px;border-radius:14px;
+  }
+  .btn-secondary svg{width:20px;height:20px;flex:none;}
+
+  .hero-stats{
+    margin-top:44px;
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    max-width:820px;
+  }
+  .stat{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;
+    padding:16px 12px;
+    text-align:center;
+  }
+  .stat .num{font-size:24px;font-weight:800;color:#fff;}
+  .stat .lbl{font-size:11.5px;color:#a9c2d4;margin-top:2px;font-weight:600;letter-spacing:.02em;}
+
+  @media (max-width:640px){
+    .hero-stats{grid-template-columns:repeat(2,1fr);}
+    .hero-actions{flex-direction:column;}
+    .btn-call-big, .btn-secondary{width:100%;justify-content:center;}
+  }
+
+  /* ---------- Section shells ---------- */
+  section{padding:64px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 40px;}
+  .eyebrow{
+    color:var(--orange);font-weight:800;font-size:12.5px;
+    text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;
+  }
+  .section-head h2{
+    font-size:clamp(24px,4.5vw,36px);
+    font-weight:800;color:var(--navy);letter-spacing:-.01em;
+  }
+  .section-head p{margin-top:12px;color:var(--gray);font-size:16px;}
+
+  /* ---------- Services grid ---------- */
+  .services{background:var(--white);}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:900px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .services-grid{grid-template-columns:1fr;}
+  }
+  .service-card{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:26px 22px;
+    background:var(--bg);
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .service-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(15,42,63,.08);border-color:#cfe0ea;}
+  .service-icon{
+    width:52px;height:52px;border-radius:12px;
+    background:linear-gradient(145deg, var(--blue-bright), var(--navy));
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .service-icon svg{width:26px;height:26px;stroke:#fff;}
+  .service-card h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+  .service-card p{font-size:14.5px;color:var(--gray);}
+
+  /* ---------- Why choose us ---------- */
+  .why{
+    background:var(--navy);
+    color:#fff;
+  }
+  .why .section-head h2{color:#fff;}
+  .why .section-head p{color:#b9cede;}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  @media (max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.why-grid{grid-template-columns:1fr;}}
+  .why-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    padding:24px 20px;
+    text-align:center;
+  }
+  .why-card .num{
+    font-size:30px;font-weight:800;color:var(--orange);margin-bottom:8px;
+  }
+  .why-card h3{font-size:15.5px;font-weight:800;margin-bottom:6px;}
+  .why-card p{font-size:13.5px;color:#b9cede;}
+
+  .since-banner{
+    margin-top:44px;
+    display:flex;align-items:center;gap:22px;
+    background:rgba(224,99,42,.12);
+    border:1px solid rgba(224,99,42,.35);
+    border-radius:18px;
+    padding:26px;
+    flex-wrap:wrap;
+  }
+  .since-banner .big-year{
+    font-size:44px;font-weight:800;color:var(--orange);line-height:1;flex:none;
+  }
+  .since-banner p{color:#e7eef3;font-size:15.5px;max-width:560px;}
+  .since-banner strong{color:#fff;}
+
+  /* ---------- Service area ---------- */
+  .area{background:var(--bg);}
+  .area-layout{
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  }
+  @media (max-width:800px){.area-layout{grid-template-columns:1fr;}}
+  .area-copy h2{font-size:clamp(22px,4vw,30px);font-weight:800;color:var(--navy);margin-bottom:14px;}
+  .area-copy p{color:var(--gray);font-size:15.5px;margin-bottom:18px;}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{
+    background:var(--white);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--navy);
+  }
+  .area-map{
+    background:var(--white);border:1px solid var(--line);border-radius:20px;
+    padding:24px;display:flex;align-items:center;justify-content:center;
+  }
+  .area-map svg{width:100%;max-width:320px;height:auto;}
+
+  /* ---------- CTA strip ---------- */
+  .cta-strip{
+    background:linear-gradient(120deg, var(--orange), var(--orange-dark));
+    color:#fff;
+  }
+  .cta-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    text-align:left;
+  }
+  .cta-inner h2{font-size:clamp(20px,3.6vw,28px);font-weight:800;}
+  .cta-inner p{margin-top:6px;color:#ffe6d7;font-size:15px;}
+  .btn-white{
+    background:#fff;color:var(--orange-dark);font-weight:800;font-size:17px;
+    padding:16px 26px;border-radius:14px;display:flex;align-items:center;gap:10px;
+    white-space:nowrap;
+  }
+  .btn-white svg{width:20px;height:20px;}
+  @media (max-width:600px){
+    .cta-inner{flex-direction:column;text-align:center;}
+    .btn-white{width:100%;justify-content:center;}
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--white);}
+  .contact-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:36px;
+  }
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{
+    background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:30px;
+  }
+  .contact-row{
+    display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .ic{
+    width:42px;height:42px;border-radius:10px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .contact-row .ic svg{width:20px;height:20px;stroke:#fff;}
+  .contact-row h4{font-size:14px;font-weight:800;color:var(--navy);}
+  .contact-row p, .contact-row a{font-size:15px;color:var(--gray);}
+  .contact-row a{color:var(--blue-bright);font-weight:700;}
+
+  .contact-cta-card{
+    background:var(--navy);color:#fff;border-radius:20px;padding:32px;
+    display:flex;flex-direction:column;justify-content:center;gap:16px;
+  }
+  .contact-cta-card h3{font-size:22px;font-weight:800;}
+  .contact-cta-card p{color:#b9cede;font-size:14.5px;}
+  .contact-cta-card .btn-call-big{justify-content:center;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-dark);color:#8fa9bc;padding:32px 0;font-size:13.5px;
+  }
+  .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;}
+  .foot-inner strong{color:#fff;}
+  .foot-note{max-width:1120px;margin:14px auto 0;padding:0 20px;color:#5f7c8f;font-size:12px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>704 Clinton Avenue South, Rochester, NY 14620</span>
+    <span class="est">Serving Greater Rochester Since 1923</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap site-header-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+        <rect width="48" height="48" rx="10" fill="#0F2A3F"/>
+        <path d="M24 10L14 20V38H34V20L24 10Z" stroke="#E0632A" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+        <path d="M24 22V38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M18 30H30" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <span class="name">Betlem</span>
+        <span class="sub">Heating &amp; Air</span>
+      </div>
+    </div>
+    <nav class="desktop-nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-pill" href="tel:5852714328">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+      585-271-4328
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffd9ba" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+      24/7 Emergency Service &middot; A+ BBB Rated
+    </div>
+    <h1>Keeping Rochester's Homes Comfortable <span>Since 1923.</span></h1>
+    <p class="tagline">Furnace, air conditioning &amp; heat pump repair, installation, and maintenance from the same family-serving company Rochester has trusted for over a century.</p>
+
+    <div class="hero-actions">
+      <a class="btn-call-big" href="tel:5852714328">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="lines"><small>Call Now &mdash; 24/7</small><strong>585-271-4328</strong></span>
+      </a>
+      <a class="btn-secondary" href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Request a Free Estimate
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="num">100+</div><div class="lbl">Years in Rochester</div></div>
+      <div class="stat"><div class="num">24/7</div><div class="lbl">Emergency Service</div></div>
+      <div class="stat"><div class="num">A+</div><div class="lbl">BBB Rating</div></div>
+      <div class="stat"><div class="num">40+</div><div class="lbl">Towns Served</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Complete Heating &amp; Cooling Services</h2>
+      <p>York and Bryant equipment, installed and serviced by NATE-certified technicians.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 3v18M4 8l8-5 8 5M4 8v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8"/></svg></div>
+        <h3>Furnace Repair &amp; Installation</h3>
+        <p>Gas furnaces and hot water boilers, repaired fast or replaced with efficient new systems.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Central Air Conditioning</h3>
+        <p>AC repair, maintenance, and new installations to keep your home cool all summer.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.83 2.83 0 0 1 4 4L7 21l-4 1 1-4z"/></svg></div>
+        <h3>Heat Pump Systems</h3>
+        <p>Air-source and ductless heat pumps, sized and installed for year-round comfort.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2 4-6 6-6 11a6 6 0 0 0 12 0c0-5-4-7-6-11z"/></svg></div>
+        <h3>Indoor Air Quality</h3>
+        <p>Duct cleaning, air purifiers, humidifiers, and dehumidifiers for healthier air.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="8" rx="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Whole-Home Generators</h3>
+        <p>Automatic backup power so your family never loses heat, light, or comfort.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l-1 7H7z"/><path d="M8 10v4a4 4 0 0 0 8 0v-4"/><path d="M12 18v3"/></svg></div>
+        <h3>Tankless Water Heaters</h3>
+        <p>Endless hot water with compact, energy-efficient tankless systems.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4M17 12h4M12 3v4M12 17v4M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/></svg></div>
+        <h3>In-Floor Radiant Heating</h3>
+        <p>Even, silent warmth radiating up from the floor &mdash; no cold spots, no noisy vents.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Maintenance Service Plans</h3>
+        <p>Scheduled tune-ups that catch problems early and keep warranties valid.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>24/7 Emergency Repair</h3>
+        <p>No heat, no AC? Our team answers around the clock, every day of the year.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Rochester Chooses Betlem</div>
+      <h2>A Century of Keeping This City Comfortable</h2>
+      <p>Four generations of homeowners have trusted the same local company.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">1923</div>
+        <h3>Founded in Rochester</h3>
+        <p>Family-serving since before central air existed.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">NATE</div>
+        <h3>Certified Technicians</h3>
+        <p>North American Technician Excellence certified staff.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">A+</div>
+        <h3>BBB Rating</h3>
+        <p>Accredited with an A+ Better Business Bureau rating.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">24/7</div>
+        <h3>Always Available</h3>
+        <p>Emergency heat and AC calls answered any hour, any day.</p>
+      </div>
+    </div>
+
+    <div class="since-banner">
+      <div class="big-year">102</div>
+      <p><strong>102 years and counting.</strong> Betlem has installed and repaired heating &amp; cooling systems for Rochester families since 1923 &mdash; through every winter this city has seen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap area-layout">
+    <div class="area-copy">
+      <div class="eyebrow">Where We Work</div>
+      <h2>Proudly Serving Greater Rochester</h2>
+      <p>From the city core to the surrounding suburbs, our trucks are on the road across Monroe County and beyond &mdash; 40+ towns and growing.</p>
+      <div class="chips">
+        <span class="chip">Rochester</span>
+        <span class="chip">Brighton</span>
+        <span class="chip">Pittsford</span>
+        <span class="chip">Greece</span>
+        <span class="chip">Irondequoit</span>
+        <span class="chip">Webster</span>
+        <span class="chip">Penfield</span>
+        <span class="chip">Henrietta</span>
+        <span class="chip">Chili</span>
+        <span class="chip">Gates</span>
+        <span class="chip">Avon</span>
+        <span class="chip">+ 30 more towns</span>
+      </div>
+    </div>
+    <div class="area-map">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="94" stroke="#1c5d8c" stroke-width="2" stroke-dasharray="4 6"/>
+        <circle cx="100" cy="100" r="66" stroke="#2f7dc0" stroke-width="2" stroke-dasharray="4 6"/>
+        <circle cx="100" cy="100" r="8" fill="#e0632a"/>
+        <path d="M100 30L100 15M100 170L100 185M30 100L15 100M170 100L185 100" stroke="#0f2a3f" stroke-width="2" stroke-linecap="round"/>
+        <text x="100" y="12" text-anchor="middle" font-size="9" fill="#0f2a3f" font-family="sans-serif" font-weight="700">N</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>No heat? No AC? Don't wait.</h2>
+      <p>Talk to a real person now &mdash; we answer 24 hours a day, 7 days a week.</p>
+    </div>
+    <a class="btn-white" href="tel:5852714328">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+      585-271-4328
+    </a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Schedule Your Free Estimate</h2>
+      <p>Reach the Betlem team directly &mdash; no call centers, no scripts.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><h4>Phone</h4><a href="tel:5852714328">585-271-4328 (HEAT)</a><p>Available 24/7 for service &amp; emergencies</p></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg></div>
+          <div><h4>Email</h4><a href="mailto:residential@betlem.com">residential@betlem.com</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Address</h4><p>704 Clinton Avenue South<br>Rochester, NY 14620</p></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><h4>Hours</h4><p>Open 24 hours a day, 7 days a week for emergency service</p></div>
+        </div>
+      </div>
+      <div class="contact-cta-card">
+        <h3>Ready when you are.</h3>
+        <p>One call gets you a real technician &mdash; not a voicemail. Free in-home estimates on new systems.</p>
+        <a class="btn-call-big" href="tel:5852714328">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="lines"><small>Call Now</small><strong>585-271-4328</strong></span>
+        </a>
+        <a class="btn-secondary" style="border-color:rgba(255,255,255,.35);justify-content:center" href="mailto:residential@betlem.com">
+          Email residential@betlem.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span><strong>Betlem Residential Heating &amp; Air Conditioning</strong> &middot; Rochester, NY</span>
+    <span>704 Clinton Avenue South, Rochester, NY 14620 &middot; 585-271-4328</span>
+  </div>
+  <p class="foot-note">Prototype homepage concept, unaffiliated redesign for evaluation purposes. Content sourced from betlem.com public pages.</p>
+</footer>
+
+</body>
+</html>
