@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamilton Heat and Air | Heating &amp; AC — Tulsa, Jenks, Broken Arrow, Owasso</title>
+<meta name="description" content="Hamilton Heat and Air — licensed HVAC installation, repair and maintenance for the Tulsa metro. Reliable, affordable, with regular hours past 5pm. Call 918-576-6835.">
+<style>
+  :root{
+    --navy:#0e2433;
+    --navy-2:#16374d;
+    --ink:#1c2b36;
+    --slate:#51677a;
+    --line:#dde6ec;
+    --paper:#f4f7f9;
+    --white:#ffffff;
+    --flame:#e8541d;
+    --flame-dark:#c74314;
+    --sky:#1f7fb8;
+    --gold:#f5b53f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{text-decoration:none;color:inherit}
+  ul{list-style:none}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+  .icon{width:24px;height:24px;flex:none}
+
+  /* ---------- utility bar ---------- */
+  .utility{
+    background:var(--navy);
+    color:#bcd2e0;
+    font-size:12.5px;
+    letter-spacing:.02em;
+  }
+  .utility .wrap{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding-top:7px;padding-bottom:7px;
+  }
+  .utility strong{color:#fff;font-weight:600}
+  .utility .u-right{white-space:nowrap}
+  @media(max-width:480px){ .utility .u-right{display:none} }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding-top:12px;padding-bottom:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand-mark{
+    width:42px;height:42px;flex:none;border-radius:10px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand-mark svg{width:24px;height:24px}
+  .brand-name{line-height:1.15;min-width:0}
+  .brand-name b{display:block;font-size:16.5px;font-weight:800;letter-spacing:-.01em;color:var(--navy);white-space:nowrap}
+  .brand-name span{display:block;font-size:11px;color:var(--slate);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  nav.desktop{display:none;gap:26px;font-size:14.5px;font-weight:600;color:var(--slate)}
+  nav.desktop a:hover{color:var(--flame)}
+  @media(min-width:860px){ nav.desktop{display:flex} }
+  .head-call{
+    display:flex;align-items:center;gap:8px;
+    background:var(--flame);color:#fff;
+    font-weight:700;font-size:14.5px;
+    padding:11px 16px;border-radius:10px;
+    box-shadow:0 3px 10px rgba(232,84,29,.30);
+    white-space:nowrap;
+  }
+  .head-call:active{background:var(--flame-dark)}
+  .head-call svg{width:17px;height:17px}
+  @media(max-width:480px){ .head-call span.num{display:none} .head-call{padding:11px 13px} }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(31,127,184,.28), transparent 60%),
+      radial-gradient(700px 380px at -10% 110%, rgba(232,84,29,.20), transparent 55%),
+      var(--navy);
+    color:#fff;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:26px 26px;
+  }
+  .hero .wrap{position:relative;z-index:1;padding-top:56px;padding-bottom:56px}
+  @media(min-width:860px){ .hero .wrap{padding-top:88px;padding-bottom:88px} }
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .kicker svg{width:15px;height:15px}
+  .hero h1{
+    font-size:clamp(2.15rem, 8.5vw, 3.9rem);
+    line-height:1.06;
+    font-weight:800;
+    letter-spacing:-.02em;
+    max-width:14ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero p.lede{
+    margin-top:18px;
+    font-size:clamp(1.02rem, 3.8vw, 1.2rem);
+    color:#c6d7e2;
+    max-width:52ch;
+  }
+  .hero p.lede strong{color:#fff}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .btn-call{
+    display:flex;align-items:center;gap:12px;
+    background:var(--flame);color:#fff;
+    border-radius:14px;
+    padding:16px 24px;
+    font-weight:800;
+    box-shadow:0 8px 26px rgba(232,84,29,.42);
+    transition:transform .12s ease;
+    width:100%;
+    justify-content:center;
+  }
+  @media(min-width:560px){ .btn-call{width:auto} }
+  .btn-call:active{transform:scale(.98);background:var(--flame-dark)}
+  .btn-call svg{width:26px;height:26px}
+  .btn-call .t{text-align:left;line-height:1.2}
+  .btn-call .t small{display:block;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+  .btn-call .t b{font-size:clamp(1.25rem,5vw,1.45rem);letter-spacing:.01em}
+  .btn-ghost{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    border:1.5px solid rgba(255,255,255,.35);
+    color:#fff;border-radius:14px;
+    padding:16px 24px;font-weight:700;font-size:15px;
+    width:100%;
+  }
+  @media(min-width:560px){ .btn-ghost{width:auto} }
+  .btn-ghost:active{background:rgba(255,255,255,.08)}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:32px}
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:999px;
+    padding:7px 13px;
+    font-size:12.5px;font-weight:600;color:#dcE8f0;
+  }
+  .chip svg{width:14px;height:14px;color:var(--gold)}
+
+  /* ---------- trust strip ---------- */
+  .trust{background:var(--paper);border-bottom:1px solid var(--line)}
+  .trust .wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    padding-top:22px;padding-bottom:22px;
+  }
+  @media(min-width:760px){ .trust .wrap{grid-template-columns:repeat(4,1fr)} }
+  .trust-item{display:flex;align-items:center;gap:11px}
+  .trust-item svg{width:26px;height:26px;color:var(--flame);flex:none}
+  .trust-item b{display:block;font-size:13.5px;line-height:1.25;color:var(--navy)}
+  .trust-item small{font-size:11.5px;color:var(--slate)}
+
+  /* ---------- sections ---------- */
+  section{padding:64px 0}
+  @media(min-width:860px){ section{padding:88px 0} }
+  .sec-head{max-width:640px;margin-bottom:40px}
+  .sec-head .tag{
+    display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--flame);margin-bottom:10px;
+  }
+  .sec-head h2{
+    font-size:clamp(1.6rem,6vw,2.35rem);
+    line-height:1.15;font-weight:800;letter-spacing:-.02em;color:var(--navy);
+  }
+  .sec-head p{margin-top:12px;color:var(--slate);font-size:16px}
+
+  /* ---------- services ---------- */
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:620px){ .svc-grid{grid-template-columns:1fr 1fr} }
+  @media(min-width:920px){ .svc-grid{grid-template-columns:repeat(3,1fr)} }
+  .svc{
+    border:1px solid var(--line);border-radius:16px;padding:26px 22px;
+    background:var(--white);
+    transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .svc:hover{box-shadow:0 12px 30px rgba(14,36,51,.10);transform:translateY(-2px)}
+  .svc-ic{
+    width:50px;height:50px;border-radius:12px;
+    background:linear-gradient(135deg,#fdeee6,#fde3d4);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .svc-ic svg{width:26px;height:26px;color:var(--flame)}
+  .svc:nth-child(even) .svc-ic{background:linear-gradient(135deg,#e6f2fa,#d9ecf7)}
+  .svc:nth-child(even) .svc-ic svg{color:var(--sky)}
+  .svc h3{font-size:17.5px;font-weight:800;color:var(--navy);margin-bottom:7px}
+  .svc p{font-size:14.5px;color:var(--slate)}
+  .svc-note{
+    margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;font-size:14px;color:var(--navy);font-weight:600;
+  }
+  .svc-note span{display:inline-flex;align-items:center;gap:8px}
+  .svc-note svg{width:17px;height:17px;color:var(--flame)}
+
+  /* ---------- why ---------- */
+  .why{background:var(--paper)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:620px){ .why-grid{grid-template-columns:1fr 1fr} }
+  .why-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:20px;
+  }
+  .why-item svg{width:24px;height:24px;color:var(--flame);flex:none;margin-top:2px}
+  .why-item b{display:block;font-size:15.5px;color:var(--navy);margin-bottom:4px}
+  .why-item p{font-size:14px;color:var(--slate)}
+  .quote{
+    margin-top:26px;
+    background:var(--navy);color:#e6eff5;
+    border-radius:18px;padding:30px 26px;
+    position:relative;overflow:hidden;
+  }
+  .quote::before{
+    content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;
+    border-radius:50%;background:rgba(232,84,29,.18);
+  }
+  .quote blockquote{
+    font-size:clamp(1.05rem,4vw,1.3rem);font-weight:600;line-height:1.5;
+    max-width:56ch;position:relative;z-index:1;
+  }
+  .quote figcaption{margin-top:14px;font-size:13.5px;color:#9fb8c8;position:relative;z-index:1}
+  .quote figcaption b{color:var(--gold)}
+
+  /* ---------- area ---------- */
+  .area-card{
+    border:1px solid var(--line);border-radius:20px;overflow:hidden;
+    display:grid;grid-template-columns:1fr;
+  }
+  @media(min-width:820px){ .area-card{grid-template-columns:1.1fr 1fr} }
+  .area-map{
+    background:
+      radial-gradient(500px 260px at 70% 30%, rgba(31,127,184,.35), transparent 60%),
+      var(--navy-2);
+    min-height:220px;
+    display:flex;align-items:center;justify-content:center;
+    padding:34px;
+  }
+  .area-map svg{width:100%;max-width:340px;height:auto}
+  .area-body{padding:30px 24px}
+  @media(min-width:820px){ .area-body{padding:44px 40px} }
+  .area-body h3{font-size:clamp(1.35rem,5vw,1.7rem);font-weight:800;color:var(--navy);letter-spacing:-.01em}
+  .area-body p{margin-top:10px;color:var(--slate);font-size:15px}
+  .city-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+  .city-list li{
+    display:flex;align-items:center;gap:9px;
+    font-weight:700;font-size:15px;color:var(--navy);
+    background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:11px 14px;
+  }
+  .city-list svg{width:16px;height:16px;color:var(--flame);flex:none}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--navy);color:#fff}
+  .contact .sec-head h2{color:#fff}
+  .contact .sec-head p{color:#b9cddb}
+  .contact .sec-head .tag{color:var(--gold)}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:820px){ .contact-grid{grid-template-columns:repeat(2,1fr)} }
+  .c-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:16px;padding:24px 22px;
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .c-card > svg{width:26px;height:26px;color:var(--gold);flex:none;margin-top:3px}
+  .c-card b{display:block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#9fb8c8;margin-bottom:6px}
+  .c-card .big{font-size:clamp(1.15rem,4.5vw,1.4rem);font-weight:800;color:#fff;line-height:1.3;word-break:break-word}
+  .c-card small{display:block;margin-top:5px;font-size:13px;color:#b9cddb}
+  a.c-card{transition:background .15s ease}
+  a.c-card:active{background:rgba(255,255,255,.12)}
+  .contact-cta{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  }
+  .contact-cta .btn-call{box-shadow:0 8px 26px rgba(232,84,29,.5)}
+
+  /* ---------- footer ---------- */
+  footer{background:#0a1b27;color:#8fa9ba;font-size:13px}
+  footer .wrap{
+    padding-top:30px;padding-bottom:34px;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  footer b{color:#dfe9f0;font-weight:700}
+  @media(min-width:760px){
+    footer .wrap{flex-direction:row;justify-content:space-between;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- utility bar -->
+<div class="utility">
+  <div class="wrap">
+    <div>Licensed HVAC Contractor &middot; <strong>OK Lic. #74861</strong></div>
+    <div class="u-right">Serving the Tulsa Metro Area</div>
+  </div>
+</div>
+
+<!-- header -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- flame + air mark -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f5b53f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22c4 0 7-2.8 7-6.5 0-4.5-4-6.5-4-10.5-2.5 1.5-3.5 4-3.5 6C9.5 8 8 6.5 8 4.5 6 6.5 5 9.5 5 12.5 5 19.2 8 22 12 22z"/>
+        </svg>
+      </span>
+      <span class="brand-name">
+        <b>Hamilton Heat and Air</b>
+        <span>Tulsa &middot; Heating &amp; Cooling</span>
+      </span>
+    </a>
+    <nav class="desktop">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="head-call" href="tel:+19185766835" aria-label="Call Hamilton Heat and Air at 918-576-6835">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="num">918-576-6835</span>
+    </a>
+  </div>
+</header>
+
+<!-- hero -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="kicker">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+      Family-owned &middot; BBB Accredited &middot; Satisfaction Guaranteed
+    </span>
+    <h1>Heating &amp; air done right — <em>with integrity.</em></h1>
+    <p class="lede">
+      Hamilton Heat and Air keeps Tulsa-area homes comfortable year-round.
+      <strong>Reliable, affordable, and open regular hours past 5pm</strong> — because
+      your comfort doesn't clock out at five.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-call" href="tel:+19185766835">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="t"><small>Tap to call now</small><b>918-576-6835</b></span>
+      </a>
+      <a class="btn-ghost" href="#services">
+        Explore our services
+        <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="hero-chips">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        OK Lic. #74861
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+        2020 Partner of the Year
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Open past 5pm
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        Trained &amp; certified techs
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- trust strip -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div><b>Licensed in Oklahoma</b><small>OK Lic. #74861</small></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+      <div><b>BBB Accredited</b><small>Business you can trust</small></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21 1.18.54 2.03 2.03 2.03 3.79"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+      <div><b>2020 Partner of the Year</b><small>P.S.O. Boundless Energy award</small></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div><b>Satisfaction Guaranteed</b><small>On every project</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- services -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Our Services</span>
+      <h2>Everything your home's comfort system needs.</h2>
+      <p>Residential and light commercial HVAC — installation, repair, and everything in between. All of our work is guaranteed and complies with the highest industry standards.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.8 7-6.5 0-4.5-4-6.5-4-10.5-2.5 1.5-3.5 4-3.5 6C9.5 8 8 6.5 8 4.5 6 6.5 5 9.5 5 12.5 5 19.2 8 22 12 22z"/></svg>
+        </div>
+        <h3>Heating &amp; AC Installation</h3>
+        <p>New system installs for homes and light commercial spaces, done to the highest industry standards.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>HVAC Repair</h3>
+        <p>Fast, honest diagnosis and repair from trained and certified technicians — with regular hours past 5pm.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M12 2v2"/><path d="m13.4 10.6 3.6-3.6"/></svg>
+        </div>
+        <h3>Maintenance</h3>
+        <p>Regular tune-ups that keep your system efficient, dependable, and running when you need it most.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>
+        </div>
+        <h3>Duct Cleaning &amp; Sealing</h3>
+        <p>Cleaner, tighter ductwork means better airflow, lower bills, and healthier air throughout your home.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </div>
+        <h3>Indoor Air Quality</h3>
+        <p>Breathe easier with solutions that improve the air your family lives in every day.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 9.5V21h14V9.5"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>
+        </div>
+        <h3>Attic Insulation</h3>
+        <p>Proper insulation keeps conditioned air where it belongs — inside — summer and winter.</p>
+      </div>
+    </div>
+    <div class="svc-note">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Extended warranty options available
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Financing available
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        Rebates — ask us what you qualify for
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- why -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Why Hamilton</span>
+      <h2>Integrity matters. It's how we do business.</h2>
+      <p>A family-owned Tulsa company built on being honest, fair, dependable, and trustworthy — on every single job.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div>
+          <b>Regular hours past 5pm</b>
+          <p>Comfort problems don't keep office hours. Neither do we — reliable and affordable, even after five.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div>
+          <b>Licensed &amp; certified</b>
+          <p>Oklahoma licensed (OK #74861) with trained, certified technicians on every project.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div>
+          <b>Satisfaction guaranteed</b>
+          <p>All of our work is guaranteed and complies with the highest industry standards.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div>
+          <b>Owner-operated, family-run</b>
+          <p>Run by Danny Hamilton with Kelly managing the business — you deal with the people whose name is on the door.</p>
+        </div>
+      </div>
+    </div>
+    <figure class="quote">
+      <blockquote>&ldquo;Integrity is the most important asset to have both professionally and personally. It means being honest, fair, dependable, and trustworthy.&rdquo;</blockquote>
+      <figcaption><b>Danny Hamilton</b> &mdash; Owner, Hamilton Heat and Air</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- service area -->
+<section id="area">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Service Area</span>
+      <h2>Proudly serving the Tulsa Metro.</h2>
+    </div>
+    <div class="area-card">
+      <div class="area-map" aria-hidden="true">
+        <svg viewBox="0 0 340 220" fill="none">
+          <circle cx="170" cy="105" r="86" stroke="rgba(255,255,255,.22)" stroke-width="1.5" stroke-dasharray="5 6"/>
+          <circle cx="170" cy="105" r="54" stroke="rgba(255,255,255,.14)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <!-- Tulsa hub -->
+          <circle cx="170" cy="105" r="9" fill="#e8541d"/>
+          <circle cx="170" cy="105" r="17" stroke="rgba(232,84,29,.5)" stroke-width="2"/>
+          <text x="170" y="84" text-anchor="middle" fill="#ffffff" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700">Tulsa</text>
+          <!-- Owasso NE -->
+          <circle cx="236" cy="42" r="6" fill="#f5b53f"/>
+          <text x="236" y="27" text-anchor="middle" fill="#dce8f0" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600">Owasso</text>
+          <line x1="178" y1="97" x2="230" y2="48" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <!-- Broken Arrow SE -->
+          <circle cx="252" cy="160" r="6" fill="#f5b53f"/>
+          <text x="252" y="185" text-anchor="middle" fill="#dce8f0" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600">Broken Arrow</text>
+          <line x1="179" y1="112" x2="246" y2="156" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <!-- Jenks SW -->
+          <circle cx="102" cy="168" r="6" fill="#f5b53f"/>
+          <text x="102" y="192" text-anchor="middle" fill="#dce8f0" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600">Jenks</text>
+          <line x1="161" y1="112" x2="108" y2="163" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-dasharray="3 4"/>
+        </svg>
+      </div>
+      <div class="area-body">
+        <h3>If you're in the metro, we've got you covered.</h3>
+        <p>Residential and light commercial heating &amp; air service across the Tulsa Metro Area:</p>
+        <ul class="city-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Tulsa
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Broken Arrow
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Jenks
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Owasso
+          </li>
+        </ul>
+        <p style="margin-top:18px">Not sure if you're in range? <a href="tel:+19185766835" style="color:var(--flame);font-weight:700">Give us a quick call</a> — we'll tell you straight.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Contact Us</span>
+      <h2>Ready when you are.</h2>
+      <p>Call, email, or stop by — reliable, affordable service with regular hours past 5pm.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="c-card" href="tel:+19185766835">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div>
+          <b>Main line</b>
+          <span class="big">918-576-6835</span>
+          <small>Tap to call from your phone</small>
+        </div>
+      </a>
+      <a class="c-card" href="tel:+19183329880">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div>
+          <b>Second line</b>
+          <span class="big">918-332-9880</span>
+          <small>Tap to call from your phone</small>
+        </div>
+      </a>
+      <a class="c-card" href="mailto:Info@hamiltonheatandair.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <div>
+          <b>Email</b>
+          <span class="big" style="font-size:clamp(.95rem,4vw,1.15rem)">Info@hamiltonheatandair.com</span>
+          <small>We'll get back to you</small>
+        </div>
+      </a>
+      <div class="c-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <b>Office</b>
+          <span class="big" style="font-size:clamp(.95rem,4vw,1.15rem)">9246 S Sheridan Rd, STE 211</span>
+          <small>Tulsa, OK 74133</small>
+        </div>
+      </div>
+    </div>
+    <div class="contact-cta">
+      <a class="btn-call" href="tel:+19185766835">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="t"><small>Call Hamilton Heat and Air</small><b>918-576-6835</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div><b>Hamilton Heat and Air</b> &middot; 9246 S Sheridan Rd STE 211, Tulsa, OK 74133</div>
+    <div>OK Lic. #74861 &middot; BBB Accredited &middot; Satisfaction Guaranteed</div>
+  </div>
+</footer>
+
+</body>
+</html>
