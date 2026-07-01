@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EV Roofing &amp; Construction Supply Corporation — Commercial &amp; Industrial Roofing, Westmoreland NY</title>
+<meta name="description" content="EV Roofing & Construction Supply Corporation — EPDM, TPO & PVC roofing systems for commercial and industrial buildings. Certified Woman-Owned Business Enterprise, Est. 1992. Westmoreland, NY. Call (315) 853-6821.">
+<!--
+  Homepage rebuild prototype by Ship48 — built exclusively from facts published
+  on the business's current site: https://evroofingcorpcom.wordpress.com/
+  No fabricated testimonials, claims, or imagery.
+-->
+<style>
+  :root{
+    --ink:#101820;
+    --ink-2:#1b2733;
+    --slate:#33414f;
+    --muted:#5b6b7a;
+    --line:#e3e8ee;
+    --paper:#ffffff;
+    --paper-2:#f4f6f9;
+    --accent:#e8590c;
+    --accent-dark:#c74a08;
+    --amber:#f5a623;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* ============ TOP BAR ============ */
+  .topbar{
+    background:var(--ink);
+    color:#cdd6df;
+    font-size:12.5px;
+    letter-spacing:.02em;
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding-top:7px;padding-bottom:7px;
+  }
+  .topbar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .topbar strong{color:#fff;font-weight:600;}
+
+  /* ============ HEADER ============ */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding-top:12px;padding-bottom:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;min-width:0;}
+  .brand .mark{
+    width:40px;height:40px;flex:0 0 40px;
+    background:var(--ink);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand .name{min-width:0;}
+  .brand .name b{
+    display:block;font-size:15.5px;font-weight:800;letter-spacing:-.01em;line-height:1.15;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .brand .name small{
+    display:block;font-size:10.5px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.09em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .head-call{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--accent);color:#fff;
+    font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:999px;
+    box-shadow:0 2px 10px rgba(232,89,12,.35);
+    white-space:nowrap;
+    transition:background .15s ease;
+  }
+  .head-call:hover{background:var(--accent-dark);}
+  .head-call svg{flex:0 0 auto;}
+  .head-call .num{display:none;}
+  @media(min-width:560px){ .head-call .num{display:inline;} .head-call .lbl{display:none;} }
+
+  /* ============ HERO ============ */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(232,89,12,.16), transparent 60%),
+      linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 100%);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{ /* subtle roof-line geometry */
+    content:"";
+    position:absolute;inset:auto -10% -2px -10%;height:120px;
+    background:
+      linear-gradient(115deg, transparent 55%, rgba(255,255,255,.045) 55.2%),
+      linear-gradient(65deg, transparent 55%, rgba(255,255,255,.03) 55.2%);
+    pointer-events:none;
+  }
+  .hero .wrap{padding-top:52px;padding-bottom:60px;position:relative;z-index:1;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--amber);border-radius:2px;}
+  .hero h1{
+    font-size:clamp(30px,7.6vw,54px);
+    line-height:1.06;
+    font-weight:800;
+    letter-spacing:-.02em;
+    max-width:16ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--amber);}
+  .hero p.lede{
+    margin-top:16px;
+    font-size:clamp(15.5px,2.2vw,18px);
+    color:#c3cdd7;
+    max-width:52ch;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  .btn-call{
+    display:inline-flex;align-items:center;justify-content:center;gap:11px;
+    background:var(--accent);color:#fff;
+    font-size:18px;font-weight:800;letter-spacing:.01em;
+    padding:16px 26px;border-radius:14px;
+    box-shadow:0 6px 22px rgba(232,89,12,.42);
+    width:100%;
+    transition:transform .12s ease, background .15s ease;
+  }
+  .btn-call:active{transform:scale(.98);}
+  .btn-call:hover{background:var(--accent-dark);}
+  .btn-ghost{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    border:1.5px solid rgba(255,255,255,.32);
+    color:#fff;font-size:15px;font-weight:700;
+    padding:14px 22px;border-radius:14px;
+    width:100%;
+    transition:border-color .15s ease,background .15s ease;
+  }
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06);}
+  @media(min-width:560px){
+    .btn-call,.btn-ghost{width:auto;}
+  }
+  .hero-chips{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;
+  }
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14);
+    color:#dbe3ea;
+    font-size:12.5px;font-weight:600;
+    padding:7px 13px;border-radius:999px;
+  }
+  .chip svg{flex:0 0 auto;}
+
+  /* ============ SECTION BASICS ============ */
+  section{padding:60px 0;}
+  .kicker{
+    font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:10px;
+  }
+  h2.sec{
+    font-size:clamp(24px,4.6vw,34px);
+    font-weight:800;letter-spacing:-.02em;line-height:1.12;
+    max-width:24ch;
+  }
+  p.sub{margin-top:12px;color:var(--muted);max-width:60ch;font-size:15.5px;}
+
+  /* ============ SERVICES ============ */
+  #services{background:var(--paper-2);}
+  .svc-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px;
+  }
+  @media(min-width:640px){.svc-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:960px){.svc-grid{grid-template-columns:repeat(4,1fr);}}
+  .svc{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 22px;
+    display:flex;flex-direction:column;gap:12px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .svc:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(16,24,32,.08);}
+  .svc .ic{
+    width:46px;height:46px;border-radius:11px;
+    background:linear-gradient(150deg,var(--ink),var(--slate));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .svc h3{font-size:16.5px;font-weight:800;letter-spacing:-.01em;}
+  .svc p{font-size:13.8px;color:var(--muted);}
+
+  /* ============ MANUFACTURERS ============ */
+  .mfr{padding:44px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .mfr .lbl{
+    text-align:center;font-size:11.5px;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .mfr-row{
+    margin-top:20px;
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  @media(min-width:720px){.mfr-row{grid-template-columns:repeat(4,1fr);}}
+  .mfr-badge{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 12px;
+    text-align:center;
+    font-weight:700;font-size:13.5px;color:var(--ink-2);
+    background:var(--paper);
+  }
+  .mfr-badge small{display:block;font-weight:600;font-size:10.5px;color:var(--muted);margin-top:3px;letter-spacing:.04em;}
+  .mfr-note{margin-top:16px;text-align:center;font-size:12.5px;color:var(--muted);}
+
+  /* ============ WHY ============ */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px;}
+  @media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:960px){.why-grid{grid-template-columns:1fr 1fr 1fr;}}
+  .why{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:20px;border-radius:var(--radius);
+    background:var(--paper-2);
+  }
+  .why .ic{
+    width:40px;height:40px;flex:0 0 40px;border-radius:10px;
+    background:#fff;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why h3{font-size:15px;font-weight:800;letter-spacing:-.01em;}
+  .why p{font-size:13.5px;color:var(--muted);margin-top:4px;}
+
+  /* ============ SAFETY BAND ============ */
+  .safety{
+    background:linear-gradient(120deg,var(--ink),var(--ink-2));
+    color:#fff;border-radius:18px;
+    padding:34px 26px;
+    margin-top:40px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  @media(min-width:760px){
+    .safety{flex-direction:row;align-items:center;gap:26px;padding:38px 40px;}
+  }
+  .safety .ic{
+    width:56px;height:56px;flex:0 0 56px;border-radius:14px;
+    background:rgba(245,166,35,.15);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .safety h3{font-size:19px;font-weight:800;letter-spacing:-.01em;}
+  .safety p{font-size:14px;color:#c3cdd7;margin-top:6px;max-width:64ch;}
+  .safety p b{color:#fff;}
+
+  /* ============ SERVICE AREA ============ */
+  #area{background:var(--paper-2);}
+  .area-card{
+    margin-top:28px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  @media(min-width:760px){.area-card{flex-direction:row;align-items:center;gap:30px;padding:30px 34px;}}
+  .area-card .pin{
+    width:54px;height:54px;flex:0 0 54px;border-radius:14px;
+    background:linear-gradient(150deg,var(--accent),var(--amber));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .area-card h3{font-size:17px;font-weight:800;}
+  .area-card p{font-size:14px;color:var(--muted);margin-top:5px;max-width:62ch;}
+  .area-card .go{
+    margin-left:auto;flex:0 0 auto;
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:14px;color:var(--accent);
+    white-space:nowrap;
+  }
+
+  /* ============ CONTACT ============ */
+  #contact .card-grid{
+    display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px;
+  }
+  @media(min-width:760px){#contact .card-grid{grid-template-columns:1fr 1fr 1fr;}}
+  .c-card{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;background:var(--paper);
+  }
+  .c-card .ic{
+    width:42px;height:42px;border-radius:10px;margin-bottom:14px;
+    background:var(--paper-2);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .c-card h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);}
+  .c-card .val{margin-top:6px;font-size:16.5px;font-weight:700;letter-spacing:-.01em;line-height:1.4;word-break:break-word;}
+  .c-card .val a:hover{color:var(--accent);}
+  .c-card small{display:block;margin-top:4px;font-size:12.5px;color:var(--muted);}
+  .cta-band{
+    margin-top:36px;
+    background:
+      radial-gradient(700px 300px at 90% 0%, rgba(245,166,35,.18), transparent 60%),
+      linear-gradient(120deg,var(--ink),var(--ink-2));
+    border-radius:18px;color:#fff;
+    padding:38px 24px;text-align:center;
+  }
+  .cta-band h3{font-size:clamp(21px,4vw,28px);font-weight:800;letter-spacing:-.02em;}
+  .cta-band p{margin-top:8px;color:#c3cdd7;font-size:14.5px;}
+  .cta-band .btn-call{margin-top:22px;max-width:340px;margin-left:auto;margin-right:auto;}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--ink);color:#9fb0bf;
+    padding:34px 0 40px;font-size:13px;
+  }
+  footer .wrap{display:flex;flex-direction:column;gap:14px;}
+  footer .fb{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:14.5px;}
+  footer .fb .mark{width:30px;height:30px;border-radius:7px;background:var(--slate);display:flex;align-items:center;justify-content:center;}
+  footer p{max-width:70ch;}
+  footer a{color:#cdd6df;}
+  footer a:hover{color:#fff;}
+  @media(min-width:760px){
+    footer .wrap{flex-direction:row;justify-content:space-between;align-items:flex-start;gap:30px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span><strong>Certified Woman-Owned Business Enterprise</strong> · Est. 1992</span>
+    <span>Westmoreland, NY</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="EV Roofing &amp; Construction Supply Corporation">
+      <span class="mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 4l9 8"/><path d="M5.5 10.5V19h13v-8.5"/></svg>
+      </span>
+      <span class="name">
+        <b>EV Roofing &amp; Construction Supply</b>
+        <small>Commercial &amp; Industrial Roofing</small>
+      </span>
+    </a>
+    <a class="head-call" href="tel:+13158536821">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="num">(315) 853-6821</span><span class="lbl">Call</span>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Est. 1992 · Westmoreland, New York</span>
+    <h1>Commercial &amp; industrial <em>roofing systems</em>, done right.</h1>
+    <p class="lede">EV Roofing &amp; Construction Supply Corporation installs EPDM, TPO and PVC roofing systems on commercial and industrial buildings — fully insured, safety-driven, and licensed by the industry's leading membrane manufacturers.</p>
+    <div class="hero-ctas">
+      <a class="btn-call" href="tel:+13158536821">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (315) 853-6821
+      </a>
+      <a class="btn-ghost" href="#contact">
+        Request a quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="hero-chips">
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        Fully insured
+      </span>
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13L17 22l-5-3-5 3 1.5-9"/></svg>
+        Woman-owned certified
+      </span>
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        Asbestos handling licensed
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2 class="sec">Single-ply roofing systems for commercial &amp; industrial buildings</h2>
+    <p class="sub">We install EPDM, TPO and PVC membrane roofing systems, and our employees are trained and licensed for roof-related asbestos removal.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="ic" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 8l10 6 10-6-10-6z"/><path d="M2 13l10 6 10-6"/></svg>
+        </span>
+        <h3>EPDM Roofing Systems</h3>
+        <p>Rubber membrane roofing installed on commercial and industrial buildings.</p>
+      </div>
+      <div class="svc">
+        <span class="ic" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M4.9 4.9l2.1 2.1"/><path d="M17 17l2.1 2.1"/><path d="M19.1 4.9L17 7"/><path d="M7 17l-2.1 2.1"/></svg>
+        </span>
+        <h3>TPO Roofing Systems</h3>
+        <p>Thermoplastic single-ply membrane systems for flat and low-slope roofs.</p>
+      </div>
+      <div class="svc">
+        <span class="ic" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6.5 7.4 6.5 12a6.5 6.5 0 0 1-13 0c0-4.6 6.5-12 6.5-12z"/></svg>
+        </span>
+        <h3>PVC Roofing Systems</h3>
+        <p>Durable, weather-resistant PVC membrane roofing for demanding facilities.</p>
+      </div>
+      <div class="svc">
+        <span class="ic" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        </span>
+        <h3>Roof-Related Asbestos Removal</h3>
+        <p>Contractor Asbestos Handling License, with employees trained and licensed in roof-related asbestos removal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURER CREDENTIALS -->
+<div class="mfr">
+  <div class="wrap">
+    <div class="lbl">Licensed by leading manufacturers for installation &amp; warranty</div>
+    <div class="mfr-row">
+      <div class="mfr-badge">Johns Manville<small>Roofing Systems</small></div>
+      <div class="mfr-badge">Firestone<small>Building Products</small></div>
+      <div class="mfr-badge">Carlisle SynTec<small>Incorporated</small></div>
+      <div class="mfr-badge">Tremco<small>Incorporated</small></div>
+    </div>
+    <p class="mfr-note">Manufacturer licensing means your roof qualifies for manufacturer-backed installation and warranty programs.</p>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="wrap">
+    <div class="kicker">Why EV Roofing</div>
+    <h2 class="sec">Built on three decades of commercial roofing</h2>
+    <div class="why-grid">
+      <div class="why">
+        <span class="ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+        </span>
+        <div>
+          <h3>Established 1992</h3>
+          <p>Decades of experience installing membrane roofing systems on commercial and industrial buildings.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13L17 22l-5-3-5 3 1.5-9"/></svg>
+        </span>
+        <div>
+          <h3>Certified Woman-Owned</h3>
+          <p>A Certified Woman-Owned Business Enterprise — a credential that counts toward diversity procurement goals.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </span>
+        <div>
+          <h3>Fully Insured &amp; Bonded</h3>
+          <p>Fully insured, with construction bonds provided when your project requires them.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15h20v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3z"/><path d="M5 15v-3a7 7 0 0 1 6-6.93V3h2v2.07A7 7 0 0 1 19 12v3"/></svg>
+        </span>
+        <div>
+          <h3>Licensed Asbestos Handling</h3>
+          <p>Contractor Asbestos Handling License; crews trained and licensed for roof-related asbestos removal.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </span>
+        <div>
+          <h3>Manufacturer Licensed</h3>
+          <p>Licensed by Johns Manville, Firestone, Carlisle SynTec and Tremco for installation and warranty.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </span>
+        <div>
+          <h3>Safety Memberships</h3>
+          <p>Members of Lovell Safety Management Group and ISNetworld.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety">
+      <span class="ic" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15h20v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3z"/><path d="M5 15v-3a7 7 0 0 1 6-6.93V3h2v2.07A7 7 0 0 1 19 12v3"/></svg>
+      </span>
+      <div>
+        <h3>Our safety goal: zero damage to people, property and product.</h3>
+        <p>We are committed to safe working conditions on every job — a standard backed by our memberships in <b>Lovell Safety Management Group</b> and <b>ISNetworld</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="area">
+  <div class="wrap">
+    <div class="kicker">Where we work</div>
+    <h2 class="sec">Based in Westmoreland, New York</h2>
+    <div class="area-card">
+      <span class="pin" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <div>
+        <h3>35 Seymour Lane, Westmoreland, NY 13490</h3>
+        <p>We serve commercial and industrial building owners from our Westmoreland headquarters. Have a project in the region? Call us — we'll confirm coverage for your location and walk you through next steps.</p>
+      </div>
+      <a class="go" href="tel:+13158536821">
+        Call to confirm
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="kicker">Get in touch</div>
+    <h2 class="sec">Talk to us about your roof</h2>
+    <p class="sub">Reach us by phone, email, or stop by our office in Westmoreland.</p>
+    <div class="card-grid">
+      <div class="c-card">
+        <span class="ic" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <h3>Phone &amp; Fax</h3>
+        <div class="val"><a href="tel:+13158536821">(315) 853-6821</a></div>
+        <small>Fax: (315) 853-6494</small>
+      </div>
+      <div class="c-card">
+        <span class="ic" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
+        </span>
+        <h3>Email</h3>
+        <div class="val"><a href="mailto:evroofingcorp@centralny.twcbc.com">evroofingcorp@centralny.twcbc.com</a></div>
+        <small>We'll get back to you promptly.</small>
+      </div>
+      <div class="c-card">
+        <span class="ic" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#e8590c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <h3>Address</h3>
+        <div class="val">35 Seymour Lane<br>Westmoreland, NY 13490</div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h3>Ready to talk about your commercial roof?</h3>
+      <p>EPDM · TPO · PVC roofing systems &nbsp;·&nbsp; Est. 1992 &nbsp;·&nbsp; Fully insured</p>
+      <a class="btn-call" href="tel:+13158536821">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (315) 853-6821
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fb">
+        <span class="mark" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 4l9 8"/><path d="M5.5 10.5V19h13v-8.5"/></svg>
+        </span>
+        EV Roofing &amp; Construction Supply Corporation
+      </div>
+      <p style="margin-top:10px;">Certified Woman-Owned Business Enterprise · Est. 1992<br>
+      EPDM, TPO &amp; PVC roofing systems for commercial and industrial buildings.</p>
+    </div>
+    <div>
+      <p>35 Seymour Lane, Westmoreland, NY 13490<br>
+      Phone: <a href="tel:+13158536821">(315) 853-6821</a> · Fax: (315) 853-6494<br>
+      <a href="mailto:evroofingcorp@centralny.twcbc.com">evroofingcorp@centralny.twcbc.com</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
