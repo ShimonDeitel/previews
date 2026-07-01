@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJR Electrical Contractors | Electricians in Memphis, TN | 901-249-7045</title>
+<meta name="description" content="MJR Electrical Contractors — family-owned electricians serving Memphis, TN and surrounding areas. Panel replacement, breaker work, wiring, lighting, and Generac generator installation. Call 901-249-7045.">
+<style>
+  :root{
+    --navy:#0e1f33;
+    --navy-2:#132b46;
+    --navy-3:#1b3a5c;
+    --amber:#ffb100;
+    --amber-dark:#e69d00;
+    --ink:#16243a;
+    --slate:#51637c;
+    --line:#e2e9f2;
+    --paper:#f5f8fc;
+    --white:#ffffff;
+    --radius:14px;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font);
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:76px; /* room for the fixed call bar on mobile */
+  }
+  img{max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .icon{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    border-bottom:3px solid var(--amber);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;min-width:0;}
+  .brand-mark{
+    width:40px;height:40px;flex:none;border-radius:9px;
+    background:var(--amber);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand-mark svg{width:22px;height:22px;stroke:var(--navy);fill:var(--navy);stroke-width:0;}
+  .brand-text{line-height:1.15;min-width:0;}
+  .brand-text strong{display:block;font-size:15px;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .brand-text span{display:block;font-size:10.5px;color:#9fb4cc;letter-spacing:.14em;text-transform:uppercase;}
+  .nav-call{
+    display:flex;align-items:center;gap:8px;
+    background:var(--amber);color:var(--navy);
+    text-decoration:none;font-weight:700;font-size:15px;
+    padding:10px 16px;border-radius:10px;white-space:nowrap;
+  }
+  .nav-call:active{background:var(--amber-dark);}
+  .nav-call .icon{width:18px;height:18px;stroke-width:2.2;}
+  .nav-call .num{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--navy);
+    color:var(--white);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-pattern{position:absolute;inset:0;opacity:.07;pointer-events:none;}
+  .hero-inner{position:relative;padding:56px 0 60px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--navy-3);
+    color:var(--amber);
+    font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .eyebrow .icon{width:14px;height:14px;stroke-width:2.4;}
+  h1{
+    font-size:clamp(34px,8vw,58px);
+    line-height:1.05;
+    letter-spacing:-.02em;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+  h1 .accent{color:var(--amber);}
+  .hero-sub{
+    font-size:clamp(16px,4vw,19px);
+    color:#c3d2e4;
+    max-width:560px;
+    margin-bottom:30px;
+  }
+  .hero-cta{display:flex;flex-direction:column;gap:12px;max-width:420px;}
+  .btn-call{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--amber);color:var(--navy);
+    text-decoration:none;font-weight:800;
+    font-size:20px;letter-spacing:.01em;
+    padding:18px 26px;border-radius:var(--radius);
+    box-shadow:0 6px 0 rgba(0,0,0,.25);
+  }
+  .btn-call:active{transform:translateY(2px);box-shadow:0 4px 0 rgba(0,0,0,.25);}
+  .btn-call .icon{width:24px;height:24px;stroke-width:2.3;}
+  .btn-call small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.75;}
+  .btn-ghost{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    border:2px solid var(--navy-3);color:var(--white);
+    text-decoration:none;font-weight:700;font-size:16px;
+    padding:14px 24px;border-radius:var(--radius);
+  }
+  .btn-ghost:active{background:var(--navy-2);}
+  .hero-points{
+    display:flex;flex-wrap:wrap;gap:10px 22px;
+    margin-top:30px;font-size:14px;color:#c3d2e4;
+  }
+  .hero-points span{display:flex;align-items:center;gap:8px;}
+  .hero-points .icon{width:16px;height:16px;stroke:var(--amber);stroke-width:2.4;}
+
+  /* ---------- Trust bar ---------- */
+  .trustbar{background:var(--amber);}
+  .trustbar .wrap{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:14px 20px;padding:18px 20px;
+  }
+  .trust-item{display:flex;align-items:center;gap:10px;color:var(--navy);}
+  .trust-item .icon{width:22px;height:22px;stroke-width:2.1;}
+  .trust-item b{display:block;font-size:14px;line-height:1.2;}
+  .trust-item small{display:block;font-size:11.5px;font-weight:600;opacity:.75;}
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0;}
+  .section-head{max-width:640px;margin-bottom:34px;}
+  .kicker{
+    color:var(--amber-dark);font-size:12.5px;font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px;
+  }
+  h2{font-size:clamp(26px,6vw,36px);line-height:1.12;letter-spacing:-.015em;font-weight:800;margin-bottom:10px;}
+  .section-head p{color:var(--slate);font-size:16px;}
+
+  /* Services */
+  .services{background:var(--paper);}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  .svc{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .svc-ic{
+    width:52px;height:52px;flex:none;border-radius:12px;
+    background:var(--navy);color:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .svc h3{font-size:16.5px;margin-bottom:4px;letter-spacing:-.01em;}
+  .svc p{font-size:14px;color:var(--slate);}
+  .svc-note{
+    margin-top:22px;text-align:center;color:var(--slate);font-size:14.5px;
+  }
+  .svc-note a{color:var(--navy);font-weight:700;text-decoration:none;border-bottom:2px solid var(--amber);}
+
+  /* Generator banner */
+  .genset{background:var(--navy);color:var(--white);}
+  .genset-card{
+    display:flex;flex-direction:column;gap:22px;
+  }
+  .genset .kicker{color:var(--amber);}
+  .genset p{color:#c3d2e4;font-size:16px;max-width:600px;}
+  .genset ul{list-style:none;display:grid;gap:12px;margin-top:6px;}
+  .genset li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#dbe6f2;}
+  .genset li .icon{width:20px;height:20px;stroke:var(--amber);margin-top:2px;}
+  .genset .btn-call{max-width:420px;margin-top:8px;}
+  .genset-art{
+    align-self:center;width:100%;max-width:340px;
+    background:var(--navy-2);border:1px solid var(--navy-3);
+    border-radius:var(--radius);padding:28px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .genset-art svg{width:100%;height:auto;}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  .why{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;gap:16px;align-items:flex-start;
+  }
+  .why-ic{
+    width:48px;height:48px;flex:none;border-radius:12px;
+    background:#fff4d9;color:var(--amber-dark);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why h3{font-size:16.5px;margin-bottom:4px;}
+  .why p{font-size:14px;color:var(--slate);}
+
+  /* Service area */
+  .area{background:var(--paper);}
+  .area-card{
+    background:var(--white);border:1px solid var(--line);
+    border-radius:var(--radius);padding:26px 22px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .area-main{display:flex;gap:14px;align-items:flex-start;}
+  .area-main .why-ic{background:var(--navy);color:var(--amber);}
+  .area-main h3{font-size:18px;margin-bottom:4px;}
+  .area-main p{color:var(--slate);font-size:15px;}
+  .area-soon{
+    display:flex;gap:10px;align-items:center;
+    background:#fff4d9;border-radius:10px;padding:12px 16px;
+    font-size:14px;color:var(--ink);font-weight:600;
+  }
+  .area-soon .icon{width:18px;height:18px;stroke:var(--amber-dark);}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:26px;}
+  .c-card{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;display:flex;gap:14px;align-items:flex-start;
+    text-decoration:none;
+  }
+  .c-card .why-ic{width:44px;height:44px;}
+  .c-card b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:3px;}
+  .c-card span{font-size:16.5px;font-weight:700;color:var(--ink);word-break:break-word;}
+  .c-card small{display:block;font-size:13px;color:var(--slate);font-weight:500;margin-top:2px;}
+  a.c-card span{color:var(--navy);}
+  .contact .btn-call{max-width:none;}
+
+  /* Footer */
+  footer{
+    background:var(--navy);color:#9fb4cc;
+    padding:34px 0 44px;font-size:13.5px;
+  }
+  .foot-brand{color:var(--white);font-weight:800;letter-spacing:.04em;font-size:15px;margin-bottom:6px;}
+  footer a{color:var(--amber);text-decoration:none;font-weight:600;}
+  footer .foot-meta{margin-top:14px;padding-top:14px;border-top:1px solid var(--navy-3);font-size:12px;}
+
+  /* Fixed mobile call bar */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--amber);
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px;color:var(--navy);text-decoration:none;
+    font-weight:800;font-size:18px;
+    box-shadow:0 -4px 16px rgba(14,31,51,.25);
+  }
+  .callbar .icon{width:22px;height:22px;stroke-width:2.3;}
+
+  /* ---------- Breakpoints ---------- */
+  @media (min-width:640px){
+    body{padding-bottom:0;}
+    .callbar{display:none;}
+    .nav-call .num{display:inline;}
+    .hero-cta{flex-direction:row;}
+    .btn-call{flex:1;}
+    .btn-ghost{flex:1;}
+    .trustbar .wrap{grid-template-columns:repeat(4,1fr);}
+    .svc-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:960px){
+    .hero-inner{padding:88px 0 92px;}
+    .svc-grid{grid-template-columns:repeat(3,1fr);}
+    .svc{flex-direction:column;gap:14px;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .genset-card{flex-direction:row;align-items:center;justify-content:space-between;}
+    .genset-copy{max-width:560px;}
+    .contact-grid{grid-template-columns:repeat(4,1fr);}
+    .c-card{flex-direction:column;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="MJR Electrical Contractors — home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5h5L10 22l8.5-11.5h-5L13 2z"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>MJR ELECTRICAL</strong>
+        <span>Contractors &middot; Memphis, TN</span>
+      </span>
+    </a>
+    <a class="nav-call" href="tel:+19012497045">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      <span>Call<span class="num">&nbsp;901-249-7045</span></span>
+    </a>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero" id="top">
+  <svg class="hero-pattern" aria-hidden="true" preserveAspectRatio="xMidYMid slice" viewBox="0 0 800 500">
+    <g stroke="#ffffff" stroke-width="1.5" fill="none">
+      <path d="M0 90h180l40 40h160"/><circle cx="380" cy="130" r="5"/>
+      <path d="M800 40H620l-50 50H420"/><circle cx="420" cy="90" r="5"/>
+      <path d="M60 500V360l50-50h140"/><circle cx="250" cy="310" r="5"/>
+      <path d="M800 300H660l-40 40v160"/><circle cx="660" cy="300" r="5"/>
+      <path d="M0 220h110l60 60v120"/><circle cx="170" cy="400" r="5"/>
+      <path d="M520 0v110l60 60h220"/><circle cx="520" cy="110" r="5"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5h5L10 22l8.5-11.5h-5L13 2z"/></svg>
+      Family Owned &middot; Memphis, TN
+    </span>
+    <h1>Professional Electricians <span class="accent">You Can Trust</span></h1>
+    <p class="hero-sub">MJR Electrical Contractors delivers reliable, affordable, and sustainable energy solutions for homes and businesses across Memphis, TN and surrounding areas.</p>
+    <div class="hero-cta">
+      <a class="btn-call" href="tel:+19012497045">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span>901-249-7045<small>Tap to call</small></span>
+      </a>
+      <a class="btn-ghost" href="#services">Our Services</a>
+    </div>
+    <div class="hero-points">
+      <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Residential &amp; Commercial</span>
+      <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Generac Generator Installation</span>
+      <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>5+ Years in Business</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Trust bar ===== -->
+<div class="trustbar">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div><b>Family Owned</b><small>Local Memphis business</small></div>
+    </div>
+    <div class="trust-item">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><b>5+ Years</b><small>In business</small></div>
+    </div>
+    <div class="trust-item">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h1M9 12h1M9 15h1M14 9h1M14 12h1M14 15h1"/></svg>
+      <div><b>Homes &amp; Businesses</b><small>Residential + commercial</small></div>
+    </div>
+    <div class="trust-item">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <div><b>Mon&ndash;Fri 7&ndash;5</b><small>Open weekdays</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Services ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Do</div>
+      <h2>Comprehensive Electrical Services</h2>
+      <p>From panel changes and breaker panel work to additions and appliance wiring — our team of highly qualified, skilled electricians serves both residential and commercial clients.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M9 10h6M9 14h6M9 18h3"/></svg></span>
+        <div><h3>Panel Replacement &amp; Changes</h3><p>Full electrical panel changes and replacements to keep your power safe and up to date.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 9v6M12 9v6M16 9v6"/></svg></span>
+        <div><h3>Breaker Panels &amp; Circuit Breakers</h3><p>Breaker panel work and circuit breaker service for dependable, code-safe power distribution.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.7.5 1 1.3 1 2.1V18h6v-1.2c0-.8.3-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></span>
+        <div><h3>Lighting &amp; Lights</h3><p>Light installation and repair for every room in your home.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 10h1.5M13.5 10H15M9 14h1.5M13.5 14H15"/></svg></span>
+        <div><h3>Commercial &amp; Office Lighting</h3><p>Bright, efficient lighting systems for offices and commercial spaces.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M7 10v4M12 10v4M17 10v4"/></svg></span>
+        <div><h3>Ballasts</h3><p>Ballast replacement and repair to keep fluorescent fixtures running flicker-free.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="9" r="1"/><circle cx="12" cy="15" r="1"/><path d="M10.5 8.5v1M13.5 8.5v1M10.5 14.5v1M13.5 14.5v1"/></svg></span>
+        <div><h3>Receptacles &amp; Outlets</h3><p>New receptacle installation, replacement, and repair throughout your property.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="6.5" r=".5"/><circle cx="10" cy="6.5" r=".5"/><circle cx="14" cy="6.5" r=".5"/><circle cx="17" cy="6.5" r=".5"/><rect x="7" y="12" width="10" height="5" rx="1"/></svg></span>
+        <div><h3>Ranges &amp; Appliance Wiring</h3><p>Safe, professional wiring for ranges and major household appliances.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+        <div><h3>Additions</h3><p>New circuits and electrical work for home additions and expanding businesses.</p></div>
+      </div>
+      <div class="svc">
+        <span class="svc-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5h5L10 22l8.5-11.5h-5L13 2z"/></svg></span>
+        <div><h3>Generac Generators</h3><p>Generator sales and installation so your home or business never loses power.</p></div>
+      </div>
+    </div>
+    <p class="svc-note">Not sure what you need? <a href="tel:+19012497045">Call 901-249-7045</a> and talk it through with an electrician.</p>
+  </div>
+</section>
+
+<!-- ===== Generac banner ===== -->
+<section class="genset">
+  <div class="wrap genset-card">
+    <div class="genset-copy">
+      <div class="kicker">Backup Power</div>
+      <h2>Never Lose Power Again — Generac Generators</h2>
+      <p>We sell and install Generac generators — trusted backup power solutions for homes and businesses in the Memphis area.</p>
+      <ul>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Generator sales and professional installation</li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Backup power for your home</li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Keep your business running through outages</li>
+      </ul>
+      <a class="btn-call" href="tel:+19012497045">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span>Ask About Generators<small>901-249-7045</small></span>
+      </a>
+    </div>
+    <div class="genset-art" aria-hidden="true">
+      <svg viewBox="0 0 200 140" fill="none" stroke="#ffb100" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="30" y="50" width="140" height="70" rx="8"/>
+        <path d="M30 70h140"/>
+        <path d="M50 85v20M65 85v20"/>
+        <rect x="120" y="82" width="34" height="24" rx="4"/>
+        <path d="M100 20 88 42h12l-8 18 20-24h-12l8-16z" fill="#ffb100" stroke="none"/>
+        <path d="M45 120v10M155 120v10"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why choose us ===== -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Why MJR</div>
+      <h2>Reliable and Efficient Service, Every Time</h2>
+      <p>A family-owned Memphis company built on trust — with the people and the equipment to do the job right.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <div><h3>Family Owned &amp; Operated</h3><p>A local Memphis business — professional electricians you always can trust for reliable and efficient service.</p></div>
+      </div>
+      <div class="why">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+        <div><h3>Highly Qualified Electricians</h3><p>A team of highly qualified and skilled electricians handles every residential and commercial job.</p></div>
+      </div>
+      <div class="why">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.7-3.7z"/></svg></span>
+        <div><h3>State-of-the-Art Equipment</h3><p>We work with an extensive set of state-of-the-art equipment for safe, efficient results.</p></div>
+      </div>
+      <div class="why">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5h5L10 22l8.5-11.5h-5L13 2z"/></svg></span>
+        <div><h3>Sustainable Energy Solutions</h3><p>Reliable, affordable, and sustainable energy solutions — including Generac backup power.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Service area ===== -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Where We Work</div>
+      <h2>Serving Memphis and Surrounding Areas</h2>
+    </div>
+    <div class="area-card">
+      <div class="area-main">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div>
+          <h3>Memphis, TN &amp; Surrounding Areas</h3>
+          <p>Our residential and commercial electrical services are available to clients in Memphis, TN and the surrounding areas. Based at 5410 Crestview Rd, Memphis, TN 38134.</p>
+        </div>
+      </div>
+      <div class="area-soon">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Coming soon: electrical contractor services in Nashville, TN
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Get In Touch</div>
+      <h2>Ready When You Are</h2>
+      <p>Call, email, or stop by — we&rsquo;re open weekdays and happy to answer your questions.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="c-card" href="tel:+19012497045">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span>
+        <div><b>Phone</b><span>901-249-7045</span><small>Tap to call</small></div>
+      </a>
+      <a class="c-card" href="mailto:mjrelectrical@bellsouth.net">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+        <div><b>Email</b><span>mjrelectrical@bellsouth.net</span></div>
+      </a>
+      <div class="c-card">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><b>Address</b><span>5410 Crestview Rd</span><small>Memphis, TN 38134</small></div>
+      </div>
+      <div class="c-card">
+        <span class="why-ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <div><b>Hours</b><span>Mon&ndash;Fri: 7:00 AM &ndash; 5:00 PM</span><small>Sat&ndash;Sun: Closed</small></div>
+      </div>
+    </div>
+    <a class="btn-call" href="tel:+19012497045">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      <span>Call 901-249-7045<small>Mon&ndash;Fri, 7:00 AM &ndash; 5:00 PM</small></span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">MJR ELECTRICAL CONTRACTORS</div>
+    <div>5410 Crestview Rd, Memphis, TN 38134 &middot; <a href="tel:+19012497045">901-249-7045</a> &middot; <a href="mailto:mjrelectrical@bellsouth.net">mjrelectrical@bellsouth.net</a></div>
+    <div>Family owned &middot; Serving Memphis, TN and surrounding areas</div>
+    <div class="foot-meta">Homepage redesign concept &mdash; prepared as a visual prototype. All business details taken from mjr-electrical.com.</div>
+  </div>
+</footer>
+
+<!-- ===== Fixed mobile call bar ===== -->
+<a class="callbar" href="tel:+19012497045" aria-label="Call MJR Electrical Contractors at 901-249-7045">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+  Call Now &middot; 901-249-7045
+</a>
+
+</body>
+</html>

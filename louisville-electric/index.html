@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tim Harrod Electric | Licensed Electricians in Louisville, KY | (502) 436-6633</title>
+<meta name="description" content="Tim Harrod Electric is a family-owned, full-service electric company serving Greater Louisville for over 18 years. Licensed, bonded & insured. Free estimates. Call (502) 436-6633.">
+<style>
+  :root{
+    --ink:#0e1b2c;
+    --ink-2:#16283f;
+    --ink-3:#1e3350;
+    --amber:#f7b32b;
+    --amber-dark:#e09c0f;
+    --paper:#f5f7fa;
+    --card:#ffffff;
+    --text:#1a2433;
+    --muted:#5a6b80;
+    --line:#e3e8ef;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .topbar-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand-mark{
+    flex:0 0 auto;width:40px;height:40px;border-radius:10px;
+    background:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand-mark svg{width:22px;height:22px}
+  .brand-name{
+    color:#fff;font-weight:800;font-size:15px;line-height:1.2;
+    letter-spacing:.02em;text-transform:uppercase;
+  }
+  .brand-sub{
+    color:rgba(255,255,255,.55);font-size:11px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;
+  }
+  .topbar-call{
+    flex:0 0 auto;
+    display:flex;align-items:center;gap:8px;
+    background:var(--amber);color:var(--ink);
+    font-weight:800;font-size:14px;
+    padding:10px 16px;border-radius:10px;
+    white-space:nowrap;
+  }
+  .topbar-call svg{width:16px;height:16px}
+  .topbar-call .num{display:none}
+  @media(min-width:560px){
+    .topbar-call .num{display:inline}
+    .brand-name{font-size:17px}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:#fff;
+    padding:56px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid-bg{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:44px 44px;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;padding-bottom:48px}
+  .overline{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(247,179,43,.12);
+    border:1px solid rgba(247,179,43,.35);
+    color:var(--amber);
+    font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:7px 14px;border-radius:999px;
+    margin-bottom:22px;
+  }
+  .overline svg{width:13px;height:13px}
+  h1{
+    font-size:clamp(34px,7.5vw,58px);
+    line-height:1.08;
+    font-weight:850;
+    letter-spacing:-.02em;
+    max-width:760px;
+  }
+  h1 .accent{color:var(--amber)}
+  .hero-sub{
+    margin-top:18px;
+    font-size:clamp(16px,2.6vw,19px);
+    color:rgba(255,255,255,.75);
+    max-width:600px;
+  }
+  .hero-ctas{
+    margin-top:30px;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .btn-call{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--amber);color:var(--ink);
+    font-size:19px;font-weight:850;letter-spacing:-.01em;
+    padding:18px 28px;border-radius:var(--radius);
+    box-shadow:0 8px 24px rgba(247,179,43,.28);
+    transition:transform .15s ease,background .15s ease;
+  }
+  .btn-call:active{transform:scale(.98)}
+  .btn-call:hover{background:#ffc042}
+  .btn-call svg{width:22px;height:22px;flex:0 0 auto}
+  .btn-call small{
+    display:block;font-size:11px;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;opacity:.7;
+  }
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:transparent;color:#fff;
+    border:1.5px solid rgba(255,255,255,.28);
+    font-size:16px;font-weight:700;
+    padding:16px 28px;border-radius:var(--radius);
+    transition:border-color .15s ease,background .15s ease;
+  }
+  .btn-secondary:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.05)}
+  @media(min-width:640px){
+    .hero{padding-top:72px}
+    .hero-inner{padding-bottom:64px}
+    .hero-ctas{flex-direction:row}
+    .btn-call,.btn-secondary{flex:0 1 auto}
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust{
+    position:relative;
+    background:var(--ink-2);
+    border-top:1px solid rgba(255,255,255,.08);
+  }
+  .trust-inner{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:rgba(255,255,255,.08);
+  }
+  .trust-item{
+    background:var(--ink-2);
+    padding:18px 14px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;
+  }
+  .trust-item .big{
+    color:var(--amber);font-weight:850;font-size:20px;line-height:1.1;letter-spacing:-.01em;
+  }
+  .trust-item .small{
+    color:rgba(255,255,255,.65);font-size:11.5px;font-weight:600;
+    letter-spacing:.06em;text-transform:uppercase;
+  }
+  @media(min-width:720px){
+    .trust-inner{grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:22px 16px}
+    .trust-item .big{font-size:23px}
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:64px 0}
+  @media(min-width:720px){section{padding:88px 0}}
+  .section-head{max-width:640px;margin-bottom:40px}
+  .kicker{
+    display:inline-block;
+    color:var(--amber-dark);
+    font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  h2{
+    font-size:clamp(27px,5vw,40px);
+    line-height:1.12;font-weight:850;letter-spacing:-.02em;
+    color:var(--ink);
+  }
+  .section-sub{margin-top:12px;color:var(--muted);font-size:16.5px}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  @media(min-width:560px){.services-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+  @media(min-width:920px){.services-grid{grid-template-columns:repeat(4,1fr)}}
+  .svc{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 20px;
+    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+  }
+  .svc:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(14,27,44,.09);
+    border-color:#d3dbe6;
+  }
+  .svc-icon{
+    width:46px;height:46px;border-radius:12px;
+    background:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .svc-icon svg{width:24px;height:24px}
+  .svc h3{font-size:17px;font-weight:800;color:var(--ink);letter-spacing:-.01em;margin-bottom:6px}
+  .svc p{font-size:14px;color:var(--muted);line-height:1.55}
+
+  /* ---------- Why ---------- */
+  .why{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:720px){.why-grid{grid-template-columns:repeat(2,1fr);gap:18px}}
+  .why-card{
+    display:flex;gap:16px;align-items:flex-start;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .why-icon{
+    flex:0 0 auto;width:44px;height:44px;border-radius:12px;
+    background:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-icon svg{width:22px;height:22px}
+  .why-card h3{font-size:16.5px;font-weight:800;color:var(--ink);margin-bottom:4px;letter-spacing:-.01em}
+  .why-card p{font-size:14px;color:var(--muted);line-height:1.55}
+
+  /* ---------- Service area ---------- */
+  .area-flex{display:flex;flex-direction:column;gap:32px}
+  @media(min-width:860px){
+    .area-flex{flex-direction:row;align-items:flex-start;gap:56px}
+    .area-flex .section-head{margin-bottom:0;flex:0 0 340px}
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:9px 16px;
+    font-size:14px;font-weight:700;color:var(--ink);
+    white-space:nowrap;
+  }
+  .chip svg{width:13px;height:13px;flex:0 0 auto}
+  .chip.all{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{background:var(--amber);padding:52px 0}
+  .cta-inner{
+    display:flex;flex-direction:column;gap:22px;align-items:flex-start;
+  }
+  .cta-inner h2{color:var(--ink)}
+  .cta-inner p{color:rgba(14,27,44,.75);font-size:16.5px;font-weight:600;margin-top:8px}
+  .btn-dark{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--ink);color:#fff;
+    font-size:18px;font-weight:850;
+    padding:17px 30px;border-radius:var(--radius);
+    width:100%;
+    transition:transform .15s ease,background .15s ease;
+  }
+  .btn-dark:hover{background:var(--ink-3)}
+  .btn-dark:active{transform:scale(.98)}
+  .btn-dark svg{width:20px;height:20px;flex:0 0 auto}
+  @media(min-width:720px){
+    .cta-inner{flex-direction:row;align-items:center;justify-content:space-between}
+    .btn-dark{width:auto}
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:720px){.contact-grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+  .contact-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 22px;
+  }
+  .contact-card .c-icon{
+    width:44px;height:44px;border-radius:12px;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .contact-card .c-icon svg{width:22px;height:22px}
+  .contact-card .c-label{
+    font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:6px;
+  }
+  .contact-card .c-value{
+    font-size:17px;font-weight:800;color:var(--ink);line-height:1.4;
+    overflow-wrap:anywhere;
+  }
+  .contact-card .c-value a{border-bottom:2px solid var(--amber)}
+  .contact-card .c-note{font-size:13.5px;color:var(--muted);margin-top:6px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:40px 0}
+  .foot-inner{display:flex;flex-direction:column;gap:18px}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.02em;text-transform:uppercase;font-size:15px}
+  .foot-brand .brand-mark{width:34px;height:34px;border-radius:9px}
+  .foot-brand .brand-mark svg{width:18px;height:18px}
+  .foot-meta{font-size:13.5px;line-height:1.8}
+  .foot-meta a{color:var(--amber);font-weight:700}
+  .foot-legal{font-size:12.5px;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.1);padding-top:18px}
+  @media(min-width:720px){
+    .foot-inner{flex-direction:row;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0e1b2c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#0e1b2c" stroke="none"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">Tim Harrod Electric</div>
+        <div class="brand-sub">Louisville, KY</div>
+      </div>
+    </div>
+    <a class="topbar-call" href="tel:15024366633" aria-label="Call Tim Harrod Electric at 502-436-6633">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call<span class="num">&nbsp;(502) 436-6633</span></span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="overline">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      Family Owned &amp; Operated &bull; Licensed &amp; Insured
+    </div>
+    <h1>Louisville&rsquo;s family&#8209;owned electricians <span class="accent">for over 18 years</span></h1>
+    <p class="hero-sub">Full-service residential and commercial electrical work across Greater Louisville &mdash; from a single outlet to a complete remodel. No job is too small.</p>
+    <div class="hero-ctas">
+      <a class="btn-call" href="tel:15024366633">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>(502) 436-6633<small>Tap to call &mdash; free estimates</small></span>
+      </a>
+      <a class="btn-secondary" href="#contact">Get a Free Estimate</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="wrap" style="padding:0 20px">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="big">18+ Years</span><span class="small">Electrical Experience</span></div>
+      <div class="trust-item"><span class="big">Licensed</span><span class="small">Bonded &amp; Insured</span></div>
+      <div class="trust-item"><span class="big">Free</span><span class="small">Estimates</span></div>
+      <div class="trust-item"><span class="big">ME34600</span><span class="small">Master Electrician Lic.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">What We Do</span>
+      <h2>Full-service electrical, done right</h2>
+      <p class="section-sub">Residential and commercial work of every size &mdash; new installs, upgrades, remodels, and repairs.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 8.5V21h14V8.5"/><path d="M12 10.5 10 14h4l-2 3.5"/></svg></div>
+        <h3>Residential Electrical</h3>
+        <p>Outlets, panels, wiring, and repairs for your home &mdash; handled by licensed electricians.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v16"/><path d="M14 9h4a1 1 0 0 1 1 1v11"/><path d="M8 8h3M8 12h3M8 16h3"/></svg></div>
+        <h3>Commercial Electrical</h3>
+        <p>Dependable electrical service for businesses and commercial properties across Louisville.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 5.9L3 18l3 3 5.8-5.7a4.5 4.5 0 0 0 5.9-6L14.5 12l-2.5-2.5 2.7-3.2z"/></svg></div>
+        <h3>Remodeling</h3>
+        <p>Electrical planning and installation for kitchen, bathroom, and bedroom renovations.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.7 1 1.5 1 2.5h6c0-1 .2-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></div>
+        <h3>LED &amp; Lighting</h3>
+        <p>LED installations, recessed lights, track lighting, and vanity lighting throughout your home.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="2.5"/><path d="M10.5 16h3M12 14.5v3"/></svg></div>
+        <h3>GFCI &amp; Outlets</h3>
+        <p>GFCI protection for kitchens, bathrooms, and outdoors &mdash; plus outlet installation and relocation.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 10c0-3-1-6-4.5-6C5 4 4.5 6 5.5 7.5 7 9.5 10 10 12 10z"/><path d="M14 11c2.6-1.5 5.7-2 7 .5 1 2-.5 3.5-3 3-2.4-.5-4-2-4-3.5z"/><path d="M11 13.5c-2.6 1.5-4.5 4-3 6 1.3 1.8 3.5 1 4-1.5.4-2-.2-3.5-1-4.5z"/></svg></div>
+        <h3>Ceiling Fans</h3>
+        <p>Ceiling fan installation and infrared switch setups for bedrooms and living areas.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></div>
+        <h3>Outdoor Lighting</h3>
+        <p>Flood lights, outdoor GFCI, pool pumps, and fountain wiring to light up your outdoor space.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 5.3a5 5 0 0 0-6.6 6.6L3 17v4h4l5.1-5.1a5 5 0 0 0 6.6-6.6l-3.2 3.2-2.5-.5-.5-2.5 3.2-3.2z"/></svg></div>
+        <h3>Appliance Repair</h3>
+        <p>Repair-first approach that can save you the cost of replacing appliances outright.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Why Choose Us</span>
+      <h2>A local family business you can trust</h2>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0e1b2c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/><path d="M15 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <h3>Family Owned &amp; Operated</h3>
+          <p>A full-service electric company run by the Harrod family &mdash; not a franchise, not a call center.</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0e1b2c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div>
+          <h3>Licensed, Bonded &amp; Insured</h3>
+          <p>Fully licensed electricians backed by Master Electrician License ME34600, with periodic training to stay sharp.</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0e1b2c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9.5 15.5 2 2 3.5-3.5"/></svg></div>
+        <div>
+          <h3>Free Estimates</h3>
+          <p>Get a clear picture of the work and the price before anything starts &mdash; the estimate costs you nothing.</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0e1b2c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div>
+          <h3>No Job Is Too Small</h3>
+          <p>From swapping one outlet to wiring a whole remodel, every job gets superior service and full attention.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section id="areas">
+  <div class="wrap area-flex">
+    <div class="section-head">
+      <span class="kicker">Service Area</span>
+      <h2>Proudly serving Greater Louisville</h2>
+      <p class="section-sub">Based in Louisville, KY and serving neighborhoods across the metro and surrounding areas.</p>
+    </div>
+    <div class="chips">
+      <span class="chip all">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Louisville
+      </span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Valley Station</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Iroquois</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>St. Matthews</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Prospect</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Mt. Washington</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Fern Creek</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Buechel Terrace</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Shively</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Westport</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>PRP</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#e09c0f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Surrounding Areas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<div class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Need an electrician?</h2>
+      <p>Call now for your free estimate &mdash; no job is too small.</p>
+    </div>
+    <a class="btn-dark" href="tel:15024366633">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (502) 436-6633
+    </a>
+  </div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Get In Touch</span>
+      <h2>Contact Tim Harrod Electric</h2>
+      <p class="section-sub">Call, email, or stop by &mdash; we&rsquo;re happy to talk through your project and give you a free estimate.</p>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="c-label">Phone</div>
+        <div class="c-value"><a href="tel:15024366633">(502) 436-6633</a></div>
+        <div class="c-note">Tap to call for a free estimate</div>
+      </div>
+
+      <div class="contact-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="c-label">Address</div>
+        <div class="c-value">5404 Anatahan Court<br>Louisville, KY 40272</div>
+        <div class="c-note">Serving Greater Louisville</div>
+      </div>
+
+      <div class="contact-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f7b32b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+        <div class="c-label">Email</div>
+        <div class="c-value"><a href="mailto:harrod1170@gmail.com">harrod1170@gmail.com</a></div>
+        <div class="c-note">Master Electrician Lic. ME34600</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#0e1b2c"/></svg>
+        </div>
+        Tim Harrod Electric
+      </div>
+      <p class="foot-meta" style="margin-top:12px">
+        5404 Anatahan Court, Louisville, KY 40272<br>
+        <a href="tel:15024366633">(502) 436-6633</a> &bull; <a href="mailto:harrod1170@gmail.com">harrod1170@gmail.com</a>
+      </p>
+    </div>
+    <p class="foot-meta">
+      Family owned &amp; operated &bull; Over 18 years of experience<br>
+      Licensed, bonded &amp; insured &bull; Master Electrician Lic. ME34600<br>
+      Free estimates &bull; No job is too small
+    </p>
+  </div>
+  <div class="wrap">
+    <p class="foot-legal">&copy; 2026 Tim Harrod Electric. All rights reserved. &bull; Website concept by Ship48</p>
+  </div>
+</footer>
+
+</body>
+</html>

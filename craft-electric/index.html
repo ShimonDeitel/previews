@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craft Electric Co., Inc. — Commercial Electricians, Birmingham AL — (205) 841-4141</title>
+<meta name="description" content="Craft Electric Co., Inc. — commercial and industrial electricians serving businesses within 60 miles of Birmingham, AL since 1981. Panels, lighting, generators, UPS, motor circuits, tenant buildouts. Call 205-841-4141.">
+<style>
+  :root{
+    --navy-950:#081420;
+    --navy-900:#0d1f31;
+    --navy-800:#12293f;
+    --navy-700:#1a3a58;
+    --amber:#ffb020;
+    --amber-deep:#f59e0b;
+    --ink:#14212e;
+    --slate:#4a5c6e;
+    --line:#e3e9ef;
+    --paper:#f6f8fa;
+    --white:#ffffff;
+    --radius:14px;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.55;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{text-decoration:none;color:inherit}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  section{scroll-margin-top:76px}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--navy-950);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:1080px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand .bolt{flex:none;width:36px;height:36px;border-radius:9px;background:var(--amber);display:flex;align-items:center;justify-content:center}
+  .brand .bolt svg{width:20px;height:20px}
+  .brand-name{color:var(--white);font-weight:800;font-size:16px;letter-spacing:.02em;line-height:1.15;white-space:nowrap}
+  .brand-sub{color:#8fa4b8;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .nav-links{display:none;gap:26px}
+  .nav-links a{color:#c3d0dc;font-size:14px;font-weight:600}
+  .nav-links a:hover{color:var(--white)}
+  .nav-call{flex:none;display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--navy-950);font-weight:800;font-size:14px;padding:11px 16px;border-radius:10px;box-shadow:0 2px 10px rgba(255,176,32,.35)}
+  .nav-call svg{width:16px;height:16px}
+  .nav-call:active{transform:scale(.97)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(255,176,32,.14), transparent 60%),
+      linear-gradient(180deg,var(--navy-950) 0%,var(--navy-900) 100%);
+    color:var(--white);padding:56px 0 40px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:44px 44px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 85%);
+    -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 85%);pointer-events:none}
+  .hero .wrap{position:relative}
+  .hero .eyebrow{color:var(--amber)}
+  .hero .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}
+  .hero h1{font-size:clamp(34px,8.5vw,58px);line-height:1.06;font-weight:800;letter-spacing:-.02em;margin:16px 0 18px;max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero p.lede{font-size:clamp(16px,4.2vw,19px);color:#bccbda;max-width:52ch;margin-bottom:28px}
+  .cta-row{display:flex;flex-direction:column;gap:12px;margin-bottom:34px}
+  .btn-call{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--amber);color:var(--navy-950);font-size:clamp(18px,5vw,21px);font-weight:800;padding:18px 26px;border-radius:var(--radius);box-shadow:0 6px 24px rgba(255,176,32,.4);letter-spacing:.01em}
+  .btn-call svg{width:22px;height:22px;flex:none}
+  .btn-call small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+  .btn-call .stack{text-align:left;line-height:1.15}
+  .btn-call:active{transform:scale(.98)}
+  .btn-ghost{display:flex;align-items:center;justify-content:center;gap:10px;border:1.5px solid rgba(255,255,255,.28);color:var(--white);font-size:16px;font-weight:700;padding:15px 24px;border-radius:var(--radius)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+  .trust{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);overflow:hidden}
+  .trust div{background:rgba(8,20,32,.75);padding:14px 12px;text-align:center}
+  .trust strong{display:block;color:var(--amber);font-size:clamp(19px,5vw,24px);font-weight:800;letter-spacing:-.01em}
+  .trust span{font-size:11.5px;color:#9fb2c4;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+
+  /* ---------- section shells ---------- */
+  .sec{padding:56px 0}
+  .sec-head{margin-bottom:30px}
+  .sec-head .eyebrow{color:var(--amber-deep)}
+  .sec-head h2{font-size:clamp(26px,6.5vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin-top:10px}
+  .sec-head p{color:var(--slate);margin-top:10px;max-width:58ch;font-size:16px}
+
+  /* ---------- services ---------- */
+  .services{background:var(--paper)}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow .2s,transform .2s}
+  .svc:hover{box-shadow:0 10px 30px rgba(13,31,49,.1);transform:translateY(-2px)}
+  .svc .ic{flex:none;width:46px;height:46px;border-radius:12px;background:var(--navy-900);display:flex;align-items:center;justify-content:center}
+  .svc .ic svg{width:24px;height:24px}
+  .svc h3{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:5px}
+  .svc p{font-size:14.5px;color:var(--slate)}
+
+  /* ---------- why ---------- */
+  .why{background:var(--navy-950);color:var(--white)}
+  .why .sec-head .eyebrow{color:var(--amber)}
+  .why .sec-head p{color:#a9bccd}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .why-item{display:flex;gap:14px;align-items:flex-start;background:var(--navy-800);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px}
+  .why-item .chk{flex:none;width:30px;height:30px;border-radius:50%;background:rgba(255,176,32,.15);display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .why-item .chk svg{width:16px;height:16px}
+  .why-item h3{font-size:16px;font-weight:800;margin-bottom:4px}
+  .why-item p{font-size:14px;color:#a9bccd}
+  .banner-quote{margin-top:30px;border-left:4px solid var(--amber);padding:6px 0 6px 18px}
+  .banner-quote p{font-size:clamp(19px,5vw,24px);font-weight:800;letter-spacing:-.01em;line-height:1.3}
+  .banner-quote span{display:block;margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+
+  /* ---------- area ---------- */
+  .area-card{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));border-radius:20px;color:var(--white);padding:30px 24px;display:flex;flex-direction:column;gap:20px;overflow:hidden;position:relative}
+  .area-card::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;border:38px solid rgba(255,176,32,.12)}
+  .area-card h3{font-size:clamp(21px,5.5vw,27px);font-weight:800;letter-spacing:-.01em;line-height:1.2;position:relative;z-index:1}
+  .area-card p{color:#b8c8d8;font-size:15px;position:relative;z-index:1;max-width:52ch}
+  .pin-row{display:flex;align-items:center;gap:10px;position:relative;z-index:1}
+  .pin-row svg{width:20px;height:20px;flex:none}
+  .pin-row span{font-weight:700;font-size:15px}
+  .lic-chips{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:1}
+  .lic-chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700}
+  .lic-chips span b{color:var(--amber)}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--paper)}
+  .con-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .con-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .con-card .ic{width:40px;height:40px;border-radius:10px;background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .con-card .ic svg{width:20px;height:20px}
+  .con-card h3{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
+  .con-card .big{font-size:clamp(19px,5vw,23px);font-weight:800;letter-spacing:-.01em;color:var(--ink);word-break:break-word}
+  .con-card a.big:hover{color:var(--amber-deep)}
+  .con-card p{font-size:14px;color:var(--slate);margin-top:6px}
+  .hours{width:100%;border-collapse:collapse;margin-top:4px}
+  .hours td{padding:9px 0;font-size:14.5px;border-bottom:1px solid var(--line)}
+  .hours tr:last-child td{border-bottom:none}
+  .hours td:first-child{font-weight:700}
+  .hours td:last-child{text-align:right;color:var(--slate)}
+  .after-hours{margin-top:12px;background:rgba(255,176,32,.12);border:1px solid rgba(245,158,11,.35);border-radius:10px;padding:12px 14px;font-size:13.5px;font-weight:600;color:#7a5200}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-950);color:#8fa4b8;padding:34px 0 90px;font-size:13px}
+  footer .frow{display:flex;flex-direction:column;gap:8px}
+  footer strong{color:var(--white);font-size:15px;font-weight:800}
+  footer a:hover{color:var(--white)}
+
+  /* ---------- sticky mobile call bar ---------- */
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(8,20,32,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--amber);color:var(--navy-950);font-weight:800;font-size:17px;padding:14px;border-radius:12px}
+  .callbar svg{width:19px;height:19px}
+
+  /* ---------- desktop ---------- */
+  @media(min-width:760px){
+    .nav-links{display:flex}
+    .hero{padding:88px 0 64px}
+    .cta-row{flex-direction:row;align-items:stretch}
+    .btn-call{padding:18px 34px}
+    .trust{grid-template-columns:repeat(4,1fr)}
+    .sec{padding:80px 0}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .con-grid{grid-template-columns:repeat(2,1fr)}
+    .area-card{padding:44px;flex-direction:column}
+    .callbar{display:none}
+    footer{padding-bottom:34px}
+    footer .frow{flex-direction:row;justify-content:space-between;align-items:center}
+  }
+  @media(min-width:1000px){
+    .svc-grid{grid-template-columns:repeat(3,1fr)}
+    .svc{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="Craft Electric Co., Inc. home">
+      <span class="bolt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z" fill="#081420"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">CRAFT ELECTRIC</span><br>
+        <span class="brand-sub">Co., Inc. &middot; Since 1981</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Craft</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-call" href="tel:+12058414141">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3h2.9l1.4 4.1-2 1.5a13 13 0 0 0 6.5 6.5l1.5-2 4.1 1.4v2.9c0 1-.8 1.9-1.9 1.8C10.6 18.5 5.5 13.4 4.8 4.9 4.7 3.8 5.6 3 6.6 3Z" fill="#081420"/></svg>
+      <span>205-841-4141</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Commercial &amp; Industrial &middot; Birmingham, AL</span>
+    <h1>We solve electrical problems <em>so you don&rsquo;t have to.</em></h1>
+    <p class="lede">Electricians with a purpose. Fast, dependable electrical service, maintenance, and repairs for businesses, facilities, and organizations that cannot afford downtime &mdash; serving Alabama since 1981.</p>
+    <div class="cta-row">
+      <a class="btn-call" href="tel:+12058414141">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3h2.9l1.4 4.1-2 1.5a13 13 0 0 0 6.5 6.5l1.5-2 4.1 1.4v2.9c0 1-.8 1.9-1.9 1.8C10.6 18.5 5.5 13.4 4.8 4.9 4.7 3.8 5.6 3 6.6 3Z" fill="#081420"/></svg>
+        <span class="stack"><small>Tap to call</small>205-841-4141</span>
+      </a>
+      <a class="btn-ghost" href="#contact">Request a bid
+        <svg viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="trust" role="list">
+      <div role="listitem"><strong>1981</strong><span>Serving AL since</span></div>
+      <div role="listitem"><strong>6,000+</strong><span>Projects in Alabama</span></div>
+      <div role="listitem"><strong>NICET IV</strong><span>Fire Alarm Certified</span></div>
+      <div role="listitem"><strong>AL &middot; TX &middot; FL</strong><span>Licensed States</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Turnkey electrical, from panel to parking lot.</h2>
+      <p>We design, install, repair, and replace electrical system components &mdash; with straightforward hourly rates and competitive bids.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#ffb020" stroke-width="1.8"/><path d="M9 7h6M9 11h6M9 15h3" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div><h3>Panels &amp; Distribution</h3><p>Design, installation, repair, and replacement of electrical panels and system components.</p></div>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z" stroke="#ffb020" stroke-width="1.8"/><path d="M10 20h4" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div><h3>Lighting &amp; Upgrades</h3><p>Commercial lighting installs and lighting upgrades for offices, warehouses, and facilities.</p></div>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="8" width="15" height="9" rx="2" stroke="#ffb020" stroke-width="1.8"/><path d="M18 11h2a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-2M7 11.5v2M10.5 11.5v2" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div><h3>Generators &amp; UPS</h3><p>Backup power that keeps you running &mdash; generator and UPS system installation and service.</p></div>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3.2" stroke="#ffb020" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div><h3>Equipment Power &amp; Motor Circuits</h3><p>Dedicated equipment power and motor circuits for industrial and manufacturing operations.</p></div>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M4 21h16M16 9h3a1 1 0 0 1 1 1v11" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 7h4M8 11h4M8 15h4" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div><h3>Tenant Buildouts</h3><p>Electrical for tenant buildouts &mdash; a go-to partner for property managers and small GCs.</p></div>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.2 5.2L4 17v3h3l5.5-5.5a4 4 0 0 0 5.2-5.2l-2.6 2.6-2.5-2.5 2.1-3.1Z" stroke="#ffb020" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <div><h3>Repairs &amp; Maintenance</h3><p>Expert repairs and ongoing maintenance &mdash; fast and straightforward, with after-hours work available.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="sec why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Craft Electric</span>
+      <h2>Your easy button for electrical work.</h2>
+      <p>Expert electricians for businesses that cannot afford downtime. Experienced electricians. Reliable results.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#ffb020" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>45+ years in business</h3><p>Founded in Birmingham in 1981 &mdash; decades of commercial and industrial experience.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#ffb020" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>Straightforward pricing</h3><p>Straightforward hourly rates and competitive bids. No surprises.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#ffb020" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>NICET IV certified</h3><p>NICET Level IV certified in Fire Alarm Systems.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#ffb020" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>Complex-project experience</h3><p>Extensive experience on complex projects &mdash; including work through partnerships in Asia, Africa, Europe, and South America.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#ffb020" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>6,000+ completed projects</h3><p>Over 6,000 projects completed in our home state of Alabama.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#ffb020" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>Community-rooted</h3><p>Members of local Chambers of Commerce and a trusted resource for organizations across Alabama.</p></div>
+      </div>
+    </div>
+    <div class="banner-quote">
+      <p>&ldquo;We solve electrical problems so you don&rsquo;t have to.&rdquo;</p>
+      <span>Electricians with a purpose</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="sec" id="area">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where we work</span>
+      <h2>Serving businesses within 60 miles of Birmingham.</h2>
+    </div>
+    <div class="area-card">
+      <div class="pin-row">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" stroke="#ffb020" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="#ffb020" stroke-width="1.8"/></svg>
+        <span>Based at 4345 Vanderbilt Road, Birmingham, AL 35217</span>
+      </div>
+      <h3>Birmingham property managers, warehouses, and small GCs count on us for repairs, tenant buildouts, and lighting upgrades.</h3>
+      <p>We serve Alabama &mdash; supporting businesses, facilities, and organizations within a 60-mile radius of Birmingham.</p>
+      <div class="lic-chips" aria-label="Licensed states">
+        <span>Licensed &middot; <b>Alabama</b></span>
+        <span>Licensed &middot; <b>Texas</b></span>
+        <span>Licensed &middot; <b>Florida</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Get in touch</span>
+      <h2>One call. Problem solved.</h2>
+      <p>Call for fast, straightforward service, or email us to request a competitive bid.</p>
+    </div>
+    <div class="con-grid">
+      <div class="con-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3h2.9l1.4 4.1-2 1.5a13 13 0 0 0 6.5 6.5l1.5-2 4.1 1.4v2.9c0 1-.8 1.9-1.9 1.8C10.6 18.5 5.5 13.4 4.8 4.9 4.7 3.8 5.6 3 6.6 3Z" stroke="#ffb020" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <h3>Phone</h3>
+        <a class="big" href="tel:+12058414141">205-841-4141</a>
+        <p>After-hours work available &mdash; call the main number.</p>
+      </div>
+      <div class="con-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#ffb020" stroke-width="1.8"/><path d="m4 7 8 6 8-6" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Email</h3>
+        <a class="big" href="mailto:wmcraftelectric@gmail.com" style="font-size:clamp(15px,4.2vw,19px)">wmcraftelectric@gmail.com</a>
+        <p>Send project details for a competitive bid.</p>
+      </div>
+      <div class="con-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" stroke="#ffb020" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="#ffb020" stroke-width="1.8"/></svg></span>
+        <h3>Address</h3>
+        <span class="big" style="font-size:18px">4345 Vanderbilt Road<br>Birmingham, AL 35217</span>
+      </div>
+      <div class="con-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#ffb020" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Office Hours</h3>
+        <table class="hours">
+          <tr><td>Mon &ndash; Thu</td><td>6:30 AM &ndash; 3:00 PM</td></tr>
+          <tr><td>Friday</td><td>6:30 AM &ndash; 12:00 PM</td></tr>
+          <tr><td>Sat &ndash; Sun</td><td>Closed</td></tr>
+        </table>
+        <div class="after-hours">Need us after hours? Call 205-841-4141.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap frow">
+    <div>
+      <strong>Craft Electric Co., Inc.</strong><br>
+      Electricians with a purpose &middot; Serving Alabama since 1981
+    </div>
+    <div>
+      4345 Vanderbilt Road, Birmingham, AL 35217 &middot; <a href="tel:+12058414141">205-841-4141</a> &middot; <a href="mailto:wmcraftelectric@gmail.com">wmcraftelectric@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile call bar -->
+<div class="callbar">
+  <a href="tel:+12058414141" aria-label="Call Craft Electric at 205-841-4141">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3h2.9l1.4 4.1-2 1.5a13 13 0 0 0 6.5 6.5l1.5-2 4.1 1.4v2.9c0 1-.8 1.9-1.9 1.8C10.6 18.5 5.5 13.4 4.8 4.9 4.7 3.8 5.6 3 6.6 3Z" fill="#081420"/></svg>
+    Call 205-841-4141
+  </a>
+</div>
+
+</body>
+</html>
