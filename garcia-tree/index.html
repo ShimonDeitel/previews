@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garcia's Tree Services | Will County, IL — Licensed &amp; Insured</title>
+<meta name="description" content="Family-owned tree removal, trimming, and stump grinding serving Joliet, Naperville, Bolingbrook, Downers Grove and Will/DuPage/Cook Counties. Call (630) 788-2134.">
+<style>
+  :root{
+    --green-900:#132a1c;
+    --green-800:#1c3b26;
+    --green-700:#2c5636;
+    --green-600:#3d7349;
+    --amber:#e8a33d;
+    --amber-dark:#c8801f;
+    --cream:#f7f5ef;
+    --white:#ffffff;
+    --ink:#1a201c;
+    --gray:#5c655e;
+    --line:#e2ded2;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:64px 0;}
+
+  /* Sticky call bar */
+  .callbar{
+    position:sticky;top:0;z-index:50;
+    background:var(--green-900);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 16px;
+    font-size:14px;
+  }
+  .callbar .brand{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.2px;}
+  .callbar .brand svg{width:22px;height:22px;flex:none;}
+  .callbar .call-btn{
+    display:flex;align-items:center;gap:6px;
+    background:var(--amber);color:var(--green-900);
+    font-weight:700;
+    padding:9px 14px;border-radius:999px;
+    white-space:nowrap;
+    font-size:14px;
+  }
+  .callbar .call-btn svg{width:16px;height:16px;}
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 80% -10%, rgba(232,163,61,.18), transparent 60%),
+      linear-gradient(180deg,var(--green-900),var(--green-800));
+    color:var(--white);
+    padding:52px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-badges{
+    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);
+    color:var(--white);
+    font-size:12.5px;font-weight:600;
+    padding:6px 11px;border-radius:999px;
+  }
+  .badge svg{width:14px;height:14px;flex:none;}
+  h1{
+    font-size:34px;
+    line-height:1.15;
+    font-weight:800;
+    letter-spacing:-.5px;
+    margin-bottom:14px;
+  }
+  h1 span{color:var(--amber);}
+  .hero p.sub{
+    font-size:16.5px;
+    color:rgba(255,255,255,.82);
+    max-width:520px;
+    margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:360px;}
+  .btn-primary{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--amber);
+    color:var(--green-900);
+    font-weight:800;
+    font-size:17px;
+    padding:16px 22px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(232,163,61,.25);
+  }
+  .btn-primary svg{width:20px;height:20px;}
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.35);
+    color:var(--white);
+    font-weight:600;
+    font-size:15px;
+    padding:14px 22px;
+    border-radius:12px;
+  }
+  .btn-secondary svg{width:18px;height:18px;}
+  .hero-tree{
+    position:absolute;right:-40px;bottom:-10px;
+    width:260px;opacity:.16;z-index:1;
+  }
+
+  /* Section headings */
+  .eyebrow{
+    color:var(--green-600);
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  h2{
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-.3px;
+    margin-bottom:10px;
+    color:var(--green-900);
+  }
+  .section-sub{color:var(--gray);font-size:15px;margin-bottom:30px;max-width:520px;}
+
+  /* Services grid */
+  .services{background:var(--white);}
+  .grid-services{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .svc-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 14px;
+  }
+  .svc-card .icon{
+    width:38px;height:38px;
+    border-radius:10px;
+    background:var(--green-800);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+  }
+  .svc-card .icon svg{width:20px;height:20px;stroke:var(--amber);}
+  .svc-card h3{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--green-900);}
+  .svc-card p{font-size:13px;color:var(--gray);}
+
+  /* Why us */
+  .why{background:var(--green-900);color:var(--white);}
+  .why .eyebrow{color:var(--amber);}
+  .why h2{color:var(--white);}
+  .why .section-sub{color:rgba(255,255,255,.7);}
+  .why-list{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .icon{
+    width:42px;height:42px;flex:none;
+    border-radius:11px;
+    background:rgba(232,163,61,.15);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .icon svg{width:22px;height:22px;stroke:var(--amber);}
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:3px;}
+  .why-item p{font-size:14px;color:rgba(255,255,255,.72);}
+
+  /* Area */
+  .area{background:var(--cream);}
+  .area-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 18px;
+  }
+  .area-card .icon{
+    width:44px;height:44px;
+    border-radius:12px;
+    background:var(--green-800);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .area-card .icon svg{width:24px;height:24px;stroke:var(--amber);}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .chip{
+    background:var(--cream);
+    border:1px solid var(--line);
+    color:var(--green-800);
+    font-size:13px;font-weight:600;
+    padding:7px 12px;border-radius:999px;
+  }
+  .area-note{font-size:13.5px;color:var(--gray);margin-top:14px;}
+
+  /* Contact */
+  .contact{background:var(--white);}
+  .contact-card{
+    background:linear-gradient(155deg,var(--green-800),var(--green-900));
+    color:var(--white);
+    border-radius:20px;
+    padding:30px 22px;
+    text-align:center;
+  }
+  .contact-card h2{color:var(--white);margin-bottom:8px;}
+  .contact-card p{color:rgba(255,255,255,.75);font-size:14.5px;margin-bottom:22px;}
+  .contact-actions{display:flex;flex-direction:column;gap:12px;}
+  .link-line{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    font-size:14px;color:rgba(255,255,255,.85);
+    margin-top:18px;
+  }
+  .link-line svg{width:16px;height:16px;}
+
+  footer{
+    background:var(--green-900);
+    color:rgba(255,255,255,.55);
+    text-align:center;
+    padding:22px 0 90px;
+    font-size:12.5px;
+  }
+  footer strong{color:rgba(255,255,255,.85);}
+
+  /* Mobile sticky call button */
+  .mobile-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--white);
+    border-top:1px solid var(--line);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    box-shadow:0 -6px 20px rgba(0,0,0,.08);
+  }
+  .mobile-call a{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--amber);
+    color:var(--green-900);
+    font-weight:800;
+    font-size:16px;
+    padding:14px;
+    border-radius:12px;
+  }
+  .mobile-call a svg{width:19px;height:19px;}
+
+  @media (min-width:640px){
+    h1{font-size:44px;}
+    .hero p.sub{font-size:18px;}
+    .hero-ctas{flex-direction:row;max-width:none;}
+    .btn-primary,.btn-secondary{width:auto;}
+    .grid-services{grid-template-columns:repeat(3,1fr);}
+    section{padding:80px 0;}
+  }
+  @media (min-width:900px){
+    .grid-services{grid-template-columns:repeat(4,1fr);}
+    h1{font-size:52px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#e8a33d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>
+    Garcia's Tree Services
+  </div>
+  <a class="call-btn" href="tel:16307882134">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    (630) 788-2134
+  </a>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-badges">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.8 1.4 6.8L12 17.3l-6.1 3.4 1.4-6.8-5.1-4.8 6.9-.8z"/></svg>Family Owned &amp; Operated</span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Licensed, Insured &amp; Bonded</span>
+    </div>
+    <h1>Tree Service You Can <span>Trust</span>, Right Here in Will County</h1>
+    <p class="sub">Removal, trimming, stump grinding, and storm cleanup — done right by a local family business serving Joliet, Naperville, Bolingbrook &amp; the surrounding suburbs.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:16307882134">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (630) 788-2134
+      </a>
+      <a class="btn-secondary" href="mailto:garciatreeservices@yahoo.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Email for a Quote
+      </a>
+    </div>
+  </div>
+  <svg class="hero-tree" viewBox="0 0 200 300" fill="none" stroke="#ffffff" stroke-width="2">
+    <path d="M100 300V170"/>
+    <path d="M100 40c-30 30-40 40-40 65a40 40 0 0 0 80 0c0-25-10-35-40-65z"/>
+    <path d="M100 90c-20 20-28 28-28 46a28 28 0 0 0 56 0c0-18-8-26-28-46z"/>
+  </svg>
+</header>
+
+<section class="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2>Full-Service Tree Care</h2>
+    <p class="section-sub">From routine trimming to emergency storm cleanup, we handle it all — no job too big or small.</p>
+    <div class="grid-services">
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 10l8-8 8 8M6 16l6-6 6 6"/></svg></div>
+        <h3>Tree Removal</h3>
+        <p>Safe, complete removal of hazardous or unwanted trees.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M6 3l6 4-6 4M18 3v6a4 4 0 0 1-4 4h-2"/></svg></div>
+        <h3>Pruning &amp; Trimming</h3>
+        <p>Shape and cable trees for health, safety, and curb appeal.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <h3>Stump Grinding</h3>
+        <p>Grind stumps flush so you can reclaim your yard.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V10l7-6 7 6v10M9 20v-6h6v6"/></svg></div>
+        <h3>Lot &amp; Land Clearing</h3>
+        <p>Clear overgrowth and prep land for new projects.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l3-6 4 3 4-8 4 6 3-3"/></svg></div>
+        <h3>Storm Damage Cleanup</h3>
+        <p>Fast response after wind and storm damage.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c4-2 4-6 8-6s4 4 8 6M4 14c4-2 4-6 8-6s4 4 8 6"/></svg></div>
+        <h3>Mulch &amp; Edging</h3>
+        <p>Fresh mulch beds and clean edging for a tidy yard.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="8" rx="1"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>Firewood</h3>
+        <p>Seasoned firewood available, cut and ready to burn.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 8l8-5 8 5M4 16l8 5 8-5"/></svg></div>
+        <h3>Spring &amp; Fall Cleanup</h3>
+        <p>Seasonal property cleanup to keep your lawn ready.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">Why Garcia's</div>
+    <h2>Local, Licensed, and Accountable</h2>
+    <p class="section-sub">A family-owned crew that shows up, does the work right, and stands behind it.</p>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <div><h3>Family Owned &amp; Operated</h3><p>A local business, not a call center — you deal directly with the people doing the work.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg></div>
+        <div><h3>Fully Licensed, Insured &amp; Bonded</h3><p>Protected work from a legitimate, accountable local company.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h3>Fast, Reliable Response</h3><p>Including storm cleanup when trees come down unexpectedly.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="eyebrow">Service Area</div>
+    <h2>Proudly Serving Will, DuPage &amp; Cook Counties</h2>
+    <div class="area-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+      <p style="color:var(--gray);font-size:14.5px;">Based in Will County, Illinois, serving Joliet, Naperville, Bolingbrook, Downers Grove, and surrounding communities across Will, DuPage, and Cook Counties.</p>
+      <div class="chip-row">
+        <span class="chip">Joliet</span>
+        <span class="chip">Naperville</span>
+        <span class="chip">Bolingbrook</span>
+        <span class="chip">Downers Grove</span>
+        <span class="chip">Will County</span>
+        <span class="chip">DuPage County</span>
+        <span class="chip">Cook County</span>
+      </div>
+      <p class="area-note">Not sure if you're in range? Call and ask — we cover 25+ municipalities across the area.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Get a Free Quote Today</h2>
+      <p>Tell us what you need — removal, trimming, stump grinding, or cleanup — and we'll take it from there.</p>
+      <div class="contact-actions">
+        <a class="btn-primary" href="tel:16307882134">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (630) 788-2134
+        </a>
+        <a class="btn-secondary" href="mailto:garciatreeservices@yahoo.com" style="border-color:rgba(255,255,255,.35);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          garciatreeservices@yahoo.com
+        </a>
+      </div>
+      <div class="link-line">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/></svg>
+        Serving Will, DuPage &amp; Cook Counties, IL
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Garcia's Tree Services</strong> — Family Owned &amp; Operated · Licensed, Insured &amp; Bonded<br>
+    (630) 788-2134 · garciatreeservices@yahoo.com
+  </div>
+</footer>
+
+<div class="mobile-call">
+  <a href="tel:16307882134">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now — (630) 788-2134
+  </a>
+</div>
+
+</body>
+</html>
