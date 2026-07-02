@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paquette Plumbing, LLC | Mendon &amp; Rutland, VT Plumber</title>
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-dark:#081b34;
+    --blue:#1d6fd6;
+    --blue-dark:#1558ad;
+    --ink:#16232f;
+    --gray:#5b6b7a;
+    --line:#e4e9ee;
+    --bg:#f6f8fa;
+    --white:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cfe0f5;
+    font-size:13px;
+    padding:8px 0;
+    text-align:center;
+    letter-spacing:.2px;
+  }
+  .topbar a{color:#fff;font-weight:600;}
+
+  /* Header */
+  header{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    max-width:1080px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--navy);}
+  .brand svg{width:34px;height:34px;flex:none;}
+  .brand-sub{display:block;font-size:11px;font-weight:600;color:var(--gray);letter-spacing:.4px;text-transform:uppercase;}
+  .call-pill{
+    background:var(--blue);color:#fff;font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:999px;display:flex;align-items:center;gap:8px;
+    box-shadow:0 4px 14px rgba(29,111,214,.35);
+    white-space:nowrap;
+  }
+  .call-pill svg{width:16px;height:16px;flex:none;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:52px 20px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-80px;top:-80px;width:320px;height:320px;
+    background:radial-gradient(circle,rgba(29,111,214,.35),transparent 70%);
+  }
+  .hero-inner{max-width:1080px;margin:0 auto;position:relative;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    color:#cfe0f5;font-size:12.5px;font-weight:600;
+    padding:6px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;line-height:1.15;font-weight:800;max-width:640px;letter-spacing:-.5px;
+  }
+  .hero p.lead{
+    margin-top:14px;font-size:16px;color:#c9d8ea;max-width:520px;
+  }
+  .hero-actions{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 22px;border-radius:10px;font-weight:700;font-size:15px;
+    border:none;cursor:pointer;
+  }
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(29,111,214,.4);}
+  .btn-primary:active{background:var(--blue-dark);}
+  .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);}
+  .btn svg{width:18px;height:18px;}
+
+  .hero-stats{
+    margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    max-width:520px;
+  }
+  .stat{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:14px 10px;text-align:center;
+  }
+  .stat .num{font-size:20px;font-weight:800;color:#fff;}
+  .stat .label{font-size:11px;color:#b9cbe1;margin-top:2px;text-transform:uppercase;letter-spacing:.3px;}
+
+  /* Section shared */
+  section{padding:52px 20px;}
+  .section-head{text-align:center;margin-bottom:32px;}
+  .eyebrow{
+    color:var(--blue);font-weight:700;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;
+  }
+  h2{font-size:26px;font-weight:800;color:var(--navy);margin-top:8px;letter-spacing:-.3px;}
+  .section-head p{color:var(--gray);margin-top:10px;font-size:15px;max-width:480px;margin-left:auto;margin-right:auto;}
+
+  /* Services grid */
+  .services-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  .service-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 16px;
+  }
+  .service-card .icon{
+    width:42px;height:42px;border-radius:10px;background:#eaf2fd;
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+  .service-card .icon svg{width:22px;height:22px;color:var(--blue);stroke:var(--blue);}
+  .service-card h3{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .service-card p{font-size:12.5px;color:var(--gray);}
+
+  /* Why us */
+  .why-list{display:flex;flex-direction:column;gap:16px;}
+  .why-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;
+  }
+  .why-item .icon{
+    width:38px;height:38px;flex:none;border-radius:10px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .icon svg{width:19px;height:19px;color:#fff;stroke:#fff;}
+  .why-item h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  /* Area */
+  .area{
+    background:var(--navy);color:#fff;border-radius:var(--radius);
+    padding:30px 22px;text-align:center;
+  }
+  .area h2{color:#fff;}
+  .area p{color:#c9d8ea;margin-top:10px;font-size:14.5px;}
+  .area-towns{
+    margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  }
+  .area-towns span{
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+    padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;
+  }
+
+  /* Contact */
+  .contact-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 20px;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .icon{
+    width:40px;height:40px;flex:none;border-radius:10px;background:#eaf2fd;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row .icon svg{width:20px;height:20px;color:var(--blue);stroke:var(--blue);}
+  .contact-row .label{font-size:11.5px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px;font-weight:600;}
+  .contact-row .value{font-size:15px;font-weight:700;color:var(--navy);}
+  .contact-row a.value{color:var(--blue);}
+
+  .cta-band{
+    background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+    color:#fff;border-radius:var(--radius);padding:30px 22px;text-align:center;margin-top:40px;
+  }
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:#e2edfb;margin-top:8px;font-size:14.5px;}
+  .cta-band .btn-primary{background:#fff;color:var(--blue-dark);margin-top:20px;box-shadow:none;}
+
+  footer{
+    background:var(--navy-dark);color:#9fb3c8;text-align:center;padding:26px 20px;font-size:12.5px;
+  }
+  footer .fbrand{color:#fff;font-weight:700;margin-bottom:6px;font-size:14px;}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px;font-weight:700;font-size:15px;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  .sticky-call svg{width:18px;height:18px;}
+  body{padding-bottom:64px;}
+
+  @media (min-width:640px){
+    .hero h1{font-size:44px;}
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+    h2{font-size:30px;}
+    body{padding-bottom:0;}
+    .sticky-call{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Serving the entire State of Vermont &middot; <a href="tel:8023530125">Call now: 802-353-0125</a>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="10" fill="#0b2545"/>
+        <path d="M16 30c0-6 5-8 5-14 0 0 7 4 7 12a7 7 0 1 1-12 2Z" stroke="#1d6fd6" stroke-width="2.2" stroke-linejoin="round" fill="#1d6fd6" fill-opacity=".15"/>
+        <path d="M22 32a3.5 3.5 0 0 0 3.5-3.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>Paquette Plumbing<span class="brand-sub">LLC &middot; Mendon, VT</span></span>
+    </div>
+    <a href="tel:8023530125" class="call-pill">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      802-353-0125
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="badge">Serving the Entire State of Vermont</span>
+    <h1>Vermont's trusted plumbing &amp; HVAC team since 2007.</h1>
+    <p class="lead">Master, commercial &amp; residential plumbing, new construction, remodels, and heating systems — from a Mendon-based crew with 65 combined years of experience.</p>
+    <div class="hero-actions">
+      <a href="tel:8023530125" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" fill="#fff"/></svg>
+        Call 802-353-0125
+      </a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">2007</div><div class="label">Founded</div></div>
+      <div class="stat"><div class="num">65 yrs</div><div class="label">Combined Exp.</div></div>
+      <div class="stat"><div class="num">VT</div><div class="label">Statewide</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Plumbing &amp; HVAC Services</h2>
+      <p>Full-service plumbing and heating for homes, businesses, and new builds across Vermont.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 21h6M12 17v4M6 3h12l-1 8a5 5 0 0 1-10 0L6 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Master Plumbing</h3>
+        <p>Licensed master-level plumbing for any job, large or small.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 7V5a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Commercial Plumbing</h3>
+        <p>Reliable systems for businesses and commercial properties.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11 12 3l9 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Residential Plumbing</h3>
+        <p>Everyday repairs and installs for Vermont homes.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 21V9l8-6 8 6v12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>New Construction</h3>
+        <p>Plumbing built in from the ground up on new builds.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h10M4 17h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Remodels &amp; Additions</h3>
+        <p>Re-piping and plumbing for renovations and home additions.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>HVAC Systems</h3>
+        <p>Heating and cooling system install &amp; service.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Energy-Efficient Water Heaters</h3>
+        <p>Modern, efficient water heater install and replacement.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Boilers &amp; Furnaces</h3>
+        <p>Installation, maintenance and repair for VT winters.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12a8 8 0 0 1 14.5-4.5M20 12a8 8 0 0 1-14.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 4v4h-4M6 20v-4h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Water Softeners</h3>
+        <p>Water softening systems, plus general maintenance &amp; service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Paquette Plumbing</span>
+      <h2>Why Vermont Calls Us</h2>
+    </div>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><h3>In Business Since 2007</h3><p>Nearly two decades serving Vermont homes and businesses.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="1.8"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div><h3>65 Years Combined Experience</h3><p>An experienced team behind every job, big or small.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11 12 3l9 8" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><h3>Residential &amp; Commercial</h3><p>From new construction to routine service calls, one team handles it all.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6l4 2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.8"/></svg></div>
+        <div><h3>Mon–Fri, 7:30 AM – 5:00 PM</h3><p>Call ahead and reach the team directly during business hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="area">
+      <span class="eyebrow" style="color:#8fb4e6;">Service Area</span>
+      <h2>Serving the Entire State of Vermont</h2>
+      <p>Based in Mendon, VT — near Rutland — and proud to serve customers statewide.</p>
+      <div class="area-towns">
+        <span>Mendon</span><span>Rutland</span><span>Statewide VT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Paquette Plumbing</h2>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" stroke="#1d6fd6" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><div class="label">Local Phone</div><a class="value" href="tel:8023530125">802-353-0125</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" stroke="#1d6fd6" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><div class="label">Toll Free</div><a class="value" href="tel:8886425727">888-642-5727</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4V4Z" stroke="#1d6fd6" stroke-width="1.8"/><path d="M4 6l8 6 8-6" stroke="#1d6fd6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><div class="label">Email</div><a class="value" href="mailto:paquetteplumbing@comcast.net">paquetteplumbing@comcast.net</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" stroke="#1d6fd6" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="#1d6fd6" stroke-width="1.8"/></svg></div>
+        <div><div class="label">Address</div><div class="value">125 Valley View Drive, Mendon, VT 05701</div></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6l4 2" stroke="#1d6fd6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1d6fd6" stroke-width="1.8"/></svg></div>
+        <div><div class="label">Hours</div><div class="value">Mon–Fri 7:30 AM–5:00 PM &middot; Sat–Sun Closed</div></div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h2>Need a plumber today?</h2>
+      <p>Call the local Mendon line for the fastest response.</p>
+      <a href="tel:8023530125" class="btn btn-primary">Call 802-353-0125</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">Paquette Plumbing, LLC</div>
+  125 Valley View Drive, Mendon, VT 05701 &middot; In business since 2007
+</footer>
+
+<a href="tel:8023530125" class="sticky-call">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" fill="#fff"/></svg>
+  Tap to Call 802-353-0125
+</a>
+
+</body>
+</html>

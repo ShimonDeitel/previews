@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravelly Hill Design Group | Landscape Architecture — Wakefield, RI</title>
+<style>
+  :root{
+    --green-dark:#2f3d2a;
+    --green:#4a5d3f;
+    --green-light:#7a9270;
+    --cream:#faf8f3;
+    --stone:#e8e3d8;
+    --ink:#22261f;
+    --accent:#c17f3e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,243,0.95);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--stone);
+  }
+  .headerbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:var(--green-dark);}
+  .brand svg{width:30px;height:30px;flex-shrink:0;}
+  .brand-text{line-height:1.15;}
+  .brand-text small{display:block;font-weight:400;font-size:0.62rem;letter-spacing:0.08em;color:var(--green);text-transform:uppercase;}
+  .call-btn{
+    display:flex;align-items:center;gap:6px;
+    background:var(--green-dark);color:#fff;
+    padding:10px 16px;border-radius:30px;
+    font-size:0.85rem;font-weight:600;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;fill:#fff;}
+
+  /* Hero */
+  .hero{
+    padding:56px 20px 48px;
+    background:linear-gradient(180deg,var(--stone) 0%, var(--cream) 100%);
+    text-align:center;
+  }
+  .hero-badge{
+    display:inline-block;
+    font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--green);font-weight:600;
+    background:rgba(74,93,63,0.08);
+    padding:6px 14px;border-radius:20px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:2.1rem;line-height:1.15;
+    color:var(--green-dark);
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin-bottom:14px;
+  }
+  .hero p.lead{
+    font-size:1.02rem;color:#4b4f45;
+    max-width:520px;margin:0 auto 26px;
+  }
+  .hero-actions{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 20px;border-radius:10px;
+    font-size:1rem;font-weight:700;
+    border:none;cursor:pointer;
+  }
+  .btn-primary{background:var(--green-dark);color:#fff;}
+  .btn-secondary{background:#fff;color:var(--green-dark);border:1.5px solid var(--stone);}
+  .btn svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;}
+
+  .hero-graphic{margin:36px auto 0;max-width:640px;}
+
+  /* Section headings */
+  .section{padding:52px 20px;}
+  .section-alt{background:#fff;}
+  .eyebrow{
+    font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:8px;
+  }
+  h2{font-size:1.55rem;color:var(--green-dark);font-weight:800;margin-bottom:10px;letter-spacing:-0.01em;}
+  .section-lead{color:#5a5e53;max-width:560px;margin-bottom:30px;font-size:0.98rem;}
+
+  /* Services grid */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  .service-card{
+    background:var(--cream);
+    border:1px solid var(--stone);
+    border-radius:14px;
+    padding:20px;
+  }
+  .service-card .icon{
+    width:42px;height:42px;
+    background:var(--green-dark);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+  }
+  .service-card .icon svg{width:22px;height:22px;fill:#fff;}
+  .service-card h3{font-size:1.02rem;color:var(--green-dark);font-weight:700;margin-bottom:6px;}
+  .service-card p{font-size:0.88rem;color:#666a5e;}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:22px;}
+  .why-item{display:flex;gap:14px;}
+  .why-item .num{
+    flex-shrink:0;width:36px;height:36px;border-radius:50%;
+    background:var(--stone);color:var(--green-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:0.95rem;
+  }
+  .why-item h3{font-size:1rem;color:var(--green-dark);font-weight:700;margin-bottom:4px;}
+  .why-item p{font-size:0.9rem;color:#5a5e53;}
+
+  /* Area */
+  .area-box{
+    background:var(--green-dark);
+    color:#fff;
+    border-radius:18px;
+    padding:32px 24px;
+    text-align:center;
+  }
+  .area-box h2{color:#fff;}
+  .area-box p{color:#d9ddd2;max-width:480px;margin:0 auto 20px;font-size:0.95rem;}
+  .area-pin{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.1);
+    padding:8px 16px;border-radius:20px;
+    font-size:0.85rem;font-weight:600;
+  }
+  .area-pin svg{width:16px;height:16px;fill:#fff;}
+
+  /* Contact */
+  .contact-card{
+    background:var(--cream);
+    border:1px solid var(--stone);
+    border-radius:16px;
+    padding:26px 22px;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid var(--stone);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .icon{
+    width:38px;height:38px;flex-shrink:0;
+    background:var(--green-dark);border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row .icon svg{width:19px;height:19px;fill:#fff;}
+  .contact-row .label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:#8a8e7e;font-weight:600;}
+  .contact-row .value{font-size:0.98rem;color:var(--ink);font-weight:600;}
+  .contact-row a.value{color:var(--green-dark);}
+
+  footer{
+    background:var(--green-dark);color:#c9cfc0;
+    text-align:center;padding:26px 20px;font-size:0.8rem;
+  }
+  footer strong{color:#fff;}
+
+  /* Sticky call bar (mobile) */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;
+    background:var(--green-dark);
+    padding:12px 20px;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    z-index:60;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.15);
+  }
+  .sticky-call a{
+    color:#fff;font-weight:700;font-size:0.98rem;
+    display:flex;align-items:center;gap:8px;
+  }
+  .sticky-call svg{width:18px;height:18px;fill:#fff;}
+  body{padding-bottom:64px;}
+
+  @media (min-width:640px){
+    .hero h1{font-size:2.6rem;}
+    .hero-actions{flex-direction:row;max-width:none;justify-content:center;}
+    .btn{width:auto;padding:15px 28px;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .services-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headerbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24"><path fill="#2f3d2a" d="M12 2C8 2 6 6 6 9c0 2.5 1.5 4.3 3 5.6V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6.4c1.5-1.3 3-3.1 3-5.6 0-3-2-7-6-7z"/></svg>
+      <div class="brand-text">Gravelly Hill<small>Design Group, LLC</small></div>
+    </div>
+    <a class="call-btn" href="tel:4014658282">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-badge">Landscape Architecture · Wakefield, RI</span>
+    <h1>Thoughtful landscape design for Rhode Island properties</h1>
+    <p class="lead">Gravelly Hill Design Group plans and details landscapes for residential, commercial, and municipal clients across Rhode Island and Connecticut — from concept sketch to construction drawings.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:4014658282">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+        Call (401) 465-8282
+      </a>
+      <a class="btn btn-secondary" href="mailto:gravellyhilldg@yahoo.com">
+        <svg viewBox="0 0 24 24"><path d="M2 6c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 0l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Email Us
+      </a>
+    </div>
+
+    <div class="hero-graphic">
+      <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="600" height="220" rx="18" fill="#e8e3d8"/>
+        <path d="M0 150 Q100 110 200 140 T400 130 T600 150 V220 H0 Z" fill="#7a9270" opacity="0.6"/>
+        <path d="M0 170 Q120 145 240 165 T480 160 T600 175 V220 H0 Z" fill="#4a5d3f" opacity="0.8"/>
+        <circle cx="120" cy="90" r="22" fill="#4a5d3f"/>
+        <rect x="115" y="108" width="10" height="26" fill="#5a4a3a"/>
+        <circle cx="470" cy="70" r="30" fill="#7a9270"/>
+        <rect x="463" y="96" width="14" height="34" fill="#5a4a3a"/>
+        <circle cx="300" cy="60" r="16" fill="#c17f3e" opacity="0.85"/>
+        <rect x="250" y="160" width="100" height="40" rx="4" fill="#faf8f3" opacity="0.9"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2>Landscape design services</h2>
+    <p class="section-lead">Full landscape architecture services, from initial site planning through detailed construction drawings.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2z"/></svg></div>
+        <h3>Landscape &amp; Garden Design</h3>
+        <p>Custom landscape and garden design tailored to your site and how you use it.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zM5 19h2V9H5v10zm4 0h2V5H9v14zm4 0h2v-8h-2v8zm4 0h2v-6h-2v6z"/></svg></div>
+        <h3>Hardscaping &amp; Patios</h3>
+        <p>Hardscape and patio design that ties structure and stone into the surrounding landscape.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 6 6 6 9c0 2.5 1.5 4.3 3 5.6V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6.4c1.5-1.3 3-3.1 3-5.6 0-3-2-7-6-7z"/></svg></div>
+        <h3>Pool Landscaping</h3>
+        <p>Swimming pool design and pool landscaping, planned together for one cohesive layout.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Fire Pits &amp; Water Features</h3>
+        <p>Custom fire pits and custom water features designed as focal points for the property.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h4v4H7V7zm6 0h4v10h-4V7zM7 13h4v4H7v-4z"/></svg></div>
+        <h3>Sheds &amp; Gazebos</h3>
+        <p>Shed and gazebo design and construction, sited to fit the rest of the landscape plan.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v2H4V4zm0 5h16v2H4V9zm0 5h10v2H4v-2zm0 5h16v2H4v-2z"/></svg></div>
+        <h3>Site Planning &amp; Drafting</h3>
+        <p>Site planning, drafting, and construction drawings for builders, contractors, and municipalities.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why Gravelly Hill</div>
+    <h2>Built for real Rhode Island sites</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div><h3>Licensed landscape architecture</h3><p>Plans developed with professional landscape-architecture training, not just planting lists.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div><h3>Residential &amp; commercial experience</h3><p>Work spans homeowners, builders, non-profits, and municipalities.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div><h3>From concept to construction drawings</h3><p>Design carries through to drawings contractors can actually build from.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">4</div>
+        <div><h3>Local to South County</h3><p>Based in downtown Wakefield, serving Rhode Island and Connecticut properties.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="area">
+  <div class="wrap">
+    <div class="area-box">
+      <h2>Serving Rhode Island &amp; Connecticut</h2>
+      <p>Based in downtown Wakefield, RI, working with residential, commercial, non-profit, and municipal clients throughout the region.</p>
+      <span class="area-pin">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Wakefield, RI
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Start your project</h2>
+    <p class="section-lead">Call or email to talk through your site and what you're looking to do.</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></div>
+        <div><div class="label">Phone</div><a class="value" href="tel:4014658282">(401) 465-8282</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 6c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 0l8 6 8-6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><div class="label">Email</div><a class="value" href="mailto:gravellyhilldg@yahoo.com">gravellyhilldg@yahoo.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+        <div><div class="label">Location</div><div class="value">213 Robinson St, Wakefield, RI 02879</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Gravelly Hill Design Group, LLC</strong> · Wakefield, RI<br>
+  Landscape Architecture &amp; Design
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:4014658282">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+    Call (401) 465-8282
+  </a>
+</div>
+
+</body>
+</html>
