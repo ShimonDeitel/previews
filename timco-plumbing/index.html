@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TimCo Plumbing and Home Improvement — Norfolk, VA | 24-Hour Emergency Plumber</title>
+<meta name="description" content="Licensed and insured plumbing and home improvement in Norfolk, VA. 35 years of experience. 24-hour emergency service. Call 1-757-735-9276.">
+<style>
+  :root{
+    --navy:#0f2740;
+    --navy2:#173a5e;
+    --blue:#1673d1;
+    --blue-d:#0f5cab;
+    --amber:#f5a623;
+    --ink:#1c2430;
+    --mut:#5b6b7c;
+    --bg:#f6f8fa;
+    --line:#e3e9ef;
+    --white:#fff;
+    --r:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+  img,svg{display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+  /* top bar */
+  .topbar{background:var(--navy);color:#c9d7e6;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:34px;gap:10px;flex-wrap:wrap;padding-top:5px;padding-bottom:5px}
+  .topbar strong{color:#fff;font-weight:600}
+  .topbar a{color:#fff;font-weight:600}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand .mark{width:38px;height:38px;flex:none}
+  .brand .name{font-weight:800;font-size:17px;line-height:1.15;letter-spacing:-.2px}
+  .brand .name span{display:block;font-size:11px;font-weight:600;color:var(--mut);letter-spacing:.4px;text-transform:uppercase}
+  .navlinks{display:none;gap:26px;font-size:15px;font-weight:600;color:var(--ink)}
+  .navlinks a:hover{color:var(--blue)}
+  .callbtn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;padding:10px 16px;border-radius:10px;white-space:nowrap;box-shadow:0 2px 6px rgba(22,115,209,.3)}
+  .callbtn:active{background:var(--blue-d)}
+  .callbtn svg{width:16px;height:16px}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#1d4a77 100%);color:#fff;overflow:hidden;position:relative}
+  .hero .wrap{position:relative;padding-top:56px;padding-bottom:60px}
+  .hero .pipes{position:absolute;right:-40px;top:0;height:100%;opacity:.10;pointer-events:none}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#e8f0f8}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  h1{font-size:clamp(30px,7.5vw,50px);line-height:1.12;letter-spacing:-.8px;font-weight:800;margin:18px 0 14px;max-width:640px}
+  h1 em{font-style:normal;color:var(--amber)}
+  .hero p.sub{font-size:17px;color:#c9d7e6;max-width:520px;margin-bottom:26px}
+  .heroctas{display:flex;gap:12px;flex-wrap:wrap}
+  .btn-big{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:17px;padding:15px 24px;border-radius:12px;width:100%;text-align:center}
+  .btn-call{background:var(--amber);color:#231a05;box-shadow:0 4px 14px rgba(245,166,35,.35)}
+  .btn-call:active{filter:brightness(.95)}
+  .btn-ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:700}
+  .btn-big svg{width:19px;height:19px;flex:none}
+  .herofacts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:36px;max-width:560px}
+  .fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 10px;text-align:center}
+  .fact b{display:block;font-size:19px;letter-spacing:-.3px}
+  .fact span{font-size:11.5px;color:#c9d7e6;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+
+  /* section base */
+  section{padding:56px 0}
+  .kicker{color:var(--blue);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
+  h2{font-size:clamp(24px,5.5vw,34px);letter-spacing:-.5px;line-height:1.15;font-weight:800;margin-bottom:10px}
+  .lead{color:var(--mut);font-size:16px;max-width:560px}
+
+  /* services */
+  .services{background:var(--bg)}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;gap:14px;align-items:flex-start}
+  .card .ic{width:44px;height:44px;flex:none;border-radius:11px;background:#e8f1fb;display:flex;align-items:center;justify-content:center}
+  .card .ic svg{width:23px;height:23px;stroke:var(--blue)}
+  .card h3{font-size:16.5px;font-weight:700;margin-bottom:4px}
+  .card p{font-size:14px;color:var(--mut)}
+
+  /* why us */
+  .why .grid2{display:grid;grid-template-columns:1fr;gap:12px;margin-top:28px}
+  .whyitem{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:var(--r)}
+  .whyitem .chk{width:30px;height:30px;flex:none;border-radius:50%;background:#e8f7ee;display:flex;align-items:center;justify-content:center}
+  .whyitem .chk svg{width:16px;height:16px;stroke:#1c9a52}
+  .whyitem b{display:block;font-size:15.5px}
+  .whyitem span{font-size:14px;color:var(--mut)}
+
+  /* emergency band */
+  .band{background:var(--navy);color:#fff;padding:38px 0}
+  .band .wrap{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+  .band h2{color:#fff;margin-bottom:2px}
+  .band p{color:#c9d7e6;font-size:15.5px}
+
+  /* area */
+  .area{background:var(--bg)}
+  .areabox{display:flex;flex-direction:column;gap:24px;margin-top:26px}
+  .areamap{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px;text-align:center}
+  .areamap svg{width:100%;max-width:340px;height:auto;margin:0 auto}
+  .hoursbox{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+  .hoursbox h3{font-size:16px;margin-bottom:12px}
+  .hrow{display:flex;justify-content:space-between;font-size:14.5px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .hrow:last-child{border-bottom:none}
+  .hrow b{color:var(--ink)}
+  .hrow .em{color:var(--blue);font-weight:700}
+
+  /* contact */
+  .contact .cgrid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+  .crow{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+  .crow .ic{width:42px;height:42px;flex:none;border-radius:11px;background:#e8f1fb;display:flex;align-items:center;justify-content:center}
+  .crow .ic svg{width:21px;height:21px;stroke:var(--blue)}
+  .crow b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut)}
+  .crow a,.crow span.val{font-size:16.5px;font-weight:700;color:var(--ink);word-break:break-all}
+  .crow a:hover{color:var(--blue)}
+
+  footer{background:var(--navy);color:#8fa5ba;font-size:13.5px;padding:28px 0}
+  footer .wrap{display:flex;flex-direction:column;gap:6px}
+  footer b{color:#fff}
+
+  /* sticky mobile call bar */
+  .stickycall{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .stickycall a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:#fff;font-weight:800;font-size:17px;padding:14px;border-radius:12px}
+  .stickycall svg{width:18px;height:18px}
+  body{padding-bottom:78px}
+
+  @media(min-width:700px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .why .grid2{grid-template-columns:repeat(2,1fr)}
+    .contact .cgrid{grid-template-columns:repeat(3,1fr)}
+    .crow{flex-direction:column;align-items:flex-start}
+    .areabox{flex-direction:row}
+    .areamap,.hoursbox{flex:1}
+    .btn-big{width:auto}
+    .band .wrap{flex-direction:row;justify-content:space-between;align-items:center}
+    .navlinks{display:flex}
+    .stickycall{display:none}
+    body{padding-bottom:0}
+  }
+  @media(min-width:1000px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div><strong>Licensed &amp; Insured</strong> · Norfolk, VA</div>
+    <div>24-Hour Emergency: <a href="tel:17577359276">1-757-735-9276</a></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#0f2740"/>
+        <path d="M11 12h8a5 5 0 015 5v11" fill="none" stroke="#f5a623" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="11" cy="12" r="3" fill="#1673d1"/>
+        <circle cx="24" cy="28" r="3" fill="#1673d1"/>
+      </svg>
+      <span class="name">TimCo Plumbing<span>&amp; Home Improvement</span></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why TimCo</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="callbtn" href="tel:17577359276">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <svg class="pipes" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M40 0v120a30 30 0 0030 30h100a30 30 0 0130 30v220" fill="none" stroke="#fff" stroke-width="22"/>
+      <path d="M140 0v60a30 30 0 0030 30h90" fill="none" stroke="#fff" stroke-width="14"/>
+      <circle cx="70" cy="150" r="14" fill="#fff"/>
+    </svg>
+    <span class="badge"><span class="dot"></span>24-Hour Emergency Service Available</span>
+    <h1>Norfolk plumbing done right — <em>35 years</em> of experience</h1>
+    <p class="sub">TimCo Plumbing and Home Improvement. Personal, affordable service from a licensed and insured pro — from leaky faucets to full bathroom renovations.</p>
+    <div class="heroctas">
+      <a class="btn-big btn-call" href="tel:17577359276">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        1-757-735-9276
+      </a>
+      <a class="btn-big btn-ghost" href="#services">See Services</a>
+    </div>
+    <div class="herofacts">
+      <div class="fact"><b>35</b><span>Years Experience</span></div>
+      <div class="fact"><b>24/7</b><span>Emergencies</span></div>
+      <div class="fact"><b>Licensed</b><span>&amp; Insured</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker">What We Do</div>
+    <h2>Plumbing &amp; home improvement services</h2>
+    <p class="lead">Repair, replacement, and installation — plus the handyman work that keeps homes and rental properties running.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <div><h3>Plumbing Repair &amp; Install</h3><p>Repair, replacement, and installation for your home's plumbing systems.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="3"/><path d="M12 7v2M10 21v-2M14 21v-2"/></svg></div>
+        <div><h3>Water Heaters</h3><p>Water heater repair and new installations to keep the hot water flowing.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v5"/><path d="M5 8h14v3a7 7 0 01-14 0V8z"/><path d="M12 18v3"/></svg></div>
+        <div><h3>Leaks &amp; Clogs</h3><p>Fixes for sinks, toilets, faucets, tubs, and sewer pipes — stop the drip and clear the drain.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div><h3>Bathroom &amp; Kitchen Renovations</h3><p>Renovations and custom designs, including tub replacement and fixture upgrades.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-4M14.5 5.5l4 4"/><path d="M12 8l4 4-8.5 8.5H4V17L12 8z"/><path d="M15 5l2-2 4 4-2 2"/></svg></div>
+        <div><h3>Water Piping</h3><p>Water piping repair and installation done to last.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div><h3>Tile &amp; Floor Work</h3><p>Clean, professional tile and flooring installation and repair.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 3l2 2-9 9-3 1 1-3 9-9z"/><path d="M9 7H5a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4"/></svg></div>
+        <div><h3>Painting, Carpentry &amp; Fences</h3><p>Home improvement work handled by the same trusted hands.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9z"/><path d="M9 21V12h6v9"/></svg></div>
+        <div><h3>Rental Property Maintenance</h3><p>Prompt, reliable maintenance for landlords and rental properties.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h3>24-Hour Emergency Service</h3><p>Plumbing emergencies don't wait for business hours — neither do we.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="kicker">Why TimCo</div>
+    <h2>Personal, affordable service you can trust</h2>
+    <div class="grid2">
+      <div class="whyitem">
+        <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><b>35 years of experience</b><span>Three and a half decades of plumbing and home improvement know-how.</span></div>
+      </div>
+      <div class="whyitem">
+        <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><b>Licensed &amp; insured</b><span>Work done properly, with the credentials to back it up.</span></div>
+      </div>
+      <div class="whyitem">
+        <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><b>Personal &amp; affordable</b><span>You deal directly with the person doing the work — no runaround.</span></div>
+      </div>
+      <div class="whyitem">
+        <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><b>24-hour emergency service</b><span>Burst pipe at midnight? Call — emergency service is available around the clock.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div>
+      <h2>Plumbing emergency?</h2>
+      <p>24-hour emergency service available. Call now and get help fast.</p>
+    </div>
+    <a class="btn-big btn-call" href="tel:17577359276">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      1-757-735-9276
+    </a>
+  </div>
+</div>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="kicker">Where We Work</div>
+    <h2>Serving Norfolk, Virginia</h2>
+    <p class="lead">Based in Norfolk, VA — call to confirm service for your address.</p>
+    <div class="areabox">
+      <div class="areamap">
+        <svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map pin over Norfolk, Virginia">
+          <rect width="340" height="220" rx="12" fill="#eef4f9"/>
+          <path d="M0 150 C60 130 90 170 150 155 C210 140 240 185 340 160 L340 220 L0 220 Z" fill="#d5e6f5"/>
+          <path d="M0 165 C70 150 110 185 180 168 C250 152 280 195 340 178 L340 220 L0 220 Z" fill="#bcd8ef"/>
+          <circle cx="170" cy="98" r="34" fill="#1673d1" opacity=".12"/>
+          <path d="M170 60c-14 0-25 11-25 25 0 18 25 41 25 41s25-23 25-41c0-14-11-25-25-25zm0 34a9 9 0 119-9 9 9 0 01-9 9z" fill="#1673d1"/>
+          <text x="170" y="150" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#0f2740">Norfolk, VA</text>
+        </svg>
+      </div>
+      <div class="hoursbox">
+        <h3>Hours</h3>
+        <div class="hrow"><span>Monday – Friday</span><b>8 AM – 5 PM</b></div>
+        <div class="hrow"><span>Saturday – Sunday</span><b>By appointment</b></div>
+        <div class="hrow"><span>Emergencies</span><span class="em">24 hours, every day</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="kicker">Get In Touch</div>
+    <h2>Contact TimCo</h2>
+    <p class="lead">Call for a fast answer, or send an email and we'll get back to you.</p>
+    <div class="cgrid">
+      <div class="crow">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><b>Phone</b><a href="tel:17577359276">1-757-735-9276</a></div>
+      </div>
+      <div class="crow">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div><b>Email</b><a href="mailto:timcoplumbingva@gmail.com">timcoplumbingva@gmail.com</a></div>
+      </div>
+      <div class="crow">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><b>Location</b><span class="val">Norfolk, VA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>TimCo Plumbing and Home Improvement</b> — Norfolk, VA</div>
+    <div>Licensed &amp; insured · 35 years of experience · 24-hour emergency service</div>
+    <div>1-757-735-9276 · timcoplumbingva@gmail.com</div>
+  </div>
+</footer>
+
+<div class="stickycall">
+  <a href="tel:17577359276">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call TimCo — 1-757-735-9276
+  </a>
+</div>
+
+</body>
+</html>

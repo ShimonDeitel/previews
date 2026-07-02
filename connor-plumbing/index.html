@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connor Plumbing — Smart, Friendly Plumbers | Martinez &amp; Augusta, GA</title>
+<meta name="description" content="Connor Plumbing — 24/7 plumbing service in Martinez, Augusta, Evans &amp; the CSRA. Flat-rate upfront pricing, no extra charge nights, weekends or holidays. Call (706) 863-3343.">
+<style>
+  :root{
+    --navy:#0b2540;
+    --navy-2:#123a63;
+    --blue:#1273d4;
+    --blue-dark:#0d5cab;
+    --ink:#1a2733;
+    --muted:#5a6b7a;
+    --bg:#f5f8fb;
+    --line:#e2e9f0;
+    --white:#fff;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+  img,svg{display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.2;font-weight:800}
+  section{padding:64px 0}
+  .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .section-title{font-size:clamp(26px,4.5vw,36px);margin-bottom:12px}
+  .section-sub{color:var(--muted);max-width:600px;margin-bottom:36px;font-size:17px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--navy)}
+  .brand svg{flex:none}
+  .nav-links{display:none;gap:28px;font-size:15px;font-weight:600;color:var(--muted)}
+  .nav-links a:hover{color:var(--blue)}
+  .call-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;transition:background .15s}
+  .call-btn:hover{background:var(--blue-dark)}
+  .call-btn svg{flex:none}
+  .call-btn .num{display:none}
+  @media(min-width:520px){.call-btn .num{display:inline}}
+  @media(min-width:820px){.nav-links{display:flex}}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:72px 0 84px;position:relative;overflow:hidden}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:600;margin-bottom:22px}
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;flex:none}
+  .hero h1{font-size:clamp(32px,6.5vw,52px);max-width:640px;margin-bottom:16px}
+  .hero p.lede{font-size:clamp(16px,2.5vw,19px);color:#c4d4e6;max-width:560px;margin-bottom:32px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;font-weight:800;font-size:17px;padding:16px 26px;border-radius:12px;transition:background .15s;box-shadow:0 6px 20px rgba(18,115,212,.35)}
+  .btn-primary:hover{background:var(--blue-dark)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:16px;padding:16px 22px;border-radius:12px;border:1.5px solid rgba(255,255,255,.35);transition:background .15s}
+  .btn-ghost:hover{background:rgba(255,255,255,.08)}
+  .hero-points{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:14.5px;color:#c4d4e6}
+  .hero-points span{display:inline-flex;align-items:center;gap:7px}
+  .hero-points svg{flex:none}
+  .hero-pipes{position:absolute;right:-60px;bottom:-40px;opacity:.08;pointer-events:none}
+
+  /* Services */
+  .services{background:var(--bg)}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr}}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;transition:box-shadow .15s,transform .15s}
+  .card:hover{box-shadow:0 10px 30px rgba(11,37,64,.08);transform:translateY(-2px)}
+  .card .icon{width:48px;height:48px;border-radius:12px;background:#e8f2fd;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{font-size:15px;color:var(--muted)}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:700px){.why-grid{grid-template-columns:1fr 1fr}}
+  .why-item{display:flex;gap:16px;padding:22px;border:1px solid var(--line);border-radius:var(--radius)}
+  .why-item .icon{width:44px;height:44px;flex:none;border-radius:12px;background:#e8f2fd;display:flex;align-items:center;justify-content:center}
+  .why-item h3{font-size:17px;margin-bottom:5px}
+  .why-item p{font-size:14.5px;color:var(--muted)}
+
+  /* Area */
+  .area{background:var(--navy);color:#fff}
+  .area .section-sub{color:#c4d4e6}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 18px;font-size:15px;font-weight:600}
+  .chip svg{flex:none}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:760px){.contact-grid{grid-template-columns:1fr 1fr 1fr}}
+  .contact-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;text-align:center;background:var(--white)}
+  .contact-card .icon{width:52px;height:52px;border-radius:50%;background:#e8f2fd;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .contact-card h3{font-size:16px;margin-bottom:6px}
+  .contact-card p{font-size:15px;color:var(--muted)}
+  .contact-card a.link{color:var(--blue);font-weight:700}
+  .cta-band{margin-top:48px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:18px;padding:40px 28px;text-align:center;color:#fff}
+  .cta-band h2{font-size:clamp(24px,4.5vw,32px);margin-bottom:10px}
+  .cta-band p{color:#d8e9fb;margin-bottom:24px;font-size:16px}
+  .cta-band .btn-white{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue-dark);font-weight:800;font-size:17px;padding:16px 28px;border-radius:12px}
+
+  /* Footer */
+  footer{background:var(--navy);color:#8fa6bd;padding:34px 0;font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+  footer a{color:#c4d4e6;font-weight:600}
+
+  /* Mobile sticky call bar */
+  .sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;background:var(--blue);color:#fff;font-weight:800;font-size:17px;padding:16px;align-items:center;justify-content:center;gap:10px;box-shadow:0 -4px 16px rgba(11,37,64,.25)}
+  @media(min-width:820px){.sticky-call{display:none}}
+  @media(max-width:819px){body{padding-bottom:60px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand" aria-label="Connor Plumbing home">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="34" height="34" rx="8" fill="#1273d4"/>
+        <path d="M10 8h6a2 2 0 0 1 2 2v5h5a2 2 0 0 1 2 2v9h-4v-7h-7a2 2 0 0 1-2-2v-5h-2V8z" fill="#fff"/>
+        <circle cx="12" cy="26" r="2.2" fill="#fff" opacity=".85"/>
+      </svg>
+      Connor Plumbing
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+17068633343">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="currentColor"/></svg>
+      <span class="num">(706) 863-3343</span><span aria-hidden="true" style="display:none">Call</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-pipes" width="420" height="420" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 180V80a20 20 0 0 1 20-20h60a20 20 0 0 1 20 20v100" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+    <path d="M160 180V40" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="160" cy="24" r="12" stroke="#fff" stroke-width="8"/>
+  </svg>
+  <div class="wrap">
+    <span class="hero-badge"><span class="dot"></span>Available 24/7 — no extra charge nights, weekends or holidays</span>
+    <h1>Smart, Friendly Plumbers Serving the Augusta Area</h1>
+    <p class="lede">From clogged drains to water heaters, Connor Plumbing handles it with flat-rate, upfront pricing — so you know the cost before the work starts.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:+17068633343">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="currentColor"/></svg>
+        Call (706) 863-3343
+      </a>
+      <a class="btn-ghost" href="#services">See Our Services</a>
+    </div>
+    <div class="hero-points">
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#3ddc84" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Flat-rate, upfront pricing</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#3ddc84" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 service</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#3ddc84" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Locally based in Martinez, GA</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <span class="kicker">What We Do</span>
+    <h2 class="section-title">Plumbing Services</h2>
+    <p class="section-sub">Whatever the problem, we'll quote a flat rate before we start — day or night.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3v6m0 0a4 4 0 1 0 4 4" stroke="#1273d4" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="13" r="8" stroke="#1273d4" stroke-width="2"/></svg></div>
+        <h3>Drain Cleaning</h3>
+        <p>Fast relief for clogged sinks, tubs, toilets and main lines — cleared right the first time.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="7" y="3" width="10" height="16" rx="3" stroke="#1273d4" stroke-width="2"/><path d="M10 19v2m4-2v2M10 7h4" stroke="#1273d4" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Water Heaters</h3>
+        <p>Installation and repair, backed by a 6-year full warranty — parts and labor, never pro-rated.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#1273d4" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="#1273d4" stroke-width="2"/><path d="M12 4v2m0 12v2M4 12h2m12 0h2" stroke="#1273d4" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Sewer Video Inspections</h3>
+        <p>Camera inspections that show exactly what's wrong in your sewer line — no guesswork.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.5 4.5a5 5 0 0 0-6.9 6.2L3 15.3V21h5.7l4.6-4.6a5 5 0 0 0 6.2-6.9l-3.3 3.3-2.8-2.8 3.1-3.5z" stroke="#1273d4" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Plumbing Repairs</h3>
+        <p>Leaks, faucets, toilets, pipes — everyday plumbing problems fixed by friendly pros.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#1273d4" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#1273d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>24/7 Emergency Service</h3>
+        <p>Plumbing emergencies don't keep business hours. Neither do we — with no extra charge after hours.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 15h10M7 15a3 3 0 0 1-3-3V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4a3 3 0 0 1-3 3M9 15v4m6-4v4" stroke="#1273d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Flat-Rate Pricing</h3>
+        <p>You approve the price before work begins. No hourly meter running, no surprises on the bill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <span class="kicker">Why Connor Plumbing</span>
+    <h2 class="section-title">Smart, Friendly Plumbers</h2>
+    <p class="section-sub">A local Martinez company that does plumbing the way it should be done.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#1273d4" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#1273d4" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>24/7 — Truly</h3><p>Nights, weekends, holidays. Same rates around the clock, with no after-hours surcharge.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z" stroke="#1273d4" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="#1273d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Upfront Flat Rates</h3><p>The price is agreed before the work starts — you'll never wonder what the bill will be.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#1273d4" stroke-width="2"/><path d="m8 12 3 3 5-6" stroke="#1273d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>6-Year Water Heater Warranty</h3><p>Full-term warranty on water heaters — parts and labor included, never pro-rated.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z" stroke="#1273d4" stroke-width="2"/><circle cx="12" cy="11" r="2.5" stroke="#1273d4" stroke-width="2"/></svg></div>
+        <div><h3>Local &amp; Nearby</h3><p>Based on Tower Drive in Martinez, GA — right in the neighborhoods we serve.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <span class="kicker" style="color:#7db8ef">Where We Work</span>
+    <h2 class="section-title">Serving the CSRA</h2>
+    <p class="section-sub">Proudly serving homes and businesses across the Augusta area, on both sides of the river.</p>
+    <div class="chips">
+      <span class="chip">Martinez, GA</span>
+      <span class="chip">Augusta, GA</span>
+      <span class="chip">Evans, GA</span>
+      <span class="chip">Grovetown, GA</span>
+      <span class="chip">Appling, GA</span>
+      <span class="chip">Harlem, GA</span>
+      <span class="chip">Hephzibah, GA</span>
+      <span class="chip">North Augusta, SC</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="kicker">Get In Touch</span>
+    <h2 class="section-title">Contact Connor Plumbing</h2>
+    <p class="section-sub">One call and a smart, friendly plumber is on the way.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" stroke="#1273d4" stroke-width="2"/></svg></div>
+        <h3>Phone — 24/7</h3>
+        <p><a class="link" href="tel:+17068633343">(706) 863-3343</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z" stroke="#1273d4" stroke-width="2"/><circle cx="12" cy="11" r="2.5" stroke="#1273d4" stroke-width="2"/></svg></div>
+        <h3>Address</h3>
+        <p>378 Tower Drive<br>Martinez, GA 30907</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2" stroke="#1273d4" stroke-width="2"/><path d="M3 10h18" stroke="#1273d4" stroke-width="2"/></svg></div>
+        <h3>Payment</h3>
+        <p>Cash, checks, Visa, MasterCard,<br>American Express &amp; Discover</p>
+      </div>
+    </div>
+    <div class="cta-band">
+      <h2>Plumbing problem right now?</h2>
+      <p>We answer around the clock — with no extra charge for nights, weekends or holidays.</p>
+      <a class="btn-white" href="tel:+17068633343">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="currentColor"/></svg>
+        Call (706) 863-3343
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Connor Plumbing &middot; 378 Tower Drive, Martinez, GA 30907</span>
+    <a href="tel:+17068633343">(706) 863-3343</a>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+17068633343" aria-label="Call Connor Plumbing now">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="currentColor"/></svg>
+  Call Now — (706) 863-3343
+</a>
+
+</body>
+</html>
