@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bussard Plumbing — Plumber in Horseheads, NY | 24/7 Emergency Service</title>
+<meta name="description" content="Bussard Plumbing has served Chemung and Steuben counties since 1982. Plumbing, drain cleaning, water heaters, gas lines. Call (607) 562-3660.">
+<style>
+  :root{
+    --navy:#0e2a47;
+    --navy2:#123push458;
+    --blue:#1673d2;
+    --blue-dark:#0f5cad;
+    --amber:#f5a623;
+    --ink:#1b2733;
+    --muted:#5b6b7b;
+    --bg:#f5f8fb;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Top bar */
+  .topbar{background:var(--navy);color:#cfe0f2;font-size:13px;padding:7px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .topbar strong{color:#fff}
+
+  /* Header */
+  header{background:var(--white);position:sticky;top:0;z-index:50;box-shadow:0 1px 8px rgba(14,42,71,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand-mark{width:42px;height:42px;flex:none;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .brand-name{font-weight:800;font-size:19px;color:var(--navy);letter-spacing:-.02em;line-height:1.1}
+  .brand-name small{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .nav-links{display:none;gap:26px}
+  .nav-links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+  .nav-links a:hover{color:var(--blue)}
+  .call-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:10px;font-size:15px;white-space:nowrap;box-shadow:0 3px 10px rgba(22,115,210,.35)}
+  .call-btn:active{transform:scale(.98)}
+  @media(min-width:820px){.nav-links{display:flex}}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,#153a63 55%,#1b4f8a 100%);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;border-radius:50%;background:rgba(22,115,210,.18)}
+  .hero .wrap{position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;margin-bottom:18px}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  h1{font-size:clamp(30px,6vw,50px);line-height:1.12;font-weight:800;letter-spacing:-.02em;max-width:640px}
+  h1 span{color:#7db8f0}
+  .hero p.lead{margin:16px 0 28px;font-size:clamp(16px,2.6vw,19px);color:#cfe0f2;max-width:560px}
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:420px}
+  .big-call{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--amber);color:#20293a;text-decoration:none;font-weight:800;font-size:20px;padding:18px 24px;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+  .big-call small{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
+  .big-call:active{transform:scale(.98)}
+  .ghost-btn{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:14px 24px;border-radius:14px}
+  @media(min-width:640px){.hero-ctas{flex-direction:row;max-width:none}.big-call{flex:none}}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;max-width:560px}
+  .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 10px;text-align:center}
+  .stat b{display:block;font-size:clamp(18px,3.4vw,26px);color:#fff}
+  .stat span{font-size:12px;color:#b9cfe6;font-weight:600}
+
+  /* Sections */
+  section{padding:60px 0}
+  .kicker{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:12px}
+  h2{font-size:clamp(24px,4.5vw,34px);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:6px 0 10px}
+  .sub{color:var(--muted);max-width:620px;margin-bottom:34px;font-size:16px}
+
+  /* Services grid */
+  .grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr}}
+  .card{background:var(--white);border:1px solid #e3eaf2;border-radius:16px;padding:24px;transition:box-shadow .2s,transform .2s}
+  .card:hover{box-shadow:0 10px 26px rgba(14,42,71,.1);transform:translateY(-2px)}
+  .icon{width:48px;height:48px;border-radius:12px;background:#e8f2fd;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .card h3{font-size:18px;color:var(--navy);margin-bottom:6px}
+  .card p{font-size:14.5px;color:var(--muted)}
+
+  /* Why us */
+  .why{background:var(--white)}
+  .why-grid{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:820px){.why-grid{grid-template-columns:1fr 1fr}}
+  .why-item{display:flex;gap:14px;align-items:flex-start}
+  .why-item .icon{margin:0;flex:none;background:#fff4de}
+  .why-item h3{font-size:17px;color:var(--navy)}
+  .why-item p{font-size:14.5px;color:var(--muted)}
+
+  /* Service area */
+  .area{background:var(--navy);color:#fff}
+  .area h2{color:#fff}
+  .area .sub{color:#b9cfe6}
+  .towns{display:flex;flex-wrap:wrap;gap:10px}
+  .town{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 18px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px}
+
+  /* Contact */
+  .contact-card{background:var(--white);border:1px solid #e3eaf2;border-radius:20px;padding:32px 24px;display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:820px){.contact-card{grid-template-columns:1.2fr 1fr;padding:40px}}
+  .c-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+  .c-row .icon{margin:0;flex:none}
+  .c-row b{display:block;color:var(--navy);font-size:15px}
+  .c-row a{color:var(--blue);text-decoration:none;font-weight:700;font-size:17px;word-break:break-all}
+  .c-row span{color:var(--muted);font-size:14.5px}
+  .cta-panel{background:linear-gradient(160deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:16px;padding:28px 24px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center}
+  .cta-panel h3{font-size:22px;letter-spacing:-.01em}
+  .cta-panel p{font-size:14.5px;color:#d7e8fb}
+  .cta-panel .big-call{font-size:18px;padding:15px 20px}
+
+  /* Footer */
+  footer{background:#0a1f36;color:#8fa6bd;padding:28px 0;font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+  footer a{color:#cfe0f2;text-decoration:none;font-weight:600}
+
+  /* Sticky mobile call bar */
+  .sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,31,54,.94);backdrop-filter:blur(8px);display:flex}
+  .sticky-call a{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--amber);color:#20293a;font-weight:800;font-size:17px;text-decoration:none;padding:14px;border-radius:12px}
+  @media(min-width:820px){.sticky-call{display:none}}
+  body{padding-bottom:76px}
+  @media(min-width:820px){body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div><strong>24/7 Emergency Service</strong> — Chemung &amp; Steuben Counties</div>
+    <div>Since <strong>1982</strong></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h6v4h-6zM10 8H4a2 2 0 0 0-2 2v8"/><path d="M14 8h-4v4a4 4 0 0 1-4 4H2"/></svg>
+      </span>
+      <span class="brand-name">Bussard Plumbing<small>Horseheads, NY</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:6075623660">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (607) 562-3660
+    </a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span>Available 24/7 for plumbing emergencies</div>
+    <h1>Reliable. Guaranteed.<br><span>Done Right.</span></h1>
+    <p class="lead">Family plumbing service for Chemung and Steuben counties since 1982. From burst pipes to bathroom renovations, Jesse and Matt get it fixed.</p>
+    <div class="hero-ctas">
+      <a class="big-call" href="tel:6075623660">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span><small>Tap to call now</small>(607) 562-3660</span>
+      </a>
+      <a class="ghost-btn" href="#services">See Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>1982</b><span>Serving since</span></div>
+      <div class="stat"><b>24/7</b><span>Emergency service</span></div>
+      <div class="stat"><b>2</b><span>Counties covered</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <p class="kicker">What we do</p>
+    <h2>Plumbing &amp; More, Handled Start to Finish</h2>
+    <p class="sub">One call covers the plumbing job — and the drywall, hookups, and finishing work that usually mean hiring a second contractor.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h6v4h-6zM10 8H4a2 2 0 0 0-2 2v8"/><path d="M14 8h-4v4a4 4 0 0 1-4 4H2"/></svg></div>
+        <h3>Residential Plumbing</h3>
+        <p>Faucets, sinks, toilets, sump pumps, pipe repairs — repaired or replaced right the first time.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Drain Cleaning</h3>
+        <p>Clogged or slow drains cleared fast, from kitchen sinks to main lines.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22a7 7 0 0 0 7-7c0-3.5-3-6-7-11-4 5-7 7.5-7 11a7 7 0 0 0 7 7z"/></svg></div>
+        <h3>Water Heaters</h3>
+        <p>Repair and replacement to bring back reliable hot water without the wait.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
+        <h3>Gas Lines</h3>
+        <p>Gas line installation and repair, including dryer and stove hookups, done safely.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>110V Electrical</h3>
+        <p>Switches, outlets, light fixtures, ceiling and exhaust fans, and new circuits.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6.09 5.74L2.5 18.15a2.12 2.12 0 0 0 3 3l6.11-6.11a4.5 4.5 0 0 0 5.74-6.09l-2.94 2.94-2.12-.71-.71-2.12 2.94-2.94z"/></svg></div>
+        <h3>Bathroom Renovations &amp; Repairs</h3>
+        <p>Bathroom updates plus the finishing details — drywall repair, handrails, and access panels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <p class="kicker">Why Bussard</p>
+    <h2>The Plumber Your Neighbors Have Called Since 1982</h2>
+    <p class="sub">Four decades of fixing things right in the Southern Tier.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h3>Established 1982</h3><p>Serving the same communities for over four decades — we're not going anywhere.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h3>24/7 Emergency Response</h3><p>Burst pipe at 2 a.m.? Call. Plumbing emergencies don't keep business hours, and neither do we.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h3>You Know Who's Coming</h3><p>Jesse and Matt do the work themselves — no rotating crews, no strangers.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div><h3>One Call Does It All</h3><p>Plumbing, gas hookups, basic electrical, and drywall patching — the whole job finished, not half of it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <p class="kicker" style="color:#7db8f0">Where we work</p>
+    <h2>Proudly Serving Chemung &amp; Steuben Counties</h2>
+    <p class="sub">Based in Horseheads, on the road across the Southern Tier.</p>
+    <div class="towns">
+      <span class="town"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Horseheads</span>
+      <span class="town"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Elmira</span>
+      <span class="town"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Corning</span>
+      <span class="town"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Bath</span>
+      <span class="town">+ surrounding communities</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="kicker">Get in touch</p>
+    <h2>Have a Plumbing Problem? Let's Fix It.</h2>
+    <p class="sub">Call for the fastest response — or email and we'll get back to you.</p>
+    <div class="contact-card">
+      <div>
+        <div class="c-row">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><b>Phone</b><a href="tel:6075623660">(607) 562-3660</a><br><span>24/7 for emergencies</span></div>
+        </div>
+        <div class="c-row">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><b>Email</b><a href="mailto:bussardplumbing3@gmail.com">bussardplumbing3@gmail.com</a></div>
+        </div>
+        <div class="c-row">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1673d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><b>Service Area</b><span>Chemung &amp; Steuben counties — Horseheads, Elmira, Corning, Bath &amp; nearby</span></div>
+        </div>
+      </div>
+      <div class="cta-panel">
+        <h3>Emergency? Don't wait.</h3>
+        <p>Tap below and talk to a plumber now.</p>
+        <a class="big-call" href="tel:6075623660">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (607) 562-3660
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 Bussard Plumbing &middot; Horseheads, NY</div>
+    <div>Reliable. Guaranteed. Done Right. &middot; <a href="tel:6075623660">(607) 562-3660</a></div>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:6075623660">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call (607) 562-3660
+  </a>
+</div>
+
+</body>
+</html>
