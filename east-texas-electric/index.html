@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>East Texas Electric | Longview, TX Electrical Contractor</title>
+<style>
+  :root{
+    --navy:#0a1628;
+    --navy-2:#111f38;
+    --accent:#ff8a00;
+    --blue:#2f8fff;
+    --text:#eef2f8;
+    --muted:#9fb0c9;
+    --card:#132540;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--navy);
+    color:var(--text);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(10,22,40,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 16px;gap:10px;
+    max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:8px;min-width:0;}
+  .brand svg{flex-shrink:0;width:30px;height:30px;}
+  .brand-name{font-weight:800;font-size:15px;letter-spacing:0.2px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .brand-name small{display:block;font-weight:500;font-size:10px;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase;}
+
+  .call-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--accent);
+    color:#171008;
+    font-weight:700;
+    font-size:14px;
+    padding:10px 14px;
+    border-radius:999px;
+    white-space:nowrap;
+    min-height:44px;
+    flex-shrink:0;
+  }
+  .call-btn svg{width:16px;height:16px;flex-shrink:0;}
+
+  /* Hero */
+  .hero{
+    padding:56px 0 44px;
+    background:
+      radial-gradient(circle at 85% 0%, rgba(47,143,255,0.18), transparent 55%),
+      radial-gradient(circle at 10% 100%, rgba(255,138,0,0.14), transparent 50%);
+    text-align:center;
+  }
+  .badge{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.6px;
+    color:var(--accent);
+    background:rgba(255,138,0,0.12);
+    border:1px solid rgba(255,138,0,0.35);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:clamp(28px,7vw,46px);
+    font-weight:800;
+    letter-spacing:-0.5px;
+    line-height:1.12;
+    margin-bottom:16px;
+  }
+  .hero h1 span{color:var(--blue);}
+  .hero p{
+    color:var(--muted);
+    font-size:16px;
+    max-width:520px;
+    margin:0 auto 28px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center;}
+  .btn-primary{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--accent);color:#171008;
+    font-weight:800;font-size:17px;
+    padding:16px 28px;border-radius:12px;
+    width:100%;max-width:320px;min-height:52px;
+    box-shadow:0 10px 30px rgba(255,138,0,0.25);
+  }
+  .btn-primary svg{width:20px;height:20px;}
+  .btn-secondary{
+    color:var(--muted);
+    font-size:14px;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  .hero-facts{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+    margin-top:32px;
+  }
+  .fact-pill{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,0.08);
+    color:var(--muted);
+    font-size:12.5px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:999px;
+  }
+  .fact-pill b{color:var(--text);}
+
+  section{padding:52px 0;}
+  .section-head{text-align:center;margin-bottom:32px;}
+  .eyebrow{
+    display:block;
+    font-size:12px;font-weight:700;letter-spacing:1px;
+    color:var(--blue);text-transform:uppercase;margin-bottom:8px;
+  }
+  h2{font-size:clamp(24px,5vw,32px);font-weight:800;letter-spacing:-0.3px;}
+
+  /* Services */
+  .services-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media(min-width:640px){
+    .services-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(min-width:900px){
+    .services-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+  .service-card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:var(--radius);
+    padding:22px 18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .icon-wrap{
+    width:48px;height:48px;
+    border-radius:12px;
+    background:rgba(47,143,255,0.14);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .icon-wrap svg{width:26px;height:26px;stroke:var(--blue);}
+  .service-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .service-card p{font-size:13.5px;color:var(--muted);}
+
+  /* Why us */
+  .why-section{
+    background:var(--navy-2);
+    border-top:1px solid rgba(255,255,255,0.06);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .why-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;}
+  @media(min-width:760px){.why-grid{grid-template-columns:1fr 1fr;}}
+  .why-card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .why-card h3{font-size:19px;font-weight:800;margin-bottom:10px;}
+  .why-list{list-style:none;}
+  .why-list li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14.5px;color:var(--muted);
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .why-list li:last-child{border-bottom:none;}
+  .why-list svg{width:18px;height:18px;flex-shrink:0;margin-top:2px;stroke:var(--accent);}
+  .why-list b{color:var(--text);}
+
+  .owner-strip{
+    display:flex;align-items:center;gap:14px;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .owner-avatar{
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg,var(--blue),var(--accent));
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:20px;color:#08111f;
+    flex-shrink:0;
+  }
+  .owner-strip h4{font-size:16px;font-weight:800;margin-bottom:2px;}
+  .owner-strip span{font-size:13px;color:var(--muted);}
+
+  /* Service area */
+  .area-card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    text-align:center;
+  }
+  .area-card svg{width:34px;height:34px;stroke:var(--accent);margin:0 auto 14px;}
+  .area-card p{color:var(--muted);font-size:15px;max-width:480px;margin:0 auto;}
+  .area-card p b{color:var(--text);}
+
+  /* Footer / contact */
+  footer{
+    background:var(--navy-2);
+    padding:48px 0 40px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:22px;}
+  .footer-brand svg{width:40px;height:40px;}
+  footer h3{font-size:20px;font-weight:800;}
+  footer .lic{font-size:12.5px;color:var(--muted);letter-spacing:0.3px;}
+  .footer-call{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--accent);color:#171008;
+    font-weight:800;font-size:18px;
+    padding:16px 30px;border-radius:12px;
+    width:100%;max-width:320px;min-height:52px;
+    margin:18px auto;
+  }
+  .footer-call svg{width:20px;height:20px;}
+  .footer-meta{
+    margin-top:24px;
+    font-size:12.5px;color:var(--muted);
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="#ff8a00"/></svg>
+      <div class="brand-name">East Texas Electric<small>Longview, TX</small></div>
+    </div>
+    <a class="call-btn" href="tel:9036639311" aria-label="Call East Texas Electric">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#171008" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Licensed &amp; Established 1996</span>
+    <h1>Longview&rsquo;s Trusted <span>Electrical</span> Contractor</h1>
+    <p>Commercial &amp; industrial electrical work handled by licensed master electricians — East Texas Electric, TECL #17628.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:9036639311">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#171008" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 903-663-9311
+      </a>
+      <a class="btn-secondary" href="tel:9036639311">Tap to call from any device</a>
+    </div>
+    <div class="hero-facts">
+      <span class="fact-pill"><b>TECL #17628</b> Licensed</span>
+      <span class="fact-pill"><b>Est. 1996</b></span>
+      <span class="fact-pill"><b>3</b> Master Electricians</span>
+      <span class="fact-pill">Drug-Free &amp; Safety Conscious</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Commercial &amp; Industrial Electrical Services</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <h3>Panels &amp; Disconnects</h3>
+        <p>Installation and repair of electrical panels and disconnects for commercial facilities.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9" cy="8" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="16" r="1"/><path d="M14 8h3M14 12h3M14 16h3"/></svg></div>
+        <h3>Grounding Systems</h3>
+        <p>Design, installation, and repair of electrical grounding systems.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+        <h3>LED Retrofits &amp; Lighting</h3>
+        <p>LED retrofits and ongoing lighting maintenance, including parking lot pole lighting.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h4l2-4 3 8 2-6h5"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Transformers</h3>
+        <p>Transformer installation and service for commercial and industrial power needs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+        <h3>Arc Flash &amp; Breaker Coordination Studies</h3>
+        <p>Arc flash studies and breaker coordination studies for facility safety compliance.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.5c.5.5.8 1 .8 1.7V17h6.4v-.8c0-.7.3-1.2.8-1.7A7 7 0 0 0 12 2z"/></svg></div>
+        <h3>Thermal Imaging</h3>
+        <p>Thermal imaging services to identify electrical issues before they cause downtime.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M9 13h6M12 10v6"/></svg></div>
+        <h3>Generators &amp; UPS Systems</h3>
+        <p>Generator installation and UPS (uninterruptible power supply) systems.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M2 12h6M16 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2"/></svg></div>
+        <h3>Surge Suppression</h3>
+        <p>Surge suppression solutions to protect equipment and electrical systems.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <h3>Electrical Equipment Install &amp; Repair</h3>
+        <p>Installation and repair of a wide range of electrical equipment for commercial clients.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Licensed. Experienced. Safety-First.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>What Sets Us Apart</h3>
+        <ul class="why-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Established 1996</b> — decades serving Texas and Louisiana projects.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Licensed team</b> — all team members licensed with the Texas Department of Licensing and Regulation.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>3 master electricians</b> on staff.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Drug-free &amp; safety conscious</b> electrical contractor.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>TECL #17628</b> licensed contractor.</span></li>
+        </ul>
+      </div>
+      <div class="owner-strip">
+        <div class="owner-avatar">LC</div>
+        <div>
+          <h4>Luke Charlson</h4>
+          <span>Owner / President &middot; Master License #354515</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Service Area</span>
+      <h2>Based in Longview, Working Across the Region</h2>
+    </div>
+    <div class="area-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <p>Located in <b>Longview, Texas</b>, East Texas Electric has been part of projects throughout <b>Texas and Louisiana</b>.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="#ff8a00"/></svg>
+      <h3>East Texas Electric</h3>
+      <span class="lic">TECL #17628 &middot; Longview, TX</span>
+    </div>
+    <a class="footer-call" href="tel:9036639311">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#171008" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      903-663-9311
+    </a>
+    <div class="footer-meta">
+      &copy; East Texas Electric &middot; Longview, Texas &middot; Established 1996
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

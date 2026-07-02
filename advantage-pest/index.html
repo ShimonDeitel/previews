@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Advantage Pest Control | Killeen, TX</title>
+<style>
+  :root{
+    --navy:#0b2e3a;
+    --navy-dark:#082129;
+    --teal:#0f4c5c;
+    --lime:#8bc53f;
+    --lime-dark:#6fa22e;
+    --ink:#1c2b2f;
+    --muted:#5b6b6e;
+    --bg:#f6f9f8;
+    --card:#ffffff;
+    --border:#e2ebe8;
+    --radius:14px;
+    --shadow:0 4px 14px rgba(11,46,58,0.08);
+    --shadow-lg:0 10px 30px rgba(11,46,58,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    max-width:100%;
+    overflow-x:hidden;
+  }
+  body{
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{max-width:100%;display:block;}
+  .container{
+    width:100%;
+    max-width:680px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* Header */
+  header.site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:var(--navy);
+    color:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:12px 20px;
+    max-width:680px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .brand-icon{
+    flex:0 0 auto;
+    width:34px;
+    height:34px;
+    color:var(--lime);
+  }
+  .brand-text{
+    font-weight:700;
+    font-size:15px;
+    line-height:1.2;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .brand-text small{
+    display:block;
+    font-weight:500;
+    font-size:11px;
+    color:#b9d3d9;
+    letter-spacing:0.02em;
+  }
+  .call-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    background:var(--lime);
+    color:var(--navy-dark);
+    font-weight:700;
+    font-size:14px;
+    padding:0 16px;
+    height:44px;
+    border-radius:999px;
+    white-space:nowrap;
+    flex:0 0 auto;
+    box-shadow:0 3px 8px rgba(0,0,0,0.18);
+  }
+  .call-btn svg{width:18px;height:18px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--teal) 100%);
+    color:#fff;
+    padding:44px 0 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:rgba(139,197,63,0.16);
+    border:1px solid rgba(139,197,63,0.4);
+    color:var(--lime);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:30px;
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:12px;
+    letter-spacing:-0.01em;
+  }
+  .hero p.lead{
+    font-size:16px;
+    color:#d3e4e6;
+    margin-bottom:26px;
+    max-width:46ch;
+  }
+  .hero-ctas{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn-primary{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--lime);
+    color:var(--navy-dark);
+    font-weight:700;
+    font-size:17px;
+    height:54px;
+    border-radius:12px;
+    box-shadow:var(--shadow-lg);
+  }
+  .btn-primary svg{width:20px;height:20px;}
+  .btn-secondary{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    color:#fff;
+    font-weight:600;
+    font-size:15px;
+    height:48px;
+    border-radius:12px;
+  }
+  .hero-meta{
+    margin-top:22px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 18px;
+    font-size:13px;
+    color:#c3d9dc;
+  }
+  .hero-meta span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .hero-meta svg{width:15px;height:15px;color:var(--lime);flex:0 0 auto;}
+
+  /* Sections */
+  section{
+    padding:44px 0;
+  }
+  .section-label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--lime-dark);
+    margin-bottom:8px;
+  }
+  h2{
+    font-size:24px;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:10px;
+    letter-spacing:-0.01em;
+  }
+  .section-sub{
+    color:var(--muted);
+    font-size:15px;
+    margin-bottom:24px;
+    max-width:52ch;
+  }
+
+  /* Services grid */
+  .services-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media (min-width:520px){
+    .services-grid{grid-template-columns:1fr 1fr;}
+  }
+  .service-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:20px;
+    box-shadow:var(--shadow);
+  }
+  .service-icon{
+    width:44px;
+    height:44px;
+    color:var(--navy);
+    background:#eaf3ee;
+    border-radius:10px;
+    padding:9px;
+    margin-bottom:14px;
+  }
+  .service-card h3{
+    font-size:16px;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .service-card p{
+    font-size:14px;
+    color:var(--muted);
+  }
+
+  /* Pests covered */
+  .pest-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:26px;
+  }
+  .pest-tag{
+    background:#eef5f0;
+    color:var(--teal);
+    font-size:13px;
+    font-weight:600;
+    padding:8px 12px;
+    border-radius:999px;
+    border:1px solid var(--border);
+  }
+
+  /* Why us */
+  .why-section{
+    background:var(--navy);
+    color:#fff;
+  }
+  .why-section .section-label{color:var(--lime);}
+  .why-section h2{color:#fff;}
+  .why-section .section-sub{color:#c3d9dc;}
+  .why-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  @media (min-width:520px){
+    .why-list{grid-template-columns:1fr 1fr;}
+  }
+  .why-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius);
+    padding:16px;
+  }
+  .why-item svg{
+    width:26px;
+    height:26px;
+    color:var(--lime);
+    flex:0 0 auto;
+    margin-top:2px;
+  }
+  .why-item h4{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .why-item p{
+    font-size:13.5px;
+    color:#c3d9dc;
+  }
+
+  /* Pricing */
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media (min-width:520px){
+    .pricing-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .price-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:20px;
+    box-shadow:var(--shadow);
+    text-align:center;
+  }
+  .price-card .plan{
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--lime-dark);
+    margin-bottom:8px;
+  }
+  .price-card .amount{
+    font-size:26px;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .price-card .amount span{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+  }
+  .price-card p.desc{
+    font-size:13.5px;
+    color:var(--muted);
+  }
+
+  /* Service area */
+  .area-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .area-card svg{
+    width:32px;
+    height:32px;
+    color:var(--lime-dark);
+    flex:0 0 auto;
+  }
+  .area-cities{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:12px;
+  }
+  .area-cities span{
+    background:#eef5f0;
+    color:var(--teal);
+    font-size:13px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:8px;
+  }
+
+  /* Contact / footer */
+  footer{
+    background:var(--navy-dark);
+    color:#fff;
+    padding:44px 0 32px;
+  }
+  .footer-cta{
+    text-align:center;
+    margin-bottom:34px;
+  }
+  .footer-cta h2{
+    color:#fff;
+    font-size:22px;
+    margin-bottom:10px;
+  }
+  .footer-cta p{
+    color:#b9d3d9;
+    font-size:14.5px;
+    margin-bottom:22px;
+    max-width:44ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .footer-call{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--lime);
+    color:var(--navy-dark);
+    font-weight:700;
+    font-size:18px;
+    height:56px;
+    padding:0 28px;
+    border-radius:12px;
+    box-shadow:var(--shadow-lg);
+  }
+  .footer-call svg{width:20px;height:20px;}
+  .footer-info{
+    border-top:1px solid rgba(255,255,255,0.12);
+    padding-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    font-size:14px;
+    color:#c3d9dc;
+  }
+  .footer-info .row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .footer-info svg{
+    width:18px;
+    height:18px;
+    color:var(--lime);
+    flex:0 0 auto;
+    margin-top:1px;
+  }
+  .footer-bottom{
+    margin-top:26px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:12px;
+    color:#7d9ba1;
+    text-align:center;
+  }
+
+  @media (min-width:640px){
+    .hero-ctas{flex-direction:row;}
+    .btn-primary, .btn-secondary{flex:1;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4L40 11V21C40 32 33 40.5 24 44C15 40.5 8 32 8 21V11L24 4Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M17 24L22 29L31 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text">Advantage Pest Control<small>Killeen, TX</small></div>
+    </div>
+    <a href="tel:2545633060" class="call-btn" aria-label="Call Advantage Pest Control">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.7 15.4 19 15.6 20.3 15.6C20.9 15.6 21.3 16 21.3 16.6V20.3C21.3 20.9 20.9 21.3 20.3 21.3C10.7 21.3 3 13.6 3 4C3 3.4 3.4 3 4 3H7.7C8.3 3 8.7 3.4 8.7 4C8.7 5.3 8.9 6.6 9.3 7.8C9.4 8.2 9.3 8.6 9.1 8.9L6.6 10.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="hero-badge">Killeen, TX &amp; Surrounding Areas</span>
+    <h1>Pest Control That Protects Your Home, Not Just Treats It</h1>
+    <p class="lead">Advantage Pest Control uses an integrated pest management program &mdash; combining targeted treatment with habitat modification &mdash; to keep roaches, ants, rodents and more out for good.</p>
+    <div class="hero-ctas">
+      <a href="tel:2545633060" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.7 15.4 19 15.6 20.3 15.6C20.9 15.6 21.3 16 21.3 16.6V20.3C21.3 20.9 20.9 21.3 20.3 21.3C10.7 21.3 3 13.6 3 4C3 3.4 3.4 3 4 3H7.7C8.3 3 8.7 3.4 8.7 4C8.7 5.3 8.9 6.6 9.3 7.8C9.4 8.2 9.3 8.6 9.1 8.9L6.6 10.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Call (254) 563-3060
+      </a>
+      <a href="#services" class="btn-secondary">See Our Services</a>
+    </div>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.4 15.9 2 12 2C8.1 2 5 5.4 5 9.5C5 14.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        408 E Avenue G, Suite 5, Killeen, TX 76541
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20V18H4V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Free phone estimates
+      </span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2>Full-Service Pest Protection</h2>
+    <p class="section-sub">From routine treatments to targeted termite defense, Advantage Pest Control handles it &mdash; no job is too small.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 6L38 12V22C38 31 32 38 24 41C16 38 10 31 10 22V12L24 6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M18 23L22 27L30 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>General Pest Control</h3>
+        <p>Bi-monthly or one-time treatments covering roaches, ants, spiders, scorpions, wasps, bees, crickets, silverfish and earwigs.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="20" width="32" height="18" rx="2" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M8 20L24 8L40 20" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M20 38V28H28V38" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <h3>Termite Treatment</h3>
+        <p>Sentricon bait station system installed around your property to monitor and eliminate termite colonies at the source.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 30C24 30 12 22 12 14C12 9.6 15.6 6 20 6C21.7 6 23.3 6.6 24 8C24.7 6.6 26.3 6 28 6C32.4 6 36 9.6 36 14C36 22 24 30 24 30Z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/>
+          <path d="M24 30V42" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+          <path d="M17 36L24 42L31 36" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Rodent Control</h3>
+        <p>Targeted control and exclusion for mice and rats, addressing entry points as well as active infestations.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M24 16V24L30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Bi-Monthly &amp; One-Time Plans</h3>
+        <p>Flexible scheduling: recurring bi-monthly service for ongoing protection, or a one-time visit for immediate issues.</p>
+      </div>
+    </div>
+
+    <div class="pest-tags">
+      <span class="pest-tag">Roaches</span>
+      <span class="pest-tag">Ants</span>
+      <span class="pest-tag">Spiders</span>
+      <span class="pest-tag">Scorpions</span>
+      <span class="pest-tag">Wasps</span>
+      <span class="pest-tag">Bees</span>
+      <span class="pest-tag">Crickets</span>
+      <span class="pest-tag">Silverfish</span>
+      <span class="pest-tag">Earwigs</span>
+      <span class="pest-tag">Mice</span>
+      <span class="pest-tag">Rats</span>
+      <span class="pest-tag">Termites</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2>Straightforward Rates</h2>
+    <p class="section-sub">Special rates available for Killeen Chamber of Commerce members.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="plan">Bi-Monthly Plan</div>
+        <div class="amount">$99</div>
+        <p class="desc">Recurring service for ongoing pest protection.</p>
+      </div>
+      <div class="price-card">
+        <div class="plan">One-Time Service</div>
+        <div class="amount">$145</div>
+        <p class="desc">Single visit for an immediate pest issue.</p>
+      </div>
+      <div class="price-card">
+        <div class="plan">Termite Treatment</div>
+        <div class="amount">From $850</div>
+        <p class="desc">Sentricon bait station installation and monitoring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <div class="section-label">Why Choose Us</div>
+    <h2>The Advantage Approach</h2>
+    <p class="section-sub">An integrated pest management program built to solve the problem, not just spray it.</p>
+    <div class="why-list">
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L20 6V11C20 16.5 16.5 21 12 22C7.5 21 4 16.5 4 11V6L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12L11 14L15 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h4>Integrated Pest Management</h4>
+          <p>Combines chemical treatment with habitat modification for longer-lasting results.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20V18H4V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <div>
+          <h4>Free Phone Estimates</h4>
+          <p>Call and get a free estimate before you commit to any service.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21L9 19L20 8C21 7 21 5.5 20 4.5C19 3.5 17.5 3.5 16.5 4.5L5.5 15.5L3 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14.5 6.5L17.5 9.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        <div>
+          <h4>No Job Too Small</h4>
+          <p>From a single-room issue to full-property protection, every job gets attention.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 21V8L12 3L20 8V21H14V15H10V21H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <div>
+          <h4>Chamber of Commerce Rates</h4>
+          <p>Special pricing available for Killeen Chamber of Commerce members.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Service Area</div>
+    <h2>Proudly Serving Central Texas</h2>
+    <div class="area-card">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.4 15.9 2 12 2C8.1 2 5 5.4 5 9.5C5 14.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+      <div>
+        <p>Advantage Pest Control serves homes and businesses throughout:</p>
+        <div class="area-cities">
+          <span>Killeen, TX</span>
+          <span>Copperas Cove</span>
+          <span>Kempner</span>
+          <span>Ft. Hood</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-cta">
+      <h2>Ready to Get Started?</h2>
+      <p>Call now for a free phone estimate on your pest control or termite treatment needs.</p>
+      <a href="tel:2545633060" class="footer-call">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.7 15.4 19 15.6 20.3 15.6C20.9 15.6 21.3 16 21.3 16.6V20.3C21.3 20.9 20.9 21.3 20.3 21.3C10.7 21.3 3 13.6 3 4C3 3.4 3.4 3 4 3H7.7C8.3 3 8.7 3.4 8.7 4C8.7 5.3 8.9 6.6 9.3 7.8C9.4 8.2 9.3 8.6 9.1 8.9L6.6 10.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        (254) 563-3060
+      </a>
+    </div>
+    <div class="footer-info">
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.4 15.9 2 12 2C8.1 2 5 5.4 5 9.5C5 14.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span>408 E Avenue G, Suite 5, Killeen, TX 76541</span>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.7 15.4 19 15.6 20.3 15.6C20.9 15.6 21.3 16 21.3 16.6V20.3C21.3 20.9 20.9 21.3 20.3 21.3C10.7 21.3 3 13.6 3 4C3 3.4 3.4 3 4 3H7.7C8.3 3 8.7 3.4 8.7 4C8.7 5.3 8.9 6.6 9.3 7.8C9.4 8.2 9.3 8.6 9.1 8.9L6.6 10.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <a href="tel:2545633060">(254) 563-3060</a>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.4 15.9 2 12 2C8.1 2 5 5.4 5 9.5C5 14.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span>Serving Killeen, Copperas Cove, Kempner &amp; Ft. Hood, TX</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; Advantage Pest Control &mdash; Killeen, TX
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

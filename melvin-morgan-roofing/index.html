@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melvin T. Morgan Roofing & Sheet Metal Co, INC. | Central Virginia Roofing Contractor</title>
+<style>
+  :root{
+    --charcoal:#1c2126;
+    --charcoal-2:#252b32;
+    --slate:#3a434d;
+    --red:#a4231f;
+    --red-dark:#7f1a17;
+    --paper:#f6f4f1;
+    --paper-2:#ece8e2;
+    --line:#dcd6cd;
+    --ink:#1c2126;
+    --muted:#5b6470;
+    --white:#ffffff;
+    --radius:14px;
+    --shadow:0 10px 30px -12px rgba(28,33,38,0.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    overflow-x:hidden;
+    width:100%;
+    padding-bottom:64px; /* space for sticky call bar */
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  h1,h2,h3{line-height:1.15;font-weight:800;letter-spacing:-0.01em;}
+  h2{font-size:clamp(1.5rem,4.5vw,2.2rem);color:var(--charcoal);}
+  .eyebrow{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--red);
+    background:rgba(164,35,31,0.08);
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:14px;
+  }
+  .section-head{margin-bottom:32px;max-width:640px;}
+  .section-head p{color:var(--muted);margin-top:10px;font-size:1rem;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:52px;
+    padding:14px 24px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:1rem;
+    border:2px solid transparent;
+    cursor:pointer;
+    width:100%;
+  }
+  .btn svg{width:20px;height:20px;flex-shrink:0;}
+  .btn-primary{background:var(--red);color:var(--white);box-shadow:0 8px 20px -6px rgba(164,35,31,0.55);}
+  .btn-primary:active{background:var(--red-dark);}
+  .btn-secondary{background:transparent;border-color:rgba(255,255,255,0.35);color:var(--white);}
+  .btn-outline{background:transparent;border-color:var(--slate);color:var(--charcoal);}
+  .btn-row{display:flex;flex-direction:column;gap:12px;margin-top:28px;}
+  @media(min-width:560px){
+    .btn{width:auto;}
+    .btn-row{flex-direction:row;}
+  }
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:40;
+    background:rgba(28,33,38,0.96);
+    backdrop-filter:blur(6px);
+    color:var(--white);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1rem;}
+  .brand .logo{width:36px;height:36px;flex-shrink:0;}
+  .brand .name{line-height:1.1;}
+  .brand .name small{display:block;font-weight:500;font-size:11px;color:#b8bec5;letter-spacing:0.02em;}
+  .header-call{
+    display:flex;align-items:center;gap:8px;
+    background:var(--red);
+    color:var(--white);
+    border-radius:999px;
+    padding:9px 16px;
+    font-weight:700;
+    font-size:13px;
+    white-space:nowrap;
+  }
+  .header-call svg{width:16px;height:16px;}
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(164,35,31,0.35), transparent 55%),
+      linear-gradient(180deg,var(--charcoal) 0%, var(--charcoal-2) 100%);
+    color:var(--white);
+    padding:52px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-illus{
+    position:absolute;right:-60px;top:-40px;width:280px;opacity:0.16;
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero h1{font-size:clamp(1.9rem,7vw,3.1rem);}
+  .hero h1 .accent{color:#ff6b63;}
+  .hero p.lead{
+    margin-top:16px;font-size:1.05rem;color:#d7dade;max-width:560px;
+  }
+  .hero-badges{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;
+  }
+  .hero-badge{
+    display:flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:999px;
+    padding:8px 14px;font-size:13px;font-weight:600;color:#eceff1;
+  }
+  .hero-badge svg{width:15px;height:15px;color:#ff8983;}
+
+  /* Services */
+  .svc-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;
+  }
+  @media(min-width:640px){ .svc-grid{grid-template-columns:1fr 1fr;} }
+  @media(min-width:960px){ .svc-grid{grid-template-columns:repeat(3,1fr);} }
+  .svc-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .svc-card .icon{
+    width:46px;height:46px;border-radius:12px;
+    background:rgba(164,35,31,0.09);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .svc-card .icon svg{width:24px;height:24px;color:var(--red);}
+  .svc-card h3{font-size:1.05rem;color:var(--charcoal);margin-bottom:6px;}
+  .svc-card p{color:var(--muted);font-size:0.92rem;}
+
+  /* Why us */
+  .why{background:var(--charcoal);color:var(--white);}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:start;}
+  @media(min-width:840px){ .why-grid{grid-template-columns:1.1fr 1fr;} }
+  .why-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .owner-block{
+    display:flex;gap:14px;align-items:center;margin-bottom:18px;
+  }
+  .owner-avatar{
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(145deg,var(--red),var(--red-dark));
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:1.1rem;flex-shrink:0;
+  }
+  .owner-name{font-weight:700;font-size:1.05rem;}
+  .owner-title{font-size:13px;color:#b8bec5;}
+  .why-list{display:flex;flex-direction:column;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .icon{
+    width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.08);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .why-item .icon svg{width:20px;height:20px;color:#ff8983;}
+  .why-item h3{font-size:1rem;margin-bottom:4px;}
+  .why-item p{color:#c3c8cd;font-size:0.9rem;}
+
+  /* Service area */
+  .area-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:720px){ .area-grid{grid-template-columns:repeat(3,1fr);} }
+  .area-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);text-align:center;
+  }
+  .area-card .pin{
+    width:42px;height:42px;border-radius:50%;background:rgba(164,35,31,0.09);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+  }
+  .area-card .pin svg{width:22px;height:22px;color:var(--red);}
+  .area-card h3{font-size:1.05rem;margin-bottom:10px;color:var(--charcoal);}
+  .area-call{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--red);font-weight:700;font-size:0.98rem;
+    padding:10px 6px;min-height:44px;
+  }
+  .area-map{
+    margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem;
+  }
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:28px;}
+  @media(min-width:900px){ .contact-grid{grid-template-columns:1fr 1fr;} }
+  .phone-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  .phone-row{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;min-height:44px;
+  }
+  .phone-row .label{font-size:0.9rem;color:var(--muted);}
+  .phone-row .num{
+    display:flex;align-items:center;gap:8px;font-weight:700;color:var(--red);font-size:1rem;
+  }
+  .phone-row .num svg{width:16px;height:16px;}
+  .email-row{
+    margin-top:14px;display:flex;align-items:center;gap:10px;
+    background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;font-weight:600;color:var(--charcoal);word-break:break-all;
+  }
+  .email-row svg{width:18px;height:18px;color:var(--red);flex-shrink:0;}
+
+  form.contact-form{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow);
+  }
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:6px;
+  }
+  .field input,.field textarea,.field select{
+    width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;
+    font-size:16px;font-family:inherit;background:var(--paper);color:var(--ink);
+    min-height:44px;
+  }
+  .field textarea{min-height:100px;resize:vertical;}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:2px solid var(--red);outline-offset:1px;}
+  .form-note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center;}
+
+  /* Footer */
+  footer{
+    background:var(--charcoal-2);color:#b8bec5;padding:36px 0 90px;font-size:13px;
+  }
+  .footer-top{
+    display:flex;flex-direction:column;gap:18px;padding-bottom:22px;
+    border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:18px;
+  }
+  @media(min-width:640px){
+    .footer-top{flex-direction:row;justify-content:space-between;align-items:center;}
+  }
+  .footer-brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:700;}
+  .footer-brand svg{width:28px;height:28px;}
+  .footer-links{display:flex;flex-wrap:wrap;gap:16px;}
+  .footer-bottom{display:flex;flex-direction:column;gap:6px;}
+
+  /* Sticky mobile call bar */
+  .call-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:var(--red);
+    display:flex;align-items:stretch;
+    box-shadow:0 -6px 20px rgba(0,0,0,0.25);
+  }
+  .call-bar a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:10px;
+    color:var(--white);font-weight:700;font-size:15px;padding:14px 10px;min-height:56px;
+  }
+  .call-bar a svg{width:20px;height:20px;}
+  .call-bar .divider{width:1px;background:rgba(255,255,255,0.25);}
+  .call-bar .secondary{background:rgba(0,0,0,0.15);flex:0.85;}
+
+  @media(min-width:900px){
+    .call-bar{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner wrap" style="padding-left:0;padding-right:0;">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="10" fill="#a4231f"/>
+        <path d="M8 27 L24 13 L40 27" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M13 24 V36 H35 V24" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span class="name">MELVIN T. MORGAN<small>Roofing &amp; Sheet Metal Co, INC.</small></span>
+    </div>
+    <a class="header-call" href="tel:4349843898" aria-label="Call Lynchburg office">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-illus" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 140 L100 60 L180 140" stroke="#ff8983" stroke-width="6" fill="none"/>
+    <path d="M40 130 V180 H160 V130" stroke="#ff8983" stroke-width="6" fill="none"/>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Central Virginia Roofing Contractor</span>
+    <h1>Roofing done right<br><span class="accent">the first time.</span></h1>
+    <p class="lead">Melvin T. Morgan Roofing &amp; Sheet Metal Co, INC. serves Lynchburg, Roanoke, Charlottesville and Central Virginia with roof replacement, repair, and emergency service — backed by free inspections and financing options.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:4349843898">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 434-984-3898
+      </a>
+      <a class="btn btn-secondary" href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Get a Free Inspection
+      </a>
+    </div>
+    <div class="hero-badges">
+      <span class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Free Roof Inspections</span>
+      <span class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Financing Available</span>
+      <span class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Emergency Roofing Available</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Full-service roofing &amp; sheet metal</h2>
+      <p>From routine repairs to full replacements and commercial work, our crews handle it all across Central Virginia.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></div>
+        <h3>Roof Replacement &amp; Repair</h3>
+        <p>Full tear-off replacements and targeted repairs built to last through Virginia weather.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>Emergency Roofing</h3>
+        <p>Roof emergency? Reach out and our team will respond to get your home protected.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M3 8l9-4 9 4"/></svg></div>
+        <h3>Flat Roofing</h3>
+        <p>Specialized flat roof systems installed and maintained for lasting protection.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.9A5 5 0 0 1 6 5.5a6 6 0 0 1 11.3-1.4A5.5 5.5 0 0 1 20 14.9"/><path d="M12 12v9M9 18l3 3 3-3"/></svg></div>
+        <h3>Storm Damage Roofing</h3>
+        <p>Wind, hail, and storm damage assessment and repair to get your roof back to sound condition.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Roof Inspections</h3>
+        <p>Thorough, free roof inspections that catch small issues before they become big ones.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M5 7v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7"/><path d="M9 11v4M15 11v4"/></svg></div>
+        <h3>Gutter Installation &amp; Repair</h3>
+        <p>Seamless gutter installation and repair to keep water moving away from your home.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></div>
+        <h3>Skylight Services</h3>
+        <p>Skylight installation, replacement, and leak repair done with proper flashing detail.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/></svg></div>
+        <h3>Sheet Metal Services</h3>
+        <p>Custom flashing, trim, and sheet metal fabrication for a durable, weathertight finish.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="13" height="13" rx="1"/><path d="M16 11h3l2 3v6h-5"/><circle cx="7.5" cy="20.5" r="1.5"/><circle cx="17.5" cy="20.5" r="1.5"/></svg></div>
+        <h3>Commercial Roofing</h3>
+        <p>Roofing solutions for commercial properties across the region, from repair to replacement.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head" style="color:#fff;">
+      <span class="eyebrow" style="background:rgba(255,255,255,0.12);color:#ff8983;">Why Us</span>
+      <h2 style="color:#fff;">A trusted roofing contractor in Central Virginia</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="owner-block">
+          <div class="owner-avatar">MM</div>
+          <div>
+            <div class="owner-name">Melvin Morgan Jr.</div>
+            <div class="owner-title">Company Leader</div>
+          </div>
+        </div>
+        <p style="color:#c3c8cd;font-size:0.95rem;">Melvin T. Morgan Roofing &amp; Sheet Metal Co, INC. is led by Melvin Morgan Jr., serving homeowners and businesses throughout Lynchburg, Roanoke, and Charlottesville with dependable roofing work and straightforward service.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <div><h3>Financing Options Available</h3><p>Flexible financing to help make necessary roofing work possible.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+          <div><h3>Free Roof Inspections</h3><p>Get a clear, no-cost assessment of your roof's condition.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3>Multi-City Coverage</h3><p>Serving Lynchburg, Roanoke, Charlottesville and Central Virginia.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Service Area</span>
+      <h2>Proudly serving Central Virginia</h2>
+      <p>Call the office nearest you for the fastest response.</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Lynchburg</h3>
+        <a class="area-call" href="tel:4349843898">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          434-984-3898
+        </a>
+      </div>
+      <div class="area-card">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Roanoke</h3>
+        <a class="area-call" href="tel:4342373800">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          434-237-3800
+        </a>
+      </div>
+      <div class="area-card">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Charlottesville</h3>
+        <a class="area-call" href="tel:5408900358">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          540-890-0358
+        </a>
+      </div>
+    </div>
+    <p class="area-map">Serving homeowners and businesses across Lynchburg, Roanoke, Charlottesville and the surrounding Central Virginia region.</p>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Request your free roof inspection</h2>
+      <p>Call the number for your area, email us, or send a message below.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="phone-list">
+          <div class="phone-row">
+            <span class="label">Toll-Free</span>
+            <a class="num" href="tel:18002490358">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              1-800-249-0358
+            </a>
+          </div>
+          <div class="phone-row">
+            <span class="label">Lynchburg</span>
+            <a class="num" href="tel:4349843898">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              434-984-3898
+            </a>
+          </div>
+          <div class="phone-row">
+            <span class="label">Roanoke</span>
+            <a class="num" href="tel:4342373800">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              434-237-3800
+            </a>
+          </div>
+          <div class="phone-row">
+            <span class="label">Charlottesville</span>
+            <a class="num" href="tel:5408900358">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              540-890-0358
+            </a>
+          </div>
+        </div>
+        <a class="email-row" href="mailto:mtmestimating@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          mtmestimating@gmail.com
+        </a>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" placeholder="(434) 000-0000" />
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <select id="city">
+            <option>Lynchburg</option>
+            <option>Roanoke</option>
+            <option>Charlottesville</option>
+            <option>Other in Central Virginia</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">How can we help?</label>
+          <textarea id="message" placeholder="Tell us about your roofing project..."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;">Send Request</button>
+        <p class="form-note">Prefer to talk now? Call 434-984-3898.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="10" fill="#a4231f"/>
+          <path d="M8 27 L24 13 L40 27" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M13 24 V36 H35 V24" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        Melvin T. Morgan Roofing &amp; Sheet Metal Co, INC.
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Serving Lynchburg, Roanoke, Charlottesville &amp; Central Virginia.</div>
+      <div>Toll-Free 1-800-249-0358 &middot; Lynchburg 434-984-3898 &middot; Roanoke 434-237-3800 &middot; Charlottesville 540-890-0358</div>
+      <div>mtmestimating@gmail.com</div>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:4349843898">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call 434-984-3898
+  </a>
+  <div class="divider"></div>
+  <a class="secondary" href="#contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+    Free Inspection
+  </a>
+</div>
+
+</body>
+</html>

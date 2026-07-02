@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aqua-Clean Pool Service, Inc | Charlottesville, VA Pool Installation &amp; Service</title>
+<style>
+  :root{
+    --deep:#053a54;
+    --teal:#0a7ea4;
+    --aqua:#17b6d4;
+    --aqua-light:#e6f7fb;
+    --ink:#0c2532;
+    --gray:#5b7180;
+    --line:#dbeaef;
+    --white:#ffffff;
+    --radius:16px;
+    --shadow: 0 8px 24px rgba(5,58,84,0.10);
+    --shadow-lg: 0 16px 40px rgba(5,58,84,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.5;
+    overflow-x:hidden;
+    padding-bottom:64px; /* space for sticky call bar */
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px;}
+  section{padding:56px 0;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--deep);
+    color:#fff;
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:8px; padding-bottom:8px;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .topbar a{color:#fff; font-weight:600;}
+  .topbar .hours{color:#bfe4ef;}
+
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header.nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:12px; padding-bottom:12px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-weight:800; font-size:17px; letter-spacing:-0.02em;
+    color:var(--deep);
+  }
+  .brand small{display:block; font-weight:600; font-size:10.5px; color:var(--teal); letter-spacing:0.04em; text-transform:uppercase;}
+  .nav-call{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--teal); color:#fff;
+    padding:10px 16px; border-radius:999px;
+    font-weight:700; font-size:14px;
+    min-height:44px;
+    white-space:nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(120% 140% at 15% 0%, rgba(23,182,212,0.20), transparent 55%),
+      linear-gradient(180deg, #072f47 0%, #0a4a6b 60%, #0a7ea4 100%);
+    color:#fff;
+    padding:52px 0 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:auto -10% -30% -10%;
+    height:220px;
+    background:
+      repeating-linear-gradient(100deg, rgba(255,255,255,0.06) 0 40px, transparent 40px 80px);
+    opacity:0.5;
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .badge-row{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-bottom:18px;
+  }
+  .pill{
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.28);
+    padding:6px 12px; border-radius:999px;
+    font-size:12.5px; font-weight:600;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  h1{
+    font-size:clamp(30px, 7vw, 48px);
+    line-height:1.08;
+    letter-spacing:-0.02em;
+    font-weight:800;
+    margin-bottom:16px;
+    max-width:16ch;
+  }
+  h1 span{color:#8fe6f9;}
+  .hero p.lead{
+    font-size:17px;
+    color:#d9f0f6;
+    max-width:46ch;
+    margin-bottom:28px;
+  }
+  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:22px;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    min-height:52px;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:16px;
+    border:none;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{
+    background:#ffffff;
+    color:var(--deep);
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+  }
+  .btn-secondary{
+    background:transparent;
+    color:#fff;
+    border:2px solid rgba(255,255,255,0.55);
+  }
+  .btn:active{transform:scale(0.98);}
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:18px;
+    font-size:13.5px; color:#c9e9f1;
+  }
+  .hero-meta div{display:flex; align-items:center; gap:7px;}
+
+  /* ---------- Section headers ---------- */
+  .eyebrow{
+    color:var(--teal); font-weight:700; font-size:12.5px;
+    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;
+  }
+  h2{
+    font-size:clamp(24px, 5vw, 32px);
+    letter-spacing:-0.02em;
+    color:var(--deep);
+    margin-bottom:12px;
+    font-weight:800;
+  }
+  .section-intro{color:var(--gray); font-size:15.5px; max-width:60ch; margin-bottom:32px;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--aqua-light);}
+  .svc-grid{
+    display:grid; grid-template-columns:1fr; gap:14px;
+  }
+  @media(min-width:640px){ .svc-grid{grid-template-columns:1fr 1fr;} }
+  @media(min-width:960px){ .svc-grid{grid-template-columns:repeat(3,1fr);} }
+  .svc-card{
+    background:#fff;
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .svc-icon{
+    width:46px; height:46px;
+    border-radius:12px;
+    background:linear-gradient(135deg, var(--aqua), var(--teal));
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:14px;
+  }
+  .svc-icon svg{width:24px; height:24px; stroke:#fff;}
+  .svc-card h3{font-size:17px; margin-bottom:6px; color:var(--deep);}
+  .svc-card p{font-size:14px; color:var(--gray);}
+
+  /* ---------- Why us ---------- */
+  .why-grid{
+    display:grid; grid-template-columns:1fr; gap:20px;
+  }
+  @media(min-width:720px){ .why-grid{grid-template-columns:1fr 1fr;} }
+  .why-item{display:flex; gap:14px; align-items:flex-start;}
+  .why-ico{
+    flex:0 0 auto;
+    width:42px; height:42px; border-radius:10px;
+    background:var(--aqua-light);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .why-ico svg{width:22px; height:22px; stroke:var(--teal);}
+  .why-item h3{font-size:16px; color:var(--deep); margin-bottom:4px;}
+  .why-item p{font-size:14px; color:var(--gray);}
+
+  .brands{
+    margin-top:36px;
+    background:var(--deep);
+    border-radius:var(--radius);
+    padding:24px 20px;
+    color:#fff;
+    text-align:center;
+  }
+  .brands p.label{font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9fd6e6; margin-bottom:14px; font-weight:700;}
+  .brand-list{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:10px 14px;
+    font-weight:700; font-size:15px;
+  }
+  .brand-list span{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    padding:8px 14px; border-radius:10px;
+  }
+
+  /* ---------- Service area ---------- */
+  .area{background:var(--aqua-light);}
+  .area-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:12px;
+  }
+  @media(min-width:640px){ .area-grid{grid-template-columns:repeat(4,1fr);} }
+  .area-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 14px;
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .area-card svg{width:22px; height:22px; stroke:var(--teal); margin:0 auto 8px;}
+  .area-card strong{font-size:14.5px; color:var(--deep); display:block;}
+  .area-note{
+    margin-top:20px; font-size:14px; color:var(--gray);
+    display:flex; align-items:center; gap:8px;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid; grid-template-columns:1fr; gap:28px;
+  }
+  @media(min-width:840px){ .contact-grid{grid-template-columns:1fr 1fr;} }
+  .info-card{
+    background:var(--deep);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:28px 24px;
+  }
+  .info-row{
+    display:flex; gap:14px; align-items:flex-start;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .info-row:last-child{border-bottom:none;}
+  .info-row svg{width:22px; height:22px; stroke:#8fe6f9; flex:0 0 auto; margin-top:2px;}
+  .info-row h4{font-size:14.5px; color:#bfe4ef; font-weight:700; margin-bottom:3px;}
+  .info-row p, .info-row a{font-size:15.5px; font-weight:600;}
+  .info-row a.tel{color:#fff;}
+  .info-call-btn{
+    margin-top:20px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    background:#fff; color:var(--deep);
+    min-height:52px; border-radius:12px; font-weight:800; font-size:16px;
+  }
+
+  form.quote-form{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+  }
+  form.quote-form h3{color:var(--deep); font-size:18px; margin-bottom:4px;}
+  form.quote-form .sub{color:var(--gray); font-size:13.5px; margin-bottom:18px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block; font-size:13px; font-weight:700; color:var(--deep); margin-bottom:6px;}
+  .field input, .field select, .field textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-size:16px;
+    font-family:inherit;
+    background:#fbfeff;
+    min-height:44px;
+  }
+  .field textarea{min-height:88px; resize:vertical;}
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--teal); box-shadow:0 0 0 3px rgba(10,126,164,0.15);
+  }
+  .submit-btn{
+    width:100%;
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    min-height:50px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:16px;
+    cursor:pointer;
+  }
+  .form-note{font-size:12px; color:var(--gray); margin-top:10px; text-align:center;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#052235;
+    color:#a9c9d6;
+    padding:36px 0 28px;
+    font-size:13.5px;
+  }
+  .footer-top{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;
+    padding-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:20px;
+  }
+  .footer-brand{color:#fff; font-weight:800; font-size:16px; margin-bottom:6px;}
+  .footer-links{display:flex; flex-wrap:wrap; gap:14px;}
+  .footer-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; color:#7ea3b3;}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .call-bar{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--teal);
+    display:flex; align-items:stretch;
+    box-shadow:0 -6px 20px rgba(0,0,0,0.18);
+  }
+  .call-bar a{
+    flex:1;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    color:#fff; font-weight:800; font-size:16px;
+    min-height:64px;
+  }
+  .call-bar a.est{
+    background:var(--deep);
+    flex:0 0 40%;
+  }
+  @media(min-width:900px){
+    .call-bar{display:none;}
+    body{padding-bottom:0;}
+  }
+  @media(max-width:899px){
+    header.nav .nav-call{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span class="hours">Mon–Fri, 9am–4pm &middot; Avon Street Extended, Charlottesville, VA</span>
+      <a href="tel:4342958131">Call 434-295-8131</a>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <div class="brand">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0a7ea4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M2 13c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M12 3v6"/><circle cx="12" cy="3" r="1.2" fill="#0a7ea4"/></svg>
+        <div>
+          Aqua-Clean Pool Service
+          <small>Since 1988 &middot; Charlottesville, VA</small>
+        </div>
+      </div>
+      <a class="nav-call" href="tel:4342958131">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        434-295-8131
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="badge-row">
+        <span class="pill">&#9733; A+ BBB Accredited</span>
+        <span class="pill">Serving Charlottesville since 1988</span>
+      </div>
+      <h1>Pool care Charlottesville has <span>trusted for decades.</span></h1>
+      <p class="lead">Installation, maintenance, renovations, and repairs from a locally-owned pool company on Avon Street Extended. Free estimates, honest work, no surprises.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:4342958131">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#053a54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 434-295-8131
+        </a>
+        <a class="btn btn-secondary" href="#quote">Get a Free Estimate</a>
+      </div>
+      <div class="hero-meta">
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c9e9f1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Mon–Fri, 9am–4pm
+        </div>
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c9e9f1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Avon Street Extended, Charlottesville
+        </div>
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c9e9f1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Free estimates
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="eyebrow">What we do</div>
+      <h2>Full-service pool &amp; spa care</h2>
+      <p class="section-intro">From new construction to weekly maintenance, our team handles every part of pool ownership so you don't have to.</p>
+      <div class="svc-grid">
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M7 21h10M12 17v4"/></svg></div>
+          <h3>Pool Installation</h3>
+          <p>Fiberglass and concrete pool installation, built to last and designed around your backyard.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M2 13c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/><path d="M12 3v6"/></svg></div>
+          <h3>Service &amp; Maintenance</h3>
+          <p>Scheduled cleaning, balancing, and upkeep to keep your pool swim-ready all season.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2 4 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <h3>Renovations &amp; Upgrades</h3>
+          <p>Resurfacing, equipment upgrades, and full renovations that modernize an aging pool.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v2M15 3v2M4 8h16M5 8l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12"/></svg></div>
+          <h3>Water Analysis</h3>
+          <p>In-store pool &amp; spa water testing so you know exactly what your water needs.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 15c1 1 2 1.5 4 1.5s3-.5 4-1.5"/><path d="M9 9h.01M15 9h.01"/></svg></div>
+          <h3>Hot Tubs &amp; Swim Spas</h3>
+          <p>Sales, service, and support for hot tubs and swim spas built for year-round use.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Equipment Repair</h3>
+          <p>Pumps, filters, heaters, and controls repaired and serviced by our team.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <div class="wrap">
+      <div class="eyebrow">Why Aqua-Clean</div>
+      <h2>Local, established, and accredited</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div>
+            <h3>Serving Charlottesville since 1988</h3>
+            <p>Decades of hands-on pool experience in the same community.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6z"/></svg></div>
+          <div>
+            <h3>A+ BBB Accredited</h3>
+            <p>Rated A+ by the Better Business Bureau.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h3>Locally owned retail location</h3>
+            <p>Visit us in person on Avon Street Extended for chemicals, parts, and expert advice.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div>
+            <h3>Free estimates</h3>
+            <p>No-cost, no-pressure estimates on installation and renovation projects.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="brands">
+        <p class="label">Brands We Carry</p>
+        <div class="brand-list">
+          <span>Pentair</span><span>Hayward</span><span>Jandy</span><span>Zodiac</span><span>BioGuard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area" id="area">
+    <div class="wrap">
+      <div class="eyebrow">Where we work</div>
+      <h2>Proudly serving Central Virginia</h2>
+      <p class="section-intro">Based in Charlottesville, our crews serve pool and spa owners throughout the surrounding area.</p>
+      <div class="area-grid">
+        <div class="area-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Charlottesville</strong>
+        </div>
+        <div class="area-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Albemarle County</strong>
+        </div>
+        <div class="area-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Lake Monticello</strong>
+        </div>
+        <div class="area-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Scottsville</strong>
+        </div>
+        <div class="area-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Crozet</strong>
+        </div>
+      </div>
+      <div class="area-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a7ea4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        Not sure if you're in our service area? Give us a call and we'll let you know.
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Request your free estimate</h2>
+      <p class="section-intro">Call us directly or send a few details and we'll follow up.</p>
+      <div class="contact-grid">
+
+        <div class="info-card">
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <h4>Phone</h4>
+              <a class="tel" href="tel:4342958131">434-295-8131</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div>
+              <h4>Hours</h4>
+              <p>Monday – Friday, 9am – 4pm</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <h4>Location</h4>
+              <p>Avon Street Extended, Charlottesville, VA</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6z"/></svg>
+            <div>
+              <h4>Owner</h4>
+              <p>Pedro Pimentel</p>
+            </div>
+          </div>
+          <a class="info-call-btn" href="tel:4342958131">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#053a54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+
+        <form class="quote-form" onsubmit="return false;">
+          <h3>Free Estimate Request</h3>
+          <p class="sub">Tell us a bit about your pool and we'll get back to you.</p>
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder="Jane Smith" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" placeholder="(434) 555-0100" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="service">Service Needed</label>
+            <select id="service">
+              <option>Pool Installation</option>
+              <option>Service &amp; Maintenance</option>
+              <option>Renovations &amp; Upgrades</option>
+              <option>Water Analysis</option>
+              <option>Hot Tubs &amp; Swim Spas</option>
+              <option>Equipment Repair</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="msg">Details</label>
+            <textarea id="msg" placeholder="Tell us about your pool and what you need..."></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Request Free Estimate</button>
+          <p class="form-note">Prefer to talk now? Call 434-295-8131, Mon–Fri 9am–4pm.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Aqua-Clean Pool Service, Inc</div>
+          <div>Avon Street Extended, Charlottesville, VA</div>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#area">Service Area</a>
+          <a href="#quote">Contact</a>
+          <a href="tel:4342958131">434-295-8131</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aqua-Clean Pool Service, Inc. Serving Charlottesville since 1988.</span>
+        <span>A+ BBB Accredited &middot; Mon–Fri 9am–4pm</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="call-bar">
+    <a class="est" href="#quote">Free Estimate</a>
+    <a href="tel:4342958131">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call 434-295-8131
+    </a>
+  </div>
+
+</body>
+</html>

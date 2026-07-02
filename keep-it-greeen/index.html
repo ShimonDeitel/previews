@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keep It Greeen, Inc. | Lawn Care & Landscaping — Winston-Salem NC</title>
+<style>
+  :root{
+    --green:#1f7a3d;
+    --green-dark:#123f21;
+    --green-light:#e9f5ec;
+    --accent:#f2a71b;
+    --ink:#16241a;
+    --gray:#5c6b60;
+    --line:#dfe9e2;
+    --bg:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  .callbar{
+    background:var(--green-dark);
+    color:#fff;
+    text-align:center;
+    font-size:13px;
+    padding:8px 12px;
+  }
+  .callbar a{color:#c9f0d3;font-weight:700;}
+
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:14px 0;
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .header-row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand svg{width:34px;height:34px;flex-shrink:0;}
+  .brand-text{line-height:1.15;}
+  .brand-text .n1{font-size:16px;font-weight:800;color:var(--green-dark);}
+  .brand-text .n2{font-size:10.5px;color:var(--gray);font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+  .call-btn{
+    background:var(--green);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:10px 16px;
+    border-radius:8px;
+    white-space:nowrap;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .call-btn svg{width:16px;height:16px;}
+
+  .hero{
+    background:linear-gradient(180deg,var(--green-light) 0%,#fff 100%);
+    padding:40px 0 36px;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--green-dark);
+    color:#d9f3e0;
+    font-size:12px;
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:32px;
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:14px;
+    color:var(--green-dark);
+    letter-spacing:-.3px;
+  }
+  .hero h1 span{color:var(--green);}
+  .hero p{
+    font-size:16px;
+    color:var(--gray);
+    max-width:520px;
+    margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;}
+  .btn-primary{
+    background:var(--green);
+    color:#fff;
+    font-weight:700;
+    font-size:17px;
+    padding:16px 20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    box-shadow:0 8px 20px rgba(31,122,61,.25);
+  }
+  .btn-primary svg{width:20px;height:20px;}
+  .btn-secondary{
+    background:#fff;
+    border:1.5px solid var(--line);
+    color:var(--green-dark);
+    font-weight:600;
+    font-size:15px;
+    padding:14px 20px;
+    border-radius:10px;
+    text-align:center;
+  }
+  .hero-facts{display:flex;gap:18px;margin-top:26px;flex-wrap:wrap;}
+  .hero-fact{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;font-weight:600;}
+  .hero-fact svg{width:15px;height:15px;color:var(--green);flex-shrink:0;}
+
+  .section{padding:46px 0;}
+  .section-alt{background:var(--green-light);}
+  .eyebrow{
+    font-size:12px;font-weight:800;color:var(--green);
+    text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;
+  }
+  h2{font-size:24px;font-weight:800;color:var(--green-dark);margin-bottom:10px;letter-spacing:-.2px;}
+  .section-sub{color:var(--gray);font-size:15px;margin-bottom:28px;max-width:520px;}
+
+  .services-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  .service-card{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    background:#fff;
+  }
+  .service-icon{
+    width:38px;height:38px;
+    background:var(--green-light);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .service-icon svg{width:20px;height:20px;color:var(--green);}
+  .service-card span{font-size:14.5px;font-weight:700;color:var(--green-dark);}
+
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-icon{
+    width:46px;height:46px;background:var(--green-dark);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .why-icon svg{width:22px;height:22px;color:#fff;}
+  .why-item h3{font-size:15.5px;font-weight:700;color:var(--green-dark);margin-bottom:3px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  .owner-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    margin-top:28px;
+  }
+  .owner-avatar{
+    width:52px;height:52px;border-radius:50%;
+    background:var(--green);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:18px;
+    flex-shrink:0;
+  }
+  .owner-card h3{font-size:15.5px;color:var(--green-dark);margin-bottom:4px;}
+  .owner-card p{font-size:13.5px;color:var(--gray);}
+
+  .area-list{display:flex;flex-wrap:wrap;gap:8px;}
+  .area-pill{
+    background:#fff;border:1px solid var(--line);color:var(--green-dark);
+    font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;
+  }
+  .area-pill.home{background:var(--green-dark);color:#fff;border-color:var(--green-dark);}
+
+  .trust-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .trust-chip{
+    display:flex;align-items:center;gap:7px;
+    background:#fff;border:1px solid var(--line);
+    border-radius:10px;padding:10px 14px;
+    font-size:13px;font-weight:600;color:var(--green-dark);
+  }
+  .trust-chip svg{width:16px;height:16px;color:var(--green);flex-shrink:0;}
+
+  .contact-card{
+    background:var(--green-dark);
+    color:#fff;
+    border-radius:16px;
+    padding:28px 22px;
+    text-align:center;
+  }
+  .contact-card h2{color:#fff;}
+  .contact-card p{color:#bfe0c9;font-size:14.5px;margin-bottom:22px;}
+  .contact-phone{
+    font-size:26px;font-weight:800;color:#fff;margin-bottom:10px;display:block;letter-spacing:-.3px;
+  }
+  .contact-phone.second{font-size:20px;font-weight:700;color:#d9f3e0;margin-bottom:18px;}
+  .contact-info{
+    display:flex;flex-direction:column;gap:10px;margin-top:22px;padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.15);text-align:left;font-size:13.5px;color:#cdeed6;
+  }
+  .contact-info div{display:flex;gap:8px;align-items:flex-start;}
+  .contact-info svg{width:16px;height:16px;color:#7ed296;flex-shrink:0;margin-top:1px;}
+
+  footer{
+    background:var(--green-dark);
+    color:#93bfa1;
+    text-align:center;
+    font-size:12px;
+    padding:22px 16px;
+  }
+  footer a{color:#c9f0d3;}
+
+  @media(min-width:640px){
+    .hero h1{font-size:40px;}
+    .hero-ctas{flex-direction:row;}
+    .btn-primary,.btn-secondary{flex:1;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(min-width:900px){
+    .services-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">Call or Text Fernando: <a href="tel:3364091401">(336) 409-1401</a></div>
+
+<header>
+  <div class="container header-row">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" fill="#1f7a3d"/><path d="M12 7v7M9 11l3 3 3-3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="brand-text">
+        <div class="n1">Keep It Greeen</div>
+        <div class="n2">Lawn Care & Landscaping</div>
+      </div>
+    </div>
+    <a class="call-btn" href="tel:3364091401">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Family-Run · Winston-Salem, NC</div>
+    <h1>A lawn that looks<br><span>cared for</span> — because it is.</h1>
+    <p>Keep It Greeen is a family-run lawn care and landscaping company. Owner Fernando personally works and oversees every project.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:3364091401">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Call (336) 409-1401
+      </a>
+      <a class="btn-secondary" href="#services">View Services</a>
+    </div>
+    <div class="hero-facts">
+      <div class="hero-fact"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/></svg>Licensed for Pesticide Application</div>
+      <div class="hero-fact"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/></svg>Insured</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="eyebrow">What We Do</div>
+    <h2>Lawn Care & Landscaping</h2>
+    <p class="section-sub">Routine lawncare and landscaping for Winston-Salem, Lewisville, and Clemmons.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20h16M6 20V10l6-6 6 6v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Lawn Maintenance</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v18M5 8l7-5 7 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Spring/Fall Cleanups</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c4 4 6 7 6 10a6 6 0 01-12 0c0-3 2-6 6-10z" stroke="currentColor" stroke-width="1.8"/></svg></div><span>Leaf Removal</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="10" width="18" height="9" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8"/></svg></div><span>Mulch Application</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M8 6l4-4 4 4M8 18l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Pine Needle Service</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 10v11" stroke="currentColor" stroke-width="1.8"/></svg></div><span>Planting</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>BobCat Work</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 17.58A5 5 0 0018 8h-1.26A8 8 0 104 16.25" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 19l4-4M8 15l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><span>Snow Removal</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.8"/></svg></div><span>Mowing / Pruning</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l2 4 4 .6-3 3 .7 4.4-3.7-2-3.7 2 .7-4.4-3-3 4-.6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><span>Flower Bed Work</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20h16M12 20V10M9 10a3 3 0 013-3 3 3 0 013 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><span>Tree Removal</span></div>
+      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><span>Plug / Seed</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Why Keep It Greeen</div>
+    <h2>The Owner Shows Up to Your Yard</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="1.8"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7" stroke="#fff" stroke-width="1.8"/></svg></div>
+        <div><h3>Owner-Operated</h3><p>Fernando personally works and oversees every project — not a rotating crew of strangers.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" stroke-width="1.8"/></svg></div>
+        <div><h3>Licensed & Insured</h3><p>Fully licensed, including pesticide application, and insured.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" stroke="#fff" stroke-width="1.8"/></svg></div>
+        <div><h3>Family-Run</h3><p>A local, family-run company focused on doing the job right.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Satisfaction-First</h3><p>Our mission is to ensure customer satisfaction on every job.</p></div>
+      </div>
+    </div>
+
+    <div class="owner-card">
+      <div class="owner-avatar">FV</div>
+      <div>
+        <h3>Fernando Vazquez, Owner</h3>
+        <p>Runs Keep It Greeen personally — from mowing to tree removal — for homeowners across Winston-Salem, Lewisville, and Clemmons.</p>
+      </div>
+    </div>
+
+    <div class="trust-strip">
+      <div class="trust-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/></svg>Family-Owned</div>
+      <div class="trust-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/></svg>Licensed & Insured</div>
+      <div class="trust-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/></svg>Call or Text</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Service Area</div>
+    <h2>Proudly Serving</h2>
+    <div class="area-list">
+      <span class="area-pill home">Winston-Salem</span>
+      <span class="area-pill">Lewisville</span>
+      <span class="area-pill">Clemmons</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="contact-card">
+      <h2>Get a Yard You're Proud Of</h2>
+      <p>Call or text Fernando directly to get started.</p>
+      <a class="contact-phone" href="tel:3364091401">(336) 409-1401</a>
+      <a class="contact-phone second" href="tel:3364090993">(336) 409-0993</a>
+      <a class="btn-primary" href="tel:3364091401" style="max-width:280px;margin:0 auto;">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Tap to Call
+      </a>
+      <div class="contact-info">
+        <div><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/></svg>5811 Fox Point Circle, Winston-Salem, NC 27104</div>
+        <div><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.8"/><path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="1.8"/></svg>keepitgreeen@outlook.com</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Keep It Greeen, Inc. — Winston-Salem, NC — <a href="tel:3364091401">(336) 409-1401</a>
+  </div>
+</footer>
+
+</body>
+</html>

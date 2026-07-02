@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ed's Home & Commercial Improvement | Charleston, WV Roofing & Remodeling</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-soft:#4a453f;
+    --paper:#faf7f2;
+    --panel:#ffffff;
+    --line:#e7e0d6;
+    --accent:#c1502e;
+    --accent-dark:#9c3f22;
+    --accent-tint:#fdece5;
+    --forest:#2f4a3c;
+    --radius:16px;
+    --shadow:0 8px 24px rgba(28,26,23,0.08);
+    --shadow-sm:0 2px 8px rgba(28,26,23,0.06);
+    font-size:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+    padding-bottom:64px; /* room for sticky call bar */
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  h1,h2,h3{font-weight:800;letter-spacing:-0.01em;}
+  h2{font-size:clamp(1.5rem,4vw,2.1rem);margin-bottom:8px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--accent-dark);background:var(--accent-tint);
+    padding:6px 12px;border-radius:999px;margin-bottom:14px;
+  }
+  .lede{color:var(--ink-soft);font-size:1.02rem;max-width:56ch;margin-bottom:32px;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--forest);color:#fff;font-size:0.85rem;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding-top:8px;padding-bottom:8px;flex-wrap:wrap;
+  }
+  .topbar a{font-weight:600;}
+  .topbar .phone-top{display:flex;align-items:center;gap:6px;}
+
+  header.site-header{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:20;
+  }
+  header.site-header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;line-height:1.15;}
+  .brand .logo-badge{
+    width:42px;height:42px;border-radius:10px;background:var(--accent);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .brand small{display:block;font-weight:600;color:var(--ink-soft);font-size:0.72rem;letter-spacing:0.02em;}
+  .header-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--accent);color:#fff;font-weight:700;font-size:0.9rem;
+    padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:var(--shadow-sm);
+  }
+  @media (max-width:520px){
+    .header-cta span.full{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 85% -10%, var(--accent-tint), transparent 60%),
+      linear-gradient(180deg,#fff, var(--paper));
+    padding:48px 0 44px;
+  }
+  .hero-grid{display:grid;gap:32px;align-items:center;}
+  @media (min-width:900px){
+    .hero-grid{grid-template-columns:1.1fr 0.9fr;}
+  }
+  .hero h1{font-size:clamp(2rem,6vw,3.1rem);line-height:1.08;margin-bottom:16px;}
+  .hero h1 .accent{color:var(--accent);}
+  .hero-actions{display:flex;flex-direction:column;gap:12px;max-width:360px;}
+  @media (min-width:480px){
+    .hero-actions{flex-direction:row;max-width:none;flex-wrap:wrap;}
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-size:1rem;font-weight:700;padding:15px 22px;border-radius:12px;
+    min-height:52px;transition:transform .12s ease, box-shadow .12s ease;
+    border:2px solid transparent;
+  }
+  .btn:active{transform:scale(0.98);}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm);}
+  .btn-secondary{background:#fff;color:var(--ink);border-color:var(--line);}
+  .btn-block{width:100%;}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .badge-pill{
+    display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:8px 14px;font-size:0.82rem;font-weight:600;color:var(--ink-soft);
+    box-shadow:var(--shadow-sm);
+  }
+  .badge-pill svg{width:16px;height:16px;flex-shrink:0;color:var(--accent);}
+
+  .hero-visual{
+    background:var(--forest);border-radius:20px;padding:28px;color:#fff;
+    box-shadow:var(--shadow);
+  }
+  .hero-visual .stat-big{font-size:2.6rem;font-weight:800;line-height:1;}
+  .hero-visual .stat-label{font-size:0.85rem;opacity:0.85;margin-top:4px;margin-bottom:22px;}
+  .hero-visual ul{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .hero-visual li{display:flex;gap:10px;align-items:flex-start;font-size:0.92rem;}
+  .hero-visual svg{width:20px;height:20px;flex-shrink:0;color:#fff;opacity:0.9;margin-top:1px;}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;
+  }
+  @media (min-width:640px){
+    .services-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:980px){
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .service-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow-sm);
+  }
+  .service-card .icon-box{
+    width:48px;height:48px;border-radius:12px;background:var(--accent-tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .service-card .icon-box svg{width:24px;height:24px;color:var(--accent-dark);}
+  .service-card h3{font-size:1.08rem;margin-bottom:6px;}
+  .service-card p{color:var(--ink-soft);font-size:0.92rem;}
+
+  /* ---------- Why us ---------- */
+  .why-section{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media (min-width:640px){
+    .why-grid{grid-template-columns:1fr 1fr;}
+  }
+  .why-item{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:14px;background:var(--paper);}
+  .why-item .icon-box{
+    width:44px;height:44px;border-radius:10px;background:var(--forest);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .why-item .icon-box svg{width:22px;height:22px;color:#fff;}
+  .why-item h3{font-size:1rem;margin-bottom:4px;}
+  .why-item p{color:var(--ink-soft);font-size:0.9rem;}
+
+  /* ---------- Service area ---------- */
+  .area-section{padding:48px 0;}
+  .area-card{
+    background:var(--forest);color:#fff;border-radius:20px;padding:32px 24px;
+    display:grid;gap:24px;box-shadow:var(--shadow);
+  }
+  @media (min-width:800px){
+    .area-card{grid-template-columns:1fr 1fr;align-items:center;}
+  }
+  .area-card h2{color:#fff;}
+  .area-card p{color:rgba(255,255,255,0.85);margin-bottom:20px;max-width:48ch;}
+  .map-graphic{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);
+    border-radius:16px;padding:20px;display:flex;align-items:center;justify-content:center;
+  }
+  .map-graphic svg{width:100%;height:auto;max-width:280px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:24px;}
+  @media (min-width:900px){
+    .contact-grid{grid-template-columns:1fr 1fr;}
+  }
+  .info-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow-sm);
+  }
+  .info-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);}
+  .info-row:last-child{border-bottom:none;}
+  .info-row .icon-box{
+    width:40px;height:40px;border-radius:10px;background:var(--accent-tint);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .info-row .icon-box svg{width:20px;height:20px;color:var(--accent-dark);}
+  .info-row h4{font-size:0.95rem;margin-bottom:2px;}
+  .info-row p, .info-row a{color:var(--ink-soft);font-size:0.9rem;}
+  .info-row a.link{color:var(--accent-dark);font-weight:700;}
+  .pay-methods{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .pay-chip{
+    font-size:0.78rem;font-weight:700;color:var(--ink-soft);
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 10px;
+  }
+
+  form.quote-form{display:flex;flex-direction:column;gap:14px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field label{font-size:0.85rem;font-weight:700;color:var(--ink);}
+  .field input, .field textarea, .field select{
+    border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;
+    font-size:1rem;font-family:inherit;background:#fff;color:var(--ink);
+    min-height:48px;width:100%;
+  }
+  .field textarea{min-height:96px;resize:vertical;}
+  .field input:focus, .field textarea:focus, .field select:focus{
+    outline:none;border-color:var(--accent);
+  }
+  .form-note{font-size:0.78rem;color:var(--ink-soft);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:rgba(255,255,255,0.85);padding:36px 0 100px;}
+  footer .wrap{display:flex;flex-direction:column;gap:18px;}
+  @media (min-width:700px){
+    footer .wrap{flex-direction:row;justify-content:space-between;align-items:flex-start;}
+  }
+  footer .foot-brand{font-weight:800;color:#fff;font-size:1.05rem;margin-bottom:6px;}
+  footer .foot-links{display:flex;flex-direction:column;gap:6px;font-size:0.88rem;}
+  footer .foot-links a{color:rgba(255,255,255,0.85);}
+  footer .legal{font-size:0.76rem;color:rgba(255,255,255,0.5);margin-top:18px;}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .call-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    background:var(--accent);
+    display:flex;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.15);
+  }
+  .call-bar a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+    color:#fff;font-weight:700;font-size:1rem;padding:16px 10px;min-height:56px;
+  }
+  .call-bar a.secondary{background:var(--accent-dark);}
+  .call-bar svg{width:20px;height:20px;flex-shrink:0;}
+  @media (min-width:860px){
+    .call-bar{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Charleston, WV &amp; surrounding areas &middot; Free estimates</span>
+    <a class="phone-top" href="tel:3049656636">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+      304-965-6636
+    </a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" width="24" height="24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+      </span>
+      <span>
+        Ed's Home &amp; Commercial<br>
+        <small>Improvement &middot; Charleston, WV</small>
+      </span>
+    </div>
+    <a class="header-cta" href="tel:3049656636">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="full">Call Now</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">30+ Years Serving Charleston, WV</span>
+        <h1>Roofing &amp; remodeling done right, <span class="accent">the first time.</span></h1>
+        <p class="lede">Locally &amp; family owned home and commercial improvement contractor &mdash; roofing, remodeling, new home builds, additions, and commercial work backed by over three decades of experience.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-block" href="tel:3049656636">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+            Call 304-965-6636
+          </a>
+          <a class="btn btn-secondary btn-block" href="#contact">
+            Get a Free Estimate
+          </a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Free local estimates</span>
+          <span class="badge-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Financing via GreenSky</span>
+          <span class="badge-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Emergency services available</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="stat-big">30+ Years</div>
+        <div class="stat-label">of quality contracting work in Charleston, WV</div>
+        <ul>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>Residential &amp; commercial roofing</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>Home remodeling &amp; renovations</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 8v13h20V8z"/><path d="M9 21v-6h6v6"/></svg>New home building</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Home additions</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/></svg>Commercial improvement services</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <span class="eyebrow">What We Do</span>
+      <h2>Full-service home &amp; commercial improvement</h2>
+      <p class="lede">From a new roof to a full commercial buildout, we handle every phase of the job with over 30 years of hands-on experience.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></div>
+          <h3>Roofing</h3>
+          <p>Residential and commercial roofing &mdash; repairs, replacements, and new installations built to last.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h3>Home Remodeling &amp; Renovations</h3>
+          <p>Kitchens, baths, and whole-home renovations updated with quality craftsmanship.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 8v13h20V8z"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>New Home Building</h3>
+          <p>Ground-up new home construction managed from foundation to finish.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/><path d="M4 13h5M15 13h5"/></svg></div>
+          <h3>Home Additions</h3>
+          <p>Add the space you need &mdash; room additions built to match your home seamlessly.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/></svg></div>
+          <h3>Commercial Improvement</h3>
+          <p>Commercial property upgrades and improvement services for local businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="wrap">
+      <span class="eyebrow">Why Choose Ed's</span>
+      <h2>Built on 30+ years of trust in Charleston</h2>
+      <p class="lede">A locally owned and family owned contractor, invested in doing the job right for our Charleston neighbors.</p>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div>
+            <h3>30+ Years of Experience</h3>
+            <p>Over three decades of quality contracting work across Charleston and the surrounding area.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-6h6v6"/></svg></div>
+          <div>
+            <h3>Locally &amp; Family Owned</h3>
+            <p>A local Charleston, WV business, family owned and invested in the community we serve.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg></div>
+          <div>
+            <h3>Financing Available</h3>
+            <p>Flexible financing available through GreenSky to help you get the project started.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 11-14h-8z"/></svg></div>
+          <div>
+            <h3>Emergency Services Available</h3>
+            <p>Storm damage or an urgent repair? Emergency services are available when you need us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area-section">
+    <div class="wrap">
+      <div class="area-card">
+        <div>
+          <span class="eyebrow" style="background:rgba(255,255,255,0.15);color:#fff;">Service Area</span>
+          <h2>Proudly serving Charleston, West Virginia</h2>
+          <p>Free estimates for local Charleston customers. Give us a call to see how we can help with your next roofing, remodeling, or commercial project.</p>
+          <a class="btn btn-primary" href="tel:3049656636">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+            Call 304-965-6636
+          </a>
+        </div>
+        <div class="map-graphic">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="90" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4 6"/>
+            <circle cx="100" cy="100" r="60" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="4 6"/>
+            <path d="M100 55c-19 0-34 15-34 34 0 25 34 66 34 66s34-41 34-66c0-19-15-34-34-34z" fill="#c1502e"/>
+            <circle cx="100" cy="89" r="13" fill="#fff"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Request your free estimate</h2>
+      <p class="lede">Call, email, or send us a few details and we'll follow up about your project.</p>
+
+      <div class="contact-grid">
+        <div class="info-card">
+          <div class="info-row">
+            <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <h4>Phone</h4>
+              <a class="link" href="tel:3049656636">304-965-6636</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+            <div>
+              <h4>Email</h4>
+              <a class="link" href="mailto:Edshomeandcommercial@yahoo.com">Edshomeandcommercial@yahoo.com</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div>
+              <h4>Hours</h4>
+              <p>Monday &ndash; Friday: 8:00 AM &ndash; 5:00 PM</p>
+              <p>Saturday &ndash; Sunday: By appointment</p>
+              <p>Emergency services available</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg></div>
+            <div>
+              <h4>Payment &amp; Financing</h4>
+              <p>Visa, MasterCard, American Express, Discover, cash, and checks accepted. Financing available through GreenSky.</p>
+              <div class="pay-methods">
+                <span class="pay-chip">Visa</span>
+                <span class="pay-chip">MasterCard</span>
+                <span class="pay-chip">Amex</span>
+                <span class="pay-chip">Discover</span>
+                <span class="pay-chip">Cash</span>
+                <span class="pay-chip">Check</span>
+                <span class="pay-chip">GreenSky Financing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3 style="margin-bottom:16px;">Request a Free Estimate</h3>
+          <form class="quote-form" onsubmit="return false;">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" type="text" placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="tel" placeholder="(304) 000-0000" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="service">Service Needed</label>
+              <select id="service">
+                <option>Roofing</option>
+                <option>Home Remodeling / Renovation</option>
+                <option>New Home Building</option>
+                <option>Home Addition</option>
+                <option>Commercial Improvement</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="details">Project Details</label>
+              <textarea id="details" placeholder="Tell us a bit about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Request</button>
+            <p class="form-note">Prefer to talk now? Call <a class="link" href="tel:3049656636" style="color:var(--accent-dark);font-weight:700;">304-965-6636</a> during business hours.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">Ed's Home &amp; Commercial Improvement</div>
+      <p style="font-size:0.88rem;max-width:40ch;color:rgba(255,255,255,0.7);">Locally &amp; family owned home and commercial improvement contractor serving Charleston, West Virginia with 30+ years of experience.</p>
+      <p class="legal">&copy; 2026 Ed's Home &amp; Commercial Improvement. All rights reserved.</p>
+    </div>
+    <div class="foot-links">
+      <a href="tel:3049656636">304-965-6636</a>
+      <a href="mailto:Edshomeandcommercial@yahoo.com">Edshomeandcommercial@yahoo.com</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Free Estimate</a>
+      <span style="color:rgba(255,255,255,0.6);">Charleston, WV &amp; surrounding areas</span>
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:3049656636">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+  <a class="secondary" href="#contact">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    Free Estimate
+  </a>
+</div>
+
+</body>
+</html>

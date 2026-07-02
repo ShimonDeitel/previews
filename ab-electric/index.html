@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A &amp; B Electric Services | Killeen, TX Electrician</title>
+<style>
+  :root {
+    --navy: #0b1220;
+    --navy-2: #121b2e;
+    --charcoal: #1a2333;
+    --amber: #ffb62e;
+    --amber-2: #ffc857;
+    --text: #eef2f8;
+    --text-dim: #b8c2d4;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 18, 32, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    max-width: 720px;
+    margin: 0 auto;
+    gap: 12px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  .brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .brand-name small {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--amber);
+    letter-spacing: 0.03em;
+  }
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--amber);
+    color: #1a1206;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    min-height: 44px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(255, 182, 46, 0.25);
+  }
+  .call-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* Hero */
+  .hero {
+    padding: 56px 20px 44px;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(255,182,46,0.12), transparent 55%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: rgba(255,182,46,0.1);
+    border: 1px solid rgba(255,182,46,0.3);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  h1 span { color: var(--amber); }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--amber);
+    color: #1a1206;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    width: 100%;
+    max-width: 320px;
+    min-height: 52px;
+    box-shadow: 0 8px 24px rgba(255, 182, 46, 0.3);
+  }
+  .cta-primary svg { width: 20px; height: 20px; }
+  .cta-note {
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  /* Section shared */
+  section { padding: 48px 20px; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* Services */
+  .services {
+    background: var(--navy-2);
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 480px) {
+    .service-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .service-card {
+    background: var(--charcoal);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  }
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    color: var(--amber);
+  }
+  .service-icon svg { width: 100%; height: 100%; }
+  .service-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .service-card p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+
+  /* Why us */
+  .why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .why-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--charcoal);
+    border-radius: var(--radius);
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .why-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    color: var(--amber);
+  }
+  .why-icon svg { width: 100%; height: 100%; }
+  .why-item h3 {
+    font-size: 15.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .why-item p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+
+  /* Service area */
+  .area {
+    background: var(--navy-2);
+    text-align: center;
+  }
+  .area-card {
+    background: var(--charcoal);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .area-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--amber);
+    margin: 0 auto 14px;
+  }
+  .area-icon svg { width: 100%; height: 100%; }
+  .area-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .area-card p {
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  /* Footer / contact */
+  footer {
+    background: var(--charcoal);
+    padding: 48px 20px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  footer h2 { margin-bottom: 12px; }
+  footer .hero-sub { margin-bottom: 24px; }
+  .footer-brand {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .footer-phone {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--amber);
+    margin-bottom: 24px;
+    letter-spacing: 0.01em;
+  }
+  .copyright {
+    margin-top: 28px;
+    font-size: 12px;
+    color: var(--text-dim);
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-name">A &amp; B Electric Services<small>Killeen, TX</small></div>
+    </div>
+    <a class="call-btn" href="tel:+12547027654" aria-label="Call A and B Electric Services">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-badge">Killeen's Electrician</span>
+    <h1>Electrical Work Done Right, <span>On Time, At a Fair Price</span></h1>
+    <p class="hero-sub">A &amp; B Electric Services provides residential and commercial electrical work in Killeen, TX &mdash; proudly serving the military community at Fort Hood.</p>
+    <div class="hero-ctas">
+      <a class="cta-primary" href="tel:+12547027654">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (254) 702-7654
+      </a>
+      <span class="cta-note">Residential &amp; commercial electrical services</span>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-label">What We Do</div>
+    <h2>Services We Offer</h2>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Electrical Wiring</h3>
+        <p>Residential wiring, circuit breaker work, and troubleshooting/repairs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </div>
+        <h3>Ceiling Fans &amp; Lighting</h3>
+        <p>Ceiling fan installation, lighting, and security lighting.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 6h4M10 10h4M10 14h4"/></svg>
+        </div>
+        <h3>Generator Installation</h3>
+        <p>Generator installation for homes and businesses.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h.01M8 11h.01M8 15h.01M12 7h4M12 11h4M12 15h4"/></svg>
+        </div>
+        <h3>Panel Upgrades &amp; Fuse Box Repair</h3>
+        <p>Panel upgrades, fuse box repair, and surge protection.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-9 9z"/><path d="M12 8v4l3 2"/></svg>
+        </div>
+        <h3>Remodeling &amp; Pool/Hot Tub</h3>
+        <p>Remodeling electrical work and pool/hot tub electrical repair.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>Commercial Construction</h3>
+        <p>New construction, tenant finish, and remodel/retrofit work.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <h3>LED Design &amp; Lighting Maintenance</h3>
+        <p>Parking lot lighting, LED design services, and lighting maintenance.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.5 5H19l-4.25 3.5L16.5 16 12 12.5 7.5 16l1.75-5.5L5 7h5.5z"/><path d="M4 21h16"/></svg>
+        </div>
+        <h3>Machine Hook-Ups &amp; Inspections</h3>
+        <p>Machine hook-ups, service upgrades, and inspections for businesses.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-label">Why Choose Us</div>
+    <h2>Built on Trust &amp; Fair Pricing</h2>
+    <div class="why-list">
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h3>On Time, Every Time</h3>
+          <p>A &amp; B Electric Services is committed to completing work on time and at a fair price.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg>
+        </div>
+        <div>
+          <h3>Strict Safety Guidelines</h3>
+          <p>All work is performed while maintaining strict safety guidelines.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <h3>Proud to Serve Fort Hood</h3>
+          <p>A &amp; B Electric Services proudly serves the military community at Fort Hood.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6-9 6-9-6z"/><path d="M3 9v6l9 6 9-6V9"/></svg>
+        </div>
+        <div>
+          <h3>Residential &amp; Commercial</h3>
+          <p>From homes to property management companies, HOAs, and businesses &mdash; routine maintenance and emergency repairs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-label">Where We Work</div>
+    <h2>Service Area</h2>
+    <div class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      </div>
+      <h3>Killeen, TX</h3>
+      <p>Serving Killeen, Texas and the surrounding Fort Hood military community.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Ready to Get Started?</h2>
+    <p class="hero-sub">Call A &amp; B Electric Services today for residential or commercial electrical work in Killeen, TX.</p>
+    <div class="footer-brand">A &amp; B Electric Services</div>
+    <a class="footer-phone" href="tel:+12547027654">(254) 702-7654</a>
+    <div>
+      <a class="call-btn" href="tel:+12547027654" style="max-width:320px; width:100%;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+    </div>
+    <p class="copyright">&copy; A &amp; B Electric Services &mdash; Killeen, TX</p>
+  </div>
+</footer>
+
+</body>
+</html>
