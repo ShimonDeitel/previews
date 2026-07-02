@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dave's Electric | Bozeman, MT Licensed Electrical Contractor</title>
+<style>
+  :root{
+    --navy:#0d2438; --gold:#c9922f; --ink:#1b2733; --paper:#faf8f4; --line:#e4ddd0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  header{position:sticky;top:0;background:var(--navy);color:#fff;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.15);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .logo{font-weight:800;font-size:20px;letter-spacing:.5px;}
+  .logo span{color:var(--gold);}
+  .call-btn{background:var(--gold);color:#1b2733;font-weight:700;padding:10px 20px;border-radius:6px;font-size:15px;white-space:nowrap;}
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,#173751 100%);color:#fff;padding:70px 0 90px;}
+  .hero .wrap{display:flex;flex-wrap:wrap;gap:40px;align-items:center;}
+  .hero-text{flex:1 1 460px;}
+  .hero h1{font-size:44px;line-height:1.15;margin-bottom:18px;font-weight:800;}
+  .hero h1 em{color:var(--gold);font-style:normal;}
+  .hero p{font-size:19px;color:#cdd8e2;max-width:520px;margin-bottom:28px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--gold);color:#1b2733;padding:16px 30px;border-radius:8px;font-weight:800;font-size:17px;display:inline-flex;align-items:center;gap:10px;}
+  .btn-outline{border:2px solid #fff;color:#fff;padding:14px 28px;border-radius:8px;font-weight:700;font-size:17px;}
+  .hero-badge{flex:1 1 320px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:28px;}
+  .hero-badge h3{color:var(--gold);font-size:15px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+  .hero-badge ul{list-style:none;}
+  .hero-badge li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px;}
+  .hero-badge li:last-child{border:none;}
+  section{padding:64px 0;}
+  h2{font-size:30px;margin-bottom:8px;font-weight:800;}
+  .sub{color:#6b7684;margin-bottom:36px;font-size:17px;}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .service-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px;}
+  .service-card .icon{width:44px;height:44px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .service-card h3{font-size:18px;margin-bottom:8px;}
+  .service-card p{color:#606b78;font-size:15px;}
+  .why{background:var(--navy);color:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;}
+  .why-item h3{color:var(--gold);font-size:20px;margin-bottom:10px;}
+  .why-item p{color:#cdd8e2;font-size:15.5px;}
+  .contact{background:#fff;border-top:1px solid var(--line);}
+  .contact-box{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:40px;display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;align-items:center;}
+  .contact-info h3{font-size:26px;margin-bottom:6px;}
+  .contact-info p{color:#606b78;}
+  .contact-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  footer{background:var(--navy);color:#9fb0c0;text-align:center;padding:30px 0;font-size:14px;}
+  footer strong{color:#fff;}
+  @media(max-width:640px){.hero h1{font-size:32px;} .nav{flex-direction:column;gap:12px;} h2{font-size:26px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">DAVE'S <span>ELECTRIC</span></div>
+    <a class="call-btn" href="tel:4065652188">Call (406) 565-2188</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>Bozeman's Licensed Electrician, <em>On Call 24 Hours</em></h1>
+      <p>Residential, commercial and industrial electrical work — new construction, remodels, service upgrades and emergency repair, done right the first time.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="tel:4065652188">📞 Tap to Call Now</a>
+        <a class="btn-outline" href="mailto:daveselectricmontana@hotmail.com">Email Us</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <h3>Why Bozeman Calls Dave's</h3>
+      <ul>
+        <li>Licensed electrical contractor</li>
+        <li>24-hour emergency service</li>
+        <li>Locally based at 60 Stubbs Ln, Bozeman, MT</li>
+        <li>Residential + commercial + industrial</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Electrical Services</h2>
+    <p class="sub">Full-scope electrical work across the Gallatin Valley.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="icon"></div><h3>New Construction Wiring</h3><p>Complete electrical rough-in and finish work for new builds.</p></div>
+      <div class="service-card"><div class="icon"></div><h3>Remodels</h3><p>Rewire and upgrade older homes safely and to code.</p></div>
+      <div class="service-card"><div class="icon"></div><h3>Service &amp; Repair</h3><p>Fast troubleshooting and repair for outages, flickers, and faults.</p></div>
+      <div class="service-card"><div class="icon"></div><h3>Commercial &amp; Industrial</h3><p>Electrical contracting for businesses and industrial sites.</p></div>
+      <div class="service-card"><div class="icon"></div><h3>24-Hour Emergency</h3><p>Power emergency? We answer the call day or night.</p></div>
+      <div class="service-card"><div class="icon"></div><h3>Troubleshooting</h3><p>Diagnose and fix electrical issues other electricians miss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <h2 style="color:#fff;">Why Homeowners Choose Dave's</h2>
+    <p class="sub" style="color:#a9b8c7;">Straight answers, licensed work, and a truck that actually shows up.</p>
+    <div class="why-grid">
+      <div class="why-item"><h3>Licensed &amp; Local</h3><p>Based right in Bozeman at 60 Stubbs Ln — not a call center three states away.</p></div>
+      <div class="why-item"><h3>24-Hour Availability</h3><p>Electrical problems don't wait for business hours, and neither do we.</p></div>
+      <div class="why-item"><h3>Full-Scope Capability</h3><p>From a single outlet to a full commercial build-out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div class="contact-info">
+        <h3>Ready when you are.</h3>
+        <p>60 Stubbs Ln, Bozeman, MT 59718</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn-primary" style="background:var(--navy);color:#fff;" href="tel:4065652188">📞 (406) 565-2188</a>
+        <a class="btn-outline" style="border-color:var(--navy);color:var(--navy);" href="mailto:daveselectricmontana@hotmail.com">Send an Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><strong>Dave's Electric</strong> — Bozeman, Montana &middot; Licensed Electrical Contractor</div>
+</footer>
+
+</body>
+</html>
