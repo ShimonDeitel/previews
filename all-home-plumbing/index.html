@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Home Plumbing Company — Plumber in Chattanooga & Hixson, TN</title>
+<meta name="description" content="All Home Plumbing Company — local, family owned and operated plumbing in Chattanooga, TN. Repairs, drain cleaning, water heaters and more. Call 423-598-1466.">
+<style>
+  :root{
+    --navy:#0e2a3f;
+    --navy2:#14405e;
+    --blue:#1273b5;
+    --blue-d:#0d5c92;
+    --amber:#f5a623;
+    --ink:#1c2b36;
+    --mut:#5b6d7a;
+    --line:#e3eaef;
+    --bg:#f6f9fb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  .hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+  .brand svg{flex:0 0 38px}
+  .brand-name{font-weight:800;font-size:16px;line-height:1.15;color:var(--navy)}
+  .brand-sub{font-size:11px;color:var(--mut);letter-spacing:.04em;text-transform:uppercase}
+  .hd-call{display:flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px;font-size:15px;white-space:nowrap;box-shadow:0 2px 6px rgba(18,115,181,.3)}
+  .hd-call:active{background:var(--blue-d)}
+  .hd-call svg{flex:0 0 16px}
+  .hd-call span.num{display:none}
+  @media(min-width:560px){.hd-call span.num{display:inline}}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 70%,#175177 100%);color:#fff;padding:52px 0 56px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;bottom:-140px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.04)}
+  .hero .wrap{position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;margin-bottom:18px}
+  .badge svg{flex:0 0 14px}
+  h1{font-size:clamp(30px,6.4vw,46px);line-height:1.12;font-weight:800;letter-spacing:-.02em;max-width:640px}
+  .hero p.lead{margin-top:14px;font-size:clamp(16px,2.6vw,19px);color:#c8d8e4;max-width:560px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:12px;padding:15px 24px;font-size:17px;transition:transform .1s}
+  .btn:active{transform:scale(.98)}
+  .btn-amber{background:var(--amber);color:#20303c;box-shadow:0 4px 14px rgba(245,166,35,.35)}
+  .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3)}
+  @media(max-width:440px){.btn{width:100%}}
+  .hero-points{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:14px;color:#c8d8e4}
+  .hero-points span{display:inline-flex;align-items:center;gap:7px}
+  .hero-points svg{flex:0 0 15px}
+
+  /* Section base */
+  section{padding:56px 0}
+  .kicker{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+  h2{font-size:clamp(24px,4.6vw,34px);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-top:6px}
+  .sub{color:var(--mut);margin-top:10px;max-width:600px}
+
+  /* Services */
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;margin-top:30px}
+  .svc{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 16px;display:flex;flex-direction:column;gap:10px}
+  .svc .ic{width:42px;height:42px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center}
+  .svc h3{font-size:15px;font-weight:700;color:var(--navy);line-height:1.3}
+
+  /* Why us */
+  .why{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:30px}
+  .why-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+  .why-card .ic{width:44px;height:44px;border-radius:50%;background:#e6f1f9;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .why-card h3{font-size:17px;color:var(--navy);font-weight:700}
+  .why-card p{font-size:14.5px;color:var(--mut);margin-top:6px}
+
+  /* Area */
+  .area-flex{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--navy)}
+
+  /* Contact */
+  .contact{background:var(--navy);color:#fff}
+  .contact h2{color:#fff}
+  .contact .sub{color:#c8d8e4}
+  .con-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+  .con-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:22px;text-decoration:none;display:block}
+  .con-card .lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9fb8c9;font-weight:700}
+  .con-card .val{font-size:19px;font-weight:800;margin-top:6px;word-break:break-word}
+  .con-card .note{font-size:13.5px;color:#c8d8e4;margin-top:4px}
+
+  footer{background:#0a1f2f;color:#8aa2b3;font-size:13.5px;padding:26px 0;text-align:center}
+  footer .fn{color:#fff;font-weight:700}
+
+  /* Sticky mobile call bar */
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--amber);color:#20303c;font-weight:800;font-size:17px;padding:14px;border-radius:12px;text-decoration:none;box-shadow:0 4px 14px rgba(245,166,35,.4)}
+  @media(max-width:700px){.callbar{display:block}body{padding-bottom:76px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a class="brand" href="#">
+      <svg width="38" height="38" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#1273b5"/><path d="M12 26v-8a4 4 0 0 1 4-4h8" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><path d="M24 10v8" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><circle cx="12" cy="29" r="2.6" fill="#f5a623"/></svg>
+      <span>
+        <span class="brand-name">All Home Plumbing</span><br>
+        <span class="brand-sub">Chattanooga, TN</span>
+      </span>
+    </a>
+    <a class="hd-call" href="tel:4235981466">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span>Call</span>&nbsp;<span class="num">423-598-1466</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7L12 2z"/></svg>
+      Local, family owned &amp; operated
+    </span>
+    <h1>Honest plumbing for Chattanooga homes.</h1>
+    <p class="lead">Licensed, bonded and insured. Our master plumber brings 20 years' experience — serving the Chattanooga community for over a decade.</p>
+    <div class="cta-row">
+      <a class="btn btn-amber" href="tel:4235981466">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Call 423-598-1466
+      </a>
+      <a class="btn btn-ghost" href="#services">See our services</a>
+    </div>
+    <div class="hero-points">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Licensed, bonded &amp; insured</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Emergency after-hours service</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Senior, military &amp; police discounts</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">What we do</span>
+    <h2>Plumbing services, done right</h2>
+    <p class="sub">From a dripping faucet to a full bathroom remodel — one call covers it.</p>
+    <div class="svc-grid">
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a4.5 4.5 0 0 0-6.4 6.4l-5 5a1.5 1.5 0 0 0 2.1 2.1l5-5a4.5 4.5 0 0 0 6.4-6.4l-3 3-2.1-2.1 3-3z"/></svg></div><h3>Plumbing Repair</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8a4 4 0 0 0-4 4"/></svg></div><h3>Drain Cleaning</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="7" y="3" width="10" height="16" rx="3"/><path d="M10 19v2m4-2v2M10 8h4"/></svg></div><h3>Water Heaters</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3>Kitchen Remodeling</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3zM6 12V5a2 2 0 0 1 4 0"/></svg></div><h3>Bathroom Remodeling</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M3 12h5l2-6 4 12 2-6h5"/></svg></div><h3>Water Lines</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></div><h3>Sump Pumps</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M7 8l5-5 5 5M12 3v13M7 16l5 5 5-5" /></svg></div><h3>Backflow Testing</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="kicker">Why All Home Plumbing</span>
+    <h2>A local plumber you can trust</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273b5" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Licensed, bonded &amp; insured</h3>
+        <p>Fully credentialed work on your home, with a master plumber who has 20 years' experience.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273b5" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M12 12v.01"/></svg></div>
+        <h3>Family owned &amp; operated</h3>
+        <p>A local business serving the Chattanooga community for over a decade — not a national franchise.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273b5" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Emergency after-hours service</h3>
+        <p>Plumbing problems don't keep business hours. Call when you need us.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273b5" stroke-width="2" aria-hidden="true"><path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6.5v11"/></svg></div>
+        <h3>Senior, military &amp; police discounts</h3>
+        <p>We're proud to offer discounts to seniors, military members and police.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <span class="kicker">Service area</span>
+    <h2>Serving Chattanooga &amp; surrounding areas</h2>
+    <p class="sub">Based in the Chattanooga area, we serve homes across the region:</p>
+    <div class="area-flex">
+      <span class="chip">Chattanooga</span>
+      <span class="chip">Hixson</span>
+      <span class="chip">Signal Mountain</span>
+      <span class="chip">Ooltewah</span>
+      <span class="chip">East Brainerd</span>
+      <span class="chip">Soddy Daisy</span>
+      <span class="chip">Brainerd</span>
+      <span class="chip">Red Bank</span>
+      <span class="chip">Apison</span>
+      <span class="chip">Harrison</span>
+      <span class="chip">Fort Oglethorpe</span>
+      <span class="chip">Lookout Mountain</span>
+      <span class="chip">Ringgold</span>
+      <span class="chip">Rossville</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="kicker" style="color:#f5a623">Get in touch</span>
+    <h2>Have a plumbing problem? Let's fix it.</h2>
+    <p class="sub">Call or email and we'll get you taken care of.</p>
+    <div class="con-grid">
+      <a class="con-card" href="tel:4235981466">
+        <span class="lbl">Phone</span>
+        <span class="val" style="display:block">423-598-1466</span>
+        <span class="note" style="display:block">Tap to call — emergency after-hours service available</span>
+      </a>
+      <a class="con-card" href="mailto:allhomeplumbing@gmail.com">
+        <span class="lbl">Email</span>
+        <span class="val" style="display:block">allhomeplumbing@gmail.com</span>
+        <span class="note" style="display:block">Send us a note about your project</span>
+      </a>
+      <div class="con-card">
+        <span class="lbl">Service area</span>
+        <span class="val" style="display:block">Chattanooga, TN</span>
+        <span class="note" style="display:block">Hixson, Signal Mountain, Ooltewah &amp; surrounding areas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="fn">All Home Plumbing Company</span> · Chattanooga, TN · 423-598-1466<br>
+    Licensed, bonded &amp; insured · Local, family owned &amp; operated
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:4235981466">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Call 423-598-1466
+  </a>
+</div>
+
+</body>
+</html>

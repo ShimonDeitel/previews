@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matt Harrod Electric — Licensed Electrician in Louisville, KY</title>
+<meta name="description" content="Matt Harrod Electric LLC — licensed, bonded and insured electrician serving Louisville, KY for 16 years. Residential & commercial. Call (502) 931-9389.">
+<style>
+:root{
+  --navy:#0e1b2c;
+  --navy2:#16283f;
+  --amber:#f5a623;
+  --amber-dark:#d98c0a;
+  --ink:#1c2530;
+  --gray:#5b6774;
+  --line:#e6eaef;
+  --bg:#f7f9fb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.2px}
+.brand .bolt{width:30px;height:30px;background:var(--amber);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand span small{display:block;font-size:10px;font-weight:600;color:#9fb0c3;letter-spacing:1.5px;text-transform:uppercase}
+.call-btn{display:flex;align-items:center;gap:8px;background:var(--amber);color:var(--navy);font-weight:800;font-size:15px;padding:10px 16px;border-radius:10px;white-space:nowrap;transition:background .15s}
+.call-btn:active,.call-btn:hover{background:var(--amber-dark)}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#1d3552 100%);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(245,166,35,.14) 0%,transparent 70%);pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(245,166,35,.14);border:1px solid rgba(245,166,35,.4);color:var(--amber);font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,6.5vw,52px);line-height:1.12;font-weight:800;letter-spacing:-.5px;max-width:680px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.sub{margin:16px 0 28px;font-size:clamp(15px,2.5vw,18px);color:#c3cfdd;max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;border-radius:12px;padding:15px 24px;font-size:16px;transition:transform .1s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn-amber{background:var(--amber);color:var(--navy)}
+.btn-amber:hover{background:var(--amber-dark)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.hero-strip{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;font-size:13.5px;color:#9fb0c3;font-weight:600}
+.hero-strip div{display:flex;align-items:center;gap:7px}
+.hero-strip svg{flex-shrink:0}
+
+/* Sections */
+section{padding:60px 0}
+.kicker{color:var(--amber-dark);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:2px}
+h2{font-size:clamp(24px,4.5vw,34px);font-weight:800;letter-spacing:-.4px;margin:8px 0 12px}
+.lead{color:var(--gray);max-width:620px;font-size:16px}
+
+/* Services */
+.svc{background:var(--bg)}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow .15s}
+.card:hover{box-shadow:0 6px 18px rgba(14,27,44,.08)}
+.card .ic{width:44px;height:44px;border-radius:11px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card h3{font-size:16.5px;font-weight:800;margin-bottom:4px}
+.card p{font-size:14px;color:var(--gray);line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:28px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.why{padding:24px;border-bottom:1px solid var(--line)}
+.why:last-child{border-bottom:0}
+.why .num{font-size:13px;font-weight:800;color:var(--amber-dark);letter-spacing:1px}
+.why h3{font-size:17px;font-weight:800;margin:6px 0 6px}
+.why p{font-size:14.5px;color:var(--gray)}
+
+/* Area */
+.area{background:var(--navy);color:#fff}
+.area .lead{color:#c3cfdd}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.05);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600}
+.chip.hl{background:var(--amber);border-color:var(--amber);color:var(--navy);font-weight:800}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:30px}
+.c-box{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:26px}
+.c-row{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.c-row:last-child{border-bottom:0}
+.c-row .ic{width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-row b{display:block;font-size:15px}
+.c-row small{color:var(--gray);font-size:13px}
+form{display:flex;flex-direction:column;gap:12px}
+label{font-size:13px;font-weight:700;color:var(--ink)}
+input,textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;font-size:15px;background:#fff}
+input:focus,textarea:focus{outline:none;border-color:var(--amber)}
+textarea{min-height:110px;resize:vertical}
+
+/* Footer */
+footer{background:var(--navy);color:#8fa1b5;padding:34px 0;font-size:13.5px}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+
+/* Sticky mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--amber);color:var(--navy);display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:17px;padding:15px 16px calc(15px + env(safe-area-inset-bottom));box-shadow:0 -4px 16px rgba(0,0,0,.18)}
+body{padding-bottom:64px}
+
+@media(min-width:700px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why{border-right:1px solid var(--line)}
+  .why:nth-child(2n){border-right:0}
+  .why:nth-last-child(-n+2){border-bottom:0}
+  .contact-grid{grid-template-columns:1fr 1.1fr}
+  .callbar{display:none}
+  body{padding-bottom:0}
+}
+@media(min-width:960px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <div class="bolt"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="#0e1b2c"/></svg></div>
+      <span>Matt Harrod Electric<small>Louisville, KY</small></span>
+    </a>
+    <a class="call-btn" href="tel:+15029319389">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="#0e1b2c"/></svg>
+      (502) 931-9389
+    </a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 3v6c0 5-3 8.5-7 11-4-2.5-7-6-7-11V5l7-3z" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Licensed &middot; Bonded &middot; Insured
+    </div>
+    <h1>Louisville's electrician for <em>16 years</em>. Done right, the first time.</h1>
+    <p class="sub">Residential and commercial electrical work across Louisville and surrounding neighborhoods — from a single outlet to a full service upgrade.</p>
+    <div class="hero-cta">
+      <a class="btn btn-amber" href="tel:+15029319389">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="#0e1b2c"/></svg>
+        Call (502) 931-9389
+      </a>
+      <a class="btn btn-ghost" href="#contact">Request a Quote</a>
+    </div>
+    <div class="hero-strip">
+      <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#f5a623" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg>Open 9:00–6:30</div>
+      <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z" stroke="#f5a623" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#f5a623" stroke-width="2"/></svg>Louisville &amp; surrounding areas</div>
+      <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/></svg>Residential &amp; commercial</div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <span class="kicker">Services</span>
+    <h2>Residential &amp; commercial electrical</h2>
+    <p class="lead">Whatever the job — new work, repair, or an upgrade — we handle it start to finish.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="18" rx="2" stroke="#f5a623" stroke-width="2"/><circle cx="12" cy="9" r="1.6" fill="#f5a623"/><circle cx="12" cy="15" r="1.6" fill="#f5a623"/></svg></div>
+        <div><h3>Outlets, Switches &amp; Dimmers</h3><p>Outlet and switch installation, dimmer switches, and troubleshooting for anything that stopped working.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 21h6M10 18h4M12 3a6 6 0 0 0-4 10.5c.8.7 1 1.6 1 2.5h6c0-.9.2-1.8 1-2.5A6 6 0 0 0 12 3z" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Lighting &amp; Ceiling Fans</h3><p>Lighting updates, LED lighting, landscape lighting, and ceiling fan installation.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#f5a623" stroke-width="2"/><path d="M9 7h6M9 11h6M9 15h3" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>Panels &amp; Breakers</h3><p>Breaker installation, service upgrades, and surge protection to keep your home safe.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 17h9a3 3 0 0 0 0-6h-1M5 17a2 2 0 1 0 4 0M5 17v-4a2 2 0 0 1 2-2h5l2-4h3" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 8v4m2-2h-4" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>EV &amp; Hot Tub Circuits</h3><p>Electric car charger hookups, smart car circuits, and dedicated hot tub circuits.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L3 18v3h3l5.3-5.3a5 5 0 0 0 6.4-6.4l-3 3-2.4-.6-.6-2.4 3-3z" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div><h3>Repair &amp; Troubleshooting</h3><p>Electrical troubleshooting, water heater repair, inspections, and preventive maintenance.</p></div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Commercial Services</h3><p>Switchgear, transformers, UPS, generators, fire alarms, signs, motors, and data center service.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <span class="kicker">Why Matt Harrod Electric</span>
+    <h2>Small company. Serious work.</h2>
+    <div class="why-grid">
+      <div class="why"><div class="num">01</div><h3>16 years in Louisville</h3><p>Operating in Louisville and the surrounding area for 16 years — your neighbors already know us.</p></div>
+      <div class="why"><div class="num">02</div><h3>Licensed, bonded &amp; insured</h3><p>Fully licensed, bonded and insured, so every job is covered and up to code.</p></div>
+      <div class="why"><div class="num">03</div><h3>You talk to the electrician</h3><p>Call and you reach the person doing the work — not a call center or a sales rep.</p></div>
+      <div class="why"><div class="num">04</div><h3>Homes and businesses</h3><p>One company for everything from a ceiling fan to commercial switchgear and generators.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--amber)">Service Area</span>
+    <h2>Serving Louisville &amp; surrounding neighborhoods</h2>
+    <p class="lead">If you're nearby and don't see your neighborhood, give us a call — we can likely help.</p>
+    <div class="chips">
+      <span class="chip hl">Louisville</span>
+      <span class="chip">St. Matthews</span>
+      <span class="chip">Jeffersontown</span>
+      <span class="chip">Fern Creek</span>
+      <span class="chip">Shively</span>
+      <span class="chip">Pleasure Ridge Park</span>
+      <span class="chip">Valley Station</span>
+      <span class="chip">Buechel Terrace</span>
+      <span class="chip">Iroquois</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="kicker">Contact</span>
+    <h2>Get a quote or ask a question</h2>
+    <p class="lead">Fastest way to reach us is a phone call during business hours.</p>
+    <div class="contact-grid">
+      <div class="c-box">
+        <div class="c-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="#f5a623"/></svg></div>
+          <div><b><a href="tel:+15029319389">(502) 931-9389</a></b><small>Tap to call</small></div>
+        </div>
+        <div class="c-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#f5a623" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div><b><a href="mailto:harrodelectric@gmail.com">harrodelectric@gmail.com</a></b><small>Email us anytime</small></div>
+        </div>
+        <div class="c-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#f5a623" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><b>9:00 – 6:30</b><small>Business hours</small></div>
+        </div>
+        <div class="c-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z" stroke="#f5a623" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#f5a623" stroke-width="2"/></svg></div>
+          <div><b>Louisville, KY</b><small>&amp; surrounding neighborhoods</small></div>
+        </div>
+      </div>
+      <div class="c-box">
+        <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-weight:800;font-size:17px\'>Thanks — we\'ll get back to you shortly.</p><p style=\'color:#5b6774;font-size:14px;margin-top:6px\'>Need us sooner? Call (502) 931-9389.</p>';">
+          <div><label for="n">Name</label><input id="n" required autocomplete="name"></div>
+          <div><label for="p">Phone</label><input id="p" type="tel" required autocomplete="tel"></div>
+          <div><label for="m">What do you need done?</label><textarea id="m" required placeholder="e.g. Add an outlet in the garage, install a ceiling fan..."></textarea></div>
+          <button class="btn btn-amber" type="submit" style="border:0;cursor:pointer">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>&copy; 2026 Matt Harrod Electric LLC &middot; Louisville, KY</div>
+    <div>Licensed &middot; Bonded &middot; Insured</div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+15029319389">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z" fill="#0e1b2c"/></svg>
+  Call Now — (502) 931-9389
+</a>
+
+</body>
+</html>
