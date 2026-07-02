@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schneider Sons Electric Corp | Toledo, OH Electrician</title>
+<style>
+  :root{
+    --navy:#0f2138;
+    --navy-dark:#0a1626;
+    --amber:#f2a11b;
+    --amber-dark:#d98a0a;
+    --gray:#5a6570;
+    --line:#e4e8ec;
+    --bg:#ffffff;
+    --bg-soft:#f6f8fa;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{color:var(--navy);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+
+  /* ---------- Top bar / phone ribbon ---------- */
+  .top-ribbon{background:var(--navy-dark);color:#fff;font-size:13px;text-align:center;padding:8px 12px;}
+  .top-ribbon a{color:var(--amber);font-weight:700;}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.2px;}
+  .brand .mark{width:34px;height:34px;flex-shrink:0;}
+  .brand span small{display:block;font-weight:500;font-size:11px;color:var(--gray);letter-spacing:.3px;}
+  .nav-links{display:none;gap:28px;font-size:14px;font-weight:600;}
+  .nav-cta{display:flex;align-items:center;gap:10px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-weight:700;font-size:14px;white-space:nowrap;}
+  .btn-amber{background:var(--amber);color:var(--navy-dark);}
+  .btn-amber:active{background:var(--amber-dark);}
+  .btn-outline{border:1.5px solid var(--navy);color:var(--navy);}
+
+  @media(min-width:860px){
+    .nav-links{display:flex;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);color:#fff;padding:52px 0 44px;position:relative;overflow:hidden;}
+  .hero::after{
+    content:"";position:absolute;right:-60px;top:-60px;width:320px;height:320px;
+    background:radial-gradient(circle,rgba(242,161,27,.18) 0%,transparent 70%);
+  }
+  .hero .wrap{position:relative;}
+  .eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(242,161,27,.15);color:var(--amber);font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,7vw,44px);line-height:1.12;font-weight:800;margin-bottom:14px;letter-spacing:-.5px;}
+  h1 em{color:var(--amber);font-style:normal;}
+  .hero p.lead{font-size:16px;color:#c8d2dc;max-width:520px;margin-bottom:26px;}
+  .hero-actions{display:flex;flex-direction:column;gap:12px;}
+  .btn-lg{padding:16px 20px;font-size:16.5px;border-radius:10px;justify-content:center;}
+  .btn-call{background:var(--amber);color:var(--navy-dark);}
+  .btn-call svg{width:20px;height:20px;flex-shrink:0;}
+  .trust-row{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:28px;font-size:13px;color:#c8d2dc;}
+  .trust-row .item{display:flex;align-items:center;gap:7px;}
+  .trust-row svg{width:16px;height:16px;color:var(--amber);flex-shrink:0;}
+
+  @media(min-width:640px){
+    .hero-actions{flex-direction:row;}
+    .btn-lg{flex:none;}
+  }
+
+  /* sticky mobile call bar */
+  .call-bar{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--amber);display:flex;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  .call-bar a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:9px;
+    padding:15px 10px;font-weight:800;font-size:16px;color:var(--navy-dark);
+  }
+  .call-bar svg{width:20px;height:20px;}
+  @media(min-width:860px){ .call-bar{display:none;} }
+  body{padding-bottom:64px;}
+  @media(min-width:860px){ body{padding-bottom:0;} }
+
+  /* ---------- Section heads ---------- */
+  .section-head{text-align:center;max-width:600px;margin:0 auto 36px;}
+  .kicker{color:var(--amber-dark);font-weight:800;font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px;}
+  h2{font-size:clamp(24px,5vw,32px);font-weight:800;letter-spacing:-.3px;margin-bottom:10px;}
+  .section-head p{color:var(--gray);font-size:15px;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--bg-soft);}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:640px){ .grid{grid-template-columns:1fr 1fr;} }
+  @media(min-width:960px){ .grid{grid-template-columns:1fr 1fr 1fr;} }
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .card .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card .icon svg{width:22px;height:22px;color:var(--amber);}
+  .card h3{font-size:16.5px;font-weight:700;}
+  .card p{font-size:14px;color:var(--gray);}
+
+  /* ---------- Why us ---------- */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:22px;}
+  @media(min-width:640px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(min-width:960px){ .why-grid{grid-template-columns:repeat(4,1fr);} }
+  .why-item{text-align:center;padding:6px;}
+  .why-item .icon-circ{
+    width:58px;height:58px;border-radius:50%;background:var(--bg-soft);border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+  }
+  .why-item .icon-circ svg{width:26px;height:26px;color:var(--amber-dark);}
+  .why-item h3{font-size:15.5px;font-weight:700;margin-bottom:6px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  /* ---------- Area ---------- */
+  .area{background:var(--navy);color:#fff;}
+  .area .wrap{display:flex;flex-direction:column;gap:26px;align-items:center;text-align:center;}
+  .area h2{color:#fff;}
+  .area p{color:#c8d2dc;font-size:15px;max-width:520px;}
+  .area-badge{
+    display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;
+  }
+  .area-badge svg{width:17px;height:17px;color:var(--amber);}
+
+  /* ---------- Contact ---------- */
+  .contact-card{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;
+    padding:30px 24px;display:flex;flex-direction:column;gap:20px;
+  }
+  @media(min-width:760px){
+    .contact-card{flex-direction:row;align-items:center;justify-content:space-between;}
+  }
+  .contact-info h3{font-size:19px;font-weight:800;margin-bottom:6px;}
+  .contact-info p{color:var(--gray);font-size:14px;}
+  .contact-rows{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+  .contact-rows a, .contact-rows span{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;}
+  .contact-rows svg{width:18px;height:18px;color:var(--amber-dark);flex-shrink:0;}
+  .contact-actions{display:flex;flex-direction:column;gap:12px;min-width:220px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-dark);color:#8f9aa6;padding:28px 0;font-size:12.5px;}
+  footer .wrap{display:flex;flex-direction:column;gap:8px;text-align:center;}
+  footer strong{color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="top-ribbon">Licensed, Bonded &amp; Insured — Call now: <a href="tel:+14196918284">(419) 691-8284</a></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#0F2138"/>
+        <path d="M22 6 L11 22h7l-2 12 13-17h-8l1-11z" fill="#F2A11B"/>
+      </svg>
+      <span>Schneider Sons Electric<small>Toledo, Ohio</small></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-amber" href="tel:+14196918284">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+      Family Owned &amp; Operated
+    </div>
+    <h1>Toledo's Trusted <em>Electricians</em>, Done Right the First Time</h1>
+    <p class="lead">Residential and commercial electrical work, generator installation, and lighting services — fully licensed, bonded, and insured. Serving Toledo, OH.</p>
+    <div class="hero-actions">
+      <a class="btn btn-lg btn-call" href="tel:+14196918284">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (419) 691-8284
+      </a>
+      <a class="btn btn-lg btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);" href="mailto:ssonselectric1556@gmail.com">Email Us</a>
+    </div>
+    <div class="trust-row">
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Licensed, Bonded &amp; Insured</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Generac Authorized Dealer</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Family Owned &amp; Operated</div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Do</div>
+      <h2>Electrical Services</h2>
+      <p>Residential and commercial work for homes and businesses across Toledo.</p>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V10l6-6 6 6v10M9 20v-6h6v6"/></svg></div>
+        <h3>House Wiring</h3>
+        <p>New construction and older-home rewiring, done to code.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+        <h3>Ceiling Fan Installation</h3>
+        <p>Fast, clean fan install and replacement, indoor or covered outdoor.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="13" height="10" rx="1"/><path d="M16 10l5-2v8l-5-2"/></svg></div>
+        <h3>Generator Installation &amp; Service</h3>
+        <p>Generac authorized dealer — install, service, and repair for home backup power.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
+        <h3>Lighting Installation &amp; Repair</h3>
+        <p>Indoor and outdoor lighting installed, repaired, and serviced.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>Electrical Repair</h3>
+        <p>Diagnosing and fixing electrical issues in homes and businesses.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg></div>
+        <h3>Commercial Electrical</h3>
+        <p>Electrical work for Toledo-area businesses and commercial properties.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Why Homeowners Choose Us</div>
+      <h2>Straightforward, Trustworthy Electrical Work</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg></div>
+        <h3>Fully Licensed &amp; Insured</h3>
+        <p>Bonded and insured for your protection on every job.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></div>
+        <h3>Family Owned</h3>
+        <p>A local Toledo family business, not a call center.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="13" height="10" rx="1"/><path d="M16 10l5-2v8l-5-2"/></svg></div>
+        <h3>Generac Authorized Dealer</h3>
+        <p>Backup generator installs and service done right.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon-circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Mon–Fri, 8am–4pm</h3>
+        <p>Reach a real person during business hours — no runaround.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--amber);">Where We Work</div>
+    <h2>Proudly Serving Toledo, Ohio</h2>
+    <p>Schneider Sons Electric Corp is based in Toledo and serves homeowners and businesses throughout the area.</p>
+    <div class="area-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      1556 Oak St, Toledo, OH 43605
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Get In Touch</div>
+      <h2>Request a Quote</h2>
+      <p>Call, email, or stop by — we're happy to talk through your project.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-info">
+        <h3>Schneider Sons Electric Corp</h3>
+        <p>Family owned &amp; operated in Toledo, OH</p>
+        <div class="contact-rows">
+          <a href="tel:+14196918284">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (419) 691-8284
+          </a>
+          <a href="mailto:ssonselectric1556@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+            ssonselectric1556@gmail.com
+          </a>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            1556 Oak St, Toledo, OH 43605
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            Mon–Fri: 8:00 AM – 4:00 PM
+          </span>
+        </div>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-lg btn-call" href="tel:+14196918284">Call (419) 691-8284</a>
+        <a class="btn btn-lg btn-outline" href="mailto:ssonselectric1556@gmail.com">Send an Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Schneider Sons Electric Corp</strong> — 1556 Oak St, Toledo, OH 43605</div>
+    <div>Fully Licensed, Bonded &amp; Insured · Generac Authorized Dealer</div>
+    <div>&copy; 2026 Schneider Sons Electric Corp. Prototype homepage concept — not the live site.</div>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:+14196918284">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call (419) 691-8284
+  </a>
+</div>
+
+</body>
+</html>
