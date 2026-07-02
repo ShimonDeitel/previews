@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G&M Plumbing and Heating, Inc. | Columbus, OH</title>
+<style>
+  :root{
+    --navy:#0b2e4f;
+    --navy-dark:#082138;
+    --blue:#1d6fb8;
+    --blue-light:#e8f2fb;
+    --orange:#e8622c;
+    --gray:#5a6b7a;
+    --line:#e2e8ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#1a2733;
+    background:#fff;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top bar */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cfe0ef;
+    font-size:13px;
+    padding:6px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;}
+  .topbar a{color:#fff;font-weight:600;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .headrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+    gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--navy);}
+  .brand .mark{
+    width:38px;height:38px;border-radius:9px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .brand .mark svg{width:22px;height:22px;}
+  .brand small{display:block;font-weight:500;font-size:11px;color:var(--gray);letter-spacing:.02em;}
+
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--orange);
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    padding:11px 18px;
+    border-radius:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:56px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-60px;top:-60px;
+    width:340px;height:340px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(29,111,184,.35) 0%,rgba(29,111,184,0) 70%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .badge{
+    display:inline-block;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    color:#dbe9f7;
+    font-size:12.5px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:100px;
+    margin-bottom:18px;
+    letter-spacing:.02em;
+  }
+  .hero h1{
+    font-size:34px;
+    line-height:1.15;
+    font-weight:800;
+    margin-bottom:14px;
+    max-width:560px;
+  }
+  .hero p{
+    font-size:16.5px;
+    color:#c9dbea;
+    max-width:480px;
+    margin-bottom:26px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn-primary{
+    background:var(--orange);
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    padding:15px 24px;
+    border-radius:9px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .btn-primary svg{width:20px;height:20px;}
+  .btn-secondary{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    font-weight:600;
+    font-size:16px;
+    padding:15px 22px;
+    border-radius:9px;
+  }
+  .hero-facts{
+    display:flex;
+    gap:22px;
+    margin-top:34px;
+    flex-wrap:wrap;
+  }
+  .hero-facts div{font-size:13px;color:#b9cee2;}
+  .hero-facts strong{display:block;font-size:15px;color:#fff;font-weight:700;}
+
+  /* Sections */
+  section{padding:56px 0;}
+  .section-head{text-align:center;max-width:560px;margin:0 auto 36px;}
+  .eyebrow{
+    color:var(--blue);
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  h2{font-size:27px;font-weight:800;color:var(--navy);margin-bottom:10px;}
+  .section-head p{color:var(--gray);font-size:15.5px;}
+
+  /* Services grid */
+  .services{background:#f7fafc;}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:24px;
+  }
+  .card .icn{
+    width:46px;height:46px;
+    background:var(--blue-light);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .card .icn svg{width:24px;height:24px;color:var(--blue);}
+  .card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .card p{font-size:14px;color:var(--gray);}
+
+  /* Why us */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:24px;
+  }
+  .why-item{display:flex;gap:14px;}
+  .why-item .icn{
+    width:44px;height:44px;flex-shrink:0;
+    background:var(--navy);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .icn svg{width:22px;height:22px;color:#fff;}
+  .why-item h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  /* Area */
+  .area{background:var(--navy);color:#fff;}
+  .area .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:24px;
+  }
+  .area h2{color:#fff;}
+  .area p{color:#c9dbea;font-size:15px;max-width:460px;}
+  .area-addr{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:12px;
+    padding:20px 22px;
+    min-width:260px;
+  }
+  .area-addr div{font-size:13px;color:#b9cee2;margin-bottom:4px;}
+  .area-addr strong{font-size:15px;color:#fff;}
+  .lic-row{
+    display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;
+  }
+  .pill{
+    font-size:12px;font-weight:600;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    padding:5px 10px;border-radius:100px;
+    color:#dbe9f7;
+  }
+
+  /* Contact / CTA */
+  .cta{
+    background:linear-gradient(160deg,var(--blue) 0%,var(--navy) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{color:#fff;}
+  .cta p{color:#dbeafd;font-size:15.5px;max-width:480px;margin:0 auto 26px;}
+  .cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .cta .btn-secondary{background:#fff;color:var(--navy);border:none;font-weight:700;}
+
+  footer{
+    background:var(--navy-dark);
+    color:#9db6cb;
+    padding:28px 0;
+    font-size:13px;
+    text-align:center;
+  }
+  footer a{color:#cfe0ef;font-weight:600;}
+
+  @media (max-width:640px){
+    .hero h1{font-size:27px;}
+    .hero p{font-size:15px;}
+    h2{font-size:23px;}
+    .call-btn span.long{display:none;}
+    .brand small{display:none;}
+    section{padding:44px 0;}
+    .area .wrap{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Licensed &amp; insured &middot; License #12531 &middot; Columbus, OH</span>
+    <a href="tel:6142631851">Call now: 614-263-1851</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap headrow">
+    <div class="brand">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l7 5v9a2 2 0 01-2 2h-3v-6H10v6H7a2 2 0 01-2-2V8l7-5z" fill="#fff"/></svg>
+      </span>
+      <span>G&amp;M Plumbing<small>&amp; Heating, Inc. &mdash; Columbus, OH</small></span>
+    </div>
+    <a class="call-btn" href="tel:6142631851">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+      <span class="long">614-263-1851</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Licensed Plumbing Contractor &middot; License #12531</span>
+    <h1>Columbus's trusted plumbing &amp; heating contractor since day one.</h1>
+    <p>Residential and commercial plumbing, pipe repairs, and in-line video camera diagnostics from a locally owned Columbus company.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="tel:6142631851">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#fff"/></svg>
+        Call 614-263-1851
+      </a>
+      <a class="btn-secondary" href="#contact">Get a Quote</a>
+    </div>
+    <div class="hero-facts">
+      <div><strong>Licensed &amp; Insured</strong>OH License #12531</div>
+      <div><strong>BBB Accredited</strong>Business rating on file</div>
+      <div><strong>Columbus, OH</strong>2077 Joyce Ave</div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Plumbing services for homes &amp; businesses</h2>
+      <p>Straightforward plumbing work, done right the first time.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h4l3-8 4 16 3-8h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Residential Plumbing</h3>
+        <p>Full-service plumbing repairs and installations for homes throughout the Columbus area.</p>
+      </div>
+      <div class="card">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Commercial Plumbing</h3>
+        <p>Plumbing services built for the demands of Columbus businesses and commercial properties.</p>
+      </div>
+      <div class="card">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M4 12a4 4 0 014-4h8a4 4 0 014 4M4 12a4 4 0 004 4h8a4 4 0 004-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Pipe Repair &amp; Replacement</h3>
+        <p>From small leaks to full pipe replacements, handled with lasting fixes rather than patches.</p>
+      </div>
+      <div class="card">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 12c2-4 6-6 9-6s7 2 9 6c-2 4-6 6-9 6s-7-2-9-6z" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>In-Line Video Camera Inspection</h3>
+        <p>Camera diagnostics to see exactly what's happening inside your lines before we recommend a fix.</p>
+      </div>
+      <div class="card">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Construction Services</h3>
+        <p>Plumbing scoped for new construction and renovation projects across Columbus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why G&amp;M</div>
+      <h2>A licensed, local Columbus plumber</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div><h3>Licensed &amp; Insured</h3><p>Ohio License #12531.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>BBB Accredited</h3><p>Business rating on file with the Better Business Bureau.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0116 0c0 4.5-4 8-8 12z" stroke="#fff" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="#fff" stroke-width="2"/></svg></div>
+        <div><h3>Columbus-Based</h3><p>Local shop at 2077 Joyce Ave, Columbus, OH.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M12 3l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7l8-4z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div><h3>APHC Affiliated</h3><p>Connected to the Apprenticeship Program for the Heating &amp; Plumbing trades.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:#8fc0e8;">Service Area</div>
+      <h2>Proudly serving Columbus, Ohio</h2>
+      <p>Based on Joyce Ave, G&amp;M Plumbing and Heating serves residential and commercial customers throughout the Columbus, OH area.</p>
+      <div class="lic-row">
+        <span class="pill">License #12531</span>
+        <span class="pill">BBB Accredited</span>
+        <span class="pill">Angie's List Listed</span>
+      </div>
+    </div>
+    <div class="area-addr">
+      <div>Address</div>
+      <strong>2077 Joyce Ave<br>Columbus, OH 43219</strong>
+      <div style="margin-top:14px;">Phone</div>
+      <strong><a href="tel:6142631851">614-263-1851</a></strong>
+      <div style="margin-top:14px;">Email</div>
+      <strong><a href="mailto:info@gmplumbing.net">info@gmplumbing.net</a></strong>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#dbeafd;">Get In Touch</div>
+    <h2>Ready to talk to a plumber?</h2>
+    <p>Call G&amp;M Plumbing and Heating directly, or send an email and we'll get back to you.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="tel:6142631851">Call 614-263-1851</a>
+      <a class="btn-secondary" href="mailto:info@gmplumbing.net">Email info@gmplumbing.net</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    G&amp;M Plumbing and Heating, Inc. &middot; 2077 Joyce Ave, Columbus, OH 43219 &middot; <a href="tel:6142631851">614-263-1851</a> &middot; <a href="mailto:info@gmplumbing.net">info@gmplumbing.net</a>
+  </div>
+</footer>
+
+</body>
+</html>

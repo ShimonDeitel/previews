@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feichtner Plumbing Co | Cincinnati Plumber Since 1987</title>
+<style>
+  :root{
+    --navy:#0f2438;
+    --navy-dark:#0a1826;
+    --blue:#1d6fd1;
+    --blue-dark:#155bab;
+    --ink:#16232f;
+    --gray:#5c6b78;
+    --line:#e4e9ee;
+    --bg:#ffffff;
+    --bg-soft:#f4f7fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--navy-dark);
+    color:#fff;
+    font-size:13px;
+    text-align:center;
+    padding:8px 12px;
+    letter-spacing:.2px;
+  }
+  .callbar a{color:#8fc1ff;font-weight:600;}
+
+  /* Header */
+  header{
+    background:var(--navy);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:50;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .headrow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 20px;
+    max-width:1120px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:17px;
+    color:#fff;
+  }
+  .brand .mark{
+    width:34px;height:34px;flex:none;
+  }
+  .brand small{display:block;font-weight:400;font-size:11px;color:#9db4c9;letter-spacing:.3px;}
+  .call-btn{
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:10px 16px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;flex:none;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:52px 20px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-120px;top:-120px;
+    width:360px;height:360px;
+    background:radial-gradient(circle,rgba(29,111,209,.35),transparent 70%);
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;position:relative;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);
+    color:#cfe1f5;
+    font-size:12px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,7vw,46px);
+    line-height:1.12;
+    font-weight:800;
+    letter-spacing:-.5px;
+    max-width:640px;
+  }
+  .hero h1 span{color:#7fb4ff;}
+  .hero p{
+    margin-top:16px;
+    font-size:16px;
+    color:#c3d3e2;
+    max-width:520px;
+  }
+  .hero-ctas{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-weight:700;
+    font-size:15px;
+    padding:14px 22px;
+    border-radius:9px;
+  }
+  .btn-primary{
+    background:var(--blue);
+    color:#fff;
+  }
+  .btn-primary svg{width:17px;height:17px;}
+  .btn-ghost{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.35);
+  }
+  .hero-stats{
+    margin-top:38px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    max-width:520px;
+  }
+  .hero-stats div{
+    border-top:1px solid rgba(255,255,255,.18);
+    padding-top:10px;
+  }
+  .hero-stats strong{
+    display:block;
+    font-size:22px;
+    font-weight:800;
+    color:#fff;
+  }
+  .hero-stats span{
+    font-size:12px;
+    color:#a9bed2;
+  }
+
+  /* Section titling */
+  section{padding:56px 0;}
+  .section-head{
+    text-align:center;
+    max-width:600px;
+    margin:0 auto 36px;
+  }
+  .eyebrow{
+    color:var(--blue);
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:clamp(24px,5vw,32px);
+    font-weight:800;
+    letter-spacing:-.4px;
+    color:var(--navy);
+  }
+  .section-head p{
+    margin-top:10px;
+    color:var(--gray);
+    font-size:15px;
+  }
+
+  /* Services grid */
+  .services{
+    background:var(--bg-soft);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media(min-width:640px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(min-width:900px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+  }
+  .card .icon{
+    width:44px;height:44px;
+    background:#eaf2fc;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:14px;
+  }
+  .card .icon svg{width:22px;height:22px;color:var(--blue);}
+  .card h3{
+    font-size:16px;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .card p{
+    font-size:14px;
+    color:var(--gray);
+  }
+
+  /* Why us */
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+    align-items:start;
+  }
+  @media(min-width:800px){
+    .why-grid{grid-template-columns:1.1fr 1fr;}
+  }
+  .why-list{display:flex;flex-direction:column;gap:18px;}
+  .why-item{display:flex;gap:14px;}
+  .why-item .num{
+    flex:none;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    font-weight:800;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .why-item h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+  .why-panel{
+    background:var(--navy);
+    color:#fff;
+    border-radius:16px;
+    padding:30px 26px;
+  }
+  .why-panel h3{font-size:20px;font-weight:800;margin-bottom:14px;}
+  .why-panel ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .why-panel li{display:flex;gap:10px;font-size:14px;color:#d6e3f0;align-items:flex-start;}
+  .why-panel li svg{width:18px;height:18px;flex:none;color:#7fb4ff;margin-top:2px;}
+
+  /* Area */
+  .area{background:var(--bg-soft);}
+  .area-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    max-width:720px;
+    margin:0 auto;
+  }
+  .chip{
+    background:#fff;
+    border:1px solid var(--line);
+    color:var(--navy);
+    font-size:13px;
+    font-weight:600;
+    padding:9px 16px;
+    border-radius:999px;
+  }
+  .area-note{
+    text-align:center;
+    color:var(--gray);
+    font-size:13px;
+    margin-top:22px;
+  }
+
+  /* Contact / CTA */
+  .contact{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+  @media(min-width:800px){
+    .contact-grid{grid-template-columns:1fr 1fr;}
+  }
+  .contact h2{font-size:clamp(24px,5vw,30px);font-weight:800;letter-spacing:-.4px;}
+  .contact > .wrap > p.lead{color:#c3d3e2;margin-top:10px;max-width:460px;}
+  .contact-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;
+    padding:24px;
+  }
+  .contact-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .ic{
+    width:38px;height:38px;flex:none;
+    background:rgba(255,255,255,.1);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row .ic svg{width:18px;height:18px;color:#7fb4ff;}
+  .contact-row a, .contact-row span{font-size:14px;color:#e7eef5;font-weight:600;}
+  .contact-row .label{display:block;font-size:11px;color:#9db4c9;font-weight:500;margin-bottom:2px;}
+  .contact .btn-primary{margin-top:20px;width:100%;justify-content:center;}
+
+  footer{
+    background:var(--navy-dark);
+    color:#8ea3b6;
+    font-size:12.5px;
+    padding:22px 20px;
+    text-align:center;
+  }
+  footer a{color:#b9cbdb;font-weight:600;}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-weight:700;
+    font-size:15px;
+    padding:14px;
+    z-index:60;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  .sticky-call svg{width:18px;height:18px;}
+  @media(min-width:800px){
+    .sticky-call{display:none;}
+  }
+  body{padding-bottom:66px;}
+  @media(min-width:800px){
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">
+  Emergency plumbing? Call now <a href="tel:5132422400">(513) 242-2400</a> — serving Greater Cincinnati
+</div>
+
+<header>
+  <div class="headrow">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#1d6fd1"/>
+        <path d="M20 8c4 4.5 8 9.6 8 14.4A8 8 0 1 1 12 22.4C12 17.6 16 12.5 20 8Z" fill="#fff"/>
+      </svg>
+      <div>
+        Feichtner Plumbing Co
+        <small>St. Bernard, OH &middot; Est. 1987</small>
+      </div>
+    </div>
+    <a class="call-btn" href="tel:5132422400">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+      (513) 242-2400
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#7fb4ff"><path d="M12 2 2 7v6c0 5.2 3.8 9.8 10 11 6.2-1.2 10-5.8 10-11V7l-10-5Zm-1.2 14.8-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7Z"/></svg>
+      Licensed &amp; insured &middot; 45+ years in Cincinnati
+    </span>
+    <h1>Cincinnati plumbing, done right<span> the first time.</span></h1>
+    <p>Family-owned since 1987. Feichtner Plumbing Co handles residential and commercial repairs, installs, and emergencies across Greater Cincinnati &mdash; with the same crew your neighbors have trusted for two generations.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:5132422400">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+        Call (513) 242-2400
+      </a>
+      <a class="btn btn-ghost" href="#contact">Request Service</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>1987</strong><span>Family-owned since</span></div>
+      <div><strong>45+ yrs</strong><span>Industry experience</span></div>
+      <div><strong>24/7</strong><span>Emergency service</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Full-service plumbing, residential &amp; commercial</h2>
+      <p>From a dripping faucet to a full remodel, our licensed team covers it.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 12a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4M4 12v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+        <h3>Residential Plumbing</h3>
+        <p>Repairs, fixture installs, and maintenance for homes throughout Greater Cincinnati.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Commercial Plumbing</h3>
+        <p>Installation and repair services for local businesses and commercial properties.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v6H4zM4 14h10v6H4z"/></svg></div>
+        <h3>Bathroom Remodeling</h3>
+        <p>Plumbing work for bathroom renovations, from rough-in to fixtures.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v9m0 0-4-4m4 4 4-4M5 15v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg></div>
+        <h3>Sewage Line Repairs</h3>
+        <p>Diagnosis and repair of sewer line issues for homes and businesses.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 7v6c0 5.2 3.8 9.8 8 11 4.2-1.2 8-5.8 8-11V7l-8-5Z"/></svg></div>
+        <h3>After-Hours Emergency</h3>
+        <p>Plumbing emergencies don't wait for business hours &mdash; and neither do we.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6M9 16h6M8 3h8l1 4H7l1-4ZM6 7h12l1 14H5L6 7Z"/></svg></div>
+        <h3>Installation &amp; Repairs</h3>
+        <p>General plumbing installation and repair work, done to code, done right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap why-grid">
+    <div>
+      <div class="section-head" style="text-align:left;margin-bottom:26px;">
+        <div class="eyebrow">Why Feichtner</div>
+        <h2>Two generations of Cincinnati plumbers</h2>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="num">1</div>
+          <div><h4>Established in 1987</h4><p>Family-owned and operated, now in its second generation.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="num">2</div>
+          <div><h4>Licensed &amp; insured</h4><p>Every job is covered and performed by qualified professionals.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="num">3</div>
+          <div><h4>45+ years of experience</h4><p>Deep, hands-on knowledge of Cincinnati-area plumbing systems.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="num">4</div>
+          <div><h4>Competitive, fair pricing</h4><p>Quality workmanship without surprise costs.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-panel">
+      <h3>Talk to a plumber now</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 15.6-3.6-3.6L5 13.4l5 5 9-9-1.4-1.4L10 15.6Z"/></svg>Locally owned in St. Bernard, OH</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 15.6-3.6-3.6L5 13.4l5 5 9-9-1.4-1.4L10 15.6Z"/></svg>Residential &amp; commercial jobs</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="m10 15.6-3.6-3.6L5 13.4l5 5 9-9-1.4-1.4L10 15.6Z"/></svg>After-hours emergency line</li>
+      </ul>
+      <a class="btn btn-primary" href="tel:5132422400" style="margin-top:20px;width:100%;justify-content:center;">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+        (513) 242-2400
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Service Area</div>
+      <h2>Proudly serving Greater Cincinnati</h2>
+    </div>
+    <div class="area-chips">
+      <span class="chip">St. Bernard</span>
+      <span class="chip">Cincinnati</span>
+      <span class="chip">Anderson</span>
+      <span class="chip">Blue Ash</span>
+      <span class="chip">Fairfield</span>
+      <span class="chip">Loveland</span>
+      <span class="chip">Montgomery</span>
+      <span class="chip">Indian Hill</span>
+      <span class="chip">West Chester</span>
+      <span class="chip">Wyoming</span>
+    </div>
+    <p class="area-note">Not sure if we cover your area? Call us at (513) 242-2400 &mdash; we're happy to check.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="lead">Call, or send your info below, and we'll get back to you about your plumbing job.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg></div>
+        <div><span class="label">Phone</span><a href="tel:5132422400">(513) 242-2400</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 12 13 4 6"/><rect x="4" y="6" width="16" height="12" rx="2"/></svg></div>
+        <div><span class="label">Email</span><a href="mailto:dfeichtner@cinci.rr.com">dfeichtner@cinci.rr.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <div><span class="label">Address</span><span>324 Railroad Ave, St Bernard, OH 45217</span></div>
+      </div>
+      <a class="btn btn-primary" href="tel:5132422400">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Feichtner Plumbing Co &middot; 324 Railroad Ave, St Bernard, OH 45217 &middot; <a href="tel:5132422400">(513) 242-2400</a><br>
+    &copy; 2026 Feichtner Plumbing Co. All rights reserved.
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:5132422400">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+  Tap to Call (513) 242-2400
+</a>
+
+</body>
+</html>
