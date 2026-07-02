@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quest Plumbing &amp; Heating Contractors, Inc. | Troy, NY | (518) 663-5280</title>
+<meta name="description" content="Family-owned plumbing, heating, and remodeling in Troy, NY since 1975. 24-hour emergency service. Call (518) 663-5280.">
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy2:#13315c;
+    --blue:#1d7fd6;
+    --blue-dk:#155fa0;
+    --amber:#f5a623;
+    --ink:#1a2430;
+    --mut:#5b6b7c;
+    --bg:#f6f8fb;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Top bar */
+  .topbar{background:var(--navy);color:#c9d6e8;font-size:13px;padding:8px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .topbar strong{color:#fff}
+
+  /* Header */
+  header{background:var(--white);position:sticky;top:0;z-index:50;box-shadow:0 1px 8px rgba(11,37,69,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);min-width:0}
+  .brand svg{flex:0 0 auto}
+  .brand-name{font-weight:800;font-size:17px;line-height:1.15;letter-spacing:-.2px}
+  .brand-sub{font-size:11px;color:var(--mut);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .nav-links{display:none;gap:26px;list-style:none}
+  .nav-links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+  .nav-links a:hover{color:var(--blue)}
+  .call-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px;font-size:15px;white-space:nowrap;box-shadow:0 2px 8px rgba(29,127,214,.35)}
+  .call-btn:active{transform:scale(.98)}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#1b4b8f 100%);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(29,127,214,.35),transparent 70%)}
+  .hero .wrap{position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;margin-bottom:20px}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  h1{font-size:clamp(32px,7vw,52px);line-height:1.1;font-weight:800;letter-spacing:-1px;margin-bottom:16px}
+  h1 .accent{color:#7cc0ff}
+  .hero p.lead{font-size:clamp(16px,2.5vw,19px);color:#c9d6e8;max-width:560px;margin-bottom:28px}
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:420px}
+  .btn-call-big{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--amber);color:var(--navy);text-decoration:none;font-weight:800;font-size:20px;padding:18px 24px;border-radius:14px;box-shadow:0 6px 20px rgba(245,166,35,.35)}
+  .btn-call-big:active{transform:scale(.98)}
+  .btn-call-big .sub{display:block;font-size:12px;font-weight:600;opacity:.75;letter-spacing:.04em;text-transform:uppercase}
+  .btn-secondary{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:14px 24px;border-radius:14px}
+  .hero-points{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;list-style:none;font-size:14px;color:#dbe6f3}
+  .hero-points li{display:flex;align-items:center;gap:8px;font-weight:600}
+  .hero-points svg{flex:0 0 auto}
+
+  /* Sections */
+  section{padding:56px 0}
+  .kicker{color:var(--blue);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:clamp(26px,5vw,36px);font-weight:800;letter-spacing:-.6px;color:var(--navy);margin-bottom:12px}
+  .sec-lead{color:var(--mut);max-width:620px;margin-bottom:32px;font-size:16px}
+
+  /* Services */
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .card{background:var(--white);border-radius:16px;padding:26px;box-shadow:0 2px 12px rgba(11,37,69,.06);border:1px solid #e6ecf3}
+  .card .icon{width:52px;height:52px;border-radius:12px;background:#e8f2fc;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .card h3{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:8px}
+  .card p{color:var(--mut);font-size:15px}
+
+  /* Why us */
+  .why{background:var(--white)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:22px}
+  .why-item{display:flex;gap:16px;align-items:flex-start}
+  .why-item .num{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+  .why-item h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px}
+  .why-item p{color:var(--mut);font-size:15px}
+
+  /* Emergency strip */
+  .strip{background:var(--amber);padding:28px 0}
+  .strip .wrap{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .strip h2{color:var(--navy);font-size:clamp(20px,4.5vw,28px);margin:0}
+  .strip p{color:#5c4308;font-weight:600;font-size:15px}
+  .strip a{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;text-decoration:none;font-weight:800;font-size:18px;padding:14px 26px;border-radius:12px}
+
+  /* Area */
+  .area-card{background:var(--white);border-radius:16px;border:1px solid #e6ecf3;padding:28px;box-shadow:0 2px 12px rgba(11,37,69,.06)}
+  .area-card .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+  .area-card .row:last-child{margin-bottom:0}
+  .area-card .row svg{flex:0 0 auto;margin-top:2px}
+  .area-card h3{font-size:16px;font-weight:800;color:var(--navy)}
+  .area-card p{color:var(--mut);font-size:15px}
+  .area-card a{color:var(--blue);font-weight:700;text-decoration:none}
+
+  /* Contact */
+  .contact{background:var(--navy);color:#fff}
+  .contact h2{color:#fff}
+  .contact .sec-lead{color:#b9c8dc}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:520px}
+  .contact-tile{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:18px;text-decoration:none;color:#fff}
+  .contact-tile .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#9fb4cd;font-weight:700}
+  .contact-tile .val{font-weight:800;font-size:17px;word-break:break-word}
+  .contact-tile svg{flex:0 0 auto}
+
+  footer{background:#081b33;color:#8fa4bd;font-size:13px;padding:24px 0;text-align:center}
+  footer .wrap{display:flex;flex-direction:column;gap:6px}
+
+  /* Sticky mobile call bar */
+  .sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--blue);display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:15px;box-shadow:0 -4px 16px rgba(11,37,69,.25);padding-bottom:calc(15px + env(safe-area-inset-bottom))}
+  body{padding-bottom:64px}
+
+  @media(min-width:700px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-ctas{flex-direction:row}
+    .btn-call-big,.btn-secondary{flex:1}
+    .strip .wrap{flex-direction:row;justify-content:space-between;align-items:center}
+  }
+  @media(min-width:960px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .nav-links{display:flex}
+    .sticky-call{display:none}
+    body{padding-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Family-owned &amp; operated in Troy, NY <strong>since 1975</strong></span>
+    <span><strong>24-Hour Emergency Service</strong></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Quest Plumbing and Heating home">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect width="48" height="48" rx="12" fill="#0b2545"/>
+        <path d="M24 9c-5.2 6.4-9 11.6-9 16.6C15 31.9 19 36 24 36s9-4.1 9-10.4C33 20.6 29.2 15.4 24 9z" fill="#1d7fd6"/>
+        <path d="M24 30.5c-2.4 0-4.4-1.9-4.4-4.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span>
+        <span class="brand-name">Quest Plumbing &amp; Heating</span><br>
+        <span class="brand-sub">Contractors, Inc. &middot; Troy, NY</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Quest</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="call-btn" href="tel:5186635280">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.25 1z"/></svg>
+      (518) 663-5280
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge"><span class="dot"></span> Second-generation family business &middot; Est. 1975</span>
+      <h1>Plumbing &amp; heating done right, <span class="accent">since 1975.</span></h1>
+      <p class="lead">Prompt, professional plumbing, heating, and remodeling for Troy and the surrounding area — with honest estimates and helpful consultations, every time.</p>
+      <div class="hero-ctas">
+        <a class="btn-call-big" href="tel:5186635280">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.25 1z"/></svg>
+          <span>(518) 663-5280<span class="sub">Tap to call &middot; 24-hr emergency</span></span>
+        </a>
+        <a class="btn-secondary" href="#contact">Request an Estimate</a>
+      </div>
+      <ul class="hero-points">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7cc0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> 24-hour emergency service</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7cc0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Weekend service available</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7cc0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Honest estimates</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="kicker">What We Do</div>
+      <h2>Our Services</h2>
+      <p class="sec-lead">From leaky faucets to full remodels, Quest handles it with the same prompt, professional service we've delivered for two generations.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d7fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3.5 4.3-6 7.8-6 11.1C6 17.9 8.7 21 12 21s6-3.1 6-6.9C18 10.8 15.5 7.3 12 3z"/><path d="M12 17.5c-1.6 0-2.9-1.3-2.9-2.9"/></svg>
+          </div>
+          <h3>Plumbing</h3>
+          <p>Repairs, fixtures, water lines, and everything in between — diagnosed honestly and fixed right the first time.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d7fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21c-2.8-1.5-4-4-3.5-6.5C5 12 7 10.5 8 8c.6 1.4 1 2.5 1 4 1.8-2 2.5-5.5 2-9 4 2.5 7 6.5 7 10.5A7.5 7.5 0 018 21z"/></svg>
+          </div>
+          <h3>Heating</h3>
+          <p>Keep your home warm through Upstate winters with dependable heating service and repairs.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d7fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 105.4 5.4L14 17.8a2 2 0 01-2.8 0l-1-1a2 2 0 010-2.8l6.1-6.1z"/><path d="M5 21l4-4M3 3l6 6"/></svg>
+          </div>
+          <h3>Remodeling</h3>
+          <p>Kitchen and bath updates handled by the same trusted team that knows your plumbing inside and out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="kicker">Why Quest</div>
+      <h2>Two generations of trust</h2>
+      <p class="sec-lead">Founded by Chris J. D'Angelo in 1975 and now run by his son Christian, Quest has served the Troy area for over 50 years.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="num">1</div>
+          <div><h3>Family-owned since 1975</h3><p>A second-generation local business — not a franchise. Your neighbors, working in your neighborhood.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="num">2</div>
+          <div><h3>Honest estimates</h3><p>Straight answers and fair pricing before any work begins. No surprises on the bill.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="num">3</div>
+          <div><h3>Prompt &amp; professional</h3><p>We show up, we communicate, and we treat your home with respect.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="num">4</div>
+          <div><h3>There when you need us</h3><p>24-hour emergency service and weekend availability — because pipes don't keep business hours.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <div>
+        <h2>Burst pipe? No heat?</h2>
+        <p>24-hour emergency service — call any time, day or night.</p>
+      </div>
+      <a href="tel:5186635280">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.25 1z"/></svg>
+        (518) 663-5280
+      </a>
+    </div>
+  </div>
+
+  <section id="area">
+    <div class="wrap">
+      <div class="kicker">Where We Work</div>
+      <h2>Serving Troy &amp; the surrounding area</h2>
+      <p class="sec-lead">Our shop is in Brunswick, NY, and we proudly serve Troy and the surrounding communities.</p>
+      <div class="area-card">
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d7fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <h3>Address</h3>
+            <p>24 Sweetmilk Creek Rd, Troy, NY 12180</p>
+          </div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d7fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div>
+            <h3>Availability</h3>
+            <p>24-hour emergency service &middot; weekend service available</p>
+          </div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d7fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.25 1z"/></svg>
+          <div>
+            <h3>Phone</h3>
+            <p><a href="tel:5186635280">(518) 663-5280</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="kicker" style="color:#7cc0ff">Get In Touch</div>
+      <h2>Request an estimate</h2>
+      <p class="sec-lead">Call or email and we'll get you an honest estimate and a helpful consultation.</p>
+      <div class="contact-grid">
+        <a class="contact-tile" href="tel:5186635280">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#7cc0ff" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.25 1z"/></svg>
+          <span><span class="lbl">Call us</span><br><span class="val">(518) 663-5280</span></span>
+        </a>
+        <a class="contact-tile" href="mailto:christian@questph.com">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7cc0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span><span class="lbl">Email</span><br><span class="val">christian@questph.com</span></span>
+        </a>
+        <div class="contact-tile">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7cc0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><span class="lbl">Visit</span><br><span class="val">24 Sweetmilk Creek Rd, Troy, NY 12180</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Quest Plumbing and Heating Contractors, Inc. &middot; Troy, NY</span>
+    <span>Family-owned and operated since 1975</span>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:5186635280">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.25 1z"/></svg>
+  Call Now &middot; (518) 663-5280
+</a>
+
+</body>
+</html>

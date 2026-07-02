@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EnvisiaCare Services, LLC — Tree &amp; Lawn Care in Cheyenne, WY</title>
+<meta name="description" content="Professional tree and lawn care serving Cheyenne, Ft. Collins, Laramie, and Casper. Tree trimming, removal, spraying, lawn fertilization and more. Call 307-298-0883 for a free estimate.">
+<style>
+  :root{
+    --green:#1e6b34;
+    --green-dark:#154d25;
+    --green-deep:#0d3318;
+    --lime:#8dc63f;
+    --ink:#16241a;
+    --muted:#5a6b5e;
+    --bg:#f6f8f4;
+    --white:#ffffff;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;background:var(--white);
+    border-bottom:1px solid #e3e9e1;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;letter-spacing:-.01em;text-decoration:none}
+  .logo svg{width:32px;height:32px;flex-shrink:0}
+  .logo span small{display:block;font-size:.62rem;font-weight:600;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+  .nav-call{
+    display:flex;align-items:center;gap:8px;text-decoration:none;
+    background:var(--green);color:#fff;font-weight:700;font-size:.95rem;
+    padding:10px 18px;border-radius:999px;white-space:nowrap;
+    transition:background .2s;
+  }
+  .nav-call:hover{background:var(--green-dark)}
+  .nav-call svg{width:16px;height:16px}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-dark) 55%,var(--green) 100%);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:auto -10% -2px -10%;height:90px;
+    background:var(--bg);
+    clip-path:polygon(0 60%,100% 0,100% 100%,0 100%);
+  }
+  .hero .wrap{padding:64px 20px 140px;position:relative;z-index:1}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+    border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:600;letter-spacing:.04em;
+  }
+  .badge svg{width:14px;height:14px}
+  .hero h1{
+    font-size:clamp(2.1rem,7vw,3.6rem);line-height:1.08;font-weight:800;
+    letter-spacing:-.02em;margin:20px 0 16px;max-width:16ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--lime)}
+  .hero p{font-size:clamp(1rem,2.6vw,1.2rem);max-width:44ch;color:rgba(255,255,255,.85);margin-bottom:32px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-call{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--lime);color:var(--green-deep);text-decoration:none;
+    font-size:1.25rem;font-weight:800;padding:18px 30px;border-radius:var(--radius);
+    box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s;
+    width:100%;max-width:420px;
+  }
+  .btn-call:active{transform:scale(.98)}
+  .btn-call svg{width:24px;height:24px;flex-shrink:0}
+  .btn-call small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+  .btn-ghost{
+    text-decoration:none;font-weight:700;font-size:1rem;color:#fff;
+    padding:14px 22px;border:2px solid rgba(255,255,255,.4);border-radius:var(--radius);
+    transition:border-color .2s,background .2s;text-align:center;
+  }
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:36px;font-size:.9rem;color:rgba(255,255,255,.8)}
+  .hero-meta div{display:flex;align-items:center;gap:8px}
+  .hero-meta svg{width:16px;height:16px;color:var(--lime)}
+
+  /* Sections */
+  section{padding:64px 0}
+  .kicker{color:var(--green);font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+  h2{font-size:clamp(1.6rem,5vw,2.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:36px}
+
+  /* Services grid */
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{
+    background:var(--white);border:1px solid #e3e9e1;border-radius:var(--radius);
+    padding:24px;transition:box-shadow .2s,transform .2s;
+  }
+  .card:hover{box-shadow:0 10px 30px rgba(21,77,37,.10);transform:translateY(-2px)}
+  .icon{
+    width:48px;height:48px;border-radius:12px;background:#e9f3e4;
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .icon svg{width:26px;height:26px;color:var(--green)}
+  .card h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+  .card p{font-size:.92rem;color:var(--muted)}
+
+  /* Why us */
+  .why{background:var(--white);border-top:1px solid #e3e9e1;border-bottom:1px solid #e3e9e1}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  @media(min-width:720px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+  .why-item{display:flex;gap:16px;align-items:flex-start}
+  .why-item .icon{margin-bottom:0;flex-shrink:0}
+  .why-item h3{font-size:1.05rem;font-weight:800;margin-bottom:4px}
+  .why-item p{font-size:.92rem;color:var(--muted)}
+
+  /* Area */
+  .area-pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+  .pill{
+    display:flex;align-items:center;gap:8px;background:var(--white);
+    border:1.5px solid var(--green);color:var(--green-dark);
+    font-weight:700;padding:12px 20px;border-radius:999px;font-size:1rem;
+  }
+  .pill svg{width:16px;height:16px;color:var(--green)}
+
+  /* Contact / final CTA */
+  .contact{
+    background:linear-gradient(160deg,var(--green-dark),var(--green-deep));
+    color:#fff;text-align:center;
+  }
+  .contact h2{color:#fff}
+  .contact .lead{color:rgba(255,255,255,.8);margin-left:auto;margin-right:auto}
+  .contact .btn-call{margin:0 auto 20px}
+  .contact-alt{font-size:.95rem;color:rgba(255,255,255,.75)}
+  .contact-alt a{color:var(--lime);font-weight:700;text-decoration:none}
+  .contact-alt a:hover{text-decoration:underline}
+
+  footer{background:var(--green-deep);color:rgba(255,255,255,.6);font-size:.85rem;padding:28px 0;text-align:center}
+  footer a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="EnvisiaCare Services home">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 2C11 8 6 11 6 17a10 10 0 0 0 20 0c0-6-5-9-10-15Z" fill="#1e6b34"/>
+        <path d="M16 12v16M16 18l-4-3M16 22l4-3" stroke="#8dc63f" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>EnvisiaCare<small>Tree &amp; Lawn Services</small></span>
+    </a>
+    <a class="nav-call" href="tel:13072980883">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      307-298-0883
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L21 9.27l-5 4.6L17.2 21 12 17.5 6.8 21 8 13.87l-5-4.6 6.1-1.01L12 2z"/></svg>
+        Serving Wyoming &amp; Northern Colorado for over 10 years
+      </span>
+      <h1>Healthy trees. <em>Greener lawns.</em> Done right.</h1>
+      <p>From tree trimming and removal to lawn fertilization and snow plowing — EnvisiaCare handles it all, because every yard (and every client) is unique.</p>
+      <div class="cta-row">
+        <a class="btn-call" href="tel:13072980883">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span><small>Tap to call — free estimate</small>307-298-0883</span>
+        </a>
+        <a class="btn-ghost" href="#services">See our services</a>
+      </div>
+      <div class="hero-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Cheyenne · Ft. Collins · Laramie · Casper
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Trees, lawns, sprinklers &amp; snow
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="kicker">What we do</div>
+      <h2>Full-service tree &amp; lawn care</h2>
+      <p class="lead">One trusted crew for everything outside your door — year-round.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-7M12 2L6 10h4l-4 6h12l-4-6h4L12 2z"/></svg></div>
+          <h3>Tree Trimming &amp; Removal</h3>
+          <p>Careful pruning to keep trees healthy and safe — plus full removal and stump grinding when a tree has to go.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M5.6 5.6l2.1 2.1M3 12h3M5.6 18.4l2.1-2.1M12 21v-3M18.4 18.4l-2.1-2.1M21 12h-3M18.4 5.6l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Tree Spraying &amp; Protection</h3>
+          <p>Targeted treatment against insects and disease, including IPS beetle and emerald ash borer.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10M12 20V8M12 8c-4 0-6-2.5-6-5 3 0 6 1 6 5zM12 10c4 0 6-2.5 6-5-3 0-6 1-6 5z"/></svg></div>
+          <h3>Tree Planting &amp; Fertilization</h3>
+          <p>New tree planting and deep root fertilization to give your trees the strongest possible start.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M4 21c1-6 3-9 8-9s7 3 8 9M12 12V7M9 5.5C9 4 10.5 3 12 3s3 1 3 2.5"/></svg></div>
+          <h3>Lawn Fertilization &amp; Weed Control</h3>
+          <p>Season-long feeding and weed programs for a thicker, greener lawn.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 20v-4M10 20v-6M14 20v-4M18 20v-6"/></svg></div>
+          <h3>Lawn Aeration</h3>
+          <p>Core aeration that lets water, air, and nutrients reach the roots where they matter.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M8 21l4-6 4 6M12 7c-2 2-5 2-7 1 1 3 4 5 7 4 3 1 6-1 7-4-2 1-5 1-7-1z"/></svg></div>
+          <h3>Landscaping</h3>
+          <p>Landscape installation and ongoing maintenance to keep your whole property looking sharp.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-3 7-7 7z"/></svg></div>
+          <h3>Sprinkler Winterization</h3>
+          <p>Proper blow-outs before the freeze so your system starts clean in spring.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M12 6l-3-3M12 6l3-3M12 18l-3 3M12 18l3 3M3.3 7l17.4 10M6.4 6.1L3.3 7l.9 3.1M17.6 17.9l3.1-.9-.9-3.1M20.7 7L3.3 17M17.6 6.1l3.1.9-.9 3.1M6.4 17.9l-3.1-.9.9-3.1"/></svg></div>
+          <h3>Snow Plowing</h3>
+          <p>Reliable winter snow removal so you're never snowed in.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>Stump Removal &amp; Grinding</h3>
+          <p>Fast, clean stump grinding that leaves your yard ready for whatever's next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="wrap">
+      <div class="kicker">Why EnvisiaCare</div>
+      <h2>A local crew that treats your yard like its own</h2>
+      <p class="lead">We believe each job is as unique as every person we work with — and we build lasting working relationships with our clients.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></div>
+          <div><h3>10+ years of experience</h3><p>Over a decade serving trees and lawns across Wyoming and Northern Colorado.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
+          <div><h3>Relationship-first</h3><p>We aim for ongoing partnerships, not one-off jobs — most of our work comes from clients who call us back.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div><h3>Year-round, one call</h3><p>Trees in spring, lawns in summer, sprinklers in fall, snow in winter — one number covers it all.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section id="area">
+    <div class="wrap">
+      <div class="kicker">Where we work</div>
+      <h2>Proudly serving the Front Range &amp; beyond</h2>
+      <p class="lead">Based in Cheyenne, Wyoming — on the road wherever you need us.</p>
+      <div class="area-pills">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Cheyenne, WY</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Ft. Collins, CO</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Laramie, WY</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Casper, WY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="kicker" style="color:var(--lime)">Free estimates</div>
+      <h2>Ready to get started?</h2>
+      <p class="lead">Call or email and tell us about your trees, your lawn, or your winter driveway — we'll take it from there.</p>
+      <a class="btn-call" href="tel:13072980883">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <span><small>Tap to call</small>307-298-0883</span>
+      </a>
+      <p class="contact-alt">Prefer email? <a href="mailto:envisiacare@gmail.com">envisiacare@gmail.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 EnvisiaCare Services, LLC · Cheyenne, Wyoming</p>
+    <p><a href="tel:13072980883">307-298-0883</a> · <a href="mailto:envisiacare@gmail.com">envisiacare@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

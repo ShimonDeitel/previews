@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RCI Plumbing &amp; General Contractors — Rio Linda &amp; Sacramento, CA</title>
+<meta name="description" content="R.C.I. Plumbing and General Contractors — commercial and residential plumbing in Rio Linda and the Sacramento region. CA Lic. #560033. Call (916) 991-2700.">
+<style>
+  :root{
+    --navy:#0e2a47;
+    --blue:#1273d6;
+    --blue-dark:#0d5cb0;
+    --ink:#1b2430;
+    --muted:#5a6675;
+    --bg:#f5f7fa;
+    --white:#ffffff;
+    --line:#e3e8ef;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Top bar */
+  .topbar{background:var(--navy);color:#c8d6e8;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:7px;padding-bottom:7px;gap:12px}
+  .topbar strong{color:#fff;font-weight:600}
+  .topbar .lic{white-space:nowrap}
+
+  /* Header */
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand .mark{width:40px;height:40px;flex:0 0 40px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center}
+  .brand .name{font-weight:800;font-size:17px;letter-spacing:-.02em;line-height:1.15}
+  .brand .name span{display:block;font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  .nav-links{display:none;gap:26px;font-size:15px;font-weight:500;color:var(--muted)}
+  .nav-links a:hover{color:var(--blue)}
+  .call-pill{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(18,115,214,.35)}
+  .call-pill:active{background:var(--blue-dark)}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,#0d3a66 60%,#0f4c86 100%);color:#fff;overflow:hidden;position:relative}
+  .hero .wrap{padding:56px 20px 60px;position:relative}
+  .hero .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:6px 14px;color:#bcd7f5}
+  .hero h1{font-size:clamp(30px,7.5vw,52px);line-height:1.08;font-weight:800;letter-spacing:-.025em;margin:18px 0 14px;max-width:640px}
+  .hero h1 em{font-style:normal;color:#6db4f7}
+  .hero p{font-size:clamp(16px,2.5vw,19px);color:#c4d5e8;max-width:560px;margin-bottom:28px}
+  .hero-cta{display:flex;flex-direction:column;gap:12px;max-width:420px}
+  .btn-call{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--blue);color:#fff;font-size:20px;font-weight:800;padding:18px 24px;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.3);letter-spacing:-.01em}
+  .btn-call small{display:block;font-size:12px;font-weight:600;opacity:.85;letter-spacing:.04em;text-transform:uppercase}
+  .btn-call:active{background:var(--blue-dark)}
+  .btn-ghost{display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid rgba(255,255,255,.35);color:#fff;font-size:15px;font-weight:600;padding:13px 20px;border-radius:12px}
+  .btn-ghost:active{background:rgba(255,255,255,.08)}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:13.5px;color:#a9c3dd}
+  .hero-badges div{display:flex;align-items:center;gap:7px}
+  .hero-pipes{position:absolute;right:-60px;bottom:-40px;opacity:.08;pointer-events:none}
+
+  /* Sections */
+  section{padding:56px 0}
+  .sec-head{max-width:620px;margin-bottom:32px}
+  .sec-head .tag{color:var(--blue);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .sec-head h2{font-size:clamp(24px,5vw,34px);font-weight:800;letter-spacing:-.02em;margin:8px 0 10px}
+  .sec-head p{color:var(--muted);font-size:16px}
+
+  /* Services */
+  .services{background:var(--bg)}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;gap:16px;align-items:flex-start}
+  .card .ico{width:44px;height:44px;flex:0 0 44px;background:#e8f1fc;border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .card h3{font-size:16.5px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em}
+  .card p{font-size:14px;color:var(--muted)}
+
+  /* Why us */
+  .why-list{display:grid;grid-template-columns:1fr;gap:0}
+  .why-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .why-item:last-child{border-bottom:0}
+  .why-item .n{font-size:14px;font-weight:800;color:var(--blue);background:#e8f1fc;width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .why-item h3{font-size:16.5px;font-weight:700;margin-bottom:3px}
+  .why-item p{font-size:14.5px;color:var(--muted)}
+
+  /* Area */
+  .area{background:var(--navy);color:#fff}
+  .area .sec-head .tag{color:#6db4f7}
+  .area .sec-head p{color:#b7c9dc}
+  .area-chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);border-radius:999px;padding:9px 18px;font-size:14.5px;font-weight:600}
+
+  /* Contact */
+  .contact .box{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:28px 22px;display:grid;gap:22px}
+  .c-row{display:flex;gap:14px;align-items:flex-start}
+  .c-row .ico{width:42px;height:42px;flex:0 0 42px;background:#e8f1fc;border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .c-row h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px}
+  .c-row a,.c-row p{font-size:17px;font-weight:600;color:var(--ink)}
+  .c-row a:hover{color:var(--blue)}
+  .contact .btn-call{margin-top:4px}
+
+  /* Footer */
+  footer{background:var(--navy);color:#9db3ca;font-size:13.5px}
+  footer .wrap{padding:28px 20px;display:flex;flex-direction:column;gap:8px}
+  footer strong{color:#fff}
+
+  /* Sticky mobile call bar */
+  .sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:block}
+  .sticky-call a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:#fff;font-weight:800;font-size:17px;padding:14px;border-radius:12px}
+  body{padding-bottom:76px}
+
+  @media(min-width:640px){
+    .grid{grid-template-columns:1fr 1fr}
+    .hero-cta{flex-direction:row}
+    .btn-call{flex:1}
+    .why-list{grid-template-columns:1fr 1fr;gap:0 40px}
+    .why-item:nth-last-child(2){border-bottom:0}
+    .contact .box{grid-template-columns:1fr 1fr;padding:34px}
+    .contact .box .full{grid-column:1/-1}
+  }
+  @media(min-width:900px){
+    .grid{grid-template-columns:1fr 1fr 1fr}
+    .nav-links{display:flex}
+    .sticky-call{display:none}
+    body{padding-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="lic">CA Lic. <strong>#560033</strong> · NV Lic. <strong>#0041537</strong></div>
+    <div class="lic">Rio Linda, CA</div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <div class="mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V6a2 2 0 0 1 2-2h4"/><path d="M10 4h4v6a4 4 0 0 1-4 4H4v-4a2 2 0 0 1 2-2"/><path d="M14 10h4a2 2 0 0 1 2 2v8"/><path d="M17 20h6" opacity="0"/><path d="M18 20h4"/></svg>
+      </div>
+      <div class="name">RCI Plumbing<span>&amp; General Contractors</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why RCI</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-pill" href="tel:+19169912700">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (916) 991-2700
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <svg class="hero-pipes" width="420" height="420" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V6a2 2 0 0 1 2-2h4"/><path d="M10 4h4v6a4 4 0 0 1-4 4H4"/><path d="M14 10h4a2 2 0 0 1 2 2v8"/></svg>
+    <div class="wrap">
+      <span class="kicker">Commercial &amp; Residential Plumbing</span>
+      <h1>Plumbing done right, <em>from podium decks to drain lines.</em></h1>
+      <p>R.C.I. Plumbing and General Contractors serves the Sacramento region from Rio Linda — licensed in California and Nevada for commercial, multi-family, and residential work.</p>
+      <div class="hero-cta">
+        <a class="btn-call" href="tel:+19169912700">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span><small>Tap to call</small>(916) 991-2700</span>
+        </a>
+        <a class="btn-ghost" href="#services">See our services</a>
+      </div>
+      <div class="hero-badges">
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6db4f7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>CA Lic. #560033</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6db4f7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>NV Lic. #0041537</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6db4f7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Commercial &amp; residential</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tag">What we do</div>
+        <h2>Full-service plumbing &amp; contracting</h2>
+        <p>From large design-build projects to a single water heater — one call covers it.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M7 8V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/><path d="M3 13h18"/></svg></div>
+          <div><h3>Commercial &amp; Multi-Family</h3><p>Apartments, condos, townhomes, hotels, and podium deck plumbing.</p></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M4 20V9l8-6 8 6v11"/><path d="M9 20v-6h6v6"/></svg></div>
+          <div><h3>Design-Build Projects</h3><p>Plumbing design and construction handled together, start to finish.</p></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v10"/><circle cx="12" cy="17" r="4"/><path d="M12 15v2"/></svg></div>
+          <div><h3>Water Heaters &amp; Recirculation</h3><p>Water heater replacement plus hot-water recirculation systems.</p></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
+          <div><h3>Sewer Jetting &amp; Drain Cleaning</h3><p>High-pressure jetting and drain clearing to keep lines flowing.</p></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 9l-6 3 6 3z" fill="#1273d6" stroke="none"/></svg></div>
+          <div><h3>Pipeline Video Inspection</h3><p>Camera inspections that find the problem before we open anything up.</p></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a5 5 0 0 0-6.9 6.9L3 18v3h3l4.8-4.8a5 5 0 0 0 6.9-6.9l-3.2 3.2-2.5-2.5z"/></svg></div>
+          <div><h3>Re-Pipes, Gas Lines &amp; Repairs</h3><p>Water and sewer line re-pipes, gas lines, fixture repair, remodels, and water audits.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tag">Why RCI</div>
+        <h2>A contractor you can actually reach</h2>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="n">1</div>
+          <div><h3>Licensed in two states</h3><p>California Lic. #560033 and Nevada Lic. #0041537 — verifiable with each state's contractor board.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="n">2</div>
+          <div><h3>Plumber and general contractor</h3><p>One company handles the plumbing and the construction around it — fewer trades to coordinate.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="n">3</div>
+          <div><h3>Big jobs and small ones</h3><p>Hotel and multi-family projects on one end, a leaking fixture on the other. Both get done.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="n">4</div>
+          <div><h3>Local and direct</h3><p>Based at 651 M Street in Rio Linda. Call the shop and talk to us directly: (916) 991-2700.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA -->
+  <section class="area" id="area">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tag">Service Area</div>
+        <h2>Serving the Sacramento region</h2>
+        <p>Home base is Rio Linda, CA — with contractor licensing in both California and Nevada.</p>
+      </div>
+      <div class="area-chips">
+        <span class="chip">Rio Linda</span>
+        <span class="chip">Sacramento Region</span>
+        <span class="chip">California — Lic. #560033</span>
+        <span class="chip">Nevada — Lic. #0041537</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tag">Contact</div>
+        <h2>Get in touch</h2>
+        <p>Call, email, or stop by the shop.</p>
+      </div>
+      <div class="box">
+        <div class="c-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><h3>Phone</h3><a href="tel:+19169912700">(916) 991-2700</a></div>
+        </div>
+        <div class="c-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><h3>Email</h3><a href="mailto:dana@rciplumbing.net">dana@rciplumbing.net</a></div>
+        </div>
+        <div class="c-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3>Address</h3><p>651 M Street, Rio Linda, CA 95673</p></div>
+        </div>
+        <div class="c-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1273d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v13h18V7z"/><path d="M9 20v-8h6v8"/></svg></div>
+          <div><h3>Fax</h3><p>(916) 991-7176</p></div>
+        </div>
+        <a class="btn-call full" href="tel:+19169912700">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span><small>Tap to call</small>(916) 991-2700</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>R.C.I. Plumbing and General Contractors</strong></div>
+    <div>651 M Street, Rio Linda, CA 95673 · (916) 991-2700 · dana@rciplumbing.net</div>
+    <div>CA Lic. #560033 · Nev. Lic. #0041537</div>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:+19169912700">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call (916) 991-2700
+  </a>
+</div>
+
+</body>
+</html>

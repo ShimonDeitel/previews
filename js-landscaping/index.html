@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JS Landscaping &amp; Sprinkler Repair LLC — Roy &amp; Ogden, UT</title>
+<meta name="description" content="Landscaping, sprinkler repair, concrete, pavers and yard cleanup serving Roy, Ogden and Davis County. Over 10 years of experience. Call 801-616-7628.">
+<style>
+:root{
+  --green:#1d6b3a; --green-dark:#134d29; --green-light:#e7f3ec;
+  --ink:#15221b; --muted:#5b6b61; --bg:#ffffff; --sand:#f6f5f1;
+  --accent:#f5a623;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #e5e8e5}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-.2px;text-decoration:none}
+.brand svg{flex:none}
+.brand small{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.4px}
+.nav-call{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;transition:background .15s}
+.nav-call:hover{background:var(--green-dark)}
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--green-dark) 0%,var(--green) 70%);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -2px -10%;height:90px;background:var(--bg);border-radius:100% 100% 0 0}
+.hero-inner{padding:64px 0 130px;position:relative;z-index:1;text-align:center;max-width:720px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:22px}
+.badge svg{flex:none}
+h1{font-size:clamp(34px,7vw,58px);line-height:1.08;letter-spacing:-1.2px;font-weight:800;margin-bottom:18px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero p.sub{font-size:clamp(16px,2.5vw,19px);color:rgba(255,255,255,.85);margin-bottom:32px}
+.cta-row{display:flex;flex-direction:column;gap:12px;align-items:center}
+.btn-call{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--accent);color:#231a05;text-decoration:none;font-weight:800;font-size:20px;padding:18px 34px;border-radius:16px;width:100%;max-width:360px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .12s}
+.btn-call:active{transform:scale(.97)}
+.btn-call small{display:block;font-size:12px;font-weight:600;opacity:.75}
+.btn-ghost{color:#fff;text-decoration:none;font-weight:600;font-size:15px;opacity:.9;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px}
+.hero-stats{display:flex;justify-content:center;gap:28px;margin-top:38px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat b{display:block;font-size:24px;font-weight:800}
+.stat span{font-size:12.5px;color:rgba(255,255,255,.75);font-weight:600;letter-spacing:.3px}
+/* Sections */
+section{padding:64px 0}
+.kicker{color:var(--green);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(26px,4.5vw,38px);letter-spacing:-.8px;line-height:1.15;margin-bottom:14px}
+.lead{color:var(--muted);font-size:17px;max-width:620px;margin-bottom:36px}
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px}
+.svc{background:var(--sand);border:1px solid #ebeae4;border-radius:14px;padding:20px 16px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s}
+.svc:hover{border-color:var(--green)}
+.svc .ic{width:40px;height:40px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center}
+.svc h3{font-size:15px;font-weight:700;letter-spacing:-.2px}
+.more-svcs{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid #dfe3df;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--muted)}
+/* Why us */
+.why{background:var(--sand)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.why-card{background:#fff;border-radius:16px;padding:26px 22px;border:1px solid #eceae3}
+.why-card .ic{width:46px;height:46px;border-radius:12px;background:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why-card h3{font-size:17px;margin-bottom:8px;letter-spacing:-.3px}
+.why-card p{color:var(--muted);font-size:14.5px}
+/* Area */
+.area-flex{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:760px){.area-flex{grid-template-columns:1fr 1.2fr;align-items:start}}
+.cities{display:flex;flex-wrap:wrap;gap:8px}
+.city{background:var(--green-light);color:var(--green-dark);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700}
+.city.primary{background:var(--green);color:#fff}
+/* Contact */
+.contact{background:linear-gradient(160deg,var(--green-dark),var(--green));color:#fff;border-radius:24px;padding:48px 24px;text-align:center}
+.contact h2{color:#fff}
+.contact p{color:rgba(255,255,255,.82);max-width:480px;margin:0 auto 28px}
+.contact .btn-call{margin:0 auto}
+.contact .alt{margin-top:22px;font-size:14.5px}
+.contact .alt a{color:#fff;font-weight:700}
+/* Footer */
+footer{padding:34px 0 44px;color:var(--muted);font-size:13.5px}
+.f-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+/* Sticky mobile call bar */
+.callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid #e2e6e2;display:none}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:14px;border-radius:14px}
+@media(max-width:640px){
+  .callbar{display:block}
+  body{padding-bottom:76px}
+  .nav-call span{display:none}
+  .nav-call{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="JS Landscaping home">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1d6b3a"/><path d="M17 26c0-7 2.5-12 8-15-1 7-3.5 12-8 15Z" fill="#8fd6a4"/><path d="M17 26c0-7-2.5-12-8-15 1 7 3.5 12 8 15Z" fill="#e7f3ec"/><path d="M17 26v-8" stroke="#e7f3ec" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>JS Landscaping<small>&amp; Sprinkler Repair LLC</small></span>
+    </a>
+    <a class="nav-call" href="tel:8016167628">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      <span>801-616-7628</span>
+    </a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="badge">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      Over 10 years of experience &middot; Locally owned
+    </div>
+    <h1>Your yard, done <em>right.</em></h1>
+    <p class="sub">Landscaping, sprinkler repair, concrete &amp; yard cleanup for Roy, Ogden and Davis County. One call and it's handled.</p>
+    <div class="cta-row">
+      <a class="btn-call" href="tel:8016167628">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+        <span>Call 801-616-7628<small>Free estimate — tap to call</small></span>
+      </a>
+      <a class="btn-ghost" href="#services">See everything we do &darr;</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>10+</b><span>YEARS EXPERIENCE</span></div>
+      <div class="stat"><b>24+</b><span>SERVICES OFFERED</span></div>
+      <div class="stat"><b>30</b><span>CITIES SERVED</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">Services</div>
+    <h2>From sprinklers to full landscapes</h2>
+    <p class="lead">One crew for the whole job — no juggling three contractors to finish one yard.</p>
+    <div class="svc-grid">
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21v-6M12 15c0-4 2-7 6-8-1 5-2.5 7-6 8ZM12 15c0-4-2-7-6-8 1 5 2.5 7 6 8Z"/></svg></div><h3>Sprinkler Repair</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20V10l7-6 7 6v10"/></svg></div><h3>Retaining &amp; Rock Walls</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 18h16M4 14h16M7 10h10M9 6h6"/></svg></div><h3>Concrete &amp; Driveways</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div><h3>Pavers &amp; Patios</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c4-1 6-3 6-7V5l5 3M11 9l5-1"/></svg></div><h3>Yard &amp; Leaf Cleanup</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20 14 10M14 10l4-6 2 2-6 4M4 20h4v-4"/></svg></div><h3>Excavating &amp; Grading</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 7c-3 0-5 2-5 5v9h10v-9c0-3-2-5-5-5ZM9 21v-4M15 21v-4"/></svg></div><h3>Pressure Washing</h3></div>
+      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d6b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v4H4zM6 10v8M18 10v8M6 18h12"/></svg></div><h3>Rain Gutter Cleaning</h3></div>
+    </div>
+    <div class="more-svcs">
+      <span class="chip">Sod removal</span><span class="chip">Weed mat</span><span class="chip">Sidewalks</span><span class="chip">Downspouts</span><span class="chip">Foundations</span><span class="chip">Basements</span><span class="chip">Flat stones</span><span class="chip">Dirt removal</span><span class="chip">Junk removal</span><span class="chip">Window cleaning</span><span class="chip">Swimming pools</span>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="kicker">Why JS</div>
+    <h2>Small crew. Big standards.</h2>
+    <p class="lead">You deal directly with the people doing the work — not a call center.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Over 10 years of experience</h3>
+        <p>A decade-plus of Utah yards, Utah soil and Utah winters. We've seen your problem before.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Local &amp; owner-operated</h3>
+        <p>Based right here in the Roy–Ogden area. When you call, you talk to the owner, Jaime.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>One crew, start to finish</h3>
+        <p>Sprinklers, concrete, walls and cleanup under one roof — the whole project gets done, not just part of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap area-flex">
+    <div>
+      <div class="kicker">Service Area</div>
+      <h2>Serving Weber &amp; Davis County</h2>
+      <p class="lead" style="margin-bottom:0">Based in Roy, working across northern Utah — from Ogden down through Davis County. Not sure if we cover you? Call and ask.</p>
+    </div>
+    <div class="cities">
+      <span class="city primary">Roy</span><span class="city primary">Ogden</span>
+      <span class="city">Layton</span><span class="city">Clearfield</span><span class="city">Syracuse</span><span class="city">Kaysville</span><span class="city">Clinton</span><span class="city">Riverdale</span><span class="city">South Ogden</span><span class="city">North Ogden</span><span class="city">West Haven</span><span class="city">Hooper</span><span class="city">Farmington</span><span class="city">Bountiful</span><span class="city">Centerville</span><span class="city">West Point</span><span class="city">Sunset</span><span class="city">Plain City</span><span class="city">Harrisville</span><span class="city">Pleasant View</span><span class="city">Brigham City</span><span class="city">+ more</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div class="kicker" style="color:#f5a623">Get a free estimate</div>
+      <h2>Ready when you are</h2>
+      <p>Tell us about your yard and we'll give you a straight answer and a fair price.</p>
+      <a class="btn-call" href="tel:8016167628">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+        <span>Call 801-616-7628<small>Free estimate — tap to call</small></span>
+      </a>
+      <p class="alt">Prefer email? <a href="mailto:jaimesaiz123456789@gmail.com">jaimesaiz123456789@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap f-row">
+    <div><strong style="color:var(--ink)">JS Landscaping &amp; Sprinkler Repair LLC</strong> &middot; Roy / Ogden, Utah</div>
+    <div><a href="tel:8016167628" style="font-weight:700;color:var(--green);text-decoration:none">801-616-7628</a></div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:8016167628">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Call for a free estimate
+  </a>
+</div>
+
+</body>
+</html>
