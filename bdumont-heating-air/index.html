@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B. Dumont Heating &amp; Air | Maumelle &amp; Central Arkansas</title>
+<style>
+  :root{--navy:#12233b;--ice:#2f8fbf;--flame:#c4531f;--cream:#f6f4ee;--gray:#5b6470;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',Arial,sans-serif;color:var(--navy);background:#fff;}
+  a{text-decoration:none;color:inherit;}
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--ice) 100%);color:#fff;padding:70px 6vw 90px;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-60px;bottom:-60px;width:300px;height:300px;border-radius:50%;background:rgba(196,83,31,.2);}
+  .badge{display:inline-block;background:var(--flame);color:#fff;padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:700;margin-bottom:18px;}
+  .hero h1{font-size:2.5rem;line-height:1.15;max-width:640px;margin-bottom:16px;}
+  .hero p{font-size:1.1rem;max-width:560px;opacity:.9;margin-bottom:30px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:8px;font-weight:700;font-size:1.05rem;}
+  .btn-call{background:var(--flame);color:#fff;box-shadow:0 8px 20px rgba(196,83,31,.35);}
+  .btn-outline{border:2px solid rgba(255,255,255,.5);color:#fff;}
+  .stats{display:flex;gap:40px;margin-top:46px;flex-wrap:wrap;}
+  .stat b{display:block;font-size:1.8rem;color:var(--flame);}
+  .stat span{font-size:.85rem;opacity:.8;}
+  section{padding:64px 6vw;}
+  .section-title{font-size:2rem;margin-bottom:10px;}
+  .section-sub{color:var(--gray);margin-bottom:36px;max-width:600px;}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;}
+  .card{background:var(--cream);border-radius:14px;padding:22px 20px;border:1px solid #e8e2d2;}
+  .card h3{font-size:1.05rem;margin-bottom:6px;}
+  .card p{color:var(--gray);font-size:.9rem;line-height:1.5;}
+  .why{background:var(--navy);color:#fff;}
+  .why .section-sub{color:#cfd9e1;}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;}
+  .why-item{padding-left:18px;border-left:3px solid var(--flame);}
+  .why-item h3{margin-bottom:6px;font-size:1.1rem;}
+  .why-item p{color:#cfd9e1;font-size:.95rem;}
+  .contact{background:var(--cream);text-align:center;}
+  .contact h2{font-size:2rem;margin-bottom:12px;}
+  .contact p{color:var(--gray);margin-bottom:30px;}
+  .contact .btn-call{font-size:1.3rem;padding:20px 40px;}
+  footer{padding:26px 6vw;text-align:center;color:var(--gray);font-size:.85rem;background:#fff;border-top:1px solid #eee;}
+  @media(max-width:600px){.hero h1{font-size:2rem;}.stats{gap:24px;}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <span class="badge">VETERAN OWNED · MAUMELLE, AR</span>
+  <h1>24-Hour Heating &amp; Air, No Overselling.</h1>
+  <p>B. Dumont Heating &amp; Air keeps Central Arkansas comfortable with veteran-owned service — AC, furnaces, heat pumps, and ductwork, plus 24/7 emergency repair.</p>
+  <div class="cta-row">
+    <a class="btn btn-call" href="tel:15012423255">📞 Call (501) 242-3255</a>
+    <a class="btn btn-outline" href="mailto:bdumonthvac@gmail.com">Email Us</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>24/7</b><span>Emergency Repairs</span></div>
+    <div class="stat"><b>VET</b><span>Owned & Operated</span></div>
+    <div class="stat"><b>Wide</b><span>Central Arkansas Coverage</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">HVAC Services</h2>
+  <p class="section-sub">Residential and commercial systems, sized right the first time.</p>
+  <div class="services">
+    <div class="card"><h3>AC Installation & Repair</h3><p>New systems and fast fixes for existing units.</p></div>
+    <div class="card"><h3>Furnaces & Boilers</h3><p>Heating repair and replacement for AR winters.</p></div>
+    <div class="card"><h3>Ductless Splits</h3><p>Zoned comfort without ductwork overhaul.</p></div>
+    <div class="card"><h3>Heat Pumps</h3><p>Efficient heating and cooling in one system.</p></div>
+    <div class="card"><h3>Sheet Metal Ductwork</h3><p>Custom fabrication and installation.</p></div>
+    <div class="card"><h3>Commercial HVAC</h3><p>System service for Arkansas businesses.</p></div>
+  </div>
+</section>
+
+<section class="why">
+  <h2 class="section-title">Why Central Arkansas Calls Dumont</h2>
+  <p class="section-sub">Verified facts, not marketing fluff.</p>
+  <div class="why-grid">
+    <div class="why-item"><h3>Veteran Owned</h3><p>Operated with military discipline and honesty.</p></div>
+    <div class="why-item"><h3>24/7 Emergency Repair</h3><p>Real response when your system fails at the worst time.</p></div>
+    <div class="why-item"><h3>Full-Service HVAC</h3><p>From ductwork to heat pumps, one team handles it all.</p></div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Schedule Service Today</h2>
+  <p>Call or email — B. Dumont responds fast across Central Arkansas.</p>
+  <a class="btn btn-call" href="tel:15012423255">📞 (501) 242-3255</a>
+</section>
+
+<footer>B. Dumont Heating & Air · Maumelle, AR · bdumonthvac@gmail.com · This is a preview concept, not the live B. Dumont website.</footer>
+</body>
+</html>
