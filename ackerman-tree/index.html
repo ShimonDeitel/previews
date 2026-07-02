@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-Ackerman Tree Service | Dayton, OH Tree Care Experts</title>
+<meta name="description" content="A-Ackerman Tree Service — residential, commercial and municipal tree care in Dayton, OH. Pruning, removal, stump grinding, land clearing, and 24-hour emergency storm service.">
+<style>
+  :root{
+    --green-900:#12271c;
+    --green-800:#1c3a29;
+    --green-700:#2b5738;
+    --green-600:#3d7a4d;
+    --amber:#e8871e;
+    --cream:#faf7f0;
+    --ink:#182018;
+    --line:#e3ded1;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--green-900);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .headbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;max-width:1080px;margin:0 auto;
+    gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;}
+  .brand-mark{width:34px;height:34px;flex:0 0 auto;}
+  .brand-text{font-weight:800;font-size:15px;letter-spacing:.2px;line-height:1.2;}
+  .brand-text small{display:block;font-weight:500;font-size:10.5px;color:#c9d8cc;letter-spacing:.5px;text-transform:uppercase;}
+  .call-pill{
+    display:flex;align-items:center;gap:7px;
+    background:var(--amber);color:#1a1206;
+    font-weight:800;font-size:14px;
+    padding:9px 14px;border-radius:999px;
+    white-space:nowrap;
+  }
+  .call-pill svg{width:16px;height:16px;flex:0 0 auto;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 80% -10%, rgba(61,122,77,.35), transparent 60%),
+      linear-gradient(180deg,var(--green-900),var(--green-800));
+    color:#fff;
+    padding:52px 0 44px;
+    position:relative;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);
+    color:#d8e6da;
+    font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;line-height:1.14;font-weight:800;letter-spacing:-.5px;
+    margin-bottom:14px;
+  }
+  .hero h1 em{color:#a8d9b4;font-style:normal;}
+  .hero p{
+    font-size:16px;color:#dbe6dd;max-width:46ch;margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:10px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    font-weight:800;font-size:16px;
+    padding:16px 20px;border-radius:12px;
+    width:100%;
+  }
+  .btn svg{width:19px;height:19px;flex:0 0 auto;}
+  .btn-primary{background:var(--amber);color:#1a1206;box-shadow:0 8px 20px rgba(232,135,30,.35);}
+  .btn-secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25);}
+  .hero-emergency{
+    margin-top:22px;
+    display:flex;align-items:center;gap:10px;
+    background:rgba(200,60,40,.16);
+    border:1px solid rgba(224,90,70,.4);
+    border-radius:12px;padding:12px 14px;
+    font-size:13.5px;color:#ffd9cf;
+  }
+  .hero-emergency svg{width:20px;height:20px;flex:0 0 auto;color:#ff9a7f;}
+  .hero-emergency strong{color:#fff;}
+
+  /* ---------- Trust strip ---------- */
+  .trust{
+    background:var(--green-700);
+    color:#eaf3ec;
+    padding:14px 0;
+  }
+  .trust .wrap{
+    display:flex;flex-wrap:wrap;gap:10px 22px;
+    justify-content:center;font-size:12.5px;font-weight:700;letter-spacing:.3px;
+  }
+  .trust .item{display:flex;align-items:center;gap:6px;}
+  .trust svg{width:15px;height:15px;flex:0 0 auto;}
+
+  /* ---------- Section heads ---------- */
+  .kicker{
+    font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+    color:var(--green-600);margin-bottom:8px;
+  }
+  h2{font-size:25px;font-weight:800;letter-spacing:-.3px;margin-bottom:10px;color:var(--green-900);}
+  .lead{color:#565f57;font-size:15px;margin-bottom:28px;max-width:52ch;}
+
+  /* ---------- Services ---------- */
+  .services{background:#fff;}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  .svc-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px;
+    background:var(--cream);
+  }
+  .svc-icon{
+    width:42px;height:42px;border-radius:10px;
+    background:var(--green-800);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+  }
+  .svc-icon svg{width:22px;height:22px;color:#a8d9b4;}
+  .svc-card h3{font-size:16.5px;font-weight:800;margin-bottom:5px;color:var(--green-900);}
+  .svc-card p{font-size:13.5px;color:#5c6459;}
+
+  /* ---------- Why us ---------- */
+  .why{background:var(--green-900);color:#fff;}
+  .why h2{color:#fff;}
+  .why .lead{color:#c7d6ca;}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-num{
+    width:38px;height:38px;border-radius:10px;flex:0 0 auto;
+    background:rgba(232,135,30,.16);
+    border:1px solid rgba(232,135,30,.4);
+    color:var(--amber);font-weight:800;font-size:15px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item h3{font-size:15.5px;font-weight:800;margin-bottom:4px;}
+  .why-item p{font-size:13.5px;color:#c7d6ca;}
+
+  /* ---------- Area ---------- */
+  .area{background:#fff;}
+  .area-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .chip{
+    background:var(--cream);border:1px solid var(--line);
+    border-radius:999px;padding:8px 13px;
+    font-size:13px;font-weight:700;color:var(--green-800);
+  }
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:linear-gradient(135deg,var(--amber),#d3721a);
+    color:#1a1206;text-align:center;
+  }
+  .cta-band h2{color:#1a1206;}
+  .cta-band .lead{color:#3a2a12;margin-left:auto;margin-right:auto;}
+  .cta-band .btn-primary{background:#1a1206;color:#fff;max-width:340px;margin:0 auto;box-shadow:none;}
+
+  /* ---------- Contact / footer ---------- */
+  footer{background:var(--green-900);color:#dbe6dd;padding:44px 0 26px;}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-bottom:30px;}
+  .contact-card h3{color:#fff;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;}
+  .contact-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:14.5px;}
+  .contact-row svg{width:18px;height:18px;flex:0 0 auto;margin-top:2px;color:var(--amber);}
+  .contact-row a{font-weight:700;color:#fff;}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding-top:18px;font-size:12px;color:#9ab19f;
+    display:flex;flex-direction:column;gap:6px;
+  }
+
+  /* ---------- Desktop ---------- */
+  @media(min-width:700px){
+    .hero h1{font-size:46px;}
+    .hero p{font-size:17.5px;}
+    .hero-ctas{flex-direction:row;}
+    .btn{width:auto;padding:16px 26px;}
+    .svc-grid{grid-template-columns:repeat(3,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:repeat(3,1fr);}
+    .foot-bottom{flex-direction:row;justify-content:space-between;}
+    h2{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="20" fill="#3d7a4d"/>
+        <path d="M20 8c4 4 7 7 7 12a7 7 0 0 1-14 0c0-5 3-8 7-12z" fill="#a8d9b4"/>
+        <rect x="18.5" y="26" width="3" height="8" rx="1" fill="#e8871e"/>
+      </svg>
+      <div class="brand-text">A-Ackerman<small>Tree Service · Dayton, OH</small></div>
+    </div>
+    <a class="call-pill" href="tel:9372773965">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      937-277-3965
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-badge">Dayton, Ohio &amp; the Miami Valley</span>
+    <h1>Tree work done right the <em>first time</em>.</h1>
+    <p>A-Ackerman Tree Service handles pruning, removal, stump grinding and storm cleanup for homes, businesses and municipalities across the Dayton area.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:9372773965">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 937-277-3965
+      </a>
+      <a class="btn btn-secondary" href="#contact">Request a Quote</a>
+    </div>
+    <div class="hero-emergency">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86l-8.18 14.14A2 2 0 0 0 3.82 21h16.36a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      <span><strong>24-Hour Emergency Storm Service</strong> &amp; dangerous tree removal — South line: <a href="tel:9374331819" style="color:#fff;">937-433-1819</a></span>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Residential, Commercial &amp; Municipal</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Open 24 Hours</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Serving Dayton &amp; the Miami Valley</span>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker">What We Do</div>
+    <h2>Full-Service Tree Care</h2>
+    <p class="lead">From routine pruning to emergency storm cleanup, one call covers it.</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C7 12 4 9 4 4c5 0 8 3 8 8zM12 12c5 0 8-3 8-8-5 0-8 3-8 8z"/></svg></div>
+        <h3>Pruning &amp; Tree Trimming</h3>
+        <p>Shaping and maintenance that keeps trees healthy and your property looking sharp.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l2 2M18 3l-2 2M8 21l4-14 4 14M6 21h12"/></svg></div>
+        <h3>Tree Removal</h3>
+        <p>Safe, complete removal of hazardous, dead or unwanted trees, any size.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M8 12h8"/></svg></div>
+        <h3>Stump Removal &amp; Cabling</h3>
+        <p>Grind out stumps for good, or cable at-risk limbs to protect what stays.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Land Clearing &amp; Leveling</h3>
+        <p>Clear lots and grounds for new construction, pasture or landscaping projects.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3>Tree Health Care Management</h3>
+        <p>Assessment and treatment plans to keep trees strong through every season.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <h3>24-Hour Emergency Service</h3>
+        <p>Storm damage and dangerous trees don't wait for business hours — neither do we.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="kicker" style="color:#a8d9b4;">Why Ackerman</div>
+    <h2>A Local Crew You Can Call Directly</h2>
+    <p class="lead">No call centers, no subcontractors passing the job around.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">1</div>
+        <div><h3>Two Direct Lines</h3><p>North and south service lines so you reach a real person, day or night.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">2</div>
+        <div><h3>Residential to Municipal</h3><p>Homeowners, businesses and municipal contracts — same crew, same standard.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">3</div>
+        <div><h3>Storm-Ready</h3><p>24-hour emergency response for downed limbs and dangerous trees.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">4</div>
+        <div><h3>Based in Dayton</h3><p>Local address on Wagoner Ford Rd — not a national franchise dispatching strangers.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="kicker">Service Area</div>
+    <h2>Proudly Serving the Miami Valley</h2>
+    <p class="lead">Based in Dayton, OH — working throughout the surrounding communities.</p>
+    <div class="area-chips">
+      <span class="chip">Dayton</span>
+      <span class="chip">Shiloh</span>
+      <span class="chip">Huber Heights</span>
+      <span class="chip">Vandalia</span>
+      <span class="chip">Brandt</span>
+      <span class="chip">Park Layne</span>
+      <span class="chip">Medway</span>
+      <span class="chip">Northridge</span>
+      <span class="chip">Fairborn</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Get a Straight Answer, Fast</h2>
+    <p class="lead">Call now and talk to A-Ackerman Tree Service directly.</p>
+    <a class="btn btn-primary" href="tel:9372773965">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      937-277-3965
+    </a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call Us</h3>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>North line: <a href="tel:9372773965">937-277-3965</a><br>South / Emergency: <a href="tel:9374331819">937-433-1819</a></span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Email</h3>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <a href="mailto:info@aakermantreeservice.com">info@aakermantreeservice.com</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Visit</h3>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>5052 Wagoner Ford Rd<br>Dayton, OH 45414</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 A-Ackerman Tree Service. All rights reserved.</span>
+      <span>Open 24 Hours — Emergency Service Available</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
