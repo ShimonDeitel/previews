@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EZ Roof Gulf — Roofing in Mobile &amp; Baldwin County, AL</title>
+<meta name="description" content="EZ Roof Gulf LLC — licensed and insured roofing installation, repairs, and inspections serving Mobile and Baldwin County, Alabama. Free estimates. Call (251) 510-0799.">
+<style>
+  :root{
+    --navy:#12263a;
+    --navy2:#0c1a29;
+    --red:#c8402f;
+    --red-dark:#a83324;
+    --sand:#f5f2ec;
+    --ink:#1c2733;
+    --muted:#5b6b7a;
+    --line:#e4ded3;
+    --white:#fff;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
+
+  /* ---------- top bar ---------- */
+  .topbar{background:var(--navy2);color:#cfd9e4;font-size:.8rem;padding:7px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .topbar strong{color:#fff;font-weight:600}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;background:var(--white);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand-mark{width:40px;height:40px;flex:0 0 auto}
+  .brand-name{font-weight:800;font-size:1.05rem;color:var(--navy);letter-spacing:.01em}
+  .brand-name span{color:var(--red)}
+  .brand-sub{display:block;font-size:.65rem;font-weight:600;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  .nav-links{display:none;gap:26px;list-style:none;font-size:.92rem;font-weight:500}
+  .nav-links a{text-decoration:none;color:var(--ink)}
+  .nav-links a:hover{color:var(--red)}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--red);color:#fff;text-decoration:none;
+    font-weight:700;font-size:.92rem;
+    padding:11px 18px;border-radius:999px;white-space:nowrap;
+    box-shadow:0 4px 14px rgba(200,64,47,.35);
+    transition:background .15s;
+  }
+  .call-btn:hover{background:var(--red-dark)}
+  .call-btn svg{width:16px;height:16px;flex:0 0 auto}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      linear-gradient(160deg, rgba(18,38,58,.96) 0%, rgba(18,38,58,.88) 55%, rgba(12,26,41,.94) 100%),
+      var(--navy);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .hero-roofline{position:absolute;inset:auto 0 0 0;opacity:.14;pointer-events:none}
+  .hero-inner{position:relative;padding:64px 0 88px;text-align:left;max-width:640px}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+    color:#e8eef4;padding:6px 12px;border-radius:999px;
+  }
+  .badge svg{width:13px;height:13px}
+  .hero h1{font-size:clamp(1.9rem,6.5vw,3.1rem);font-weight:800;margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:#f0a496}
+  .hero p{font-size:1.05rem;color:#c9d5e0;margin-bottom:30px;max-width:52ch}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .btn-primary,.btn-ghost{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-weight:700;font-size:1rem;text-decoration:none;
+    padding:15px 26px;border-radius:999px;transition:all .15s;
+  }
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 20px rgba(200,64,47,.45)}
+  .btn-primary:hover{background:var(--red-dark)}
+  .btn-primary svg{width:18px;height:18px}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.08)}
+  .hero-note{margin-top:18px;font-size:.85rem;color:#9fb2c2}
+
+  /* ---------- trust strip ---------- */
+  .trust{background:var(--sand);border-bottom:1px solid var(--line)}
+  .trust .wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    padding:0;
+  }
+  .trust-item{
+    padding:20px 16px;text-align:center;background:var(--sand);
+  }
+  .trust-item svg{width:26px;height:26px;margin:0 auto 8px;color:var(--red)}
+  .trust-item strong{display:block;font-size:.9rem;color:var(--navy)}
+  .trust-item span{font-size:.76rem;color:var(--muted)}
+
+  /* ---------- sections ---------- */
+  section{padding:64px 0}
+  .kicker{
+    font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--red);margin-bottom:10px;
+  }
+  .sec-title{font-size:clamp(1.5rem,5vw,2.2rem);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .sec-lede{color:var(--muted);max-width:60ch;margin-bottom:36px}
+
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .svc{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;background:#fff;transition:box-shadow .15s,transform .15s;
+  }
+  .svc:hover{box-shadow:0 10px 28px rgba(18,38,58,.1);transform:translateY(-2px)}
+  .svc-icon{
+    width:48px;height:48px;border-radius:12px;background:var(--sand);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .svc-icon svg{width:24px;height:24px;color:var(--red)}
+  .svc h3{font-size:1.08rem;color:var(--navy);margin-bottom:8px}
+  .svc p{font-size:.92rem;color:var(--muted)}
+
+  /* why us */
+  .why{background:var(--navy);color:#fff}
+  .why .sec-title{color:#fff}
+  .why .sec-lede{color:#b7c6d4}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .why-item{
+    display:flex;gap:16px;align-items:flex-start;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);padding:20px;
+  }
+  .why-item svg{width:24px;height:24px;flex:0 0 auto;color:#f0a496;margin-top:2px}
+  .why-item strong{display:block;color:#fff;margin-bottom:4px}
+  .why-item p{font-size:.9rem;color:#b7c6d4}
+
+  /* area */
+  .area .wrap{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
+  .area-map{width:100%;max-width:380px;margin:0 auto}
+  .area-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .area-tag{
+    font-size:.85rem;font-weight:600;color:var(--navy);
+    background:var(--sand);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;
+  }
+
+  /* contact */
+  .contact{background:var(--sand)}
+  .contact-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;display:grid;grid-template-columns:1fr;gap:24px;
+  }
+  .c-row{display:flex;gap:14px;align-items:flex-start}
+  .c-row svg{width:22px;height:22px;flex:0 0 auto;color:var(--red);margin-top:3px}
+  .c-row strong{display:block;color:var(--navy);font-size:.95rem}
+  .c-row a{color:var(--red);font-weight:700;text-decoration:none;font-size:1.15rem}
+  .c-row span,.c-row p{font-size:.9rem;color:var(--muted)}
+  .contact .btn-primary{width:100%;margin-top:6px}
+
+  /* footer */
+  footer{background:var(--navy2);color:#8fa2b3;font-size:.83rem;padding:34px 0}
+  footer .wrap{display:flex;flex-direction:column;gap:8px}
+  footer strong{color:#dbe4ec}
+
+  /* sticky mobile call bar */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--red);padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    display:flex;justify-content:center;
+    box-shadow:0 -4px 18px rgba(0,0,0,.2);
+  }
+  .callbar a{
+    color:#fff;font-weight:800;font-size:1.05rem;text-decoration:none;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .callbar svg{width:19px;height:19px}
+  body{padding-bottom:64px}
+
+  /* ---------- desktop ---------- */
+  @media(min-width:760px){
+    .nav-links{display:flex}
+    .trust .wrap{grid-template-columns:repeat(4,1fr)}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .area .wrap{grid-template-columns:1.1fr .9fr}
+    .contact-card{grid-template-columns:repeat(2,1fr);padding:40px}
+    .contact .btn-primary{grid-column:1/-1;width:auto;justify-self:start}
+    .callbar{display:none}
+    body{padding-bottom:0}
+    .hero-inner{padding:96px 0 130px}
+    footer .wrap{flex-direction:row;justify-content:space-between;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>Licensed &amp; Insured &middot; <strong>Alabama Lic # 31421</strong></div>
+    <div>Mon&ndash;Fri 9am&ndash;4:30pm</div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M4 26 24 8l20 18" stroke="#c8402f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 24v14h24V24" stroke="#12263a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand-name">EZ ROOF <span>GULF</span></span>
+        <span class="brand-sub">Mobile, Alabama</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+12515100799" aria-label="Call EZ Roof Gulf at (251) 510-0799">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      (251) 510-0799
+    </a>
+  </div>
+</header>
+
+<div class="hero">
+  <svg class="hero-roofline" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 220 L150 120 L300 220 L420 90 L560 220 L700 130 L840 220 L980 100 L1200 220 Z" fill="#fff"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="badge-row">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Licensed &amp; Insured
+        </span>
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+          CertainTeed Select ShingleMaster&trade;
+        </span>
+      </div>
+      <h1>Superior workmanship.<br>Prompt service. <em>EZ Roof Gulf has you covered.</em></h1>
+      <p>Roofing installation, repairs, and inspections for the Mobile market and Baldwin County — backed by a 3-year workmanship guarantee and product warranties up to 50 years through our suppliers.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:+12515100799">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+          Call (251) 510-0799
+        </a>
+        <a class="btn-ghost" href="#contact">Get a Free Estimate</a>
+      </div>
+      <div class="hero-note">Free professional roofing estimates &middot; "EZ" financing available</div>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <strong>Licensed &amp; Insured</strong><span>Alabama Lic # 31421</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+      <strong>Select ShingleMaster&trade;</strong><span>CertainTeed certified</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/><path d="m9 12 2 2 4-4"/></svg>
+      <strong>3-Year Guarantee</strong><span>On our workmanship</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+      <strong>"EZ" Financing</strong><span>Options available</span>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">What We Do</div>
+    <h2 class="sec-title">Roofing services, done right</h2>
+    <p class="sec-lede">From full installations to a fast repair before you list your home — one licensed local crew handles it all.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg></div>
+        <h3>Roof Installation</h3>
+        <p>Complete roofing installations with superior workmanship and product warranties up to 50 years available through our suppliers.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Roof Repairs</h3>
+        <p>Prompt, professional repairs to stop leaks and storm damage before small problems become big ones.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3>Roof Inspections</h3>
+        <p>Thorough inspections that tell you exactly where your roof stands — no guesswork, no pressure.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
+        <h3>Insurance Estimates</h3>
+        <p>Detailed estimates for insurance claims, prepared so the paperwork works for you instead of against you.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="m9.5 15 1.7 1.7 3.3-3.4"/></svg></div>
+        <h3>Home Sale Certifications</h3>
+        <p>Selling your home? Get the roof certification buyers and lenders want to see, without slowing down your closing.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4v16h16v-7"/><path d="M18 2h4v4"/><path d="m14 10 8-8"/></svg></div>
+        <h3>Free Estimates</h3>
+        <p>Free professional roofing estimates — know exactly what your project costs before any work begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="kicker">Why EZ Roof Gulf</div>
+    <h2 class="sec-title">One of the top roofing companies in the Mobile market</h2>
+    <p class="sec-lede">When you call, you deal with the people who actually put on your roof — not a call center.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><strong>Licensed &amp; insured</strong><p>Alabama License # 31421 — fully licensed and insured for your protection.</p></div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+        <div><strong>CertainTeed Select ShingleMaster&trade;</strong><p>A certification held by a select group of roofers — proof of training and craftsmanship.</p></div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><strong>3-year workmanship guarantee</strong><p>We stand behind our installations — plus supplier product warranties up to 50 years.</p></div>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><strong>Prompt service</strong><p>Prompt service and roofing installations — we show up, and we finish the job.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Where We Work</div>
+      <h2 class="sec-title">Serving Mobile &amp; Baldwin County</h2>
+      <p class="sec-lede">EZ Roof Gulf is based in Mobile, Alabama and serves homeowners across the Mobile market and Baldwin County.</p>
+      <div class="area-tags">
+        <span class="area-tag">Mobile, AL</span>
+        <span class="area-tag">Baldwin County</span>
+        <span class="area-tag">Gulf Coast Alabama</span>
+      </div>
+    </div>
+    <svg class="area-map" viewBox="0 0 300 260" aria-label="Map illustration of the Mobile Bay area service region">
+      <rect width="300" height="260" rx="16" fill="#f5f2ec"/>
+      <path d="M60 20 C70 70 55 110 80 150 C95 175 90 210 110 240" stroke="#c9d5e0" stroke-width="30" fill="none" stroke-linecap="round"/>
+      <path d="M150 30 C140 90 160 140 150 190 C148 210 155 230 160 245" stroke="#aebfd0" stroke-width="46" fill="none" stroke-linecap="round"/>
+      <circle cx="105" cy="95" r="9" fill="#c8402f"/>
+      <circle cx="105" cy="95" r="16" fill="#c8402f" opacity=".2"/>
+      <text x="105" y="72" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#12263a">Mobile</text>
+      <circle cx="215" cy="140" r="7" fill="#12263a"/>
+      <text x="215" y="120" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="600" fill="#12263a">Baldwin Co.</text>
+      <text x="150" y="252" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" fill="#5b6b7a">Mobile Bay area — illustration</text>
+    </svg>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="kicker">Get In Touch</div>
+    <h2 class="sec-title">Ready for a free estimate?</h2>
+    <p class="sec-lede">Call or email and tell us about your roof. We'll get back to you personally.</p>
+    <div class="contact-card">
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <div><strong>Phone</strong><a href="tel:+12515100799">(251) 510-0799</a></div>
+      </div>
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <div><strong>Email</strong><a href="mailto:william@ezroofgulf.com" style="font-size:1rem">william@ezroofgulf.com</a></div>
+      </div>
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><strong>Location</strong><span>Mobile, Alabama 36582</span></div>
+      </div>
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><strong>Hours</strong><span>Mon&ndash;Fri: 9am&ndash;4:30pm<br>Sat&ndash;Sun: Closed</span></div>
+      </div>
+      <a class="btn-primary" href="tel:+12515100799">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        Call Now — (251) 510-0799
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>EZ Roof Gulf LLC</strong> &middot; Mobile, Alabama &middot; Alabama Lic # 31421</div>
+    <div>Licensed &amp; Insured &middot; CertainTeed Select ShingleMaster&trade;</div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+12515100799" aria-label="Tap to call EZ Roof Gulf">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+    Tap to Call — (251) 510-0799
+  </a>
+</div>
+
+</body>
+</html>
