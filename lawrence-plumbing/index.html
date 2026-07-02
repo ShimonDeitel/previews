@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lawrence Plumbing Services | Columbia, MO Master Plumber</title>
+<meta name="description" content="Master Plumber Bob Lawrence serving Columbia, MO. Water heaters, drain lines, fixtures, remodeling & more. Call 573-239-8005.">
+<style>
+  :root{
+    --navy:#0f2942;
+    --navy-dark:#0a1c2e;
+    --blue:#1d6fb8;
+    --blue-light:#eaf3fb;
+    --ink:#1a2530;
+    --gray:#5b6b78;
+    --line:#e2e8ee;
+    --white:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+
+  /* ---- Top call bar ---- */
+  .callbar{
+    background:var(--navy-dark);
+    color:#fff;
+    font-size:13px;
+    text-align:center;
+    padding:8px 12px;
+    letter-spacing:.2px;
+  }
+  .callbar a{color:#8fd0ff;font-weight:600;}
+
+  /* ---- Header ---- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .headrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1100px;margin:0 auto;
+    gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:var(--navy);}
+  .brand .logo{width:36px;height:36px;flex:none;}
+  .brand small{display:block;font-weight:500;font-size:11px;color:var(--gray);}
+  .call-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--blue);color:#fff;
+    padding:11px 16px;border-radius:999px;
+    font-weight:700;font-size:14px;white-space:nowrap;
+    box-shadow:0 4px 14px rgba(29,111,184,.35);
+  }
+  .call-btn svg{width:16px;height:16px;flex:none;}
+
+  /* ---- Hero ---- */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;position:relative;overflow:hidden;
+    padding:52px 0 60px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle at 85% 15%, rgba(29,111,184,.35), transparent 55%);
+  }
+  .hero-inner{position:relative;text-align:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+    color:#cfe6fa;font-size:12.5px;font-weight:600;
+    padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,7vw,46px);
+    font-weight:800;line-height:1.15;margin-bottom:14px;
+    letter-spacing:-.5px;
+  }
+  .hero h1 span{color:#6fb8f2;}
+  .hero p.sub{
+    font-size:16px;color:#c3d6e6;max-width:520px;
+    margin:0 auto 28px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .btn-primary{
+    background:var(--blue);color:#fff;font-weight:700;font-size:16px;
+    padding:16px 20px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 8px 24px rgba(29,111,184,.4);
+  }
+  .btn-primary svg{width:19px;height:19px;flex:none;}
+  .btn-secondary{
+    background:rgba(255,255,255,.08);color:#fff;font-weight:600;font-size:15px;
+    padding:14px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .hero-meta{
+    margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;
+    font-size:13px;color:#a9c2d6;
+  }
+  .hero-meta span{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:14px;height:14px;flex:none;color:#6fb8f2;}
+
+  /* ---- Section headings ---- */
+  .sec-head{text-align:center;margin-bottom:34px;}
+  .eyebrow{
+    color:var(--blue);font-weight:700;font-size:12.5px;
+    letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;
+  }
+  .sec-head h2{font-size:clamp(22px,5.5vw,32px);font-weight:800;color:var(--navy);letter-spacing:-.4px;}
+  .sec-head p{color:var(--gray);font-size:15px;margin-top:10px;max-width:480px;margin-left:auto;margin-right:auto;}
+
+  /* ---- Services grid ---- */
+  .grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  @media(min-width:640px){.grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr;}}
+  .card{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;background:#fff;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .card:hover{box-shadow:0 10px 30px rgba(15,41,66,.08);transform:translateY(-2px);}
+  .card .icon{
+    width:44px;height:44px;border-radius:10px;
+    background:var(--blue-light);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card .icon svg{width:22px;height:22px;}
+  .card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .card p{font-size:13.5px;color:var(--gray);}
+
+  /* ---- Why us ---- */
+  .why{background:var(--blue-light);}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:22px;}
+  @media(min-width:700px){.why-grid{grid-template-columns:repeat(3,1fr);}}
+  .why-item{text-align:center;padding:8px;}
+  .why-item .icon{
+    width:54px;height:54px;border-radius:14px;background:#fff;
+    color:var(--blue);display:flex;align-items:center;justify-content:center;
+    margin:0 auto 14px;box-shadow:0 6px 18px rgba(15,41,66,.08);
+  }
+  .why-item .icon svg{width:26px;height:26px;}
+  .why-item h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  /* ---- Area ---- */
+  .area-box{
+    display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center;
+    border:1px solid var(--line);border-radius:var(--radius);padding:30px 22px;
+  }
+  .area-box .icon{
+    width:56px;height:56px;border-radius:50%;background:var(--blue-light);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .area-box .icon svg{width:26px;height:26px;}
+  .area-box h3{font-size:18px;font-weight:800;color:var(--navy);}
+  .area-box p{font-size:14px;color:var(--gray);max-width:460px;}
+  .addr{
+    font-size:13.5px;color:var(--navy);font-weight:600;
+    background:var(--blue-light);padding:8px 14px;border-radius:8px;
+  }
+
+  /* ---- Contact / CTA ---- */
+  .cta{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;text-align:center;
+  }
+  .cta h2{font-size:clamp(22px,6vw,30px);font-weight:800;margin-bottom:10px;}
+  .cta p{color:#c3d6e6;font-size:15px;margin-bottom:26px;}
+  .contact-cards{display:flex;flex-direction:column;gap:14px;max-width:400px;margin:0 auto;}
+  .contact-card{
+    display:flex;align-items:center;gap:14px;text-align:left;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    border-radius:12px;padding:16px 18px;
+  }
+  .contact-card .icon{
+    width:42px;height:42px;border-radius:10px;background:var(--blue);
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .contact-card .icon svg{width:20px;height:20px;color:#fff;}
+  .contact-card .label{font-size:12px;color:#9fb8cc;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+  .contact-card .value{font-size:15px;font-weight:700;color:#fff;word-break:break-word;}
+
+  /* ---- Footer ---- */
+  footer{background:var(--navy-dark);color:#8ea6ba;text-align:center;padding:26px 20px;font-size:12.5px;}
+  footer strong{color:#cfe0ee;}
+
+  /* ---- Sticky mobile call bar ---- */
+  .mobile-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+    font-weight:700;font-size:15px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.18);
+  }
+  .mobile-call svg{width:18px;height:18px;}
+  body{padding-bottom:64px;}
+  @media(min-width:768px){
+    .mobile-call{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">
+  Master Plumber serving Columbia, MO &middot; Call now <a href="tel:5732398005">(573) 239-8005</a>
+</div>
+
+<header>
+  <div class="headrow">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#1d6fb8"/>
+        <path d="M13 27V17.5C13 14.46 15.46 12 18.5 12H21.5C24.54 12 27 14.46 27 17.5V27" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 27H27" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20" cy="19" r="2.4" fill="#ffffff"/>
+      </svg>
+      <div>
+        Lawrence Plumbing
+        <small>Master Plumber &middot; Columbia, MO</small>
+      </div>
+    </div>
+    <a class="call-btn" href="tel:5732398005">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 14.9C17.7 15.3 19 15.5 20.3 15.5C20.9 15.5 21.3 15.9 21.3 16.5V20.2C21.3 20.8 20.9 21.2 20.3 21.2C10.7 21.2 3 13.5 3 3.9C3 3.3 3.4 2.9 4 2.9H7.7C8.3 2.9 8.7 3.3 8.7 3.9C8.7 5.2 8.9 6.5 9.3 7.7C9.4 8.1 9.3 8.5 9 8.8L6.6 10.8Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10" stroke="#6fb8f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#6fb8f2" stroke-width="1.6"/></svg>
+      Licensed Master Plumber
+    </div>
+    <h1>Columbia's Trusted <span>Master Plumber</span></h1>
+    <p class="sub">Bob Lawrence Plumbing Services handles everything from leaky faucets to full bathroom remodels &mdash; fast, honest, and done right the first time.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:5732398005">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 14.9C17.7 15.3 19 15.5 20.3 15.5C20.9 15.5 21.3 15.9 21.3 16.5V20.2C21.3 20.8 20.9 21.2 20.3 21.2C10.7 21.2 3 13.5 3 3.9C3 3.3 3.4 2.9 4 2.9H7.7C8.3 2.9 8.7 3.3 8.7 3.9C8.7 5.2 8.9 6.5 9.3 7.7C9.4 8.1 9.3 8.5 9 8.8L6.6 10.8Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Call (573) 239-8005
+      </a>
+      <a class="btn-secondary" href="mailto:plumberbobl@yahoo.com">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#ffffff" stroke-width="1.6"/><path d="M3.5 6.5L12 13L20.5 6.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Email Us
+      </a>
+    </div>
+    <div class="hero-meta">
+      <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 5 14.5 5 9.5C5 5.9 8.1 3 12 3C15.9 3 19 5.9 19 9.5C19 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg> Columbia, MO &amp; surrounding area</span>
+      <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg> Fast response</span>
+      <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Master Plumber quality</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Full-Service Plumbing</h2>
+      <p>From quick repairs to full remodels, Lawrence Plumbing covers it all.</p>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C12 3 6 10 6 14.5C6 17.5 8.7 20 12 20C15.3 20 18 17.5 18 14.5C18 10 12 3 12 3Z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Water Heaters</h3>
+        <p>Installation, repair, and replacement of water heaters for reliable hot water.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Water Softeners</h3>
+        <p>Water softener, reverse osmosis, purifier, and distillation system setup.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="8" width="14" height="12" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M8 8V6C8 4.3 9.3 3 11 3H13C14.7 3 16 4.3 16 6V8" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Garbage Disposals &amp; Dishwashers</h3>
+        <p>Install, repair, and replace kitchen disposal units and dishwashers.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="12" cy="17" rx="6" ry="3" stroke="currentColor" stroke-width="1.7"/><path d="M6 17V10C6 7.2 8.2 5 11 5H12" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Toilets, Bidets &amp; Fixtures</h3>
+        <p>Toilet and bidet installs, faucet and fixture upgrades and repairs.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 12V8C8 6.3 9.3 5 11 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="17" cy="12" r="2" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Gas Lines</h3>
+        <p>Safe gas line installation and repair for appliances and fixtures.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 10H21" stroke="currentColor" stroke-width="1.7"/><path d="M8 4V10" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Kitchen, Bath &amp; Laundry Remodeling</h3>
+        <p>Full plumbing for kitchen, bathroom, and laundry room remodels.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 6V16C6 17.7 7.3 19 9 19H15C16.7 19 18 17.7 18 16V6" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Drain Lines</h3>
+        <p>Drain line repair, clearing, and replacement to keep water flowing.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 7V12C4 16.5 7.4 20.4 12 21C16.6 20.4 20 16.5 20 12V7L12 3Z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>General Plumbing Repair</h3>
+        <p>Repair, installation, and replacement for everyday plumbing needs.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Why Lawrence Plumbing</div>
+      <h2>Master Plumber You Can Trust</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L4 6V11C4 16 7.4 20.4 12 21C16.6 20.4 20 16 20 11V6L12 3Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Licensed Master Plumber</h3>
+        <p>Direct access to Bob Lawrence, a licensed Master Plumber &mdash; not a call center.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V21" stroke="currentColor" stroke-width="1.7"/><path d="M6 7H16.5C18 7 19 8 19 9.3C19 10.7 18 11.5 16.5 11.5H8C6.3 11.5 5 12.5 5 14C5 15.5 6.3 16.5 8 16.5H18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Straightforward Pricing</h3>
+        <p>Clear communication before work starts &mdash; no surprises.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 5 14.5 5 9.5C5 5.9 8.1 3 12 3C15.9 3 19 5.9 19 9.5C19 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Local to Columbia</h3>
+        <p>Based in Columbia, MO and serving the surrounding area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Service Area</div>
+      <h2>Proudly Serving Columbia, MO</h2>
+    </div>
+    <div class="area-box">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 5 14.5 5 9.5C5 5.9 8.1 3 12 3C15.9 3 19 5.9 19 9.5C19 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg></div>
+      <h3>Columbia, MO &amp; Surrounding Area</h3>
+      <p>Lawrence Plumbing Services is based in Columbia, Missouri and provides plumbing services throughout the surrounding area.</p>
+      <div class="addr">2000 E. Broadway, Ste. 305, Columbia, MO 65201</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Ready to Get Started?</h2>
+    <p>Call or email Lawrence Plumbing Services today.</p>
+    <div class="contact-cards">
+      <a class="contact-card" href="tel:5732398005">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 14.9C17.7 15.3 19 15.5 20.3 15.5C20.9 15.5 21.3 15.9 21.3 16.5V20.2C21.3 20.8 20.9 21.2 20.3 21.2C10.7 21.2 3 13.5 3 3.9C3 3.3 3.4 2.9 4 2.9H7.7C8.3 2.9 8.7 3.3 8.7 3.9C8.7 5.2 8.9 6.5 9.3 7.7C9.4 8.1 9.3 8.5 9 8.8L6.6 10.8Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="label">Call</div>
+          <div class="value">(573) 239-8005</div>
+        </div>
+      </a>
+      <a class="contact-card" href="mailto:plumberbobl@yahoo.com">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#ffffff" stroke-width="1.6"/><path d="M3.5 6.5L12 13L20.5 6.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="label">Email</div>
+          <div class="value">plumberbobl@yahoo.com</div>
+        </div>
+      </a>
+      <div class="contact-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 5 14.5 5 9.5C5 5.9 8.1 3 12 3C15.9 3 19 5.9 19 9.5C19 14.5 12 21 12 21Z" stroke="#ffffff" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="#ffffff" stroke-width="1.6"/></svg></div>
+        <div>
+          <div class="label">Address</div>
+          <div class="value">2000 E. Broadway, Ste. 305, Columbia, MO 65201</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Lawrence Plumbing Services</strong> &mdash; Master Plumber Bob Lawrence &middot; Columbia, MO<br>
+  &copy; 2026 Lawrence Plumbing Services. All rights reserved.
+</footer>
+
+<a class="mobile-call" href="tel:5732398005">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 14.9C17.7 15.3 19 15.5 20.3 15.5C20.9 15.5 21.3 15.9 21.3 16.5V20.2C21.3 20.8 20.9 21.2 20.3 21.2C10.7 21.2 3 13.5 3 3.9C3 3.3 3.4 2.9 4 2.9H7.7C8.3 2.9 8.7 3.3 8.7 3.9C8.7 5.2 8.9 6.5 9.3 7.7C9.4 8.1 9.3 8.5 9 8.8L6.6 10.8Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Call (573) 239-8005
+</a>
+
+</body>
+</html>
