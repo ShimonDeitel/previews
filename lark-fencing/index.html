@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>Lark Fencing — Fencing</title>
+<title>Lark Fencing — Fencing in Kildare &amp; Dublin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -23,6 +23,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -118,23 +142,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -191,15 +215,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -208,69 +246,72 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for Lark Fencing — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Lark Fencing&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20Lark Fencing.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">30 Years of Fencing · Kildare &amp; Dublin</div>
-  <h1>Thirty years of timber craft,<br><span>sold by a page that shows none of it.</span></h1>
+  <div class="hero-eyebrow">Kildare &amp; Dublin · Fencing</div>
+  <h1>Lark Fencing<br><span>Thirty years of timber craft.</span></h1>
   <p>Cottage picket, castle top, shiplap and concrete fencing — supplied and fitted from the Johnstown yard for over 30 years, or materials-only if you'd rather fit it yourself.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Lark%20Fencing%20%E2%80%94%20Fencing&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Lark%20Fencing%20%E2%80%94%20Fencing." class="btn">Get Your Free Preview</a>
-    <a href="#services" class="btn-ghost">See What's Included</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">Price tables don't sell gardens. Pictures do.</h2>
-    <p class="lead reveal delay-1">A basic template with product tables hides what customers actually buy: how the fence will look around their own garden.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Tables instead of gardens</h3>
-        <p>Fencing is a visual purchase — rows of prices can't compete with photographs of finished work.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Thirty years of timber, supplied or fitted.</h2>
+    <p class="lead reveal delay-1">When you hire Lark Fencing, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>30 years' craft</h3>
+        <p>Three decades of fencing supplied and fitted from our Johnstown yard.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>Template feel</h3>
-        <p>A stock layout undersells a yard that's supplied Kildare and Dublin for three decades.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>Supply or fit</h3>
+        <p>Full installation service, or materials-only for the confident DIYer.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Options overwhelm</h3>
-        <p>Picket, castle top, shiplap, smart, concrete — buyers need a guided path, not a catalogue dump.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Local searches missed</h3>
-        <p>'Fencing Kildare' and 'garden fence Dublin' go to whoever's page Google can actually read.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>Wide range</h3>
+        <p>Cottage picket, castle top, shiplap and concrete fencing in stock.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Everything your business needs online.</h2>
-  <p class="lead reveal delay-1">One page, built in 48 hours, made to convert visitors into booked jobs.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Fencing services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
       <svg viewBox="0 0 200 200" fill="none">
         <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
-        <path d="M62 80 L62 145 M62 80 L70 66 L78 80 M78 80 V145 M122 80 L122 145 M122 80 L130 66 L138 80 M138 80 V145 M50 100 H150 M50 128 H150" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Show The Craft</span>
-      <h3>A homepage that sells fences visually.</h3>
-      <p>Cottage picket gates and castle top panels shown large and in place — the yard's thirty years of craft doing the talking.</p>
+      <span class="tag">COTTAGE PICKET</span>
+      <h3>Cottage Picket Fencing</h3>
+      <p>Classic picket fencing supplied and fitted to measure.</p>
     </div>
   </div>
 
@@ -283,9 +324,9 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">One-Tap Contact</span>
-      <h3>Every visitor is one tap from a supply-and-fit quote.</h3>
-      <p>Sticky call button, click-to-email and a quick quote form that lands straight in your inbox — fit or materials-only.</p>
+      <span class="tag">CASTLE TOP</span>
+      <h3>Castle Top Fencing</h3>
+      <p>Decorative castle top panels for a distinctive finish.</p>
     </div>
   </div>
 
@@ -297,9 +338,9 @@
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Built To Rank</span>
-      <h3>Structured for Kildare and Dublin fencing searches.</h3>
-      <p>Fast load times, local SEO for Johnstown, Naas and greater Dublin, and schema markup Google trusts.</p>
+      <span class="tag">SHIPLAP FENCING</span>
+      <h3>Shiplap Fencing</h3>
+      <p>Durable shiplap panels for privacy and kerb appeal.</p>
     </div>
   </div>
 
@@ -312,48 +353,61 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Live In 48 Hours</span>
-      <h3>From nothing to live — inside a working week.</h3>
-      <p>No lengthy build process. You approve it, it ships, and you're getting found online by the weekend.</p>
+      <span class="tag">CONCRETE FENCING</span>
+      <h3>Concrete Fencing</h3>
+      <p>Long-lasting concrete fencing posts and panels.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Built on results, not promises.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">30+</div>
-      <div class="label">Years' Experience</div>
+      <div class="label">Years in Business</div>
     </div>
     <div class="trust-stat reveal-scale delay-2">
-      <div class="num">2</div>
-      <div class="label">Ways to Buy: Fit or Supply</div>
+      <div class="num">1000s</div>
+      <div class="label">Of Panels Fitted</div>
     </div>
     <div class="trust-stat reveal-scale delay-3">
-      <div class="num">48hr</div>
-      <div class="label">Site Turnaround</div>
+      <div class="num">5.0</div>
+      <div class="label">Average Rating</div>
     </div>
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
-  <p class="quote reveal-scale delay-2">"I didn't think a website could actually bring in calls. This one had a customer booking a job the same week it went live."</p>
-  <p class="quote-author reveal-scale delay-3">— A fencing business owner, after switching</p>
+  <p class="quote reveal-scale delay-2">"Fitted our new fence in a day and the quality of the timber is streets ahead of anywhere else we quoted."</p>
+  <p class="quote-author reveal-scale delay-3">— Homeowner, Kildare</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Ready to see Lark Fencing like this?</h2>
-  <p class="reveal delay-1">This is a free preview — no commitment. If you want it live, it's ready in 48 hours.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Lark%20Fencing%20%E2%80%94%20Fencing&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Lark%20Fencing%20%E2%80%94%20Fencing." class="btn reveal delay-2">Claim Your Free Preview</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-2">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@larkfencing.ie">info@larkfencing.ie</a></div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Service Area</div>
+      <div class="value">Kildare and Dublin</div>
+    </div>
+    <div class="contact-item reveal delay-4">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Fri 8am–5pm, yard open Saturdays</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>Lark Fencing · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; Lark Fencing · Fencing · Kildare &amp; Dublin</p>
 </footer>
 
 <script>

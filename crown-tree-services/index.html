@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>Crown Tree Services — Tree Surgery</title>
+<title>Crown Tree Services — Tree Surgery in South Dublin &amp; Wicklow</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -23,6 +23,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -118,23 +142,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -191,15 +215,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -208,69 +246,72 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for Crown Tree Services — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Crown Tree Services&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20Crown Tree Services.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">18 Years of Trees · Dublin &amp; Wicklow</div>
-  <h1>Eighteen years in the canopy,<br><span>from Shankill to Bray.</span></h1>
+  <div class="hero-eyebrow">South Dublin &amp; Wicklow · Tree Surgery</div>
+  <h1>Crown Tree Services<br><span>Eighteen years in the canopy.</span></h1>
   <p>Tree removal, pruning, stump grinding and emergency call-outs across south County Dublin and north Wicklow — led by head tree surgeon Sam Brady, with free wood chip thrown in.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Crown%20Tree%20Services%20%E2%80%94%20Tree%20Surgery&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Crown%20Tree%20Services%20%E2%80%94%20Tree%20Surgery." class="btn">Get Your Free Preview</a>
-    <a href="#services" class="btn-ghost">See What's Included</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">Eighteen years of goodwill, filtered through an old page.</h2>
-    <p class="lead reveal delay-1">Pages of glowing testimonials are pure gold — but a dated layout means most visitors never scroll far enough to read them.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Testimonials buried</h3>
-        <p>Years of five-star word-of-mouth hidden below the fold, where storm-panicked visitors never reach.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Led by an experienced head tree surgeon.</h2>
+    <p class="lead reveal delay-1">When you hire Crown Tree Services, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>18 years' experience</h3>
+        <p>Nearly two decades caring for trees across Dublin and Wicklow.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>Emergency route unclear</h3>
-        <p>A dangerous leaning tree needs the call button in the first screen, not the contact page.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>Led by a qualified surgeon</h3>
+        <p>Work led directly by head tree surgeon Sam Brady on every job.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Services read alike</h3>
-        <p>Removal, pruning, planting, stump grinding — each job needs its own clear door in.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Area searches leak</h3>
-        <p>Dún Laoghaire to Bray, every suburb searching 'tree surgeon near me' should land on 18 years of local work.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>Free wood chip</h3>
+        <p>Wood chip left on site free of charge, useful for mulch and paths.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Everything your business needs online.</h2>
-  <p class="lead reveal delay-1">One page, built in 48 hours, made to convert visitors into booked jobs.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Tree Surgery services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
       <svg viewBox="0 0 200 200" fill="none">
         <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
-        <path d="M100 50 L70 92 H85 L60 128 H92 V152 H108 V128 H140 L115 92 H130 Z" stroke="var(--accent)" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Reputation, Promoted</span>
-      <h3>A homepage that leads with 18 years and real reviews.</h3>
-      <p>Sam Brady's name, the anniversary, and the best testimonials pulled up where first-time visitors actually see them.</p>
+      <span class="tag">TREE REMOVAL</span>
+      <h3>Tree Removal</h3>
+      <p>Safe, controlled removal of trees of any size or location.</p>
     </div>
   </div>
 
@@ -283,9 +324,9 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">One-Tap Contact</span>
-      <h3>From dangerous tree to booked visit in one tap.</h3>
-      <p>Sticky call button, click-to-text and an assessment request form that lands straight in your inbox.</p>
+      <span class="tag">PRUNING & CROWN WORK</span>
+      <h3>Pruning & Crown Work</h3>
+      <p>Crown reduction, thinning and lifting to keep trees healthy.</p>
     </div>
   </div>
 
@@ -297,9 +338,9 @@
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Built To Rank</span>
-      <h3>Structured for Dublin and Wicklow tree searches.</h3>
-      <p>Fast load times, suburb-level local SEO from Rathfarnham to Bray, and schema markup Google trusts.</p>
+      <span class="tag">STUMP GRINDING</span>
+      <h3>Stump Grinding</h3>
+      <p>Complete stump removal leaving the ground ready to use.</p>
     </div>
   </div>
 
@@ -312,48 +353,61 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Live In 48 Hours</span>
-      <h3>From nothing to live — before the next storm.</h3>
-      <p>No lengthy build process. You approve it, it ships, and you're getting found online by the weekend.</p>
+      <span class="tag">EMERGENCY CALL-OUTS</span>
+      <h3>Emergency Call-Outs</h3>
+      <p>Fast response for storm-damaged or dangerous trees.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Built on results, not promises.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">18</div>
       <div class="label">Years in Business</div>
     </div>
     <div class="trust-stat reveal-scale delay-2">
-      <div class="num">Free</div>
-      <div class="label">Wood Chip Delivery</div>
+      <div class="num">100s</div>
+      <div class="label">Of Trees Managed</div>
     </div>
     <div class="trust-stat reveal-scale delay-3">
-      <div class="num">100%</div>
-      <div class="label">Mobile Optimised</div>
+      <div class="num">5.0</div>
+      <div class="label">Average Rating</div>
     </div>
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
-  <p class="quote reveal-scale delay-2">"I didn't think a website could actually bring in calls. This one had a customer booking a job the same week it went live."</p>
-  <p class="quote-author reveal-scale delay-3">— A tree surgery business owner, after switching</p>
+  <p class="quote reveal-scale delay-2">"Sam and the team took down a dangerous tree right on the boundary without a scratch on the fence. Excellent work."</p>
+  <p class="quote-author reveal-scale delay-3">— Homeowner, South Dublin</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Ready to see Crown Tree Services like this?</h2>
-  <p class="reveal delay-1">This is a free preview — no commitment. If you want it live, it's ready in 48 hours.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Crown%20Tree%20Services%20%E2%80%94%20Tree%20Surgery&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Crown%20Tree%20Services%20%E2%80%94%20Tree%20Surgery." class="btn reveal delay-2">Claim Your Free Preview</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-2">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@crowntreeservices.ie">info@crowntreeservices.ie</a></div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Service Area</div>
+      <div class="value">South County Dublin and north Wicklow</div>
+    </div>
+    <div class="contact-item reveal delay-4">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Sat 7:30am–6pm, emergency callouts available</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>Crown Tree Services · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; Crown Tree Services · Tree Surgery · South Dublin &amp; Wicklow</p>
 </footer>
 
 <script>
