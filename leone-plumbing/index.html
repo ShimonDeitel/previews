@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P.A. Leone & Son's Plumbing | Syracuse, NY</title>
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-dark:#081b34;
+    --blue:#1d6fd6;
+    --blue-dark:#125bb5;
+    --ink:#1a2433;
+    --gray:#5c6b7a;
+    --line:#e4e9ef;
+    --bg:#ffffff;
+    --bg-soft:#f5f8fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cfe0f5;
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:8px;
+    padding-bottom:8px;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .topbar a{color:#fff;font-weight:600;}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:40px;height:40px;border-radius:10px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .brand-name{font-size:16px;font-weight:800;color:var(--navy);line-height:1.2;}
+  .brand-name span{display:block;font-size:11px;font-weight:600;color:var(--gray);letter-spacing:.04em;}
+  .call-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:11px 16px;
+    border-radius:10px;
+    white-space:nowrap;
+  }
+  .call-btn:active{background:var(--blue-dark);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:52px 0 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-80px;top:-80px;
+    width:320px;height:320px;
+    background:radial-gradient(circle,rgba(29,111,214,.35),transparent 70%);
+  }
+  .hero .wrap{position:relative;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);
+    color:#cfe0f5;
+    font-size:12.5px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:34px;
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:-.01em;
+    margin-bottom:14px;
+  }
+  h1 em{color:#7fb2f5;font-style:normal;}
+  .hero p{
+    font-size:16px;
+    color:#c6d5e8;
+    margin-bottom:26px;
+    max-width:520px;
+  }
+  .hero-actions{display:flex;flex-direction:column;gap:12px;}
+  .btn-primary{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    font-size:17px;
+    padding:16px 20px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(29,111,214,.35);
+  }
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    font-weight:600;
+    font-size:15px;
+    padding:14px 20px;
+    border-radius:12px;
+  }
+  .hero-meta{
+    display:flex;
+    gap:22px;
+    margin-top:30px;
+    flex-wrap:wrap;
+  }
+  .hero-meta div{font-size:12.5px;color:#a9bfd8;}
+  .hero-meta strong{display:block;font-size:20px;color:#fff;font-weight:800;}
+
+  /* ---------- Services ---------- */
+  .section-head{margin-bottom:28px;}
+  .eyebrow{
+    color:var(--blue);
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  h2{font-size:26px;font-weight:800;letter-spacing:-.01em;color:var(--navy);}
+  .section-head p{color:var(--gray);margin-top:8px;font-size:15px;}
+
+  .services{background:var(--bg-soft);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .service-icon{
+    width:44px;height:44px;
+    border-radius:10px;
+    background:#eaf2fd;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .service-card h3{font-size:16px;font-weight:700;margin-bottom:4px;color:var(--ink);}
+  .service-card p{font-size:13.5px;color:var(--gray);}
+  .service-tag{
+    display:inline-block;
+    margin-top:8px;
+    font-size:11px;
+    font-weight:700;
+    color:var(--blue);
+    background:#eaf2fd;
+    padding:3px 9px;
+    border-radius:999px;
+  }
+
+  /* ---------- Why us ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .why-card{
+    text-align:center;
+    padding:22px 12px;
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+  .why-card .num{
+    font-size:26px;
+    font-weight:800;
+    color:var(--blue);
+    margin-bottom:6px;
+  }
+  .why-card .label{font-size:12.5px;color:var(--gray);font-weight:600;}
+
+  /* ---------- Area ---------- */
+  .area{background:var(--bg-soft);}
+  .area-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .pin{
+    width:46px;height:46px;border-radius:12px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .area-box h3{font-size:17px;font-weight:700;margin-bottom:4px;}
+  .area-box p{font-size:14px;color:var(--gray);}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-band h2{color:#fff;margin-bottom:10px;}
+  .cta-band p{color:#c6d5e8;font-size:15px;margin-bottom:22px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .contact-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .contact-card .ic{
+    width:42px;height:42px;border-radius:10px;
+    background:#eaf2fd;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .contact-card .label{font-size:11.5px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+  .contact-card .val{font-size:15px;font-weight:700;color:var(--ink);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-dark);
+    color:#8fa5c0;
+    padding:28px 0;
+    text-align:center;
+    font-size:12.5px;
+  }
+  footer strong{color:#fff;}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .sticky-call{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+    font-weight:700;
+    font-size:16px;
+    z-index:60;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  body{padding-bottom:64px;}
+
+  /* ---------- Larger screens ---------- */
+  @media (min-width:640px){
+    h1{font-size:44px;}
+    .hero p{font-size:17px;}
+    .hero-actions{flex-direction:row;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:repeat(4,1fr);}
+    .contact-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;}
+    .service-grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Syracuse & Central New York &middot; Family-owned since 1955</span>
+    <a href="mailto:rleone@leoneplumbing.com">rleone@leoneplumbing.com</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M7 3h4v3.5a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3h2v5a4 4 0 0 1-3 3.87V19a3 3 0 0 1-6 0v-7.13A4 4 0 0 1 5 8V3h2z" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-name">P.A. Leone & Son's<span>PLUMBING</span></div>
+    </div>
+    <a class="call-btn" href="tel:3154723677">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#ffffff"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 9l-5 4.4L17.4 21 12 17.3 6.6 21 8 13.4 3 9l6.6-.4L12 2z" fill="#7fb2f5"/></svg>
+        Trusted in Syracuse since 1955
+      </div>
+      <h1>Syracuse Plumbing, Done <em>Right</em> the First Time</h1>
+      <p>Three generations of the Leone family fixing pipes, drains, water heaters and gas lines across Central New York. Straightforward advice, no surprises.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:3154723677">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#ffffff"/></svg>
+          (315) 472-3677
+        </a>
+        <a class="btn-secondary" href="mailto:rleone@leoneplumbing.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" stroke="#ffffff" stroke-width="1.5"/><path d="M3.5 6.5L12 13l8.5-6.5" stroke="#ffffff" stroke-width="1.5"/></svg>
+          Email Rick Leone
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>65+</strong>Years in business</div>
+        <div><strong>3</strong>Generations, one family</div>
+        <div><strong>Syracuse</strong>& Central NY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Residential & Commercial Plumbing</h2>
+      <p>From a slow drain to a full commercial build-out, it's handled in-house.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 7 5 10.5 5 14.5A7 7 0 0 0 19 14.5C19 10.5 16 7 12 2z" stroke="#1d6fd6" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>Water Heaters</h3>
+          <p>Repair, replacement and installation for homes across Syracuse.</p>
+          <span class="service-tag">Residential</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M4 12a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4M4 12a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4" stroke="#1d6fd6" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>Sewer & Drain Cleaning</h3>
+          <p>Drain camera inspection and high-pressure drain jetting.</p>
+          <span class="service-tag">Residential</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1d6fd6" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="#1d6fd6" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>Fixture & Piping Repairs</h3>
+          <p>Leaks, fittings, and fixture replacement done right.</p>
+          <span class="service-tag">Residential</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M5 12l3-3M5 12l3 3M19 12l-3-3M19 12l-3 3" stroke="#1d6fd6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>Gas Piping</h3>
+          <p>Safe, code-compliant gas line installation and repair.</p>
+          <span class="service-tag">Residential</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="1.5" stroke="#1d6fd6" stroke-width="1.6"/><path d="M8 8h2M8 12h2M8 16h2M14 8h2M14 12h2M14 16h2" stroke="#1d6fd6" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>New Construction & Remodels</h3>
+          <p>Design-build plumbing for commercial projects.</p>
+          <span class="service-tag">Commercial</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke="#1d6fd6" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>Backflow Testing</h3>
+          <p>Certified backflow prevention testing for businesses.</p>
+          <span class="service-tag">Commercial</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Leone</div>
+      <h2>A Syracuse Name Since 1955</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="num">65+</div><div class="label">Years Serving Syracuse</div></div>
+      <div class="why-card"><div class="num">3</div><div class="label">Generations of Leones</div></div>
+      <div class="why-card"><div class="num">2</div><div class="label">Residential & Commercial</div></div>
+      <div class="why-card"><div class="num">1</div><div class="label">Family You Can Reach Directly</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Service Area</div>
+      <h2>Proudly Serving Central New York</h2>
+    </div>
+    <div class="area-box">
+      <div class="pin">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 7 5 10.5 5 14.5A7 7 0 0 0 19 14.5C19 10.5 16 7 12 2z" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <h3>Syracuse & Central New York</h3>
+        <p>Based at 208 Basin Street, Syracuse, NY. Serving homeowners and businesses throughout the greater Syracuse area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Got a Plumbing Problem?</h2>
+    <p>Call the Leone family directly — no call centers, no runaround.</p>
+    <a class="btn-primary" href="tel:3154723677" style="display:inline-flex;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#ffffff"/></svg>
+      (315) 472-3677
+    </a>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Contact</div>
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#1d6fd6"/></svg></div>
+        <div><div class="label">Phone</div><a class="val" href="tel:3154723677">(315) 472-3677</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" stroke="#1d6fd6" stroke-width="1.5"/><path d="M3.5 6.5L12 13l8.5-6.5" stroke="#1d6fd6" stroke-width="1.5"/></svg></div>
+        <div><div class="label">Email</div><a class="val" href="mailto:rleone@leoneplumbing.com">rleone@leoneplumbing.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 7 5 10.5 5 14.5A7 7 0 0 0 19 14.5C19 10.5 16 7 12 2z" stroke="#1d6fd6" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <div><div class="label">Address</div><div class="val">208 Basin Street, Syracuse, NY 13208</div></div>
+      </div>
+      <div class="contact-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" stroke="#1d6fd6" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="#1d6fd6" stroke-width="1.6"/></svg></div>
+        <div><div class="label">Service Area</div><div class="val">Syracuse & Central NY</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>P.A. Leone & Son's Plumbing</strong> &middot; 208 Basin Street, Syracuse, NY 13208 &middot; (315) 472-3677<br>
+    Family-owned & operated since 1955.
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:3154723677">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#ffffff"/></svg>
+  Tap to Call (315) 472-3677
+</a>
+
+</body>
+</html>

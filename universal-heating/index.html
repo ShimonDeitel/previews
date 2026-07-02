@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universal Heating & Cooling | Rochester, NY | 585-328-1423</title>
+<style>
+  :root{
+    --navy:#0d2b45;
+    --navy-dark:#081a2c;
+    --orange:#e8621c;
+    --orange-dark:#c94f10;
+    --ice:#3ba9d6;
+    --gray:#5a6b78;
+    --light:#f4f7f9;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy-dark);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--navy-dark);
+    color:var(--white);
+    text-align:center;
+    font-size:13px;
+    padding:8px 12px;
+    letter-spacing:.2px;
+  }
+  .callbar strong{color:#ffd7b0;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;
+    max-width:1100px;margin:0 auto;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    color:var(--white);
+    font-weight:700;
+    font-size:17px;
+  }
+  .logo svg{width:34px;height:34px;flex-shrink:0;}
+  .logo .sub{display:block;font-size:10.5px;font-weight:500;color:#a9c3d6;letter-spacing:.5px;}
+  .call-btn{
+    background:var(--orange);
+    color:var(--white);
+    font-weight:700;
+    font-size:14px;
+    padding:10px 16px;
+    border-radius:8px;
+    display:flex;align-items:center;gap:7px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;}
+  .call-btn:active{background:var(--orange-dark);}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:var(--white);
+    padding:52px 20px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-60px;top:-60px;
+    width:280px;height:280px;
+    background:radial-gradient(circle, rgba(232,98,28,.25), transparent 70%);
+  }
+  .hero-inner{max-width:1100px;margin:0 auto;position:relative;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    color:#ffd7b0;
+    font-size:12.5px;font-weight:600;
+    padding:6px 12px;border-radius:99px;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:34px;
+    line-height:1.15;
+    font-weight:800;
+    margin-bottom:14px;
+    letter-spacing:-.5px;
+  }
+  h1 span{color:#ffab6e;}
+  .hero p{
+    color:#c7d6e2;
+    font-size:16px;
+    margin-bottom:26px;
+    max-width:520px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:340px;}
+  .btn-primary{
+    background:var(--orange);
+    color:var(--white);
+    font-weight:700;
+    font-size:16px;
+    padding:16px 20px;
+    border-radius:10px;
+    text-align:center;
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    box-shadow:0 8px 20px rgba(232,98,28,.35);
+  }
+  .btn-primary svg{width:19px;height:19px;}
+  .btn-secondary{
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.35);
+    color:var(--white);
+    font-weight:600;
+    font-size:15px;
+    padding:14px 20px;
+    border-radius:10px;
+    text-align:center;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:16px 26px;
+    margin-top:30px;
+    font-size:13px;
+    color:#9fb7c9;
+  }
+  .hero-meta div{display:flex;align-items:center;gap:7px;}
+  .hero-meta svg{width:15px;height:15px;flex-shrink:0;color:#ffab6e;}
+
+  /* Sections generic */
+  section{padding:52px 20px;}
+  .eyebrow{
+    color:var(--orange);
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  h2{
+    font-size:26px;
+    font-weight:800;
+    color:var(--navy-dark);
+    margin-bottom:12px;
+    letter-spacing:-.4px;
+  }
+  .section-sub{color:var(--gray);font-size:15px;margin-bottom:32px;max-width:520px;}
+
+  /* Services */
+  .services{background:var(--light);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .service-card{
+    background:var(--white);
+    border-radius:14px;
+    padding:20px;
+    display:flex;gap:14px;align-items:flex-start;
+    border:1px solid #e6ecef;
+  }
+  .service-icon{
+    width:44px;height:44px;flex-shrink:0;
+    background:var(--navy);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-icon svg{width:22px;height:22px;color:var(--ice);}
+  .service-card h3{font-size:16px;font-weight:700;margin-bottom:4px;color:var(--navy-dark);}
+  .service-card p{font-size:13.5px;color:var(--gray);}
+
+  /* Why us */
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .why-card{
+    padding:18px 14px;
+    border-radius:12px;
+    background:var(--light);
+    text-align:center;
+  }
+  .why-card svg{width:28px;height:28px;color:var(--orange);margin:0 auto 10px;}
+  .why-card h4{font-size:14px;font-weight:700;margin-bottom:4px;}
+  .why-card p{font-size:12.5px;color:var(--gray);}
+
+  /* Emergency strip */
+  .emergency{
+    background:var(--orange);
+    color:var(--white);
+    text-align:center;
+    padding:36px 20px;
+  }
+  .emergency h2{color:var(--white);margin-bottom:8px;}
+  .emergency p{color:#ffe3cf;margin-bottom:20px;font-size:14.5px;}
+  .emergency .call-btn{
+    background:var(--white);
+    color:var(--orange-dark);
+    display:inline-flex;
+    margin:0 auto;
+    font-size:16px;
+    padding:14px 24px;
+  }
+
+  /* Area */
+  .area-list{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin-top:10px;
+  }
+  .area-chip{
+    background:var(--light);
+    border:1px solid #e6ecef;
+    color:var(--navy-dark);
+    font-size:13px;
+    font-weight:600;
+    padding:8px 13px;
+    border-radius:99px;
+  }
+
+  /* Contact / footer */
+  .contact{background:var(--navy-dark);color:var(--white);}
+  .contact .eyebrow{color:#ffab6e;}
+  .contact h2{color:var(--white);}
+  .contact-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    padding:22px;
+    margin-top:20px;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row svg{width:19px;height:19px;color:var(--ice);flex-shrink:0;}
+  .contact-row .label{font-size:11.5px;color:#9fb7c9;text-transform:uppercase;letter-spacing:.6px;}
+  .contact-row .val{font-size:15px;font-weight:600;}
+  .contact-row a.val{color:var(--white);}
+
+  footer{
+    background:var(--navy-dark);
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#7f95a6;
+    font-size:12.5px;
+    text-align:center;
+    padding:22px 20px 90px;
+  }
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;
+    background:var(--orange);
+    z-index:60;
+    padding:12px 16px;
+    padding-bottom:calc(12px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 16px rgba(0,0,0,.2);
+  }
+  .sticky-call a{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    color:var(--white);
+    font-weight:700;
+    font-size:16px;
+  }
+  .sticky-call svg{width:19px;height:19px;}
+
+  @media (min-width:600px){
+    h1{font-size:44px;}
+    .hero p{font-size:17px;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:repeat(4,1fr);}
+    .hero-ctas{flex-direction:row;max-width:none;}
+    .btn-primary,.btn-secondary{flex:0 0 auto;padding:16px 26px;}
+  }
+  @media (min-width:900px){
+    .service-grid{grid-template-columns:1fr 1fr 1fr;}
+    h1{font-size:50px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">Serving Rochester, NY since <strong>1956</strong> &nbsp;|&nbsp; 24/7 Emergency Service, 365 Days a Year</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 8v13a1 1 0 001 1h5v-7h4v7h5a1 1 0 001-1V8l-8-6z" fill="#e8621c"/><circle cx="12" cy="13" r="2.4" fill="#3ba9d6"/></svg>
+      <span>Universal Heating<span class="sub">& COOLING &nbsp;·&nbsp; ROCHESTER, NY</span></span>
+    </div>
+    <a class="call-btn" href="tel:5853281423">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l1.5 4.5H18l-3.6 2.8 1.4 4.5L12 11l-3.8 2.8 1.4-4.5L6 6.5h4.5L12 2z" fill="#ffab6e"/></svg>
+      Family owned since 1956
+    </div>
+    <h1>Heating &amp; cooling repair<br>for <span>Rochester, NY</span></h1>
+    <p>Furnace, boiler, and A/C repair from state-certified technicians. Same local family business Rochester has called for over 65 years.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:5853281423">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+        Call 585-328-1423
+      </a>
+      <a class="btn-secondary" href="#contact">Request Service</a>
+    </div>
+    <div class="hero-meta">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        24/7 emergency service
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        926 West Main St, Rochester, NY
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 004-4V6a4 4 0 00-8 0v5a4 4 0 004 4z"/><path d="M19 11a7 7 0 01-14 0M12 19v3"/></svg>
+        BBB member since 1970
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2>Residential HVAC Services</h2>
+    <p class="section-sub">Heating and cooling work for homes across the Rochester area, using Rheem, Dunkirk, Goodman, and Aprilaire equipment.</p>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div><h3>Heating Repair &amp; Installation</h3><p>Furnace repair and new system installation to keep your home warm through Rochester winters.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <div><h3>Boiler Repair</h3><p>Diagnostics and repair for residential boiler systems.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12h12M6 8h12M6 16h8"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div>
+        <div><h3>Central Air Conditioning</h3><p>A/C cleaning, repair, and installation to handle summer heat.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
+        <div><h3>HVAC Maintenance &amp; Cleaning</h3><p>Routine system cleaning and maintenance to prevent breakdowns.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 22v-6M4 12h6M14 12h6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div><h3>Oil Tank Pumping</h3><p>Oil tank pump-out service for area homes.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 20V10a5 5 0 0110 0v10M7 20h10M4 20h16"/></svg></div>
+        <div><h3>Gas Water Heater Installation</h3><p>Installation of gas water heaters.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">Why Universal Heating</div>
+    <h2>Local, certified, always on call</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+        <h4>State Certified</h4>
+        <p>State certified technicians</p>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <h4>24/7 Availability</h4>
+        <p>Emergency service, 365 days a year</p>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        <h4>Since 1956</h4>
+        <p>Family owned and operated in Rochester</p>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 004-4V6a4 4 0 00-8 0v5a4 4 0 004 4zM19 11a7 7 0 01-14 0M12 19v3"/></svg>
+        <h4>BBB Member Since 1970</h4>
+        <p>Also a member of the Better Contractors Bureau</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="emergency">
+  <div class="wrap">
+    <h2>Heat out? Don't wait.</h2>
+    <p>24/7 emergency service, 365 days a year.</p>
+    <a class="call-btn" href="tel:5853281423">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      585-328-1423
+    </a>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="eyebrow">Service Area</div>
+    <h2>Proudly serving Greater Rochester</h2>
+    <p class="section-sub">Based at 926 West Main Street, serving Rochester, New York and the surrounding area.</p>
+    <div class="area-list">
+      <span class="area-chip">Rochester</span>
+      <span class="area-chip">Greater Rochester Area</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Contact Universal Heating</h2>
+    <p style="color:#9fb7c9;font-size:15px;max-width:480px;">Call anytime for emergency service, or reach out by email for estimates and scheduling.</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+        <div><span class="label">Phone</span><br><a class="val" href="tel:5853281423">585-328-1423</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+        <div><span class="label">Email</span><br><a class="val" href="mailto:chaddhaskins@gmail.com">chaddhaskins@gmail.com</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><span class="label">Address</span><br><span class="val">926 West Main Street, Rochester, NY 14611</span></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div><span class="label">Hours</span><br><span class="val">24/7 Emergency Service, 365 Days a Year</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Universal Heating &amp; Cooling &middot; Rochester, NY &middot; Family owned since 1956
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:5853281423">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+    Tap to Call 585-328-1423
+  </a>
+</div>
+
+</body>
+</html>
