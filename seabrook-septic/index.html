@@ -514,9 +514,9 @@
           </span>
         </div>
       </div>
-      <form id="quoteForm" onsubmit="event.preventDefault();this.querySelectorAll('.field,.btn-submit,h3,p').forEach(function(e){e.style.display='none'});document.getElementById('formDone').style.display='block';">
+      <form id="quoteForm" onsubmit="event.preventDefault();this.querySelectorAll('.field,.btn-submit,h3,.form-intro').forEach(function(e){e.style.display='none'});document.getElementById('formDone').style.display='block';">
         <h3>Request a quote</h3>
-        <p>Tell us what's going on and we'll call you back.</p>
+        <p class="form-intro">Tell us what's going on and we'll call you back.</p>
         <div class="form-row">
           <div class="field">
             <label for="f-name">Name</label>

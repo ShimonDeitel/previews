@@ -43,7 +43,8 @@
   .brand{display:flex;align-items:center;gap:10px;min-width:0}
   .brand .mark{flex:0 0 auto}
   .brand-name{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.2px;line-height:1.1}
-  .brand-sub{font-size:11px;color:var(--mut);letter-spacing:.4px;text-transform:uppercase}
+  .brand-sub{font-size:11px;color:var(--mut);letter-spacing:.4px;text-transform:uppercase;white-space:nowrap}
+  @media(max-width:479px){.brand-sub{display:none}.brand br{display:none}}
   .call-btn{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--blue);color:#fff;font-weight:700;font-size:15px;
@@ -80,7 +81,7 @@
   .btn:active{transform:scale(.98)}
   .btn-primary{background:var(--amber);color:#fff;box-shadow:0 4px 14px rgba(232,132,44,.4)}
   .btn-ghost{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff}
-  @media(min-width:640px){.hero-ctas{flex-direction:row}.hero-ctas .btn{flex:1}}
+  @media(min-width:640px){.hero-ctas{flex-direction:row;max-width:none}.hero-ctas .btn{flex:0 0 auto;white-space:nowrap;padding-left:28px;padding-right:28px}}
   .hero-note{margin-top:16px;font-size:13px;color:#9db6d4}
 
   /* ---------- Trust strip ---------- */
