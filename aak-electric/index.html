@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAK Electric, LLC — Licensed Electrical Contractor in Watertown, NY</title>
+<meta name="description" content="AAK Electric, LLC — 37 years of residential, commercial and industrial electrical work in Watertown, NY. Whole house generators, wiring, LED lighting, solar. 24/7 emergency service. Call 315-782-6152.">
+<style>
+  :root{
+    --navy:#0d1b2a;
+    --navy2:#13263b;
+    --amber:#f5a623;
+    --amber2:#e0940f;
+    --ink:#1b2733;
+    --gray:#5b6b7b;
+    --bg:#f6f8fa;
+    --white:#ffffff;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img,svg{display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1080px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:.5px}
+  .logo .bolt{width:30px;height:30px;background:var(--amber);border-radius:8px;display:flex;align-items:center;justify-content:center}
+  .logo small{display:block;font-size:.6rem;font-weight:600;color:#9fb3c8;letter-spacing:1.5px;text-transform:uppercase}
+  .call-btn{display:flex;align-items:center;gap:8px;background:var(--amber);color:var(--navy);font-weight:800;padding:10px 16px;border-radius:999px;font-size:.95rem;white-space:nowrap;transition:transform .15s}
+  .call-btn:active{transform:scale(.97)}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 55%,#1a3550 100%);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,.16),transparent 70%)}
+  .hero .wrap{position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.5);color:var(--amber);font-weight:700;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:20px}
+  .hero h1{font-size:clamp(1.9rem,6vw,3.2rem);line-height:1.15;font-weight:900;letter-spacing:-.5px;max-width:640px}
+  .hero h1 span{color:var(--amber)}
+  .hero p{margin-top:16px;font-size:clamp(1rem,2.6vw,1.2rem);color:#c6d4e2;max-width:560px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;padding:15px 26px;border-radius:12px;font-size:1.05rem;transition:transform .15s}
+  .btn:active{transform:scale(.97)}
+  .btn-amber{background:var(--amber);color:var(--navy)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.35);color:#fff}
+  .hero-strip{display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:36px;font-size:.9rem;color:#c6d4e2}
+  .hero-strip div{display:flex;align-items:center;gap:8px}
+
+  /* Sections */
+  section{padding:60px 0}
+  .kicker{color:var(--amber2);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.78rem}
+  h2{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:900;letter-spacing:-.5px;margin:6px 0 14px}
+  .lead{color:var(--gray);max-width:620px}
+
+  /* Services */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:32px}
+  .card{background:var(--white);border-radius:var(--radius);padding:26px 22px;box-shadow:0 1px 3px rgba(13,27,42,.08);border:1px solid #e6ebf0}
+  .card .icon{width:46px;height:46px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .card h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+  .card p{color:var(--gray);font-size:.93rem}
+
+  /* Why us */
+  .why{background:var(--navy);color:#fff}
+  .why .lead{color:#c6d4e2}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+  .why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:24px 20px}
+  .why-card .num{font-size:2rem;font-weight:900;color:var(--amber);line-height:1}
+  .why-card h3{font-size:1.02rem;font-weight:800;margin:10px 0 6px}
+  .why-card p{color:#aebfd0;font-size:.9rem}
+
+  /* Area */
+  .area-flex{display:flex;flex-wrap:wrap;gap:28px;align-items:center;margin-top:24px}
+  .area-card{background:var(--white);border:1px solid #e6ebf0;border-radius:var(--radius);padding:26px;flex:1;min-width:260px;box-shadow:0 1px 3px rgba(13,27,42,.08)}
+  .area-card h3{font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .area-card p{color:var(--gray);font-size:.95rem}
+
+  /* Contact */
+  .contact{background:linear-gradient(160deg,var(--navy2),var(--navy));color:#fff;border-radius:20px;padding:44px 28px;margin:0 20px}
+  .contact-inner{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:center}
+  .contact h2{color:#fff}
+  .contact p{color:#c6d4e2;max-width:480px}
+  .contact-actions{display:flex;flex-direction:column;gap:12px;min-width:250px;flex:0 1 300px}
+  .contact-line{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.02rem}
+  .contact-line small{display:block;font-weight:600;color:#9fb3c8;font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
+
+  footer{padding:28px 20px 90px;text-align:center;color:var(--gray);font-size:.85rem}
+
+  /* Sticky mobile call bar */
+  .callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;background:var(--amber);color:var(--navy);font-weight:900;font-size:1.1rem;padding:16px;text-align:center;box-shadow:0 -4px 16px rgba(0,0,0,.2)}
+  .callbar span{display:inline-flex;align-items:center;gap:10px;justify-content:center}
+  @media(max-width:640px){
+    .callbar{display:block}
+    .nav .call-btn span.txt{display:none}
+    .nav .call-btn{padding:10px 12px}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#top">
+      <span class="bolt">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z" fill="#0d1b2a"/></svg>
+      </span>
+      <span>AAK ELECTRIC<small>Watertown, NY</small></span>
+    </a>
+    <a class="call-btn" href="tel:3157826152" aria-label="Call AAK Electric at 315-782-6152">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z" fill="#0d1b2a"/></svg>
+      <span class="txt">315-782-6152</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z" fill="#f5a623"/></svg>
+        37 Years of Experience
+      </span>
+      <h1>Powering Watertown homes &amp; businesses <span>the right way.</span></h1>
+      <p>Residential, commercial and industrial electrical work — from whole house generators to complete wiring. When the power goes out, we pick up. 24/7 emergency service.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-amber" href="tel:3157826152">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z" fill="#0d1b2a"/></svg>
+          Call 315-782-6152
+        </a>
+        <a class="btn btn-ghost" href="#services">Our Services</a>
+      </div>
+      <div class="hero-strip">
+        <div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f5a623" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg>
+          24/7 Emergency Service
+        </div>
+        <div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/></svg>
+          Residential · Commercial · Industrial
+        </div>
+        <div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z" stroke="#f5a623" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#f5a623" stroke-width="2"/></svg>
+          Watertown, NY
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <span class="kicker">What We Do</span>
+      <h2>Electrical services, done once and done right</h2>
+      <p class="lead">From a single outlet to a full industrial build-out, AAK Electric handles the job start to finish.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="14" rx="2" stroke="#f5a623" stroke-width="2"/><path d="M8 21h8M12 17v4M8 8h3M8 12h5" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Whole House Generators</h3>
+          <p>Automatic standby power so a North Country outage never leaves your family in the dark.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <h3>Electrical Wiring</h3>
+          <p>Repair, replacement, new construction and additions — clean, code-compliant wiring.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.9.7 1.5 1.2 1.5 2.1h4c0-.9.6-1.4 1.5-2.1A6 6 0 0 0 12 3Z" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <h3>LED Lighting</h3>
+          <p>Efficient, modern LED upgrades that cut your power bill and brighten every space.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3.5" stroke="#f5a623" stroke-width="2"/></svg></div>
+          <h3>Solar Power</h3>
+          <p>Solar installation that turns sunlight into real savings, wired by licensed pros.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="6" r="1.6" fill="#f5a623"/><circle cx="16" cy="12" r="1.6" fill="#f5a623"/><circle cx="10" cy="18" r="1.6" fill="#f5a623"/></svg></div>
+          <h3>High Voltage Work</h3>
+          <p>Industrial-grade high voltage service handled with the experience it demands.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12a7 7 0 0 1 14 0" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/><path d="M8.5 15a3.5 3.5 0 0 1 7 0" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="18.5" r="1.7" fill="#f5a623"/></svg></div>
+          <h3>Data Wiring</h3>
+          <p>Structured data and network cabling for offices, shops and connected homes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="wrap">
+      <span class="kicker">Why AAK Electric</span>
+      <h2>The crew Watertown has trusted for 37 years</h2>
+      <p class="lead">Electrical work is not the place to gamble. Here is why customers keep our number saved.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="num">37</div>
+          <h3>Years of Experience</h3>
+          <p>Nearly four decades of residential, commercial and industrial electrical work.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">24/7</div>
+          <h3>Emergency Service</h3>
+          <p>Outages don't keep business hours. Neither do we — call any time, day or night.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">3-in-1</div>
+          <h3>Every Job Size</h3>
+          <p>Homes, storefronts and industrial facilities — one contractor for all of it.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">NECA</div>
+          <h3>Professional Affiliations</h3>
+          <p>NECA member and BBB-listed — standards you can verify, not just promises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section id="area">
+    <div class="wrap">
+      <span class="kicker">Where We Work</span>
+      <h2>Based in Watertown, NY</h2>
+      <div class="area-flex">
+        <div class="area-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z" stroke="#e0940f" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#e0940f" stroke-width="2"/></svg>
+            Our Shop
+          </h3>
+          <p>26022 Allen Dr.<br>Watertown, NY 13601</p>
+        </div>
+        <div class="area-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5" stroke="#e0940f" stroke-width="2" stroke-linejoin="round"/></svg>
+            Serving the North Country
+          </h3>
+          <p>Residential, commercial and industrial electrical service for Watertown and the surrounding area. Call to confirm we cover your location.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-top:0">
+    <div class="contact">
+      <div class="contact-inner">
+        <div>
+          <span class="kicker" style="color:var(--amber)">Get In Touch</span>
+          <h2>Need an electrician? Talk to us today.</h2>
+          <p>Call for a quote or email us about your project — big or small, we'll give you a straight answer.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-amber" href="tel:3157826152" style="width:100%">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z" fill="#0d1b2a"/></svg>
+            315-782-6152
+          </a>
+          <a class="contact-line" href="mailto:kris@aakelectric.net">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#f5a623" stroke-width="2"/><path d="m3 7 9 6 9-6" stroke="#f5a623" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span><small>Email</small>kris@aakelectric.net</span>
+          </a>
+          <div class="contact-line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f5a623" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/></svg>
+            <span><small>Emergencies</small>24/7 — call any time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  AAK Electric, LLC · 26022 Allen Dr., Watertown, NY 13601 · 315-782-6152 · kris@aakelectric.net
+</footer>
+
+<a class="callbar" href="tel:3157826152">
+  <span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z" fill="#0d1b2a"/></svg>
+    Tap to Call — 315-782-6152
+  </span>
+</a>
+
+</body>
+</html>

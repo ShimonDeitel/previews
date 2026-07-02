@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthy Lawns &amp; Shrubs, Inc. — Lawn Care in Little Rock, AR Since 1978</title>
+<meta name="description" content="Chemical lawn care, lawn maintenance and landscaping in Little Rock, Arkansas since 1978. Licensed and insured. Call (501) 227-6143.">
+<style>
+  :root{
+    --green:#1b7a3d;
+    --green-dark:#14572c;
+    --green-deep:#0d3d1f;
+    --lime:#8fd14f;
+    --ink:#152218;
+    --muted:#5a6b5e;
+    --bg:#f6f8f4;
+    --card:#ffffff;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block}
+  a{color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+    backdrop-filter:blur(10px);border-bottom:1px solid #e3e9e1;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand-mark{width:38px;height:38px;flex:0 0 auto;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .brand-name{font-weight:800;font-size:15px;line-height:1.15;letter-spacing:-.01em}
+  .brand-name small{display:block;font-weight:600;font-size:10.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;
+    text-decoration:none;font-weight:700;font-size:14px;padding:10px 16px;border-radius:999px;
+    box-shadow:0 3px 10px rgba(27,122,61,.28);white-space:nowrap;
+  }
+  .call-btn:active{transform:scale(.97)}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-dark) 55%,var(--green) 100%);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:auto -10% -55px -10%;height:120px;
+    background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0;
+  }
+  .hero-inner{padding:56px 0 120px;position:relative;z-index:1;max-width:640px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 14px;
+    font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;
+  }
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}
+  h1{font-size:clamp(2rem,7.5vw,3.4rem);line-height:1.08;letter-spacing:-.025em;font-weight:800;margin-bottom:16px}
+  h1 em{font-style:normal;color:var(--lime)}
+  .hero p{font-size:clamp(1rem,3.6vw,1.15rem);color:rgba(255,255,255,.85);margin-bottom:28px;max-width:52ch}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .btn-big{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 26px;border-radius:14px;font-weight:800;font-size:16.5px;text-decoration:none;
+  }
+  .btn-primary{background:var(--lime);color:var(--green-deep);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+  .btn-primary:active{transform:scale(.97)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.4);color:#fff}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;font-size:13.5px;color:rgba(255,255,255,.75);font-weight:600}
+  .hero-meta span{display:inline-flex;align-items:center;gap:7px}
+
+  /* Sections */
+  section{padding:56px 0}
+  .kicker{color:var(--green);font-weight:800;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:clamp(1.5rem,5.4vw,2.15rem);letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:32px}
+
+  /* Services grid */
+  .grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:920px){.grid-3{grid-template-columns:1fr 1fr 1fr}}
+  .card{
+    background:var(--card);border:1px solid #e6ece4;border-radius:var(--radius);
+    padding:24px;box-shadow:0 1px 3px rgba(21,34,24,.05);
+  }
+  .icon-chip{
+    width:46px;height:46px;border-radius:12px;background:#e8f4ea;color:var(--green);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card h3{font-size:17px;margin-bottom:6px;letter-spacing:-.01em}
+  .card p{font-size:14.5px;color:var(--muted)}
+
+  /* Why us */
+  .why{background:#fff;border-top:1px solid #e6ece4;border-bottom:1px solid #e6ece4}
+  .why-list{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.why-list{grid-template-columns:1fr 1fr}}
+  .why-item{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border-radius:14px;padding:18px}
+  .check{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .why-item strong{display:block;font-size:15.5px;margin-bottom:2px}
+  .why-item span{font-size:13.5px;color:var(--muted)}
+
+  /* Service area / contact */
+  .contact-card{
+    background:linear-gradient(150deg,var(--green-dark),var(--green-deep));
+    color:#fff;border-radius:22px;padding:36px 26px;text-align:center;
+  }
+  .contact-card h2{color:#fff}
+  .contact-card p{color:rgba(255,255,255,.8);max-width:46ch;margin:0 auto 26px}
+  .contact-rows{display:grid;gap:12px;max-width:420px;margin:26px auto 0;text-align:left}
+  .contact-row{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 16px;font-size:14.5px;text-decoration:none}
+  .contact-row svg{flex:0 0 auto;margin-top:2px;color:var(--lime)}
+  .contact-row b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.65);margin-bottom:1px}
+
+  footer{padding:28px 0 90px;text-align:center;color:var(--muted);font-size:13px}
+  @media(min-width:720px){footer{padding-bottom:36px}}
+
+  /* Mobile sticky call bar */
+  .sticky-call{
+    position:fixed;left:12px;right:12px;bottom:12px;z-index:60;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--green);color:#fff;text-decoration:none;font-weight:800;font-size:16px;
+    padding:15px;border-radius:14px;box-shadow:0 8px 26px rgba(13,61,31,.4);
+  }
+  @media(min-width:720px){.sticky-call{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Healthy Lawns and Shrubs home">
+      <span class="brand-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 20c2-6 4-9 8-13"/><path d="M12 7c0-3 2-4 5-4 0 3-1 5-5 4z" fill="#fff" stroke="none"/><path d="M8 20v-4M12 20v-6M16 20v-3M20 20v-5M4 20h17"/></svg>
+      </span>
+      <span class="brand-name">Healthy Lawns &amp; Shrubs<small>Little Rock, AR &middot; Since 1978</small></span>
+    </a>
+    <a class="call-btn" href="tel:+15012276143">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      (501) 227-6143
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <span class="badge"><span class="dot"></span>Serving Little Rock since 1978</span>
+      <h1>A healthy lawn is a <em>beautiful</em> lawn.</h1>
+      <p>Professional chemical lawn care, maintenance and landscaping for Little Rock homes and businesses — from a licensed, insured local company with over 45 years in the field.</p>
+      <div class="hero-ctas">
+        <a class="btn-big btn-primary" href="tel:+15012276143">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Call (501) 227-6143
+        </a>
+        <a class="btn-big btn-ghost" href="#services">Our Services</a>
+      </div>
+      <div class="hero-meta">
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Licensed &amp; insured</span>
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>EPA-registered materials</span>
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Locally owned</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="kicker">What we do</div>
+      <h2>Complete care for your lawn and landscape</h2>
+      <p class="lead">One local team for everything your yard needs — treatment, upkeep and improvement, season after season.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon-chip">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M12 9c0-3.5 2.5-6 6-6 0 3.5-2.5 6-6 6z"/><path d="M12 15c0-3.5-2.5-6-6-6 0 3.5 2.5 6 6 6z"/></svg>
+          </div>
+          <h3>Chemical Lawn Care</h3>
+          <p>Fertilization and weed control programs using EPA-registered and approved materials and equipment, applied by an experienced, licensed team.</p>
+        </div>
+        <div class="card">
+          <div class="icon-chip">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20v-5M10 20v-8M14 20v-6M18 20v-9"/><path d="M3 9l4-4 4 3 5-5 5 4"/></svg>
+          </div>
+          <h3>Lawn Maintenance</h3>
+          <p>Regular mowing, edging, weeding and grooming that keeps your property sharp all year — so you never have to think about it.</p>
+        </div>
+        <div class="card">
+          <div class="icon-chip">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7"/><path d="M12 15c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M8 22h8"/></svg>
+          </div>
+          <h3>Landscaping &amp; Pruning</h3>
+          <p>Shrub and bed care, pruning and fertilizing that keep your whole landscape healthy — not just the grass.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <div class="kicker">Why Healthy Lawns &amp; Shrubs</div>
+      <h2>Little Rock has trusted us since 1978</h2>
+      <p class="lead">Over four decades of caring for Arkansas lawns — and the credentials to back it up.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <span class="check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><strong>In business since 1978</strong><span>Decades of experience with Arkansas grasses, soil and seasons.</span></div>
+        </div>
+        <div class="why-item">
+          <span class="check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><strong>Licensed &amp; insured</strong><span>Fully licensed and insured for your protection and peace of mind.</span></div>
+        </div>
+        <div class="why-item">
+          <span class="check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><strong>EPA-registered materials</strong><span>Only EPA-registered and approved materials and equipment on your property.</span></div>
+        </div>
+        <div class="why-item">
+          <span class="check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><strong>Professional memberships</strong><span>Arkansas Turfgrass Association, Arkansas State Plant Board, Professional Lawn Care Association of America, Professional Grounds Management Society.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <div class="kicker" style="color:var(--lime)">Service area: Little Rock, Arkansas</div>
+        <h2>Ready for a healthier lawn?</h2>
+        <p>Call us weekdays and talk to a real local lawn-care professional. Monday&ndash;Friday, 8:00 am&ndash;4:30 pm.</p>
+        <a class="btn-big btn-primary" href="tel:+15012276143">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Call (501) 227-6143
+        </a>
+        <div class="contact-rows">
+          <a class="contact-row" href="tel:+15012276143">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            <span style="color:#fff"><b>Phone</b>(501) 227-6143</span>
+          </a>
+          <a class="contact-row" href="mailto:grassman1954@gmail.com">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span style="color:#fff"><b>Email</b>grassman1954@gmail.com</span>
+          </a>
+          <div class="contact-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span style="color:#fff"><b>Address</b>7225 West 12th St., Little Rock, AR 72204</span>
+          </div>
+          <div class="contact-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span style="color:#fff"><b>Hours</b>Mon&ndash;Fri 8:00 am&ndash;4:30 pm &middot; Sat&ndash;Sun closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Healthy Lawns &amp; Shrubs, Inc. &middot; Little Rock, Arkansas &middot; Serving since 1978<br>
+    P.O. Box 56499, Little Rock, AR 72215 &middot; Licensed &amp; insured
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+15012276143">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+  Tap to Call (501) 227-6143
+</a>
+
+</body>
+</html>
