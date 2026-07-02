@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Target Pest Control | Rochester NY Pest Exterminator</title>
+<style>
+  :root{
+    --ink:#101820;
+    --ink-soft:#3c4650;
+    --paper:#ffffff;
+    --paper-soft:#f4f6f5;
+    --line:#e3e7e6;
+    --brand:#1f6f4a;
+    --brand-dark:#154f34;
+    --accent:#e0672a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 24px;border-radius:12px;font-weight:700;font-size:17px;
+    border:none;cursor:pointer;white-space:nowrap;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:active{background:#c8551f;}
+  .btn-outline{background:transparent;color:var(--paper);border:2px solid rgba(255,255,255,.55);}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--brand-dark);color:#fff;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:.02em;
+    padding:8px 12px;
+  }
+  .callbar a{text-decoration:underline;}
+
+  /* Header */
+  header{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .header-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;}
+  .brand-mark{width:36px;height:36px;flex:0 0 auto;}
+  .header-call{
+    display:flex;align-items:center;gap:8px;
+    background:var(--brand);color:#fff;
+    padding:10px 16px;border-radius:10px;font-weight:700;font-size:15px;
+  }
+  .header-call svg{width:18px;height:18px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--brand-dark) 0%,var(--brand) 100%);
+    color:#fff;padding:44px 0 40px;
+    position:relative;overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;opacity:.12;}
+  .hero-content{position:relative;z-index:1;}
+  .eyebrow{
+    display:inline-block;background:rgba(255,255,255,.15);
+    padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700;
+    letter-spacing:.03em;margin-bottom:16px;
+  }
+  h1{font-size:clamp(30px,7vw,46px);line-height:1.12;font-weight:800;margin-bottom:14px;letter-spacing:-.01em;}
+  .hero p{font-size:17px;color:rgba(255,255,255,.92);max-width:520px;margin-bottom:26px;}
+  .hero-actions{display:flex;flex-direction:column;gap:12px;max-width:360px;}
+  .hero-actions .btn{width:100%;}
+  .trust-row{
+    display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;
+    font-size:13px;color:rgba(255,255,255,.85);font-weight:600;
+  }
+  .trust-row span{display:flex;align-items:center;gap:6px;}
+  .trust-row svg{width:16px;height:16px;flex:0 0 auto;}
+
+  /* Sticky mobile call button */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--accent);color:#fff;
+    padding:14px 20px;text-align:center;font-weight:800;font-size:16px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 -4px 14px rgba(0,0,0,.15);
+  }
+  .sticky-call svg{width:20px;height:20px;}
+  body{padding-bottom:64px;}
+
+  /* Section generic */
+  section{padding:52px 0;}
+  .section-head{text-align:center;max-width:600px;margin:0 auto 34px;}
+  .section-head .eyebrow{background:rgba(31,111,74,.1);color:var(--brand-dark);}
+  h2{font-size:clamp(24px,5vw,32px);font-weight:800;letter-spacing:-.01em;margin-bottom:10px;}
+  .section-head p{color:var(--ink-soft);font-size:16px;}
+
+  /* Services grid */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  @media(min-width:640px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:960px){.services-grid{grid-template-columns:1fr 1fr 1fr 1fr;}}
+  .service-card{
+    background:var(--paper-soft);border:1px solid var(--line);
+    border-radius:14px;padding:22px 18px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .service-card .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--brand);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-card .icon svg{width:24px;height:24px;stroke:#fff;}
+  .service-card h3{font-size:16px;font-weight:700;}
+  .service-card p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:22px;}
+  @media(min-width:720px){.why-grid{grid-template-columns:repeat(3,1fr);}}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .icon{
+    width:48px;height:48px;border-radius:12px;background:var(--brand-dark);
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  }
+  .why-item .icon svg{width:24px;height:24px;stroke:#fff;}
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+  .why-item p{font-size:14px;color:var(--ink-soft);}
+  .why-bg{background:var(--paper-soft);}
+
+  /* Area */
+  .area-box{
+    background:var(--brand-dark);color:#fff;border-radius:18px;
+    padding:32px 24px;display:flex;flex-direction:column;gap:18px;
+    align-items:center;text-align:center;
+  }
+  .area-box svg{width:40px;height:40px;stroke:#fff;}
+  .area-towns{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px;
+  }
+  .area-towns span{
+    background:rgba(255,255,255,.12);padding:8px 14px;border-radius:999px;
+    font-size:14px;font-weight:600;
+  }
+
+  /* Contact */
+  .contact-card{
+    background:var(--paper-soft);border:1px solid var(--line);
+    border-radius:18px;padding:30px 24px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .contact-row{display:flex;gap:14px;align-items:center;}
+  .contact-row .icon{
+    width:42px;height:42px;border-radius:10px;background:var(--brand);
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  }
+  .contact-row .icon svg{width:20px;height:20px;stroke:#fff;}
+  .contact-row a{font-weight:700;font-size:16px;}
+  .contact-row .label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+
+  footer{
+    background:var(--ink);color:rgba(255,255,255,.7);
+    padding:28px 0;text-align:center;font-size:13px;
+  }
+  footer .brand-name{color:#fff;font-weight:700;margin-bottom:6px;font-size:15px;}
+
+  @media(min-width:720px){
+    .hero-actions{flex-direction:row;max-width:none;}
+    .hero-actions .btn{width:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">
+  Serving Rochester &amp; the Finger Lakes since 1988 &middot; <a href="tel:5854277175">Call (585) 427-7175</a>
+</div>
+
+<header>
+  <div class="wrap header-row">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" stroke="#1f6f4a" stroke-width="2"/>
+        <circle cx="20" cy="20" r="12" stroke="#1f6f4a" stroke-width="2"/>
+        <circle cx="20" cy="20" r="5" fill="#e0672a"/>
+      </svg>
+      <span>Target Pest Control</span>
+    </div>
+    <a class="header-call" href="tel:5854277175">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-content">
+    <span class="eyebrow">Family-Owned Since 1988</span>
+    <h1>Rochester's Trusted Pest Control, Three Generations Running</h1>
+    <p>The Griffin family has kept Rochester-area homes and businesses pest-free for over 30 years. Fast, local, and honest.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:5854277175">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (585) 427-7175
+      </a>
+      <a class="btn btn-outline" href="mailto:targetpestcontrol@rochester.rr.com">Email Us</a>
+    </div>
+    <div class="trust-row">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>BBB Accredited</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>30+ Years Local</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Family-Operated</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Handle</span>
+      <h2>Full-Service Pest Control</h2>
+      <p>From everyday pests to serious infestations, we've seen it all in Rochester homes.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <h3>General Pest Control</h3>
+        <p>Ongoing protection against common household invaders.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4M2 11h20"/></svg></div>
+        <h3>Commercial Pest Control</h3>
+        <p>Reliable service plans for businesses across the region.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2 3-2 6 0 8 2-2 2-5 0-8zM12 10v12M7 15c-3 0-5 2-5 5M17 15c3 0 5 2 5 5M6 20c-1.5 0-2.5 1-2.5 2M18 20c1.5 0 2.5 1 2.5 2"/></svg></div>
+        <h3>Bees, Wasps &amp; Hornets</h3>
+        <p>Safe removal of stinging-insect nests on your property.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="5" ry="7"/><path d="M9 6l-2-3M15 6l2-3M7 11H3M17 11h4M7 16H4M17 16h3"/></svg></div>
+        <h3>Bed Bug Extermination</h3>
+        <p>Thorough treatment to eliminate bed bugs for good.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c0-3 2-5 5-5s5 2 5 5"/><circle cx="17" cy="9" r="2"/><path d="M14 19l-2-3 2-1 2 1-2 3z"/><path d="M4 14v3M9 9V6"/></svg></div>
+        <h3>Rodent Control</h3>
+        <p>Mice and rat removal plus exclusion to keep them out.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M12 9v13M8 13l-3 2M16 13l3 2M8 18l-3 2M16 18l3 2"/></svg></div>
+        <h3>Mosquitoes &amp; Ticks</h3>
+        <p>Yard treatments so you can enjoy the outdoors again.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="4"/><path d="M12 13v8M9 17l-3 3M15 17l3 3M9 8l-3-3M15 8l3-3M6 9H2M22 9h-4"/></svg></div>
+        <h3>Spider Control</h3>
+        <p>Reduce webs and spider activity inside and out.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="10" r="4"/><path d="M12 10h8M17 6l3 4-3 4"/></svg></div>
+        <h3>Fly Control</h3>
+        <p>Targeted treatments to cut down fly populations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Target</span>
+      <h2>Local, Family-Run, Experienced</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <h3>Three Generations of Griffins</h3>
+          <p>A family-owned and operated business since 1988, still run by the same family today.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg></div>
+        <div>
+          <h3>BBB Accredited</h3>
+          <p>A business rating you can check and trust before you book.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <h3>Experienced Technicians</h3>
+          <p>Our team averages over 17 years in the pest control industry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="area-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <h2 style="color:#fff;">Serving the Greater Rochester Area</h2>
+      <p style="color:rgba(255,255,255,.85);max-width:480px;">Based in Rush, NY, we've served over 10,000 households and businesses throughout the region.</p>
+      <div class="area-towns">
+        <span>Rochester</span>
+        <span>Victor</span>
+        <span>Webster</span>
+        <span>Brockport</span>
+        <span>Henrietta</span>
+        <span>Rush</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="why-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Talk to Target Pest Control</h2>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div>
+          <div class="label">Phone</div>
+          <a href="tel:5854277175">(585) 427-7175</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+        <div>
+          <div class="label">Email</div>
+          <a href="mailto:targetpestcontrol@rochester.rr.com">targetpestcontrol@rochester.rr.com</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="label">Address</div>
+          <span style="font-weight:700;font-size:16px;">6029 East Henrietta Rd, Rush, NY 14543</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="tel:5854277175" style="width:100%;margin-top:6px;">Call Now for a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-name">Target Pest Control</div>
+    <div>6029 East Henrietta Rd, Rush, NY 14543 &middot; (585) 427-7175</div>
+    <div style="margin-top:8px;">Design concept mockup &mdash; not the live site.</div>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:5854277175">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Tap to Call (585) 427-7175
+</a>
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centi's Landscaping LLC & Tree Removal Services | New Haven, CT</title>
+<style>
+  :root{
+    --green-dark:#1c3d2e;
+    --green:#2f6b45;
+    --green-light:#eef6ee;
+    --gold:#c98a2c;
+    --ink:#16241c;
+    --paper:#fbfaf6;
+    --line:#dfe6df;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .topbar{
+    background:var(--green-dark);
+    color:#fff;
+    font-size:14px;
+    padding:8px 0;
+    text-align:center;
+  }
+  .topbar a{font-weight:600;border-bottom:1px solid rgba(255,255,255,.4);}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.2px;color:var(--green-dark);}
+  .brand .mark{width:34px;height:34px;flex:none;}
+  .call-btn{
+    background:var(--green);
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+    display:flex;align-items:center;gap:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;flex:none;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--green-dark) 0%,var(--green) 100%);
+    color:#fff;
+    padding:52px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 85% 15%, rgba(255,255,255,.08), transparent 55%),
+      radial-gradient(ellipse at 10% 90%, rgba(255,255,255,.06), transparent 50%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1;text-align:center;}
+  .badge{
+    display:inline-block;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.3);
+    color:#fff;
+    font-size:12.5px;
+    font-weight:600;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+    letter-spacing:.2px;
+  }
+  .hero h1{
+    font-size:34px;
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:-0.5px;
+    margin-bottom:14px;
+  }
+  .hero p.sub{
+    font-size:16.5px;
+    color:rgba(255,255,255,.88);
+    max-width:520px;
+    margin:0 auto 28px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center;}
+  .btn-primary{
+    background:var(--gold);
+    color:#231605;
+    font-weight:800;
+    font-size:17px;
+    padding:16px 28px;
+    border-radius:10px;
+    width:100%;
+    max-width:320px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+  }
+  .btn-primary svg{width:20px;height:20px;flex:none;}
+  .btn-secondary{
+    color:#fff;
+    font-weight:600;
+    font-size:14.5px;
+    padding:10px;
+    border-bottom:1px solid rgba(255,255,255,.4);
+  }
+  .hero-tree{
+    margin:34px auto 0;
+    width:220px;
+  }
+
+  /* Trust strip */
+  .trust{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  .trust-row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+    text-align:center;
+  }
+  .trust-item{flex:1;min-width:90px;}
+  .trust-item .num{font-size:20px;font-weight:800;color:var(--green-dark);}
+  .trust-item .lbl{font-size:11.5px;color:#5b6b60;font-weight:600;text-transform:uppercase;letter-spacing:.3px;margin-top:2px;}
+
+  /* Section shells */
+  section{padding:52px 0;}
+  .section-head{text-align:center;margin-bottom:32px;}
+  .eyebrow{
+    color:var(--green);
+    font-weight:700;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:26px;
+    font-weight:800;
+    color:var(--ink);
+    letter-spacing:-0.4px;
+  }
+  .section-head p{color:#5b6b60;font-size:15px;margin-top:10px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  /* Services grid */
+  .services{background:var(--green-light);}
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 16px;
+    text-align:left;
+  }
+  .card .icon{
+    width:38px;height:38px;
+    background:var(--green-light);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+  }
+  .card .icon svg{width:20px;height:20px;stroke:var(--green-dark);}
+  .card h3{font-size:15.5px;font-weight:700;margin-bottom:4px;color:var(--ink);}
+  .card p{font-size:13px;color:#647065;}
+
+  /* Why us */
+  .why-list{display:flex;flex-direction:column;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .check{
+    width:30px;height:30px;flex:none;
+    background:var(--green);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .check svg{width:16px;height:16px;stroke:#fff;}
+  .why-item h3{font-size:15.5px;font-weight:700;margin-bottom:2px;}
+  .why-item p{font-size:13.5px;color:#5b6b60;}
+
+  /* Area */
+  .area{background:var(--green-dark);color:#fff;}
+  .area .section-head p{color:rgba(255,255,255,.75);}
+  .area-eyebrow{color:#a9d3b6;}
+  .area-tags{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .area-tag{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    padding:9px 16px;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:600;
+  }
+  .area-tag.main{background:var(--gold);color:#231605;border-color:var(--gold);}
+
+  /* Contact / CTA */
+  .contact{background:#fff;}
+  .contact-card{
+    background:var(--green-light);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:32px 22px;
+    text-align:center;
+  }
+  .contact-card h2{font-size:22px;font-weight:800;margin-bottom:8px;letter-spacing:-0.3px;}
+  .contact-card p{color:#5b6b60;font-size:14.5px;margin-bottom:22px;}
+  .contact-actions{display:flex;flex-direction:column;gap:12px;}
+  .contact-actions a{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 18px;border-radius:10px;font-weight:700;font-size:15.5px;
+  }
+  .contact-actions .call{background:var(--green);color:#fff;}
+  .contact-actions .email{background:#fff;color:var(--green-dark);border:1.5px solid var(--green);}
+  .contact-actions svg{width:18px;height:18px;flex:none;}
+  .contact-note{font-size:12.5px;color:#7c8a7f;margin-top:18px;}
+
+  /* Footer */
+  footer{
+    background:var(--green-dark);
+    color:rgba(255,255,255,.65);
+    padding:26px 0;
+    text-align:center;
+    font-size:12.5px;
+  }
+  footer .fbrand{color:#fff;font-weight:700;font-size:14px;margin-bottom:6px;}
+  footer a{text-decoration:underline;color:rgba(255,255,255,.85);}
+
+  /* Sticky mobile call button */
+  .sticky-call{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:60;
+    background:var(--green);
+    color:#fff;
+    padding:14px 20px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:800;
+    font-size:16px;
+    box-shadow:0 -6px 18px rgba(0,0,0,.15);
+  }
+  .sticky-call svg{width:18px;height:18px;flex:none;}
+  body{padding-bottom:64px;}
+
+  @media (min-width:600px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+    .hero h1{font-size:42px;}
+    .hero-ctas{flex-direction:row;justify-content:center;}
+    .contact-actions{flex-direction:row;justify-content:center;}
+    .contact-actions a{flex:1;max-width:240px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Call now for a free estimate: <a href="tel:2035079306">(203) 507-9306</a>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="20" fill="#2f6b45"/>
+        <path d="M20 8c4 4 7 8 7 13a7 7 0 0 1-14 0c0-5 3-9 7-13z" fill="#c98a2c"/>
+        <rect x="18.5" y="24" width="3" height="9" rx="1" fill="#fff"/>
+      </svg>
+      <span>Centi's Landscaping &amp; Tree Removal</span>
+    </div>
+    <a class="call-btn" href="tel:2035079306">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="badge">Family-Owned &middot; 8 Years in New Haven, CT</span>
+    <h1>Tree Removal &amp; Landscaping You Can Count On</h1>
+    <p class="sub">From full tree removal to weekly lawn care, Centi's handles residential and commercial properties across New Haven and the surrounding area &mdash; done right, the first time.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:2035079306">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#231605" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (203) 507-9306
+      </a>
+      <a class="btn-secondary" href="#contact">Or request a free estimate &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap trust-row">
+    <div class="trust-item"><div class="num">8+</div><div class="lbl">Years in Business</div></div>
+    <div class="trust-item"><div class="num">Family</div><div class="lbl">Owned &amp; Operated</div></div>
+    <div class="trust-item"><div class="num">Res. &amp; Comm.</div><div class="lbl">Properties Served</div></div>
+    <div class="trust-item"><div class="num">New Haven</div><div class="lbl">CT &amp; Nearby</div></div>
+  </div>
+</div>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Full-Service Tree &amp; Landscaping</h2>
+      <p>Eight years of hands-on work across New Haven County, from single tree jobs to full property upkeep.</p>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 8 9h3l-3 6h4v7h0v-7h4l-3-6h3z"/></svg></div>
+        <h3>Tree Removal</h3>
+        <p>Safe, complete removal of hazardous or unwanted trees, any size.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M6 3l6 3-6 3M6 15l6 3-6 3"/></svg></div>
+        <h3>Tree &amp; Shrub Trimming</h3>
+        <p>Routine pruning and trimming to keep trees healthy and shaped.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M9 15h6M8 12h8M9 9h6"/></svg></div>
+        <h3>Stump Grinding</h3>
+        <p>Grind stumps down flush with the ground so you can reclaim the space.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V10l6-6 6 6v10"/></svg></div>
+        <h3>Landscaping</h3>
+        <p>Lawn care and landscaping for residential and commercial properties.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 6l16 12M20 6 4 18M2 12h20"/></svg></div>
+        <h3>Snow Removal</h3>
+        <p>Reliable plowing and snow clearing through the winter season.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="8" width="7" height="13"/><path d="M3 8l3.5-5h7L17 8"/></svg></div>
+        <h3>Firewood</h3>
+        <p>Seasoned firewood available, cut and ready to burn.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Concrete Services</h3>
+        <p>Concrete work for driveways, walkways, and patios.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M3 17l3-8h12l3 8M8 9V5h8v4"/></svg></div>
+        <h3>Asphalt Services</h3>
+        <p>Asphalt installation and repair for driveways and lots.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Centi's</div>
+      <h2>Local, Family-Run, Straightforward</h2>
+    </div>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div>
+          <h3>8 Years Serving New Haven</h3>
+          <p>A family-owned business with nearly a decade of local tree and landscaping work.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div>
+          <h3>Residential &amp; Commercial</h3>
+          <p>Equipped to handle projects of all sizes, from a single backyard tree to full commercial lots.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div>
+          <h3>One Call for Everything</h3>
+          <p>Trees, lawn care, snow removal, concrete, and asphalt &mdash; one crew, one number.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div>
+          <h3>Free Estimates</h3>
+          <p>Call or email for a free estimate on your project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow area-eyebrow">Service Area</div>
+      <h2>Proudly Serving New Haven, CT</h2>
+      <p>And nearby communities including Orange, Milford, and Woodbridge.</p>
+    </div>
+    <div class="area-tags">
+      <span class="area-tag main">New Haven</span>
+      <span class="area-tag">Orange</span>
+      <span class="area-tag">Milford</span>
+      <span class="area-tag">Woodbridge</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Get a Free Estimate</h2>
+      <p>Call or email Centi's Landscaping &amp; Tree Removal today.</p>
+      <div class="contact-actions">
+        <a class="call" href="tel:2035079306">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (203) 507-9306
+        </a>
+        <a class="email" href="mailto:Centisland@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1c3d2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+          Email Us
+        </a>
+      </div>
+      <p class="contact-note">Centisland@gmail.com &middot; Serving New Haven, CT &amp; nearby towns</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">Centi's Landscaping LLC &amp; Tree Removal Services</div>
+    <p>New Haven, CT &middot; <a href="tel:2035079306">(203) 507-9306</a> &middot; <a href="mailto:Centisland@gmail.com">Centisland@gmail.com</a></p>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:2035079306">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Tap to Call (203) 507-9306
+</a>
+
+</body>
+</html>

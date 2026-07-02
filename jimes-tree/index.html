@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jime's Tree Service | Albany, NY Tree Removal &amp; Stump Grinding</title>
+<style>
+  :root{
+    --green-dark:#1b3a2b;
+    --green:#2d5c40;
+    --green-light:#4c8a63;
+    --accent:#e8912d;
+    --cream:#f7f5ef;
+    --ink:#1a1f1c;
+    --gray:#5c645e;
+    --border:#e1ddd0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--green-dark);
+    color:#fff;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.2px;}
+  .brand svg{width:30px;height:30px;flex-shrink:0;}
+  .call-pill{
+    display:flex;align-items:center;gap:8px;
+    background:var(--accent);color:#1a1f1c;
+    padding:10px 16px;border-radius:30px;
+    font-weight:700;font-size:15px;white-space:nowrap;
+  }
+  .call-pill svg{width:18px;height:18px;flex-shrink:0;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--green-dark) 0%, var(--green) 65%, var(--green-light) 100%);
+    color:#fff;
+    padding:48px 20px 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-60px;bottom:-60px;
+    width:280px;height:280px;
+    background:radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  }
+  .hero-inner{max-width:1100px;margin:0 auto;position:relative;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:6px 12px;border-radius:20px;
+    font-size:13px;font-weight:600;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(30px,7vw,46px);
+    line-height:1.12;
+    font-weight:800;
+    margin-bottom:14px;
+    letter-spacing:-.5px;
+  }
+  .hero p{
+    font-size:17px;
+    color:rgba(255,255,255,0.88);
+    max-width:520px;
+    margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn-primary{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--accent);color:#1a1f1c;
+    padding:16px 24px;border-radius:12px;
+    font-weight:800;font-size:17px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+  .btn-primary svg{width:20px;height:20px;}
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid rgba(255,255,255,0.4);
+    color:#fff;
+    padding:14px 22px;border-radius:12px;
+    font-weight:700;font-size:16px;
+  }
+  .hero-meta{
+    margin-top:28px;display:flex;flex-wrap:wrap;gap:18px;
+    font-size:14px;color:rgba(255,255,255,0.8);
+  }
+  .hero-meta span{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:16px;height:16px;flex-shrink:0;}
+
+  /* Section generic */
+  section{padding:56px 20px;}
+  .section-label{
+    font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--green);margin-bottom:8px;
+  }
+  h2{font-size:clamp(24px,5vw,32px);font-weight:800;margin-bottom:14px;letter-spacing:-.3px;}
+  .section-sub{color:var(--gray);font-size:16px;max-width:560px;margin-bottom:32px;}
+
+  /* Services */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  @media(min-width:640px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:900px){.services-grid{grid-template-columns:1fr 1fr 1fr;}}
+  .service-card{
+    background:#fff;border:1px solid var(--border);
+    border-radius:16px;padding:22px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .service-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.06);}
+  .service-icon{
+    width:44px;height:44px;border-radius:10px;
+    background:var(--green-dark);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .service-icon svg{width:24px;height:24px;stroke:#fff;}
+  .service-card h3{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .service-card p{font-size:14px;color:var(--gray);}
+
+  /* Why us */
+  .why-section{background:var(--green-dark);color:#fff;}
+  .why-section .section-label{color:var(--accent);}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:8px;}
+  @media(min-width:700px){.why-grid{grid-template-columns:repeat(4,1fr);}}
+  .why-item{display:flex;flex-direction:column;gap:8px;}
+  .why-item .num{font-size:30px;font-weight:800;color:var(--accent);}
+  .why-item h3{font-size:16px;font-weight:700;}
+  .why-item p{font-size:14px;color:rgba(255,255,255,0.75);}
+
+  /* Area */
+  .area-box{
+    background:#fff;border:1px solid var(--border);border-radius:20px;
+    padding:32px 24px;display:flex;flex-direction:column;gap:20px;
+  }
+  @media(min-width:700px){.area-box{flex-direction:row;align-items:center;justify-content:space-between;}}
+  .area-text h2{margin-bottom:8px;}
+  .area-text p{color:var(--gray);font-size:15px;max-width:420px;}
+  .map-pin{
+    display:flex;align-items:center;gap:14px;
+    background:var(--cream);border-radius:14px;padding:16px 20px;
+  }
+  .map-pin svg{width:32px;height:32px;flex-shrink:0;color:var(--green);}
+  .map-pin .addr{font-weight:700;font-size:15px;}
+  .map-pin .addr small{display:block;font-weight:500;color:var(--gray);font-size:13px;margin-top:2px;}
+
+  /* Contact / CTA band */
+  .cta-band{
+    background:linear-gradient(135deg,var(--accent),#d97f1f);
+    color:#1a1f1c;text-align:center;
+  }
+  .cta-band h2{margin-bottom:10px;}
+  .cta-band p{max-width:480px;margin:0 auto 26px;color:rgba(26,31,28,0.8);font-size:16px;}
+  .cta-band .btn-primary{background:#1a1f1c;color:#fff;margin:0 auto;box-shadow:none;}
+
+  footer{
+    background:var(--green-dark);color:rgba(255,255,255,0.7);
+    padding:32px 20px;font-size:13px;text-align:center;
+  }
+  footer .foot-phone{color:#fff;font-weight:700;}
+  footer a{text-decoration:underline;}
+
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--green-dark);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    display:flex;
+  }
+  .sticky-call a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--accent);color:#1a1f1c;font-weight:800;font-size:16px;
+    padding:14px;border-radius:12px;
+  }
+  .sticky-call svg{width:20px;height:20px;}
+  body{padding-bottom:76px;}
+  @media(min-width:900px){.sticky-call{display:none;}body{padding-bottom:0;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#e8912d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 6 6 9 6 13a6 6 0 0 0 12 0c0-4-3-7-6-11z"/><path d="M12 13v9"/></svg>
+      Jime's Tree Service
+    </div>
+    <a class="call-pill" href="tel:5188695784">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (518) 869-5784
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="badge">Serving Albany &amp; the Capital District since 1960</span>
+    <h1>Tree trouble?<br>One call, handled right.</h1>
+    <p>Tree removal, stump grinding, and emergency storm response from a local, insured &amp; licensed crew based right in Albany.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:5188695784">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (518) 869-5784
+      </a>
+      <a class="btn-secondary" href="#contact">Get a Free Quote</a>
+    </div>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Insured &amp; Licensed
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Same-Day &amp; Emergency Service
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        1785 Central Ave, Albany NY
+      </span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-label">What We Do</div>
+    <h2>Full-service tree care</h2>
+    <p class="section-sub">From routine trims to storm-damage emergencies, our crew handles every job with the right equipment for it.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 6 6 9 6 13a6 6 0 0 0 12 0c0-4-3-7-6-11z"/><path d="M12 13v9"/></svg></div>
+        <h3>Tree Removal</h3>
+        <p>Safe, complete removal of trees of any size, including hazardous and hard-to-access jobs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/></svg></div>
+        <h3>Stump Grinding</h3>
+        <p>Grind stumps down below grade so you can reclaim your yard and reseed right over it.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><path d="M5 5l14 14M19 5L5 19"/></svg></div>
+        <h3>Crane Service</h3>
+        <p>Crane-assisted removals for large or tightly-positioned trees near homes and power lines.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 10h3l2 3v4h-5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg></div>
+        <h3>Chipper Service</h3>
+        <p>On-site chipping to clear brush and limbs fast, leaving your property clean.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l3-9h10l3 9"/><path d="M9 11V7a3 3 0 0 1 6 0v4"/></svg></div>
+        <h3>Mulch &amp; Wood Chips</h3>
+        <p>Quality mulch and wood chips available for purchase for your landscaping needs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <h3>Firewood</h3>
+        <p>Seasoned firewood available for sale, delivered locally in the Capital District.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="wrap">
+    <div class="section-label">Why Jime's</div>
+    <h2>Local, licensed, and ready when you need us</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">1960</div>
+        <h3>Established locally</h3>
+        <p>Family-run tree service based in Albany, NY.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">✓</div>
+        <h3>Insured &amp; Licensed</h3>
+        <p>Fully insured and licensed for every job we take on.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">24/7</div>
+        <h3>Emergency response</h3>
+        <p>Same-day and emergency service when storms strike.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">$</div>
+        <h3>Insurance claims help</h3>
+        <p>We help you navigate insurance claims for storm damage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="area-box">
+      <div class="area-text">
+        <div class="section-label">Service Area</div>
+        <h2>Proudly serving the Capital District</h2>
+        <p>Based in Albany, NY, and serving surrounding Capital District communities.</p>
+      </div>
+      <div class="map-pin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="addr">1785 Central Avenue
+          <small>Albany, NY 12205</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Get your free quote today</h2>
+    <p>Call now or send an email — Jime's Tree Service responds fast.</p>
+    <a class="btn-primary" href="tel:5188695784">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (518) 869-5784
+    </a>
+    <p style="margin-top:18px;font-size:14px;">Or email <a href="mailto:jimestree@yahoo.com" style="text-decoration:underline;">jimestree@yahoo.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Jime's Tree Service &middot; 1785 Central Avenue, Albany, NY 12205</p>
+    <p style="margin-top:6px;">Call <a class="foot-phone" href="tel:5188695784">(518) 869-5784</a> &middot; <a href="mailto:jimestree@yahoo.com">jimestree@yahoo.com</a></p>
+    <p style="margin-top:14px;color:rgba(255,255,255,0.4);">Prototype homepage concept — not affiliated with or endorsed by Jime's Tree Service.</p>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:5188695784">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now — (518) 869-5784
+  </a>
+</div>
+
+</body>
+</html>
