@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberty Electrical Contractors, Inc. | Jacksonville, FL Licensed Electricians</title>
+<meta name="description" content="Commercial, residential & industrial electrical contractors serving Jacksonville & Northeast Florida since 1986. BBB A+ rated. Call (904) 745-1850.">
+<style>
+  :root{
+    --navy:#0b1f3a;
+    --navy-dark:#071527;
+    --blue:#1e5fd9;
+    --blue-bright:#2f76ff;
+    --amber:#f5a623;
+    --white:#ffffff;
+    --off:#f4f6f9;
+    --gray:#5b6672;
+    --line:#e3e7ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:64px 0;}
+  h1,h2,h3{line-height:1.15;font-weight:800;}
+  .eyebrow{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--blue-bright);
+    margin-bottom:12px;
+  }
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:#c9d4e6;
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:8px;
+    padding-bottom:8px;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .topbar-item{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+  .topbar-item svg{width:14px;height:14px;flex:none;}
+  .topbar a.call{color:#fff;font-weight:700;}
+
+  /* ---------- HEADER ---------- */
+  header.main{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,31,58,.97);
+    backdrop-filter:blur(6px);
+  }
+  header.main .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;}
+  .brand svg{width:34px;height:34px;flex:none;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text strong{font-size:17px;letter-spacing:.01em;}
+  .brand-text span{font-size:11px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+  .nav-cta{
+    display:flex;align-items:center;gap:10px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 18px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn svg{width:16px;height:16px;flex:none;}
+  .btn-amber{background:var(--amber);color:var(--navy-dark);}
+  .btn-amber:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(245,166,35,.35);}
+  .btn-outline{border-color:rgba(255,255,255,.35);color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,.08);}
+  .btn-block{width:100%;justify-content:center;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(47,118,255,.35), transparent 60%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;
+    padding:72px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(circle at 80% 20%, black, transparent 70%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    padding:6px 12px;border-radius:999px;
+    font-size:12.5px;font-weight:700;color:#e7ecf6;
+  }
+  .pill svg{width:14px;height:14px;flex:none;color:var(--amber);}
+  .hero h1{font-size:44px;letter-spacing:-.02em;margin-bottom:18px;}
+  .hero h1 .accent{color:var(--amber);}
+  .hero p.lead{font-size:18px;color:#c9d4e6;max-width:52ch;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:14px;margin-top:40px;max-width:520px;
+  }
+  .stat{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:16px 14px;
+  }
+  .stat strong{display:block;font-size:24px;color:#fff;}
+  .stat span{font-size:12px;color:#aab8cf;}
+
+  .hero-card{
+    background:#fff;color:var(--navy);
+    border-radius:18px;padding:28px;
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+  }
+  .hero-card h3{font-size:19px;margin-bottom:6px;}
+  .hero-card p{font-size:14px;color:var(--gray);margin-bottom:20px;}
+  .hero-card .phone-big{
+    display:flex;align-items:center;gap:12px;
+    background:var(--off);
+    border:1px solid var(--line);
+    border-radius:12px;padding:16px;margin-bottom:14px;
+  }
+  .hero-card .phone-big svg{width:26px;height:26px;color:var(--blue);flex:none;}
+  .hero-card .phone-big a{font-size:22px;font-weight:800;color:var(--navy);}
+  .hero-card ul{list-style:none;margin-bottom:20px;}
+  .hero-card ul li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14px;color:var(--navy);padding:6px 0;
+  }
+  .hero-card ul li svg{width:17px;height:17px;color:var(--blue);flex:none;margin-top:1px;}
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{
+    background:var(--off);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:22px 0;
+  }
+  .trust .wrap{
+    display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;
+  }
+  .trust-item{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;color:var(--navy);}
+  .trust-item svg{width:22px;height:22px;color:var(--blue);flex:none;}
+
+  /* ---------- SECTION HEADS ---------- */
+  .sec-head{max-width:640px;margin:0 auto 40px;text-align:center;}
+  .sec-head h2{font-size:32px;letter-spacing:-.01em;margin-bottom:10px;}
+  .sec-head p{color:var(--gray);font-size:16px;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  .svc-card{
+    border:1px solid var(--line);border-radius:14px;padding:26px 22px;
+    background:#fff;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .svc-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(11,31,58,.08);border-color:var(--blue);}
+  .svc-icon{
+    width:48px;height:48px;border-radius:10px;
+    background:linear-gradient(135deg, var(--blue), var(--navy));
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .svc-icon svg{width:24px;height:24px;color:#fff;}
+  .svc-card h3{font-size:17px;margin-bottom:8px;}
+  .svc-card p{font-size:14px;color:var(--gray);}
+
+  /* ---------- SECTORS ---------- */
+  .sectors{background:var(--off);}
+  .sector-row{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+  }
+  .sector-chip{
+    display:flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:10px 18px;font-size:14px;font-weight:700;color:var(--navy);
+  }
+  .sector-chip svg{width:16px;height:16px;color:var(--blue);flex:none;}
+
+  /* ---------- WHY US ---------- */
+  .why-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:28px;
+  }
+  .why-item{display:flex;gap:16px;}
+  .why-icon{
+    width:52px;height:52px;border-radius:12px;background:var(--off);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .why-icon svg{width:26px;height:26px;color:var(--blue);}
+  .why-item h3{font-size:17px;margin-bottom:6px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* ---------- QUOTE / PRESIDENT ---------- */
+  .quote-sec{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;
+  }
+  .quote-sec .wrap{max-width:760px;text-align:center;}
+  .quote-mark{font-size:60px;color:var(--amber);line-height:1;margin-bottom:6px;font-weight:800;}
+  .quote-sec p.quote{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:18px;}
+  .quote-sec .who{font-size:14px;color:#aab8cf;}
+  .quote-sec .who strong{color:#fff;}
+
+  /* ---------- SERVICE AREA ---------- */
+  .area-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  }
+  .area-map{
+    border:1px solid var(--line);border-radius:16px;
+    background:var(--off);
+    padding:30px;
+  }
+  .area-map svg{width:100%;height:auto;}
+  .area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+  .area-tag{
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:8px 14px;font-size:13.5px;font-weight:600;color:var(--navy);
+  }
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta-band{
+    background:var(--amber);
+    color:var(--navy-dark);
+  }
+  .cta-band .wrap{
+    display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+  }
+  .cta-band h2{font-size:26px;max-width:520px;}
+  .cta-band p{font-size:14px;font-weight:600;opacity:.85;}
+  .cta-band .btn-amber{background:var(--navy-dark);color:#fff;}
+  .cta-band .btn-amber:hover{box-shadow:0 8px 20px rgba(7,21,39,.35);}
+
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  }
+  .contact-card{
+    border:1px solid var(--line);border-radius:16px;padding:30px;background:var(--off);
+  }
+  .contact-card h3{font-size:18px;margin-bottom:18px;}
+  .contact-line{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;}
+  .contact-line svg{width:22px;height:22px;color:var(--blue);flex:none;margin-top:2px;}
+  .contact-line strong{display:block;font-size:14px;color:var(--navy);}
+  .contact-line span, .contact-line a{font-size:14px;color:var(--gray);}
+  .contact-line a.emph{color:var(--blue);font-weight:700;}
+
+  .form-card{
+    border:1px solid var(--line);border-radius:16px;padding:30px;background:#fff;
+  }
+  .form-card h3{font-size:18px;margin-bottom:6px;}
+  .form-card p.sub{font-size:13.5px;color:var(--gray);margin-bottom:20px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;
+    padding:11px 12px;font-size:14px;font-family:inherit;color:var(--navy);
+    background:#fff;
+  }
+  .field input:focus, .field textarea:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .field textarea{resize:vertical;min-height:90px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy-dark);color:#9fb0c9;padding:40px 0 24px;
+  }
+  footer .wrap{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+    padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.1);
+    margin-bottom:20px;
+  }
+  .footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;}
+  .footer-brand svg{width:26px;height:26px;flex:none;}
+  footer .fine{font-size:12.5px;text-align:center;}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;}
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero h1{font-size:34px;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:1fr;}
+    .area-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hero-stats{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (max-width: 600px){
+    section{padding:48px 0;}
+    .topbar .wrap{justify-content:center;text-align:center;}
+    .brand-text strong{font-size:15px;}
+    .nav-cta .btn-outline{display:none;}
+    .hero{padding:44px 0 56px;}
+    .hero h1{font-size:28px;}
+    .hero p.lead{font-size:16px;}
+    .hero-actions{flex-direction:column;}
+    .hero-actions .btn{width:100%;justify-content:center;}
+    .hero-stats{grid-template-columns:1fr 1fr 1fr;gap:8px;}
+    .stat{padding:12px 8px;}
+    .stat strong{font-size:19px;}
+    .services-grid{grid-template-columns:1fr;}
+    .sec-head h2{font-size:26px;}
+    .trust .wrap{justify-content:center;text-align:center;}
+    .quote-sec p.quote{font-size:19px;}
+    .cta-band .wrap{flex-direction:column;text-align:center;}
+    .cta-band .btn{width:100%;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2h-1C8.7 19 5 15.3 5 8V5z"/></svg>
+      <a class="call" href="tel:9047451850">(904) 745-1850</a>
+    </div>
+    <div class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <span>1424 Whitlock Ave, Jacksonville, FL 32211</span>
+    </div>
+    <div class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+      <span>Serving Jacksonville &amp; NE Florida since 1986</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="main">
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6z" fill="var(--amber)" stroke="var(--amber)"/></svg>
+      <div class="brand-text">
+        <strong>Liberty Electrical Contractors</strong>
+        <span>Est. 1986 &middot; Jacksonville, FL</span>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="#contact">Request a Quote</a>
+      <a class="btn btn-amber" href="tel:9047451850">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2h-1C8.7 19 5 15.3 5 8V5z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="badge-row">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>BBB A+ Rated</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/></svg>Certified Master Electrical Contractor</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 3"/><circle cx="12" cy="12" r="9"/></svg>Serving NE Florida Since 1986</span>
+      </div>
+      <h1>With Liberty Comes <span class="accent">Peace of Mind.</span></h1>
+      <p class="lead">Full-service commercial, residential &amp; industrial electrical contracting for Jacksonville and Northeast Florida &mdash; led by Certified Master Electrical Contractor Louis J. DePetris.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" href="tel:9047451850">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2h-1C8.7 19 5 15.3 5 8V5z"/></svg>
+          Call (904) 745-1850
+        </a>
+        <a class="btn btn-outline" href="#contact">Get a Free Estimate</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>40+</strong><span>Years in Business</span></div>
+        <div class="stat"><strong>A+</strong><span>BBB Rating</span></div>
+        <div class="stat"><strong>24/7</strong><span>Service Calls</span></div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Talk to an Electrician Today</h3>
+      <p>Commercial, residential &amp; industrial work &mdash; new installs, upgrades, and repairs.</p>
+      <div class="phone-big">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2h-1C8.7 19 5 15.3 5 8V5z"/></svg>
+        <a href="tel:9047451850">(904) 745-1850</a>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg>New installations &amp; additions</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg>Upgrades &amp; change-outs</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg>Service &amp; repairs</li>
+      </ul>
+      <a class="btn btn-amber btn-block" href="#contact">Request a Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/></svg>Certified Master Electrical Contractor</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>BBB Accredited &mdash; A+ Rating</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 3"/><circle cx="12" cy="12" r="9"/></svg>Family-Owned Since 1986</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Jacksonville &amp; Northeast Florida</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Electrical Services</h2>
+      <p>Commercial, residential, and industrial electrical work &mdash; from a single outlet to a full-facility build-out.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6z"/></svg></div>
+        <h3>New Installations</h3>
+        <p>Ground-up electrical installations for commercial, residential, and industrial properties.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 3l7 7-9 9-7-7 9-9z"/><path d="M4 20l3-3"/></svg></div>
+        <h3>Upgrades &amp; Change-Outs</h3>
+        <p>Panel upgrades, service change-outs, and electrical system modernization.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h3>Additions</h3>
+        <p>Electrical expansions for growing homes, businesses, and facilities.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <h3>Service &amp; Repairs</h3>
+        <p>Fast, reliable diagnosis and repair for electrical issues big and small.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <h3>Commercial Electrical</h3>
+        <p>Full-scope electrical contracting for retail, office, and commercial spaces.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/></svg></div>
+        <h3>Residential Electrical</h3>
+        <p>Trusted home electrical work backed by 40+ years of Jacksonville service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Industries Served</span>
+      <h2>Specialized Electrical Work For</h2>
+    </div>
+    <div class="sector-row">
+      <span class="sector-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Houses of Worship</span>
+      <span class="sector-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V10l6-6 6 6v11"/></svg>Restaurants</span>
+      <span class="sector-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M9 21V9M3 9l9-6 9 6"/></svg>Retail Stores</span>
+      <span class="sector-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Manufacturers</span>
+      <span class="sector-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="18" height="10" rx="1"/><path d="M7 10V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/></svg>Warehouse Facilities</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Liberty</span>
+      <h2>Peace of Mind, By Design</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/></svg></div>
+        <div>
+          <h3>Certified Master Electrical Contractor</h3>
+          <p>Led by Louis J. DePetris, a Certified Master Electrical Contractor with decades of hands-on expertise.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div>
+          <h3>BBB Accredited, A+ Rating</h3>
+          <p>A long-standing Better Business Bureau member with an A+ rating &mdash; verified trust, not just a promise.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M12 8v5l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div>
+          <h3>40+ Years Serving Northeast Florida</h3>
+          <p>Family-owned and operating in Jacksonville since 1986 &mdash; generations of local electrical experience.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <div>
+          <h3>Commercial, Residential &amp; Industrial</h3>
+          <p>One contractor for every kind of property &mdash; homes, businesses, and industrial facilities alike.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-sec">
+  <div class="wrap">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="quote">With Liberty Comes Peace of Mind.</p>
+    <p class="who"><strong>Louis J. DePetris</strong> &mdash; President &amp; Certified Master Electrical Contractor, Liberty Electrical Contractors, Inc.</p>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="area">
+  <div class="wrap area-grid">
+    <div>
+      <span class="eyebrow">Where We Work</span>
+      <h2 style="font-size:32px;margin-bottom:14px;">Proudly Serving Jacksonville &amp; Northeast Florida</h2>
+      <p style="color:var(--gray);font-size:16px;margin-bottom:10px;">Liberty Electrical Contractors is based at 1424 Whitlock Ave, Jacksonville, FL, and serves commercial, residential, and industrial clients throughout the Jacksonville and Northeast Florida region.</p>
+      <div class="area-list">
+        <span class="area-tag">Jacksonville, FL</span>
+        <span class="area-tag">Northeast Florida</span>
+      </div>
+    </div>
+    <div class="area-map">
+      <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="110" r="90" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-dasharray="4 5" opacity=".5"/>
+        <circle cx="150" cy="110" r="55" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-dasharray="4 5" opacity=".7"/>
+        <circle cx="150" cy="110" r="8" fill="var(--amber)"/>
+        <path d="M150 110 v-22" stroke="var(--amber)" stroke-width="2"/>
+        <circle cx="150" cy="80" r="4" fill="var(--navy)"/>
+        <text x="150" y="200" text-anchor="middle" font-size="13" fill="var(--navy)" font-family="inherit" font-weight="700">Jacksonville, FL</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Ready to get started?</h2>
+      <p>Call now or request a free estimate &mdash; a real electrician, not a call center.</p>
+    </div>
+    <a class="btn btn-amber" href="tel:9047451850">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2h-1C8.7 19 5 15.3 5 8V5z"/></svg>
+      (904) 745-1850
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Request a Free Estimate</h2>
+      <p>Tell us about your project and we'll get back to you promptly.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Contact Information</h3>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2h-1C8.7 19 5 15.3 5 8V5z"/></svg>
+          <div><strong>Phone</strong><a class="emph" href="tel:9047451850">(904) 745-1850</a></div>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><strong>Address</strong><span>1424 Whitlock Ave, Jacksonville, FL 32211</span></div>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 8h18M8 2v4M16 2v4"/></svg>
+          <div><strong>Serving</strong><span>Jacksonville &amp; Northeast Florida since 1986</span></div>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          <div><strong>Credentials</strong><span>BBB Accredited (A+) &middot; Certified Master Electrical Contractor</span></div>
+        </div>
+      </div>
+      <form class="form-card" onsubmit="return false;">
+        <h3>Send a Message</h3>
+        <p class="sub">We'll respond as soon as possible.</p>
+        <div class="field"><label for="name">Full Name</label><input id="name" type="text" placeholder="Jane Smith" required></div>
+        <div class="field"><label for="phone">Phone Number</label><input id="phone" type="tel" placeholder="(904) 555-0123" required></div>
+        <div class="field"><label for="msg">Project Details</label><textarea id="msg" placeholder="Tell us what you need..." required></textarea></div>
+        <button class="btn btn-amber btn-block" type="submit">Request Free Estimate</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6z" fill="var(--amber)"/></svg>
+      Liberty Electrical Contractors, Inc.
+    </div>
+    <div class="foot-links">
+      <a href="tel:9047451850">(904) 745-1850</a>
+      <a href="#services">Services</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <p class="fine">&copy; 2026 Liberty Electrical Contractors, Inc. &middot; 1424 Whitlock Ave, Jacksonville, FL 32211 &middot; Concept redesign for review, not the live site.</p>
+</footer>
+
+</body>
+</html>
