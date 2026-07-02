@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danley Pest Control | Fort Myers, FL</title>
+<style>
+  :root{
+    --ink:#12201c;
+    --ink-soft:#3c4d47;
+    --paper:#faf8f3;
+    --paper-alt:#f1efe6;
+    --green:#1f6b4a;
+    --green-dark:#154d36;
+    --accent:#e8b93a;
+    --line:#dedad0;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+  ul{list-style:none;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.02em;}
+  .brand svg{width:32px;height:32px;flex-shrink:0;}
+  .call-pill{
+    display:flex;align-items:center;gap:7px;
+    background:var(--green);color:#fff;
+    padding:10px 16px;border-radius:999px;
+    font-weight:700;font-size:14px;white-space:nowrap;
+  }
+  .call-pill svg{width:16px;height:16px;fill:#fff;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--green-dark) 0%,var(--green) 100%);
+    color:#fff;
+    padding:48px 20px 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-60px;bottom:-60px;
+    width:260px;height:260px;
+    background:radial-gradient(circle,rgba(232,185,58,0.18) 0%,transparent 70%);
+  }
+  .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:6px 12px;border-radius:999px;
+    font-size:12.5px;font-weight:700;letter-spacing:.02em;
+    margin-bottom:18px;
+  }
+  .eyebrow svg{width:14px;height:14px;fill:var(--accent);}
+  h1{
+    font-size:34px;line-height:1.12;font-weight:800;letter-spacing:-0.02em;
+    margin-bottom:14px;
+  }
+  h1 span{color:var(--accent);}
+  .hero p{font-size:16.5px;color:rgba(255,255,255,0.88);max-width:520px;margin-bottom:26px;}
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 22px;border-radius:999px;
+    font-weight:800;font-size:16.5px;
+    border:none;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn svg{width:19px;height:19px;flex-shrink:0;}
+  .btn-primary{background:var(--accent);color:var(--green-dark);}
+  .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.55);}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;
+    font-size:13.5px;color:rgba(255,255,255,0.78);
+  }
+  .hero-meta li{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:15px;height:15px;fill:var(--accent);flex-shrink:0;}
+
+  /* Sections */
+  section{padding:44px 20px;}
+  .section-head{margin-bottom:26px;}
+  .kicker{
+    font-size:12.5px;font-weight:800;color:var(--green);
+    letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;
+  }
+  h2{font-size:25px;font-weight:800;letter-spacing:-0.02em;color:var(--ink);}
+  .lede{color:var(--ink-soft);font-size:15px;margin-top:8px;max-width:520px;}
+
+  /* Services grid */
+  .services{background:var(--paper-alt);}
+  .service-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  }
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 14px;
+  }
+  .service-card .icon{
+    width:38px;height:38px;border-radius:10px;
+    background:rgba(31,107,74,0.1);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+  }
+  .service-card .icon svg{width:20px;height:20px;fill:var(--green);}
+  .service-card h3{font-size:14.5px;font-weight:700;margin-bottom:4px;letter-spacing:-0.01em;}
+  .service-card p{font-size:12.5px;color:var(--ink-soft);line-height:1.4;}
+  .service-note{
+    margin-top:16px;font-size:13px;color:var(--ink-soft);
+    background:#fff;border:1px dashed var(--line);border-radius:10px;padding:12px 14px;
+  }
+
+  /* Why us */
+  .why-list{display:flex;flex-direction:column;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .num{
+    flex-shrink:0;width:40px;height:40px;border-radius:10px;
+    background:var(--green-dark);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:15px;
+  }
+  .why-item h3{font-size:15.5px;font-weight:700;margin-bottom:3px;}
+  .why-item p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* Area */
+  .area{background:var(--green-dark);color:#fff;}
+  .area h2{color:#fff;}
+  .area .lede{color:rgba(255,255,255,0.78);}
+  .area-card{
+    margin-top:20px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:var(--radius);
+    padding:22px;
+    display:flex;align-items:center;gap:16px;
+  }
+  .area-card svg{width:34px;height:34px;fill:var(--accent);flex-shrink:0;}
+  .area-card h3{font-size:17px;font-weight:800;margin-bottom:3px;}
+  .area-card p{font-size:13.5px;color:rgba(255,255,255,0.75);}
+
+  /* Contact */
+  .contact-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 20px;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 0;border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .icon{
+    width:42px;height:42px;border-radius:10px;background:rgba(31,107,74,0.1);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-row .icon svg{width:21px;height:21px;fill:var(--green);}
+  .contact-row .label{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;font-weight:700;}
+  .contact-row .value{font-size:15.5px;font-weight:700;color:var(--ink);}
+  .contact-cta{margin-top:20px;}
+
+  /* Footer */
+  footer{
+    background:var(--ink);color:rgba(255,255,255,0.7);
+    padding:28px 20px;text-align:center;font-size:12.5px;
+  }
+  footer strong{color:#fff;}
+  footer .foot-phone{display:inline-block;margin-top:6px;color:var(--accent);font-weight:700;}
+
+  /* sticky call bar mobile */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--green);
+    padding:12px 16px;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    box-shadow:0 -4px 14px rgba(0,0,0,0.15);
+  }
+  .sticky-call a{
+    color:#fff;font-weight:800;font-size:15.5px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .sticky-call svg{width:18px;height:18px;fill:var(--accent);}
+  body{padding-bottom:64px;}
+
+  @media (min-width:640px){
+    h1{font-size:44px;}
+    .hero-ctas{flex-direction:row;}
+    .btn{width:auto;}
+    .service-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .hero-inner{display:flex;justify-content:space-between;align-items:center;gap:40px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#1f6b4a"/><path d="M16 7c-3.5 3-6 6.8-6 10.4C10 21.7 12.7 25 16 25s6-3.3 6-7.6C22 13.8 19.5 10 16 7z" fill="#e8b93a"/></svg>
+      Danley Pest Control
+    </div>
+    <a class="call-pill" href="tel:2392469396">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6l-6-4.4h7.6z"/></svg>
+        Fort Myers, FL &middot; Locally Owned
+      </div>
+      <h1>Pests gone.<br><span>Job done.</span></h1>
+      <p>Brandon Danley has spent over 5 years in the pest industry protecting Fort Myers homes and businesses. Straightforward service, no run-around.</p>
+      <div class="hero-ctas">
+        <a href="tel:2392469396" class="btn btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          Call 239-246-9396
+        </a>
+        <a href="#contact" class="btn btn-outline">Request an Estimate</a>
+      </div>
+      <ul class="hero-meta">
+        <li><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Fort Myers &amp; surrounding area</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg>Residential &amp; commercial</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>Mon&ndash;Fri, 9am&ndash;5pm</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Handle</div>
+      <h2>Pest control for the whole property</h2>
+      <p class="lede">Brandon covers residential and commercial pest needs across Fort Myers.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/></svg></div>
+        <h3>Residential Service</h3>
+        <p>Protection for houses and yards, tailored to your property.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12h-6v-7h-4v7z"/></svg></div>
+        <h3>Commercial Service</h3>
+        <p>Reliable pest management for local businesses.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a2 2 0 110 4 2 2 0 010-4zm4 12H8v-1c0-1.7 2.7-3 4-3s4 1.3 4 3v1z"/></svg></div>
+        <h3>Custom Estimates</h3>
+        <p>Every property is different &mdash; get a plan built for yours.</p>
+      </div>
+    </div>
+    <div class="service-note">Ask Brandon which pests are covered for your specific property &mdash; every estimate is scoped to your situation.</div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Why Danley</div>
+      <h2>Local, direct, dependable</h2>
+    </div>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div><h3>5+ years in the pest industry</h3><p>Owner Brandon Danley brings hands-on experience to every job.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div><h3>Fort Myers native</h3><p>Brandon grew up here and knows the area's pest pressures.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div><h3>You talk to the owner</h3><p>Call or email and reach Brandon directly &mdash; no call center.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Service Area</div>
+      <h2>Proudly serving Fort Myers</h2>
+      <p class="lede">Based in Fort Myers, Florida &mdash; call to confirm service at your address.</p>
+    </div>
+    <div class="area-card">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <div>
+        <h3>Fort Myers, FL</h3>
+        <p>Residential &amp; commercial pest control</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Get In Touch</div>
+      <h2>We'll get the job done</h2>
+      <p class="lede">Reach out and Brandon will follow up to schedule your estimate.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg></div>
+        <div><div class="label">Phone</div><div class="value">239-246-9396</div></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.01L12 13l8-6.99V6H4zm16 12V8.24l-8 6.99-8-6.99V18h16z"/></svg></div>
+        <div><div class="label">Email</div><div class="value">DanleyPestControl@gmail.com</div></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+        <div><div class="label">Hours</div><div class="value">Mon&ndash;Fri, 9:00 AM &ndash; 5:00 PM</div></div>
+      </div>
+      <div class="contact-cta">
+        <a href="tel:2392469396" class="btn btn-primary" style="width:100%;">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Danley Pest Control</strong> &mdash; Fort Myers, FL<br>
+  "We'll Get The Job Done"
+  <div class="foot-phone">239-246-9396</div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:2392469396">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+    Tap to Call Danley Pest Control
+  </a>
+</div>
+
+</body>
+</html>
