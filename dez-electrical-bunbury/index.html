@@ -1,5 +1,38 @@
+<!--
+  SHIP48 MASTER PROTOTYPE TEMPLATE
+  This page IS the business's new homepage — a finished, customer-facing site
+  the business could adopt tomorrow. The ONLY sales-pitch element is the slim
+  dismissible preview banner at the very top. Everything else speaks to the
+  business's own customers.
+
+  SWAP TOKENS a customizing agent must fill:
+    DEZ Electrical & Security   - business name (appears in title, banner, hero, footer, mailto)
+    Electrical & Security           - trade/industry, e.g. "Roofing"
+    Bunbury            - city/locality for the hero eyebrow
+    Power and protection, one call.         - strong customer-facing hero tagline, e.g. "Roofs that outlast the weather."
+    Electrical installations, maintenance and security systems for Bunbury homes and businesses, from one local team.    - one sentence on what the business does for its customers
+    {{PHONE}}           - phone number (used in tel: links and visible text)
+    info@dezelectrical.example  - the business's own contact email
+    Serving Bunbury and surrounds    - service area, e.g. "Serving Austin and surrounding counties"
+    Mon-Fri 7am-5pm           - business hours, e.g. "Mon–Fri 7am–6pm"
+    Why homeowners choose DEZ Electrical & Security.    - why-us section headline
+    Two Trades, One Team / Electrical and security work handled by the same trusted crew.   - trust point 1 (e.g. years in business)
+    Licensed & Insured / Every install carried out to Australian electrical and security standards.   - trust point 2 (e.g. guarantee)
+    Local Bunbury Team / Fast response and a team that knows the area.   - trust point 3 (e.g. locally owned)
+    Electrical Installations / Wiring, upgrades and repairs for homes and businesses.  \
+    Security Systems / Alarm and camera systems installed and maintained.   \  4 services, customer-facing copy
+    Ongoing Maintenance / Scheduled checks to keep electrical and security systems reliable.   /
+    Access Control / Gate and door access systems for homes and businesses.  /
+    ELECTRICAL .. ACCESS CONTROL   - short uppercase tag per service row
+    48hr / Response Time  - e.g. "20+" / "Years in Business"
+    100% / Licensed & Insured  - e.g. "1,500+" / "Jobs Completed"
+    2-in-1 / Electrical + Security  - e.g. "4.9" / "Average Rating"
+    Having one company do both the wiring and the alarm system made everything simpler.           - a real customer testimonial quote
+    Bunbury business owner    - who said it, e.g. "Maria G., homeowner"
+    --accent (CSS var)  - single brand accent color (+ --accent-dim rgba)
+-->
 <meta charset="UTF-8">
-<title>DEZ Electrical & Security — Electrical & Security</title>
+<title>DEZ Electrical & Security — Electrical & Security in Bunbury</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -23,6 +56,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -118,23 +175,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -191,15 +248,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -208,69 +279,73 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for DEZ Electrical & Security — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20DEZ Electrical & Security&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20DEZ Electrical & Security.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">Electrical & Security · Bunbury</div>
-  <h1>DEZ.<br><span>Power and protection, one call.</span></h1>
-  <p>Electrical installations, maintenance and security systems for Bunbury homes and businesses — from one local team.</p>
+  <div class="hero-eyebrow">Bunbury · Electrical & Security</div>
+  <h1>DEZ Electrical & Security<br><span>Power and protection, one call.</span></h1>
+  <p>Electrical installations, maintenance and security systems for Bunbury homes and businesses, from one local team.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20DEZ%20Electrical%20%26%20Security%20%E2%80%94%20Electrical%20%26%20Security&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20DEZ%20Electrical%20%26%20Security%20%E2%80%94%20Electrical%20%26%20Security." class="btn">Get Your Free Preview</a>
-    <a href="#services" class="btn-ghost">See What's Included</a>
+    <a href="#contact" class="btn">Get a Quote</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">Your old site is costing you jobs.</h2>
-    <p class="lead reveal delay-1">Electrical plus security is a rare combination, but a dated template site makes it look like every other sparkie in Bunbury.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Looks outdated on phones</h3>
-        <p>Slow, cramped, and clearly built before 2015 — where 80% of your leads are searching from.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Why homeowners choose DEZ Electrical & Security.</h2>
+    <p class="lead reveal delay-1">When you hire DEZ Electrical & Security, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>Two Trades, One Team</h3>
+        <p>Electrical and security work handled by the same trusted crew.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>No clear way to contact you</h3>
-        <p>Buried phone numbers and broken contact forms send customers straight to a competitor.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>Licensed & Insured</h3>
+        <p>Every install carried out to Australian electrical and security standards.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Generic stock templates</h3>
-        <p>The same layout as a hundred other Electrical & Security businesses — nothing that says this is really you.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Doesn't rank on Google</h3>
-        <p>No structure search engines trust, so local jobs go to whoever shows up first — rarely you.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>Local Bunbury Team</h3>
+        <p>Fast response and a team that knows the area.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Everything your business needs online.</h2>
-  <p class="lead reveal delay-1">One page, built in 48 hours, made to convert visitors into booked jobs.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Electrical & Security services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
       <svg viewBox="0 0 200 200" fill="none">
         <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
-        <path d="M110 40 L70 110 H98 L88 160 L132 88 H104 L110 40 Z" stroke="var(--accent)" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Instant Trust</span>
-      <h3>Two trades, one trusted local team.</h3>
-      <p>Electrical work and security installs presented side by side — so customers see they can protect and power the property in one booking.</p>
+      <span class="tag">ELECTRICAL</span>
+      <h3>Electrical Installations</h3>
+      <p>Wiring, upgrades and repairs for homes and businesses.</p>
     </div>
   </div>
 
@@ -283,9 +358,9 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">One-Tap Contact</span>
-      <h3>One tap from 'we should sort this' to a site visit.</h3>
-      <p>Sticky call button and an enquiry form straight to your inbox — for the homeowner thinking about security after something happens nearby.</p>
+      <span class="tag">SECURITY</span>
+      <h3>Security Systems</h3>
+      <p>Alarm and camera systems installed and maintained.</p>
     </div>
   </div>
 
@@ -297,9 +372,9 @@
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Built To Rank</span>
-      <h3>Structured for Google, not just for looks.</h3>
-      <p>Fast load times, local SEO basics and schema markup so Bunbury searches for electricians and security installers both land on DEZ.</p>
+      <span class="tag">MAINTENANCE</span>
+      <h3>Ongoing Maintenance</h3>
+      <p>Scheduled checks to keep electrical and security systems reliable.</p>
     </div>
   </div>
 
@@ -312,26 +387,26 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Live In 48 Hours</span>
-      <h3>From nothing to live — before your next job starts.</h3>
-      <p>No lengthy build process. You approve it, it ships, and you're getting found online by the weekend.</p>
+      <span class="tag">ACCESS CONTROL</span>
+      <h3>Access Control</h3>
+      <p>Gate and door access systems for homes and businesses.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Built on results, not promises.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">48hr</div>
-      <div class="label">Turnaround Time</div>
+      <div class="label">Response Time</div>
     </div>
     <div class="trust-stat reveal-scale delay-2">
       <div class="num">100%</div>
-      <div class="label">Mobile Optimized</div>
+      <div class="label">Licensed & Insured</div>
     </div>
     <div class="trust-stat reveal-scale delay-3">
       <div class="num">2-in-1</div>
@@ -339,21 +414,35 @@
     </div>
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
-  <p class="quote reveal-scale delay-2">"Security is bought on trust. A page that looks professional is the first lock on the door."</p>
-  <p class="quote-author reveal-scale delay-3">— Why security installers need a sharp first impression</p>
+  <p class="quote reveal-scale delay-2">"Having one company do both the wiring and the alarm system made everything simpler."</p>
+  <p class="quote-author reveal-scale delay-3">— Bunbury business owner</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Ready to see DEZ Electrical & Security like this?</h2>
-  <p class="reveal delay-1">This is a free preview — no commitment. If you want it live, it's ready in 48 hours.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20DEZ%20Electrical%20%26%20Security%20%E2%80%94%20Electrical%20%26%20Security&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20DEZ%20Electrical%20%26%20Security%20%E2%80%94%20Electrical%20%26%20Security." class="btn reveal delay-2">Claim Your Free Preview</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <a href="mailto:info@dezelectrical.example" class="btn reveal delay-2">Email Us</a>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-1">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@dezelectrical.example">info@dezelectrical.example</a></div>
+    </div>
+    <div class="contact-item reveal delay-2">
+      <div class="label">Service Area</div>
+      <div class="value">Serving Bunbury and surrounds</div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Hours</div>
+      <div class="value">Mon-Fri 7am-5pm</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>DEZ Electrical & Security · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; DEZ Electrical & Security · Electrical & Security · Bunbury</p>
 </footer>
 
 <script>

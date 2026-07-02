@@ -1,5 +1,38 @@
+<!--
+  SHIP48 MASTER PROTOTYPE TEMPLATE
+  This page IS the business's new homepage — a finished, customer-facing site
+  the business could adopt tomorrow. The ONLY sales-pitch element is the slim
+  dismissible preview banner at the very top. Everything else speaks to the
+  business's own customers.
+
+  SWAP TOKENS a customizing agent must fill:
+    Hobart Fencing & Gates   - business name (appears in title, banner, hero, footer, mailto)
+    Fencing           - trade/industry, e.g. "Roofing"
+    Hobart            - city/locality for the hero eyebrow
+    Rock-solid, boundary to boundary.         - strong customer-facing hero tagline, e.g. "Roofs that outlast the weather."
+    Residential and commercial fencing and gate solutions across Hobart, built to stand up to Tasmanian weather.    - one sentence on what the business does for its customers
+    {{PHONE}}           - phone number (used in tel: links and visible text)
+    info@hobartfencing.example  - the business's own contact email
+    Serving Hobart and surrounds    - service area, e.g. "Serving Austin and surrounding counties"
+    Mon-Fri 7am-5pm           - business hours, e.g. "Mon–Fri 7am–6pm"
+    Why homeowners choose Hobart Fencing & Gates.    - why-us section headline
+    Built for Tasmanian Weather / Fencing and gates constructed to handle Hobart's conditions year-round.   - trust point 1 (e.g. years in business)
+    Residential & Commercial / One team for homes, businesses and everything in between.   - trust point 2 (e.g. guarantee)
+    Quality Materials / We use materials that last, not the cheapest option available.   - trust point 3 (e.g. locally owned)
+    Timber Fencing / Classic timber fencing installed and repaired to last.  \
+    Metal & Colorbond Fencing / Durable metal and colorbond fencing solutions.   \  4 services, customer-facing copy
+    Automatic & Manual Gates / Gate installation and repair for homes and businesses.   /
+    Fencing Repairs / Fast repairs for storm damage and general wear.  /
+    TIMBER FENCING .. REPAIRS   - short uppercase tag per service row
+    48hr / Response Time  - e.g. "20+" / "Years in Business"
+    100% / Quality Materials  - e.g. "1,500+" / "Jobs Completed"
+    R+C / Residential & Commercial  - e.g. "4.9" / "Average Rating"
+    The fence looks better than the photos we showed them -- genuinely impressed with the finish.           - a real customer testimonial quote
+    Hobart homeowner    - who said it, e.g. "Maria G., homeowner"
+    --accent (CSS var)  - single brand accent color (+ --accent-dim rgba)
+-->
 <meta charset="UTF-8">
-<title>Hobart Fencing & Gates — Fencing</title>
+<title>Hobart Fencing & Gates — Fencing in Hobart</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -23,6 +56,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -118,23 +175,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -191,15 +248,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -208,69 +279,73 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for Hobart Fencing & Gates — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Hobart Fencing & Gates&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20Hobart Fencing & Gates.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">Fencing & Gates · Hobart</div>
-  <h1>Hobart Fencing & Gates.<br><span>Rock-solid, boundary to boundary.</span></h1>
-  <p>Residential and commercial fencing and gate solutions across Hobart — built to stand up to Tasmanian weather.</p>
+  <div class="hero-eyebrow">Hobart · Fencing</div>
+  <h1>Hobart Fencing & Gates<br><span>Rock-solid, boundary to boundary.</span></h1>
+  <p>Residential and commercial fencing and gate solutions across Hobart, built to stand up to Tasmanian weather.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Hobart%20Fencing%20%26%20Gates%20%E2%80%94%20Fencing&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Hobart%20Fencing%20%26%20Gates%20%E2%80%94%20Fencing." class="btn">Get Your Free Preview</a>
-    <a href="#services" class="btn-ghost">See What's Included</a>
+    <a href="#contact" class="btn">Get a Quote</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">Your old site is costing you jobs.</h2>
-    <p class="lead reveal delay-1">Fencing is bought on looks. A dated website can't show off the one thing that sells a fence — how good it looks installed.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Looks outdated on phones</h3>
-        <p>Slow, cramped, and clearly built before 2015 — where 80% of your leads are searching from.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Why homeowners choose Hobart Fencing & Gates.</h2>
+    <p class="lead reveal delay-1">When you hire Hobart Fencing & Gates, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>Built for Tasmanian Weather</h3>
+        <p>Fencing and gates constructed to handle Hobart's conditions year-round.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>No clear way to contact you</h3>
-        <p>Buried phone numbers and broken contact forms send customers straight to a competitor.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>Residential & Commercial</h3>
+        <p>One team for homes, businesses and everything in between.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Generic stock templates</h3>
-        <p>The same layout as a hundred other Fencing businesses — nothing that says this is really you.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Doesn't rank on Google</h3>
-        <p>No structure search engines trust, so local jobs go to whoever shows up first — rarely you.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>Quality Materials</h3>
+        <p>We use materials that last, not the cheapest option available.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Everything your business needs online.</h2>
-  <p class="lead reveal delay-1">One page, built in 48 hours, made to convert visitors into booked jobs.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Fencing services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
       <svg viewBox="0 0 200 200" fill="none">
         <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
-        <path d="M60 150 V80 L70 65 L80 80 V150 M100 150 V80 L110 65 L120 80 V150 M140 150 V80 L150 65 L160 80 V150 M45 100 H165 M45 130 H165" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Instant Trust</span>
-      <h3>Fences that sell themselves on sight.</h3>
-      <p>Timber, Colorbond, gates — real Hobart installs shown big and clean, because a photo of a straight fence beats any paragraph.</p>
+      <span class="tag">TIMBER FENCING</span>
+      <h3>Timber Fencing</h3>
+      <p>Classic timber fencing installed and repaired to last.</p>
     </div>
   </div>
 
@@ -283,9 +358,9 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">One-Tap Contact</span>
-      <h3>From 'the fence is done for' to a booked quote.</h3>
-      <p>Sticky call button and a quote form straight to your inbox — catching homeowners right after the winter wind takes a panel.</p>
+      <span class="tag">METAL FENCING</span>
+      <h3>Metal & Colorbond Fencing</h3>
+      <p>Durable metal and colorbond fencing solutions.</p>
     </div>
   </div>
 
@@ -297,9 +372,9 @@
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Built To Rank</span>
-      <h3>Structured for Google, not just for looks.</h3>
-      <p>Fast load times, local SEO basics and schema markup so Hobart fencing searches land on you before the marketplaces.</p>
+      <span class="tag">GATES</span>
+      <h3>Automatic & Manual Gates</h3>
+      <p>Gate installation and repair for homes and businesses.</p>
     </div>
   </div>
 
@@ -312,26 +387,26 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Live In 48 Hours</span>
-      <h3>From nothing to live — before your next job starts.</h3>
-      <p>No lengthy build process. You approve it, it ships, and you're getting found online by the weekend.</p>
+      <span class="tag">REPAIRS</span>
+      <h3>Fencing Repairs</h3>
+      <p>Fast repairs for storm damage and general wear.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Built on results, not promises.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">48hr</div>
-      <div class="label">Turnaround Time</div>
+      <div class="label">Response Time</div>
     </div>
     <div class="trust-stat reveal-scale delay-2">
       <div class="num">100%</div>
-      <div class="label">Mobile Optimized</div>
+      <div class="label">Quality Materials</div>
     </div>
     <div class="trust-stat reveal-scale delay-3">
       <div class="num">R+C</div>
@@ -339,21 +414,35 @@
     </div>
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
-  <p class="quote reveal-scale delay-2">"Nobody reads about fences. They look at them. The site that shows the best photos wins the quote request."</p>
-  <p class="quote-author reveal-scale delay-3">— On selling a visual trade visually</p>
+  <p class="quote reveal-scale delay-2">"The fence looks better than the photos we showed them -- genuinely impressed with the finish."</p>
+  <p class="quote-author reveal-scale delay-3">— Hobart homeowner</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Ready to see Hobart Fencing & Gates like this?</h2>
-  <p class="reveal delay-1">This is a free preview — no commitment. If you want it live, it's ready in 48 hours.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Hobart%20Fencing%20%26%20Gates%20%E2%80%94%20Fencing&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Hobart%20Fencing%20%26%20Gates%20%E2%80%94%20Fencing." class="btn reveal delay-2">Claim Your Free Preview</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <a href="mailto:info@hobartfencing.example" class="btn reveal delay-2">Email Us</a>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-1">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@hobartfencing.example">info@hobartfencing.example</a></div>
+    </div>
+    <div class="contact-item reveal delay-2">
+      <div class="label">Service Area</div>
+      <div class="value">Serving Hobart and surrounds</div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Hours</div>
+      <div class="value">Mon-Fri 7am-5pm</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>Hobart Fencing & Gates · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; Hobart Fencing & Gates · Fencing · Hobart</p>
 </footer>
 
 <script>
