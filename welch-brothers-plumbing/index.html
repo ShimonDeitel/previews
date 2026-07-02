@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welch Brothers Plumbing &amp; Heating | Lowell, MA Since 1904</title>
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-dark:#081a33;
+    --red:#c0392b;
+    --red-dark:#9c2c20;
+    --ink:#1c2733;
+    --gray:#5a6672;
+    --line:#e3e7eb;
+    --bg:#ffffff;
+    --bg-soft:#f5f7fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cfd8e3;
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:8px;padding-bottom:8px;flex-wrap:wrap;gap:6px;
+  }
+  .topbar a{color:#fff;font-weight:600;}
+  .topbar .license{opacity:.85;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    background:var(--navy);
+    color:#fff;
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  header.site .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:42px;height:42px;flex:none;
+  }
+  .brand-text{line-height:1.15;}
+  .brand-text .name{font-size:17px;font-weight:800;letter-spacing:.2px;}
+  .brand-text .sub{font-size:11px;color:#9fb3ca;text-transform:uppercase;letter-spacing:.8px;}
+  .call-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--red);
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:15px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:18px;height:18px;flex:none;}
+  .call-btn:active{background:var(--red-dark);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      linear-gradient(160deg, rgba(11,37,69,.94), rgba(8,26,51,.97)),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 2px, transparent 2px 40px);
+    color:#fff;
+    padding:64px 0 56px;
+    text-align:center;
+  }
+  .badge-since{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    padding:7px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.4px;
+    margin-bottom:22px;
+  }
+  .badge-since svg{width:14px;height:14px;}
+  .hero h1{
+    font-size:clamp(28px,7vw,46px);
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:16px;
+  }
+  .hero h1 span{color:#ff8a75;}
+  .hero p.lead{
+    font-size:17px;
+    color:#c7d4e3;
+    max-width:520px;
+    margin:0 auto 30px;
+  }
+  .hero-ctas{
+    display:flex;flex-direction:column;gap:12px;
+    max-width:340px;margin:0 auto;
+  }
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 20px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:16px;
+  }
+  .btn svg{width:20px;height:20px;flex:none;}
+  .btn-primary{
+    background:var(--red);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(192,57,43,.35);
+  }
+  .btn-secondary{
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.3);
+  }
+  .hero-meta{
+    margin-top:28px;
+    font-size:13px;
+    color:#9fb3ca;
+    display:flex;flex-wrap:wrap;gap:8px 18px;
+    justify-content:center;
+  }
+  .hero-meta strong{color:#fff;}
+
+  /* ---------- Section heading ---------- */
+  .kicker{
+    color:var(--red);
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    text-align:center;
+  }
+  h2.title{
+    font-size:clamp(22px,5vw,30px);
+    font-weight:800;
+    text-align:center;
+    margin-bottom:36px;
+    color:var(--navy);
+  }
+
+  /* ---------- Services ---------- */
+  .services{background:var(--bg-soft);}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 16px;
+    text-align:left;
+  }
+  .card .icon{
+    width:38px;height:38px;
+    margin-bottom:12px;
+    color:var(--red);
+  }
+  .card h3{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--navy);}
+  .card p{font-size:13px;color:var(--gray);}
+
+  /* ---------- Why us ---------- */
+  .why-list{display:flex;flex-direction:column;gap:18px;max-width:600px;margin:0 auto;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .num{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:14px;
+  }
+  .why-item h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* ---------- Area ---------- */
+  .area{background:var(--navy);color:#fff;text-align:center;}
+  .area h2.title{color:#fff;}
+  .area .kicker{color:#ff8a75;}
+  .area p{color:#c7d4e3;max-width:560px;margin:0 auto 22px;font-size:15px;}
+  .area-tags{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  }
+  .area-tags span{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    padding:7px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{text-align:center;}
+  .contact-card{
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:32px 20px;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .contact-card .phone-big{
+    font-size:clamp(26px,7vw,34px);
+    font-weight:800;
+    color:var(--navy);
+    margin:14px 0 6px;
+    display:block;
+  }
+  .contact-card .label{
+    font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--gray);font-weight:700;
+  }
+  .contact-row{
+    display:flex;flex-direction:column;gap:10px;
+    margin-top:22px;
+    text-align:left;
+    font-size:14px;
+    color:var(--ink);
+  }
+  .contact-row .row{display:flex;gap:10px;align-items:flex-start;}
+  .contact-row svg{width:18px;height:18px;flex:none;color:var(--red);margin-top:1px;}
+  .contact-row a{font-weight:700;color:var(--navy);}
+  .contact .btn{max-width:340px;margin:24px auto 0;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-dark);
+    color:#8fa3ba;
+    text-align:center;
+    padding:26px 20px;
+    font-size:12.5px;
+  }
+  footer strong{color:#fff;}
+  footer .foot-links{margin-top:8px;}
+  footer .foot-links a{color:#cfd8e3;font-weight:600;}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;
+    background:var(--red);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 16px;
+    font-weight:800;
+    font-size:16px;
+    z-index:60;
+    box-shadow:0 -4px 16px rgba(0,0,0,.2);
+  }
+  .sticky-call svg{width:20px;height:20px;}
+  body{padding-bottom:64px;}
+
+  @media (min-width:640px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+    .hero-ctas{flex-direction:row;max-width:none;}
+    .btn{flex:1;}
+    .sticky-call{display:none;}
+    body{padding-bottom:0;}
+  }
+  @media (min-width:900px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="license">Licensed &amp; Insured — MA License #12870</span>
+    <a href="tel:9784532100">(978) 453-2100</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="23" stroke="#ff8a75" stroke-width="2"/>
+        <path d="M16 30V20a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 30v-6h8v6" stroke="#ff8a75" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="14" r="2" fill="#ff8a75"/>
+      </svg>
+      <div class="brand-text">
+        <div class="name">Welch Brothers</div>
+        <div class="sub">Plumbing &amp; Heating</div>
+      </div>
+    </div>
+    <a href="tel:9784532100" class="call-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge-since">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      SERVING THE MERRIMACK VALLEY SINCE 1904
+    </div>
+    <h1>Lowell's Trusted <span>Plumbing &amp; Heating</span> Team for Over 120 Years</h1>
+    <p class="lead">Four generations of honest, reliable service. Water heaters, boilers, and heating systems — done right the first time.</p>
+    <div class="hero-ctas">
+      <a href="tel:9784532100" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (978) 453-2100
+      </a>
+      <a href="mailto:wblowell@comcast.net" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+        Email Us
+      </a>
+    </div>
+    <div class="hero-meta">
+      <span><strong>Est. 1904</strong></span>
+      <span>&middot;</span>
+      <span>Lowell, MA</span>
+      <span>&middot;</span>
+      <span>MA Lic. #12870</span>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="kicker">What We Do</div>
+    <h2 class="title">Plumbing &amp; Heating Services</h2>
+    <div class="grid">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11Z"/></svg>
+        <h3>Plumbing</h3>
+        <p>Full-service residential &amp; commercial plumbing repair and installation.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+        <h3>Heating</h3>
+        <p>Heating system installation, service, and repair for Lowell-area homes.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+        <h3>Water Heaters</h3>
+        <p>Replacement and repair, including high-efficiency tankless units.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <h3>Boilers</h3>
+        <p>Replacement and repair of standard and high-efficiency boilers.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        <h3>Steam Systems</h3>
+        <p>Service and repair for older Lowell homes' steam heating.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <h3>Fuel Conversion</h3>
+        <p>Convert your heating system to a more efficient fuel source.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        <h3>Remodeling</h3>
+        <p>Plumbing &amp; heating work for kitchen and bathroom remodels.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        <h3>High-Efficiency Systems</h3>
+        <p>High-efficiency boilers and tankless water heaters, installed right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="kicker">Why Welch Brothers</div>
+    <h2 class="title">Four Generations of Trust</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div>
+          <h3>Serving Lowell Since 1904</h3>
+          <p>More than a century of plumbing and heating experience in the Merrimack Valley.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div>
+          <h3>Licensed &amp; Insured</h3>
+          <p>Massachusetts License #12870 — fully licensed and insured for your protection.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div>
+          <h3>Local, Family-Run</h3>
+          <p>A Lowell-based company that knows the area's homes, buildings, and older systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="kicker">Service Area</div>
+    <h2 class="title">Proudly Serving the Merrimack Valley</h2>
+    <p>Based in Lowell, MA, and serving surrounding communities including Chelmsford and the greater Merrimack Valley area.</p>
+    <div class="area-tags">
+      <span>Lowell</span>
+      <span>Chelmsford</span>
+      <span>Merrimack Valley</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="kicker">Get In Touch</div>
+    <h2 class="title">Ready When You Are</h2>
+    <div class="contact-card">
+      <span class="label">Call Us Directly</span>
+      <a href="tel:9784532100" class="phone-big">(978) 453-2100</a>
+      <div class="contact-row">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Lowell, MA — Serving the Merrimack Valley</span>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+          <a href="mailto:wblowell@comcast.net">wblowell@comcast.net</a>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4Z"/><path d="M19 11a7 7 0 0 1-14 0M12 19v3"/></svg>
+          <span>MA License #12870 — Licensed &amp; Insured</span>
+        </div>
+      </div>
+    </div>
+    <a href="tel:9784532100" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call (978) 453-2100
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div><strong>Welch Brothers Plumbing &amp; Heating</strong> — Lowell, MA</div>
+  <div>Serving the Merrimack Valley Since 1904 &middot; MA License #12870</div>
+  <div class="foot-links"><a href="tel:9784532100">(978) 453-2100</a> &middot; <a href="mailto:wblowell@comcast.net">wblowell@comcast.net</a></div>
+</footer>
+
+<a href="tel:9784532100" class="sticky-call">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Call (978) 453-2100
+</a>
+
+</body>
+</html>

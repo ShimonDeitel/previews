@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steve's Plumbing & Heating LLC | Springfield MA Since 1978</title>
+<meta name="description" content="Family-owned plumbing & heating in Feeding Hills/Agawam, MA. Serving Greater Springfield, West Springfield, Longmeadow since 1978. Call (413) 736-4306.">
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-2:#123a6b;
+    --blue:#1f6feb;
+    --ink:#12213a;
+    --muted:#5b6b85;
+    --line:#e3e8f0;
+    --bg:#ffffff;
+    --bg-soft:#f5f8fc;
+    --amber:#e08a2c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top bar */
+  .topbar{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+    padding:8px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+  .topbar a{color:#fff;font-weight:600;}
+  .topbar .hours{opacity:.85;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:var(--navy);}
+  .brand .logo{width:36px;height:36px;flex:none;}
+  .brand small{display:block;font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.02em;}
+  .call-btn{
+    background:var(--blue);color:#fff;font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:8px;display:flex;align-items:center;gap:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;flex:none;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 65%,#1a4a8a 100%);
+    color:#fff;
+    padding:56px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-80px;top:-80px;width:320px;height:320px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 12px;border-radius:999px;
+    font-size:12.5px;font-weight:700;letter-spacing:.03em;
+    margin-bottom:18px;
+  }
+  .badge svg{width:14px;height:14px;}
+  .hero h1{
+    font-size:34px;line-height:1.15;font-weight:800;margin-bottom:14px;
+    max-width:600px;
+  }
+  .hero h1 span{color:#8fc4ff;}
+  .hero p.lead{
+    font-size:16px;color:#cfe0f5;max-width:480px;margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
+  .btn-primary{
+    background:var(--amber);color:#1a1200;font-weight:800;font-size:16px;
+    padding:15px 22px;border-radius:10px;display:flex;align-items:center;gap:10px;
+    box-shadow:0 8px 20px rgba(224,138,44,.35);
+  }
+  .btn-primary svg{width:20px;height:20px;flex:none;}
+  .btn-secondary{
+    background:rgba(255,255,255,.08);color:#fff;font-weight:700;font-size:15px;
+    padding:14px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.35);
+  }
+  .hero-facts{
+    display:flex;flex-wrap:wrap;gap:22px;
+    font-size:13px;color:#cfe0f5;
+  }
+  .hero-facts .fact{display:flex;align-items:center;gap:7px;}
+  .hero-facts svg{width:16px;height:16px;flex:none;color:#8fc4ff;}
+
+  /* Sections */
+  section{padding:52px 0;}
+  .section-head{margin-bottom:30px;text-align:center;}
+  .eyebrow{
+    color:var(--blue);font-weight:800;font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;margin-bottom:8px;display:block;
+  }
+  .section-head h2{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:8px;}
+  .section-head p{color:var(--muted);font-size:15px;max-width:520px;margin:0 auto;}
+
+  /* Services */
+  .services{background:var(--bg-soft);}
+  .svc-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+  }
+  .svc-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:20px 16px;
+  }
+  .svc-card .icon{
+    width:42px;height:42px;border-radius:10px;
+    background:#e8f1ff;color:var(--blue);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+  }
+  .svc-card .icon svg{width:22px;height:22px;}
+  .svc-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+  .svc-card p{font-size:13px;color:var(--muted);}
+
+  /* Why us */
+  .why-grid{display:flex;flex-direction:column;gap:16px;}
+  .why-item{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:16px;border:1px solid var(--line);border-radius:12px;
+  }
+  .why-item .icon{
+    width:40px;height:40px;border-radius:10px;flex:none;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .icon svg{width:20px;height:20px;}
+  .why-item h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+  .why-item p{font-size:13.5px;color:var(--muted);}
+
+  /* Area */
+  .area{background:var(--navy);color:#fff;}
+  .area .section-head h2{color:#fff;}
+  .area .section-head p{color:#b9cbe6;}
+  .area-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .area-tags span{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+    padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;
+  }
+  .area-note{
+    text-align:center;color:#b9cbe6;font-size:13px;margin-top:20px;
+  }
+
+  /* Contact */
+  .contact-card{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;
+    padding:26px 20px;display:flex;flex-direction:column;gap:18px;
+  }
+  .contact-row{display:flex;gap:14px;align-items:flex-start;}
+  .contact-row .icon{
+    width:38px;height:38px;border-radius:10px;flex:none;
+    background:#e8f1ff;color:var(--blue);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row .icon svg{width:19px;height:19px;}
+  .contact-row h4{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.03em;margin-bottom:3px;}
+  .contact-row p, .contact-row a{font-size:15px;color:var(--ink);font-weight:600;}
+  .contact-row a.link{color:var(--blue);}
+  .contact-cta{
+    margin-top:6px;background:var(--blue);color:#fff;font-weight:800;
+    text-align:center;padding:16px;border-radius:10px;font-size:16px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .contact-cta svg{width:19px;height:19px;}
+
+  footer{
+    background:var(--navy);color:#a9bede;
+    padding:26px 0;text-align:center;font-size:12.5px;
+  }
+  footer strong{color:#fff;}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--blue);color:#fff;
+    padding:13px 16px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:800;font-size:15px;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  .sticky-call svg{width:18px;height:18px;}
+  body{padding-bottom:58px;}
+
+  @media (min-width:640px){
+    .hero h1{font-size:44px;}
+    .svc-grid{grid-template-columns:repeat(3,1fr);}
+    .why-grid{flex-direction:row;flex-wrap:wrap;}
+    .why-item{flex:1 1 45%;}
+  }
+  @media (min-width:900px){
+    .hero h1{font-size:52px;}
+    .svc-grid{grid-template-columns:repeat(4,1fr);}
+    .why-item{flex:1 1 30%;}
+    body{padding-bottom:0;}
+    .sticky-call{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="hours">Mon–Fri 7:30 AM–4:30 PM &middot; Feeding Hills, MA</span>
+    <a href="tel:14137364306">Call (413) 736-4306</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#0B2545"/>
+        <path d="M20 9c-4.5 5-7 8.7-7 12.2A7 7 0 0020 28.2a7 7 0 007-7C27 17.7 24.5 14 20 9z" fill="#1F6FEB"/>
+        <path d="M20 15c-2.2 2.6-3.3 4.4-3.3 6.1a3.3 3.3 0 006.6 0c0-1.7-1.1-3.5-3.3-6.1z" fill="#8FC4FF"/>
+      </svg>
+      <span>Steve's Plumbing &amp; Heating<small>Family-owned since 1978</small></span>
+    </div>
+    <a class="call-btn" href="tel:14137364306">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg>
+      Serving Greater Springfield Since 1978
+    </span>
+    <h1>Plumbing &amp; heating done right <span>the first time.</span></h1>
+    <p class="lead">Steve's Plumbing &amp; Heating LLC is a family-owned company serving Feeding Hills, Agawam, West Springfield, Longmeadow and the Greater Springfield area with steam boiler, hydronic heating and full-service plumbing work.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:14137364306">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (413) 736-4306
+      </a>
+      <a class="btn-secondary" href="#contact">Request an Estimate</a>
+    </div>
+    <div class="hero-facts">
+      <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Mon–Fri, 7:30 AM–4:30 PM</span>
+      <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg>Master Plumbing License #M16099</span>
+      <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Feeding Hills, MA</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Full-service plumbing &amp; heating</h2>
+      <p>From emergency repairs to boiler replacements, we handle it all.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a5 5 0 0110 0v2"/></svg></div>
+        <h3>Steam Boiler Replacement</h3>
+        <p>Full replacement of aging steam boiler systems.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Hydronic Heating</h3>
+        <p>Installation and service for hydronic heating systems.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-5.5 7-12a7 7 0 00-14 0c0 6.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Faucet Repair</h3>
+        <p>Fixing leaks and replacing worn-out faucets.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
+        <h3>Hot Water Tank Replacement</h3>
+        <p>Removal and installation of new hot water tanks.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-7 7 7v11M9 21v-6h6v6"/></svg></div>
+        <h3>Bathroom Remodeling</h3>
+        <p>Plumbing work for bathroom remodel projects.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Plumbing Maintenance</h3>
+        <p>Ongoing maintenance to keep systems running smoothly.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg></div>
+        <h3>Emergency Repairs</h3>
+        <p>Prompt response for urgent plumbing issues.</p>
+      </div>
+      <div class="svc-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>General Plumbing</h3>
+        <p>All-around residential plumbing work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Steve's</span>
+      <h2>Nearly 50 years in Western Mass</h2>
+      <p>A local, family-owned business built on getting the job done right the first time.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
+        <div><h3>Family-Owned Since 1978</h3><p>Run by Aaron, continuing decades of local service.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg></div>
+        <div><h3>Licensed Master Plumber</h3><p>Master Plumbing License #M16099.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><h3>Done Right the First Time</h3><p>Our stated commitment on every job we take on.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h3>Local to Feeding Hills</h3><p>Based at 11 Hall Street, Feeding Hills, MA 01030.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Service Area</span>
+      <h2>Proudly serving Greater Springfield</h2>
+      <p>Based in Feeding Hills and serving surrounding Western Massachusetts communities.</p>
+    </div>
+    <div class="area-tags">
+      <span>Feeding Hills</span>
+      <span>Agawam</span>
+      <span>Springfield</span>
+      <span>West Springfield</span>
+      <span>Longmeadow</span>
+    </div>
+    <p class="area-note">Not sure if you're in our area? Give us a call — (413) 736-4306.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Steve's Plumbing &amp; Heating</h2>
+      <p>Call, email, or stop by — we're open weekdays 7:30 AM to 4:30 PM.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><h4>Phone</h4><a class="link" href="tel:14137364306">(413) 736-4306</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+        <div><h4>Email</h4><a class="link" href="mailto:stevesplumbing.ma@gmail.com">stevesplumbing.ma@gmail.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h4>Address</h4><p>11 Hall Street, Feeding Hills, MA 01030</p></div>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div><h4>Hours</h4><p>Monday – Friday, 7:30 AM – 4:30 PM</p></div>
+      </div>
+      <a class="contact-cta" href="tel:14137364306">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Tap to Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Steve's Plumbing &amp; Heating LLC</strong> &middot; Feeding Hills, MA &middot; Master Plumbing License #M16099</p>
+    <p>&copy; 2026 Steve's Plumbing &amp; Heating LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:14137364306" style="display:flex;align-items:center;gap:10px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call (413) 736-4306
+  </a>
+</div>
+
+</body>
+</html>
