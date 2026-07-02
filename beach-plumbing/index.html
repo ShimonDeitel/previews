@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beach Plumbing | Myrtle Beach, SC Plumber</title>
+<style>
+  :root{
+    --navy:#0b2540;
+    --navy-dark:#081b30;
+    --blue:#1f7ae0;
+    --sand:#f6f3ec;
+    --white:#ffffff;
+    --gray:#5b6b7a;
+    --line:#e4e2da;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--navy-dark);
+    color:var(--white);
+    text-align:center;
+    font-size:14px;
+    padding:9px 12px;
+    letter-spacing:.2px;
+  }
+  .callbar a{font-weight:700;color:#8fc4ff;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:saturate(180%) blur(8px);
+  }
+  .headrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--navy);}
+  .brand svg{width:30px;height:30px;flex:none;}
+  .call-btn{
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:10px 16px;
+    border-radius:999px;
+    display:flex;align-items:center;gap:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:52px 20px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-60px;bottom:-60px;
+    width:260px;height:260px;
+    background:radial-gradient(circle, rgba(31,122,224,.35) 0%, rgba(31,122,224,0) 70%);
+  }
+  .hero-inner{position:relative;z-index:2;text-align:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.22);
+    color:#cfe3ff;
+    font-size:12.5px;font-weight:600;
+    padding:6px 12px;border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:-.5px;
+  }
+  .hero h1 span{color:#79b8ff;}
+  .hero p{
+    margin-top:14px;
+    font-size:16px;
+    color:#c3d3e5;
+    max-width:520px;
+    margin-left:auto;margin-right:auto;
+  }
+  .hero-ctas{
+    margin-top:26px;
+    display:flex;flex-direction:column;gap:12px;
+    max-width:340px;margin-left:auto;margin-right:auto;
+  }
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    padding:15px 20px;
+    border-radius:12px;
+    font-weight:700;font-size:16.5px;
+  }
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px -8px rgba(31,122,224,.6);}
+  .btn-primary svg{width:19px;height:19px;}
+  .btn-secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.28);}
+  .trust-row{
+    margin-top:28px;
+    display:flex;justify-content:center;gap:18px;flex-wrap:wrap;
+    font-size:12.5px;color:#a9bdd4;
+  }
+  .trust-row span{display:flex;align-items:center;gap:6px;}
+  .trust-row svg{width:14px;height:14px;color:#79b8ff;}
+
+  /* Section base */
+  section{padding:52px 20px;}
+  .eyebrow{
+    font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--blue);text-align:center;margin-bottom:8px;
+  }
+  h2{
+    font-size:26px;font-weight:800;text-align:center;letter-spacing:-.4px;
+    margin-bottom:10px;color:var(--navy);
+  }
+  .lead{
+    text-align:center;color:var(--gray);font-size:15px;
+    max-width:480px;margin:0 auto 34px;
+  }
+
+  /* Services */
+  .services-section{background:var(--sand);}
+  .grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .icon{
+    flex:none;width:44px;height:44px;border-radius:12px;
+    background:rgba(31,122,224,.1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .icon svg{width:22px;height:22px;color:var(--blue);}
+  .card h3{font-size:16px;font-weight:700;margin-bottom:3px;}
+  .card p{font-size:14px;color:var(--gray);}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .num{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:13px;
+  }
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:3px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* Area */
+  .area-section{background:var(--navy);color:#fff;text-align:center;}
+  .area-section h2{color:#fff;}
+  .area-section .lead{color:#aebfd3;}
+  .pin{
+    width:52px;height:52px;margin:0 auto 18px;
+    background:rgba(31,122,224,.18);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pin svg{width:26px;height:26px;color:#79b8ff;}
+  .area-tag{
+    display:inline-block;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    padding:8px 16px;border-radius:999px;
+    font-size:14px;font-weight:600;
+    margin-top:6px;
+  }
+
+  /* Contact */
+  .contact-card{
+    background:var(--sand);
+    border-radius:20px;
+    padding:30px 22px;
+    text-align:center;
+  }
+  .contact-card h2{margin-bottom:6px;}
+  .contact-list{margin-top:22px;display:flex;flex-direction:column;gap:12px;}
+  .contact-row{
+    display:flex;align-items:center;gap:12px;
+    background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px;
+    text-align:left;
+  }
+  .contact-row .icon{background:rgba(31,122,224,.1);}
+  .contact-row .label{font-size:12px;color:var(--gray);}
+  .contact-row .value{font-size:15px;font-weight:700;color:var(--navy);}
+
+  /* Footer */
+  footer{
+    background:var(--navy-dark);color:#8ea2b8;
+    text-align:center;padding:30px 20px;font-size:12.5px;
+  }
+  footer .fbrand{color:#fff;font-weight:700;font-size:15px;margin-bottom:6px;}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--blue);
+    padding:12px 16px;
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    color:#fff;font-weight:800;font-size:16px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.18);
+  }
+  .sticky-call svg{width:18px;height:18px;}
+  body{padding-bottom:64px;}
+
+  @media(min-width:640px){
+    .hero h1{font-size:42px;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .hero-ctas{flex-direction:row;max-width:none;}
+    .btn{flex:1;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">Emergency plumbing? Call now <a href="tel:8432224087">843.222.4087</a></div>
+
+<header>
+  <div class="headrow">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 3.5 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7.5 6-11z"/></svg>
+      Beach Plumbing
+    </div>
+    <a class="call-btn" href="tel:8432224087">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner wrap">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1 3-6z"/></svg>
+      Family-Owned &middot; Grand Strand
+    </div>
+    <h1>Myrtle Beach's <span>Trusted Plumber</span><br>Since Day One</h1>
+    <p>Over 15 years fixing pipes, water heaters &amp; drains across the Grand Strand. Certified Master Plumber. Insured &amp; bonded.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:8432224087">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 843.222.4087
+      </a>
+      <a class="btn btn-secondary" href="mailto:beachplumbingsc@gmail.com">Email Us</a>
+    </div>
+    <div class="trust-row">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Certified Master Plumber</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Insured &amp; Bonded</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>15+ Years Local</span>
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2>Full-Service Plumbing</h2>
+    <p class="lead">From a leaky faucet to a full renovation, Beach Plumbing handles it.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 3.5 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7.5 6-11z"/></svg></div>
+        <div><h3>Water Heaters</h3><p>Repair, replacement &amp; installation.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h3>Toilet, Drain &amp; Kitchen Plumbing</h3><p>Clogs, leaks, fixtures &amp; repairs.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg></div>
+        <div><h3>Renovations</h3><p>Plumbing for remodels &amp; new builds.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4M4 12a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4"/></svg></div>
+        <div><h3>Water &amp; Sewer Lines</h3><p>Diagnosis, repair &amp; replacement.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg></div>
+        <div><h3>Gas Lines</h3><p>Safe installation &amp; repair.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+        <div><h3>Filtration Systems</h3><p>Cleaner water for your home.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why Beach Plumbing</div>
+    <h2>Local. Certified. Reliable.</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div><h3>15+ Years on the Grand Strand</h3><p>Deep local experience across Myrtle Beach.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div><h3>Certified Master Plumber</h3><p>Licensed expertise on every job.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div><h3>Insured &amp; Bonded</h3><p>Protected work, every time.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">4</div>
+        <div><h3>Family-Owned</h3><p>A local business, not a franchise.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-section" id="area">
+  <div class="wrap">
+    <div class="pin">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    </div>
+    <h2>Proudly Serving Myrtle Beach</h2>
+    <p class="lead">Beach Plumbing works throughout the Grand Strand region of South Carolina.</p>
+    <span class="area-tag">Myrtle Beach, SC &amp; the Grand Strand</span>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Ready When You Are</h2>
+      <p class="lead" style="margin-bottom:0;">Call or email for a quote — real people, real fast.</p>
+      <div class="contact-list">
+        <a class="contact-row" href="tel:8432224087">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="label">Call</div><div class="value">843.222.4087</div></div>
+        </a>
+        <a class="contact-row" href="mailto:beachplumbingsc@gmail.com">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+          <div><div class="label">Email</div><div class="value">beachplumbingsc@gmail.com</div></div>
+        </a>
+        <div class="contact-row">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="label">Service Area</div><div class="value">Myrtle Beach, SC</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">Beach Plumbing</div>
+  <div>Myrtle Beach, SC &middot; 843.222.4087 &middot; Certified Master Plumber &middot; Insured &amp; Bonded</div>
+</footer>
+
+<a class="sticky-call" href="tel:8432224087">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Call 843.222.4087
+</a>
+
+</body>
+</html>

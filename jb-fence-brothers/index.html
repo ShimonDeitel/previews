@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JB Fence Brothers | Charleston & Lowcountry Fence Installation</title>
+<style>
+  :root{
+    --ink:#1a2420;
+    --wood:#5c4632;
+    --wood-dark:#3d2f22;
+    --green:#2f4a3c;
+    --green-dark:#1f332a;
+    --cream:#f7f4ee;
+    --line:#e3ddd0;
+    --accent:#c65d2e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .topbar{
+    background:var(--green-dark);
+    color:#fff;
+    text-align:center;
+    padding:9px 12px;
+    font-size:13.5px;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  .topbar a{border-bottom:1px solid rgba(255,255,255,.5);}
+
+  /* Header */
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .headrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.2px;}
+  .brand svg{width:34px;height:34px;flex:none;}
+  .brand .sub{display:block;font-size:11px;font-weight:600;color:var(--wood);letter-spacing:.4px;text-transform:uppercase;}
+  .call-btn{
+    background:var(--accent);color:#fff;font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:8px;white-space:nowrap;
+    box-shadow:0 2px 6px rgba(198,93,46,.35);
+  }
+
+  /* Hero */
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(31,51,42,.88), rgba(31,51,42,.94)),
+      repeating-linear-gradient(90deg, #2b3f34 0 2px, #263a30 2px 34px);
+    color:#fff;
+    padding:56px 20px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-fence{position:absolute;bottom:0;left:0;right:0;opacity:.35;z-index:1;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:5px 12px;border-radius:20px;
+    font-size:12.5px;font-weight:700;letter-spacing:.3px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;line-height:1.14;font-weight:800;letter-spacing:-.5px;
+    margin-bottom:14px;
+  }
+  .hero h1 span{color:#e8b97f;}
+  .hero p{
+    font-size:16.5px;color:#dfe6e1;max-width:520px;margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 22px;border-radius:9px;font-weight:700;font-size:15.5px;
+  }
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(198,93,46,.4);}
+  .btn-secondary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;
+    font-size:13px;color:#c7d1cb;
+  }
+  .hero-meta div{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:15px;height:15px;flex:none;}
+
+  /* Sections */
+  section{padding:52px 20px;}
+  .section-head{margin-bottom:30px;max-width:560px;}
+  .section-head .tag{
+    color:var(--accent);font-weight:800;font-size:12.5px;letter-spacing:1.2px;
+    text-transform:uppercase;margin-bottom:8px;display:block;
+  }
+  .section-head h2{font-size:26px;font-weight:800;letter-spacing:-.4px;}
+  .section-head p{margin-top:10px;color:#4a544e;font-size:15px;}
+
+  /* Services grid */
+  .services{background:#fff;}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  .card{
+    border:1px solid var(--line);border-radius:14px;padding:22px;
+    background:var(--cream);
+  }
+  .card .icon{
+    width:46px;height:46px;border-radius:10px;
+    background:var(--green);display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .card .icon svg{width:24px;height:24px;stroke:#fff;}
+  .card h3{font-size:17px;font-weight:800;margin-bottom:6px;}
+  .card p{font-size:14px;color:#565f59;}
+
+  /* Why us */
+  .why{background:var(--green-dark);color:#fff;}
+  .why .section-head h2, .why .section-head p{color:#fff;}
+  .why .section-head p{color:#c7d1cb;}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:8px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .num{
+    flex:none;width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:14px;color:#e8b97f;
+  }
+  .why-item h4{font-size:16px;font-weight:700;margin-bottom:4px;}
+  .why-item p{font-size:14px;color:#c7d1cb;}
+
+  /* Area */
+  .area{background:#fff;}
+  .area-box{
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .area-map{
+    background:var(--cream);padding:28px 22px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .area-info{padding:24px 22px;}
+  .area-info h3{font-size:18px;font-weight:800;margin-bottom:10px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .chip{
+    background:var(--green);color:#fff;font-size:13px;font-weight:600;
+    padding:6px 12px;border-radius:20px;
+  }
+
+  /* Contact */
+  .contact{background:var(--green-dark);color:#fff;}
+  .contact-box{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    border-radius:16px;padding:30px 22px;text-align:center;
+  }
+  .contact-box h2{font-size:25px;font-weight:800;margin-bottom:10px;letter-spacing:-.3px;}
+  .contact-box p{color:#c7d1cb;font-size:15px;margin-bottom:26px;}
+  .contact-actions{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .contact-line{
+    margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);
+    font-size:13.5px;color:#c7d1cb;display:flex;flex-direction:column;gap:8px;
+  }
+  .contact-line a{font-weight:700;color:#fff;}
+
+  footer{
+    background:var(--wood-dark);color:#cbb9a2;text-align:center;
+    padding:22px 20px;font-size:12.5px;
+  }
+  footer strong{color:#fff;}
+
+  @media(min-width:700px){
+    .hero h1{font-size:46px;}
+    .hero p{font-size:18px;}
+    .grid{grid-template-columns:repeat(3,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .area-box{flex-direction:row;}
+    .area-map{flex:0 0 280px;}
+    .contact-actions{flex-direction:row;justify-content:center;}
+    .section-head h2{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Free estimates &middot; Call or text <a href="tel:+18435349156">(843) 534-9156</a>
+</div>
+
+<header>
+  <div class="headrow">
+    <div class="brand">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#2F4A3C"/>
+        <rect x="8" y="12" width="4" height="20" fill="#E8B97F"/>
+        <rect x="18" y="8" width="4" height="24" fill="#E8B97F"/>
+        <rect x="28" y="12" width="4" height="20" fill="#E8B97F"/>
+        <rect x="6" y="17" width="28" height="3" fill="#F7F4EE"/>
+      </svg>
+      <span>JB Fence Brothers
+        <span class="sub">Charleston Lowcountry</span>
+      </span>
+    </div>
+    <a class="call-btn" href="tel:+18435349156">Call Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-fence" viewBox="0 0 800 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#0f1a14">
+      <rect x="0" y="60" width="800" height="6"/>
+      <rect x="0" y="90" width="800" height="6"/>
+      <rect x="10" y="30" width="10" height="90"/>
+      <rect x="50" y="30" width="10" height="90"/>
+      <rect x="90" y="30" width="10" height="90"/>
+      <rect x="130" y="30" width="10" height="90"/>
+      <rect x="170" y="30" width="10" height="90"/>
+      <rect x="210" y="30" width="10" height="90"/>
+      <rect x="250" y="30" width="10" height="90"/>
+      <rect x="290" y="30" width="10" height="90"/>
+      <rect x="330" y="30" width="10" height="90"/>
+      <rect x="370" y="30" width="10" height="90"/>
+      <rect x="410" y="30" width="10" height="90"/>
+      <rect x="450" y="30" width="10" height="90"/>
+      <rect x="490" y="30" width="10" height="90"/>
+      <rect x="530" y="30" width="10" height="90"/>
+      <rect x="570" y="30" width="10" height="90"/>
+      <rect x="610" y="30" width="10" height="90"/>
+      <rect x="650" y="30" width="10" height="90"/>
+      <rect x="690" y="30" width="10" height="90"/>
+      <rect x="730" y="30" width="10" height="90"/>
+      <rect x="770" y="30" width="10" height="90"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Locally owned &middot; Family operated &middot; Since 2015</span>
+    <h1>Fences built right, <span>the first time.</span></h1>
+    <p>James &amp; Melinda Gage and their crew install and repair aluminum, wood privacy, and chain link fences across the Charleston &amp; Lowcountry area &mdash; residential and commercial.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:+18435349156">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (843) 534-9156
+      </a>
+      <a class="btn btn-secondary" href="#contact">Get a Free Estimate</a>
+    </div>
+    <div class="hero-meta">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8b97f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Charleston &amp; North Charleston, SC
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e8b97f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Military, first responder &amp; law enforcement discounts
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">What We Do</span>
+      <h2>Fencing services for every property</h2>
+      <p>New installations, repairs, and removal &mdash; done by a crew that lives and works in the Lowcountry.</p>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/></svg></div>
+        <h3>Aluminum &amp; Metal Fencing</h3>
+        <p>Durable aluminum and metal fence installation and repair for a clean, low-maintenance look.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="4" height="16"/><rect x="10" y="4" width="4" height="16"/><rect x="17" y="4" width="4" height="16"/></svg></div>
+        <h3>Wood Privacy Fencing</h3>
+        <p>Classic privacy fence installs and repairs built to hold up to Lowcountry weather.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M21 3 3 21"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+        <h3>Chain Link Fencing</h3>
+        <p>Reliable chain link installation and repair for yards, pets, and commercial sites.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div>
+        <h3>Fence Removal</h3>
+        <p>Old, damaged, or unwanted fence taken down and hauled away to make room for the new.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/></svg></div>
+        <h3>Residential Projects</h3>
+        <p>Backyards, pool enclosures, and property lines fenced for privacy, security, and curb appeal.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-5h6v5"/></svg></div>
+        <h3>Commercial Projects</h3>
+        <p>Secure, code-compliant fencing for businesses, lots, and commercial properties.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Why JB Fence Brothers</span>
+      <h2>A family business you can actually reach</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div>
+          <h4>Locally owned, family operated</h4>
+          <p>Run by James &amp; Melinda Gage since 2015 &mdash; not a call center, a local crew.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div>
+          <h4>Free estimates</h4>
+          <p>Call or text for a straightforward quote on your project, no pressure.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div>
+          <h4>Residential &amp; commercial</h4>
+          <p>From backyard privacy fences to commercial property lines, one crew handles it all.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">4</div>
+        <div>
+          <h4>Community discounts</h4>
+          <p>Discounts offered to military, first responders, and law enforcement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Service Area</span>
+      <h2>Serving the Charleston &amp; Lowcountry area</h2>
+    </div>
+    <div class="area-box">
+      <div class="area-map">
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+          <circle cx="70" cy="70" r="66" stroke="#2F4A3C" stroke-width="2" stroke-dasharray="4 5"/>
+          <path d="M70 30c-16 0-28 13-28 28 0 21 28 52 28 52s28-31 28-52c0-15-12-28-28-28z" fill="#C65D2E"/>
+          <circle cx="70" cy="58" r="10" fill="#F7F4EE"/>
+        </svg>
+      </div>
+      <div class="area-info">
+        <h3>North Charleston &amp; the Lowcountry</h3>
+        <p>JB Fence Brothers installs and repairs fences throughout the greater Charleston / Lowcountry region of South Carolina.</p>
+        <div class="chips">
+          <span class="chip">Charleston</span>
+          <span class="chip">North Charleston</span>
+          <span class="chip">Lowcountry Area</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Ready for a free estimate?</h2>
+      <p>Call, text, or email James &amp; Melinda &mdash; and get a straight answer on your fence project.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="tel:+18435349156">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (843) 534-9156
+        </a>
+        <a class="btn btn-secondary" href="mailto:jbfencebrothers@yahoo.com">Email Us</a>
+      </div>
+      <div class="contact-line">
+        <span>Phone / Text: <a href="tel:+18435349156">(843) 534-9156</a></span>
+        <span>Email: <a href="mailto:jbfencebrothers@yahoo.com">jbfencebrothers@yahoo.com</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>JB Fence Brothers LLC</strong> &mdash; Locally owned &amp; family operated since 2015 &middot; Charleston / Lowcountry, SC
+</footer>
+
+</body>
+</html>
