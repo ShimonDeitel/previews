@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jack Ward &amp; Sons Plumbing Co. | Nashville Plumbers Since 1947</title>
+<meta name="description" content="Jack Ward & Sons Plumbing Co. — trusted Nashville plumbers since 1947. Residential & commercial plumbing, 24/7 emergency service. Call (615) 227-2811.">
+<style>
+  :root{
+    --navy:#0e2a47;
+    --navy-deep:#091d33;
+    --blue:#1272c4;
+    --blue-bright:#1e88e5;
+    --amber:#f5a623;
+    --ink:#1b2733;
+    --slate:#5a6b7b;
+    --mist:#f2f6fa;
+    --line:#dde6ee;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* ===== Top bar ===== */
+  .topbar{background:var(--navy-deep);color:#c8d6e4;font-size:.8rem;padding:7px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .topbar strong{color:var(--amber);font-weight:700}
+
+  /* ===== Header ===== */
+  header{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand-mark{
+    width:42px;height:42px;flex:0 0 42px;border-radius:10px;
+    background:var(--navy);display:flex;align-items:center;justify-content:center;
+  }
+  .brand-text{line-height:1.15;min-width:0}
+  .brand-text .name{font-weight:800;font-size:1rem;color:var(--navy);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand-text .since{font-size:.7rem;color:var(--slate);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+  .nav-links{display:none;gap:26px;font-weight:600;font-size:.92rem;color:var(--slate)}
+  .nav-links a:hover{color:var(--blue)}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--amber);color:var(--navy-deep);
+    font-weight:800;font-size:.9rem;
+    padding:11px 16px;border-radius:10px;white-space:nowrap;
+    box-shadow:0 3px 10px rgba(245,166,35,.35);
+  }
+  .call-btn:active{transform:scale(.97)}
+
+  /* ===== Hero ===== */
+  .hero{
+    background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(30,136,229,.28), transparent 60%),
+      linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 70%);
+    color:var(--white);
+    padding:56px 0 64px;
+    position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:auto 0 0 0;height:70px;
+    background:linear-gradient(to top right,var(--white) 49.6%,transparent 50.4%);
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+    border-radius:999px;padding:6px 14px;font-size:.78rem;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;color:#ffd990;
+    color:#ffe0a3;margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2rem,6.5vw,3.4rem);
+    line-height:1.08;font-weight:900;letter-spacing:-.02em;
+    max-width:640px;
+  }
+  .hero h1 span{color:var(--amber)}
+  .hero p{
+    margin:18px 0 30px;color:#c9d8e8;font-size:1.05rem;max-width:540px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:420px;margin-bottom:36px}
+  .cta-primary{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--amber);color:var(--navy-deep);
+    font-size:1.15rem;font-weight:900;padding:17px 24px;border-radius:14px;
+    box-shadow:0 8px 24px rgba(245,166,35,.4);
+  }
+  .cta-primary small{display:block;font-size:.72rem;font-weight:700;opacity:.75;letter-spacing:.04em}
+  .cta-primary:active{transform:scale(.98)}
+  .cta-secondary{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    border:1.5px solid rgba(255,255,255,.35);color:var(--white);
+    font-weight:700;padding:14px 24px;border-radius:14px;font-size:1rem;
+  }
+  .cta-secondary:hover{background:rgba(255,255,255,.08)}
+  .hero-stats{display:flex;gap:0;flex-wrap:wrap;position:relative;z-index:2}
+  .stat{padding:0 22px;border-left:2px solid rgba(255,255,255,.15)}
+  .stat:first-child{padding-left:0;border-left:none}
+  .stat b{display:block;font-size:1.5rem;font-weight:900;color:var(--amber);line-height:1.1}
+  .stat span{font-size:.75rem;color:#a9bdd1;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+  /* ===== Sections ===== */
+  section{padding:64px 0}
+  .kicker{
+    color:var(--blue);font-weight:800;font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.16em;margin-bottom:10px;
+  }
+  h2{font-size:clamp(1.55rem,4.5vw,2.3rem);font-weight:900;letter-spacing:-.02em;color:var(--navy);line-height:1.15}
+  .sec-intro{color:var(--slate);margin-top:12px;max-width:560px}
+
+  /* Services */
+  .services{background:var(--mist)}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:34px}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:22px;display:flex;gap:16px;align-items:flex-start;
+    transition:box-shadow .2s,transform .2s;
+  }
+  .card:hover{box-shadow:0 10px 30px rgba(14,42,71,.1);transform:translateY(-2px)}
+  .icon{
+    width:46px;height:46px;flex:0 0 46px;border-radius:12px;
+    background:linear-gradient(145deg,var(--blue),var(--navy));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card h3{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+  .card p{font-size:.88rem;color:var(--slate);line-height:1.5}
+  .more-services{
+    margin-top:22px;background:var(--white);border:1px dashed var(--line);
+    border-radius:16px;padding:20px 22px;font-size:.9rem;color:var(--slate);
+  }
+  .more-services b{color:var(--navy)}
+
+  /* Why us */
+  .why-list{display:grid;grid-template-columns:1fr;gap:0;margin-top:30px;border-top:1px solid var(--line)}
+  .why{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .why-num{
+    font-size:.8rem;font-weight:900;color:var(--amber);background:var(--navy);
+    width:34px;height:34px;flex:0 0 34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why h3{font-size:1.05rem;font-weight:800;color:var(--navy)}
+  .why p{font-size:.9rem;color:var(--slate);margin-top:3px}
+
+  /* Emergency band */
+  .band{
+    background:linear-gradient(120deg,var(--blue) 0%,var(--navy) 90%);
+    color:var(--white);text-align:center;padding:48px 0;
+  }
+  .band h2{color:var(--white);font-size:clamp(1.4rem,4.5vw,2rem)}
+  .band p{color:#cfe1f2;margin:10px auto 24px;max-width:460px}
+  .band .cta-primary{max-width:340px;margin:0 auto}
+
+  /* Area */
+  .area{background:var(--mist)}
+  .area-box{
+    margin-top:28px;background:var(--white);border:1px solid var(--line);
+    border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:18px;
+  }
+  .area-row{display:flex;gap:14px;align-items:flex-start}
+  .area-row .icon{width:40px;height:40px;flex:0 0 40px;border-radius:10px}
+  .area-row b{color:var(--navy);font-size:.95rem}
+  .area-row p{font-size:.88rem;color:var(--slate)}
+
+  /* Contact */
+  .contact-card{
+    margin-top:30px;background:var(--navy);border-radius:20px;color:var(--white);
+    padding:34px 26px;display:flex;flex-direction:column;gap:24px;
+    background-image:radial-gradient(600px 300px at 100% 0%, rgba(30,136,229,.3), transparent 60%);
+  }
+  .contact-item{display:flex;gap:14px;align-items:flex-start}
+  .contact-item .icon{background:rgba(255,255,255,.12)}
+  .contact-item b{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#9fb6cc;margin-bottom:2px}
+  .contact-item a,.contact-item span{font-size:1.05rem;font-weight:700}
+  .contact-item a:hover{color:var(--amber)}
+  .contact-card .cta-primary{width:100%}
+
+  /* Footer */
+  footer{background:var(--navy-deep);color:#8ea6bd;padding:34px 0;font-size:.82rem}
+  footer .wrap{display:flex;flex-direction:column;gap:8px;text-align:center;align-items:center}
+  footer b{color:var(--white)}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--amber);color:var(--navy-deep);
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:900;font-size:1.05rem;padding:15px 16px;
+    box-shadow:0 -4px 18px rgba(0,0,0,.18);
+    padding-bottom:calc(15px + env(safe-area-inset-bottom));
+  }
+  body{padding-bottom:64px}
+
+  @media(min-width:700px){
+    .grid{grid-template-columns:1fr 1fr}
+    .hero-ctas{flex-direction:row}
+    .cta-primary,.cta-secondary{flex:1}
+    .why-list{grid-template-columns:1fr 1fr;gap:0 40px}
+    .area-box{flex-direction:row;justify-content:space-between}
+    .contact-card{flex-direction:row;flex-wrap:wrap;align-items:center}
+    .contact-item{flex:1 1 240px}
+    .contact-card .cta-primary{width:auto;flex:1 1 100%;max-width:360px}
+  }
+  @media(min-width:960px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .nav-links{display:flex}
+    .sticky-call{display:none}
+    body{padding-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>Serving Nashville &amp; Middle Tennessee <strong>since 1947</strong></div>
+    <div><strong>24/7</strong> emergency plumbing</div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-8.5 8.5a2.12 2.12 0 1 0 3 3L17 9"/><path d="M15 5l4 4"/><path d="M17.5 2.5l4 4-2 2-4-4z"/></svg>
+      </span>
+      <span class="brand-text">
+        <span class="name">Jack Ward &amp; Sons Plumbing Co.</span>
+        <span class="since">Nashville &middot; Est. 1947</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+16152272811">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (615) 227-2811
+    </a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+      Family plumbing since 1947
+    </div>
+    <h1>Nashville&rsquo;s plumbers for <span>over 75 years.</span></h1>
+    <p>Quality plumbing services at affordable pricing &mdash; residential, commercial, and 24/7 emergency work across Middle Tennessee. Built on hard work, integrity, value, and customer satisfaction.</p>
+    <div class="hero-ctas">
+      <a class="cta-primary" href="tel:+16152272811">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>(615) 227-2811<small>Tap to call &mdash; 24/7 emergency</small></span>
+      </a>
+      <a class="cta-secondary" href="#services">See Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>1947</b><span>Established</span></div>
+      <div class="stat"><b>24/7</b><span>Emergency</span></div>
+      <div class="stat"><b>Res + Com</b><span>All plumbing</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2>Full-service plumbing, done right.</h2>
+    <p class="sec-intro">From a leaking faucet to full commercial and new-construction plumbing &mdash; one company, one call.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/></svg></span>
+        <div><h3>Leak Detection &amp; Repair</h3><p>Find and fix leaks fast, before they turn into water damage and high bills.</p></div>
+      </div>
+      <div class="card">
+        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="14" rx="3"/><path d="M10 16v4M14 16v4M10 6h4"/></svg></span>
+        <div><h3>Water Heater Repair &amp; Replacement</h3><p>Repairs and new installs to get your hot water back, reliably.</p></div>
+      </div>
+      <div class="card">
+        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <div><h3>24/7 Emergency Plumbing</h3><p>Burst pipe at 2 a.m.? We answer around the clock, every day of the year.</p></div>
+      </div>
+      <div class="card">
+        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></span>
+        <div><h3>Drain Cleaning</h3><p>Clogged sinks, tubs, and main lines cleared quickly and cleanly.</p></div>
+      </div>
+      <div class="card">
+        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8a4 4 0 0 1 4-4h8"/><path d="M16 2v4M13 8h6M16 8v4a2 2 0 0 0 2 2h2"/></svg></span>
+        <div><h3>Faucet &amp; Toilet Repair</h3><p>Repair and replacement of faucets, fixtures, and toilets throughout your home.</p></div>
+      </div>
+      <div class="card">
+        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 12h18M12 3v18"/></svg></span>
+        <div><h3>Kitchen &amp; Bath Remodeling</h3><p>Plumbing for remodels and new construction, roughed in and finished right.</p></div>
+      </div>
+    </div>
+    <div class="more-services">
+      <b>Also:</b> commercial plumbing &middot; water filtration &middot; pump repair &amp; replacement &middot; line replacement &amp; repair &middot; grease trap cleaning &amp; certification &middot; backflow testing &amp; repair
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="kicker">Why Jack Ward &amp; Sons</div>
+    <h2>Quality plumbing services. Affordable pricing.</h2>
+    <div class="why-list">
+      <div class="why">
+        <span class="why-num">1</span>
+        <div><h3>Established 1947</h3><p>A Nashville plumbing company serving Middle Tennessee for over 75 years.</p></div>
+      </div>
+      <div class="why">
+        <span class="why-num">2</span>
+        <div><h3>Fair, affordable pricing</h3><p>Excellent service at a fraction of the price some other companies charge.</p></div>
+      </div>
+      <div class="why">
+        <span class="why-num">3</span>
+        <div><h3>Built on integrity</h3><p>Founded on principles of hard work, integrity, value, and customer satisfaction.</p></div>
+      </div>
+      <div class="why">
+        <span class="why-num">4</span>
+        <div><h3>Residential &amp; commercial</h3><p>One team for homes, businesses, remodels, and new construction.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <h2>Plumbing emergency? We&rsquo;re on call 24/7.</h2>
+    <p>Nights, weekends, holidays &mdash; when water is where it shouldn&rsquo;t be, call now.</p>
+    <a class="cta-primary" href="tel:+16152272811">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call (615) 227-2811
+    </a>
+  </div>
+</div>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="kicker">Where we work</div>
+    <h2>Proudly serving Nashville &amp; Middle Tennessee.</h2>
+    <div class="area-box">
+      <div class="area-row">
+        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><b>Based in Nashville</b><p>1100 Tuckahoe Dr., Nashville, TN 37207</p></div>
+      </div>
+      <div class="area-row">
+        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>
+        <div><b>Middle Tennessee coverage</b><p>Serving homes and businesses across the greater Nashville area.</p></div>
+      </div>
+      <div class="area-row">
+        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <div><b>Around-the-clock response</b><p>24/7 emergency plumbing when you need it most.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="kicker">Get in touch</div>
+    <h2>Talk to a plumber today.</h2>
+    <div class="contact-card">
+      <div class="contact-item">
+        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <div><b>Phone</b><a href="tel:+16152272811">(615) 227-2811</a></div>
+      </div>
+      <div class="contact-item">
+        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><b>Address</b><span>1100 Tuckahoe Dr., Nashville, TN 37207</span></div>
+      </div>
+      <div class="contact-item">
+        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>
+        <div><b>Email</b><a href="mailto:MACLAIN@WARDP-M.COM">MACLAIN@WARDP-M.COM</a></div>
+      </div>
+      <a class="cta-primary" href="tel:+16152272811">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Tap to Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Jack Ward &amp; Sons Plumbing Co.</b> &middot; Established 1947</div>
+    <div>1100 Tuckahoe Dr., Nashville, TN 37207 &middot; (615) 227-2811</div>
+    <div>&copy; 2026 Jack Ward &amp; Sons Plumbing Co. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+16152272811">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Call (615) 227-2811 — 24/7
+</a>
+
+</body>
+</html>
