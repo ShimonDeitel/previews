@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savannah's Landscaping Services LLC | Savannah, GA Since 2009</title>
+<style>
+  :root{
+    --green-dark:#1f3d2b;
+    --green:#2f5d3a;
+    --green-mid:#3f7a4d;
+    --green-light:#e8f2ea;
+    --earth:#7a5230;
+    --cream:#faf8f3;
+    --ink:#1a2420;
+    --gray:#5a655e;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--green-dark);
+    color:var(--white);
+    text-align:center;
+    font-size:14px;
+    padding:8px 12px;
+    letter-spacing:.2px;
+  }
+  .callbar a{font-weight:700;text-decoration:underline;}
+
+  /* Header */
+  header{
+    background:var(--white);
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 1px 0 rgba(0,0,0,0.06);
+  }
+  .headrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    max-width:1120px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:38px;height:38px;flex-shrink:0;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text strong{font-size:16px;font-weight:800;color:var(--green-dark);}
+  .brand-text span{font-size:11px;color:var(--gray);letter-spacing:.5px;text-transform:uppercase;}
+  .call-btn{
+    background:var(--green);
+    color:var(--white);
+    font-weight:700;
+    font-size:14px;
+    padding:10px 16px;
+    border-radius:999px;
+    display:flex;align-items:center;gap:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;fill:var(--white);}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--green-dark) 0%,var(--green) 55%,var(--green-mid) 100%);
+    color:var(--white);
+    padding:44px 20px 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    right:-60px;bottom:-60px;
+    width:280px;height:280px;
+    background:rgba(255,255,255,0.06);
+    border-radius:50%;
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;position:relative;z-index:2;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.3);
+    color:var(--white);
+    font-size:12.5px;font-weight:600;
+    padding:6px 12px;border-radius:999px;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(30px,7vw,46px);
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-0.5px;
+    margin-bottom:14px;
+  }
+  .hero p.lead{
+    font-size:16.5px;
+    color:rgba(255,255,255,0.9);
+    max-width:520px;
+    margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
+  .btn-primary{
+    background:var(--white);
+    color:var(--green-dark);
+    font-weight:800;
+    font-size:16px;
+    padding:15px 22px;
+    border-radius:12px;
+    display:flex;align-items:center;gap:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+  }
+  .btn-primary svg{width:19px;height:19px;fill:var(--green-dark);}
+  .btn-secondary{
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,0.55);
+    color:var(--white);
+    font-weight:700;
+    font-size:16px;
+    padding:14px 22px;
+    border-radius:12px;
+  }
+  .hero-facts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    border-top:1px solid rgba(255,255,255,0.2);
+    padding-top:22px;
+  }
+  .hero-facts div{text-align:left;}
+  .hero-facts strong{display:block;font-size:22px;font-weight:800;}
+  .hero-facts span{font-size:12px;color:rgba(255,255,255,0.75);}
+
+  /* Section shared */
+  section{padding:52px 20px;}
+  .eyebrow{
+    color:var(--green-mid);
+    font-weight:800;
+    font-size:12.5px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  h2{
+    font-size:clamp(24px,5vw,32px);
+    font-weight:800;
+    color:var(--green-dark);
+    letter-spacing:-0.3px;
+    margin-bottom:12px;
+  }
+  .section-sub{color:var(--gray);font-size:15px;max-width:560px;margin-bottom:32px;}
+
+  /* Services */
+  .services{background:var(--white);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media(min-width:640px){
+    .service-grid{grid-template-columns:1fr 1fr;}
+  }
+  .service-card{
+    background:var(--green-light);
+    border:1px solid rgba(47,93,58,0.12);
+    border-radius:16px;
+    padding:20px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .service-icon{
+    width:42px;height:42px;
+    flex-shrink:0;
+    background:var(--green);
+    border-radius:11px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-icon svg{width:22px;height:22px;stroke:var(--white);fill:none;stroke-width:1.8;}
+  .service-card h3{font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+  .service-card p{font-size:13.5px;color:var(--gray);}
+
+  /* Why us */
+  .why{background:var(--cream);}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:640px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  .why-item{
+    background:var(--white);
+    border-radius:16px;
+    padding:22px;
+    border:1px solid rgba(0,0,0,0.06);
+  }
+  .why-item .num{
+    font-size:13px;font-weight:800;color:var(--green-mid);
+    letter-spacing:1px;margin-bottom:10px;
+  }
+  .why-item h3{font-size:16.5px;font-weight:700;margin-bottom:6px;color:var(--ink);}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* Area */
+  .area{background:var(--green-dark);color:var(--white);}
+  .area h2{color:var(--white);}
+  .area .section-sub{color:rgba(255,255,255,0.75);}
+  .area-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;}
+  .area-chips span{
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.22);
+    padding:9px 14px;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:600;
+  }
+  .county-line{font-size:14px;color:rgba(255,255,255,0.7);}
+
+  /* Contact */
+  .contact{background:var(--white);}
+  .contact-card{
+    background:var(--green-light);
+    border-radius:20px;
+    padding:30px 24px;
+    text-align:center;
+  }
+  .contact-card h2{margin-bottom:8px;}
+  .contact-card .section-sub{margin:0 auto 24px;}
+  .contact-actions{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .contact-actions .btn-primary{
+    background:var(--green);
+    color:var(--white);
+    justify-content:center;
+    width:100%;
+  }
+  .contact-actions .btn-primary svg{fill:var(--white);}
+  .contact-actions .btn-secondary{
+    background:var(--white);
+    border:1.5px solid rgba(47,93,58,0.3);
+    color:var(--green-dark);
+    justify-content:center;
+    width:100%;
+    display:flex;align-items:center;gap:8px;
+  }
+  .contact-meta{
+    margin-top:22px;
+    font-size:13.5px;
+    color:var(--gray);
+    display:flex;flex-direction:column;gap:4px;
+  }
+
+  footer{
+    background:var(--green-dark);
+    color:rgba(255,255,255,0.65);
+    text-align:center;
+    padding:26px 20px;
+    font-size:12.5px;
+  }
+  footer strong{color:var(--white);}
+
+  @media(min-width:640px){
+    .contact-actions{flex-direction:row;max-width:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="callbar">
+    Call now for a free estimate: <a href="tel:9123861232">(912) 386-1232</a>
+  </div>
+
+  <header>
+    <div class="headrow">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#2f5d3a"/>
+          <path d="M24 34c0-8 4-13 4-13s-9 1-9 9c0 2.5 2 4 5 4z" fill="#e8f2ea"/>
+          <path d="M24 34c0-10-6-16-6-16s-8 3-8 11c0 3 3 5 7 5" fill="#3f7a4d"/>
+          <path d="M24 34V20" stroke="#e8f2ea" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text">
+          <strong>Savannah's Landscaping</strong>
+          <span>Since 2009</span>
+        </div>
+      </div>
+      <a class="call-btn" href="tel:9123861232">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+        Serving Savannah &amp; the Coastal Empire Since 2009
+      </div>
+      <h1>Landscaping done right, the first time.</h1>
+      <p class="lead">Sod, irrigation, drainage, hardscapes, and land clearing for homes and properties across Savannah, GA. Local crews, real experience, straight answers.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:9123861232">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+          (912) 386-1232
+        </a>
+        <a class="btn-secondary" href="#contact">Request a Free Estimate</a>
+      </div>
+      <div class="hero-facts">
+        <div>
+          <strong>2009</strong>
+          <span>In business since</span>
+        </div>
+        <div>
+          <strong>9+</strong>
+          <span>Cities served nearby</span>
+        </div>
+        <div>
+          <strong>3</strong>
+          <span>Counties covered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="wrap">
+      <div class="eyebrow">What We Do</div>
+      <h2>Full-service landscaping &amp; site work</h2>
+      <p class="section-sub">From a fresh lawn to complete drainage and grading, one local crew handles it all.</p>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l7-6 7 6v10"/></svg></div>
+          <div><h3>Sod Installation</h3><p>St. Augustine, Centipede, and Zoysia sod, installed correctly.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+          <div><h3>Irrigation Services</h3><p>New installs, repairs, and upgrades for reliable watering.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 12a8 8 0 0116 0M4 12v6h16v-6"/></svg></div>
+          <div><h3>Drainage Solutions</h3><p>French drains, sump pumps, gutters, and dry wells.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M4 8l8-4 8 4M4 16l8 4 8-4"/></svg></div>
+          <div><h3>Pine Straw &amp; Mulch</h3><p>Fresh pine straw and mulch installation for clean beds.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="10" rx="1"/><path d="M7 10V6h10v4"/></svg></div>
+          <div><h3>Hardscapes &amp; Retaining Walls</h3><p>Paver patios, retaining walls, and hardscape features.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 18l-5-5 5-5M15 6l5 5-5 5"/></svg></div>
+          <div><h3>Land Clearing &amp; Grading</h3><p>Land clearing, forestry mulching, grading, and leveling.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5c0 3-5 11-5 11S7 10 7 7a5 5 0 015-5z"/><circle cx="12" cy="7" r="2"/></svg></div>
+          <div><h3>Flower Beds &amp; Lighting</h3><p>Flower bed installation and landscape lighting design.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><h3>Site Development</h3><p>Concrete work, driveways, culverts, and erosion control.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <div class="eyebrow">Why Savannah's Landscaping</div>
+      <h2>Experience is the difference</h2>
+      <p class="section-sub">A local company that's been doing this work in the Savannah area since 2009.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="num">01</div>
+          <h3>Established 2009</h3>
+          <p>Over a decade serving homeowners and properties across the Coastal Empire.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">02</div>
+          <h3>Full-Scope Capability</h3>
+          <p>From sod and mulch to grading, drainage, and site development — one company, start to finish.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">03</div>
+          <h3>Local Crews</h3>
+          <p>Based in Savannah at 5710 Ogeechee Road, working the surrounding counties directly.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">04</div>
+          <h3>Straight Answers</h3>
+          <p>Call and talk to a real person about your property and what it actually needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#a9d4b4;">Service Area</div>
+      <h2>Serving Savannah &amp; the Coastal Empire</h2>
+      <p class="section-sub">Proudly working across Chatham, Bryan, and Liberty counties.</p>
+      <div class="area-chips">
+        <span>Savannah</span>
+        <span>Richmond Hill</span>
+        <span>Pooler</span>
+        <span>Wilmington Island</span>
+        <span>Hinesville</span>
+        <span>Midway</span>
+        <span>Port Wentworth</span>
+        <span>Rincon</span>
+        <span>Guyton</span>
+      </div>
+      <p class="county-line">Chatham County &middot; Bryan County &middot; Liberty County</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <div class="eyebrow">Get Started</div>
+        <h2>Ready for your free estimate?</h2>
+        <p class="section-sub">Call or email today and a member of our team will get back to you.</p>
+        <div class="contact-actions">
+          <a class="btn-primary" href="tel:9123861232">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+            (912) 386-1232
+          </a>
+          <a class="btn-secondary" href="mailto:service@savannahslandscapingservices.com">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f3d2b" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            Email Us
+          </a>
+        </div>
+        <div class="contact-meta">
+          <span>5710 Ogeechee Road, Suite 200, Savannah, GA</span>
+          <span>service@savannahslandscapingservices.com</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Savannah's Landscaping Services LLC</strong> &middot; Serving Savannah, GA since 2009
+  </footer>
+
+</body>
+</html>
