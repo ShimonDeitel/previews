@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berryhill Lawn Care LLC</title>
+<style>
+  :root{
+    --green:#1f5c3f;
+    --green-dark:#153f2b;
+    --green-light:#eaf3ec;
+    --accent:#3f8f5f;
+    --text:#1a1f1c;
+    --muted:#5b655d;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--white);
+    border-bottom:1px solid #e8ece9;
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1100px;margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:var(--green-dark);}
+  .logo svg{width:28px;height:28px;flex-shrink:0;}
+  .call-pill{
+    display:flex;align-items:center;gap:6px;
+    background:var(--green);color:#fff;
+    padding:10px 16px;border-radius:999px;
+    font-weight:700;font-size:14px;white-space:nowrap;
+  }
+  .call-pill svg{width:16px;height:16px;fill:#fff;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--green-light) 0%, #fff 100%);
+    padding:44px 20px 40px;
+    text-align:center;
+  }
+  .hero-badge{
+    display:inline-block;background:var(--white);border:1px solid #d5e3d9;
+    color:var(--green);font-size:12px;font-weight:700;letter-spacing:.04em;
+    padding:6px 14px;border-radius:999px;margin-bottom:18px;text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:34px;line-height:1.15;font-weight:800;color:var(--green-dark);
+    margin-bottom:14px;letter-spacing:-0.01em;
+  }
+  .hero p{
+    font-size:16px;color:var(--muted);max-width:520px;margin:0 auto 26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 20px;border-radius:12px;font-weight:700;font-size:16px;
+    border:none;cursor:pointer;
+  }
+  .btn svg{width:18px;height:18px;flex-shrink:0;}
+  .btn-primary{background:var(--green);color:#fff;fill:#fff;}
+  .btn-secondary{background:#fff;color:var(--green-dark);border:1.5px solid #cfe0d5;fill:var(--green-dark);}
+
+  .hero-note{margin-top:16px;font-size:13px;color:var(--muted);}
+
+  /* Services */
+  section{padding:48px 20px;}
+  .section-head{text-align:center;margin-bottom:28px;}
+  .section-head .eyebrow{
+    color:var(--accent);font-weight:700;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  .section-head h2{font-size:26px;font-weight:800;color:var(--green-dark);}
+
+  .services-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:1100px;margin:0 auto;
+  }
+  .service-card{
+    background:var(--green-light);border-radius:14px;padding:18px 14px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .service-card svg{width:26px;height:26px;fill:var(--green);}
+  .service-card h3{font-size:14px;font-weight:700;color:var(--text);}
+
+  /* Why us */
+  .why-us{background:var(--green-dark);color:#fff;}
+  .why-us .section-head h2{color:#fff;}
+  .why-us .section-head .eyebrow{color:#a9d4b8;}
+  .why-list{display:flex;flex-direction:column;gap:16px;max-width:520px;margin:0 auto;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item svg{width:22px;height:22px;fill:#a9d4b8;flex-shrink:0;margin-top:2px;}
+  .why-item h3{font-size:15px;font-weight:700;margin-bottom:2px;}
+  .why-item p{font-size:14px;color:#cfe0d5;}
+
+  /* Area */
+  .area{text-align:center;}
+  .area-card{
+    background:var(--green-light);border-radius:16px;padding:28px 20px;max-width:520px;margin:0 auto;
+  }
+  .area-card svg{width:36px;height:36px;fill:var(--green);margin:0 auto 12px;}
+  .area-card p{color:var(--muted);font-size:15px;}
+
+  /* Contact */
+  .contact{background:var(--green-light);}
+  .contact-card{
+    background:#fff;border-radius:16px;padding:28px 22px;max-width:480px;margin:0 auto;
+    box-shadow:0 4px 24px rgba(21,63,43,0.08);
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #eef2ef;
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row svg{width:22px;height:22px;fill:var(--green);flex-shrink:0;}
+  .contact-row a{font-weight:700;font-size:16px;color:var(--green-dark);}
+  .contact-row span{display:block;font-size:12px;color:var(--muted);}
+
+  .contact .btn{margin-top:20px;}
+
+  footer{
+    padding:28px 20px;text-align:center;background:var(--green-dark);color:#a9d4b8;font-size:13px;
+  }
+  footer strong{color:#fff;}
+
+  @media (min-width:640px){
+    .hero h1{font-size:44px;}
+    .hero p{font-size:18px;}
+    .hero-ctas{flex-direction:row;max-width:none;justify-content:center;}
+    .btn{min-width:220px;}
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (min-width:900px){
+    .hero h1{font-size:52px;}
+    .services-grid{grid-template-columns:repeat(4,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><path fill="#1f5c3f" d="M12 2C9 2 6.5 4.5 6.5 7.5c0 2.4 1.6 4.4 3.5 5.1V21a2 2 0 0 0 4 0v-8.4c1.9-.7 3.5-2.7 3.5-5.1C17.5 4.5 15 2 12 2z"/></svg>
+      Berryhill Lawn Care
+    </div>
+    <a class="call-pill" href="tel:+14782305390">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">Serving customers since 2019</div>
+  <h1>Reliable Lawn Care &amp; Landscaping</h1>
+  <p>Berryhill Lawn Care LLC handles the mowing, mulching, and hardscaping so your yard always looks its best.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="tel:+14782305390">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      Call (478) 230-5390
+    </a>
+    <a class="btn btn-secondary" href="mailto:coleberryhill13@gmail.com">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1.5 2 6.5 5.5L18.5 6h-13zM19 8.2l-6.7 5.6a1 1 0 0 1-1.3 0L4 8.2V18h15V8.2z"/></svg>
+      Email Us
+    </a>
+  </div>
+  <p class="hero-note">Free quotes &middot; Family-owned &middot; Est. 2019</p>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <div class="eyebrow">What We Do</div>
+    <h2>Our Services</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M12 2C9 2 6.5 4.5 6.5 7.5c0 2.4 1.6 4.4 3.5 5.1V21a2 2 0 0 0 4 0v-8.4c1.9-.7 3.5-2.7 3.5-5.1C17.5 4.5 15 2 12 2z"/></svg>
+      <h3>Lawn Maintenance</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M4 21h16v-2H4v2zM6 17h3v-6H6v6zm4.5 0h3V7h-3v10zm4.5 0h3v-8h-3v8z"/></svg>
+      <h3>Landscaping &amp; Hardscaping</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M12 2 3 7v2h18V7l-9-5zM5 11v8H3v2h18v-2h-2v-8h-2v8h-3v-8h-2v8H9v-8H5z"/></svg>
+      <h3>Irrigation Install &amp; Repair</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M12 2 4 7v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V7l-8-5z"/></svg>
+      <h3>Tree Removal &amp; Service</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M3 20h18v-2H3v2zM5 16l3-8 3 8H5zm7 0 3-10 3 10h-6z"/></svg>
+      <h3>Land Clearing</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M3 4h18v4H3V4zm2 6h14v10H5V10zm3 2v6h2v-6H8zm5 0v6h2v-6h-2z"/></svg>
+      <h3>Sod Installation</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2 3 6 6 6 10a6 6 0 0 1-12 0c0-4 4-7 6-10z"/></svg>
+      <h3>Pine Straw &amp; Mulch</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M2 12h20M4 12l4-4M4 12l4 4M22 12l-4-4M22 12l-4 4" stroke="#1f5c3f" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Driveway Repair</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M4 18h16v2H4v-2zM6 6h2v10H6V6zm5 4h2v6h-2v-6zm5-6h2v12h-2V4z"/></svg>
+      <h3>Dirt, Gravel &amp; Sand Delivery</h3>
+    </div>
+    <div class="service-card">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm2 4h14l-1.5 10h-11L5 10z"/></svg>
+      <h3>Drainage Services</h3>
+    </div>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="section-head">
+    <div class="eyebrow">Why Berryhill</div>
+    <h2>Built On Trust</h2>
+  </div>
+  <div class="why-list">
+    <div class="why-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2 3 7v5c0 5.4 3.6 9.8 9 11 5.4-1.2 9-5.6 9-11V7l-9-5zm-1 14-4-4 1.4-1.4L11 13.2l6.6-6.6L19 8l-8 8z"/></svg>
+      <div><h3>In Business Since 2019</h3><p>Years of hands-on lawn and landscape work.</p></div>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C9 2 6.5 4.5 6.5 7.5c0 2.4 1.6 4.4 3.5 5.1V21a2 2 0 0 0 4 0v-8.4c1.9-.7 3.5-2.7 3.5-5.1C17.5 4.5 15 2 12 2z"/></svg>
+      <div><h3>Full-Service Crew</h3><p>From mowing to sod, irrigation to drainage — one call covers it.</p></div>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      <div><h3>Direct Line to Cole</h3><p>Call or email and talk to the owner directly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="section-head">
+    <div class="eyebrow">Where We Work</div>
+    <h2>Service Area</h2>
+  </div>
+  <div class="area-card">
+    <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    <p>Call or email us to confirm whether your property is within our current service area.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="section-head">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Request a Free Quote</h2>
+  </div>
+  <div class="contact-card">
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      <div><span>Phone</span><a href="tel:+14782305390">(478) 230-5390</a></div>
+    </div>
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1.5 2 6.5 5.5L18.5 6h-13zM19 8.2l-6.7 5.6a1 1 0 0 1-1.3 0L4 8.2V18h15V8.2z"/></svg>
+      <div><span>Email</span><a href="mailto:coleberryhill13@gmail.com">coleberryhill13@gmail.com</a></div>
+    </div>
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24"><path d="M12 2 3 7v5c0 5.4 3.6 9.8 9 11 5.4-1.2 9-5.6 9-11V7l-9-5zm-1 14-4-4 1.4-1.4L11 13.2l6.6-6.6L19 8l-8 8z"/></svg>
+      <div><span>Owner</span><a href="#">Cole Berryhill</a></div>
+    </div>
+  </div>
+  <a class="btn btn-primary" style="max-width:480px;margin:20px auto 0;" href="tel:+14782305390">
+    <svg viewBox="0 0 24 24"><path fill="#fff" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    Tap to Call Now
+  </a>
+</section>
+
+<footer>
+  <strong>Berryhill Lawn Care LLC</strong><br>
+  (478) 230-5390 &middot; coleberryhill13@gmail.com &middot; Est. 2019
+</footer>
+
+</body>
+</html>

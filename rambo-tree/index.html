@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rambo Tree Services | San Antonio, TX</title>
+<style>
+  :root{
+    --green-900:#12281c;
+    --green-800:#1b3a27;
+    --green-700:#245234;
+    --green-500:#3f7d4f;
+    --green-400:#5a9c6b;
+    --amber:#e8a13d;
+    --cream:#f8f6f1;
+    --ink:#16201a;
+    --muted:#5c6a61;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--green-900);
+    color:#fff;
+    text-align:center;
+    font-size:14px;
+    padding:9px 12px;
+    letter-spacing:.2px;
+  }
+  .callbar a{font-weight:700;color:var(--amber);}
+
+  /* Header */
+  header{
+    background:var(--green-900);
+    color:#fff;
+    padding:16px 0 20px;
+  }
+  .header-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .brand-mark{
+    width:40px;height:40px;flex:none;
+  }
+  .brand-name{
+    font-size:18px;
+    font-weight:800;
+    line-height:1.15;
+  }
+  .brand-name span{
+    display:block;
+    font-size:11px;
+    font-weight:500;
+    color:var(--green-400);
+    letter-spacing:.5px;
+    text-transform:uppercase;
+  }
+  .header-call{
+    background:var(--amber);
+    color:var(--green-900);
+    font-weight:800;
+    font-size:13px;
+    padding:10px 14px;
+    border-radius:8px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--green-800),var(--green-900) 70%);
+    color:#fff;
+    padding:36px 0 44px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,7vw,42px);
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:14px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--amber);
+  }
+  .hero p{
+    font-size:16px;
+    color:#d8e3da;
+    max-width:480px;
+    margin:0 auto 26px;
+  }
+  .hero-ctas{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-weight:800;
+    font-size:16px;
+    padding:16px 28px;
+    border-radius:12px;
+    width:100%;
+    max-width:340px;
+  }
+  .btn-primary{
+    background:var(--amber);
+    color:var(--green-900);
+    box-shadow:0 8px 24px rgba(232,161,61,.35);
+  }
+  .btn-secondary{
+    background:transparent;
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,.4);
+  }
+  .hero-sub{
+    margin-top:18px;
+    font-size:13px;
+    color:#b7c6bc;
+  }
+  .tree-strip{
+    display:flex;
+    justify-content:center;
+    gap:2px;
+    margin-top:32px;
+    opacity:.5;
+  }
+
+  /* Sections */
+  section{padding:52px 0;}
+  .section-tag{
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--green-500);
+    text-align:center;
+    margin-bottom:8px;
+  }
+  h2{
+    font-size:clamp(24px,6vw,32px);
+    font-weight:800;
+    text-align:center;
+    color:var(--green-900);
+    margin-bottom:12px;
+  }
+  .section-sub{
+    text-align:center;
+    color:var(--muted);
+    max-width:440px;
+    margin:0 auto 32px;
+    font-size:15px;
+  }
+
+  /* Services grid */
+  .services-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid #e7e2d6;
+    border-radius:14px;
+    padding:20px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .service-icon{
+    width:44px;height:44px;flex:none;
+    background:var(--green-800);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .service-icon svg{width:24px;height:24px;stroke:var(--amber);}
+  .service-card h3{
+    font-size:16px;
+    font-weight:700;
+    color:var(--green-900);
+    margin-bottom:3px;
+  }
+  .service-card p{
+    font-size:13.5px;
+    color:var(--muted);
+  }
+
+  /* Why us */
+  .why-section{
+    background:var(--green-900);
+    color:#fff;
+  }
+  .why-section h2{color:#fff;}
+  .why-section .section-sub{color:#b7c6bc;}
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .why-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    padding:18px 14px;
+    text-align:center;
+  }
+  .why-card svg{width:28px;height:28px;stroke:var(--amber);margin:0 auto 10px;}
+  .why-card h3{font-size:14px;font-weight:700;margin-bottom:4px;}
+  .why-card p{font-size:12.5px;color:#b7c6bc;}
+
+  /* Area */
+  .area-card{
+    background:#fff;
+    border:1px solid #e7e2d6;
+    border-radius:16px;
+    padding:26px 22px;
+    text-align:center;
+  }
+  .area-card svg{width:36px;height:36px;stroke:var(--green-500);margin:0 auto 14px;}
+  .area-card h3{font-size:18px;font-weight:800;color:var(--green-900);margin-bottom:8px;}
+  .area-card p{font-size:14px;color:var(--muted);}
+  .lang-pill{
+    display:inline-flex;
+    gap:8px;
+    margin-top:16px;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--green-700);
+    background:#eef4ee;
+    padding:8px 14px;
+    border-radius:999px;
+  }
+
+  /* Contact */
+  .contact-section{
+    background:linear-gradient(180deg,var(--cream),#efe9db);
+  }
+  .contact-card{
+    background:var(--green-900);
+    color:#fff;
+    border-radius:20px;
+    padding:32px 24px;
+    text-align:center;
+  }
+  .contact-card h2{color:#fff;margin-bottom:10px;}
+  .contact-card p{color:#c9d6cd;font-size:14px;margin-bottom:24px;}
+  .contact-numbers{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:16px;
+  }
+  .call-line{
+    background:var(--amber);
+    color:var(--green-900);
+    border-radius:12px;
+    padding:16px;
+    font-weight:800;
+    font-size:17px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .call-line small{
+    font-weight:600;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    color:var(--green-800);
+  }
+  .call-line.secondary{
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.35);
+    color:#fff;
+  }
+  .call-line.secondary small{color:#b7c6bc;}
+  .email-line{
+    margin-top:8px;
+    font-size:13px;
+    color:#b7c6bc;
+    word-break:break-all;
+  }
+  .email-line a{color:var(--amber);font-weight:700;}
+
+  footer{
+    background:var(--green-900);
+    color:#8fa397;
+    text-align:center;
+    padding:22px 20px;
+    font-size:12px;
+  }
+  footer .foot-brand{
+    color:#fff;
+    font-weight:700;
+    margin-bottom:4px;
+  }
+
+  /* Sticky mobile call button */
+  .sticky-call{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--amber);
+    color:var(--green-900);
+    text-align:center;
+    font-weight:800;
+    font-size:15px;
+    padding:14px;
+    z-index:50;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  body{padding-bottom:58px;}
+
+  @media (min-width:640px){
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .hero-ctas{flex-direction:row;justify-content:center;}
+    .btn{width:auto;}
+  }
+  @media (min-width:860px){
+    .services-grid{grid-template-columns:1fr 1fr 1fr;}
+    .why-grid{grid-template-columns:repeat(4,1fr);}
+  }
+</style>
+</head>
+<body>
+
+  <div class="callbar">
+    Call or text now &mdash; <a href="tel:2107164798">(210) 716-4798</a>
+  </div>
+
+  <header>
+    <div class="container header-row">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#1b3a27"/>
+          <path d="M24 8c-6 5-10 11-10 17a10 10 0 0020 0c0-6-4-12-10-17z" fill="#5a9c6b"/>
+          <path d="M24 14c-4 4-7 8-7 12a7 7 0 0014 0c0-4-3-8-7-12z" fill="#e8a13d"/>
+          <rect x="22.5" y="30" width="3" height="10" rx="1" fill="#fff"/>
+        </svg>
+        <div class="brand-name">Rambo Tree Services<span>San Antonio, TX</span></div>
+      </div>
+      <a class="header-call" href="tel:2107164798">Call Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">English &amp; Spanish Spoken</span>
+      <h1>Tree Work Done Right, <em>The First Time</em></h1>
+      <p>High-risk tree removal, canopy lifting, ball moss removal, lot clearing &amp; more &mdash; serving the San Antonio area.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:2107164798">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (210) 716-4798
+        </a>
+        <a class="btn btn-secondary" href="tel:2104262065">Llamar en Espa&ntilde;ol</a>
+      </div>
+      <div class="hero-sub">Free estimates &middot; Serving the San Antonio area</div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-tag">What We Do</div>
+      <h2>Our Services</h2>
+      <p class="section-sub">Full-service tree care for homes and lots across San Antonio.</p>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M12 22c-4-4-8-6-8-11a8 8 0 0116 0c0 5-4 7-8 11z"/></svg></div>
+          <div><h3>Tree Removal</h3><p>Full tree removal service, done safely and cleanly.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M6 20l3-8M18 20l-3-8M3 8l9-6 9 6"/></svg></div>
+          <div><h3>High-Risk Tree Logging</h3><p>Careful removal of hazardous, storm-damaged, or hard-to-reach trees.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+          <div><h3>Canopy Lifting</h3><p>Trim and raise tree canopies for better clearance and curb appeal.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></svg></div>
+          <div><h3>Ball Moss Removal</h3><p>Remove ball moss to protect your trees' health and appearance.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
+          <div><h3>Lot Clearing</h3><p>Clearing overgrown or wooded lots to get your property ready.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M12 6l6 4-6 4-6-4 6-4z"/></svg></div>
+          <div><h3>Palm Tree Cleaning</h3><p>Palm tree trimming and cleanup to keep them healthy and tidy.</p></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z"/></svg></div>
+          <div><h3>Christmas Lights Installation</h3><p>Holiday light installation to get your home ready for the season.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <div class="section-tag" style="color:var(--green-400);">Why Rambo</div>
+      <h2>Why Choose Us</h2>
+      <p class="section-sub">Local, bilingual, and ready to help.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <h3>Bilingual Service</h3>
+          <p>We speak English and Spanish</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <h3>Local to San Antonio</h3>
+          <p>Rooted in the community we serve</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <h3>Fast Response</h3>
+          <p>Call or text and get a quick reply</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <h3>Direct Owner Contact</h3>
+          <p>Talk directly with Bryan, not a call center</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="container">
+      <div class="section-tag">Service Area</div>
+      <h2>Where We Work</h2>
+      <div class="area-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h3>Proudly Serving the San Antonio Area</h3>
+        <p>Rambo Tree Services is based in San Antonio, TX and serves homes and properties throughout the area.</p>
+        <div class="lang-pill">Se habla espa&ntilde;ol</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2>Get a Free Estimate</h2>
+        <p>Call or text today &mdash; Bryan and the crew are ready to help.</p>
+        <div class="contact-numbers">
+          <a class="call-line" href="tel:2107164798"><small>Call / Text (English)</small>(210) 716-4798</a>
+          <a class="call-line secondary" href="tel:2104262065"><small>Espa&ntilde;ol</small>(210) 426-2065</a>
+        </div>
+        <div class="email-line">Or email <a href="mailto:bryanriverabr1108@gmail.com">bryanriverabr1108@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-brand">Rambo Tree Services</div>
+    <div>San Antonio, TX &middot; (210) 716-4798</div>
+  </footer>
+
+  <a class="sticky-call" href="tel:2107164798">Tap to Call Rambo Tree Services</a>
+
+</body>
+</html>
