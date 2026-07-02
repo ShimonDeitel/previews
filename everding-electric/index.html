@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everding Electric, Inc. | Commercial, Industrial & Residential Electricians | Bixby, OK</title>
+<meta name="description" content="Everding Electric, Inc. — licensed electrical contractor serving Tulsa, Bixby, and surrounding Oklahoma since 1999. Commercial, industrial & residential. Call (918) 369-9250.">
+<style>
+  :root{
+    --navy:#0b1f33;
+    --navy-dark:#071426;
+    --blue:#1e6fd9;
+    --blue-dark:#144e9c;
+    --amber:#f5a623;
+    --gray:#5b6b7c;
+    --light:#f4f7fa;
+    --line:#e3e8ee;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  h1,h2,h3{line-height:1.15;font-weight:800;}
+  h2{font-size:clamp(24px,5vw,34px);margin-bottom:10px;}
+  .eyebrow{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:10px;
+  }
+  .sub{color:var(--gray);font-size:16px;max-width:620px;margin-bottom:28px;}
+
+  /* ---------- Top utility bar ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cbd6e2;
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:8px;
+    padding-bottom:8px;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .topbar a{color:#cbd6e2;}
+  .topbar .em{color:#ffb454;font-weight:700;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:12px;padding-bottom:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand .mark{
+    width:38px;height:38px;border-radius:9px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .brand .name{font-weight:800;font-size:17px;letter-spacing:-.01em;}
+  .brand .name small{display:block;font-weight:600;font-size:11px;color:var(--gray);letter-spacing:.02em;}
+  nav.desktop{display:flex;gap:26px;font-size:14px;font-weight:600;}
+  .header-cta{
+    display:flex;align-items:center;gap:14px;
+  }
+  .call-btn{
+    background:var(--blue);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    white-space:nowrap;
+  }
+
+  @media (max-width:860px){
+    nav.desktop{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    padding:64px 0 56px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    right:-120px;top:-120px;
+    width:420px;height:420px;
+    background:radial-gradient(circle,rgba(30,111,217,.35),transparent 70%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero .badgebar{
+    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;
+  }
+  .pill{
+    font-size:12px;font-weight:700;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    padding:6px 12px;border-radius:999px;
+    color:#dbe6f2;
+  }
+  .hero h1{
+    font-size:clamp(30px,7vw,50px);
+    margin-bottom:16px;
+    max-width:760px;
+    letter-spacing:-.02em;
+  }
+  .hero h1 span{color:var(--amber);}
+  .hero p.lead{
+    font-size:17px;color:#c6d3e2;max-width:560px;margin-bottom:30px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 24px;border-radius:9px;
+    font-weight:700;font-size:15px;
+    border:2px solid transparent;
+  }
+  .btn-primary{background:var(--amber);color:#211405;}
+  .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:16px;margin-top:44px;
+    border-top:1px solid rgba(255,255,255,.14);
+    padding-top:28px;
+  }
+  .hero-stats .stat b{display:block;font-size:26px;color:#fff;}
+  .hero-stats .stat span{font-size:12.5px;color:#a9b8c9;}
+
+  @media (max-width:600px){
+    .hero-stats{grid-template-columns:1fr 1fr;}
+  }
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .mobile-callbar{
+    display:none;
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--navy-dark);
+    padding:10px 14px;
+    box-shadow:0 -4px 16px rgba(0,0,0,.25);
+  }
+  .mobile-callbar a{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--blue);
+    color:#fff;font-weight:800;font-size:16px;
+    padding:14px;border-radius:10px;
+  }
+  @media (max-width:760px){
+    .mobile-callbar{display:block;}
+    body{padding-bottom:74px;}
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:20px;
+  }
+  @media (max-width:900px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .services-grid{grid-template-columns:1fr;} }
+  .card{
+    background:var(--light);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+  }
+  .card .icon{
+    width:44px;height:44px;border-radius:10px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .card h3{font-size:17px;margin-bottom:8px;}
+  .card p{font-size:14px;color:var(--gray);}
+
+  /* ---------- Why us ---------- */
+  .why{background:var(--light);}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px;
+  }
+  @media (max-width:900px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .why-grid{grid-template-columns:1fr;} }
+  .why-item{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;
+  }
+  .why-item .num{
+    font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.06em;margin-bottom:8px;
+  }
+  .why-item h3{font-size:16px;margin-bottom:6px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  /* ---------- Area ---------- */
+  .area{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+  }
+  @media (max-width:860px){ .area{grid-template-columns:1fr;} }
+  .area-map{
+    background:var(--navy);
+    border-radius:16px;
+    padding:28px;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .area-map svg{width:100%;height:auto;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .chip{
+    font-size:13px;font-weight:600;
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:8px 14px;border-radius:999px;
+  }
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:linear-gradient(120deg,var(--blue-dark),var(--blue));
+    color:#fff;
+    text-align:center;
+  }
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:#dceafd;max-width:560px;margin:0 auto 26px;}
+  .cta-band .btn-primary{background:#fff;color:var(--blue-dark);}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;
+  }
+  @media (max-width:760px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-card{
+    border:1px solid var(--line);border-radius:14px;padding:24px;
+  }
+  .contact-card h3{font-size:15px;margin-bottom:14px;}
+  .row-line{
+    display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;
+  }
+  .row-line:last-child{border-bottom:none;}
+  .row-line span:first-child{color:var(--gray);}
+  .row-line span:last-child{font-weight:700;text-align:right;}
+  .emergency-card{background:var(--navy);color:#fff;border:none;}
+  .emergency-card h3{color:#ffb454;}
+  .emergency-card .row-line{border-color:rgba(255,255,255,.14);}
+  .emergency-card .row-line span:first-child{color:#a9b8c9;}
+  .emergency-card .row-line span:last-child{color:#fff;}
+  .emergency-card .btn{margin-top:16px;width:100%;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-dark);color:#8fa0b3;font-size:13px;padding:32px 0;
+  }
+  footer .wrap{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+  footer strong{color:#fff;}
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div>Serving Tulsa, Bixby &amp; surrounding Oklahoma since 1999</div>
+      <div>Emergency (24/7): <a class="em" href="tel:19186399702">(918) 639-9702</a></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <span class="mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="#f5a623"/></svg>
+        </span>
+        <span class="name">Everding Electric<small>Commercial &middot; Industrial &middot; Residential</small></span>
+      </a>
+      <nav class="desktop">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="call-btn" href="tel:19183699250">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z" fill="#fff"/></svg>
+          (918) 369-9250
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="badgebar">
+        <span class="pill">Licensed &amp; Insured — OK &amp; FL</span>
+        <span class="pill">A+ BBB Rating</span>
+        <span class="pill">Native American Woman-Owned</span>
+      </div>
+      <h1>Electrical work done right, <span>the first time.</span></h1>
+      <p class="lead">Everding Electric has served Tulsa, Bixby, and the surrounding Oklahoma area since 1999 — commercial build-outs, industrial controls, and residential electrical, backed by licensed journeymen on every job.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:19183699250">Call (918) 369-9250</a>
+        <a class="btn btn-outline" href="tel:19186399702">24/7 Emergency Line</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>1999</b><span>In business since</span></div>
+        <div class="stat"><b>OK &amp; FL</b><span>Unlimited contractor license</span></div>
+        <div class="stat"><b>A+</b><span>Better Business Bureau</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <span class="eyebrow">What We Do</span>
+      <h2>Commercial, industrial &amp; residential electrical services</h2>
+      <p class="sub">One licensed contractor for every stage of a project — from ground-up build-out to ongoing troubleshooting.</p>
+      <div class="services-grid">
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-6 8 6v12h-6v-7h-4v7H4z" stroke="#fff" stroke-width="1.8"/></svg></div>
+          <h3>Commercial Build-Out</h3>
+          <p>Lighting, switches, power poles, and tenant finishes for new and remodeled commercial spaces.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#fff" stroke-width="1.8"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#fff" stroke-width="1.8"/></svg></div>
+          <h3>Industrial Systems</h3>
+          <p>Conveyors, motors, control stations, and variable frequency drives (VFDs).</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <h3>Troubleshooting</h3>
+          <p>Energy management systems, chiller controls, lift stations, and tower lighting.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12l2-2 4 4 8-8 2 2-10 10-6-6z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <h3>Residential Electrical</h3>
+          <p>Full residential electrical systems installed and serviced by licensed electricians.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M8 9h8M8 13h5" stroke="#fff" stroke-width="1.8"/></svg></div>
+          <h3>Panels &amp; Generators</h3>
+          <p>Conduit, control panels, generators, pole lighting, and sign installation.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <h3>Low Voltage &amp; Underground</h3>
+          <p>Low voltage cabling, 4G installation, parking lot power, and underground utilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <span class="eyebrow">Why Everding</span>
+      <h2>27 years of licensed electrical work in Oklahoma</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="num">01</div>
+          <h3>Unlimited License</h3>
+          <p>Unlimited electrical contractor license in Oklahoma and Florida.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">02</div>
+          <h3>OSHA-Rated Crew</h3>
+          <p>Every employee holds a minimum OSHA 10 safety rating.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">03</div>
+          <h3>Code Compliant</h3>
+          <p>All work performed to National Electric Code (NEC) standards.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">04</div>
+          <h3>Licensed Team</h3>
+          <p>Licensed journeymen and apprentices staffed on every job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="wrap area">
+      <div>
+        <span class="eyebrow">Service Area</span>
+        <h2>Proudly serving Bixby &amp; the greater Tulsa metro</h2>
+        <p class="sub">Based in Bixby, Oklahoma, Everding Electric serves commercial, industrial, and residential customers across the Tulsa area.</p>
+        <div class="chip-row">
+          <span class="chip">Bixby, OK</span>
+          <span class="chip">Tulsa, OK</span>
+          <span class="chip">Surrounding Oklahoma Areas</span>
+        </div>
+      </div>
+      <div class="area-map">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="220" fill="#0b1f33"/>
+          <path d="M20 180 L60 40 L120 60 L160 20 L220 50 L260 30 L300 120 L280 190 L100 200 Z" fill="none" stroke="#2b4a6e" stroke-width="1.5"/>
+          <circle cx="150" cy="120" r="6" fill="#f5a623"/>
+          <text x="162" y="124" fill="#fff" font-size="12" font-family="Arial">Bixby, OK</text>
+          <circle cx="95" cy="70" r="4" fill="#1e6fd9"/>
+          <text x="106" y="74" fill="#c6d3e2" font-size="11" font-family="Arial">Tulsa</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Need an electrician you can count on?</h2>
+      <p>Call now to talk with Everding Electric about your commercial, industrial, or residential project.</p>
+      <a class="btn btn-primary" href="tel:19183699250">Call (918) 369-9250</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h2>Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>OFFICE</h3>
+          <div class="row-line"><span>Phone</span><span><a href="tel:19183699250">(918) 369-9250</a></span></div>
+          <div class="row-line"><span>Address</span><span>8550 E 131 Street South,<br>Bixby, OK 74008</span></div>
+          <div class="row-line"><span>Hours</span><span>Mon–Fri, 9:00 AM – 6:00 PM</span></div>
+          <div class="row-line"><span>Email</span><span>everdingelectric@<br>everdingelectric.com</span></div>
+        </div>
+        <div class="contact-card emergency-card">
+          <h3>EMERGENCY LINE</h3>
+          <div class="row-line"><span>Phone</span><span>(918) 639-9702</span></div>
+          <div class="row-line"><span>Availability</span><span>Weekends &amp; holidays</span></div>
+          <div class="row-line"><span>Response</span><span>Emergency calls only</span></div>
+          <a class="btn btn-primary" href="tel:19186399702">Call Emergency Line</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div><strong>Everding Electric, Inc.</strong> — Bixby, OK &middot; Licensed &amp; insured electrical contractor.</div>
+      <div>&copy; 2026 Everding Electric, Inc. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="mobile-callbar">
+    <a href="tel:19183699250">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z" fill="#fff"/></svg>
+      Tap to Call (918) 369-9250
+    </a>
+  </div>
+
+</body>
+</html>
