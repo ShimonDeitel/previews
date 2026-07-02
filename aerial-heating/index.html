@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aerial Heating and Air — HVAC in Charlotte, NC</title>
+<meta name="description" content="Family-owned heating and air conditioning services for residential clients in Charlotte, NC and surrounding areas.">
+<style>
+:root{
+  --navy:#0e2a47;
+  --navy-2:#123a63;
+  --sky:#1f7ae0;
+  --sky-soft:#e8f1fc;
+  --amber:#f59e0b;
+  --ink:#16212e;
+  --muted:#5b6b7c;
+  --line:#e3e9f0;
+  --bg:#ffffff;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;color:var(--navy);letter-spacing:-.01em}
+.brand svg{flex:none}
+.nav-cta{background:var(--sky);color:#fff;font-weight:700;font-size:.9rem;padding:9px 16px;border-radius:999px;transition:background .2s}
+.nav-cta:hover{background:#1663ba}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 55%,#17518f 100%);color:#fff;overflow:hidden;position:relative}
+.hero .wrap{padding:56px 20px 64px;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:600;letter-spacing:.02em}
+.badge svg{flex:none}
+.hero h1{font-size:clamp(1.9rem,6.5vw,3.1rem);line-height:1.15;font-weight:800;letter-spacing:-.02em;margin:18px 0 14px;max-width:620px}
+.hero h1 span{color:#8fc3ff}
+.hero p{font-size:1.05rem;color:#c9d9ec;max-width:520px;margin-bottom:28px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:1rem;padding:15px 26px;border-radius:12px;transition:transform .15s,box-shadow .15s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--amber);color:#231a05;box-shadow:0 6px 20px rgba(245,158,11,.35)}
+.btn-primary:hover{box-shadow:0 8px 26px rgba(245,158,11,.5)}
+.btn-ghost{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+.hero-art{position:absolute;right:-60px;bottom:-40px;opacity:.14;pointer-events:none}
+.hero-strip{background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.12)}
+.hero-strip .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;padding:14px 20px;font-size:.86rem;color:#bcd2ea}
+.hero-strip span{display:inline-flex;align-items:center;gap:7px;font-weight:600}
+
+/* Sections */
+section{padding:60px 0}
+.kicker{color:var(--sky);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
+h2{font-size:clamp(1.5rem,4.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-bottom:10px}
+.lead{color:var(--muted);max-width:560px;margin-bottom:34px}
+
+/* Services */
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:920px){.grid-3{grid-template-columns:1fr 1fr 1fr}}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:box-shadow .2s,border-color .2s;background:#fff}
+.card:hover{border-color:#c8d8ea;box-shadow:0 10px 30px rgba(14,42,71,.08)}
+.icon-chip{width:48px;height:48px;border-radius:12px;background:var(--sky-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card h3{font-size:1.08rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.card p{font-size:.94rem;color:var(--muted)}
+
+/* Why us */
+.why{background:#f7fafd;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-item{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:var(--radius);background:#fff;border:1px solid var(--line)}
+.why-item .icon-chip{width:42px;height:42px;margin:0;flex:none}
+.why-item h3{font-size:1rem;font-weight:700;color:var(--navy)}
+.why-item p{font-size:.9rem;color:var(--muted)}
+
+/* Area */
+.area-flex{display:flex;flex-direction:column;gap:28px}
+@media(min-width:800px){.area-flex{flex-direction:row;align-items:center}.area-flex>div{flex:1}}
+.area-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.area-map svg{width:100%;height:auto}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{background:var(--sky-soft);color:var(--navy-2);font-weight:600;font-size:.85rem;padding:7px 14px;border-radius:999px}
+
+/* Contact */
+.contact{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;border-radius:20px;padding:44px 26px;text-align:center}
+.contact h2{color:#fff}
+.contact p{color:#c9d9ec;max-width:480px;margin:0 auto 26px}
+.contact .btn-primary{font-size:1.05rem}
+.contact-note{margin-top:18px;font-size:.88rem;color:#9db8d6}
+.contact-note a{color:#8fc3ff;font-weight:600}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Aerial Heating and Air home">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#0e2a47"/>
+        <path d="M16 6l8 8h-4v6h-8v-6H8l8-8z" fill="#8fc3ff"/>
+        <path d="M10 24h12" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Aerial Heating &amp; Air
+    </a>
+    <a class="nav-cta" href="mailto:Heatandcool@aerialheatair.com">Get a Quote</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.9 6.3 6.6.6-5 4.5 1.5 6.6L12 16.7 6 20l1.5-6.6-5-4.5 6.6-.6L12 2z" fill="#f59e0b"/></svg>
+      Family-Owned &amp; Operated · Charlotte, NC
+    </span>
+    <h1>Comfort in every season, <span>done right.</span></h1>
+    <p>Heating and air conditioning services for residential clients in Charlotte and surrounding areas — built on outstanding customer service, integrity, and professionalism.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:Heatandcool@aerialheatair.com">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Email for a Free Quote
+      </a>
+      <a class="btn btn-ghost" href="#services">Our Services</a>
+    </div>
+  </div>
+  <svg class="hero-art" width="380" height="380" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l9 9h-3v9h-5v-6H11v6H6v-9H3l9-9z" fill="#fff"/></svg>
+  <div class="hero-strip">
+    <div class="wrap">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#8fc3ff" stroke-width="2.5" stroke-linecap="round"/></svg>Detailed consultations</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#8fc3ff" stroke-width="2.5" stroke-linecap="round"/></svg>Quality equipment &amp; parts</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#8fc3ff" stroke-width="2.5" stroke-linecap="round"/></svg>Eco-efficient solutions</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2>Heating &amp; cooling services</h2>
+    <p class="lead">From new installations to keeping your current system running its best, we walk you through your options with a detailed consultation.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon-chip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c3 3.5 5 6.2 5 9a5 5 0 11-10 0c0-2.8 2-5.5 5-9z" stroke="#1f7ae0" stroke-width="2" stroke-linejoin="round"/><path d="M12 17a3 3 0 003-3" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Heating</h3>
+        <p>Reliable heating service and installation to keep your home warm and comfortable all winter long.</p>
+      </div>
+      <div class="card">
+        <div class="icon-chip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v20M4 6l16 12M20 6L4 18" stroke="#1f7ae0" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Air Conditioning</h3>
+        <p>Cooling solutions sized for your home, installed with high-quality equipment and parts.</p>
+      </div>
+      <div class="card">
+        <div class="icon-chip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#1f7ae0" stroke-width="2"/><path d="M7 9h10M7 13h10M7 17h6" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>HVAC Installation</h3>
+        <p>Complete HVAC installation with a detailed consultation on the options available to you.</p>
+      </div>
+      <div class="card">
+        <div class="icon-chip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4.5 4.5 0 00-6.4 6.4l-4.3 4.3 3 3 4.3-4.3a4.5 4.5 0 006.4-6.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z" stroke="#1f7ae0" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Service &amp; Repair</h3>
+        <p>Prompt, professional attention when your system needs a fix — we treat your home like our own.</p>
+      </div>
+      <div class="card">
+        <div class="icon-chip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" stroke="#1f7ae0" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Consultations</h3>
+        <p>Detailed, no-pressure consultations so you understand every option before deciding.</p>
+      </div>
+      <div class="card">
+        <div class="icon-chip">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c4-2.5 7-6 7-10a7 7 0 10-14 0c0 4 3 7.5 7 10z" stroke="#1f7ae0" stroke-width="2"/><path d="M8 12c2-4 6-4 8-6-1 5-3 8-8 6z" fill="#f59e0b"/></svg>
+        </div>
+        <h3>Eco-Efficient Options</h3>
+        <p>Energy-conscious equipment choices that keep comfort high and waste low.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="wrap">
+    <div class="kicker">Why Aerial</div>
+    <h2>A local team you can trust</h2>
+    <p class="lead">We're a family-owned and operated business serving our Charlotte neighbors with integrity.</p>
+    <div class="grid">
+      <div class="why-item">
+        <div class="icon-chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0112 6.5 5.5 5.5 0 0121.5 12c-2.5 4.4-9.5 9-9.5 9z" stroke="#1f7ae0" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div><h3>Family-owned &amp; operated</h3><p>You deal with people who care, not a call center.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon-chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 12l3 3 5-6" stroke="#1f7ae0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1f7ae0" stroke-width="2"/></svg></div>
+        <div><h3>Integrity &amp; professionalism</h3><p>Straight answers, honest recommendations, tidy work.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon-chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 20V10m6 10V4m6 16v-7" stroke="#1f7ae0" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>Quality equipment &amp; parts</h3><p>We install what we'd put in our own homes.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="icon-chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5.5 6.5l13 11M18.5 6.5l-13 11" stroke="#1f7ae0" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>Eco-efficiency focus</h3><p>Comfort that's easier on your energy bill and the planet.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section id="area">
+  <div class="wrap area-flex">
+    <div>
+      <div class="kicker">Service area</div>
+      <h2>Proudly serving Charlotte &amp; surrounding areas</h2>
+      <p class="lead" style="margin-bottom:0">We provide heating and air conditioning services to residential clients in Charlotte, North Carolina and the surrounding areas.</p>
+      <div class="pill-row">
+        <span class="pill">Charlotte, NC</span>
+        <span class="pill">Surrounding areas</span>
+      </div>
+    </div>
+    <div class="area-map" aria-hidden="true">
+      <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="260" fill="#eef4fb"/>
+        <path d="M0 200 Q100 170 200 195 T400 180" stroke="#c8d8ea" stroke-width="3" fill="none"/>
+        <path d="M0 120 Q120 90 240 115 T400 95" stroke="#d7e3f0" stroke-width="3" fill="none"/>
+        <path d="M60 0 Q90 130 70 260" stroke="#d7e3f0" stroke-width="3" fill="none"/>
+        <path d="M320 0 Q300 120 330 260" stroke="#c8d8ea" stroke-width="3" fill="none"/>
+        <circle cx="200" cy="130" r="86" fill="#1f7ae0" opacity=".10"/>
+        <circle cx="200" cy="130" r="54" fill="#1f7ae0" opacity=".14"/>
+        <path d="M200 96c14 0 24 10 24 23 0 16-24 39-24 39s-24-23-24-39c0-13 10-23 24-23z" fill="#0e2a47"/>
+        <circle cx="200" cy="119" r="9" fill="#f59e0b"/>
+        <text x="200" y="188" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#0e2a47">Charlotte, NC</text>
+        <text x="200" y="207" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#5b6b7c">+ surrounding areas</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div class="kicker" style="color:#8fc3ff">Get started</div>
+      <h2>Ready for reliable comfort?</h2>
+      <p>Tell us what's going on with your heating or cooling and we'll get back to you with options and a quote.</p>
+      <a class="btn btn-primary" href="mailto:Heatandcool@aerialheatair.com?subject=Quote%20request">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Heatandcool@aerialheatair.com
+      </a>
+      <div class="contact-note">Ask about our current specials — including 10% savings offers.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Aerial Heating and Air · Charlotte, NC</span>
+    <span>Family-owned &amp; operated · <a href="mailto:Heatandcool@aerialheatair.com" style="color:var(--sky);font-weight:600">Heatandcool@aerialheatair.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

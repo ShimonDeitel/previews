@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miller's Green Team — Lawn Care &amp; Landscaping in Charlotte, NC</title>
+<meta name="description" content="Family-owned, licensed and insured lawn care in Charlotte, NC. Mowing, aeration &amp; seeding, hedge trimming, fertilization, and landscaping. Call (704) 759-4216 for a free quote.">
+<style>
+  :root{
+    --green:#1e7a3c;
+    --green-dark:#155c2c;
+    --green-deep:#0c3d1c;
+    --lime:#8fd14f;
+    --ink:#182420;
+    --muted:#5a6b62;
+    --bg:#f6f8f4;
+    --card:#ffffff;
+    --line:#e2e9e1;
+    --radius:16px;
+    font-size:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+  .brand .logo{width:36px;height:36px;flex:0 0 36px}
+  .brand span em{font-style:normal;color:var(--green)}
+  .nav-links{display:none;gap:28px;font-size:.95rem;font-weight:600;color:var(--muted)}
+  .nav-links a:hover{color:var(--green-dark)}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--green);color:#fff;font-weight:700;font-size:.92rem;
+    padding:10px 16px;border-radius:999px;white-space:nowrap;
+    box-shadow:0 2px 8px rgba(30,122,60,.35);transition:background .15s;
+  }
+  .call-btn:hover{background:var(--green-dark)}
+  .call-btn svg{width:16px;height:16px}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-dark) 55%,var(--green) 100%);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .hero .wrap{position:relative;padding-top:64px;padding-bottom:120px;z-index:1}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .badge{
+    font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+    padding:5px 12px;border-radius:999px;
+  }
+  h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.12;letter-spacing:-.02em;font-weight:800;max-width:15ch}
+  h1 .accent{color:var(--lime)}
+  .hero p{margin-top:16px;max-width:46ch;font-size:1.06rem;color:rgba(255,255,255,.88)}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:1rem;padding:15px 26px;border-radius:12px;transition:transform .12s, background .15s;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--lime);color:var(--green-deep);box-shadow:0 4px 18px rgba(0,0,0,.25)}
+  .btn-primary:hover{background:#9fdd63}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .btn svg{width:18px;height:18px}
+  .hero-note{margin-top:16px;font-size:.85rem;color:rgba(255,255,255,.65)}
+  /* grass edge */
+  .grass{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:70px;color:var(--bg)}
+
+  /* Sections */
+  section{padding:64px 0}
+  .kicker{color:var(--green);font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+  h2{font-size:clamp(1.6rem,4.5vw,2.2rem);letter-spacing:-.02em;line-height:1.2;margin-top:8px}
+  .sub{color:var(--muted);margin-top:10px;max-width:56ch}
+
+  /* Services */
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:box-shadow .15s,transform .15s;
+  }
+  .card:hover{box-shadow:0 8px 24px rgba(24,36,32,.08);transform:translateY(-2px)}
+  .card .icon{
+    width:48px;height:48px;border-radius:12px;background:#e8f4e7;color:var(--green);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card .icon svg{width:26px;height:26px}
+  .card h3{font-size:1.1rem;letter-spacing:-.01em}
+  .card p{color:var(--muted);font-size:.95rem;margin-top:6px}
+
+  /* Why us */
+  .why{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+  .why-item{display:flex;gap:14px;align-items:flex-start}
+  .check{
+    flex:0 0 28px;width:28px;height:28px;border-radius:50%;
+    background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  .check svg{width:14px;height:14px}
+  .why-item h3{font-size:1.02rem}
+  .why-item p{color:var(--muted);font-size:.93rem;margin-top:2px}
+
+  /* Area */
+  .area-card{
+    margin-top:28px;background:var(--green-deep);color:#fff;border-radius:var(--radius);
+    padding:32px 24px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;
+  }
+  .area-card .pin{width:40px;height:40px;color:var(--lime)}
+  .area-card h3{font-size:1.3rem;letter-spacing:-.01em}
+  .area-card p{color:rgba(255,255,255,.85);max-width:52ch}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+  .contact-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;gap:6px;
+  }
+  .contact-card .label{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .contact-card .value{font-size:1.25rem;font-weight:800;letter-spacing:-.01em;color:var(--green-dark);word-break:break-word}
+  .contact-card .hint{font-size:.88rem;color:var(--muted)}
+  .contact-card:hover .value{text-decoration:underline}
+
+  /* CTA band */
+  .cta-band{background:var(--green);color:#fff;text-align:center}
+  .cta-band h2{color:#fff}
+  .cta-band .btn-primary{margin-top:24px}
+
+  footer{padding:32px 0 96px;text-align:center;color:var(--muted);font-size:.85rem}
+  footer .foot-brand{font-weight:800;color:var(--ink);margin-bottom:6px}
+
+  /* Sticky mobile call bar */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);
+  }
+  .callbar a{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--green);color:#fff;font-weight:800;font-size:1.05rem;
+    padding:14px;border-radius:12px;box-shadow:0 4px 14px rgba(30,122,60,.35);
+  }
+  .callbar svg{width:18px;height:18px}
+
+  @media(min-width:720px){
+    .nav-links{display:flex}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+    .contact-grid{grid-template-columns:repeat(3,1fr)}
+    .callbar{display:none}
+    footer{padding-bottom:40px}
+    .area-card{flex-direction:row;align-items:center;gap:24px;padding:40px}
+  }
+  @media(min-width:1000px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Miller's Green Team home">
+      <svg class="logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#1e7a3c"/>
+        <path d="M12 28c1.5-6 2-11 1-16 3 4 4.5 9 4 14M20 28c0-7 1-12 4-17 1 6 0 12-2 17M27 28c2-4 3-8 3-12 1 5 1 9-1 12" stroke="#8fd14f" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M8 29h24" stroke="#e8f4e7" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span>Miller's <em>Green Team</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+17047594216">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
+      (704) 759-4216
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="badge-row">
+        <span class="badge">Licensed &amp; Insured</span>
+        <span class="badge">Family Owned</span>
+        <span class="badge">Charlotte, NC</span>
+      </div>
+      <h1>A greener lawn, <span class="accent">without the weekend work.</span></h1>
+      <p>Miller's Green Team is a family-owned lawn care and landscaping company serving Charlotte and surrounding areas. Licensed, insured, and committed to transforming your outdoor space.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+17047594216">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
+          Call or Text for a Quote
+        </a>
+        <a class="btn btn-ghost" href="#services">See Our Services</a>
+      </div>
+      <p class="hero-note">Customizable service packages to fit any budget.</p>
+    </div>
+    <svg class="grass" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0 70h1440V38c-60 12-120-14-180-4s-120 26-180 14-120-30-180-18-120 30-180 16-120-28-180-14-120 26-180 12S60 20 0 34v36z"/>
+    </svg>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <p class="kicker">What We Do</p>
+      <h2>Lawn care services, done right</h2>
+      <p class="sub">From weekly maintenance to full landscaping projects — one knowledgeable team for everything your yard needs.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20c2-8 2.5-13 1.5-17C9 8 10 13 9.5 20M12 20c0-9 1.5-14 5-18 1 7-.5 13-2.5 18M19 20c1.5-4 2-7 2-10"/></svg></div>
+          <h3>Lawn Care</h3>
+          <p>Regular mowing and maintenance that keeps your grass healthy, even, and looking sharp all season.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="6" r="1.2" fill="currentColor"/><circle cx="12" cy="4" r="1.2" fill="currentColor"/><circle cx="18" cy="6" r="1.2" fill="currentColor"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="9" r="1.2" fill="currentColor"/><path d="M4 14c5 3 11 3 16 0M4 18c5 3 11 3 16 0"/></svg></div>
+          <h3>Aeration &amp; Seeding</h3>
+          <p>Loosen compacted soil and overseed so water, air, and nutrients reach the roots — for thicker turf.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4L6 12l4 4 8-8-4-4zM10 16l-5 5M13 7l4 4"/></svg></div>
+          <h3>Hedge Trimming</h3>
+          <p>Clean, shaped hedges and shrubs that frame your home instead of hiding it.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6l-1 4h-4L9 3zM10 7h4v3a2 2 0 002 2v9H8v-9a2 2 0 002-2V7z"/><path d="M10 16h4"/></svg></div>
+          <h3>Fertilizer Application</h3>
+          <p>Properly timed feeding that keeps your lawn green, strong, and better at fighting off weeds.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11M12 11c0-4 3-7 7-7 0 4-3 7-7 7zM12 14c0-3-2.5-5-5.5-5 0 3 2.5 5 5.5 5z"/><path d="M6 21h12"/></svg></div>
+          <h3>Landscaping</h3>
+          <p>Beds, plantings, and outdoor improvements that turn your yard into a space you actually enjoy.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 8.7l5.4-.8L12 3z"/></svg></div>
+          <h3>Custom Packages</h3>
+          <p>Mix and match services into a package that fits your yard and your budget. Just ask.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="why">
+    <div class="wrap">
+      <p class="kicker">Why Miller's Green Team</p>
+      <h2>The team your neighbors would recommend</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h3>Licensed &amp; Insured</h3><p>Fully licensed and insured, so your property is protected on every visit.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h3>Family Owned &amp; Operated</h3><p>You deal directly with the people doing the work — not a call center.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h3>Professional &amp; Knowledgeable</h3><p>The right treatment at the right time of year, done the right way.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h3>Packages for Any Budget</h3><p>Customizable service packages — pay for what your yard actually needs.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA -->
+  <section id="area">
+    <div class="wrap">
+      <p class="kicker">Where We Work</p>
+      <h2>Proudly serving Charlotte, NC</h2>
+      <div class="area-card">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.8 7-11a7 7 0 10-14 0c0 5.2 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div>
+          <h3>Charlotte &amp; surrounding areas</h3>
+          <p>Not sure if you're in our service area? Call or text us — if we can't help, we'll tell you straight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="cta-band">
+    <div class="wrap">
+      <p class="kicker" style="color:#c9efb0">Get Started</p>
+      <h2>Ready for a lawn you're proud of?</h2>
+      <p class="sub" style="color:rgba(255,255,255,.85);margin-left:auto;margin-right:auto">Call, text, or email for a free, no-pressure quote.</p>
+      <a class="btn btn-primary" href="tel:+17047594216">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
+        Call (704) 759-4216
+      </a>
+    </div>
+  </section>
+
+  <section style="padding-top:0;margin-top:-8px">
+    <div class="wrap">
+      <div class="contact-grid">
+        <a class="contact-card" href="tel:+17047594216">
+          <span class="label">Call or Text</span>
+          <span class="value">(704) 759-4216</span>
+          <span class="hint">Tap to call from your phone</span>
+        </a>
+        <a class="contact-card" href="sms:+17047594216">
+          <span class="label">Text a Photo of Your Yard</span>
+          <span class="value">Send a Text</span>
+          <span class="hint">Fastest way to get a quote</span>
+        </a>
+        <a class="contact-card" href="mailto:millersgreenteam@gmail.com">
+          <span class="label">Email</span>
+          <span class="value">millersgreenteam@gmail.com</span>
+          <span class="hint">We'll get back to you promptly</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-brand">Miller's Green Team</p>
+    <p>Family-owned lawn care &amp; landscaping · Licensed &amp; insured · Charlotte, NC</p>
+    <p>(704) 759-4216 · millersgreenteam@gmail.com</p>
+  </div>
+</footer>
+
+<div class="callbar" aria-hidden="false">
+  <a href="tel:+17047594216">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
+    Call (704) 759-4216
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duck's Property Services, LLC — Excavation, Lot Clearing &amp; Tree Removal in Virginia</title>
+<meta name="description" content="Duck's Property Services, LLC — excavation, lot clearing, grading, tree removal and erosion control across Virginia since 2004. Call (804) 439-2010 for a free estimate.">
+<style>
+:root{
+  --green:#1e4d2b;
+  --green-dark:#143520;
+  --amber:#e8a020;
+  --amber-dark:#c9860f;
+  --ink:#1a1f1c;
+  --muted:#5b6660;
+  --bg:#f7f6f2;
+  --card:#ffffff;
+  --line:#e4e2da;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.01em;color:var(--green)}
+.brand svg{flex:none}
+.brand span small{display:block;font-size:.66rem;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:none;gap:26px;font-size:.92rem;font-weight:600;color:var(--muted)}
+.nav-links a:hover{color:var(--green)}
+.call-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:10px;transition:background .15s}
+.call-btn:hover{background:var(--green-dark)}
+@media(min-width:820px){.nav-links{display:flex}}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--green-dark) 0%,var(--green) 100%);color:#fff;overflow:hidden;position:relative}
+.hero-inner{padding:64px 0 0;position:relative;z-index:1;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.badge svg{flex:none}
+.hero h1{font-size:clamp(1.9rem,6.5vw,3.2rem);line-height:1.12;font-weight:800;letter-spacing:-.02em;margin:20px auto 14px;max-width:760px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.sub{font-size:clamp(1rem,3.5vw,1.15rem);color:rgba(255,255,255,.82);max-width:620px;margin:0 auto 28px}
+.hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:1.05rem;padding:16px 28px;border-radius:12px;width:100%;max-width:340px;transition:transform .12s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn-amber{background:var(--amber);color:#231a05}
+.btn-amber:hover{background:var(--amber-dark)}
+.btn-ghost{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.95rem;padding:13px 24px}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+@media(min-width:640px){.hero-ctas{flex-direction:row;justify-content:center}.btn{width:auto}}
+.hero-strip{position:relative;z-index:1;background:rgba(0,0,0,.25);border-top:1px solid rgba(255,255,255,.12)}
+.strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:18px 0;text-align:center}
+.strip-grid b{display:block;font-size:1.15rem;color:var(--amber)}
+.strip-grid span{font-size:.72rem;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+/* hero treeline art */
+.treeline{position:absolute;bottom:0;left:0;right:0;opacity:.14;pointer-events:none}
+
+/* Sections */
+section{padding:64px 0}
+.kicker{color:var(--amber-dark);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+h2{font-size:clamp(1.5rem,5vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
+.lead{color:var(--muted);max-width:620px;margin-bottom:36px}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;gap:16px;align-items:flex-start;transition:border-color .15s,box-shadow .15s}
+.svc:hover{border-color:var(--green);box-shadow:0 4px 18px rgba(20,53,32,.08)}
+.svc .ic{flex:none;width:44px;height:44px;border-radius:11px;background:#eaf1ec;display:flex;align-items:center;justify-content:center}
+.svc h3{font-size:1.02rem;font-weight:700;margin-bottom:4px}
+.svc p{font-size:.88rem;color:var(--muted);line-height:1.5}
+
+/* Why us */
+.why{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:820px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+.why-item{display:flex;gap:14px}
+.why-item .ic{flex:none;width:42px;height:42px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center}
+.why-item h3{font-size:1rem;font-weight:700;margin-bottom:4px}
+.why-item p{font-size:.9rem;color:var(--muted)}
+
+/* Area */
+.area-card{background:var(--green-dark);color:#fff;border-radius:18px;padding:36px 24px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+@media(min-width:820px){.area-card{flex-direction:row;align-items:center;justify-content:space-between;padding:40px 44px}}
+.area-card h2{color:#fff;margin-bottom:8px}
+.area-card p{color:rgba(255,255,255,.8);max-width:480px}
+.area-card .btn{max-width:none;width:auto}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:820px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+.c-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center}
+.c-card .ic{width:46px;height:46px;border-radius:12px;background:#eaf1ec;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.c-card h3{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.c-card a,.c-card span{font-weight:700;font-size:1.02rem;color:var(--green);word-break:break-word}
+.c-card a:hover{text-decoration:underline}
+.c-card p.note{font-size:.82rem;color:var(--muted);font-weight:400;margin-top:4px}
+
+/* Footer */
+footer{background:var(--green-dark);color:rgba(255,255,255,.7);padding:32px 0 96px;font-size:.85rem}
+footer .frow{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+footer b{color:#fff}
+@media(min-width:640px){footer{padding-bottom:40px}.frow{flex-direction:row;justify-content:space-between}}
+
+/* Sticky mobile call bar */
+.callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);display:flex}
+.callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--amber);color:#231a05;font-weight:800;font-size:1.05rem;padding:14px;border-radius:12px}
+@media(min-width:640px){.callbar{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Duck's Property Services home">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="8" fill="#1e4d2b"/><path d="M17 6l7 10h-4l4.5 7H9.5L14 16h-4l7-10z" fill="#e8a020"/><rect x="15.6" y="23" width="2.8" height="5" rx="1" fill="#e8a020"/></svg>
+      <span>Duck's Property Services<small>Richmond, Virginia · Since 2004</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+18044392010">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      (804) 439-2010
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <span class="badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="#e8a020" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        Serving Virginia since 2004
+      </span>
+      <h1>Excavation, lot clearing &amp; tree removal — <em>done right</em>, on budget.</h1>
+      <p class="sub">Commercial, industrial and residential site work across Virginia. We stay in contact throughout every project and finish to scope.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-amber" href="tel:+18044392010">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Call (804) 439-2010
+        </a>
+        <a class="btn btn-ghost" href="#contact">Request an Estimate</a>
+      </div>
+    </div>
+    <svg class="treeline" viewBox="0 0 800 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V70l25-30 25 30 20-45 25 45 15-20 30 20 20-55 30 55 20-25 25 25 15-40 30 40 25-30 20 30 25-50 30 50 15-20 25 20 20-40 30 40 20-25 25 25 15-45 30 45 20-30 25 30 15-20 30 20 20-45 25 45v20z" fill="#fff"/></svg>
+    <div class="hero-strip">
+      <div class="wrap strip-grid">
+        <div><b>20+</b><span>Years in Business</span></div>
+        <div><b>10+</b><span>Services Offered</span></div>
+        <div><b>VA</b><span>Statewide Service</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <p class="kicker">What We Do</p>
+      <h2>Full-service site work &amp; property services</h2>
+      <p class="lead">From breaking ground to final grade — one crew, one point of contact, for commercial, industrial and residential clients.</p>
+      <div class="svc-grid">
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20v-4h6v4M11 16l4-7 4 3-2 4"/><circle cx="7" cy="20" r="0"/><path d="M15 9l-2-5-4 2"/></svg></div><div><h3>Excavation &amp; Site Work</h3><p>Complete site preparation for projects of every size, done to scope and within budget.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l5 7h-3l4 6H6l4-6H7l5-7z"/><path d="M12 16v5M4 21h16"/></svg></div><div><h3>Lot Clearing</h3><p>Clearing lots and land to get your build or project ready to move.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3l6 7h-4l4 6h-5M9 6L4 12h3l-4 6h9"/><path d="M10 18v3M6 21h9"/></svg></div><div><h3>Tree Removal</h3><p>Safe removal of trees — from single problem trees to full properties.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M5 18l3-8h8l3 8M9 10V6h6v4"/></svg></div><div><h3>Grading</h3><p>Precise grading for drainage, driveways, pads and finished landscapes.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0M12 4v6M9 7l3 3 3-3"/></svg></div><div><h3>Sediment Ponds &amp; Erosion Control</h3><p>Sediment ponds and erosion control measures that keep your site compliant.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 17h13l-2-6H7l-2 6zM15 17h7M18 11l2 6M5 17v3M12 17v3"/></svg></div><div><h3>Dirt &amp; Gravel Delivery</h3><p>Fill dirt and gravel delivered where and when you need it.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg></div><div><h3>Snow Removal</h3><p>Reliable snow removal to keep lots, drives and access roads open.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 01-12 0c0-4 3-7 6-11z"/></svg></div><div><h3>Property Beautification</h3><p>Cleanup and improvements that lift the look and value of your property.</p></div></div>
+        <div class="svc"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div><h3>Emergency Services</h3><p>When storms hit or things can't wait, we respond. Additional services on request.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="why">
+    <div class="wrap">
+      <p class="kicker">Why Duck's</p>
+      <h2>Two decades of doing what we say</h2>
+      <p class="lead">In business since 2004, serving commercial, industrial and residential clients across Virginia.</p>
+      <div class="why-grid">
+        <div class="why-item"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div><h3>Since 2004</h3><p>Over 20 years of site work experience across Virginia.</p></div></div>
+        <div class="why-item"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-8.5 8.4c-1.5 0-2.9-.4-4.1-1L3 20l1.2-4.3A8.3 8.3 0 013.9 11.5a8.4 8.4 0 018.5-8.4 8.4 8.4 0 018.6 8.4z"/></svg></div><div><h3>Communication First</h3><p>We stay in contact throughout each project — no chasing us for updates.</p></div></div>
+        <div class="why-item"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div><div><h3>To Scope, On Budget</h3><p>We work with you so projects finish to scope and within budget.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="wrap">
+      <div class="area-card">
+        <div>
+          <p class="kicker" style="color:var(--amber)">Service Area</p>
+          <h2>Based in Richmond. Serving all of Virginia.</h2>
+          <p>Wherever your site is in the Commonwealth, we'll come take a look and give you a straight answer.</p>
+        </div>
+        <a class="btn btn-amber" href="tel:+18044392010">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Call for a Free Estimate
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <p class="kicker">Get In Touch</p>
+      <h2>Tell us about your project</h2>
+      <p class="lead">Call or email and we'll get back to you fast.</p>
+      <div class="contact-grid">
+        <div class="c-card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></div>
+          <h3>Phone</h3>
+          <a href="tel:+18044392010">(804) 439-2010</a>
+        </div>
+        <div class="c-card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <h3>Email</h3>
+          <a href="mailto:DucksPropertyServices@outlook.com">DucksPropertyServices<wbr>@outlook.com</a>
+        </div>
+        <div class="c-card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e4d2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <h3>Mail</h3>
+          <span>P.O. Box 70694</span>
+          <p class="note">Richmond, VA 23255</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap frow">
+    <div><b>Duck's Property Services, LLC</b> · Richmond, Virginia · Since 2004</div>
+    <div><a href="tel:+18044392010" style="color:#e8a020;font-weight:700">(804) 439-2010</a></div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+18044392010">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Call (804) 439-2010
+  </a>
+</div>
+
+</body>
+</html>

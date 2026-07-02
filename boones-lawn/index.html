@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boone's Lawn Care LLC — Lawn Care &amp; Small Tree Removal in Montgomery, AL</title>
+<meta name="description" content="Boone's Lawn Care LLC — fully insured lawn care, edging, trimming, weed wacking, small tree removal and clean-up throughout Montgomery, AL. Established 2018. Call (334) 669-4445.">
+<style>
+:root{
+  --green:#1f7a33;
+  --green-dark:#155c25;
+  --ink:#17211a;
+  --muted:#5a6b5e;
+  --bg:#f6f8f4;
+  --card:#ffffff;
+  --line:#e2e8de;
+  --accent:#e8f3ea;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.01em}
+.brand .logo{width:34px;height:34px;flex:0 0 auto}
+.nav-call{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:700;font-size:.92rem;padding:9px 16px;border-radius:999px;transition:background .15s}
+.nav-call:hover{background:var(--green-dark)}
+.nav-call svg{width:15px;height:15px}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#eaf3ec 0%,var(--bg) 100%);padding:56px 0 48px;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:600;color:var(--green-dark)}
+.badge svg{width:13px;height:13px}
+h1{font-size:clamp(1.9rem,6.4vw,3rem);line-height:1.12;letter-spacing:-.02em;font-weight:800;max-width:14ch}
+h1 span{color:var(--green)}
+.hero p.lede{margin:16px 0 26px;font-size:1.06rem;color:var(--muted);max-width:46ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;border-radius:12px;padding:15px 24px;font-size:1.02rem;transition:transform .1s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 6px 18px rgba(31,122,51,.28)}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-secondary{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn svg{width:18px;height:18px}
+.hero-grass{position:absolute;bottom:-2px;left:0;right:0;width:100%;height:46px;opacity:.55}
+
+/* Sections */
+section{padding:56px 0}
+.kicker{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+h2{font-size:clamp(1.5rem,4.6vw,2.1rem);letter-spacing:-.02em;line-height:1.2;margin-bottom:10px}
+.section-sub{color:var(--muted);max-width:52ch;margin-bottom:32px}
+
+/* Services */
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:860px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card .icon{width:44px;height:44px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card .icon svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.05rem;margin-bottom:6px;letter-spacing:-.01em}
+.card p{font-size:.92rem;color:var(--muted)}
+
+/* Why us */
+.why{background:#122e18;color:#fff;border-radius:0}
+.why .kicker{color:#8fd6a0}
+.why h2{color:#fff}
+.why .section-sub{color:#b9ccbe}
+.why-grid{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:560px){.why-grid{grid-template-columns:1fr 1fr}}
+.why-item{display:flex;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px}
+.why-item .check{flex:0 0 auto;width:26px;height:26px;border-radius:999px;background:#2e9c48;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.why-item .check svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.why-item h3{font-size:1rem;margin-bottom:3px}
+.why-item p{font-size:.88rem;color:#b9ccbe}
+
+/* Area */
+.area-box{display:grid;gap:20px;grid-template-columns:1fr;align-items:center}
+@media(min-width:760px){.area-box{grid-template-columns:1.1fr .9fr}}
+.map-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.map-card svg{width:100%;max-width:280px;margin:0 auto}
+.map-card .loc{margin-top:10px;font-weight:700;font-size:.95rem}
+.map-card .loc small{display:block;font-weight:500;color:var(--muted)}
+
+/* Contact */
+.contact{background:var(--accent)}
+.contact-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:700px){.contact-card{grid-template-columns:1fr 1fr 1fr}}
+.c-item{display:flex;gap:14px;align-items:flex-start}
+.c-item .icon{flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.c-item .icon svg{width:21px;height:21px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.c-item h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:2px}
+.c-item a,.c-item p{font-weight:600;font-size:.98rem;word-break:break-word}
+.c-item a:hover{color:var(--green)}
+
+/* Footer */
+footer{padding:28px 0 90px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.85rem}
+@media(min-width:700px){footer{padding-bottom:28px}}
+
+/* Sticky mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;font-weight:800;font-size:1.05rem;border-radius:12px;padding:14px}
+.callbar svg{width:18px;height:18px}
+@media(min-width:700px){.callbar{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#1f7a33"/><path d="M20 30V16M20 30c0-6-3-9-7-11 1 6 3 9 7 11zm0 0c0-6 3-9 7-11-1 6-3 9-7 11z" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Boone's Lawn Care
+    </div>
+    <a class="nav-call" href="tel:+13346694445">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (334) 669-4445
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>4.8 on Google</span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>BBB A Rating</span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fully Insured</span>
+    </div>
+    <h1>A cleaner yard, <span>done right</span> — every time.</h1>
+    <p class="lede">Boone's Lawn Care LLC provides quality lawn care, trimming, edging, and small tree removal throughout the Montgomery area. Established 2018 — reliable, professional, and fully insured.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+13346694445">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (334) 669-4445
+      </a>
+      <a class="btn btn-secondary" href="#services">See Services</a>
+    </div>
+  </div>
+  <svg class="hero-grass" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46V30c20-8 30 6 50-4s30 8 50 0 30-14 50-4 30 12 50 2 30-10 50-2 30 10 50 0 30-12 50-4 30 10 50 2 30-8 50 0 30 12 50 2 30-12 50-4 30 10 50 0 30-10 50-2 30 10 50 2 30-10 50-2 30 8 50 0 30-12 50-2 30 12 50 2 30-10 50-2 30 8 50 0 30-10 50-2 30 8 50 0V46z" fill="#1f7a33"/></svg>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">Our Services</span>
+    <h2>Everything your yard needs</h2>
+    <p class="section-sub">Quality work in a timely manner — from weekly mowing to clean-ups and small tree removal.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20v-4h8v4M13 18l6-8M17 7l3 3"/><circle cx="8" cy="13" r="1.5"/></svg></div>
+        <h3>Lawn Care</h3>
+        <p>Regular mowing and upkeep that keeps your lawn healthy and looking sharp all season.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20L14 10M14 10l4-4M18 6l2-2M12 8c2-2 2-5 0-6-1 2-1 4 0 6zM8 12c-2 2-5 2-6 0 2-1 4-1 6 0z"/></svg></div>
+        <h3>Weed Wacking</h3>
+        <p>String trimming along fences, beds, and tight spots your mower can't reach.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 18h16M4 18c4 0 6-2 8-2s4 2 8 2M9 16V6M9 6l-2 2M9 6l2 2"/></svg></div>
+        <h3>Edging</h3>
+        <p>Crisp, clean lines along driveways, walkways, and curbs for a manicured finish.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 21c0-6 2-10 6-13M12 8c0-3 2-5 6-5 0 4-2 6-6 5zM9 13c-3 1-6 0-7-3 3-1 6 0 7 3z"/></svg></div>
+        <h3>Trimming</h3>
+        <p>Hedge and shrub trimming that keeps your landscaping neat and shaped.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l4 6h-3l4 6h-3l3 6H7l3-6H7l4-6H8l4-6zM12 21v-3"/></svg></div>
+        <h3>Small Tree Removal</h3>
+        <p>Safe removal of small trees, limbs, and stumps that are in the way or a hazard.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20h16M7 20c0-4-2-6-3-7 3 0 5 1 6 3M17 20c0-4 2-6 3-7-3 0-5 1-6 3M12 20V10M12 10c-2-1-3-4-2-7 3 1 4 4 2 7z"/></svg></div>
+        <h3>Clean-Up</h3>
+        <p>Yard and debris clean-ups that get overgrown or messy properties back in shape.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="kicker">Why Boone's</span>
+    <h2>A local crew you can count on</h2>
+    <p class="section-sub">Serving the Montgomery area since 2018.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><h3>Fully Insured</h3><p>Your property is protected on every job.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><h3>Reliable &amp; Trustworthy</h3><p>We show up when we say we will and do the job right.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><h3>Professional &amp; Experienced</h3><p>Quality work in a timely manner, since 2018.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><h3>A Rating by the BBB</h3><p>Accountable, established, and rated by the Better Business Bureau.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap area-box">
+    <div>
+      <span class="kicker">Service Area</span>
+      <h2>Proudly serving the Montgomery area</h2>
+      <p class="section-sub" style="margin-bottom:16px">Boone's Lawn Care is up and running throughout the Montgomery, Alabama area. Not sure if we cover your neighborhood? Give us a quick call.</p>
+      <a class="btn btn-primary" href="tel:+13346694445">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Us
+      </a>
+    </div>
+    <div class="map-card">
+      <svg viewBox="0 0 280 200" aria-hidden="true">
+        <path d="M40 20h180l10 100-20 60H70l-14-40-22-60z" fill="#e8f3ea" stroke="#cfe0d2" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="150" cy="105" r="34" fill="#1f7a33" opacity=".12"/>
+        <circle cx="150" cy="105" r="20" fill="#1f7a33" opacity=".16"/>
+        <path d="M150 82c-9 0-16 7-16 16 0 12 16 26 16 26s16-14 16-26c0-9-7-16-16-16z" fill="#1f7a33"/>
+        <circle cx="150" cy="98" r="6" fill="#fff"/>
+      </svg>
+      <div class="loc">Montgomery, Alabama<small>and surrounding areas</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="kicker">Get In Touch</span>
+    <h2>Get your free estimate</h2>
+    <p class="section-sub">Call, text, or email — we'll get back to you fast.</p>
+    <div class="contact-card">
+      <div class="c-item">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><h3>Phone</h3><a href="tel:+13346694445">(334) 669-4445</a></div>
+      </div>
+      <div class="c-item">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
+        <div><h3>Email</h3><a href="mailto:booneslawncarellc@gmail.com">booneslawncarellc@gmail.com</a></div>
+      </div>
+      <div class="c-item">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div><h3>Mail</h3><p>411 Coliseum Blvd #8082, Montgomery, AL 36109</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Boone's Lawn Care LLC &middot; Montgomery, Alabama &middot; Est. 2018</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+13346694445">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Tap to Call — (334) 669-4445
+  </a>
+</div>
+
+</body>
+</html>
