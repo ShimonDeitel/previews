@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Pool Service Inc. | Waterford & Oakland County, MI</title>
+<style>
+  :root{
+    --blue:#0c5fa8;
+    --deep:#083a66;
+    --ink:#0f1b26;
+    --gray:#5a6b78;
+    --line:#e3e9ee;
+    --bg:#f6f9fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.5;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1080px;margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-0.2px;}
+  .logo svg{width:30px;height:30px;flex-shrink:0;}
+  .call-pill{
+    display:flex;align-items:center;gap:8px;
+    background:var(--blue);color:#fff;
+    padding:10px 16px;border-radius:999px;
+    font-weight:600;font-size:14px;
+    white-space:nowrap;
+  }
+  .call-pill svg{width:16px;height:16px;fill:#fff;flex-shrink:0;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(180deg,#eaf3fa 0%,#fff 100%);
+    padding:44px 20px 40px;
+    text-align:center;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#fff;border:1px solid var(--line);
+    padding:6px 14px;border-radius:999px;
+    font-size:12.5px;font-weight:600;color:var(--blue);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;line-height:1.15;letter-spacing:-0.5px;
+    font-weight:800;margin-bottom:14px;
+  }
+  .hero h1 span{color:var(--blue);}
+  .hero p{
+    color:var(--gray);font-size:16px;max-width:520px;margin:0 auto 26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center;}
+  .btn-primary{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--blue);color:#fff;font-weight:700;font-size:17px;
+    padding:16px 28px;border-radius:14px;width:100%;max-width:320px;
+    box-shadow:0 8px 20px rgba(12,95,168,0.28);
+  }
+  .btn-primary svg{width:20px;height:20px;fill:#fff;}
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:#fff;color:var(--ink);font-weight:600;font-size:15px;
+    padding:14px 24px;border-radius:14px;width:100%;max-width:320px;
+    border:1.5px solid var(--line);
+  }
+  .hero-meta{
+    margin-top:22px;font-size:13px;color:var(--gray);
+    display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;
+  }
+
+  /* SECTION TITLES */
+  .section{padding:52px 20px;}
+  .section-alt{background:var(--bg);}
+  .kicker{
+    font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--blue);text-align:center;margin-bottom:8px;
+  }
+  h2{
+    font-size:26px;font-weight:800;letter-spacing:-0.4px;
+    text-align:center;margin-bottom:12px;
+  }
+  .section-sub{
+    text-align:center;color:var(--gray);font-size:15px;
+    max-width:480px;margin:0 auto 32px;
+  }
+
+  /* SERVICES GRID */
+  .grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:22px;
+  }
+  .card-icon{
+    width:44px;height:44px;border-radius:12px;
+    background:#eaf3fa;display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .card-icon svg{width:22px;height:22px;stroke:var(--blue);fill:none;}
+  .card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .card p{font-size:14px;color:var(--gray);}
+
+  /* WHY US */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-num{
+    width:36px;height:36px;border-radius:10px;background:var(--deep);
+    color:#fff;font-weight:700;font-size:14px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .why-item h3{font-size:15.5px;font-weight:700;margin-bottom:4px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* AREA */
+  .area-box{
+    background:var(--deep);color:#fff;border-radius:20px;
+    padding:32px 24px;text-align:center;
+  }
+  .area-box h2{color:#fff;}
+  .area-box .section-sub{color:#c8d9e8;}
+  .area-list{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px;
+  }
+  .area-chip{
+    background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);
+    padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;
+  }
+
+  /* CONTACT */
+  .contact-card{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:28px 22px;max-width:420px;margin:0 auto;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 0;border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .ic{
+    width:38px;height:38px;border-radius:10px;background:#eaf3fa;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-row .ic svg{width:18px;height:18px;stroke:var(--blue);fill:none;}
+  .contact-row .label{font-size:11.5px;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;font-weight:700;}
+  .contact-row .value{font-size:15.5px;font-weight:600;}
+
+  /* FOOTER */
+  footer{
+    background:var(--ink);color:#9db0c0;
+    padding:30px 20px;text-align:center;font-size:13px;
+  }
+  footer strong{color:#fff;}
+
+  /* STICKY MOBILE CALL BAR */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--blue);
+    padding:12px 20px calc(12px + env(safe-area-inset-bottom));
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.15);
+  }
+  .sticky-call a{
+    color:#fff;font-weight:700;font-size:16px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .sticky-call svg{width:18px;height:18px;fill:#fff;}
+  body{padding-bottom:64px;}
+
+  @media (min-width:640px){
+    .hero h1{font-size:44px;}
+    .hero p{font-size:17px;}
+    .hero-ctas{flex-direction:row;justify-content:center;}
+    .btn-primary,.btn-secondary{width:auto;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    h2{font-size:32px;}
+  }
+  @media (min-width:900px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 17c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0" stroke="#0c5fa8" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M2 21c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0" stroke="#0c5fa8" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="12" cy="8" r="5" stroke="#0c5fa8" stroke-width="1.8"/>
+      </svg>
+      Ultimate Pool Service
+    </div>
+    <a href="tel:2484813345" class="call-pill">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      248-481-3345
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="badge">★ Family-Owned Since 1996</div>
+  <h1>Waterford's Trusted <span>Inground Pool</span> Care Team</h1>
+  <p>Openings, closings, weekly maintenance, and repairs for Oakland &amp; Wayne County homeowners — done right by a certified local crew.</p>
+  <div class="hero-ctas">
+    <a href="tel:2484813345" class="btn-primary">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      Call 248-481-3345
+    </a>
+    <a href="mailto:ultimatepoolservice1997@gmail.com" class="btn-secondary">Email Us</a>
+  </div>
+  <div class="hero-meta">
+    <span>Certified CPO Operators</span>
+    <span>·</span>
+    <span>Residential Inground Pools</span>
+    <span>·</span>
+    <span>Waterford, MI</span>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="kicker">What We Do</div>
+    <h2>Full-Service Pool Care</h2>
+    <p class="section-sub">From spring opening to winter closing, and everything the pool throws at you in between.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12a4 4 0 014-4h8a4 4 0 014 4M4 12v4a2 2 0 002 2h12a2 2 0 002-2v-4"/><circle cx="9" cy="18.5" r=".6"/></svg></div>
+        <h3>Openings &amp; Closings</h3>
+        <p>Seasonal pool openings, full closings, partial closings, and line blowing to protect your system.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-5 6.5-5 9.5a5 5 0 0010 0C17 9.5 15 7 12 3z"/></svg></div>
+        <h3>Weekly &amp; Bi-Weekly Maintenance</h3>
+        <p>Routine cleaning and upkeep on a schedule that fits your pool and your season.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4M15 3v4M4 9h16M6 9v10a2 2 0 002 2h8a2 2 0 002-2V9"/></svg></div>
+        <h3>Vacation Pool Care</h3>
+        <p>Heading out of town? We keep the pool balanced and clean while you're away.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3l1.5 3 3.3.5-2.4 2.3.6 3.3L10 10.6 7 12.1l.6-3.3L5.2 6.5l3.3-.5L10 3z"/><path d="M4 20c1.2-3 3.5-4 6-4s4.8 1 6 4"/></svg></div>
+        <h3>Chemical Balancing</h3>
+        <p>Water testing and treatment, including green-water recovery, done to CPO standards.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-1.8-.3 1.6 1.6 0 00-1 1.5V21a2 2 0 11-4 0v-.2a1.6 1.6 0 00-1-1.5 1.6 1.6 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.6 1.6 0 00.3-1.8 1.6 1.6 0 00-1.5-1H3a2 2 0 110-4h.2a1.6 1.6 0 001.5-1 1.6 1.6 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.6 1.6 0 001.8.3H9a1.6 1.6 0 001-1.5V3a2 2 0 114 0v.2a1.6 1.6 0 001 1.5 1.6 1.6 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.6 1.6 0 00-.3 1.8V9a1.6 1.6 0 001.5 1H21a2 2 0 110 4h-.2a1.6 1.6 0 00-1.5 1z"/></svg></div>
+        <h3>Equipment Repair</h3>
+        <p>Pump motor and filter repair, plus general system troubleshooting.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6-8 4 5 6-6M4 12l6 8 4-5 6 6"/></svg></div>
+        <h3>Leak Detection</h3>
+        <p>Tracking down where your pool is losing water, before it becomes a bigger problem.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
+        <h3>Tile, Coping &amp; Marcite</h3>
+        <p>Repair and restoration work on tile, coping, and marcite finishes.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <h3>Phone &amp; Email Consultation</h3>
+        <p>Questions about your pool? Call or email — we're happy to talk it through.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="kicker">Why Ultimate</div>
+    <h2>Local, Certified, Family-Run</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">1</div>
+        <div><h3>Certified CPO Operators</h3><p>Our team holds Certified Pool &amp; Spa Operator certification — trained to industry standard.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">2</div>
+        <div><h3>Since 1996</h3><p>Nearly three decades servicing inground pools across Oakland and Wayne County.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">3</div>
+        <div><h3>Family-Owned</h3><p>Run by the Clements family — Tina, Dan, and Taylor — carrying on a business built from the ground up.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">4</div>
+        <div><h3>Inground Specialists</h3><p>We focus on residential inground pools, so the work gets our full attention and expertise.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="area">
+  <div class="wrap">
+    <div class="area-box">
+      <div class="kicker" style="color:#8fc0e8;">Service Area</div>
+      <h2>Proudly Serving Oakland &amp; Wayne County</h2>
+      <p class="section-sub">Based in Waterford, Michigan — servicing homes throughout the surrounding area.</p>
+      <div class="area-list">
+        <span class="area-chip">Waterford</span>
+        <span class="area-chip">Redford</span>
+        <span class="area-chip">Oakland County</span>
+        <span class="area-chip">Wayne County</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact">
+  <div class="wrap">
+    <div class="kicker">Get In Touch</div>
+    <h2>Talk To Us Today</h2>
+    <p class="section-sub">Call, email, or stop by — we're happy to answer questions about your pool.</p>
+    <div class="contact-card">
+      <a href="tel:2484813345" class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="none"/></svg></div>
+        <div><div class="label">Phone</div><div class="value">248-481-3345</div></div>
+      </a>
+      <a href="mailto:ultimatepoolservice1997@gmail.com" class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4V4z" fill="none"/><path d="M4 6l8 7 8-7" fill="none"/></svg></div>
+        <div><div class="label">Email</div><div class="value">ultimatepoolservice1997@gmail.com</div></div>
+      </a>
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" fill="none"/><circle cx="12" cy="9" r="2.5" fill="none"/></svg></div>
+        <div><div class="label">Address</div><div class="value">1246 Forest Bay Drive<br>Waterford, MI 48328</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Ultimate Pool Service Inc.</strong><br>
+  Waterford, MI &middot; Serving Oakland &amp; Wayne County since 1996
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:2484813345">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+    Tap to Call 248-481-3345
+  </a>
+</div>
+
+</body>
+</html>
