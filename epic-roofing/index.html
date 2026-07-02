@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epic Roofing &amp; Construction — Tulsa, OK Roofing | (918) 771-0177</title>
+<meta name="description" content="Epic Roofing & Construction in Tulsa, OK. Roof inspection, replacement, roofing & construction, and solar panel installation. Licensed #80003667. Call (918) 771-0177.">
+<style>
+  :root{
+    --navy:#0f2438;
+    --navy2:#16324c;
+    --amber:#e8842b;
+    --amber-dark:#cf701c;
+    --ink:#1c2733;
+    --muted:#5b6b7a;
+    --line:#e4e9ee;
+    --bg:#f6f8fa;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Top bar */
+  .topbar{background:var(--navy);color:#cfdbe6;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:7px;padding-bottom:7px;gap:12px}
+  .topbar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar a{color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+  .brand-mark{flex:0 0 auto}
+  .brand-name{font-weight:800;font-size:17px;line-height:1.15;letter-spacing:-.2px;color:var(--navy)}
+  .brand-name small{display:block;font-size:10px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--amber)}
+  .nav-links{display:none;gap:26px;list-style:none}
+  .nav-links a{text-decoration:none;font-size:15px;font-weight:600;color:var(--ink)}
+  .nav-links a:hover{color:var(--amber)}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;
+    text-decoration:none;font-weight:700;font-size:15px;padding:10px 16px;border-radius:10px;
+    white-space:nowrap;box-shadow:0 2px 8px rgba(232,132,43,.35);
+  }
+  .call-btn:active{background:var(--amber-dark)}
+
+  /* Hero */
+  .hero{background:linear-gradient(165deg,var(--navy) 0%,var(--navy2) 60%,#1d4260 100%);color:#fff;overflow:hidden;position:relative}
+  .hero .wrap{position:relative;padding-top:56px;padding-bottom:150px;z-index:1}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#e9f0f6}
+  .hero h1{font-size:clamp(30px,7.5vw,52px);line-height:1.1;font-weight:800;letter-spacing:-.8px;margin:18px 0 14px;max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero p{font-size:17px;color:#c4d3df;max-width:46ch;margin-bottom:26px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;padding:15px 24px;border-radius:12px}
+  .btn-primary{background:var(--amber);color:#fff;box-shadow:0 4px 16px rgba(232,132,43,.4)}
+  .btn-primary:active{background:var(--amber-dark)}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:30px;font-size:13.5px;color:#a9bdcc}
+  .hero-facts div{display:flex;align-items:center;gap:7px}
+  .roofline{position:absolute;bottom:-2px;left:0;right:0;width:100%;height:auto}
+
+  /* Sections */
+  section{padding:56px 0}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+  h2{font-size:clamp(24px,5.5vw,34px);font-weight:800;letter-spacing:-.5px;color:var(--navy);line-height:1.15;margin-bottom:10px}
+  .lede{color:var(--muted);font-size:16px;max-width:60ch;margin-bottom:32px}
+
+  /* Services */
+  .services{background:var(--bg)}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card .icon{width:46px;height:46px;border-radius:12px;background:#fdf1e4;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .card h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .card p{font-size:14.5px;color:var(--muted)}
+
+  /* Why us */
+  .why-list{display:grid;grid-template-columns:1fr;gap:14px}
+  .why-item{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .why-item .tick{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .why-item strong{display:block;font-size:15.5px;color:var(--navy)}
+  .why-item span{font-size:13.5px;color:var(--muted)}
+
+  /* Area */
+  .area{background:var(--navy);color:#fff}
+  .area h2{color:#fff}
+  .area .lede{color:#b9c9d6}
+  .area-card{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px}
+  .area-card .pin{flex:0 0 auto}
+  .area-card strong{display:block;font-size:17px}
+  .area-card span{font-size:14px;color:#b9c9d6}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .contact-card{border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:14px;align-items:flex-start;text-decoration:none}
+  .contact-card .icon{flex:0 0 auto;width:42px;height:42px;border-radius:11px;background:#fdf1e4;display:flex;align-items:center;justify-content:center}
+  .contact-card strong{display:block;font-size:16px;color:var(--navy)}
+  .contact-card span{font-size:14.5px;color:var(--muted);word-break:break-word}
+  .cta-band{background:linear-gradient(120deg,var(--amber),#f09a48);border-radius:20px;padding:34px 24px;text-align:center;color:#fff;margin-top:36px}
+  .cta-band h3{font-size:clamp(21px,5vw,28px);font-weight:800;letter-spacing:-.4px;margin-bottom:8px}
+  .cta-band p{font-size:15px;opacity:.95;margin-bottom:20px}
+  .cta-band a{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:15px 28px;border-radius:12px}
+
+  /* Footer */
+  footer{background:#0b1b2b;color:#8fa3b3;font-size:13.5px;padding:34px 0 90px}
+  footer .wrap{display:flex;flex-direction:column;gap:8px}
+  footer a{color:#c8d6e0;text-decoration:none}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--amber);color:#fff;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:800;font-size:17px;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 18px rgba(0,0,0,.18);
+  }
+
+  @media(min-width:640px){
+    .grid{grid-template-columns:1fr 1fr}
+    .why-list{grid-template-columns:1fr 1fr}
+    .contact-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(min-width:900px){
+    .nav-links{display:flex}
+    .grid{grid-template-columns:repeat(4,1fr)}
+    .sticky-call{display:none}
+    footer{padding-bottom:34px}
+    .why-list{grid-template-columns:repeat(3,1fr)}
+    .contact-grid{grid-template-columns:repeat(4,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Open 7 days &middot; Mon&ndash;Sun 8:30am&ndash;7:00pm</span>
+    <a href="tel:+19187710177">(918) 771-0177</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+        <path d="M4 21 19 7l15 14" stroke="#e8842b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 20v11h20V20" stroke="#0f2438" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Epic Roofing<br>&amp; Construction<small>Tulsa, Oklahoma</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Epic</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+19187710177">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z" fill="#fff"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" stroke="#e8842b" stroke-width="2" stroke-linejoin="round"/></svg>
+        Licensed &middot; #80003667
+      </span>
+      <h1>Tulsa roofing, done <em>right</em>.</h1>
+      <p>Roof inspections, full replacements, construction, and solar panel installation — serving Tulsa, Oklahoma, seven days a week.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:+19187710177">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z" fill="#fff"/></svg>
+          (918) 771-0177
+        </a>
+        <a class="btn-ghost" href="#services">Our Services</a>
+      </div>
+      <div class="hero-facts">
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#e8842b" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#e8842b" stroke-width="2" stroke-linecap="round"/></svg>
+          Open Mon&ndash;Sun, 8:30am&ndash;7pm
+        </div>
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="#e8842b" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#e8842b" stroke-width="2"/></svg>
+          11047 S Memorial Dr., Tulsa, OK
+        </div>
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 2 2.9 6 6.6.9-4.8 4.6L17.9 20 12 16.9 6.1 20l1.2-6.5L2.5 8.9 9.1 8 12 2z" stroke="#e8842b" stroke-width="2" stroke-linejoin="round"/></svg>
+          Military discount available
+        </div>
+      </div>
+    </div>
+    <svg class="roofline" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V60l180-30 200 40 220-55 240 45 200-30 210 40 190-25v45H0z" fill="#ffffff"/></svg>
+  </div>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="kicker">What we do</div>
+      <h2>Roofing &amp; construction services</h2>
+      <p class="lede">From a first inspection to a finished roof — one licensed local team handles the whole job.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#e8842b" stroke-width="2"/><path d="m16.5 16.5 4 4" stroke="#e8842b" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Roof Inspection</h3>
+          <p>A thorough look at your roof's condition so you know exactly where it stands before making any decisions.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12 12 4l9 8" stroke="#e8842b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11v9h12v-9" stroke="#e8842b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Roof Replacement</h3>
+          <p>Full roof replacement done right the first time — protecting your home for the long haul.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 4.3a2 2 0 0 1 2.8 0l2.2 2.2a2 2 0 0 1 0 2.8L9 20H4v-5L14.7 4.3z" stroke="#e8842b" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <h3>Construction</h3>
+          <p>Roofing and construction work under one roof — one crew, one point of contact, one standard of quality.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="#e8842b" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="#e8842b" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Solar Panel Installation</h3>
+          <p>Put your roof to work. Professional solar panel installation for Tulsa homes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="kicker">Why Epic</div>
+      <h2>When you want it done right</h2>
+      <p class="lede">Founded in 2017 by Garrett Boulware and Chris Jensen, Epic Roofing &amp; Construction is a licensed Tulsa roofing company built on doing the job properly.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#e8842b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><strong>Licensed</strong><span>Oklahoma license #80003667</span></div>
+        </div>
+        <div class="why-item">
+          <div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#e8842b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><strong>BBB Accredited</strong><span>Better Business Bureau certified</span></div>
+        </div>
+        <div class="why-item">
+          <div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#e8842b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><strong>GacoFlex Certified</strong><span>Certified in GacoFlex roof coating systems</span></div>
+        </div>
+        <div class="why-item">
+          <div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#e8842b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><strong>Military Discount</strong><span>Thank-you savings for those who serve</span></div>
+        </div>
+        <div class="why-item">
+          <div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#e8842b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><strong>Open 7 Days a Week</strong><span>Mon&ndash;Sun, 8:30am&ndash;7:00pm</span></div>
+        </div>
+        <div class="why-item">
+          <div class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="#e8842b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><strong>Locally Owned</strong><span>Tulsa-based since 2017</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area" id="area">
+    <div class="wrap">
+      <div class="kicker">Where we work</div>
+      <h2>Proudly serving Tulsa, Oklahoma</h2>
+      <p class="lede">Your home isn't just a house — it's a castle. We treat every Tulsa roof that way.</p>
+      <div class="area-card">
+        <svg class="pin" width="42" height="42" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="#e8842b" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="#e8842b"/></svg>
+        <div>
+          <strong>Tulsa, OK &amp; surrounding area</strong>
+          <span>Based at 11047 S Memorial Dr., Tulsa, OK 74133 — call to confirm we cover your address.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="kicker">Get in touch</div>
+      <h2>Talk to a roofer today</h2>
+      <p class="lede">Call, email, or stop by — we're open seven days a week.</p>
+      <div class="contact-grid">
+        <a class="contact-card" href="tel:+19187710177">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z" stroke="#e8842b" stroke-width="2"/></svg></div>
+          <div><strong>Phone</strong><span>(918) 771-0177</span></div>
+        </a>
+        <a class="contact-card" href="mailto:info@epicroofs.net">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#e8842b" stroke-width="2"/><path d="m3 7 9 6 9-6" stroke="#e8842b" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div><strong>Email</strong><span>info@epicroofs.net</span></div>
+        </a>
+        <div class="contact-card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="#e8842b" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#e8842b" stroke-width="2"/></svg></div>
+          <div><strong>Address</strong><span>11047 S Memorial Dr., Tulsa, OK 74133</span></div>
+        </div>
+        <div class="contact-card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#e8842b" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#e8842b" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><strong>Hours</strong><span>Mon&ndash;Sun: 8:30am &ndash; 7:00pm</span></div>
+        </div>
+      </div>
+
+      <div class="cta-band">
+        <h3>Need eyes on your roof?</h3>
+        <p>One call gets a licensed Tulsa roofer on it.</p>
+        <a href="tel:+19187710177">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z" fill="#fff"/></svg>
+          Call (918) 771-0177
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:#fff">Epic Roofing &amp; Construction</strong> &middot; License #80003667</div>
+    <div>11047 S Memorial Dr., Tulsa, OK 74133 &middot; <a href="tel:+19187710177">(918) 771-0177</a> &middot; <a href="mailto:info@epicroofs.net">info@epicroofs.net</a></div>
+    <div>&copy; 2026 Epic Roofing &amp; Construction. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+19187710177">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z" fill="#fff"/></svg>
+  Tap to Call (918) 771-0177
+</a>
+
+</body>
+</html>

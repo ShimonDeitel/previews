@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Villani's Lawn &amp; Landscape LLC — Niagara Falls, NY</title>
+<meta name="description" content="Family owned landscaping, lawn care, snow removal, hardscapes and equipment rental serving Niagara Falls, Grand Island and Western NY. Call (716) 299-1414.">
+<style>
+  :root{
+    --green:#1e6b3a; --green-dark:#14502a; --green-deep:#0d3a1e;
+    --lime:#8fce5a; --ink:#16211a; --muted:#5a6b60; --bg:#f6f8f4;
+    --card:#ffffff; --line:#e3eadf; --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+  h2{font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2;letter-spacing:-.02em}
+  .kicker{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+  .sub{color:var(--muted);margin-top:10px;max-width:56ch}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1rem;letter-spacing:-.01em}
+  .brand .mark{width:34px;height:34px;border-radius:9px;background:var(--green);display:grid;place-items:center;flex-shrink:0}
+  .navlinks{display:none;gap:26px;font-size:.92rem;font-weight:600;color:var(--muted)}
+  .navlinks a:hover{color:var(--green)}
+  .call-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:999px;box-shadow:0 2px 8px rgba(20,80,42,.25);transition:background .15s}
+  .call-btn:hover{background:var(--green-dark)}
+  .call-btn svg{width:15px;height:15px}
+  @media(min-width:820px){.navlinks{display:flex}}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-dark) 55%,var(--green) 100%);color:#fff;padding:64px 0 0;overflow:hidden}
+  .hero-grid{display:grid;gap:36px}
+  .hero h1{font-size:clamp(2rem,7vw,3.3rem);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+  .hero h1 span{color:var(--lime)}
+  .hero p{margin-top:16px;font-size:1.05rem;color:#d7e6d5;max-width:48ch}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--green-deep);font-weight:800;font-size:1rem;padding:15px 24px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .12s}
+  .btn-primary:active{transform:scale(.97)}
+  .btn-primary svg{width:18px;height:18px}
+  .btn-ghost{display:inline-flex;align-items:center;padding:15px 24px;border-radius:12px;border:1.5px solid rgba(255,255,255,.45);font-weight:700;font-size:1rem;color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:7px 13px;border-radius:999px;font-size:.8rem;font-weight:600}
+  .badge svg{width:13px;height:13px;flex-shrink:0}
+  .hero-art{margin-top:8px}
+  @media(min-width:820px){.hero{padding-top:80px}.hero-grid{grid-template-columns:1.1fr .9fr;align-items:end}}
+
+  /* Services */
+  .services-grid{display:grid;gap:14px;margin-top:32px;grid-template-columns:1fr}
+  @media(min-width:560px){.services-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:box-shadow .15s,transform .15s}
+  .svc:hover{box-shadow:0 8px 24px rgba(20,80,42,.1);transform:translateY(-2px)}
+  .svc .ic{width:44px;height:44px;border-radius:11px;background:#e8f2e2;display:grid;place-items:center;margin-bottom:14px}
+  .svc .ic svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .svc h3{font-size:1.02rem;margin-bottom:5px}
+  .svc p{font-size:.88rem;color:var(--muted);line-height:1.5}
+
+  /* Why us */
+  .why{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why-grid{display:grid;gap:22px;margin-top:32px}
+  @media(min-width:720px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+  .why-item{display:flex;gap:14px;align-items:flex-start}
+  .why-item .dot{width:40px;height:40px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex-shrink:0}
+  .why-item .dot svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .why-item h3{font-size:1rem}
+  .why-item p{font-size:.88rem;color:var(--muted)}
+
+  /* Area */
+  .area-card{margin-top:30px;background:var(--green-deep);color:#fff;border-radius:20px;padding:34px 26px;display:grid;gap:24px}
+  @media(min-width:760px){.area-card{grid-template-columns:1fr auto;align-items:center;padding:40px}}
+  .area-card h3{font-size:1.35rem;letter-spacing:-.01em}
+  .area-card p{color:#c9dcc7;font-size:.95rem;margin-top:8px;max-width:52ch}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:7px 15px;font-size:.85rem;font-weight:600}
+
+  /* Contact */
+  .contact-grid{display:grid;gap:16px;margin-top:32px}
+  @media(min-width:720px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+  .c-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+  .c-card .ic{width:46px;height:46px;border-radius:50%;background:#e8f2e2;display:grid;place-items:center;margin:0 auto 12px}
+  .c-card .ic svg{width:21px;height:21px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .c-card h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700}
+  .c-card .big{font-size:1.08rem;font-weight:800;margin-top:6px;word-break:break-word}
+  .c-card .big a:hover{color:var(--green)}
+  .c-card small{color:var(--muted);display:block;margin-top:4px;font-size:.82rem}
+
+  /* CTA band */
+  .cta-band{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:#fff;text-align:center;border-radius:20px;padding:44px 24px;margin-top:44px}
+  .cta-band h2{font-size:clamp(1.4rem,4.5vw,2rem)}
+  .cta-band p{color:#d7e6d5;margin:10px auto 24px;max-width:46ch}
+
+  footer{padding:34px 0 90px;color:var(--muted);font-size:.85rem;text-align:center}
+  footer .fbrand{font-weight:700;color:var(--ink)}
+  @media(min-width:820px){footer{padding-bottom:40px}}
+
+  /* Sticky mobile call bar */
+  .callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;font-weight:800;font-size:1.05rem;padding:14px;border-radius:12px}
+  .callbar svg{width:18px;height:18px}
+  @media(min-width:820px){.callbar{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8fce5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9"/><path d="M12 9C12 5 9 3 5 3c0 4 3 6 7 6z" fill="#8fce5a" stroke="none"/><path d="M12 13c0-3 2.5-5 6-5 0 3.5-2.5 5-6 5z" fill="#cfe9b8" stroke="none"/></svg></span>
+      Villani's Lawn &amp; Landscape
+    </a>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:7162991414">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+      (716) 299-1414
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>A greener yard.<br>A <span>stronger</span> property.</h1>
+        <p>Family owned and operated for over 20 years, Villani's handles everything outdoors — from weekly grass cutting to full landscape installs, hardscapes, and snow removal.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="tel:7162991414">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+            Call (716) 299-1414
+          </a>
+          <a class="btn-ghost" href="#services">See Our Services</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#8fce5a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Family Owned 20+ Years</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#8fce5a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Open 24/7</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#8fce5a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Niagara Falls, NY</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2b8a4e"/><stop offset="1" stop-color="#1e6b3a"/>
+            </linearGradient>
+            <linearGradient id="lawn" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#8fce5a"/><stop offset="1" stop-color="#5fae3d"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="480" height="300" rx="18" fill="url(#sky)"/>
+          <circle cx="390" cy="60" r="30" fill="#cfe9b8" opacity=".9"/>
+          <!-- rolling lawn -->
+          <path d="M0 190 Q120 150 240 185 T480 175 V300 H0 Z" fill="url(#lawn)"/>
+          <path d="M0 225 Q140 195 280 222 T480 215 V300 H0 Z" fill="#4d9c33" opacity=".8"/>
+          <!-- mow stripes -->
+          <path d="M60 300 L130 205 L165 205 L120 300 Z" fill="#a5da78" opacity=".45"/>
+          <path d="M180 300 L235 210 L268 210 L240 300 Z" fill="#a5da78" opacity=".35"/>
+          <path d="M300 300 L340 212 L372 212 L360 300 Z" fill="#a5da78" opacity=".45"/>
+          <!-- trees -->
+          <g>
+            <rect x="86" y="128" width="10" height="34" rx="4" fill="#5b4224"/>
+            <circle cx="91" cy="105" r="34" fill="#2f7d43"/>
+            <circle cx="72" cy="118" r="22" fill="#3c9152"/>
+            <circle cx="112" cy="118" r="20" fill="#3c9152"/>
+          </g>
+          <g>
+            <rect x="352" y="140" width="8" height="28" rx="3" fill="#5b4224"/>
+            <circle cx="356" cy="122" r="26" fill="#2f7d43"/>
+            <circle cx="340" cy="132" r="16" fill="#3c9152"/>
+          </g>
+          <!-- shrubs / hedge -->
+          <ellipse cx="230" cy="176" rx="26" ry="14" fill="#2f7d43"/>
+          <ellipse cx="262" cy="180" rx="20" ry="11" fill="#3c9152"/>
+          <!-- stone path (hardscape) -->
+          <g fill="#d9d2c3" opacity=".95">
+            <ellipse cx="250" cy="236" rx="17" ry="8"/>
+            <ellipse cx="278" cy="254" rx="19" ry="9"/>
+            <ellipse cx="252" cy="273" rx="21" ry="10"/>
+            <ellipse cx="288" cy="291" rx="23" ry="10"/>
+          </g>
+          <!-- house -->
+          <g>
+            <rect x="150" y="118" width="70" height="52" rx="3" fill="#f2efe6"/>
+            <path d="M143 122 L185 92 L227 122 Z" fill="#8a5a33"/>
+            <rect x="176" y="140" width="18" height="30" rx="2" fill="#1e6b3a"/>
+            <rect x="158" y="132" width="13" height="13" rx="2" fill="#bcd9ef"/>
+            <rect x="200" y="132" width="13" height="13" rx="2" fill="#bcd9ef"/>
+          </g>
+          <!-- snowflake nod: sun rays -->
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <span class="kicker">What We Do</span>
+      <h2>One call covers your whole property</h2>
+      <p class="sub">We have the right tools for the job — year-round, in every season.</p>
+      <div class="services-grid">
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M4 20v-3c3-1 6-1 8 0s5 1 8 0v3"/><path d="M7 13V7l4 2 4-3v7"/></svg></div><h3>Landscape Design &amp; Installation</h3><p>Complete design and install to bring out the hidden beauty inside your property.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 19c0-6 3-9 6-9s6 3 6 9"/><path d="M12 10V4"/><path d="M9 6l3-2 3 2"/></svg></div><h3>Grass Cutting</h3><p>Reliable, clean cuts that keep your lawn healthy and looking sharp all season.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M8 21h8"/><path d="M12 12v9"/></svg></div><h3>Tree Trimming</h3><p>Careful trimming to keep trees healthy, safe, and shaped the way you want.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/><rect x="8.5" y="4" width="7" height="7" rx="1"/></svg></div><h3>Hardscape Work</h3><p>Patios, walkways, and stonework built to last through Western NY seasons.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 17h20"/><path d="M4 17l3-8h10l3 8"/><path d="M9 9V6h6v3"/></svg></div><h3>Mulching &amp; Bulk Products</h3><p>Fresh mulch and bulk material, with trucking and delivery available.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M2 12h20"/><path d="M5 5l14 14"/><path d="M19 5L5 19"/></svg></div><h3>Snow Removal</h3><p>Dependable plowing and removal to keep you moving all winter, 24/7.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9 17h5"/><path d="M6 14V8h8l3 6"/></svg></div><h3>Equipment Rental</h3><p>The right machine for your project, rented from a crew that uses them daily.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v2"/><path d="M12 18v2"/><path d="M4 12h2"/><path d="M18 12h2"/></svg></div><h3>Tub Grinding</h3><p>Heavy-duty grinding for land clearing, storm debris, and large-scale jobs.</p></div>
+        <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M6 18v-6h12v6"/><path d="M4 12l8-6 8 6"/></svg></div><h3>Dock Construction &amp; Repair</h3><p>Waterfront dock building and repair for lakeside and riverside properties.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="why">
+    <div class="wrap">
+      <span class="kicker">Why Villani's</span>
+      <h2>Our reputation is our name</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="dot"><svg viewBox="0 0 24 24"><path d="M12 21c-4-3.5-8-6.5-8-11a8 8 0 0 1 16 0c0 4.5-4 7.5-8 11z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><h3>Local &amp; Family Owned</h3><p>Over 20 years serving neighbors across Niagara Falls and Western NY — our name is on every job.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <div><h3>Open 24/7</h3><p>Storms don't keep business hours. Neither do we — reach us around the clock, every day.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="dot"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18v3h3l5.7-5.7a4.5 4.5 0 0 0 6-6L15 12l-3-3z"/></svg></span>
+          <div><h3>The Right Tools for the Job</h3><p>From mowers to heavy equipment and tub grinders, we bring pro-grade gear to every project.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA -->
+  <section id="area">
+    <div class="wrap">
+      <span class="kicker">Where We Work</span>
+      <h2>Proudly serving Western New York</h2>
+      <div class="area-card">
+        <div>
+          <h3>Based in Niagara Falls, NY</h3>
+          <p>6405 Packard Road, Niagara Falls, NY 14304 — serving homes and businesses throughout the region.</p>
+          <div class="chips">
+            <span class="chip">Niagara Falls</span>
+            <span class="chip">Grand Island</span>
+            <span class="chip">Western NY</span>
+          </div>
+        </div>
+        <a class="btn-primary" href="tel:7162991414">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+          Get a Free Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <span class="kicker">Get In Touch</span>
+      <h2>Ready when you are — 24/7</h2>
+      <div class="contact-grid">
+        <div class="c-card">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg></span>
+          <h3>Phone</h3>
+          <div class="big"><a href="tel:7162991414">(716) 299-1414</a></div>
+          <small>Fax: (716) 299-1413</small>
+        </div>
+        <div class="c-card">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21c-4-3.5-8-6.5-8-11a8 8 0 0 1 16 0c0 4.5-4 7.5-8 11z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <h3>Address</h3>
+          <div class="big">6405 Packard Road</div>
+          <small>Niagara Falls, NY 14304</small>
+        </div>
+        <div class="c-card">
+          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <h3>Hours</h3>
+          <div class="big">Open 24 / 7</div>
+          <small>Every day of the year</small>
+        </div>
+      </div>
+
+      <div class="cta-band">
+        <h2>See the hidden beauty inside your property</h2>
+        <p>Call today and tell us what you're working on — we'll bring the right tools for the job.</p>
+        <a class="btn-primary" href="tel:7162991414">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+          Call (716) 299-1414
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">Villani's Lawn &amp; Landscape LLC</div>
+    <div>6405 Packard Road, Niagara Falls, NY 14304 · (716) 299-1414</div>
+    <div style="margin-top:6px">Family owned &amp; operated for over 20 years.</div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:7162991414">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+    Tap to Call — (716) 299-1414
+  </a>
+</div>
+
+</body>
+</html>
