@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sasquatch Pest Control &mdash; Pest Control in Deming, WA (serving Whatcom County)</title>
+<style>
+  :root {
+    --navy: #0b2545;
+    --navy-light: #13355e;
+    --accent: #ff7a29;
+    --ink: #1a1a1a;
+    --paper: #faf8f5;
+    --line: #e4e0d8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 18px 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand { display:flex; align-items:center; gap:12px; font-weight:700; font-size:1.25rem; }
+  .brand svg { width:32px; height:32px; stroke:var(--accent); fill:none; stroke-width:1.6; }
+  .call-btn {
+    background: var(--accent);
+    color: #1a1a1a;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff;
+    padding: 90px 6vw 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:"";
+    position:absolute; inset:0;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 40px);
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    max-width: 900px;
+    margin: 0 auto 18px;
+    position: relative;
+  }
+  .hero p.sub {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 34px;
+    opacity: 0.9;
+    position: relative;
+  }
+  .hero .cta-row {
+    display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color:#1a1a1a;
+    padding: 16px 34px;
+    border-radius: 999px;
+    font-weight:700;
+    font-size:1.1rem;
+    text-decoration:none;
+    box-shadow: 0 8px 24px rgba(255,122,41,0.35);
+  }
+  .btn-secondary {
+    border: 2px solid rgba(255,255,255,0.6);
+    color:#fff;
+    padding:14px 32px;
+    border-radius:999px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .badges {
+    display:flex; gap:28px; justify-content:center; flex-wrap:wrap;
+    margin-top: 40px; position:relative;
+  }
+  .badge {
+    font-size:0.85rem;
+    opacity:0.85;
+    display:flex; align-items:center; gap:8px;
+  }
+  .badge svg { width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:2; }
+  section { padding: 64px 6vw; max-width:1100px; margin:0 auto; }
+  h2 { font-size: 2rem; margin-bottom: 12px; text-align:center; }
+  .section-sub { text-align:center; color:#555; max-width:640px; margin:0 auto 40px; }
+  .services-grid {
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 22px;
+  }
+  .service-card {
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding: 26px 22px; display:flex; gap:16px; align-items:flex-start;
+  }
+  .service-card svg { width:28px; height:28px; stroke:var(--navy); fill:none; stroke-width:1.6; flex-shrink:0; }
+  .service-card p { font-size:0.98rem; color:#2a2a2a; }
+  .why-us { background:#fff; }
+  .why-grid {
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap:24px; margin-top: 10px;
+  }
+  .why-card {
+    border-left: 4px solid var(--accent);
+    background: var(--paper);
+    padding: 22px 24px;
+    border-radius: 6px;
+  }
+  .why-card h3 { font-size:1.05rem; margin-bottom:6px; color:var(--navy); }
+  .contact {
+    background: var(--navy);
+    color:#fff;
+    text-align:center;
+  }
+  .contact h2 { color:#fff; }
+  .contact .section-sub { color: rgba(255,255,255,0.75); }
+  .contact-card {
+    background: rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:16px;
+    padding: 40px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .contact-row {
+    display:flex; align-items:center; justify-content:center; gap:12px;
+    font-size:1.3rem; font-weight:700; margin-bottom:16px;
+  }
+  .contact-row svg { width:22px; height:22px; stroke:var(--accent); fill:none; stroke-width:2; }
+  .contact small { opacity:0.7; display:block; margin-top:20px; }
+  footer {
+    text-align:center; padding: 28px 6vw; color:#888; font-size:0.85rem;
+  }
+  @media (max-width: 640px) {
+    header { flex-direction:column; text-align:center; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <svg viewBox="0 0 24 24"><path d="M12 2C10 5 8 8 8 11a4 4 0 0 0 8 0c0-3-2-6-4-9zm0 3c1 2 2 4 2 6a2 2 0 0 1-4 0c0-2 1-4 2-6zM4 20l3-3M20 20l-3-3M4 14l3 1M20 14l-3 1"/></svg>
+    Sasquatch Pest Control
+  </div>
+  <a class="call-btn" href="tel:3604102199">Call 360-410-2199</a>
+</header>
+
+<section class="hero" style="padding-top:70px;">
+  <h1>Pest Control You Can Trust in Deming, WA (serving Whatcom County)</h1>
+  <p class="sub">~15 broken image placeholders across the site and a footer copyright that reads a future/incorrect year.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="tel:3604102199">Tap to Call &mdash; 360-410-2199</a>
+    <a class="btn-secondary" href="mailto:sasquatchpest@gmail.com">Email Us</a>
+  </div>
+  <div class="badges">
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Family-owned and locally operated</div>
+<div class="badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>5.0 stars, 348+ reviews</div>
+<div class="badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Mon-Fri 8am-6pm, Sat-Sun 8am-4pm</div>
+  </div>
+</section>
+
+<section>
+  <h2>Our Services</h2>
+  <p class="section-sub">Straightforward, local pest control work &mdash; done right the first time.</p>
+  <div class="services-grid">
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M12 2C10 5 8 8 8 11a4 4 0 0 0 8 0c0-3-2-6-4-9zm0 3c1 2 2 4 2 6a2 2 0 0 1-4 0c0-2 1-4 2-6zM4 20l3-3M20 20l-3-3M4 14l3 1M20 14l-3 1"/></svg><p>Family-owned and locally operated</p></div>
+<div class="service-card"><svg viewBox="0 0 24 24"><path d="M12 2C10 5 8 8 8 11a4 4 0 0 0 8 0c0-3-2-6-4-9zm0 3c1 2 2 4 2 6a2 2 0 0 1-4 0c0-2 1-4 2-6zM4 20l3-3M20 20l-3-3M4 14l3 1M20 14l-3 1"/></svg><p>5.0 stars, 348+ reviews</p></div>
+<div class="service-card"><svg viewBox="0 0 24 24"><path d="M12 2C10 5 8 8 8 11a4 4 0 0 0 8 0c0-3-2-6-4-9zm0 3c1 2 2 4 2 6a2 2 0 0 1-4 0c0-2 1-4 2-6zM4 20l3-3M20 20l-3-3M4 14l3 1M20 14l-3 1"/></svg><p>Mon-Fri 8am-6pm, Sat-Sun 8am-4pm</p></div>
+<div class="service-card"><svg viewBox="0 0 24 24"><path d="M12 2C10 5 8 8 8 11a4 4 0 0 0 8 0c0-3-2-6-4-9zm0 3c1 2 2 4 2 6a2 2 0 0 1-4 0c0-2 1-4 2-6zM4 20l3-3M20 20l-3-3M4 14l3 1M20 14l-3 1"/></svg><p>Commercial IPM programs</p></div>
+  </div>
+</section>
+
+<section class="why-us">
+  <h2>Why Deming  Chooses Us</h2>
+  <p class="section-sub">Real facts, not empty promises.</p>
+  <div class="why-grid">
+    <div class="why-card"><h3>Verified</h3><p>Family-owned and locally operated</p></div>
+<div class="why-card"><h3>Verified</h3><p>5.0 stars, 348+ reviews</p></div>
+<div class="why-card"><h3>Verified</h3><p>Mon-Fri 8am-6pm, Sat-Sun 8am-4pm</p></div>
+<div class="why-card"><h3>Verified</h3><p>Residential: ants, bed bugs, bees, fleas, roaches, rodents, spiders, termites, wasps + repairs/exclusions</p></div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Get In Touch Today</h2>
+  <p class="section-sub">Fast, friendly, local service &mdash; call, text, or email.</p>
+  <div class="contact-card">
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h2.28a1 1 0 0 1 .97.76l1.1 4.4a1 1 0 0 1-.5 1.11L7.1 10.6a16 16 0 0 0 6.3 6.3l1.33-1.75a1 1 0 0 1 1.11-.5l4.4 1.1a1 1 0 0 1 .76.97V19a2 2 0 0 1-2 2h-1C10.7 21 3 13.3 3 4V5z"/></svg>
+      <a href="tel:3604102199">360-410-2199</a>
+    </div>
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+      <a href="mailto:sasquatchpest@gmail.com">sasquatchpest@gmail.com</a>
+    </div>
+    <small>Serving Deming, WA (serving Whatcom County)</small>
+  </div>
+</section>
+
+<footer>
+  &copy; Sasquatch Pest Control &middot; Prototype homepage built by Ship48
+</footer>
+</body>
+</html>
