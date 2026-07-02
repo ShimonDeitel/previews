@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
 <meta charset="UTF-8">
-<title>A2Z Heating & Plumbing — HVAC & plumbing</title>
+<title>A2Z Heating & Plumbing — HVAC & Plumbing in Iowa City Corridor, IA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -25,6 +23,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -120,23 +142,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -193,15 +215,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -210,108 +246,126 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for A2Z Heating & Plumbing — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20A2Z Heating & Plumbing&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20A2Z Heating & Plumbing.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">Heating · Cooling · Plumbing · Iowa City Corridor</div>
-  <h1>53,000 jobs into it,<br><span>we've seen your problem before.</span></h1>
+  <div class="hero-eyebrow">Iowa City Corridor, IA · HVAC & Plumbing</div>
+  <h1>A2Z Heating & Plumbing<br><span>53,000 jobs into it, we've seen your problem before.</span></h1>
   <p>A2Z Heating & Plumbing is a family-owned North Liberty company serving the Iowa City corridor since 2003 — furnaces, AC, boilers, and full plumbing, with 24/7 emergency service.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20A2Z%20Heating%20%26%20Plumbing&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20A2Z%20Heating%20%26%20Plumbing." class="btn">Request Service</a>
-    <a href="#services" class="btn-ghost">See Our Services</a>
+    <a href="#services" class="btn">Our Services</a>
+    <a href="#contact" class="btn-ghost">Get In Touch</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">Iowa weather finds the weak link.</h2>
-    <p class="lead reveal delay-1">Furnaces fail on the coldest night, AC quits on the hottest day. That's just how it goes — unless it's maintained.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Furnace out in January</h3>
-        <p>An Iowa cold snap with no heat isn't uncomfortable — it's an emergency, and frozen pipes are next.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Why A2Z Heating & Plumbing?</h2>
+    <p class="lead reveal delay-1">When you hire A2Z Heating & Plumbing, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>53,000 Jobs Completed</h3>
+        <p>Experience that comes from doing the work, again and again.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>AC limping through July</h3>
-        <p>Humid corridor summers punish old AC units. They rarely fail gradually.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>27 Awards Won</h3>
+        <p>Recognition for quality and service across the corridor.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Water heater roulette</h3>
-        <p>Most homeowners find out the heater is done when the shower does.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Repairs vs. replace guesswork</h3>
-        <p>Without an honest tech, you can't know if you're fixing a system or feeding it.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>24/7 Emergency Service</h3>
+        <p>Because heating and plumbing failures don't schedule.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Heating, cooling, and plumbing — A to Z.</h2>
-  <p class="lead reveal delay-1">Iowa City, Cedar Rapids, Coralville, Tiffin, and surrounding communities.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">HVAC & Plumbing services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M100 52 C110 72 130 84 130 112 A30 30 0 0 1 70 112 C70 96 82 88 86 74 C92 84 98 86 100 52 Z" stroke="var(--accent)" stroke-width="7" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-right">
       <span class="tag">Heating</span>
-      <h3>Furnaces, boilers, heat pumps, fireplaces.</h3>
-      <p>Installation, service, repair, and replacement by certified technicians — Goodman dealer.</p>
+      <h3>Heating</h3>
+      <p>Furnaces, boilers, heat pumps, fireplaces.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-right">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M100 55 V145 M61 78 L139 122 M139 78 L61 122 M100 55 L90 68 M100 55 L110 68 M100 145 L90 132 M100 145 L110 132" stroke="var(--accent)" stroke-width="6" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="55" y="70" width="90" height="60" rx="10" stroke="var(--accent)" stroke-width="8"/>
+        <path d="M55 85 L100 110 L145 85" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-left">
       <span class="tag">Cooling</span>
-      <h3>Ready before the humidity hits.</h3>
-      <p>AC repair and replacement to keep corridor summers on the right side of the thermostat.</p>
+      <h3>Cooling</h3>
+      <p>Ready before the humidity hits.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M100 52 C100 52 65 95 65 118 A35 35 0 0 0 135 118 C135 95 100 52 100 52 Z" stroke="var(--accent)" stroke-width="7" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M100 50 L115 85 L153 90 L125 115 L133 153 L100 133 L67 153 L75 115 L47 90 L85 85 Z" stroke="var(--accent)" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-right">
       <span class="tag">Plumbing</span>
-      <h3>From water heaters to full remodels.</h3>
-      <p>Water heaters, faucets, drains, toilets, remodels, and new construction plumbing.</p>
+      <h3>Plumbing</h3>
+      <p>From water heaters to full remodels.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-right">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><circle cx="100" cy="100" r="45" stroke="var(--accent)" stroke-width="7"/><path d="M100 75 V100 L120 112" stroke="var(--accent)" stroke-width="7" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="60" y="55" width="80" height="90" rx="12" stroke="var(--accent)" stroke-width="8"/>
+        <circle cx="100" cy="130" r="6" fill="var(--accent)"/>
+      </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">24/7 Emergency Service</span>
-      <h3>Because failures don't schedule.</h3>
-      <p>Round-the-clock residential emergency service — plus commercial boiler and rooftop work.</p>
+      <span class="tag">Emergency Service</span>
+      <h3>24/7 Emergency Service</h3>
+      <p>Because failures don't schedule.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Two decades, 53,000 jobs, one family.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">2003</div>
@@ -328,20 +382,34 @@
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
   <p class="quote reveal-scale delay-2">"A family-owned and operated small business serving the corridor since 2003."</p>
-  <p class="quote-author reveal-scale delay-3">— A2Z Heating & Plumbing, North Liberty, Iowa</p>
+  <p class="quote-author reveal-scale delay-3">— A2Z Heating & Plumbing</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Heat, cool, or plumbing trouble?</h2>
-  <p class="reveal delay-1">Call anytime — 24/7 emergency service across the Iowa City corridor.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20A2Z%20Heating%20%26%20Plumbing&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20A2Z%20Heating%20%26%20Plumbing." class="btn reveal delay-2">Request Service</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <a href="mailto:info@a2zheatingplumbing.com" class="btn reveal delay-2">Email Us</a>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-2">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@a2zheatingplumbing.com">info@a2zheatingplumbing.com</a></div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Service Area</div>
+      <div class="value">Iowa City Corridor</div>
+    </div>
+    <div class="contact-item reveal delay-4">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Fri 8am–6pm</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>A2Z Heating & Plumbing · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; A2Z Heating & Plumbing · HVAC & Plumbing · Iowa City Corridor, IA</p>
 </footer>
 
 <script>
@@ -358,5 +426,3 @@
   targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
-
-</html>

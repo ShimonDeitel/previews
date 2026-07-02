@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
 <meta charset="UTF-8">
-<title>Jenkins Lawn & Landscape — landscaping</title>
+<title>Jenkins Lawn & Landscape — Landscaping in St. Joseph, MO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -25,6 +23,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -120,23 +142,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -193,15 +215,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -210,108 +246,126 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for Jenkins Lawn & Landscape — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Jenkins Lawn & Landscape&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20Jenkins Lawn & Landscape.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">Landscaping · St. Joseph, Missouri · Since 1993</div>
-  <h1>St. Joseph yards,<br><span>kept beautiful since 1993.</span></h1>
+  <div class="hero-eyebrow">St. Joseph, MO · Landscaping</div>
+  <h1>Jenkins Lawn & Landscape<br><span>St. Joseph yards, kept beautiful since 1993.</span></h1>
   <p>Jenkins Lawn & Landscape has served St. Joseph and a 30-mile radius for over 30 years — design, maintenance, lawn health, and even snow and holiday lighting.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Jenkins%20Lawn%20%26%20Landscape&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Jenkins%20Lawn%20%26%20Landscape." class="btn">Get a Free Estimate</a>
-    <a href="#services" class="btn-ghost">See Our Services</a>
+    <a href="#services" class="btn">Our Services</a>
+    <a href="#contact" class="btn-ghost">Get In Touch</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">A yard is a full-time job you already have.</h2>
-    <p class="lead reveal delay-1">Between mowing, mulching, treatments, and cleanup, most homeowners are a season behind.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Landscaping that never happens</h3>
-        <p>The vision for the yard stays a vision — because installation is a bigger job than a weekend.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Why Jenkins Lawn & Landscape?</h2>
+    <p class="lead reveal delay-1">When you hire Jenkins Lawn & Landscape, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>30+ Years of Trust</h3>
+        <p>St. Joseph's trusted lawn experts since 1993.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>Thin, patchy grass</h3>
-        <p>Without aeration, seeding, and the right treatments, lawns fade a little more each year.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>30-Mile Service Radius</h3>
+        <p>Wide coverage beyond just St. Joseph itself.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Cleanup that piles up</h3>
-        <p>Leaves, brush, and overgrowth accumulate faster than free Saturdays do.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Winter and holidays, unhandled</h3>
-        <p>Snow needs clearing at 5 a.m. and holiday lights need a ladder you'd rather not climb.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>Year-Round Services</h3>
+        <p>Snow and holiday lighting keep the crew busy beyond growing season.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Four seasons, one local crew.</h2>
-  <p class="lead reveal delay-1">Serving St. Joseph plus Atchison, Platte City, Weston, and everything within 30 miles.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Landscaping services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M140 60 C90 60 62 92 62 128 C62 136 64 142 66 146 C98 144 138 120 140 60 Z M66 146 C80 110 104 88 128 74" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-right">
       <span class="tag">Landscaping</span>
-      <h3>Design it, plant it, mulch it.</h3>
-      <p>Landscape design, installation, planting, and mulching that turns the plan into the yard.</p>
+      <h3>Landscaping</h3>
+      <p>Design it, plant it, mulch it.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-right">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M60 120 H120 L132 95 H145 M60 120 V95 H100 M70 138 A10 10 0 1 0 70.01 138 M125 138 A10 10 0 1 0 125.01 138" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="55" y="70" width="90" height="60" rx="10" stroke="var(--accent)" stroke-width="8"/>
+        <path d="M55 85 L100 110 L145 85" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-left">
       <span class="tag">Lawn Health</span>
-      <h3>Grow the lawn, not just cut it.</h3>
-      <p>Aeration, fertilization, seeding, and seasonal treatments for turf that actually thickens.</p>
+      <h3>Lawn Health</h3>
+      <p>Grow the lawn, not just cut it.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M100 50 L145 68 V105 C145 130 125 145 100 152 C75 145 55 130 55 105 V68 Z M82 105 L96 118 L122 88" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M100 50 L115 85 L153 90 L125 115 L133 153 L100 133 L67 153 L75 115 L47 90 L85 85 Z" stroke="var(--accent)" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Maintenance & Cleanup</span>
-      <h3>Stay ahead of the growth.</h3>
-      <p>Mowing, edging, trimming, tree and brush removal, and full cleanups year-round.</p>
+      <span class="tag">Maintenance</span>
+      <h3>Maintenance & Cleanup</h3>
+      <p>Stay ahead of the growth.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-right">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M100 55 V145 M61 78 L139 122 M139 78 L61 122 M100 55 L90 68 M100 55 L110 68 M100 145 L90 132 M100 145 L110 132" stroke="var(--accent)" stroke-width="6" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="60" y="55" width="80" height="90" rx="12" stroke="var(--accent)" stroke-width="8"/>
+        <circle cx="100" cy="130" r="6" fill="var(--accent)"/>
+      </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Snow & Holiday Services</span>
-      <h3>The off-season, covered.</h3>
-      <p>24/7 snow and ice management, plus holiday light design, installation, and storage.</p>
+      <span class="tag">Snow & Holiday</span>
+      <h3>Snow & Holiday Services</h3>
+      <p>The off-season, covered.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Thirty-three years of local yards.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">1993</div>
@@ -328,20 +382,34 @@
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
   <p class="quote reveal-scale delay-2">"St. Joseph's trusted lawn experts since 1993."</p>
-  <p class="quote-author reveal-scale delay-3">— Jenkins Lawn & Landscape, St. Joseph, Missouri</p>
+  <p class="quote-author reveal-scale delay-3">— Jenkins Lawn & Landscape</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Want the yard without the weekends?</h2>
-  <p class="reveal delay-1">Free estimates within 30 miles of St. Joseph.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Jenkins%20Lawn%20%26%20Landscape&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Jenkins%20Lawn%20%26%20Landscape." class="btn reveal delay-2">Get a Free Estimate</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <a href="mailto:info@jenkinslawnlandscape.com" class="btn reveal delay-2">Email Us</a>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-2">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@jenkinslawnlandscape.com">info@jenkinslawnlandscape.com</a></div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Service Area</div>
+      <div class="value">St. Joseph and a 30-mile radius</div>
+    </div>
+    <div class="contact-item reveal delay-4">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Fri 8am–6pm</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>Jenkins Lawn & Landscape · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; Jenkins Lawn & Landscape · Landscaping · St. Joseph, MO</p>
 </footer>
 
 <script>
@@ -358,5 +426,3 @@
   targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
-
-</html>

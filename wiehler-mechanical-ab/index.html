@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>Wiehler Plumbing & Heating — Plumbing & Heating</title>
+<title>Wiehler Mechanical — Plumbing & Heating in Calgary, AB</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -23,6 +23,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -118,23 +142,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -191,15 +215,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -208,66 +246,73 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for Wiehler Mechanical — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Wiehler Mechanical&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20Wiehler Mechanical.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">Plumbing & Heating · Done Right</div>
-  <h1>Three generations since 1979<br><span>deserve more than a dated homepage.</span></h1>
+  <div class="hero-eyebrow">Calgary, AB · Plumbing & Heating</div>
+  <h1>Wiehler Mechanical<br><span>Three generations of family craftsmanship.</span></h1>
   <p>Founded by Marty Wiehler in 1979 and carried on by his sons — plumbing, heating, hot water and air quality across Calgary, Airdrie, Cochrane, Okotoks and Red Deer.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Wiehler%20Plumbing%20%26%20Heating%20%E2%80%94%20Plumbing%20%26%20Heating&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Wiehler%20Plumbing%20%26%20Heating%20%E2%80%94%20Plumbing%20%26%20Heating." class="btn">Get Your Free Preview</a>
-    <a href="#services" class="btn-ghost">See What's Included</a>
+    <a href="#services" class="btn">Our Services</a>
+    <a href="#contact" class="btn-ghost">Get In Touch</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">Your old site is costing you jobs.</h2>
-    <p class="lead reveal delay-1">Most plumbing sites were built once, years ago, and never touched again. Calgary homeowners notice.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Looks outdated on phones</h3>
-        <p>Slow, cramped, and clearly built before 2015 — where 80% of your leads are searching from.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Why Wiehler Mechanical?</h2>
+    <p class="lead reveal delay-1">When you hire Wiehler Mechanical, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>46 Years of Family Craftsmanship</h3>
+        <p>Founded in 1979 by Marty Wiehler and still run by his sons today.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>No clear way to contact you</h3>
-        <p>Buried phone numbers and broken contact forms send customers straight to a competitor.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>A Real Wiehler on Every Job</h3>
+        <p>You're never just a ticket number — a family member is behind the work.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Generic stock templates</h3>
-        <p>The same layout as a hundred other Plumbing & Heating businesses — nothing that says this is really you.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Doesn't rank on Google</h3>
-        <p>No structure search engines trust, so local jobs go to whoever shows up first — rarely you.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>Full Mechanical Service</h3>
+        <p>Plumbing, heating, hot water and air quality, all under one roof.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Everything your business needs online.</h2>
-  <p class="lead reveal delay-1">One page, built in 48 hours, made to convert visitors into booked jobs.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Plumbing & Heating services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M70 60 H110 V90 H140 V130 M70 60 V150 M55 150 H85" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="140" cy="145" r="8" fill="var(--accent)"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Instant Trust</span>
-      <h3>46 years of family craftsmanship, visible instantly.</h3>
-      <p>A father-and-sons story told properly — the kind of history no franchise competitor can copy.</p>
+      <span class="tag">Plumbing</span>
+      <h3>Plumbing</h3>
+      <p>Complete residential plumbing repair and installation.</p>
     </div>
   </div>
 
@@ -280,9 +325,9 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">One-Tap Contact</span>
-      <h3>Every visitor one tap from a real Wiehler.</h3>
-      <p>Sticky call button, click-to-text and a booking form that lands straight in the inbox — no missed calls, no missed jobs.</p>
+      <span class="tag">Heating</span>
+      <h3>Heating & Boilers</h3>
+      <p>Furnace and boiler service to keep Alberta winters comfortable.</p>
     </div>
   </div>
 
@@ -294,9 +339,9 @@
       </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Built To Rank</span>
-      <h3>Found from Calgary to Red Deer.</h3>
-      <p>Local SEO structure for every service area, so nearby heating and plumbing searches land on you first.</p>
+      <span class="tag">Hot Water</span>
+      <h3>Hot Water Systems</h3>
+      <p>Tank and tankless water heater installation and repair.</p>
     </div>
   </div>
 
@@ -309,18 +354,18 @@
       </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Live In 48 Hours</span>
-      <h3>From nothing to live — before the next boiler season.</h3>
-      <p>No lengthy build process. Approved, shipped, and getting found online by the weekend.</p>
+      <span class="tag">Air Quality</span>
+      <h3>Air Quality</h3>
+      <p>Indoor air quality solutions for healthier homes.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Built on results, not promises.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">1979</div>
@@ -331,26 +376,40 @@
       <div class="label">Wiehlers On The Team</div>
     </div>
     <div class="trust-stat reveal-scale delay-3">
-      <div class="num">48hr</div>
-      <div class="label">Site Turnaround</div>
+      <div class="num">46</div>
+      <div class="label">Years in Business</div>
     </div>
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
-  <p class="quote reveal-scale delay-2">“I didn’t think a website could actually bring in calls. This one had a customer booking a job the same week it went live.”</p>
-  <p class="quote-author reveal-scale delay-3">— A family plumbing business, after switching</p>
+  <p class="quote reveal-scale delay-2">"I didn't think a website could actually bring in calls. This one had a customer booking a job the same week it went live."</p>
+  <p class="quote-author reveal-scale delay-3">— A homeowner, Calgary area</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Ready to see Wiehler Plumbing & Heating like this?</h2>
-  <p class="reveal delay-1">This is a free preview — no commitment. If you want it live, it's ready in 48 hours.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Wiehler%20Plumbing%20%26%20Heating%20%E2%80%94%20Plumbing%20%26%20Heating&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Wiehler%20Plumbing%20%26%20Heating%20%E2%80%94%20Plumbing%20%26%20Heating." class="btn reveal delay-2">Claim Your Free Preview</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <a href="mailto:info@wiehlermechanical.com" class="btn reveal delay-2">Email Us</a>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-2">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@wiehlermechanical.com">info@wiehlermechanical.com</a></div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Service Area</div>
+      <div class="value">Calgary, Airdrie, Cochrane, Okotoks and Red Deer</div>
+    </div>
+    <div class="contact-item reveal delay-4">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Fri 8am–6pm</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>Wiehler Plumbing & Heating · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; Wiehler Mechanical · Plumbing & Heating · Calgary, AB</p>
 </footer>
 
 <script>

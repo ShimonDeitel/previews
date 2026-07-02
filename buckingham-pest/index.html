@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
 <meta charset="UTF-8">
-<title>Buckingham Pest Control — pest control</title>
+<title>Buckingham Pest Control — Pest Control in Greater St. Louis, MO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -25,6 +23,30 @@
   }
 
   section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
 
   /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
   .reveal{
@@ -120,23 +142,23 @@
   }
   @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
 
-  /* ================= PROBLEM SECTION ================= */
-  .problem{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
-  .problem-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .problem h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-  .problem > .problem-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
 
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
-  .pain-card{
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
     background:var(--bg);border-radius:20px;padding:32px 26px;
     border:1px solid #e5e5e7;
   }
-  .pain-card .x{
-    width:40px;height:40px;border-radius:50%;background:#ffe8e8;color:#d70015;
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
     display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
   }
-  .pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
-  .pain-card p{font-size:.95rem;color:var(--ink-soft);}
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
 
   /* ================= SERVICES ================= */
   .services{text-align:center;}
@@ -193,15 +215,29 @@
   }
   .quote-author{color:#a1a1a6;font-size:1rem;}
 
-  /* ================= CTA ================= */
-  .cta{
-    text-align:center;padding:160px 24px 180px;
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
   }
-  .cta h2{
+  .contact h2{
     font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
     max-width:780px;margin:0 auto 22px;
   }
-  .cta p{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
 
   footer{
     text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
@@ -210,108 +246,126 @@
 </style>
 
 <!-- ============================================================= -->
-<!-- 1. HERO -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for Buckingham Pest Control — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Buckingham Pest Control&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20Buckingham Pest Control.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
 <!-- ============================================================= -->
 <section class="hero">
-  <div class="hero-eyebrow">Pest Control · Greater St. Louis · 30 Years</div>
-  <h1>Pests picked the wrong<br><span>side of the river.</span></h1>
+  <div class="hero-eyebrow">Greater St. Louis, MO · Pest Control</div>
+  <h1>Buckingham Pest Control<br><span>Pests picked the wrong side of the river.</span></h1>
   <p>Buckingham Pest Control has protected homes across St. Charles, St. Louis, and Jefferson counties for about 30 years — from termites and bed bugs to raccoons in the attic.</p>
   <div class="hero-cta">
-    <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Buckingham%20Pest%20Control&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Buckingham%20Pest%20Control." class="btn">Get an Inspection</a>
-    <a href="#services" class="btn-ghost">See Our Services</a>
+    <a href="#services" class="btn">Our Services</a>
+    <a href="#contact" class="btn-ghost">Get In Touch</a>
   </div>
   <div class="scroll-cue"></div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 2. THE PROBLEM -->
+<!-- 2. WHY US — customer-facing trust points -->
 <!-- ============================================================= -->
-<section class="problem">
-  <div class="problem-inner">
-    <h2 class="reveal">By the time you see one, there are more.</h2>
-    <p class="lead reveal delay-1">Missouri pests don't announce themselves. Here's what's usually happening before you notice.</p>
-    <div class="pain-grid">
-      <div class="pain-card reveal delay-1">
-        <div class="x">✕</div>
-        <h3>Termites eating quietly</h3>
-        <p>Termite damage averages tens of thousands per home — and it happens out of sight.</p>
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Why Buckingham Pest Control?</h2>
+    <p class="lead reveal delay-1">When you hire Buckingham Pest Control, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>30 Years in Business</h3>
+        <p>A locally-owned family business serving Greater St. Louis for three decades.</p>
       </div>
-      <div class="pain-card reveal delay-2">
-        <div class="x">✕</div>
-        <h3>Wildlife moving in</h3>
-        <p>Squirrels, raccoons, opossums, and birds treat attics like vacancies.</p>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>Five Counties Covered</h3>
+        <p>Wide regional coverage across the metro area.</p>
       </div>
-      <div class="pain-card reveal delay-3">
-        <div class="x">✕</div>
-        <h3>Bed bugs hitchhiking</h3>
-        <p>One trip, one used couch — and suddenly it's a whole-house problem.</p>
-      </div>
-      <div class="pain-card reveal delay-4">
-        <div class="x">✕</div>
-        <h3>Mosquito-owned backyards</h3>
-        <p>Ticks, fleas, and mosquitoes can make your own yard a no-go zone all summer.</p>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>One Call Handles It All</h3>
+        <p>From termites to raccoons, one team does the job.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 3. SERVICES -->
+<!-- 3. SERVICES — what we do for you -->
 <!-- ============================================================= -->
 <section class="services" id="services">
-  <h2 class="reveal">Every pest, one local company.</h2>
-  <p class="lead reveal delay-1">Structural pests, termites, wildlife, and yard treatments across the St. Louis metro.</p>
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Pest Control services done right, by a team that treats your property like its own.</p>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><circle cx="100" cy="112" r="30" stroke="var(--accent)" stroke-width="7"/><path d="M100 82 V60 M78 90 L62 74 M122 90 L138 74 M70 112 H50 M130 112 H150 M80 134 L66 148 M120 134 L134 148" stroke="var(--accent)" stroke-width="7" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-right">
-      <span class="tag">Structural Pest Control</span>
-      <h3>Ants, spiders, roaches — gone.</h3>
-      <p>Treatment for ants, spiders, cockroaches, bed bugs, and fleas, inside and out.</p>
+      <span class="tag">Structural Pests</span>
+      <h3>Structural Pest Control</h3>
+      <p>Ants, spiders, roaches — gone.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-right">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M100 50 L145 68 V105 C145 130 125 145 100 152 C75 145 55 130 55 105 V68 Z M82 105 L96 118 L122 88" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="55" y="70" width="90" height="60" rx="10" stroke="var(--accent)" stroke-width="8"/>
+        <path d="M55 85 L100 110 L145 85" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Termite Removal & Inspection</span>
-      <h3>Stop the most expensive pest first.</h3>
-      <p>Termite inspections and removal before the damage bill grows.</p>
+      <span class="tag">Termite Control</span>
+      <h3>Termite Removal & Inspection</h3>
+      <p>Stop the most expensive pest first.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-left">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M60 105 L100 65 L140 105 M72 100 V145 H128 V100 M92 145 V118 H108 V145" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M100 50 L115 85 L153 90 L125 115 L133 153 L100 133 L67 153 L75 115 L47 90 L85 85 Z" stroke="var(--accent)" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="service-text reveal-right">
       <span class="tag">Wildlife Removal</span>
-      <h3>Humane, thorough, sealed up after.</h3>
-      <p>Squirrels, raccoons, opossums, and birds removed — and their entry points closed.</p>
+      <h3>Wildlife Removal</h3>
+      <p>Humane, thorough, sealed up after.</p>
     </div>
   </div>
 
   <div class="service-row">
     <div class="service-visual reveal-right">
-      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/><path d="M85 80 H115 L120 145 H80 Z M92 80 V68 H108 V80 M120 60 L132 55 M124 72 L138 70 M116 50 L124 40" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="60" y="55" width="80" height="90" rx="12" stroke="var(--accent)" stroke-width="8"/>
+        <circle cx="100" cy="130" r="6" fill="var(--accent)"/>
+      </svg>
     </div>
     <div class="service-text reveal-left">
-      <span class="tag">Mosquito, Tick & Flea Control</span>
-      <h3>Take the yard back.</h3>
-      <p>Seasonal treatments plus rodent control and T•A•P insulation for lasting protection.</p>
+      <span class="tag">Mosquito & Tick</span>
+      <h3>Mosquito, Tick & Flea Control</h3>
+      <p>Take the yard back.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================= -->
-<!-- 4. TRUST -->
+<!-- 4. TRUST — the business speaking to its customers -->
 <!-- ============================================================= -->
 <section class="trust">
-  <h2 class="reveal-scale">Three decades of pest-free St. Louis homes.</h2>
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
   <div class="trust-stats">
     <div class="trust-stat reveal-scale delay-1">
       <div class="num">30</div>
@@ -328,20 +382,34 @@
   </div>
   <div class="stars reveal-scale delay-1">★★★★★</div>
   <p class="quote reveal-scale delay-2">"A locally-owned family business serving the Greater St. Louis area for 30 years."</p>
-  <p class="quote-author reveal-scale delay-3">— Buckingham Pest Control, St. Peters, Missouri</p>
+  <p class="quote-author reveal-scale delay-3">— Buckingham Pest Control</p>
 </section>
 
 <!-- ============================================================= -->
-<!-- 5. CTA -->
+<!-- 5. CONTACT — the business's own contact info -->
 <!-- ============================================================= -->
-<section class="cta" id="cta">
-  <h2 class="reveal">Hearing something in the walls?</h2>
-  <p class="reveal delay-1">Schedule an inspection — St. Charles, St. Louis, Jefferson counties and beyond.</p>
-  <a href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Buckingham%20Pest%20Control&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20site%20like%20this%20for%20Buckingham%20Pest%20Control." class="btn reveal delay-2">Get an Inspection</a>
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <a href="mailto:info@buckinghampestcontro.com" class="btn reveal delay-2">Email Us</a>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-2">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:info@buckinghampestcontro.com">info@buckinghampestcontro.com</a></div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Service Area</div>
+      <div class="value">St. Charles, St. Louis, and Jefferson counties</div>
+    </div>
+    <div class="contact-item reveal delay-4">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Fri 8am–6pm</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>Buckingham Pest Control · Prototype by Ship48 · site-in-48h</p>
+  <p>&copy; Buckingham Pest Control · Pest Control · Greater St. Louis, MO</p>
 </footer>
 
 <script>
@@ -358,5 +426,3 @@
   targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
-
-</html>
