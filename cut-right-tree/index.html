@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cut Right Tree Service — Chattanooga Tree Removal, Trimming &amp; 24/7 Emergency</title>
+<meta name="description" content="Licensed &amp; insured tree service in Chattanooga, TN. Tree removal, trimming, stump grinding, crane service. 24/7 emergency response. Call (423) 260-1238.">
+<style>
+:root{
+  --green:#1e5c33;
+  --green-dark:#14401f;
+  --green-deep:#0c2a15;
+  --lime:#8fd14f;
+  --amber:#f5a623;
+  --ink:#14211a;
+  --muted:#5c6b60;
+  --bg:#f6f8f4;
+  --white:#ffffff;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+svg{display:block}
+
+/* Top emergency bar */
+.topbar{background:var(--green-deep);color:#cfe8d4;font-size:13px;font-weight:600;text-align:center;padding:8px 14px}
+.topbar a{color:var(--lime);text-decoration:none;font-weight:800}
+
+/* Header */
+header{background:var(--white);position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(0,0,0,.07)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .mark{width:40px;height:40px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-name{font-weight:800;font-size:17px;letter-spacing:-.02em;line-height:1.1}
+.brand-name span{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.call-btn{display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:11px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(30,92,51,.35)}
+.call-btn:active{transform:scale(.97)}
+.nav-links{display:none;gap:26px;font-size:15px;font-weight:600}
+.nav-links a{text-decoration:none;color:var(--ink)}
+.nav-links a:hover{color:var(--green)}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-dark) 55%,var(--green) 100%);color:#fff;position:relative;overflow:hidden}
+.hero-inner{padding:56px 0 130px;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;letter-spacing:.02em}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1{font-size:clamp(34px,7.5vw,58px);line-height:1.06;letter-spacing:-.03em;font-weight:900;margin:20px 0 16px}
+h1 em{font-style:normal;color:var(--lime)}
+.hero p.lede{font-size:clamp(16px,4vw,19px);color:#d7e7db;max-width:560px;font-weight:500}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:16px;padding:16px 24px;border-radius:12px;text-decoration:none;transition:transform .1s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--lime);color:var(--green-deep);box-shadow:0 6px 20px rgba(0,0,0,.3);flex:1 1 100%;font-size:18px}
+.btn-ghost{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.35);color:#fff;flex:1 1 100%}
+.hero-proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:13.5px;font-weight:700;color:#cfe8d4}
+.hero-proof div{display:flex;align-items:center;gap:7px}
+.treeline{position:absolute;bottom:-2px;left:0;width:100%;z-index:1;pointer-events:none}
+
+/* Stats strip */
+.stats{margin-top:-64px;position:relative;z-index:3}
+.stats-card{background:var(--white);border-radius:var(--radius);box-shadow:0 12px 34px rgba(12,42,21,.14);display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}
+.stat{padding:20px 8px;text-align:center;border-right:1px solid #eef2ec}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:clamp(20px,5vw,30px);font-weight:900;color:var(--green);letter-spacing:-.02em}
+.stat span{font-size:11.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+/* Sections */
+section{padding:64px 0}
+.kicker{color:var(--green);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+h2{font-size:clamp(26px,6vw,38px);font-weight:900;letter-spacing:-.025em;line-height:1.12;margin:8px 0 14px}
+.sub{color:var(--muted);font-size:16.5px;max-width:620px}
+
+/* Services */
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+.card{background:var(--white);border:1px solid #e7ece6;border-radius:var(--radius);padding:22px;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 10px 26px rgba(12,42,21,.1);transform:translateY(-2px)}
+.card .icon{width:48px;height:48px;border-radius:12px;background:#e9f4e6;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card h3{font-size:18px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14.5px}
+.card.hot{background:var(--green-deep);border-color:var(--green-deep);color:#fff}
+.card.hot .icon{background:rgba(143,209,79,.18)}
+.card.hot p{color:#b9d4c0}
+.card.hot .tag{display:inline-block;background:var(--amber);color:#3a2a00;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+
+/* Why us */
+.why{background:var(--white)}
+.why-list{display:grid;grid-template-columns:1fr;gap:6px;margin-top:28px}
+.why-item{display:flex;gap:16px;padding:18px;border-radius:12px}
+.why-item:hover{background:var(--bg)}
+.why-item .tick{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.why-item h3{font-size:16.5px;font-weight:800}
+.why-item p{color:var(--muted);font-size:14.5px}
+
+/* Service area */
+.area{background:var(--green-deep);color:#fff}
+.area .sub{color:#b9d4c0}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 17px;font-size:14px;font-weight:700}
+.chip.home{background:var(--lime);border-color:var(--lime);color:var(--green-deep)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:32px}
+.contact-card{background:var(--white);border:1px solid #e7ece6;border-radius:var(--radius);padding:26px}
+.contact-card h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.contact-card p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+.contact-card a.big{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;color:var(--green);text-decoration:none;word-break:break-all}
+.contact-card a.big.email{font-size:16px}
+form{display:grid;gap:12px}
+label{font-size:13px;font-weight:800;letter-spacing:.02em}
+input,select,textarea{width:100%;padding:14px;border:1.5px solid #d8e0d6;border-radius:10px;font:inherit;font-size:16px;background:#fbfcfa}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green)}
+.submit{background:var(--green);color:#fff;border:0;border-radius:12px;padding:16px;font-size:17px;font-weight:800;cursor:pointer}
+.submit:active{transform:scale(.98)}
+.form-note{font-size:12.5px;color:var(--muted);text-align:center}
+
+/* Footer */
+footer{background:#0a2010;color:#8fb397;padding:40px 0 110px;font-size:13.5px}
+.foot{display:flex;flex-direction:column;gap:10px}
+footer a{color:#cfe8d4;text-decoration:none;font-weight:700}
+
+/* Sticky mobile call bar */
+.sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid #e2e8e0;display:flex;gap:10px}
+.sticky-call a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:900;font-size:16px;padding:14px;border-radius:12px;text-decoration:none}
+.sticky-call .c1{background:var(--green);color:#fff}
+.sticky-call .c2{background:#eef4ec;color:var(--green-dark)}
+
+@media(min-width:720px){
+  .nav-links{display:flex}
+  .btn-primary,.btn-ghost{flex:0 1 auto}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .why-list{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr 1.2fr}
+  .sticky-call{display:none}
+  footer{padding-bottom:40px}
+}
+@media(min-width:980px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .grid .card.hot{grid-column:span 3;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px}
+  .grid .card.hot .icon{margin:0}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Storm damage? We answer 24/7 &mdash; <a href="tel:+14232601238">(423) 260-1238</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Cut Right Tree Service home">
+      <span class="mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L5.5 11h3L4 17.5h6V22h4v-4.5h6L15.5 11h3L12 2z" fill="#8fd14f"/></svg>
+      </span>
+      <span class="brand-name">Cut Right Tree Service<span>Chattanooga, TN</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+14232601238">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z" fill="currentColor"/></svg>
+      (423) 260-1238
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <span class="badge"><span class="dot"></span>24/7 Emergency Tree Service &middot; Licensed &amp; Insured</span>
+      <h1>Chattanooga&rsquo;s trees,<br>cut <em>right</em> the first time.</h1>
+      <p class="lede">Over 30 years of tree removal, trimming, and storm response across the Chattanooga area. Skilled, equipped, reliable &mdash; and ready when you call.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+14232601238">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z" fill="currentColor"/></svg>
+          Call (423) 260-1238
+        </a>
+        <a class="btn btn-ghost" href="#contact">Get a Free Estimate</a>
+      </div>
+      <div class="hero-proof">
+        <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="#8fd14f"/></svg>Licensed &amp; Insured</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="#8fd14f"/></svg>BBB Accredited</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="#8fd14f"/></svg>Financing Available</div>
+      </div>
+    </div>
+    <svg class="treeline" viewBox="0 0 1440 90" preserveAspectRatio="none" height="90" aria-hidden="true"><path d="M0 90V62l30-6 18-24 16 24 26 4 14-32 18 32 34 6 22-40 20 40 30 4 12-20 18 20 40 8 26-52 24 52 36 4 16-28 20 28 44 6 18-36 22 36 38 6 14-24 20 24 42 4 24-44 22 44 40 6 16-26 18 26 46 6 20-38 24 38 44 4 12-18 18 18 50 8 22-46 26 46 60 8 18-30 22 30 62 6V90H0z" fill="#f6f8f4"/></svg>
+  </div>
+
+  <!-- STATS -->
+  <div class="wrap stats">
+    <div class="stats-card">
+      <div class="stat"><b>30+</b><span>Years&rsquo; Experience</span></div>
+      <div class="stat"><b>24/7</b><span>Emergency Response</span></div>
+      <div class="stat"><b>Free</b><span>Estimates</span></div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <span class="kicker">What We Do</span>
+      <h2>Full-service tree care, big jobs to small.</h2>
+      <p class="sub">From delicate pruning to full removals with crane support, one crew handles the whole job &mdash; and leaves your yard clean.</p>
+      <div class="grid">
+        <div class="card hot">
+          <span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-2 8 9-12h-6l2-8z" fill="#f5a623"/></svg></span>
+          <div>
+            <span class="tag">24/7 Priority</span>
+            <h3>Emergency Tree Service</h3>
+            <p>Storm damage, fallen limbs, trees on structures. Call any hour &mdash; we come ready to work.</p>
+          </div>
+          <a class="btn btn-primary" style="flex:none" href="tel:+14232601238">Call Now</a>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L5.5 11h3L4 17.5h7V22h2v-4.5h7L15.5 11h3L12 2z" fill="#1e5c33"/></svg></span>
+          <h3>Tree Removal</h3>
+          <p>Safe, controlled removal of hazardous, dead, or unwanted trees of any size.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M9 4H4v5M15 20h5v-5" stroke="#1e5c33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <h3>Tree Trimming &amp; Pruning</h3>
+          <p>Shaping, thinning, and clearance cuts that keep trees healthy and property safe.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1e5c33" stroke-width="2.2"/><path d="M12 8v4l3 2" stroke="#1e5c33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <h3>Tree Assessment</h3>
+          <p>Honest evaluations of tree health and risk before you spend a dollar on work.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="14" r="6" stroke="#1e5c33" stroke-width="2.2"/><path d="M12 14L17 5" stroke="#1e5c33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <h3>Stump Grinding</h3>
+          <p>Grind stumps below grade so you can replant, mow, or build over them.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 20h18M6 20V9l8-5v16M14 8l6 3v9" stroke="#1e5c33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Crane Services</h3>
+          <p>Heavy equipment for large removals and tight spots where climbing won&rsquo;t cut it.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" stroke="#1e5c33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Land Clearing</h3>
+          <p>Lot and brush clearing to get your land build-ready or back under control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="why">
+    <div class="wrap">
+      <span class="kicker">Why Cut Right</span>
+      <h2>The crew your neighbors call back.</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <span class="tick"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="#fff"/></svg></span>
+          <div><h3>30+ years in the trees</h3><p>Decades of local experience on Chattanooga-area jobs of every size.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="tick"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="#fff"/></svg></span>
+          <div><h3>Licensed &amp; insured</h3><p>Fully covered work, so the risk never lands on you or your property.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="tick"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="#fff"/></svg></span>
+          <div><h3>Certified arborist team</h3><p>Tree care decisions made by people trained to keep trees healthy.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="tick"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z" fill="#fff"/></svg></span>
+          <div><h3>Fair, matched pricing</h3><p>Free estimates, financing available, and we&rsquo;ll match reasonable competitor quotes.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section id="area" class="area">
+    <div class="wrap">
+      <span class="kicker" style="color:var(--lime)">Where We Work</span>
+      <h2>Serving the greater Chattanooga area.</h2>
+      <p class="sub">Based at 3115 Curtis St in Chattanooga, we run crews across Hamilton County and nearby North Georgia communities.</p>
+      <div class="chips">
+        <span class="chip home">Chattanooga</span>
+        <span class="chip">Hixson</span>
+        <span class="chip">Soddy Daisy</span>
+        <span class="chip">Red Bank</span>
+        <span class="chip">Ooltewah</span>
+        <span class="chip">Apison</span>
+        <span class="chip">Collegedale</span>
+        <span class="chip">Signal Mountain</span>
+        <span class="chip">Rock Springs</span>
+        <span class="chip">Chickamauga</span>
+        <span class="chip">Lafayette</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <span class="kicker">Free Estimate</span>
+      <h2>Tell us about the job.</h2>
+      <p class="sub">Call for the fastest response &mdash; especially for emergencies &mdash; or send the details and we&rsquo;ll get back to you.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Call or email anytime</h3>
+          <p>24/7 emergency tree service</p>
+          <a class="big" href="tel:+14232601238">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z" fill="currentColor"/></svg>
+            (423) 260-1238
+          </a>
+          <p style="margin:18px 0 6px"><b style="color:var(--ink)">Email</b></p>
+          <a class="big email" href="mailto:contact@cutrighttreeservice.com">contact@cutrighttreeservice.com</a>
+          <p style="margin:18px 0 0"><b style="color:var(--ink)">Address</b><br>3115 Curtis St, Chattanooga, TN 37406</p>
+        </div>
+        <div class="contact-card">
+          <form onsubmit="event.preventDefault();this.innerHTML='<p style=&quot;font-weight:800;font-size:18px;padding:30px 0;text-align:center&quot;>Thanks! We&rsquo;ll be in touch shortly.<br><span style=&quot;font-weight:600;font-size:14px;color:#5c6b60&quot;>Need us now? Call (423) 260-1238.</span></p>'">
+            <div><label for="f-name">Name</label><input id="f-name" required autocomplete="name"></div>
+            <div><label for="f-phone">Phone</label><input id="f-phone" type="tel" required autocomplete="tel"></div>
+            <div><label for="f-service">Service needed</label>
+              <select id="f-service">
+                <option>Tree Removal</option><option>Tree Trimming / Pruning</option><option>Emergency / Storm Damage</option><option>Stump Grinding</option><option>Tree Assessment</option><option>Crane Service</option><option>Land Clearing</option><option>Other</option>
+              </select>
+            </div>
+            <div><label for="f-msg">Details</label><textarea id="f-msg" rows="3" placeholder="Tell us about the tree, location, and access"></textarea></div>
+            <button class="submit" type="submit">Request Free Estimate</button>
+            <p class="form-note">No spam, no obligation. We just call you back.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <b style="color:#fff;font-size:15px">Cut Right Tree Service</b>
+    <span>3115 Curtis St, Chattanooga, TN 37406 &middot; Licensed &amp; Insured &middot; 24/7 Emergency</span>
+    <span><a href="tel:+14232601238">(423) 260-1238</a> &middot; <a href="mailto:contact@cutrighttreeservice.com">contact@cutrighttreeservice.com</a></span>
+    <span>&copy; 2026 Cut Right Tree Service. All rights reserved.</span>
+  </div>
+</footer>
+
+<div class="sticky-call" aria-hidden="false">
+  <a class="c1" href="tel:+14232601238">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z" fill="currentColor"/></svg>
+    Call Now
+  </a>
+  <a class="c2" href="#contact">Free Estimate</a>
+</div>
+
+</body>
+</html>
