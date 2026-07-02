@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Killeen Plumbing Company | Westlake, OH Plumber</title>
+<style>
+  :root{
+    --navy:#0b2e4f;
+    --navy-dark:#071f38;
+    --blue:#1f6fd6;
+    --blue-light:#eaf2fd;
+    --ink:#12202e;
+    --gray:#5b6b78;
+    --line:#e3e8ee;
+    --bg:#ffffff;
+    --off:#f6f9fc;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+
+  /* Top call bar */
+  .topbar{
+    background:var(--navy-dark);
+    color:#fff;
+    font-size:13px;
+    text-align:center;
+    padding:8px 12px;
+  }
+  .topbar a{color:#fff;font-weight:600;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;
+    max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--navy);}
+  .brand-mark{width:34px;height:34px;flex:0 0 auto;}
+  .brand-text{line-height:1.15;}
+  .brand-text small{display:block;font-weight:500;font-size:11px;color:var(--gray);letter-spacing:.02em;}
+  .call-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:10px 16px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;flex:0 0 auto;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:52px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-80px;top:-80px;
+    width:320px;height:320px;
+    background:radial-gradient(circle,rgba(31,111,214,0.35),transparent 70%);
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.18);
+    color:#cfe0f7;
+    font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    margin-bottom:14px;
+  }
+  .hero h1 span{color:#7fb2f5;}
+  .hero p{
+    font-size:16px;
+    color:#c6d4e3;
+    max-width:52ch;
+    margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:16px;
+    padding:16px 20px;
+    border-radius:12px;
+    width:100%;
+  }
+  .btn svg{width:20px;height:20px;flex:0 0 auto;}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(31,111,214,0.35);}
+  .btn-secondary{background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.28);}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:10px 20px;
+    font-size:13px;color:#aebfd2;
+  }
+  .hero-meta div{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:15px;height:15px;flex:0 0 auto;color:#7fb2f5;}
+
+  /* Trust strip */
+  .trust{
+    background:var(--off);
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  .trust-inner{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    text-align:center;
+  }
+  .trust-item{font-size:13px;font-weight:700;color:var(--navy);display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .trust-item span{font-weight:500;color:var(--gray);font-size:12px;}
+
+  /* Section heading */
+  .sec-head{margin-bottom:28px;text-align:center;}
+  .sec-tag{
+    font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;
+    margin-bottom:8px;
+  }
+  .sec-head h2{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin-bottom:8px;}
+  .sec-head p{color:var(--gray);font-size:15px;max-width:48ch;margin:0 auto;}
+
+  /* Services grid */
+  .services{background:var(--bg);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .service-card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+    background:#fff;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .service-icon{
+    flex:0 0 auto;
+    width:44px;height:44px;
+    border-radius:10px;
+    background:var(--blue-light);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-icon svg{width:22px;height:22px;color:var(--blue);}
+  .service-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .service-card p{font-size:13.5px;color:var(--gray);}
+
+  /* Why us */
+  .why{background:var(--navy);color:#fff;}
+  .why .sec-head h2{color:#fff;}
+  .why .sec-head p{color:#b9c8da;}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .why-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .why-num{
+    font-size:13px;font-weight:800;color:#7fb2f5;
+    margin-bottom:8px;
+  }
+  .why-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .why-card p{font-size:13.5px;color:#c6d4e3;}
+
+  /* Area */
+  .area{background:var(--off);}
+  .area-chips{
+    display:flex;flex-wrap:wrap;gap:8px;
+    justify-content:center;
+  }
+  .chip{
+    font-size:13px;font-weight:600;color:var(--navy);
+    background:#fff;
+    border:1px solid var(--line);
+    padding:8px 14px;
+    border-radius:999px;
+  }
+  .area-note{
+    text-align:center;color:var(--gray);font-size:13.5px;margin-top:20px;
+  }
+
+  /* Hours + contact */
+  .contact{background:var(--bg);}
+  .contact-grid{
+    display:grid;grid-template-columns:1fr;gap:18px;
+  }
+  .card{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;
+  }
+  .card h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .card h3 svg{width:18px;height:18px;color:var(--blue);}
+  .hours-row{
+    display:flex;justify-content:space-between;
+    font-size:14px;color:var(--ink);
+    padding:8px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:last-child{color:var(--gray);}
+  .contact-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);}
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row svg{width:18px;height:18px;color:var(--blue);flex:0 0 auto;}
+  .contact-row a{font-weight:700;color:var(--navy);font-size:15px;}
+  .contact-row .label{display:block;font-size:11px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(160deg,var(--blue) 0%,#154f9c 100%);
+    color:#fff;text-align:center;
+  }
+  .final-cta h2{font-size:24px;font-weight:800;margin-bottom:10px;}
+  .final-cta p{color:#dbe8fb;margin-bottom:22px;font-size:15px;}
+  .final-cta .btn-secondary{background:#fff;color:var(--navy);border:none;}
+
+  footer{
+    background:var(--navy-dark);color:#9fb0c2;
+    text-align:center;padding:28px 20px;font-size:12.5px;
+  }
+  footer p{margin-bottom:4px;}
+
+  /* Sticky mobile call button */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;
+    background:var(--blue);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px;
+    font-weight:800;font-size:16px;
+    box-shadow:0 -6px 18px rgba(0,0,0,0.15);
+    z-index:60;
+  }
+  .sticky-call svg{width:20px;height:20px;}
+  body{padding-bottom:64px;}
+
+  @media (min-width:640px){
+    .hero h1{font-size:42px;}
+    .hero-ctas{flex-direction:row;}
+    .btn{width:auto;padding:16px 26px;}
+    .trust-inner{grid-template-columns:repeat(3,1fr);}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .service-grid{grid-template-columns:repeat(3,1fr);}
+    .why-grid{grid-template-columns:repeat(4,1fr);}
+    .hero p{font-size:18px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Serving Cuyahoga &amp; Lorain County since 1999 &middot; Call <a href="tel:4408711112">(440) 871-1112</a>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#0B2E4F"/>
+        <path d="M14 12h5v6a3 3 0 003 3h4v9a2 2 0 01-2 2H14a2 2 0 01-2-2V14a2 2 0 012-2z" stroke="#7FB2F5" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M23 12l4 4-4 4" stroke="#7FB2F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text">Killeen Plumbing<small>Westlake, OH</small></div>
+    </div>
+    <a class="call-btn" href="tel:4408711112">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Licensed &amp; Insured &middot; Since 1999</div>
+    <h1>Cleveland-Area Plumbing, <span>Done Right the First Time.</span></h1>
+    <p>Killeen Plumbing Company has served Westlake and Greater Cleveland homes and businesses for over 25 years — fast, affordable, professional plumbing you can count on.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:4408711112">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="white"/></svg>
+        Call (440) 871-1112
+      </a>
+      <a class="btn btn-secondary" href="mailto:Killeenplumbing@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4V6z" stroke="white" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="white" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Email Us
+      </a>
+    </div>
+    <div class="hero-meta">
+      <div><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.3" stroke="currentColor" stroke-width="1.8"/></svg>673 Dover Center Rd, Westlake, OH</div>
+      <div><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Mon&ndash;Fri 7AM&ndash;7PM, Sat 8AM&ndash;2PM</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item">25+ Years in Business<span>Since 1999</span></div>
+    <div class="trust-item">Licensed &amp; Insured<span>License ID HUYIK587652</span></div>
+    <div class="trust-item">BBB &amp; BuildZoom<span>Certified</span></div>
+  </div>
+</div>
+
+<section class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">What We Do</div>
+      <h2>Full-Service Plumbing</h2>
+      <p>Residential and commercial plumbing for the Cleveland area — from routine repairs to major installations.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 11-12 0c0-4.5 6-11 6-11z" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div><h3>Sewer &amp; Drain Cleaning</h3><p>Clogs, backups, and slow drains cleared fast.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 10h16" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div><h3>Trenchless Sewer</h3><p>Sewer line repair and replacement without digging up your yard.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 20l4-16h6l4 16" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><h3>Excavation</h3><p>Underground plumbing and utility line excavation work.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v7m0 0l3-3m-3 3l-3-3M6 13h12v8H6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><h3>Water Heaters</h3><p>Repair, replacement, and installation of water heaters.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div><h3>Sump Pump &amp; Battery Backup</h3><p>Keep your basement dry with reliable pump systems.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-4.4-3-7-6.2-7-9.8A7 7 0 0112 4a7 7 0 017 7.2c0 3.6-2.6 6.8-7 9.8z" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div><h3>Water Proofing</h3><p>Basement and foundation waterproofing solutions.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M4 6h16M4 18h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div><h3>Backflow Prevention</h3><p>Testing and installation to keep your water supply safe.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><h3>Water Filtration</h3><p>Whole-home water filtration systems, installed and serviced.</p></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div><h3>Residential &amp; Commercial</h3><p>Full plumbing service for homes and businesses alike.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Why Killeen Plumbing</div>
+      <h2>25+ Years of Straightforward Plumbing</h2>
+      <p>What your neighbors in Westlake and across Cuyahoga &amp; Lorain County already know.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-num">01</div><h3>Since 1999</h3><p>Over 25 years serving the Greater Cleveland area.</p></div>
+      <div class="why-card"><div class="why-num">02</div><h3>Licensed &amp; Insured</h3><p>License ID HUYIK587652 &mdash; fully licensed and insured.</p></div>
+      <div class="why-card"><div class="why-num">03</div><h3>BBB &amp; BuildZoom</h3><p>Certified and verifiable on both platforms.</p></div>
+      <div class="why-card"><div class="why-num">04</div><h3>100% Satisfaction Guarantee</h3><p>We stand behind every job we complete.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Service Area</div>
+      <h2>Proudly Serving Cuyahoga &amp; Lorain County</h2>
+    </div>
+    <div class="area-chips">
+      <span class="chip">Westlake</span>
+      <span class="chip">Avon</span>
+      <span class="chip">Bay Village</span>
+      <span class="chip">Berea</span>
+      <span class="chip">Brooklyn</span>
+      <span class="chip">Brook Park</span>
+      <span class="chip">Cleveland</span>
+      <span class="chip">Elyria</span>
+      <span class="chip">Fairview Park</span>
+      <span class="chip">Lakewood</span>
+      <span class="chip">Lorain</span>
+      <span class="chip">Middleburg Heights</span>
+      <span class="chip">North Olmsted</span>
+      <span class="chip">North Ridgeville</span>
+      <span class="chip">Parma</span>
+      <span class="chip">Rocky River</span>
+      <span class="chip">Sheffield Lake</span>
+      <span class="chip">Sheffield Village</span>
+      <span class="chip">Strongsville</span>
+    </div>
+    <p class="area-note">Not sure if we cover your area? Call us &mdash; we're happy to check.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Get In Touch</div>
+      <h2>Contact Killeen Plumbing</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="card">
+        <h3><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Business Hours</h3>
+        <div class="hours-row"><span>Monday &ndash; Friday</span><span>7:00 AM &ndash; 7:00 PM</span></div>
+        <div class="hours-row"><span>Saturday</span><span>8:00 AM &ndash; 2:00 PM</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+      <div class="card">
+        <h3><svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Direct Contact</h3>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <div><span class="label">Phone</span><a href="tel:4408711112">(440) 871-1112</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <div><span class="label">Email</span><a href="mailto:Killeenplumbing@gmail.com">Killeenplumbing@gmail.com</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.3" stroke="currentColor" stroke-width="1.8"/></svg>
+          <div><span class="label">Address</span><a href="https://maps.google.com/?q=673+Dover+Center+Rd+Westlake+OH+44145" target="_blank" rel="noopener">673 Dover Center Rd, Westlake, OH 44145</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Got a Plumbing Problem?</h2>
+    <p>Call Killeen Plumbing Company now &mdash; fast, affordable, professional service.</p>
+    <a class="btn btn-secondary" href="tel:4408711112">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#0B2E4F"/></svg>
+      (440) 871-1112
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Killeen Plumbing Company &middot; 673 Dover Center Rd, Westlake, OH 44145</p>
+  <p>License ID HUYIK587652 &middot; Licensed &amp; Insured</p>
+</footer>
+
+<a class="sticky-call" href="tel:4408711112">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="white"/></svg>
+  Call Now: (440) 871-1112
+</a>
+
+</body>
+</html>
