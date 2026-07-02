@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preciado D-Fence | Fence Installation & Repair | East Peoria, IL</title>
+<style>
+  :root{
+    --ink:#1a1f1a;
+    --wood:#5c4530;
+    --wood-dark:#3d2f21;
+    --green:#2f4a34;
+    --green-dark:#1f3324;
+    --cream:#f7f4ee;
+    --line:#e2ddd0;
+    --accent:#c96a3c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1100px;margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.2px;}
+  .logo-mark{width:34px;height:34px;flex-shrink:0;}
+  .logo small{display:block;font-weight:500;font-size:10px;color:var(--wood);letter-spacing:.5px;text-transform:uppercase;}
+  .call-btn{
+    background:var(--green);color:#fff;padding:10px 16px;border-radius:8px;
+    font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--green-dark),var(--green) 60%,var(--wood-dark));
+    color:#fff;
+    padding:56px 20px 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 34px);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:1100px;margin:0 auto;position:relative;}
+  .eyebrow{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:#e7c9a8;margin-bottom:14px;
+  }
+  h1{
+    font-size:clamp(30px,7vw,46px);
+    font-weight:800;
+    line-height:1.08;
+    letter-spacing:-.5px;
+    margin-bottom:14px;
+  }
+  .hero p{
+    font-size:16px;
+    color:#dce7de;
+    max-width:520px;
+    margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:340px;}
+  .btn-primary{
+    background:var(--accent);color:#fff;padding:16px 22px;border-radius:10px;
+    font-weight:700;font-size:16px;text-align:center;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+  }
+  .btn-primary svg{width:19px;height:19px;flex-shrink:0;}
+  .btn-secondary{
+    background:rgba(255,255,255,.08);color:#fff;padding:14px 22px;border-radius:10px;
+    font-weight:600;font-size:15px;text-align:center;border:1px solid rgba(255,255,255,.35);
+  }
+  .hero-fence{
+    margin-top:40px;
+    display:flex;align-items:flex-end;justify-content:center;gap:4px;
+    opacity:.9;
+  }
+
+  /* Trust strip */
+  .trust{
+    background:var(--wood-dark);color:#f0e9dd;
+    padding:14px 20px;
+    font-size:13px;font-weight:600;
+    display:flex;flex-wrap:wrap;gap:10px 24px;
+    justify-content:center;text-align:center;
+    letter-spacing:.2px;
+  }
+  .trust span{display:flex;align-items:center;gap:7px;}
+  .trust svg{width:15px;height:15px;flex-shrink:0;color:#e7c9a8;}
+
+  /* Sections */
+  section{padding:56px 20px;}
+  .section-head{text-align:center;max-width:600px;margin:0 auto 34px;}
+  .section-head .eyebrow{color:var(--wood);}
+  .section-head h2{
+    font-size:clamp(24px,5vw,32px);font-weight:800;letter-spacing:-.3px;color:var(--green-dark);
+    margin-bottom:10px;
+  }
+  .section-head p{color:#5a5a52;font-size:15px;}
+
+  /* Services grid */
+  .services{background:#fff;}
+  .grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  @media(min-width:640px){.grid{grid-template-columns:1fr 1fr;}}
+  .card{
+    background:var(--cream);border:1px solid var(--line);border-radius:14px;
+    padding:22px;
+  }
+  .card-icon{
+    width:44px;height:44px;border-radius:10px;background:var(--green);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card-icon svg{width:24px;height:24px;color:#fff;}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--green-dark);}
+  .card p{font-size:14px;color:#5a5a52;}
+
+  /* Why us */
+  .why{background:var(--green-dark);color:#fff;}
+  .why .section-head h2{color:#fff;}
+  .why .section-head p{color:#c9d6cc;}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  @media(min-width:640px){.why-grid{grid-template-columns:repeat(3,1fr);}}
+  .why-item{text-align:center;padding:10px;}
+  .why-item .num{
+    width:48px;height:48px;border-radius:50%;background:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:18px;margin:0 auto 14px;
+  }
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .why-item p{font-size:14px;color:#c9d6cc;}
+
+  /* Area */
+  .area{background:#fff;text-align:center;}
+  .area-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--cream);border:1px solid var(--line);
+    padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;color:var(--green-dark);
+    margin-bottom:18px;
+  }
+  .area-badge svg{width:16px;height:16px;color:var(--accent);}
+  .area p.desc{max-width:520px;margin:0 auto;color:#5a5a52;font-size:15px;}
+
+  /* Contact */
+  .contact{
+    background:var(--wood-dark);color:#fff;
+  }
+  .contact .section-head h2{color:#fff;}
+  .contact .section-head p{color:#e7ddcc;}
+  .contact-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    border-radius:16px;padding:26px 22px;max-width:480px;margin:0 auto;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:14px;padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .ic{
+    width:38px;height:38px;border-radius:9px;background:var(--accent);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-row .ic svg{width:19px;height:19px;color:#fff;}
+  .contact-row .label{font-size:12px;color:#c9c1b0;text-transform:uppercase;letter-spacing:.5px;font-weight:700;}
+  .contact-row .value{font-size:15px;font-weight:700;word-break:break-word;}
+  .contact-cta{
+    margin-top:22px;
+  }
+  .contact-cta .btn-primary{width:100%;}
+
+  footer{
+    background:var(--green-dark);color:#a9bfae;
+    text-align:center;padding:26px 20px;font-size:12.5px;
+  }
+  footer strong{color:#fff;}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--accent);color:#fff;
+    padding:14px 20px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:15px;
+    box-shadow:0 -6px 18px rgba(0,0,0,.2);
+  }
+  .sticky-call svg{width:18px;height:18px;}
+  body{padding-bottom:62px;}
+  @media(min-width:900px){
+    .sticky-call{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#2F4A34"/>
+        <rect x="8" y="14" width="3" height="18" fill="#F7F4EE"/>
+        <rect x="18.5" y="10" width="3" height="22" fill="#F7F4EE"/>
+        <rect x="29" y="14" width="3" height="18" fill="#F7F4EE"/>
+        <rect x="6" y="14" width="28" height="3" fill="#C96A3C"/>
+      </svg>
+      <div>
+        Preciado D-Fence
+        <small>East Peoria, IL</small>
+      </div>
+    </div>
+    <a class="call-btn" href="tel:3098576166">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4.5a1 1 0 011-1h3.49a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Family-Owned Since 2015</span>
+    <h1>Fencing Done Right — It's All in the Details</h1>
+    <p>Preciado D-Fence installs, repairs, and remodels fences and custom gates for homeowners in East Peoria and the surrounding area. Straight lines, solid posts, fair prices.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:3098576166">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4.5a1 1 0 011-1h3.49a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+        Call (309) 857-6166
+      </a>
+      <a class="btn-secondary" href="#contact">Get a Free Estimate</a>
+    </div>
+    <div class="hero-fence" aria-hidden="true">
+      <svg width="100%" height="46" viewBox="0 0 320 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="18" width="320" height="4" fill="#e7c9a8" opacity="0.5"/>
+        <g fill="#e7c9a8" opacity="0.6">
+          <rect x="4" y="6" width="8" height="40"/>
+          <rect x="24" y="6" width="8" height="40"/>
+          <rect x="44" y="6" width="8" height="40"/>
+          <rect x="64" y="6" width="8" height="40"/>
+          <rect x="84" y="6" width="8" height="40"/>
+          <rect x="104" y="6" width="8" height="40"/>
+          <rect x="124" y="6" width="8" height="40"/>
+          <rect x="144" y="6" width="8" height="40"/>
+          <rect x="164" y="6" width="8" height="40"/>
+          <rect x="184" y="6" width="8" height="40"/>
+          <rect x="204" y="6" width="8" height="40"/>
+          <rect x="224" y="6" width="8" height="40"/>
+          <rect x="244" y="6" width="8" height="40"/>
+          <rect x="264" y="6" width="8" height="40"/>
+          <rect x="284" y="6" width="8" height="40"/>
+          <rect x="304" y="6" width="8" height="40"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 3 6v6c0 5.25 3.75 9.75 9 11 5.25-1.25 9-5.75 9-11V6l-9-4z"/></svg>
+    Family-Owned & Operated
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+    Serving East Peoria Since 2015
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Competitive, Upfront Pricing
+  </span>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Fence & Gate Services</h2>
+      <p>From a new fence line to a quick repair, Preciado D-Fence handles the whole job.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 21V9M4 9l3-3M4 9l3 3M12 21V5M12 5l3-3M12 5l3 3M20 21V9M20 9l-3-3M20 9l-3 3"/><path d="M4 21h16"/></svg>
+        </div>
+        <h3>Fence Installation</h3>
+        <p>New fence installs built to hold up season after season — sized and set for your property.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="8" height="13"/><path d="M11 12h6a2 2 0 012 2v7"/><circle cx="8" cy="14" r="1"/></svg>
+        </div>
+        <h3>Custom Gates</h3>
+        <p>Custom-built gates designed and installed to match your fence and fit your entryway.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6l9-9z"/><path d="M13 5l6 6"/></svg>
+        </div>
+        <h3>Fence Repair</h3>
+        <p>Storm damage, rot, leaning posts — we'll fix what's broken instead of pushing a full replacement you don't need.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>
+        </div>
+        <h3>Fence Remodeling</h3>
+        <p>Updating an old or outdated fence line with a fresh install, tailored to how your property looks today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Preciado D-Fence</span>
+      <h2>Straightforward, Reliable, Local</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">1</div>
+        <h3>Family-Owned</h3>
+        <p>Run by Demetrio Preciado since 2015 — not a call center, not a franchise.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <h3>Fair, Upfront Fees</h3>
+        <p>Competitive pricing with no surprise charges once the work starts.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <h3>Attention to Detail</h3>
+        <p>"It's All in the Details" isn't just a tagline — it's how every gate and post gets set.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="area-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+      East Peoria, IL & Surrounding Area
+    </div>
+    <p class="desc">Preciado D-Fence is based at 1002 S. 17th St in Pekin, Illinois, and serves East Peoria and the surrounding communities for fence installation, gates, and repairs.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Request Your Free Estimate</h2>
+      <p>Call or email Demetrio directly — no forms, no middlemen.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.36 1.79.7 2.63a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.45-1.27a2 2 0 012.11-.45c.84.34 1.73.58 2.63.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="label">Phone</div>
+          <div class="value"><a href="tel:3098576166">(309) 857-6166</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div>
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:demetriopreciado92@gmail.com">demetriopreciado92@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg></div>
+        <div>
+          <div class="label">Address</div>
+          <div class="value">1002 S. 17th St, Pekin, IL</div>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <a class="btn-primary" href="tel:3098576166">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4.5a1 1 0 011-1h3.49a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Preciado D-Fence</strong> — Fence Installation, Gates & Repair</p>
+  <p>1002 S. 17th St, Pekin, IL &middot; Serving East Peoria, IL</p>
+</footer>
+
+<a class="sticky-call" href="tel:3098576166">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4.5a1 1 0 011-1h3.49a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+  Call (309) 857-6166
+</a>
+
+</body>
+</html>
