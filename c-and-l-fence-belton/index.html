@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C and L Fence Co</title>
+<style>
+  :root { --accent: #6b4a2f; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.5; background: #fff; }
+  a { text-decoration: none; color: inherit; }
+  .btn { display: inline-block; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 18px; cursor: pointer; border: none; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-outline { background: transparent; color: #fff; border: 2px solid #fff; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 20px 6vw; position: sticky; top: 0; background: #fff; z-index: 10; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+  .logo { font-weight: 800; font-size: 22px; color: var(--accent); }
+  header a.call { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 6px; font-weight: 700; }
+  .hero { background: linear-gradient(135deg, #3f2c1c, var(--accent)); color: #fff; padding: 90px 6vw 70px; text-align: center; }
+  .hero h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 800; max-width: 900px; margin: 0 auto 18px; }
+  .hero p { font-size: 20px; opacity: .92; max-width: 700px; margin: 0 auto 34px; }
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  section { padding: 70px 6vw; max-width: 1100px; margin: 0 auto; }
+  h2 { font-size: 32px; text-align: center; margin-bottom: 40px; color: #2e2015; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px; }
+  .card { border: 1px solid #e6e6e6; border-radius: 12px; padding: 28px 22px; text-align: center; transition: box-shadow .2s; }
+  .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .card svg { width: 46px; height: 46px; margin-bottom: 14px; color: var(--accent); }
+  .card h3 { font-size: 19px; margin-bottom: 8px; }
+  .card p { color: #555; font-size: 15px; }
+  .why { background: #f7f2ec; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center; }
+  .why-grid .num { font-size: 40px; font-weight: 800; color: var(--accent); }
+  .contact { background: #2e2015; color: #fff; text-align: center; }
+  .contact h2 { color: #fff; }
+  .contact a.call { display: inline-block; background: var(--accent); color: #fff; padding: 18px 40px; border-radius: 8px; font-weight: 700; font-size: 20px; margin: 10px; }
+  .contact a.email { display: inline-block; color: #fff; opacity: .85; margin-top: 14px; font-size: 16px; }
+  footer { text-align: center; padding: 30px; font-size: 13px; color: #888; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">C and L Fence Co</div>
+  <a class="call" href="tel:+12545349360">Call (254) 534-9360</a>
+</header>
+
+<div class="hero">
+  <h1>Fencing Built to Last, From a Family That's Done It for 30 Years</h1>
+  <p>C and L Fence Co is a small, family-owned and operated fence company serving Belton and the surrounding area. Give us a call today for all your fencing needs.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="tel:+12545349360">Call Now for a Free Quote</a>
+    <a class="btn btn-outline" href="#contact">Get in Touch</a>
+  </div>
+</div>
+
+<section>
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v16M4 4h4v4H4zM4 12h4v4H4zM12 4v16M12 4h4v4h-4zM12 12h4v4h-4zM20 4v16"/></svg>
+      <h3>Fence Installation</h3>
+      <p>New wood, chain link, and privacy fencing installed for homes and properties of any size.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 6-9 6-9-6 9-6zM3 14l9 6 9-6"/></svg>
+      <h3>Fence Repair</h3>
+      <p>Storm damage, rot, and wear — we fix and restore existing fences so they hold up for years.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      <h3>Free Estimates</h3>
+      <p>No job too big or too small. Call today and we'll come take a look and give you an honest price.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <h2>Why Call C and L Fence Co</h2>
+  <div class="why-grid">
+    <div>
+      <div class="num">30+</div>
+      <p>Years of combined experience in the fence industry</p>
+    </div>
+    <div>
+      <div class="num">Family</div>
+      <p>Small, family owned and operated — you talk directly to the people doing the work</p>
+    </div>
+    <div>
+      <div class="num">Local</div>
+      <p>Serving Belton and the surrounding community</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Get a Free Quote Today</h2>
+  <p>Call or email us — we're happy to answer questions and set up a time to take a look at your property.</p>
+  <div>
+    <a class="btn call" href="tel:+12545349360">Call (254) 534-9360</a>
+  </div>
+  <a class="email" href="mailto:candlfenceco@gmail.com">candlfenceco@gmail.com</a>
+</section>
+
+<footer>&copy; C and L Fence Co. This is a preview website.</footer>
+
+</body>
+</html>
