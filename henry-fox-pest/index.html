@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Henry N. Fox Professional Pest Management | Fairview &amp; Erie, PA</title>
+<style>
+  :root{
+    --navy-900:#12203a;
+    --navy-700:#1c3560;
+    --red-600:#c23b2f;
+    --red-700:#a32f25;
+    --sand:#f7f5ef;
+    --ink:#161c26;
+    --muted:#5b6472;
+    --line:rgba(0,0,0,0.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--sand);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+
+  .callbar{
+    background:var(--navy-900);
+    color:#fff;
+    text-align:center;
+    font-size:14px;
+    padding:8px 12px;
+    font-weight:600;
+  }
+  .callbar a{color:#ffd9d3;text-decoration:underline;}
+
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 20px;
+    background:var(--sand);
+    position:sticky;top:0;z-index:50;
+    border-bottom:1px solid var(--line);
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--navy-900);line-height:1.15;}
+  .logo svg{width:32px;height:32px;flex:none;}
+  .logo .sub{font-size:10.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
+  .call-btn{
+    background:var(--red-600);
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    display:flex;align-items:center;gap:6px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;fill:#fff;}
+
+  .hero{
+    position:relative;
+    padding:56px 20px 60px;
+    background:linear-gradient(160deg, var(--navy-700), var(--navy-900) 75%);
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero-inner{position:relative;z-index:2;text-align:center;max-width:640px;margin:0 auto;}
+  .eyebrow{
+    display:inline-block;
+    background:rgba(255,255,255,0.12);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(28px,7vw,44px);
+    font-weight:800;
+    line-height:1.14;
+    letter-spacing:-0.4px;
+  }
+  .hero p.sub{
+    margin-top:14px;
+    font-size:17px;
+    color:rgba(255,255,255,0.85);
+    max-width:480px;
+    margin-left:auto;margin-right:auto;
+  }
+  .hero-ctas{
+    margin-top:28px;
+    display:flex;flex-direction:column;gap:12px;align-items:center;
+  }
+  .btn-primary{
+    background:var(--red-600);
+    color:#fff;
+    font-weight:800;
+    font-size:17px;
+    padding:16px 28px;
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;max-width:340px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.25);
+  }
+  .btn-primary svg{width:20px;height:20px;fill:#fff;}
+  .btn-secondary{
+    color:#fff;font-weight:700;font-size:14px;padding:10px;
+    border:1.5px solid rgba(255,255,255,0.5);
+    border-radius:10px;
+    width:100%;max-width:340px;text-align:center;
+  }
+  .hero-meta{
+    margin-top:22px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;
+    font-size:13px;color:rgba(255,255,255,0.75);
+  }
+  .hero-meta span{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:14px;height:14px;fill:#ffb3a8;}
+
+  section{padding:56px 20px;}
+  .section-head{text-align:center;max-width:520px;margin:0 auto 34px;}
+  .kicker{color:var(--red-600);font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;}
+  h2{font-size:clamp(24px,5.5vw,32px);font-weight:800;margin-top:8px;letter-spacing:-0.3px;color:var(--navy-900);}
+  .section-head p{margin-top:10px;color:var(--muted);font-size:15px;}
+
+  .services{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:1100px;margin:0 auto;
+  }
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:20px 16px;display:flex;flex-direction:column;gap:10px;
+    box-shadow:0 2px 10px rgba(18,32,58,0.05);
+  }
+  .service-card .icon{
+    width:38px;height:38px;border-radius:10px;background:#fdeceb;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-card .icon svg{width:20px;height:20px;fill:var(--red-600);}
+  .service-card h3{font-size:15px;font-weight:700;color:var(--navy-900);}
+  .service-card p{font-size:13px;color:var(--muted);}
+
+  .why{background:var(--navy-900);color:#fff;}
+  .why .section-head p{color:rgba(255,255,255,0.7);}
+  .why .kicker{color:#ff9d90;}
+  .why h2{color:#fff;}
+  .why-grid{display:flex;flex-direction:column;gap:16px;max-width:600px;margin:0 auto;}
+  .why-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:14px;padding:16px;
+  }
+  .why-item .num{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:14px;color:#ff9d90;
+  }
+  .why-item h4{font-size:15px;font-weight:700;margin-bottom:4px;}
+  .why-item p{font-size:13.5px;color:rgba(255,255,255,0.75);}
+
+  .area{text-align:center;}
+  .area-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fdeceb;color:var(--red-700);
+    padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:18px;
+  }
+  .area-badge svg{width:16px;height:16px;fill:var(--red-600);}
+  .area p{color:var(--muted);font-size:15px;max-width:480px;margin:0 auto;}
+
+  .contact-band{
+    background:linear-gradient(160deg, var(--red-600), var(--navy-900) 85%);
+    color:#fff;border-radius:24px;max-width:1100px;margin:0 auto;
+    padding:44px 24px;text-align:center;
+  }
+  .contact-band h2{color:#fff;}
+  .contact-band p{color:rgba(255,255,255,0.85);margin-top:10px;font-size:15px;}
+  .contact-actions{margin-top:26px;display:flex;flex-direction:column;gap:12px;align-items:center;}
+  .phone-big{font-size:clamp(26px,7vw,34px);font-weight:800;letter-spacing:-0.5px;}
+  .contact-actions .btn-primary{background:#fff;color:var(--navy-900);}
+  .contact-actions .btn-primary svg{fill:var(--navy-900);}
+  .email-link{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:underline;}
+
+  footer{padding:30px 20px 40px;text-align:center;color:var(--muted);font-size:12.5px;}
+  footer .foot-logo{font-weight:800;color:var(--navy-900);margin-bottom:6px;font-size:14px;}
+
+  @media (min-width:640px){
+    .hero-ctas{flex-direction:row;justify-content:center;}
+    .btn-primary,.btn-secondary{width:auto;}
+    .services{grid-template-columns:repeat(4,1fr);}
+    .why-grid{flex-direction:row;flex-wrap:wrap;}
+    .why-item{flex:1 1 260px;}
+    .contact-actions{flex-direction:row;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="callbar">
+    Same-day service — call <a href="tel:8144343159">(814) 434-3159</a>
+  </div>
+
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5.2 3.4 9.4 8 10 4.6-.6 8-4.8 8-10V6l-8-4z" fill="#c23b2f"/></svg>
+      <div>Henry N. Fox<br><span class="sub">Professional Pest Management</span></div>
+    </div>
+    <a class="call-btn" href="tel:8144343159">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      Call Now
+    </a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Fairview &amp; Erie, PA</span>
+      <h1>Over fifty years of pest control Erie trusts.</h1>
+      <p class="sub">Henry N. Fox has been clearing homes and businesses of pests for decades — quality materials, fair prices, and a guarantee behind every job.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:8144343159">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          Call (814) 434-3159
+        </a>
+        <a class="btn-secondary" href="#contact">Get a Free Estimate</a>
+      </div>
+      <div class="hero-meta">
+        <span><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>50+ years experience</span>
+        <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 5v5.4l4.2 2.5-.8 1.3L11 13V7h2z"/></svg>Satisfaction guaranteed</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-head">
+      <span class="kicker">Services</span>
+      <h2>Pest control for every problem</h2>
+      <p>Residential and commercial extermination, removal, and inspection.</p>
+    </div>
+    <div class="services">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 4 4 4 4 4v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V4s-4 0-8-2z"/></svg></div>
+        <h3>Ants &amp; Carpenter Ants</h3>
+        <p>Full colony treatment for common ants and structural carpenter ants.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0z"/></svg></div>
+        <h3>Roaches &amp; Cockroaches</h3>
+        <p>Targeted treatment to eliminate roaches and stop them returning.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2c2 3 6 4 6 9a6 6 0 0 1-12 0c0-5 4-6 6-9z"/></svg></div>
+        <h3>Mice &amp; Rats</h3>
+        <p>Rodent removal and exclusion for homes and businesses.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 22h16L12 2z"/></svg></div>
+        <h3>Bees, Wasps &amp; Hornets</h3>
+        <p>Safe nest removal for stinging insects around your property.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 3h12v4H6zm-2 6h16v12H4z"/></svg></div>
+        <h3>Termites &amp; Wood-Destroying Organisms</h3>
+        <p>Inspection and treatment to protect your home's structure.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3a5 5 0 0 1 5 5c0 3-5 13-5 13S7 11 7 8a5 5 0 0 1 5-5z"/></svg></div>
+        <h3>Spiders &amp; Fleas</h3>
+        <p>Treatment for spiders, fleas, and other household pests.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg></div>
+        <h3>Mosquitoes &amp; Cluster Flies</h3>
+        <p>Reduce seasonal mosquito and cluster fly pressure outdoors.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2z"/></svg></div>
+        <h3>Inspections &amp; Bird Control</h3>
+        <p>Full property pest inspections plus bird deterrent solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="section-head">
+      <span class="kicker">Why Henry N. Fox</span>
+      <h2>Decades of experience, done right</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div>
+          <h4>Over 50 years in pest control</h4>
+          <p>Henry N. Fox has been treating homes and businesses in the Erie area for more than five decades.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div>
+          <h4>High-quality materials</h4>
+          <p>State-of-the-art, hazard-free equipment and quality materials on every job.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div>
+          <h4>Satisfaction guaranteed</h4>
+          <p>Affordable prices backed by a satisfaction guarantee, for residential and commercial jobs alike.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area">
+    <div class="area-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 8 12 8 12s8-6.6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+      Fairview, PA 16415
+    </div>
+    <p>Based in Fairview, PA and proudly serving Erie, PA and the surrounding area for residential and commercial pest control.</p>
+  </section>
+
+  <section id="contact">
+    <div class="contact-band">
+      <span class="kicker" style="color:#ffe1dc;">Get In Touch</span>
+      <h2>Have a pest problem? Let's fix it.</h2>
+      <p>Call now for a free estimate — same trusted service, over 50 years running.</p>
+      <div class="contact-actions">
+        <a class="btn-primary" href="tel:8144343159">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          <span class="phone-big">(814) 434-3159</span>
+        </a>
+        <a class="email-link" href="mailto:Henryfox1953@gmail.com">Henryfox1953@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-logo">Henry N. Fox Professional Pest Management</div>
+    <div>Fairview, PA 16415 &nbsp;·&nbsp; (814) 434-3159</div>
+  </footer>
+
+</body>
+</html>
