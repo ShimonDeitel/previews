@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shelton's Tree Service | Knoxville, TN — 20+ Years</title>
+<style>
+  :root{
+    --green-dark:#1b3a2b;
+    --green:#2f5d3a;
+    --green-light:#4d7c53;
+    --accent:#e8a13d;
+    --cream:#f7f5ef;
+    --ink:#1a1a1a;
+    --gray:#5b5b53;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--green-dark);
+    color:#fff;
+    text-align:center;
+    padding:10px 12px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  .callbar a{color:var(--accent);}
+
+  /* Header */
+  header{
+    background:var(--cream);
+    position:sticky;top:0;z-index:50;
+    border-bottom:1px solid #e4e0d3;
+  }
+  .headrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    max-width:1100px;margin:0 auto;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-weight:800;font-size:18px;color:var(--green-dark);
+  }
+  .brand svg{width:34px;height:34px;flex-shrink:0;}
+  .call-btn{
+    background:var(--green);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+    display:flex;align-items:center;gap:8px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;fill:#fff;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--green-dark),var(--green) 70%);
+    color:#fff;
+    padding:56px 20px 64px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.3);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.4px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,7vw,46px);
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:14px;
+  }
+  .hero p.sub{
+    font-size:clamp(15px,3.6vw,18px);
+    color:#dcead f;
+    color:#e3ecdf;
+    max-width:520px;
+    margin:0 auto 28px;
+  }
+  .hero-ctas{
+    display:flex;flex-direction:column;gap:12px;
+    max-width:340px;margin:0 auto;
+  }
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 20px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:16px;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:var(--green-dark);
+  }
+  .btn-secondary{
+    background:rgba(255,255,255,.1);
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,.5);
+  }
+  .btn svg{width:18px;height:18px;flex-shrink:0;}
+  .btn-primary svg{fill:var(--green-dark);}
+  .btn-secondary svg{fill:#fff;}
+
+  .hero-tree{
+    position:absolute;
+    opacity:.12;
+    right:-40px;bottom:-30px;
+    width:260px;height:260px;
+  }
+
+  /* Trust strip */
+  .trust{
+    background:#fff;
+    border-bottom:1px solid #eee;
+    padding:18px 20px;
+  }
+  .trust .wrap{
+    display:flex;flex-wrap:wrap;
+    justify-content:center;
+    gap:10px 28px;
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--green-dark);
+  }
+  .trust .item{display:flex;align-items:center;gap:7px;}
+  .trust svg{width:16px;height:16px;fill:var(--accent);flex-shrink:0;}
+
+  /* Section headers */
+  section{padding:52px 20px;}
+  .section-title{
+    text-align:center;
+    font-size:clamp(24px,5.5vw,32px);
+    font-weight:800;
+    color:var(--green-dark);
+    margin-bottom:8px;
+  }
+  .section-sub{
+    text-align:center;
+    color:var(--gray);
+    font-size:15px;
+    max-width:480px;
+    margin:0 auto 34px;
+  }
+
+  /* Services grid */
+  .services-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+    max-width:1000px;margin:0 auto;
+  }
+  @media(min-width:640px){
+    .services-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(min-width:900px){
+    .services-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:14px;
+    padding:24px 20px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(27,58,43,.1);
+  }
+  .service-icon{
+    width:46px;height:46px;
+    background:var(--green-dark);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .service-icon svg{width:24px;height:24px;fill:var(--accent);}
+  .service-card h3{
+    font-size:17px;font-weight:700;
+    color:var(--green-dark);
+    margin-bottom:6px;
+  }
+  .service-card p{
+    font-size:14px;color:var(--gray);
+  }
+  .service-card.emergency{
+    background:var(--green-dark);
+    border-color:var(--green-dark);
+  }
+  .service-card.emergency h3,
+  .service-card.emergency p{color:#fff;}
+  .service-card.emergency .service-icon{background:var(--accent);}
+  .service-card.emergency .service-icon svg{fill:var(--green-dark);}
+
+  /* Why us */
+  .why{
+    background:#fff;
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+    max-width:900px;margin:0 auto;
+  }
+  @media(min-width:700px){
+    .why-grid{grid-template-columns:1fr 1fr;}
+  }
+  .why-item{
+    display:flex;gap:14px;
+    align-items:flex-start;
+  }
+  .why-icon{
+    width:40px;height:40px;flex-shrink:0;
+    border-radius:50%;
+    background:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-icon svg{width:20px;height:20px;fill:var(--green);}
+  .why-item h4{font-size:16px;font-weight:700;color:var(--green-dark);margin-bottom:4px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* Area */
+  .area{
+    background:var(--cream);
+    text-align:center;
+  }
+  .area-chips{
+    display:flex;flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    max-width:700px;margin:0 auto;
+  }
+  .chip{
+    background:#fff;
+    border:1px solid #e4e0d3;
+    padding:9px 16px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--green-dark);
+  }
+
+  /* CTA band */
+  .cta-band{
+    background:linear-gradient(160deg,var(--green),var(--green-dark));
+    color:#fff;
+    text-align:center;
+    padding:52px 20px;
+  }
+  .cta-band h2{
+    font-size:clamp(22px,5.5vw,30px);
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .cta-band p{
+    color:#dfe9dd;
+    margin-bottom:26px;
+    font-size:15px;
+  }
+  .cta-band .btn{max-width:320px;margin:0 auto;}
+
+  /* Contact / footer */
+  footer{
+    background:#101f16;
+    color:#cfd8ce;
+    padding:40px 20px 24px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:26px;
+    max-width:900px;margin:0 auto 26px;
+  }
+  @media(min-width:700px){
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  .footer-brand{
+    display:flex;align-items:center;gap:10px;
+    font-weight:800;color:#fff;font-size:17px;margin-bottom:10px;
+  }
+  .footer-brand svg{width:28px;height:28px;}
+  .contact-line{
+    display:flex;align-items:center;gap:10px;
+    font-size:14.5px;margin-bottom:10px;
+  }
+  .contact-line svg{width:17px;height:17px;fill:var(--accent);flex-shrink:0;}
+  .contact-line a{color:#fff;font-weight:600;}
+  footer h5{color:#fff;font-size:14px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
+  footer ul{list-style:none;font-size:14px;}
+  footer li{margin-bottom:7px;color:#b9c2b8;}
+  .footer-bottom{
+    border-top:1px solid #24352a;
+    padding-top:18px;
+    text-align:center;
+    font-size:12.5px;
+    color:#8a9488;
+  }
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;
+    background:var(--accent);
+    padding:12px 16px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:800;
+    color:var(--green-dark);
+    font-size:15.5px;
+    z-index:60;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  .sticky-call svg{width:18px;height:18px;fill:var(--green-dark);}
+  body{padding-bottom:64px;}
+  @media(min-width:768px){
+    .sticky-call{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">
+  20+ Years Serving Knoxville &amp; East TN &middot; Call Now: <a href="tel:8653407230">(865) 340-7230</a>
+</div>
+
+<header>
+  <div class="headrow">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#2f5d3a"/><path d="M24 8c5 5 9 9 9 15a9 9 0 0 1-7 8.7V38a2 2 0 1 1-4 0v-6.3A9 9 0 0 1 15 23c0-6 4-10 9-15z" fill="#e8a13d"/></svg>
+      <span>Shelton's Tree Service</span>
+    </div>
+    <a class="call-btn" href="tel:8653407230">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero" style="padding-top:56px;">
+  <svg class="hero-tree" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 2c8 8 15 15 15 24a13 13 0 0 1-11 12.8V46a2 2 0 1 1-8 0v-7.2A13 13 0 0 1 9 26C9 17 16 10 24 2z" fill="#fff"/></svg>
+  <div class="wrap">
+    <span class="badge">Family-Owned &middot; 20+ Years in Knoxville</span>
+    <h1>Trusted Tree Care for Knoxville &amp; East Tennessee</h1>
+    <p class="sub">Licensed &amp; insured tree removal, trimming, and storm cleanup. Free estimates. 24/7 emergency service.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:8653407230">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+        Call (865) 340-7230
+      </a>
+      <a class="btn btn-secondary" href="#contact">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 12l8-5.99V6H4zm16 2.24-8 6-8-6V18h16V8.24z"/></svg>
+        Get a Free Estimate
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5 4.9L18.2 21 12 17.6 5.8 21 7 13.9 2 9l7.1-.7L12 2z"/></svg>5.0★ Google Rating (15+ Reviews)</div>
+    <div class="item"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg>Licensed &amp; Insured</div>
+    <div class="item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5v5.6l4.2 2.5-.8 1.3L11 13V7h2z"/></svg>24/7 Emergency Service</div>
+  </div>
+</div>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">Full-service tree care for homes and businesses across East Tennessee.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2c5 5 9 9 9 14a9 9 0 0 1-18 0c0-5 4-9 9-14z"/></svg></div>
+      <h3>Tree Removal</h3>
+      <p>Safe, complete removal of hazardous, dead, or unwanted trees of any size.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M6 3h12v2H6zM4 8h16v2H4zm3 5h10v2H7zm2 5h6v2H9z"/></svg></div>
+      <h3>Tree Trimming &amp; Pruning</h3>
+      <p>Shape and maintain healthy trees while reducing risk to your property.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 8l10 6 10-6-10-6zM2 16l10 6 10-6M2 12l10 6 10-6"/></svg></div>
+      <h3>Storm Preparation &amp; Cleanup</h3>
+      <p>Pre-storm risk assessment plus fast cleanup after high winds and storm damage.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="#1b3a2b"/></svg></div>
+      <h3>Stump Grinding</h3>
+      <p>Grind stumps below grade so you can reclaim and replant your yard.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12h-6v-7h-4v7H4z"/></svg></div>
+      <h3>Commercial Tree Services</h3>
+      <p>Property-wide tree management for businesses, HOAs, and commercial lots.</p>
+    </div>
+    <div class="service-card emergency">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-13h-7l0-7z"/></svg></div>
+      <h3>Emergency Tree Services</h3>
+      <p>24/7 response for storm damage and trees down — call anytime, day or night.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <h2 class="section-title">Why Homeowners Choose Shelton's</h2>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-3z"/></svg></div>
+      <div>
+        <h4>Family-Owned, 20+ Years</h4>
+        <p>Family-owned and operated, serving East Tennessee for more than two decades.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12 3.4 13.4 9 19 21 7l-1.4-1.4z"/></svg></div>
+      <div>
+        <h4>Licensed &amp; Insured</h4>
+        <p>Fully licensed and insured, with documentation available on request.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5v5.6l4.2 2.5-.8 1.3L11 13V7h2z"/></svg></div>
+      <div>
+        <h4>24/7 Emergency Response</h4>
+        <p>Storm damage doesn't wait for business hours — neither do we.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 8l10 6 10-6-10-6zM2 16l10 6 10-6"/></svg></div>
+      <div>
+        <h4>Free Estimates</h4>
+        <p>Get a no-obligation quote before any work begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <h2 class="section-title">Proudly Serving East Tennessee</h2>
+  <p class="section-sub">Based in Knoxville, TN — serving surrounding communities.</p>
+  <div class="area-chips">
+    <span class="chip">Knoxville</span>
+    <span class="chip">Oak Ridge</span>
+    <span class="chip">Clinton</span>
+    <span class="chip">Seymour</span>
+    <span class="chip">Jefferson City</span>
+    <span class="chip">Maryville</span>
+    <span class="chip">Farragut</span>
+    <span class="chip">Alcoa</span>
+    <span class="chip">Lenoir City</span>
+    <span class="chip">La Follette</span>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Need Tree Work Done Right?</h2>
+    <p>Call Ray and the team at Shelton's Tree Service for a free estimate.</p>
+    <a class="btn btn-primary" href="tel:8653407230">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+      (865) 340-7230
+    </a>
+  </div>
+</div>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#2f5d3a"/><path d="M24 8c5 5 9 9 9 15a9 9 0 0 1-7 8.7V38a2 2 0 1 1-4 0v-6.3A9 9 0 0 1 15 23c0-6 4-10 9-15z" fill="#e8a13d"/></svg>
+        Shelton's Tree Service
+      </div>
+      <div class="contact-line">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+        <a href="tel:8653407230">(865) 340-7230</a>
+      </div>
+      <div class="contact-line">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 12l8-5.99V6H4zm16 2.24-8 6-8-6V18h16V8.24z"/></svg>
+        <a href="mailto:sheltonstreeservice01@gmail.com">sheltonstreeservice01@gmail.com</a>
+      </div>
+      <div class="contact-line">
+        <svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+        Knoxville, TN 37909
+      </div>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul>
+        <li>Tree Removal</li>
+        <li>Tree Trimming &amp; Pruning</li>
+        <li>Storm Prep &amp; Cleanup</li>
+        <li>Stump Grinding</li>
+        <li>Commercial Tree Services</li>
+        <li>24/7 Emergency Service</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Shelton's Tree Service. Family-owned &amp; operated in Knoxville, TN.
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:8653407230">
+  <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+  Tap to Call (865) 340-7230
+</a>
+
+</body>
+</html>

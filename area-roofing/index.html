@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Roofing Co. | Corpus Christi Roofing Since 1991</title>
+<style>
+  :root{
+    --navy:#0f2438;
+    --navy-dark:#0a1a29;
+    --red:#c8412c;
+    --red-dark:#a8331f;
+    --ink:#1a1f24;
+    --gray:#5a6572;
+    --line:#e4e8ec;
+    --bg:#ffffff;
+    --offwhite:#f6f8fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Top bar */
+  .topbar{
+    background:var(--navy-dark);
+    color:#cfd8e0;
+    font-size:13px;
+    padding:8px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+  .topbar a{color:#fff;font-weight:600;}
+  .topbar .badge{color:#9fb0c0;}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,36,56,0.97);
+    backdrop-filter:saturate(180%) blur(6px);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;}
+  .brand svg{width:34px;height:34px;flex:none;}
+  .brand-text{line-height:1.15;}
+  .brand-text .name{font-weight:800;font-size:17px;letter-spacing:0.2px;}
+  .brand-text .tag{font-size:11px;color:#a9bccd;letter-spacing:0.5px;text-transform:uppercase;}
+  .nav-links{display:none;gap:26px;color:#dfe6ec;font-size:14px;font-weight:600;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{
+    display:flex;align-items:center;gap:8px;
+    background:var(--red);
+    color:#fff;font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:8px;
+    white-space:nowrap;
+  }
+  .nav-cta svg{width:16px;height:16px;}
+  .nav-cta:hover{background:var(--red-dark);}
+  @media(min-width:860px){
+    .nav-links{display:flex;}
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 26px);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    padding:56px 0 60px;
+    display:flex;flex-direction:column;gap:26px;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(200,65,44,0.16);
+    border:1px solid rgba(200,65,44,0.4);
+    color:#ff9d86;
+    font-size:12.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;
+    width:fit-content;
+  }
+  h1{
+    font-size:36px;
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-0.5px;
+  }
+  h1 span{color:#ff9d86;}
+  .hero p.sub{
+    font-size:16px;
+    color:#c3ceda;
+    max-width:46ch;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 22px;border-radius:10px;
+    font-weight:700;font-size:16px;
+    width:100%;
+  }
+  .btn svg{width:20px;height:20px;flex:none;}
+  .btn-primary{
+    background:var(--red);color:#fff;
+    box-shadow:0 10px 24px -8px rgba(200,65,44,0.6);
+  }
+  .btn-primary:active{background:var(--red-dark);}
+  .btn-ghost{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    color:#fff;
+  }
+  .hero-facts{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    border-top:1px solid rgba(255,255,255,0.14);
+    padding-top:22px;
+  }
+  .hero-facts .fact{text-align:center;}
+  .hero-facts .num{font-size:22px;font-weight:800;color:#fff;}
+  .hero-facts .lbl{font-size:11.5px;color:#9fb0c0;text-transform:uppercase;letter-spacing:0.4px;margin-top:2px;}
+
+  @media(min-width:760px){
+    .hero-inner{padding:88px 0 84px;}
+    h1{font-size:52px;max-width:16ch;}
+    .hero-ctas{flex-direction:row;}
+    .btn{width:auto;padding:16px 28px;}
+  }
+
+  /* Section shell */
+  section{padding:56px 0;}
+  .section-head{margin-bottom:32px;text-align:center;}
+  .kicker{
+    color:var(--red);font-weight:700;font-size:12.5px;
+    text-transform:uppercase;letter-spacing:0.6px;
+    margin-bottom:8px;
+  }
+  h2{font-size:28px;font-weight:800;letter-spacing:-0.4px;color:var(--navy);}
+  .section-head p{color:var(--gray);margin-top:10px;font-size:15px;max-width:52ch;margin-left:auto;margin-right:auto;}
+
+  /* Services */
+  .services{background:var(--offwhite);}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr);}}
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .card .icon{
+    width:46px;height:46px;border-radius:10px;
+    background:rgba(200,65,44,0.1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card .icon svg{width:24px;height:24px;color:var(--red);stroke:var(--red);}
+  .card h3{font-size:16.5px;font-weight:700;color:var(--navy);}
+  .card p{font-size:13.5px;color:var(--gray);}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  @media(min-width:760px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .num{
+    flex:none;width:38px;height:38px;border-radius:10px;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:14px;
+  }
+  .why-item h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  /* Area */
+  .area{background:var(--navy);color:#fff;}
+  .area .section-head p{color:#b7c3ce;}
+  .area h2{color:#fff;}
+  .county-list{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .county-pill{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    padding:9px 16px;border-radius:999px;
+    font-size:13.5px;font-weight:600;
+  }
+  .county-pill.main{
+    background:var(--red);border-color:var(--red);
+  }
+
+  /* Certs strip */
+  .certs{padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .certs .wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:center;}
+  .cert{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:700;font-size:13.5px;}
+  .cert svg{width:22px;height:22px;color:var(--red);stroke:var(--red);flex:none;}
+
+  /* Contact / CTA */
+  .contact{background:var(--offwhite);}
+  .contact-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:28px 22px;
+    display:flex;flex-direction:column;gap:18px;
+    max-width:640px;margin:0 auto;
+    text-align:center;
+  }
+  .contact-card h2{color:var(--navy);}
+  .contact-rows{display:flex;flex-direction:column;gap:12px;text-align:left;}
+  .contact-row{
+    display:flex;align-items:center;gap:12px;
+    padding:12px 14px;border:1px solid var(--line);border-radius:10px;
+    font-size:14.5px;
+  }
+  .contact-row svg{width:20px;height:20px;color:var(--red);flex:none;}
+  .contact-row .lbl{color:var(--gray);font-size:11.5px;text-transform:uppercase;letter-spacing:0.3px;display:block;}
+  .contact-row .val{font-weight:700;color:var(--navy);}
+  .contact-row a{color:var(--navy);}
+
+  /* Footer */
+  footer{background:var(--navy-dark);color:#93a3b2;padding:32px 0;}
+  footer .wrap{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;}
+  footer .fbrand{color:#fff;font-weight:800;font-size:15px;}
+  footer .fnote{font-size:12.5px;line-height:1.6;max-width:52ch;}
+  footer .fcall{
+    display:inline-flex;align-items:center;gap:8px;
+    color:#fff;font-weight:700;
+    background:var(--red);padding:10px 18px;border-radius:8px;font-size:14px;
+  }
+
+  /* Sticky mobile call bar */
+  .call-bar{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--red);
+    display:flex;
+  }
+  .call-bar a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+    color:#fff;font-weight:800;font-size:15px;
+    padding:14px 10px;
+  }
+  .call-bar svg{width:18px;height:18px;}
+  body{padding-bottom:58px;}
+  @media(min-width:760px){
+    .call-bar{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="badge">Corpus Christi, TX &bull; Serving South Texas Since 1991</span>
+    <a href="tel:13612252755">Call (361) 225-2755</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 6L4 20h6v20h10V28h8v12h10V20h6L24 6z" fill="#c8412c"/>
+      </svg>
+      <div class="brand-text">
+        <div class="name">Area Roofing Co.</div>
+        <div class="tag">Since 1991</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="tel:13612252755">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Certified Owens Corning Contractor &bull; Windstorm Certified</span>
+    <h1>Corpus Christi's Roofing Company <span>Since 1991</span></h1>
+    <p class="sub">Roof installation, repair, seamless gutters, and insurance restoration for South Texas homes. Family-run, locally trusted, three decades on Gulf Coast roofs.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:13612252755">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (361) 225-2755
+      </a>
+      <a class="btn btn-ghost" href="#contact">Request a Free Estimate</a>
+    </div>
+    <div class="hero-facts">
+      <div class="fact"><div class="num">34+</div><div class="lbl">Years in Business</div></div>
+      <div class="fact"><div class="num">5</div><div class="lbl">Counties Served</div></div>
+      <div class="fact"><div class="num">100%</div><div class="lbl">Locally Owned</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="certs">
+  <div class="wrap">
+    <div class="cert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+      Certified Owens Corning Contractor
+    </div>
+    <div class="cert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+      Windstorm Certified
+    </div>
+    <div class="cert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Serving South Texas Since 1991
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Do</div>
+      <h2>Roofing, Gutters &amp; Remodeling</h2>
+      <p>Full-service roofing and renovation work for Corpus Christi and surrounding counties.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
+        <h3>Roof Installation</h3>
+        <p>Asphalt shingles, architectural shingles, metal roofing, TPO, modified bitumen, low-slope roofs, and full redecks.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3l7 7-8 8-7-7z"/><path d="M6 15L3 21l6-3"/></svg></div>
+        <h3>Roof Repair</h3>
+        <p>Leak repair, storm damage, and general roof maintenance to protect your home.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v4H4z"/><path d="M6 8v12M18 8v12"/></svg></div>
+        <h3>Seamless Gutters</h3>
+        <p>5-inch and 6-inch seamless aluminum gutter installation, fitted on site.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l3-3 3 3 5-6"/></svg></div>
+        <h3>Insurance Restoration</h3>
+        <p>Storm and windstorm damage restoration, coordinated with your insurance claim.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg></div>
+        <h3>Interior Remodeling</h3>
+        <p>Kitchen and bathroom renovations from a crew you already trust with your roof.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V9l7-6 7 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Exterior Remodeling</h3>
+        <p>Patios, decks, and siding to finish the outside of your home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Why Area Roofing</div>
+      <h2>Three Decades on South Texas Roofs</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">01</div>
+        <div><h3>Established 1991</h3><p>Over three decades serving Corpus Christi and the surrounding Gulf Coast region.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">02</div>
+        <div><h3>Certified Owens Corning Contractor</h3><p>Installs backed by a nationally recognized manufacturer certification.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">03</div>
+        <div><h3>Windstorm Certified</h3><p>Qualified for Texas windstorm inspection requirements, important for coastal homes.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">04</div>
+        <div><h3>One Call for the Whole Job</h3><p>Roofing, gutters, and remodeling handled by a single local team.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Where We Work</div>
+      <h2>Proudly Serving South Texas</h2>
+      <p>Based in Corpus Christi, TX and serving the surrounding counties.</p>
+    </div>
+    <div class="county-list">
+      <span class="county-pill main">Corpus Christi</span>
+      <span class="county-pill">San Patricio County</span>
+      <span class="county-pill">Jim Wells County</span>
+      <span class="county-pill">Live Oak County</span>
+      <span class="county-pill">McMullen County</span>
+      <span class="county-pill">Bee County</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div>
+        <div class="kicker">Get In Touch</div>
+        <h2>Ready to Talk About Your Roof?</h2>
+      </div>
+      <div class="contact-rows">
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><span class="lbl">Phone</span><a class="val" href="tel:13612252755">(361) 225-2755</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          <div><span class="lbl">Email</span><a class="val" href="mailto:arearoofing@yahoo.com">arearoofing@yahoo.com</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><span class="lbl">Mailing Address</span><span class="val">P.O. Box 6801, Corpus Christi, TX 78466</span></div>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="tel:13612252755">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (361) 225-2755
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">Area Roofing Co.</div>
+    <p class="fnote">Corpus Christi, TX &bull; Serving San Patricio, Jim Wells, Live Oak, McMullen, and Bee Counties since 1991. Certified Owens Corning Contractor. Windstorm Certified.</p>
+    <a class="fcall" href="tel:13612252755">Call (361) 225-2755</a>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a href="tel:13612252755">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Tap to Call (361) 225-2755
+  </a>
+</div>
+
+</body>
+</html>
