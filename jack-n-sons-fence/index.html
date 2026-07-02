@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack-N-Sons Fence Company | Worcester, MA</title>
+<style>
+  :root{
+    --ink:#1a1f26;
+    --ink-soft:#4a5560;
+    --line:#e3e7ea;
+    --paper:#ffffff;
+    --panel:#f4f6f7;
+    --green:#2f4b3c;
+    --green-dark:#1f332a;
+    --accent:#c8722c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:34px;height:34px;flex-shrink:0;}
+  .brand-text{font-weight:800;font-size:15px;letter-spacing:0.2px;line-height:1.15;}
+  .brand-text small{display:block;font-weight:500;color:var(--ink-soft);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-top:1px;}
+  .call-pill{
+    display:flex;align-items:center;gap:6px;
+    background:var(--green);color:#fff;
+    padding:9px 14px;border-radius:100px;
+    font-size:13px;font-weight:700;white-space:nowrap;
+  }
+  .call-pill svg{width:15px;height:15px;flex-shrink:0;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,#f4f6f7 0%,#ffffff 100%);
+    padding:34px 0 30px;
+    border-bottom:1px solid var(--line);
+  }
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:11.5px;font-weight:700;letter-spacing:0.3px;
+    color:var(--green);background:#e7ece8;
+    padding:5px 10px;border-radius:100px;text-transform:uppercase;
+  }
+  h1{
+    font-size:32px;line-height:1.12;letter-spacing:-0.5px;
+    font-weight:800;color:var(--ink);margin-bottom:12px;
+  }
+  h1 span{color:var(--green);}
+  .hero-sub{
+    font-size:16px;color:var(--ink-soft);max-width:520px;margin-bottom:22px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:10px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 20px;border-radius:12px;
+    font-size:16px;font-weight:700;
+    border:2px solid transparent;
+  }
+  .btn-primary{background:var(--green);color:#fff;}
+  .btn-primary svg{width:18px;height:18px;}
+  .btn-secondary{background:transparent;color:var(--ink);border-color:var(--line);}
+  .hero-meta{
+    margin-top:20px;display:flex;flex-wrap:wrap;gap:14px 20px;
+    font-size:13px;color:var(--ink-soft);
+  }
+  .hero-meta span{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:15px;height:15px;color:var(--green);flex-shrink:0;}
+
+  /* Section titles */
+  .section{padding:44px 0;}
+  .section-alt{background:var(--panel);}
+  .eyebrow{
+    font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;
+  }
+  h2{font-size:24px;font-weight:800;letter-spacing:-0.3px;margin-bottom:6px;}
+  .section-sub{color:var(--ink-soft);font-size:15px;margin-bottom:24px;max-width:520px;}
+
+  /* Services grid */
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:12px;
+  }
+  .service-card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;padding:18px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .service-icon{
+    width:44px;height:44px;flex-shrink:0;border-radius:10px;
+    background:#eef2ee;display:flex;align-items:center;justify-content:center;
+  }
+  .service-icon svg{width:24px;height:24px;color:var(--green);}
+  .service-card h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+  .service-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.45;}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-num{
+    width:38px;height:38px;border-radius:10px;flex-shrink:0;
+    background:var(--green);color:#fff;font-weight:800;font-size:15px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item h3{font-size:15.5px;font-weight:700;margin-bottom:3px;}
+  .why-item p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* Area */
+  .area-card{
+    background:var(--green-dark);color:#fff;
+    border-radius:16px;padding:26px 22px;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .area-card h2{color:#fff;}
+  .area-card .section-sub{color:#c9d4cd;}
+  .area-list{display:flex;flex-wrap:wrap;gap:8px;}
+  .area-chip{
+    background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);
+    padding:6px 12px;border-radius:100px;font-size:12.5px;font-weight:600;
+  }
+  .area-note{font-size:12.5px;color:#a9b8ad;}
+
+  /* Contact */
+  .contact-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:22px;display:flex;flex-direction:column;gap:16px;
+  }
+  .contact-row{
+    display:flex;align-items:center;gap:12px;
+    padding:14px;border-radius:12px;background:var(--panel);
+  }
+  .contact-row svg{width:20px;height:20px;color:var(--green);flex-shrink:0;}
+  .contact-row .label{font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink-soft);font-weight:700;}
+  .contact-row .val{font-size:15px;font-weight:700;word-break:break-word;}
+
+  footer{
+    padding:26px 0 34px;text-align:center;
+    border-top:1px solid var(--line);
+  }
+  footer p{font-size:12.5px;color:var(--ink-soft);}
+  footer .fname{font-weight:800;color:var(--ink);font-size:14px;margin-bottom:4px;}
+
+  /* Sticky mobile call bar */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--green);color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 20px calc(14px + env(safe-area-inset-bottom));
+    font-size:15px;font-weight:800;letter-spacing:0.2px;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.12);
+  }
+  .sticky-call svg{width:17px;height:17px;}
+  body{padding-bottom:64px;}
+
+  @media (min-width:640px){
+    h1{font-size:42px;}
+    .hero-sub{font-size:17.5px;}
+    .hero-ctas{flex-direction:row;}
+    .btn{padding:16px 26px;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .contact-card{flex-direction:row;}
+    .contact-row{flex:1;}
+  }
+  @media (min-width:900px){
+    .services-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="9" fill="#2f4b3c"/>
+        <path d="M9 30V12M9 12H15M9 18H14M9 24H15M20 30V12M20 12H26M20 18H25M20 24H26M31 30V15M31 15L27 19M31 15L35 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text">Jack-N-Sons<small>Fence Company</small></div>
+    </div>
+    <a class="call-pill" href="tel:17742859947">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="badge">Family Owned</span>
+      <span class="badge">Since 1978</span>
+      <span class="badge">Worcester County</span>
+    </div>
+    <h1>Fencing built to <span>last</span>, from a Worcester company since 1978</h1>
+    <p class="hero-sub">Vinyl, wood, chain link, and ornamental iron fencing installed by Jack-N-Sons Fence Company — serving Worcester County and the New England region.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:17742859947">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (774) 285-9947
+      </a>
+      <a class="btn btn-secondary" href="mailto:DDavini@JacknSonsFence.com">Email for a Quote</a>
+    </div>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        640 Franklin St, Worcester, MA 01604
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+        DDavini@JacknSonsFence.com
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Install</div>
+    <h2>Fencing services</h2>
+    <p class="section-sub">Full-service fence installation and metal fabrication for residential and commercial properties.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v18M4 9h4M4 15h4M12 3v18M12 9h4M12 15h4M20 3v18"/></svg>
+        </div>
+        <div>
+          <h3>Vinyl Fencing &amp; Rail</h3>
+          <p>PVC vinyl fencing and deck railing — low maintenance, built for New England weather.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18M9 3v18M13 3v18M17 3v18M3 7h18M3 15h18"/></svg>
+        </div>
+        <div>
+          <h3>Wood Fencing</h3>
+          <p>White and red cedar fencing, custom-built for privacy, security, or classic curb appeal.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l4 4M3 11l4 4M3 19l4-4M21 3l-4 4M21 11l-4 4M21 19l-4-4M7 7l4 4-4 4M17 7l-4 4 4 4"/></svg>
+        </div>
+        <div>
+          <h3>Chain Link Fencing</h3>
+          <p>Durable, cost-effective chain link for yards, lots, and commercial sites.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M21 12h-3M6 12H3M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7 5.6 5.6"/></svg>
+        </div>
+        <div>
+          <h3>Wrought Iron &amp; Ornamental Aluminum</h3>
+          <p>Decorative, sturdy iron and aluminum fencing for a refined finished look.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div>
+          <h3>Metal Fabrication</h3>
+          <p>Custom metalwork and fabrication services beyond standard fence installs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why Jack-N-Sons</div>
+    <h2>Built on 40+ years of local work</h2>
+    <p class="section-sub">A family-run fence company that's been part of Worcester County since 1978.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">78</div>
+        <div>
+          <h3>Serving since 1978</h3>
+          <p>Decades of fence installations across Worcester County and the New England region.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">FM</div>
+        <div>
+          <h3>Family owned &amp; operated</h3>
+          <p>Direct contact with the owner — no call centers, no middlemen.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">5</div>
+        <div>
+          <h3>Multiple fence types</h3>
+          <p>Vinyl, wood, chain link, and ornamental iron — one company for the whole job.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">MF</div>
+        <div>
+          <h3>Metal fabrication too</h3>
+          <p>Custom metalwork capability alongside standard fence installation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="area">
+  <div class="wrap">
+    <div class="area-card">
+      <div>
+        <div class="eyebrow" style="color:#e2b98a;">Service Area</div>
+        <h2>Worcester County &amp; New England</h2>
+        <p class="section-sub">Based in Worcester, MA — installing fences throughout the surrounding region.</p>
+      </div>
+      <div class="area-list">
+        <span class="area-chip">Worcester, MA</span>
+        <span class="area-chip">Worcester County</span>
+        <span class="area-chip">New England Region</span>
+      </div>
+      <p class="area-note">Call to confirm service at your specific address.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Request your quote</h2>
+    <p class="section-sub">Call, email, or stop by — Jack-N-Sons is ready to talk through your fence project.</p>
+    <div class="contact-card">
+      <a class="contact-row" href="tel:17742859947">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div>
+          <div class="label">Phone</div>
+          <div class="val">(774) 285-9947</div>
+        </div>
+      </a>
+      <a class="contact-row" href="mailto:DDavini@JacknSonsFence.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+        <div>
+          <div class="label">Email</div>
+          <div class="val">DDavini@JacknSonsFence.com</div>
+        </div>
+      </a>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <div class="label">Address</div>
+          <div class="val">640 Franklin St, Worcester, MA 01604</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fname">Jack-N-Sons Fence Company</div>
+    <p>640 Franklin Street, Worcester, MA 01604 &middot; (774) 285-9947 &middot; Serving Worcester County since 1978</p>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:17742859947">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Tap to Call (774) 285-9947
+</a>
+
+</body>
+</html>
