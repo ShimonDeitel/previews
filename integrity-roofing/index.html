@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrity Roofing, Siding & Windows | Kansas City, MO</title>
+<style>
+  :root{
+    --navy:#101826;
+    --navy-2:#1a2740;
+    --blue:#2f6fed;
+    --blue-dark:#1f4fc2;
+    --ink:#111418;
+    --gray:#5a6472;
+    --line:#e4e7ec;
+    --bg:#ffffff;
+    --bg-soft:#f6f7f9;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;
+    border:none;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(47,111,237,.35);}
+  .btn-primary:hover{background:var(--blue-dark);}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--line);}
+
+  /* ---------- Top call bar ---------- */
+  .callbar{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+    text-align:center;
+    padding:8px 12px;
+    letter-spacing:.2px;
+  }
+  .callbar a{font-weight:700;color:#9dc0ff;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--navy);}
+  .brand .mark{width:34px;height:34px;flex:none;}
+  .brand small{display:block;font-weight:600;color:var(--gray);font-size:10.5px;letter-spacing:.4px;}
+  .nav-call{
+    display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+    padding:10px 16px;border-radius:999px;font-weight:700;font-size:14px;
+  }
+  .nav-call svg{width:16px;height:16px;flex:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--navy) 0%, var(--navy-2) 55%, #223458 100%);
+    color:#fff;
+    padding:40px 0 56px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.035) 0 2px, transparent 2px 26px);
+    opacity:.6;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+    padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:600;
+    color:#cfe0ff;margin-bottom:18px;
+  }
+  .badge svg{width:14px;height:14px;flex:none;}
+  h1{
+    font-size:34px;line-height:1.14;font-weight:800;letter-spacing:-.5px;
+    margin-bottom:14px;
+  }
+  h1 span{color:#8fb4ff;}
+  .hero p.lead{
+    font-size:16px;color:#c7d2e6;max-width:520px;margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .hero-ctas .btn{width:100%;}
+  .trust-row{
+    display:flex;flex-wrap:wrap;gap:10px 18px;
+    padding-top:22px;border-top:1px solid rgba(255,255,255,.15);
+  }
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#d7e0f2;font-weight:600;}
+  .trust-item svg{width:18px;height:18px;flex:none;color:#8fb4ff;}
+
+  .roofline{
+    position:absolute;left:0;right:0;bottom:-1px;height:60px;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:52px 0;}
+  .eyebrow{
+    display:block;font-size:12.5px;font-weight:800;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--blue);margin-bottom:8px;
+  }
+  h2{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--navy);margin-bottom:10px;}
+  .section-sub{color:var(--gray);font-size:15px;max-width:560px;margin-bottom:30px;}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  .service-card{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 16px;
+  }
+  .service-card .icon{
+    width:42px;height:42px;border-radius:10px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .service-card .icon svg{width:22px;height:22px;color:#8fb4ff;}
+  .service-card h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .service-card p{font-size:13px;color:var(--gray);line-height:1.45;}
+
+  /* ---------- Why us ---------- */
+  .why{background:var(--bg-soft);}
+  .why-list{display:flex;flex-direction:column;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;}
+  .why-item .num{
+    flex:none;width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+  }
+  .why-item h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+  .why-item p{font-size:13.5px;color:var(--gray);}
+
+  /* ---------- Area ---------- */
+  .area-card{
+    background:var(--navy);color:#fff;border-radius:20px;padding:28px 22px;
+    position:relative;overflow:hidden;
+  }
+  .area-card svg.pin{width:34px;height:34px;color:#8fb4ff;margin-bottom:14px;}
+  .area-card h2{color:#fff;}
+  .area-card .section-sub{color:#c7d2e6;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .chip{
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+    padding:7px 13px;border-radius:999px;font-size:12.5px;font-weight:600;color:#e6ecfa;
+  }
+  .locations{margin-top:20px;font-size:13px;color:#aebbd4;line-height:1.7;}
+  .locations strong{color:#fff;}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+    color:#fff;border-radius:20px;padding:30px 22px;text-align:center;
+  }
+  .cta-band h2{color:#fff;margin-bottom:8px;}
+  .cta-band p{color:#dce7ff;font-size:14.5px;margin-bottom:22px;}
+  .cta-band .btn-primary{background:#fff;color:var(--blue-dark);box-shadow:none;width:100%;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:flex;flex-direction:column;gap:14px;}
+  .contact-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .contact-card .icon{
+    flex:none;width:40px;height:40px;border-radius:10px;background:var(--bg-soft);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-card .icon svg{width:20px;height:20px;color:var(--blue);}
+  .contact-card h3{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+  .contact-card p, .contact-card a{font-size:13.5px;color:var(--gray);}
+  .contact-card a.phone-link{color:var(--blue);font-weight:700;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy);color:#aebbd4;padding:34px 0 90px;font-size:12.5px;}
+  footer .brand{color:#fff;margin-bottom:10px;}
+  footer .foot-links{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;}
+  footer hr{border:none;border-top:1px solid rgba(255,255,255,.12);margin:18px 0;}
+
+  /* ---------- Sticky mobile call button ---------- */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:#fff;border-top:1px solid var(--line);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    box-shadow:0 -6px 20px rgba(0,0,0,.08);
+  }
+  .sticky-call .btn{width:100%;}
+
+  @media (min-width:640px){
+    .container{padding:0 32px;}
+    h1{font-size:44px;}
+    .hero p.lead{font-size:18px;}
+    .hero-ctas{flex-direction:row;}
+    .hero-ctas .btn{width:auto;}
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+    .why-list{display:grid;grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+    h1{font-size:52px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="callbar">
+  Locally owned in Kansas City since 2008 &nbsp;•&nbsp; Call now:
+  <a href="tel:19135131745">(913) 513-1745</a>
+</div>
+
+<header>
+  <div class="nav container">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4 L36 16 L33 16 L33 34 L7 34 L7 16 L4 16 Z" fill="#101826"/>
+        <path d="M20 4 L36 16 L33 16 L20 6.5 L7 16 L4 16 Z" fill="#2f6fed"/>
+        <rect x="17" y="22" width="6" height="12" fill="#fff"/>
+      </svg>
+      <div>
+        Integrity Roofing
+        <small>SIDING &amp; WINDOWS</small>
+      </div>
+    </div>
+    <a class="nav-call" href="tel:19135131745">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L17.5 20 12 17l-5.5 3 1-6.5L3 9l6-1z"/></svg>
+      BBB Torch Award for Ethics
+    </div>
+    <h1>Kansas City roofing, siding &amp; windows done <span>the honest way.</span></h1>
+    <p class="lead">Family-owned and serving the Kansas City metro since 2008. Straight answers, real inspections, and crews who show up when they say they will.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:19135131745">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (913) 513-1745
+      </a>
+      <a class="btn btn-ghost" href="https://www.integrityroofingllc.com/contact">Request a Free Inspection</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        17+ years, Kansas City metro
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        GAF &amp; Owens Corning certified
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Insurance claim assistance
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="eyebrow">What we do</span>
+    <h2>Roofing, siding &amp; windows — one crew, one call.</h2>
+    <p class="section-sub">Full exterior services for Kansas City area homes, from storm repairs to full replacements.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M5 10v10h14V10"/></svg></div>
+        <h3>Roofing</h3>
+        <p>Full replacements and repairs, all major shingle types.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Siding</h3>
+        <p>Vinyl, LP SmartSide, and fiber cement installation.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M12 4v16M4 12h16"/></svg></div>
+        <h3>Windows &amp; Doors</h3>
+        <p>Energy-efficient replacement windows and entry doors.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16M6 10v9a1 1 0 001 1h10a1 1 0 001-1v-9"/><path d="M9 14v2M15 14v2"/></svg></div>
+        <h3>Seamless Gutters</h3>
+        <p>Custom-fit gutters and gutter guard systems.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg></div>
+        <h3>Storm Damage</h3>
+        <p>Wind and hail repair, insurance claim support.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Attic Insulation</h3>
+        <p>Improve comfort and energy efficiency year-round.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <span class="eyebrow">Why Integrity</span>
+    <h2>Building trust, one home at a time.</h2>
+    <p class="section-sub">The name is the promise. Here's how we back it up.</p>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div><h3>Locally owned since 2008</h3><p>17+ years serving Kansas City area homeowners.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div><h3>BBB Torch Award for Ethics</h3><p>Recognized for honest business practices.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div><h3>Manufacturer certified</h3><p>GAF, Owens Corning, Pella, James Hardie, LP SmartSide.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="num">4</div>
+        <div><h3>Insurance claim help</h3><p>We walk you through storm damage claims.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="area-card">
+      <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="eyebrow" style="color:#8fb4ff;">Service area</span>
+      <h2>Proudly serving Kansas City &amp; beyond.</h2>
+      <p class="section-sub">Based in Warrensburg, MO with a Kansas City location, covering Missouri and Kansas communities.</p>
+      <div class="chip-row">
+        <span class="chip">Lee's Summit</span>
+        <span class="chip">Blue Springs</span>
+        <span class="chip">Independence</span>
+        <span class="chip">Gladstone</span>
+        <span class="chip">Raymore</span>
+        <span class="chip">Harrisonville</span>
+        <span class="chip">Warrensburg</span>
+        <span class="chip">Sedalia</span>
+        <span class="chip">Olathe, KS</span>
+        <span class="chip">Overland Park, KS</span>
+        <span class="chip">Shawnee, KS</span>
+      </div>
+      <div class="locations">
+        <strong>Warrensburg, MO:</strong> 501 N Holden St, Warrensburg, MO 64093<br>
+        <strong>Kansas City area:</strong> (913) 513-1745
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-band">
+      <h2>Get a free inspection.</h2>
+      <p>No pressure, no obligation — just an honest look at your roof.</p>
+      <a class="btn btn-primary" href="tel:19135131745">Call (913) 513-1745</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h2>Talk to a real person today.</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div>
+          <h3>Kansas City</h3>
+          <a class="phone-link" href="tel:19135131745">(913) 513-1745</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div>
+          <h3>Warrensburg office</h3>
+          <a class="phone-link" href="tel:16604766228">(660) 476-6228</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3>Address</h3>
+          <p>501 N Holden St, Warrensburg, MO 64093</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg></div>
+        <div>
+          <h3>Online</h3>
+          <a href="https://www.integrityroofingllc.com/contact">integrityroofingllc.com/contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand" style="display:flex;align-items:center;gap:10px;font-weight:800;">
+      <svg width="26" height="26" viewBox="0 0 40 40" fill="none"><path d="M20 4 L36 16 L33 16 L33 34 L7 34 L7 16 L4 16 Z" fill="#fff"/><path d="M20 4 L36 16 L33 16 L20 6.5 L7 16 L4 16 Z" fill="#2f6fed"/></svg>
+      Integrity Roofing, Siding &amp; Windows
+    </div>
+    <p>Locally owned and operated, serving the Kansas City metro since 2008.</p>
+    <div class="foot-links">
+      <a href="tel:19135131745">Call</a>
+      <a href="https://www.integrityroofingllc.com/contact">Contact</a>
+    </div>
+    <hr>
+    <p>© 2013–2026 Integrity Roofing LLC. Prototype homepage concept — not the live site.</p>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a class="btn btn-primary" href="tel:19135131745">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Tap to Call (913) 513-1745
+  </a>
+</div>
+
+</body>
+</html>
