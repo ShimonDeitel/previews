@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garibay's Lawn Care | Joliet, IL</title>
+<style>
+  :root{
+    --green:#1f5c34;
+    --green-dark:#123b21;
+    --green-light:#e8f3ea;
+    --gold:#d99b2b;
+    --ink:#1a1a1a;
+    --gray:#5c6560;
+    --line:#e1e6e2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1100px;margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:var(--green-dark);}
+  .logo svg{width:28px;height:28px;flex-shrink:0;}
+  .call-pill{
+    display:flex;align-items:center;gap:6px;
+    background:var(--green);color:#fff;
+    padding:9px 16px;border-radius:999px;
+    font-weight:700;font-size:14px;
+    white-space:nowrap;
+  }
+  .call-pill svg{width:16px;height:16px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--green-light) 0%,#fff 100%);
+    padding:36px 20px 40px;
+    text-align:center;
+  }
+  .badge{
+    display:inline-block;
+    background:#fff;border:1px solid var(--green);
+    color:var(--green);
+    font-size:12px;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;
+    padding:6px 14px;border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:32px;
+    line-height:1.15;
+    font-weight:800;
+    color:var(--green-dark);
+    margin-bottom:12px;
+    letter-spacing:-0.5px;
+  }
+  .hero p.sub{
+    font-size:16px;
+    color:var(--gray);
+    max-width:520px;
+    margin:0 auto 24px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 20px;border-radius:12px;
+    font-weight:700;font-size:16px;
+    border:2px solid transparent;
+  }
+  .btn-primary{background:var(--green);color:#fff;}
+  .btn-secondary{background:#fff;color:var(--green);border-color:var(--green);}
+  .btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  .hero-illustration{
+    margin:32px auto 0;
+    max-width:340px;
+  }
+
+  /* Trust strip */
+  .trust-strip{
+    background:var(--green-dark);
+    color:#fff;
+    padding:14px 20px;
+  }
+  .trust-strip .wrap{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:18px;
+    font-size:13px;font-weight:600;
+  }
+  .trust-strip .item{display:flex;align-items:center;gap:6px;}
+  .trust-strip svg{width:16px;height:16px;flex-shrink:0;}
+
+  /* Section headings */
+  section{padding:48px 20px;}
+  .section-head{text-align:center;margin-bottom:32px;}
+  .section-head .eyebrow{
+    font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--green);margin-bottom:8px;
+  }
+  .section-head h2{font-size:26px;font-weight:800;color:var(--green-dark);letter-spacing:-0.3px;}
+
+  /* Services grid */
+  .services{background:#fafbfa;}
+  .services-grid{
+    display:grid;grid-template-columns:1fr;gap:14px;
+    max-width:640px;margin:0 auto;
+  }
+  .service-card{
+    display:flex;gap:14px;align-items:flex-start;
+    background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:18px;
+  }
+  .service-card .icon{
+    width:44px;height:44px;flex-shrink:0;
+    background:var(--green-light);border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-card .icon svg{width:24px;height:24px;color:var(--green);stroke:var(--green);}
+  .service-card h3{font-size:16px;font-weight:700;margin-bottom:3px;}
+  .service-card p{font-size:14px;color:var(--gray);}
+
+  /* Why us */
+  .why-grid{
+    display:grid;grid-template-columns:1fr;gap:20px;
+    max-width:640px;margin:0 auto;
+  }
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-item .num{
+    width:36px;height:36px;flex-shrink:0;border-radius:50%;
+    background:var(--green);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:14px;
+  }
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:2px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* Area */
+  .area{background:var(--green-light);}
+  .area-list{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    max-width:640px;margin:0 auto;
+  }
+  .area-chip{
+    background:#fff;border:1px solid var(--line);
+    padding:9px 16px;border-radius:999px;
+    font-size:14px;font-weight:600;color:var(--green-dark);
+  }
+
+  /* Contact / CTA */
+  .cta{
+    background:var(--green-dark);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{font-size:26px;font-weight:800;margin-bottom:10px;}
+  .cta p{font-size:15px;color:#c9dccf;max-width:440px;margin:0 auto 26px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .cta .btn-primary{background:var(--gold);color:var(--green-dark);}
+  .cta .btn-secondary{background:transparent;color:#fff;border-color:#3d6b4a;}
+
+  .contact-info{
+    margin-top:32px;padding-top:28px;border-top:1px solid #2b4a35;
+    display:flex;flex-direction:column;gap:14px;align-items:center;
+    font-size:14px;
+  }
+  .contact-info .row{display:flex;align-items:center;gap:8px;color:#e6f0e8;}
+  .contact-info svg{width:16px;height:16px;flex-shrink:0;color:var(--gold);}
+
+  footer{
+    background:#0f2e1a;color:#8fae97;
+    text-align:center;padding:22px 20px;font-size:12px;
+  }
+
+  @media(min-width:600px){
+    .hero h1{font-size:40px;}
+    .hero-ctas{flex-direction:row;max-width:none;}
+    .btn{flex:1;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .cta-buttons{flex-direction:row;max-width:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9 7 6 9.5 6 13a6 6 0 0012 0c0-3.5-3-6-6-10z" fill="#1f5c34"/><path d="M12 21v-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Garibay's Lawn Care
+    </div>
+    <a class="call-pill" href="tel:8155827830">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="badge">Family Owned &middot; Joliet, IL</span>
+  <h1>Lawn care that shows up &amp; does it right.</h1>
+  <p class="sub">Mowing, cleanups, and landscaping for homes and businesses across the Joliet area. Fully licensed &amp; insured.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="tel:8155827830">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call (815) 582-7830
+    </a>
+    <a class="btn btn-secondary" href="mailto:Garibayslawn@gmail.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4V4z"/><path d="M22 6l-10 7L2 6"/></svg>
+      Email Us
+    </a>
+  </div>
+
+  <div class="hero-illustration">
+    <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="120" width="340" height="40" fill="#e8f3ea"/>
+      <path d="M0 122 Q 20 110 40 122 T 80 122 T 120 122 T 160 122 T 200 122 T 240 122 T 280 122 T 320 122 T 340 122" fill="none" stroke="#1f5c34" stroke-width="3"/>
+      <circle cx="60" cy="60" r="26" fill="#1f5c34"/>
+      <circle cx="95" cy="45" r="20" fill="#2a7345"/>
+      <circle cx="35" cy="45" r="18" fill="#2a7345"/>
+      <rect x="55" y="80" width="10" height="42" fill="#7a5230"/>
+      <circle cx="220" cy="55" r="22" fill="#2a7345"/>
+      <circle cx="250" cy="70" r="16" fill="#1f5c34"/>
+      <rect x="215" y="75" width="9" height="47" fill="#7a5230"/>
+      <g transform="translate(150,105)">
+        <rect x="0" y="10" width="34" height="18" rx="3" fill="#d99b2b"/>
+        <circle cx="8" cy="30" r="7" fill="#1a1a1a"/>
+        <circle cx="28" cy="30" r="7" fill="#1a1a1a"/>
+        <rect x="30" y="0" width="6" height="14" fill="#5c6560"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Licensed &amp; Insured
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      10+ Years Experience
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+      Family Owned
+    </div>
+  </div>
+</div>
+
+<section class="services">
+  <div class="section-head">
+    <div class="eyebrow">What We Do</div>
+    <h2>Our Services</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="10" rx="1"/><circle cx="6" cy="20" r="1.5"/><circle cx="14" cy="20" r="1.5"/><path d="M17 10h3l1 4h-4"/></svg></div>
+      <div><h3>Mowing, Trimming &amp; Edging</h3><p>Weekly and biweekly lawn maintenance for a clean, consistent cut.</p></div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg></div>
+      <div><h3>Aeration, Dethatching &amp; Overseeding</h3><p>Healthier soil and thicker turf that stands up to Illinois seasons.</p></div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V10l7-6 7 6v10M9 20v-6h6v6"/></svg></div>
+      <div><h3>Mulch, Stone &amp; Topsoil</h3><p>Decorative mulch and stone installs plus topsoil delivery.</p></div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></svg></div>
+      <div><h3>Spring &amp; Fall Cleanups</h3><p>Leaf and debris removal to get your property ready for the season.</p></div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-11z"/></svg></div>
+      <div><h3>Seed &amp; Sod Installation</h3><p>New lawn installs and repairs, from bare patches to full yards.</p></div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/></svg></div>
+      <div><h3>Residential &amp; Commercial</h3><p>Serving homeowners and business properties throughout the area.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-head">
+    <div class="eyebrow">Why Garibay's</div>
+    <h2>A Family Business You Can Count On</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="num">1</div>
+      <div><h3>Family Owned &amp; Operated</h3><p>Over 10 years serving the Joliet community directly, not through a franchise.</p></div>
+    </div>
+    <div class="why-item">
+      <div class="num">2</div>
+      <div><h3>Licensed &amp; Insured</h3><p>Work done right, with the protection you'd expect from a professional crew.</p></div>
+    </div>
+    <div class="why-item">
+      <div class="num">3</div>
+      <div><h3>Residential &amp; Commercial</h3><p>One crew for your home lawn or your business property.</p></div>
+    </div>
+    <div class="why-item">
+      <div class="num">4</div>
+      <div><h3>Straightforward to Reach</h3><p>Call or email directly — no runaround, real answers from the family.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="section-head">
+    <div class="eyebrow">Service Area</div>
+    <h2>Proudly Serving</h2>
+  </div>
+  <div class="area-list">
+    <span class="area-chip">Joliet</span>
+    <span class="area-chip">Plainfield</span>
+    <span class="area-chip">Naperville</span>
+    <span class="area-chip">Lockport</span>
+    <span class="area-chip">New Lenox</span>
+    <span class="area-chip">Crest Hill</span>
+    <span class="area-chip">Romeoville</span>
+    <span class="area-chip">Bolingbrook</span>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Ready for a Better Looking Lawn?</h2>
+    <p>Call or email today for a quote from Garibay's Lawn Care.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="tel:8155827830">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (815) 582-7830
+      </a>
+      <a class="btn btn-secondary" href="tel:8157931894">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (815) 793-1894
+      </a>
+    </div>
+    <div class="contact-info">
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4V4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Garibayslawn@gmail.com
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Joliet, IL &amp; surrounding areas
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Garibay's Lawn Care Inc. All rights reserved.
+</footer>
+
+</body>
+</html>

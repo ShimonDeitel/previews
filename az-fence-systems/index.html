@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fence Systems Inc | Mesa, AZ Fencing Since 1994</title>
+<style>
+  :root{
+    --navy:#12233b;
+    --navy-dark:#0b1626;
+    --steel:#3d5a75;
+    --accent:#c8622a;
+    --accent-dark:#a94f1f;
+    --line:#e4e7eb;
+    --bg:#ffffff;
+    --bg-soft:#f5f6f8;
+    --text:#1b2430;
+    --text-soft:#5a6672;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1120px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;}
+  .brand-mark{width:34px;height:34px;flex-shrink:0;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text strong{font-size:16px;letter-spacing:0.2px;}
+  .brand-text span{font-size:10.5px;color:#b9c3cf;letter-spacing:1.5px;text-transform:uppercase;}
+  .call-pill{
+    display:flex;align-items:center;gap:8px;
+    background:var(--accent);
+    color:#fff;
+    padding:9px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .call-pill svg{width:16px;height:16px;flex-shrink:0;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:52px 0 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-60px;bottom:-60px;
+    width:280px;height:280px;
+    background:radial-gradient(circle,rgba(200,98,42,0.25) 0%,transparent 70%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    color:#dfe6ee;
+    font-size:12.5px;font-weight:600;
+    padding:6px 12px;border-radius:999px;
+  }
+  .badge svg{width:13px;height:13px;}
+  h1{
+    font-size:clamp(30px,7vw,46px);
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-0.5px;
+    margin-bottom:14px;
+  }
+  h1 em{
+    font-style:normal;
+    color:var(--accent);
+  }
+  .hero-sub{
+    font-size:16.5px;
+    color:#c3ccd6;
+    max-width:52ch;
+    margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:420px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    font-size:16px;font-weight:700;
+    padding:15px 20px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    width:100%;
+  }
+  .btn svg{width:19px;height:19px;flex-shrink:0;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:active{background:var(--accent-dark);}
+  .btn-secondary{background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.25);}
+  .hero-meta{
+    display:flex;gap:20px;flex-wrap:wrap;
+    margin-top:28px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .hero-meta-item{display:flex;flex-direction:column;}
+  .hero-meta-item strong{font-size:22px;font-weight:800;color:#fff;}
+  .hero-meta-item span{font-size:11.5px;color:#a7b2bf;text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;}
+
+  /* SECTION HEADINGS */
+  section{padding:52px 0;}
+  .eyebrow{
+    font-size:12px;font-weight:700;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    margin-bottom:8px;
+  }
+  h2{
+    font-size:clamp(24px,5vw,32px);
+    font-weight:800;
+    letter-spacing:-0.3px;
+    margin-bottom:10px;
+    color:var(--navy);
+  }
+  .section-sub{color:var(--text-soft);font-size:15.5px;max-width:56ch;margin-bottom:32px;}
+
+  /* SERVICES */
+  .services-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .service-card{
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .service-icon{
+    width:46px;height:46px;flex-shrink:0;
+    background:var(--navy);
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-icon svg{width:24px;height:24px;stroke:#fff;}
+  .service-card h3{font-size:16.5px;font-weight:700;margin-bottom:4px;color:var(--navy);}
+  .service-card p{font-size:14px;color:var(--text-soft);}
+
+  /* WHY US */
+  .why-section{background:var(--bg-soft);}
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-num{
+    width:38px;height:38px;flex-shrink:0;
+    border-radius:10px;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:15px;
+  }
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:3px;color:var(--navy);}
+  .why-item p{font-size:14px;color:var(--text-soft);}
+
+  /* AREA */
+  .area-box{
+    background:var(--navy);
+    color:#fff;
+    border-radius:20px;
+    padding:30px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .area-box h2{color:#fff;}
+  .area-box .section-sub{color:#c3ccd6;}
+  .area-list{
+    display:flex;flex-wrap:wrap;gap:8px;
+  }
+  .area-chip{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:7px 13px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+  }
+
+  /* CONTACT */
+  .contact-card{
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:26px 22px;
+  }
+  .contact-row{
+    display:flex;align-items:flex-start;gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row svg{width:20px;height:20px;stroke:var(--accent);flex-shrink:0;margin-top:2px;}
+  .contact-row strong{display:block;font-size:15px;color:var(--navy);}
+  .contact-row span{font-size:13.5px;color:var(--text-soft);}
+
+  /* FOOTER CTA */
+  .final-cta{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:48px 0 44px;
+  }
+  .final-cta h2{color:#fff;}
+  .final-cta .section-sub{color:#c3ccd6;margin-left:auto;margin-right:auto;}
+  .final-cta .btn{max-width:340px;margin:22px auto 0;}
+
+  footer{
+    background:var(--navy-dark);
+    color:#8a94a1;
+    font-size:12.5px;
+    text-align:center;
+    padding:22px 20px;
+  }
+  footer strong{color:#c3ccd6;}
+
+  @media(min-width:640px){
+    .hero-ctas{flex-direction:row;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(min-width:900px){
+    .services-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="9" fill="#c8622a"/>
+        <path d="M8 30V12M8 12h5M13 12v18M13 20h6M19 12v18M19 16h6M25 12v18M25 24h6M31 12v18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <strong>Fence Systems Inc</strong>
+        <span>Mesa, Arizona</span>
+      </div>
+    </div>
+    <a class="call-pill" href="tel:4805077479">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c8622a" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        Serving Arizona Since 1994
+      </span>
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c8622a" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+        Licensed &amp; Insured
+      </span>
+    </div>
+    <h1>Mesa's Fence &amp; Gate Builder <em>Since 1994</em></h1>
+    <p class="hero-sub">Vinyl, ornamental iron, and chain-link fences and gates &mdash; manufactured and installed for homes, businesses, and high-security sites across the Valley.</p>
+    <div class="hero-ctas">
+      <a href="tel:4805077479" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (480) 507-7479
+      </a>
+      <a href="#contact" class="btn btn-secondary">Get a Free Estimate</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>1994</strong><span>Founded</span></div>
+      <div class="hero-meta-item"><strong>Mesa, AZ</strong><span>Shop &amp; Office</span></div>
+      <div class="hero-meta-item"><strong>BBB</strong><span>Member</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Build</div>
+    <h2>Fencing &amp; Gates, Done Right</h2>
+    <p class="section-sub">Manufactured and installed in-house, from concept and design through fabrication and installation.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 21V9M9 21V9M14 21V9M19 21V9M4 9l7-6 7 6"/></svg></div>
+        <div><h3>Vinyl Fencing</h3><p>Low-maintenance vinyl fences for privacy and curb appeal.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 21V5M5 5l3-3 3 3M12 21V9M19 21V13M19 13l-3-3M19 13l3-3"/></svg></div>
+        <div><h3>Ornamental Iron</h3><p>Custom hand-forged iron fencing and decorative rail work.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9h16M4 14h16M9 4v16M14 4v16"/></svg></div>
+        <div><h3>Chain-Link Fencing</h3><p>Durable chain-link for residential, commercial &amp; industrial sites.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="10" width="18" height="11" rx="1"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg></div>
+        <div><h3>Gates &amp; Entry Doors</h3><p>From standard swing gates to custom entry doors and access gates.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 2l9 4.5v5c0 5.5-3.8 9.9-9 11-5.2-1.1-9-5.5-9-11v-5L12 2z"/></svg></div>
+        <div><h3>High-Security Fencing</h3><p>Industrial and high-security fencing solutions for commercial sites.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <div><h3>Commercial &amp; Industrial</h3><p>Fencing projects for businesses, facilities, and job sites.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="wrap">
+    <div class="eyebrow">Why Fence Systems</div>
+    <h2>Built On 30+ Years In Arizona</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">1</div>
+        <div><h3>Since 1994</h3><p>Manufacturing and installing fences and gates in Arizona for over three decades.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">2</div>
+        <div><h3>Licensed &amp; Insured</h3><p>Fully licensed and insured, with membership in the Better Business Bureau.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">3</div>
+        <div><h3>In-House Manufacturing</h3><p>Offices and manufacturing facility located right here in Mesa, AZ.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">4</div>
+        <div><h3>Full-Service Process</h3><p>We work with you through design, fabrication, and installation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="area-box">
+      <div>
+        <div class="eyebrow" style="color:#e79a6b;">Service Area</div>
+        <h2>Based in Mesa, Serving the Valley</h2>
+        <p class="section-sub">Our shop and office are at 441 S Robson, Mesa, AZ 85210.</p>
+      </div>
+      <div class="area-list">
+        <span class="area-chip">Mesa</span>
+        <span class="area-chip">Residential</span>
+        <span class="area-chip">Commercial</span>
+        <span class="area-chip">Industrial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Request Your Free Estimate</h2>
+    <p class="section-sub">Call or stop by the shop &mdash; we'll walk your project from design to installation.</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><strong><a href="tel:4805077479">(480) 507-7479</a></strong><span>Tap to call</span></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><strong>441 S Robson #106</strong><span>Mesa, AZ 85210</span></div>
+      </div>
+    </div>
+    <div class="hero-ctas" style="margin-top:20px;max-width:100%;">
+      <a href="tel:4805077479" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (480) 507-7479
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#e79a6b;">Ready When You Are</div>
+    <h2>Let's Talk About Your Fence</h2>
+    <p class="section-sub">Vinyl, iron, or chain-link &mdash; residential or commercial. One call gets you started.</p>
+    <a href="tel:4805077479" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (480) 507-7479
+    </a>
+  </div>
+</section>
+
+<footer>
+  <strong>Fence Systems Inc</strong> &middot; 441 S Robson #106, Mesa, AZ 85210 &middot; Serving Arizona since 1994
+</footer>
+
+</body>
+</html>
