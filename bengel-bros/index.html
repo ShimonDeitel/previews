@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bengel Bros. Landscaping | Erie, PA</title>
+<style>
+  :root{
+    --green-900:#12321f;
+    --green-700:#1f5c34;
+    --green-600:#2c7a45;
+    --green-100:#eaf4ec;
+    --cream:#fbfaf6;
+    --ink:#16201a;
+    --muted:#5a6a5f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* Top call bar */
+  .callbar{
+    background:var(--green-900);
+    color:#fff;
+    text-align:center;
+    font-size:14px;
+    padding:8px 12px;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  .callbar a{color:#dff2e4;text-decoration:underline;}
+
+  /* Header */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 20px;
+    background:var(--cream);
+    position:sticky;top:0;z-index:50;
+    border-bottom:1px solid rgba(0,0,0,0.06);
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--green-900);}
+  .logo svg{width:30px;height:30px;flex:none;}
+  .call-btn{
+    background:var(--green-700);
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    display:flex;align-items:center;gap:6px;
+    white-space:nowrap;
+  }
+  .call-btn svg{width:16px;height:16px;fill:#fff;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    padding:56px 20px 64px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08), transparent 40%),
+      linear-gradient(160deg, var(--green-700), var(--green-900) 70%);
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero-hills{position:absolute;left:0;right:0;bottom:-2px;width:100%;opacity:0.5;}
+  .hero-inner{position:relative;z-index:2;text-align:center;max-width:640px;margin:0 auto;}
+  .eyebrow{
+    display:inline-block;
+    background:rgba(255,255,255,0.14);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(30px,7vw,46px);
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-0.5px;
+  }
+  .hero p.sub{
+    margin-top:14px;
+    font-size:17px;
+    color:rgba(255,255,255,0.88);
+    max-width:480px;
+    margin-left:auto;margin-right:auto;
+  }
+  .hero-ctas{
+    margin-top:28px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+  }
+  .btn-primary{
+    background:#fff;
+    color:var(--green-900);
+    font-weight:800;
+    font-size:17px;
+    padding:16px 28px;
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;
+    max-width:340px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+  }
+  .btn-primary svg{width:20px;height:20px;fill:var(--green-900);}
+  .btn-secondary{
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:10px;
+    border:1.5px solid rgba(255,255,255,0.5);
+    border-radius:10px;
+    width:100%;
+    max-width:340px;
+    text-align:center;
+  }
+  .hero-meta{
+    margin-top:22px;
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:rgba(255,255,255,0.75);
+  }
+  .hero-meta span{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:14px;height:14px;fill:#9fe0b3;}
+
+  /* Section shared */
+  section{padding:56px 20px;}
+  .section-head{text-align:center;max-width:520px;margin:0 auto 34px;}
+  .kicker{
+    color:var(--green-600);
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  h2{
+    font-size:clamp(24px,5.5vw,32px);
+    font-weight:800;
+    margin-top:8px;
+    letter-spacing:-0.3px;
+    color:var(--green-900);
+  }
+  .section-head p{margin-top:10px;color:var(--muted);font-size:15px;}
+
+  /* Services grid */
+  .services{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid rgba(0,0,0,0.06);
+    border-radius:16px;
+    padding:20px 16px;
+    display:flex;flex-direction:column;gap:10px;
+    box-shadow:0 2px 10px rgba(18,50,31,0.05);
+  }
+  .service-card .icon{
+    width:38px;height:38px;
+    border-radius:10px;
+    background:var(--green-100);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .service-card .icon svg{width:20px;height:20px;fill:var(--green-700);}
+  .service-card h3{font-size:15px;font-weight:700;color:var(--green-900);}
+  .service-card p{font-size:13px;color:var(--muted);}
+
+  /* Why us */
+  .why{background:var(--green-900);color:#fff;}
+  .why .section-head p{color:rgba(255,255,255,0.7);}
+  .why .kicker{color:#9fe0b3;}
+  .why h2{color:#fff;}
+  .why-grid{
+    display:flex;flex-direction:column;gap:16px;
+    max-width:600px;margin:0 auto;
+  }
+  .why-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:14px;
+    padding:16px;
+  }
+  .why-item .num{
+    flex:none;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:14px;color:#9fe0b3;
+  }
+  .why-item h4{font-size:15px;font-weight:700;margin-bottom:4px;}
+  .why-item p{font-size:13.5px;color:rgba(255,255,255,0.75);}
+
+  /* Area */
+  .area{text-align:center;}
+  .area-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--green-100);
+    color:var(--green-800,var(--green-700));
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:18px;
+  }
+  .area-badge svg{width:16px;height:16px;fill:var(--green-700);}
+  .area p{color:var(--muted);font-size:15px;max-width:480px;margin:0 auto;}
+
+  /* Contact / CTA band */
+  .contact-band{
+    background:linear-gradient(160deg, var(--green-600), var(--green-800,var(--green-900)));
+    color:#fff;
+    border-radius:24px;
+    max-width:1100px;
+    margin:0 auto;
+    padding:44px 24px;
+    text-align:center;
+  }
+  .contact-band h2{color:#fff;}
+  .contact-band p{color:rgba(255,255,255,0.85);margin-top:10px;font-size:15px;}
+  .contact-actions{
+    margin-top:26px;
+    display:flex;flex-direction:column;gap:12px;
+    align-items:center;
+  }
+  .phone-big{
+    font-size:clamp(26px,7vw,34px);
+    font-weight:800;
+    letter-spacing:-0.5px;
+  }
+  .contact-actions .btn-primary{color:var(--green-800,var(--green-900));}
+  .email-link{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:underline;}
+
+  footer{
+    padding:30px 20px 40px;
+    text-align:center;
+    color:var(--muted);
+    font-size:12.5px;
+  }
+  footer .foot-logo{font-weight:800;color:var(--green-900);margin-bottom:6px;font-size:14px;}
+
+  @media (min-width:640px){
+    .hero-ctas{flex-direction:row;justify-content:center;}
+    .btn-primary,.btn-secondary{width:auto;}
+    .services{grid-template-columns:repeat(4,1fr);}
+    .why-grid{flex-direction:row;flex-wrap:wrap;}
+    .why-item{flex:1 1 260px;}
+    .contact-actions{flex-direction:row;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="callbar">
+    Free quotes — call or text <a href="tel:8143157236">(814) 315-7236</a>
+  </div>
+
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><path d="M12 2C9 6 5 9 5 13.5 5 17.6 8.1 21 12 21s7-3.4 7-7.5C19 9 15 6 12 2z" fill="#2c7a45"/></svg>
+      Bengel Bros.
+    </div>
+    <a class="call-btn" href="tel:8143157236">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      Call Now
+    </a>
+  </header>
+
+  <section class="hero">
+    <svg class="hero-hills" viewBox="0 0 800 120" preserveAspectRatio="none">
+      <path d="M0,80 C150,20 300,110 450,60 C600,20 700,90 800,50 L800,120 L0,120 Z" fill="rgba(255,255,255,0.06)"/>
+    </svg>
+    <div class="hero-inner">
+      <span class="eyebrow">Erie, PA 16506</span>
+      <h1>Landscaping done right, from start to finish.</h1>
+      <p class="sub">Mowing, mulching, trimming, and yard restoration for Erie homeowners — with a crew that keeps you in the loop the whole way through.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:8143157236">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          Call (814) 315-7236
+        </a>
+        <a class="btn-secondary" href="#contact">Request a Free Quote</a>
+      </div>
+      <div class="hero-meta">
+        <span><svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.4 8.5-7 10-3.6-1.5-7-5-7-10V6l7-4z"/></svg>Free quotes</span>
+        <span><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 5v5.4l4.2 2.5-.8 1.3L11 13V7h2z"/></svg>Mon–Fri, 9am–5pm</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-head">
+      <span class="kicker">Services</span>
+      <h2>Everything your yard needs</h2>
+      <p>Full-service lawn and landscape care for homes across Erie.</p>
+    </div>
+    <div class="services">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 20h18v2H3v-2zM12 2 6 10h3v6h6v-6h3L12 2z"/></svg></div>
+        <h3>Lawn Mowing &amp; Edging</h3>
+        <p>Clean, consistent cuts and crisp edges, week after week.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+        <h3>Hedge Trimming</h3>
+        <p>Shaped hedges and shrubs that frame your property well.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v4H4V4zm2 6h12l-2 10H8L6 10z"/></svg></div>
+        <h3>Mulching &amp; Flower Beds</h3>
+        <p>Fresh mulch and flower bedding to finish off any bed.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 13h18v2H3v-2zm2-6h14v2H5V7zm-2 12h18v2H3v-2z"/></svg></div>
+        <h3>Sidewalk &amp; Driveway Restoration</h3>
+        <p>Repair and refresh worn walkways and driveways.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c-3 4-7 7-7 11a7 7 0 0 0 14 0c0-4-4-7-7-11z"/></svg></div>
+        <h3>Yard Restoration</h3>
+        <p>Bring a neglected or storm-damaged yard back to life.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 3h4v6H6zm8 4h4v10h-4zM10 11h4v6h-4z"/></svg></div>
+        <h3>Small Tree &amp; Bush Removal</h3>
+        <p>Clear out overgrown or unwanted trees and bushes.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20l6-14 2 5 2-5 6 14H4z"/></svg></div>
+        <h3>Power Washing</h3>
+        <p>Restore siding, patios, and driveways to like-new.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg></div>
+        <h3>Ongoing Property Care</h3>
+        <p>Recurring service so your yard always looks its best.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="section-head">
+      <span class="kicker">Why Bengel Bros.</span>
+      <h2>Landscapers who actually communicate</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">1</div>
+        <div>
+          <h4>Constant communication</h4>
+          <p>We stay in touch with you from the first call until the job is finished — no guessing where things stand.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">2</div>
+        <div>
+          <h4>Local Erie crew</h4>
+          <p>Based right in Erie, PA — we know the neighborhoods and the seasons here.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="num">3</div>
+        <div>
+          <h4>Free, no-pressure quotes</h4>
+          <p>Tell us what your property needs and we'll give you a straightforward price — no obligation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area">
+    <div class="area-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 8 12 8 12s8-6.6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+      Erie, PA 16506
+    </div>
+    <p>Proudly serving Erie, Pennsylvania and the surrounding area. Reach out to check if we cover your neighborhood.</p>
+  </section>
+
+  <section id="contact">
+    <div class="contact-band">
+      <span class="kicker" style="color:#dff2e4;">Get In Touch</span>
+      <h2>Ready for a better-looking yard?</h2>
+      <p>Call now for a free quote — Bengel Bros. usually responds the same day.</p>
+      <div class="contact-actions">
+        <a class="btn-primary" href="tel:8143157236">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          <span class="phone-big">(814) 315-7236</span>
+        </a>
+        <a class="email-link" href="mailto:bengelbroslcpm@gmail.com">bengelbroslcpm@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-logo">Bengel Bros. Landscaping</div>
+    <div>Erie, PA 16506 &nbsp;·&nbsp; (814) 315-7236</div>
+  </footer>
+
+</body>
+</html>
