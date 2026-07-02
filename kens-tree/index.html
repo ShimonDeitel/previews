@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ken's Tree Service — Tree Removal &amp; Trimming in Des Moines, IA</title>
+<meta name="description" content="Ken's Tree Service — tree removal, trimming, stump removal and storm cleanup in Des Moines and Central Iowa. Licensed, bonded and insured. Free estimates. Call 515-249-4434.">
+<style>
+  :root{
+    --ink:#152018;
+    --ink-soft:#4a5a4f;
+    --green-950:#0f2417;
+    --green-900:#16351f;
+    --green-700:#1f5c33;
+    --green-600:#27753f;
+    --green-100:#e6f0e9;
+    --green-50:#f2f7f3;
+    --amber:#e8890c;
+    --amber-dark:#c97407;
+    --paper:#ffffff;
+    --line:#dbe5dd;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:saturate(150%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-in{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0;}
+  .brand-mark{
+    width:38px;height:38px;flex:0 0 auto;border-radius:10px;
+    background:var(--green-700);display:grid;place-items:center;
+  }
+  .brand-name{font-weight:800;font-size:1.02rem;letter-spacing:-.01em;line-height:1.15;}
+  .brand-sub{font-size:.72rem;color:var(--ink-soft);font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+  .header-call{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--amber);color:#fff;text-decoration:none;
+    font-weight:800;font-size:.95rem;letter-spacing:.01em;
+    padding:11px 16px;border-radius:999px;white-space:nowrap;
+    box-shadow:0 2px 8px rgba(232,137,12,.35);
+  }
+  .header-call:active{background:var(--amber-dark);}
+  .header-call .num{display:none;}
+  @media(min-width:480px){.header-call .num{display:inline;}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--green-950);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .hero-in{
+    position:relative;z-index:1;
+    padding:56px 0 120px;text-align:left;
+  }
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+    color:#dbeee1;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(1.9rem,6.5vw,3.1rem);
+    line-height:1.12;letter-spacing:-.02em;font-weight:800;
+    max-width:620px;
+  }
+  .hero h1 em{font-style:normal;color:#8fd6a5;}
+  .hero p.lede{
+    margin-top:16px;font-size:clamp(1rem,2.6vw,1.15rem);
+    color:#c7dccd;max-width:560px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:800;text-decoration:none;border-radius:12px;
+    padding:16px 22px;font-size:1.05rem;letter-spacing:.01em;
+  }
+  .btn-call{
+    background:var(--amber);color:#fff;
+    box-shadow:0 4px 14px rgba(232,137,12,.4);
+    flex:1 1 auto;min-width:230px;
+  }
+  .btn-call:active{background:var(--amber-dark);}
+  .btn-ghost{
+    background:rgba(255,255,255,.08);color:#fff;
+    border:1px solid rgba(255,255,255,.28);
+    flex:1 1 auto;min-width:170px;
+  }
+  .hero-points{
+    display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:24px;
+    font-size:.88rem;color:#c7dccd;font-weight:600;
+  }
+  .hero-points span{display:inline-flex;align-items:center;gap:7px;}
+  .treeline{
+    position:absolute;left:0;right:0;bottom:-1px;z-index:0;
+    width:100%;height:auto;opacity:.5;
+  }
+
+  /* ---------- Trust bar ---------- */
+  .trust{
+    background:var(--green-50);border-bottom:1px solid var(--line);
+  }
+  .trust-in{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);border-left:1px solid var(--line);border-right:1px solid var(--line);
+  }
+  @media(min-width:760px){.trust-in{grid-template-columns:repeat(4,1fr);}}
+  .trust-item{
+    background:var(--green-50);padding:18px 14px;text-align:center;
+  }
+  .trust-item strong{display:block;font-size:1rem;letter-spacing:-.01em;}
+  .trust-item span{font-size:.8rem;color:var(--ink-soft);font-weight:600;}
+
+  /* ---------- Sections ---------- */
+  section{padding:64px 0;}
+  .kicker{
+    color:var(--green-600);font-weight:800;font-size:.8rem;
+    letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{
+    font-size:clamp(1.5rem,4.5vw,2.1rem);
+    letter-spacing:-.02em;line-height:1.2;font-weight:800;
+    max-width:560px;
+  }
+  .section-lede{margin-top:12px;color:var(--ink-soft);max-width:600px;}
+
+  /* Services */
+  .svc-grid{
+    display:grid;gap:14px;margin-top:32px;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:600px){.svc-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:960px){.svc-grid{grid-template-columns:repeat(3,1fr);}}
+  .svc{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;background:#fff;
+  }
+  .svc-icon{
+    width:46px;height:46px;border-radius:12px;
+    background:var(--green-100);display:grid;place-items:center;margin-bottom:14px;
+  }
+  .svc h3{font-size:1.08rem;letter-spacing:-.01em;margin-bottom:6px;}
+  .svc p{font-size:.92rem;color:var(--ink-soft);}
+
+  /* Why us */
+  .why{background:var(--green-50);}
+  .why-grid{display:grid;gap:12px;margin-top:30px;grid-template-columns:1fr;}
+  @media(min-width:760px){.why-grid{grid-template-columns:1fr 1fr;}}
+  .why-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;
+  }
+  .why-check{
+    flex:0 0 auto;width:30px;height:30px;border-radius:999px;
+    background:var(--green-700);display:grid;place-items:center;margin-top:2px;
+  }
+  .why-item strong{display:block;font-size:1rem;letter-spacing:-.01em;}
+  .why-item p{font-size:.9rem;color:var(--ink-soft);margin-top:3px;}
+
+  /* Area */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px;}
+  .chip{
+    background:var(--green-100);color:var(--green-900);
+    font-weight:700;font-size:.9rem;padding:9px 16px;border-radius:999px;
+  }
+
+  /* Contact */
+  .contact{background:var(--green-950);color:#fff;}
+  .contact .kicker{color:#8fd6a5;}
+  .contact .section-lede{color:#c7dccd;}
+  .contact-grid{display:grid;gap:26px;margin-top:34px;grid-template-columns:1fr;}
+  @media(min-width:820px){.contact-grid{grid-template-columns:1fr 1.1fr;align-items:start;}}
+  .call-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius);padding:26px 22px;
+  }
+  .call-card .label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9dc4aa;}
+  .call-card a.big-num{
+    display:block;color:#fff;text-decoration:none;font-weight:800;
+    font-size:clamp(1.7rem,7vw,2.2rem);letter-spacing:-.01em;margin-top:6px;
+  }
+  .call-card p{color:#c7dccd;font-size:.92rem;margin-top:12px;}
+  .call-card .btn-call{margin-top:20px;width:100%;}
+  form{
+    background:#fff;border-radius:var(--radius);padding:24px 20px;color:var(--ink);
+  }
+  form h3{font-size:1.15rem;letter-spacing:-.01em;margin-bottom:4px;}
+  form .form-sub{font-size:.88rem;color:var(--ink-soft);margin-bottom:18px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:.82rem;font-weight:700;margin-bottom:6px;}
+  .field input,.field select,.field textarea{
+    width:100%;font:inherit;font-size:1rem;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:10px;
+    padding:13px 14px;background:#fff;appearance:none;
+  }
+  .field textarea{resize:vertical;min-height:96px;}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--green-600);
+    box-shadow:0 0 0 3px rgba(39,117,63,.15);
+  }
+  .field select{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;
+  }
+  .btn-submit{
+    width:100%;border:0;cursor:pointer;font:inherit;
+    background:var(--green-700);color:#fff;font-weight:800;font-size:1.05rem;
+    padding:16px;border-radius:12px;
+  }
+  .btn-submit:active{background:var(--green-900);}
+  .form-note{font-size:.78rem;color:var(--ink-soft);margin-top:12px;text-align:center;}
+  .form-ok{
+    display:none;background:var(--green-100);color:var(--green-900);
+    font-weight:700;font-size:.95rem;border-radius:10px;
+    padding:14px;margin-top:14px;text-align:center;
+  }
+
+  /* Footer */
+  footer{
+    background:#0b1b11;color:#9dc4aa;
+    padding:28px 0 110px;font-size:.85rem;
+  }
+  @media(min-width:700px){footer{padding-bottom:28px;}}
+  .footer-in{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;}
+  footer a{color:#dbeee1;text-decoration:none;font-weight:700;}
+
+  /* Sticky mobile call bar */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(15,36,23,.97);border-top:1px solid rgba(255,255,255,.14);
+  }
+  .callbar a{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--amber);color:#fff;text-decoration:none;
+    font-weight:800;font-size:1.05rem;padding:14px;border-radius:12px;
+  }
+  @media(min-width:700px){.callbar{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="Ken's Tree Service home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5.5 12H9l-4 6.5h14L15 12h3.5L12 3z"/><path d="M12 18.5V21"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">Ken's Tree Service</span><br>
+        <span class="brand-sub">Des Moines, Iowa</span>
+      </span>
+    </a>
+    <a class="header-call" href="tel:15152494434">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call<span class="num">&nbsp;515-249-4434</span></span>
+    </a>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<main id="top">
+<section class="hero" style="padding:0;">
+  <div class="wrap hero-in">
+    <span class="hero-eyebrow">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="#8fd6a5" aria-hidden="true"><circle cx="12" cy="12" r="6"/></svg>
+      Free estimates &amp; emergency service
+    </span>
+    <h1>Tree removal &amp; trimming done right — <em>and cleaned up right.</em></h1>
+    <p class="lede">Ken's Tree Service has served Des Moines and Central Iowa for over 15 years. Licensed, bonded and insured, with the equipment to handle any job safely.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-call" href="tel:15152494434">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 515-249-4434
+      </a>
+      <a class="btn btn-ghost" href="#estimate">Get a free estimate</a>
+    </div>
+    <div class="hero-points">
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8fd6a5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Licensed, bonded &amp; insured</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8fd6a5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>15+ years in Central Iowa</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8fd6a5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Storm cleanup</span>
+    </div>
+  </div>
+  <svg class="treeline" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#16351f" d="M0 90V60l30-18 25 14 20-26 28 20 24-12 22 16 30-30 32 24 20-10 26 18 22-14 30 22 26-32 30 26 22-12 24 16 28-22 26 18 20-8 30 20 24-26 30 22 22-12 28 18 24-16 28 22 22-28 30 24 20-10 28 18 24-14 28 20 24-24 30 22 20-8 26 16 24-18 28 22 26-14 24 12V90z"/>
+  </svg>
+</section>
+
+<!-- ===== Trust bar ===== -->
+<div class="trust">
+  <div class="wrap" style="padding:0 20px;">
+    <div class="trust-in">
+      <div class="trust-item"><strong>15+ years</strong><span>serving Central Iowa</span></div>
+      <div class="trust-item"><strong>Licensed</strong><span>bonded &amp; insured</span></div>
+      <div class="trust-item"><strong>Free</strong><span>estimates</span></div>
+      <div class="trust-item"><strong>Emergency</strong><span>storm service</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Services ===== -->
+<section id="services">
+  <div class="wrap">
+    <p class="kicker">What we do</p>
+    <h2>Full-service tree care, from crown to stump</h2>
+    <p class="section-lede">One crew, the right equipment, and a thorough cleanup on every job.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5c33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5.5 12H9l-4 6.5h14L15 12h3.5L12 3z"/><path d="M12 18.5V22"/></svg>
+        </span>
+        <h3>Tree removal</h3>
+        <p>Safe takedowns of dead, damaged or unwanted trees — including tight spots near homes and power lines.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5c33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4"/></svg>
+        </span>
+        <h3>Tree trimming &amp; pruning</h3>
+        <p>Keep trees healthy, safe and looking their best with proper trimming and pruning.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5c33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20V12c0-1.5 1-3 3-3h6c2 0 3 1.5 3 3v8"/><path d="M12 9V4"/><path d="M12 4c-1.5 0-2.5-1-2.5-1S10 1.5 12 1.5 14.5 3 14.5 3 13.5 4 12 4z"/></svg>
+        </span>
+        <h3>Stump removal</h3>
+        <p>Get rid of the stump too — reclaim your yard after a removal.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5c33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7"/><path d="M9 8a3 3 0 1 1 6 0c1.7.4 3 1.9 3 3.7a3.8 3.8 0 0 1-3.8 3.8H9.8A3.8 3.8 0 0 1 6 11.7C6 9.9 7.3 8.4 9 8z"/></svg>
+        </span>
+        <h3>Shrub &amp; hedge care</h3>
+        <p>Trimming, shaping and removal of shrubs, bushes and hedges.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5c33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-2 8 9-12h-6l2-8z"/></svg>
+        </span>
+        <h3>Storm cleanup</h3>
+        <p>Fallen trees and limbs handled fast, with emergency service when you need it.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5c33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h13v-6l-3-4H3v10z"/><path d="M16 13h3l2 2v2h-5"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+        </span>
+        <h3>Free wood chips</h3>
+        <p>Free wood chips by the truckload — great for mulch and landscaping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why us ===== -->
+<section class="why" id="why">
+  <div class="wrap">
+    <p class="kicker">Why Ken's</p>
+    <h2>We go the extra mile</h2>
+    <p class="section-lede">Our crews are expected to go the extra mile in preventing damage and in thorough cleanup — on every single job.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="why-check" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><strong>Licensed, bonded &amp; insured</strong><p>Your property is protected before we touch a single branch.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="why-check" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><strong>The right equipment</strong><p>60-foot bucket truck, chip trucks, wood chippers and a clam log loader — the tools to do the job safely.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="why-check" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><strong>Thorough cleanup</strong><p>We prevent damage on the way down and leave your yard clean when we're done.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="why-check" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><strong>15+ years local</strong><p>Over 15 years serving homeowners across Des Moines and Central Iowa.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Service area ===== -->
+<section id="area">
+  <div class="wrap">
+    <p class="kicker">Service area</p>
+    <h2>Proudly serving Central Iowa</h2>
+    <div class="chips">
+      <span class="chip">Des Moines</span>
+      <span class="chip">West Des Moines</span>
+      <span class="chip">Ankeny</span>
+      <span class="chip">Urbandale</span>
+      <span class="chip">Johnston</span>
+      <span class="chip">Waukee</span>
+      <span class="chip">Grimes</span>
+      <span class="chip">Altoona</span>
+      <span class="chip">Bondurant</span>
+      <span class="chip">Norwalk</span>
+      <span class="chip">Indianola</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="estimate">
+  <div class="wrap">
+    <p class="kicker">Free estimate</p>
+    <h2 style="color:#fff;">Get your free estimate today</h2>
+    <p class="section-lede">Call us or send the details of your job — we'll get back to you with a free, no-obligation estimate.</p>
+    <div class="contact-grid">
+      <div class="call-card">
+        <span class="label">Fastest way — call us</span>
+        <a class="big-num" href="tel:15152494434">515-249-4434</a>
+        <p>Free estimates and emergency storm service for Des Moines and surrounding Central Iowa communities.</p>
+        <a class="btn btn-call" href="tel:15152494434">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Tap to call now
+        </a>
+      </div>
+      <form id="estimateForm" novalidate>
+        <h3>Request an estimate online</h3>
+        <p class="form-sub">Tell us about the job and we'll follow up.</p>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(515) 555-0123" required>
+        </div>
+        <div class="field">
+          <label for="f-city">City</label>
+          <input id="f-city" name="city" type="text" autocomplete="address-level2" placeholder="Des Moines">
+        </div>
+        <div class="field">
+          <label for="f-service">What do you need?</label>
+          <select id="f-service" name="service">
+            <option>Tree removal</option>
+            <option>Tree trimming / pruning</option>
+            <option>Stump removal</option>
+            <option>Shrub or hedge work</option>
+            <option>Storm cleanup</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Details</label>
+          <textarea id="f-msg" name="message" placeholder="Tell us about the tree, its size, and where it is on your property."></textarea>
+        </div>
+        <button class="btn-submit" type="submit">Request free estimate</button>
+        <p class="form-ok" id="formOk">Thanks! On the live site this goes straight to Ken's inbox.</p>
+        <p class="form-note">Design preview — form not yet connected.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap footer-in">
+    <span><strong style="color:#dbeee1;">Ken's Tree Service</strong> · Des Moines, Iowa</span>
+    <span><a href="tel:15152494434">515-249-4434</a> · Free estimates &amp; emergency service</span>
+    <span>Licensed, bonded &amp; insured</span>
+  </div>
+</footer>
+
+<!-- ===== Sticky mobile call bar ===== -->
+<div class="callbar">
+  <a href="tel:15152494434">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call 515-249-4434 — Free estimate
+  </a>
+</div>
+
+<script>
+  document.getElementById('estimateForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formOk').style.display = 'block';
+  });
+</script>
+</body>
+</html>

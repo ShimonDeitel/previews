@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Superior Air — Heating &amp; Air Conditioning in Visalia, CA | (559) 734-2002</title>
+<meta name="description" content="Superior Air: HVAC installation, repair &amp; maintenance in Visalia, Tulare, Hanford, Porterville &amp; Kingsburg since 1994. Carrier factory-authorized dealer. Call (559) 734-2002.">
+<style>
+  :root{
+    --navy:#0e2a47;
+    --navy-2:#123túa;
+    --blue:#1467c2;
+    --blue-dk:#0f4f96;
+    --sky:#eaf2fb;
+    --ink:#1b2733;
+    --mut:#5a6b7c;
+    --line:#dde6ef;
+    --bg:#f7fafc;
+    --white:#ffffff;
+    --amber:#e8842c;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.55;
+  }
+  img,svg{display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Header ---------- */
+  .topbar{background:var(--navy);color:#c9d9ec;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:34px;gap:10px}
+  .topbar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar a{color:#fff;font-weight:600;white-space:nowrap}
+  header.site{
+    position:sticky;top:0;z-index:50;background:var(--white);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 1px 8px rgba(14,42,71,.06);
+  }
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand .mark{flex:0 0 auto}
+  .brand-name{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.2px;line-height:1.1}
+  .brand-sub{font-size:11px;color:var(--mut);letter-spacing:.4px;text-transform:uppercase}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--blue);color:#fff;font-weight:700;font-size:15px;
+    padding:10px 16px;border-radius:999px;white-space:nowrap;
+    box-shadow:0 2px 6px rgba(20,103,194,.35);
+  }
+  .call-btn:active{background:var(--blue-dk)}
+  .call-btn svg{flex:0 0 auto}
+  .call-btn .num{display:none}
+  @media(min-width:480px){.call-btn .num{display:inline}.call-btn .lbl{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,#153a63 55%,var(--blue-dk) 100%);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .hero .art{position:absolute;right:-70px;top:-40px;opacity:.10;pointer-events:none}
+  .hero .wrap{position:relative;padding-top:52px;padding-bottom:56px}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .badge{
+    font-size:12px;font-weight:600;letter-spacing:.3px;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+    padding:5px 12px;border-radius:999px;color:#e6eefb;
+  }
+  .hero h1{font-size:clamp(30px,7.5vw,48px);line-height:1.12;font-weight:800;letter-spacing:-.5px;max-width:640px}
+  .hero h1 em{font-style:normal;color:#8fc0f5}
+  .hero p.lead{margin-top:14px;font-size:clamp(15px,4vw,18px);color:#c9d9ec;max-width:560px}
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-top:26px;max-width:420px}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:17px;padding:16px 22px;border-radius:var(--radius);
+    text-align:center;transition:transform .08s;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--amber);color:#fff;box-shadow:0 4px 14px rgba(232,132,44,.4)}
+  .btn-ghost{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff}
+  @media(min-width:640px){.hero-ctas{flex-direction:row}.hero-ctas .btn{flex:1}}
+  .hero-note{margin-top:16px;font-size:13px;color:#9db6d4}
+
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--white);border-bottom:1px solid var(--line)}
+  .trust .wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    padding-top:0;padding-bottom:0;
+  }
+  .trust-item{display:flex;align-items:center;gap:10px;padding:16px 6px;font-size:13px;font-weight:600;color:var(--navy)}
+  .trust-item svg{flex:0 0 auto}
+  .trust-item small{display:block;font-weight:400;color:var(--mut);font-size:12px}
+  @media(min-width:760px){.trust .wrap{grid-template-columns:repeat(4,1fr)}}
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0}
+  .kicker{color:var(--blue);font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:clamp(24px,5.5vw,34px);font-weight:800;color:var(--navy);letter-spacing:-.4px;line-height:1.15}
+  .sect-sub{margin-top:10px;color:var(--mut);max-width:600px;font-size:15px}
+
+  /* ---------- Services ---------- */
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+  @media(min-width:600px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+  .svc{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;gap:10px;
+  }
+  .svc .ic{
+    width:48px;height:48px;border-radius:12px;background:var(--sky);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .svc h3{font-size:17px;color:var(--navy);font-weight:700}
+  .svc p{font-size:14px;color:var(--mut)}
+
+  /* ---------- Why us ---------- */
+  .why{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+  @media(min-width:760px){.why-grid{grid-template-columns:1fr 1fr}}
+  .why-item{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .why-item .n{
+    flex:0 0 auto;width:40px;height:40px;border-radius:10px;
+    background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;
+  }
+  .why-item h3{font-size:16px;color:var(--navy);font-weight:700;margin-bottom:3px}
+  .why-item p{font-size:14px;color:var(--mut)}
+
+  /* ---------- Area ---------- */
+  .area .wrap{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:820px){.area .wrap{grid-template-columns:1.1fr .9fr;align-items:center}}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--white);border:1px solid var(--line);border-radius:999px;
+    padding:9px 16px;font-size:14px;font-weight:600;color:var(--navy);
+  }
+  .area-card{
+    background:var(--navy);color:#fff;border-radius:var(--radius);padding:26px;
+  }
+  .area-card h3{font-size:18px;margin-bottom:8px}
+  .area-card p{font-size:14px;color:#c9d9ec}
+  .area-card .btn{margin-top:18px;background:var(--amber);color:#fff}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--white);border-top:1px solid var(--line)}
+  .contact .wrap{display:grid;grid-template-columns:1fr;gap:32px}
+  @media(min-width:860px){.contact .wrap{grid-template-columns:1fr 1fr}}
+  .info-list{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+  .info-item{display:flex;gap:14px;align-items:flex-start}
+  .info-item .ic{
+    flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--sky);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .info-item b{display:block;color:var(--navy);font-size:15px}
+  .info-item span,.info-item a.link{font-size:14px;color:var(--mut)}
+  .info-item a.link{color:var(--blue);font-weight:600}
+  form{
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:14px;
+  }
+  form h3{color:var(--navy);font-size:18px}
+  label{font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:5px}
+  input,select,textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);
+    background:var(--white);border:1px solid var(--line);border-radius:10px;
+    padding:12px 14px;
+  }
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+  textarea{resize:vertical;min-height:90px}
+  .form-row{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:520px){.form-row{grid-template-columns:1fr 1fr}}
+  form .btn-primary{border:none;cursor:pointer;width:100%}
+  .form-note{font-size:12px;color:var(--mut);text-align:center}
+
+  /* ---------- CTA band ---------- */
+  .band{background:linear-gradient(120deg,var(--blue-dk),var(--blue));color:#fff;text-align:center}
+  .band h2{color:#fff}
+  .band p{margin-top:8px;color:#dcebfc;font-size:15px}
+  .band .btn{margin:24px auto 0;max-width:340px;background:var(--white);color:var(--blue-dk)}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy);color:#9db6d4;font-size:13px}
+  footer .wrap{padding:32px 20px;display:flex;flex-direction:column;gap:10px;text-align:center}
+  footer b{color:#fff}
+  footer a{color:#c9d9ec;font-weight:600}
+
+  /* ---------- Mobile sticky call bar ---------- */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    display:flex;background:var(--amber);color:#fff;
+    align-items:center;justify-content:center;gap:10px;
+    font-size:17px;font-weight:800;padding:15px 16px;
+    padding-bottom:calc(15px + env(safe-area-inset-bottom));
+    box-shadow:0 -3px 14px rgba(0,0,0,.18);
+  }
+  @media(min-width:760px){.sticky-call{display:none}}
+  @media(max-width:759px){body{padding-bottom:64px}}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Mon–Fri 8AM–5PM &middot; Available for calls 24/7</span>
+    <a href="tel:+15597342002">(559) 734-2002</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Superior Air home">
+      <svg class="mark" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#0e2a47"/>
+        <path d="M8 24c3-1.5 5.5-1.5 8 0s5.5 1.5 8 0 5.5-1.5 8 0" stroke="#8fc0f5" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <path d="M8 17c3-1.5 5.5-1.5 8 0s5.5 1.5 8 0 5.5-1.5 8 0" stroke="#1467c2" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <path d="M8 31c3-1.5 5.5-1.5 8 0s5.5 1.5 8 0 5.5-1.5 8 0" stroke="#e8842c" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span>
+        <span class="brand-name">Superior Air</span><br>
+        <span class="brand-sub">Heating &amp; Air Conditioning</span>
+      </span>
+    </a>
+    <a class="call-btn" href="tel:+15597342002">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" fill="currentColor"/></svg>
+      <span class="num">(559) 734-2002</span><span class="lbl">Call Now</span>
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <svg class="art" width="420" height="420" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <circle cx="50" cy="50" r="8" fill="#fff"/>
+    <g stroke="#fff" stroke-width="6" stroke-linecap="round">
+      <path d="M50 38V12"/><path d="M50 62v26"/><path d="M38 50H12"/><path d="M62 50h26"/>
+      <path d="M41.5 41.5 23 23"/><path d="M58.5 58.5 77 77"/><path d="M41.5 58.5 23 77"/><path d="M58.5 41.5 77 23"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="badge">Serving the Valley since 1994</span>
+      <span class="badge">CA License #779800</span>
+    </div>
+    <h1>Comfort you can count on, <em>in every season.</em></h1>
+    <p class="lead">Heating and air conditioning installation, repair, and maintenance for homes across Visalia and Tulare &amp; Kings counties — backed by a 100% customer satisfaction guarantee.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:+15597342002">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" fill="currentColor"/></svg>
+        Call (559) 734-2002
+      </a>
+      <a class="btn btn-ghost" href="#contact">Request Service</a>
+    </div>
+    <p class="hero-note">Mon–Fri 8:00AM–5:00PM &middot; Available for calls 24/7</p>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5.5V11c0 5 3.4 9.4 8 10.5 4.6-1.1 8-5.5 8-10.5V5.5L12 2z" stroke="#1467c2" stroke-width="1.8" fill="none"/><path d="m8.8 12 2.2 2.2 4.2-4.4" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <span>Licensed &amp; Established<small>CA Lic. #779800 &middot; Since 1994</small></span>
+    </div>
+    <div class="trust-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9" r="5" stroke="#1467c2" stroke-width="1.8" fill="none"/><path d="m9 13-1.5 8L12 18.5 16.5 21 15 13" stroke="#1467c2" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg>
+      <span>NATE-Certified<small>Trained technicians</small></span>
+    </div>
+    <div class="trust-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M6 2v4h4" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="m9 12.2 2.2 2.2 4-4.2" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <span>Satisfaction Guarantee<small>100% customer satisfaction</small></span>
+    </div>
+    <div class="trust-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#1467c2" stroke-width="1.8" fill="none"/><path d="M3 10h18" stroke="#1467c2" stroke-width="1.8"/><path d="M7 15h4" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>Financing Available<small>Through Wells Fargo, on approved credit</small></span>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section id="services">
+  <div class="wrap">
+    <p class="kicker">What we do</p>
+    <h2>Heating &amp; cooling services, done right</h2>
+    <p class="sect-sub">From new system installation to tune-ups and repairs, Superior Air keeps Central Valley homes comfortable year-round.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v8m0 10v-4m-6.4-9.4 4.3 4.3M5 12H3m18 0h-6m-8.6 6.4 4.3-4.3m8.6-8.5-4.3 4.3m4.3 8.5-4.3-4.3" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="2.2" fill="#1467c2"/></svg></div>
+        <h3>Air Conditioning</h3>
+        <p>Cooling installation, repair, and maintenance to keep your home comfortable through hot Valley summers.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c3.9 0 7-3 7-6.8 0-2.6-1.4-4.6-2.9-6.3C14.6 6.1 13 4.6 12.5 3c-.3 1.9-1.4 3.2-2.7 4.6C8.2 9.4 5 11.5 5 14.2 5 18 8.1 21 12 21z" stroke="#e8842c" stroke-width="1.8" stroke-linejoin="round" fill="none"/><path d="M12 21c1.7 0 3-1.4 3-3.1 0-1.9-1.7-3-3-4.9-1.3 1.9-3 3-3 4.9 0 1.7 1.3 3.1 3 3.1z" stroke="#e8842c" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div>
+        <h3>Heating</h3>
+        <p>Furnace and heating system installation, repair, and maintenance for reliable warmth all winter.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 6.5a4.8 4.8 0 0 1 6 4.6c0 .8-.2 1.6-.6 2.3L14 7.7c.2-.5.3-.9.5-1.2z" fill="#1467c2"/><path d="m16.7 15.3 3.6 3.6-1.4 1.4-3.6-3.6-8.2 4.2a1 1 0 0 1-1.2-.2l-.6-.6a1 1 0 0 1-.2-1.2l4.2-8.2L5.7 7.1 4.3 8.5 2.9 7.1 7.1 2.9l1.4 1.4-1.4 1.4 3.6 3.6" stroke="#1467c2" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div>
+        <h3>Repair &amp; Maintenance</h3>
+        <p>Fast diagnosis and honest repairs, plus routine tune-ups that extend the life of your equipment.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#1467c2" stroke-width="1.8" fill="none"/><path d="M7 8.5h10M7 12h10M7 15.5h10" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>HVAC Installation</h3>
+        <p>New system design and installation — energy savings by design, sized correctly for your home.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15c2-1.2 4-1.2 6 0s4 1.2 6 0 3-1 4 0" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M4 10c2-1.2 4-1.2 6 0s4 1.2 6 0 3-1 4 0" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M4 20c2-1.2 4-1.2 6 0s4 1.2 6 0 3-1 4 0" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
+        <h3>Indoor Air Quality</h3>
+        <p>Solutions that help you breathe easier at home, from filtration to whole-home air quality upgrades.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h9a4 4 0 0 1 4 4v8" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M4 4h9a8 8 0 0 1 8 8v8" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="5" cy="19" r="2.2" stroke="#1467c2" stroke-width="1.8" fill="none"/></svg></div>
+        <h3>Aeroseal Duct Sealing</h3>
+        <p>Seal leaky ductwork from the inside to cut wasted energy and improve airflow room to room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section class="why" id="why">
+  <div class="wrap">
+    <p class="kicker">Why Superior Air</p>
+    <h2>Local, established, and accountable</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="n"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5.5V11c0 5 3.4 9.4 8 10.5 4.6-1.1 8-5.5 8-10.5V5.5L12 2z" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div>
+        <div>
+          <h3>Serving the Valley since 1994</h3>
+          <p>Decades of heating and cooling work in Tulare and Kings counties — a local company, not a call center.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="n"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9" r="5" stroke="#fff" stroke-width="1.8" fill="none"/><path d="m9 13-1.5 8L12 18.5 16.5 21 15 13" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h3>NATE-certified technicians</h3>
+          <p>Nationally recognized certification means your system is serviced by trained professionals.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="n"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 12.2 2.2 2.2 4-4.2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div>
+        <div>
+          <h3>Carrier factory-authorized dealer</h3>
+          <p>Trusted equipment installed to the manufacturer's standards, with energy savings by design.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="n"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 7.7 4.5 4.5 0 0 1 19.5 11c0 5.4-7.5 10-7.5 10z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h3>100% satisfaction guarantee</h3>
+          <p>We stand behind our work — and financing is available through Wells Fargo with approved credit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service area -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Service area</p>
+      <h2>Proudly serving Tulare &amp; Kings counties</h2>
+      <p class="sect-sub">Based in Visalia, we serve homeowners across the South Valley:</p>
+      <div class="chips">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" stroke="#1467c2" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1467c2"/></svg>Visalia</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" stroke="#1467c2" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1467c2"/></svg>Tulare</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" stroke="#1467c2" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1467c2"/></svg>Hanford</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" stroke="#1467c2" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1467c2"/></svg>Porterville</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" stroke="#1467c2" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1467c2"/></svg>Kingsburg</span>
+      </div>
+    </div>
+    <div class="area-card">
+      <h3>Not sure if we cover your area?</h3>
+      <p>Give us a quick call — if you're in or around Tulare or Kings County, chances are we can help.</p>
+      <a class="btn" href="tel:+15597342002">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" fill="currentColor"/></svg>
+        (559) 734-2002
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Get in touch</p>
+      <h2>Request service or a free conversation about your system</h2>
+      <div class="info-list">
+        <div class="info-item">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" fill="#1467c2"/></svg></div>
+          <div><b>Phone</b><a class="link" href="tel:+15597342002">(559) 734-2002</a></div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" stroke="#1467c2" stroke-width="1.8" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1467c2"/></svg></div>
+          <div><b>Address</b><span>8244 W. Hillsdale Ct. #11, Visalia, CA 93291</span></div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#1467c2" stroke-width="1.8" fill="none"/><path d="M12 7v5l3.5 2" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
+          <div><b>Hours</b><span>Monday–Friday 8:00AM–5:00PM<br>Available for calls 24/7</span></div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5.5V11c0 5 3.4 9.4 8 10.5 4.6-1.1 8-5.5 8-10.5V5.5L12 2z" stroke="#1467c2" stroke-width="1.8" fill="none"/><path d="m8.8 12 2.2 2.2 4.2-4.4" stroke="#1467c2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div><b>License</b><span>CA Contractor License #779800</span></div>
+        </div>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Thanks — this is a design preview. On the live site, this sends straight to Superior Air.';">
+      <h3>Send a message</h3>
+      <div class="form-row">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+        <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(559) 555-0100"></div>
+      </div>
+      <div><label for="f-city">City</label>
+        <select id="f-city" name="city">
+          <option>Visalia</option><option>Tulare</option><option>Hanford</option><option>Porterville</option><option>Kingsburg</option><option>Other</option>
+        </select>
+      </div>
+      <div><label for="f-msg">How can we help?</label><textarea id="f-msg" name="message" placeholder="e.g. AC not cooling, need a maintenance visit, new system quote..."></textarea></div>
+      <button class="btn btn-primary" type="submit">Request Service</button>
+      <p class="form-note">Prefer to talk? Call <a class="link" href="tel:+15597342002" style="color:var(--blue);font-weight:700">(559) 734-2002</a></p>
+    </form>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="band">
+  <div class="wrap">
+    <h2>Offering energy savings by design</h2>
+    <p>One call takes care of your heating and cooling — Monday to Friday, with phones answered 24/7.</p>
+    <a class="btn" href="tel:+15597342002">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" fill="currentColor"/></svg>
+      Call (559) 734-2002
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div><b>Superior Air</b> &middot; Heating &amp; Air Conditioning</div>
+    <div>8244 W. Hillsdale Ct. #11, Visalia, CA 93291 &middot; <a href="tel:+15597342002">(559) 734-2002</a></div>
+    <div>CA License #779800 &middot; Serving Tulare &amp; Kings counties since 1994</div>
+    <div>&copy; 2026 Superior Air. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Mobile sticky call bar -->
+<a class="sticky-call" href="tel:+15597342002" aria-label="Call Superior Air at (559) 734-2002">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" fill="currentColor"/></svg>
+  Tap to Call &middot; (559) 734-2002
+</a>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>East Brainerd Plumbing &amp; Heating, Inc. | Chattanooga Plumbers Since 1960</title>
+<meta name="description" content="East Brainerd Plumbing & Heating — The Gentlemen Plumbers. Family-owned plumbing, water heaters, sewer & drain service in Chattanooga, TN since 1960. 24-hour emergency service. Call (423) 830-0922.">
+<style>
+  :root{
+    --navy:#0e2a3f;
+    --navy-deep:#0a1f30;
+    --copper:#e07b2b;
+    --copper-dark:#c4651c;
+    --ink:#1c2b36;
+    --muted:#5a6b77;
+    --line:#e3e9ee;
+    --bg:#ffffff;
+    --bg-soft:#f4f7f9;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;
+    padding-bottom:64px; /* room for fixed mobile call bar */
+  }
+  img,svg{display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+  h2{font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.2;color:var(--navy);letter-spacing:-.01em}
+  .kicker{
+    display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--copper-dark);margin-bottom:10px;
+  }
+  .lead{color:var(--muted);max-width:56ch;margin-top:12px}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;background:var(--navy);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+  .brand-mark{flex:0 0 auto;width:38px;height:38px;border-radius:9px;background:var(--copper);
+    display:flex;align-items:center;justify-content:center}
+  .brand-text{line-height:1.15;min-width:0}
+  .brand-text b{display:block;color:#fff;font-size:.95rem;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand-text span{display:block;color:#9fb3c2;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+  .nav-call{
+    flex:0 0 auto;display:flex;align-items:center;gap:8px;text-decoration:none;
+    background:var(--copper);color:var(--navy-deep);font-weight:700;font-size:.9rem;
+    padding:10px 14px;border-radius:10px;white-space:nowrap;
+  }
+  .nav-call:active{background:var(--copper-dark)}
+  .nav-call .num{display:none}
+  @media(min-width:560px){.nav-call .num{display:inline}}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;
+    color:#ffd9b8;border:1px solid rgba(224,123,43,.55);border-radius:999px;
+    padding:6px 14px;margin-bottom:20px;letter-spacing:.04em;
+  }
+  .hero h1{font-size:clamp(1.9rem,6.5vw,3.1rem);line-height:1.12;letter-spacing:-.02em;max-width:18ch}
+  .hero h1 em{font-style:normal;color:var(--copper)}
+  .hero p{color:#b9c8d4;margin:18px 0 28px;max-width:52ch;font-size:1.02rem}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:1rem;text-decoration:none;border-radius:12px;
+    padding:15px 22px;min-height:52px;
+  }
+  .btn-call{background:var(--copper);color:var(--navy-deep)}
+  .btn-call:active{background:var(--copper-dark)}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+  .btn-ghost:active{background:rgba(255,255,255,.08)}
+  @media(max-width:480px){.cta-row .btn{flex:1 1 100%}}
+  .hero-points{
+    display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;
+    padding-top:22px;border-top:1px solid rgba(255,255,255,.12);
+  }
+  .hero-points li{
+    list-style:none;display:flex;align-items:center;gap:8px;
+    color:#d7e2ea;font-size:.86rem;font-weight:600;
+  }
+  .hero-points svg{flex:0 0 auto}
+
+  /* ---------- Emergency strip ---------- */
+  .strip{background:var(--copper);color:var(--navy-deep);padding:14px 0}
+  .strip .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;text-align:center}
+  .strip b{font-size:.95rem}
+  .strip a{font-weight:800;text-decoration:none;white-space:nowrap;border-bottom:2px solid rgba(10,31,48,.35)}
+
+  /* ---------- Services ---------- */
+  .grid{display:grid;gap:16px;margin-top:30px;grid-template-columns:1fr}
+  @media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .card .icon{
+    width:46px;height:46px;border-radius:11px;background:var(--bg-soft);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card h3{color:var(--navy);font-size:1.05rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.9rem}
+  #services{background:var(--bg-soft)}
+  #services .card{border-color:#dde5eb}
+
+  /* ---------- Why us ---------- */
+  .why-list{display:grid;gap:14px;margin-top:30px;grid-template-columns:1fr}
+  @media(min-width:700px){.why-list{grid-template-columns:repeat(2,1fr)}}
+  .why{
+    display:flex;gap:14px;align-items:flex-start;
+    border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+  }
+  .why .icon{
+    flex:0 0 auto;width:42px;height:42px;border-radius:10px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why h3{color:var(--navy);font-size:1rem;margin-bottom:3px}
+  .why p{color:var(--muted);font-size:.88rem}
+
+  /* ---------- Area ---------- */
+  #area{background:var(--navy);color:#fff}
+  #area h2{color:#fff}
+  #area .lead{color:#b9c8d4}
+  .area-box{
+    margin-top:26px;display:flex;gap:14px;align-items:flex-start;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);padding:20px;
+  }
+  .area-box .icon{flex:0 0 auto;width:42px;height:42px;border-radius:10px;background:var(--copper);
+    display:flex;align-items:center;justify-content:center}
+  .area-box p{color:#d7e2ea;font-size:.92rem}
+  .area-box b{color:#fff}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;gap:28px;margin-top:30px;grid-template-columns:1fr}
+  @media(min-width:820px){.contact-grid{grid-template-columns:1fr 1.2fr}}
+  .contact-info{display:grid;gap:14px;align-content:start}
+  .c-item{display:flex;gap:12px;align-items:flex-start}
+  .c-item .icon{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--bg-soft);
+    display:flex;align-items:center;justify-content:center}
+  .c-item b{display:block;color:var(--navy);font-size:.92rem}
+  .c-item a,.c-item span{color:var(--muted);font-size:.92rem;text-decoration:none;word-break:break-word}
+  .c-item a:active{color:var(--copper-dark)}
+  form{display:grid;gap:12px}
+  label{font-size:.82rem;font-weight:700;color:var(--navy)}
+  input,textarea{
+    width:100%;font:inherit;font-size:1rem;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;background:#fff;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--copper)}
+  textarea{min-height:110px;resize:vertical}
+  .form-row{display:grid;gap:12px}
+  @media(min-width:560px){.form-row{grid-template-columns:1fr 1fr}}
+  .btn-submit{border:none;cursor:pointer;background:var(--navy);color:#fff;width:100%}
+  .btn-submit:active{background:var(--navy-deep)}
+  .form-ok{
+    display:none;background:#eef7ef;border:1px solid #bfe0c2;color:#1e5e24;
+    border-radius:10px;padding:14px;font-size:.92rem;font-weight:600;
+  }
+  .form-note{font-size:.78rem;color:var(--muted)}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-deep);color:#8fa5b5;padding:34px 0;font-size:.84rem}
+  footer .wrap{display:grid;gap:6px;text-align:center}
+  footer b{color:#fff}
+  footer a{color:#c9d6df;text-decoration:none}
+
+  /* ---------- Fixed mobile call bar ---------- */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--copper);color:var(--navy-deep);
+    font-weight:800;font-size:1rem;text-decoration:none;
+    padding:15px 16px calc(15px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 14px rgba(10,31,48,.25);
+  }
+  @media(min-width:760px){.callbar{display:none} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="East Brainerd Plumbing and Heating home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a1f30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 5.7L3 17.7V21h3.3l5.7-5.7a4.5 4.5 0 0 0 5.7-6L14 13l-3-3 3.7-3.7z"/></svg>
+      </span>
+      <span class="brand-text">
+        <b>East Brainerd Plumbing &amp; Heating</b>
+        <span>The Gentlemen Plumbers</span>
+      </span>
+    </a>
+    <a class="nav-call" href="tel:+14238300922">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      <span>Call</span><span class="num">(423) 830-0922</span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Serving Chattanooga since 1960
+    </span>
+    <h1>Honest plumbing, done right — <em>for over 60 years.</em></h1>
+    <p>East Brainerd Plumbing &amp; Heating is a family-owned Chattanooga company. From leaky faucets to full remodels, our licensed and insured team shows up, fixes it, and stands behind the work — day or night.</p>
+    <div class="cta-row">
+      <a class="btn btn-call" href="tel:+14238300922">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        Call (423) 830-0922
+      </a>
+      <a class="btn btn-ghost" href="#contact">Request Service</a>
+    </div>
+    <ul class="hero-points">
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Licensed &amp; fully insured
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        24-hour emergency service
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Family-owned since 1960
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        Work backed by warranties
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ EMERGENCY STRIP ============ -->
+<div class="strip" role="note">
+  <div class="wrap">
+    <b>Burst pipe at 2 a.m.? We answer.</b>
+    <span>24-hour emergency service —</span>
+    <a href="tel:+14238300922">(423) 830-0922</a>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">What we do</span>
+    <h2>Plumbing &amp; heating services</h2>
+    <p class="lead">Residential, commercial, and industrial — one call covers it all.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 5.7L3 17.7V21h3.3l5.7-5.7a4.5 4.5 0 0 0 5.7-6L14 13l-3-3 3.7-3.7z"/></svg>
+        </span>
+        <h3>Plumbing Repairs &amp; Installation</h3>
+        <p>Leaks, fixtures, pipes, and new installations — repaired or replaced properly the first time.</p>
+      </div>
+      <div class="card">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="18" rx="3"/><path d="M10 22v-2M14 22v-2"/><path d="M12 6.5s-1.8 2-1.8 3.3a1.8 1.8 0 0 0 3.6 0C13.8 8.5 12 6.5 12 6.5z"/></svg>
+        </span>
+        <h3>Water Heaters</h3>
+        <p>Repair and replacement to bring the hot water back — sized right for your home or business.</p>
+      </div>
+      <div class="card">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6 6.3 6 10.8a6 6 0 0 1-12 0C6 9 12 2.7 12 2.7z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></svg>
+        </span>
+        <h3>Sewer &amp; Drain Cleaning</h3>
+        <p>Slow drains and sewer trouble diagnosed and cleared, from the sink trap to the main line.</p>
+      </div>
+      <div class="card">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1"/><path d="M14 6h3a2 2 0 0 1 2 2v2"/><path d="M19 10v2"/><path d="M19 16v.5M19 20v.5M15.5 14l-.4.4M15.5 18.5l-.4.4M22.5 14l.4.4"/><rect x="2" y="10" width="4" height="7" rx="1"/></svg>
+        </span>
+        <h3>Unstopping &amp; Jetting</h3>
+        <p>Stubborn clogs and buildup blasted clear with professional unstopping and jetting equipment.</p>
+      </div>
+      <div class="card">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V7a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v1"/><path d="M4 12h16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2z"/><path d="M12 16v2M12 20v.5"/></svg>
+        </span>
+        <h3>Kitchen &amp; Bathroom Remodeling</h3>
+        <p>Plumbing-smart remodels for kitchens and baths, handled by people who know what's behind the walls.</p>
+      </div>
+      <div class="card">
+        <span class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M15 9h4a2 2 0 0 1 2 2v10"/><path d="M8 7h2M8 11h2M8 15h2"/></svg>
+        </span>
+        <h3>Commercial &amp; Industrial</h3>
+        <p>Dependable service for businesses and facilities across the Chattanooga area — big jobs welcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why">
+  <div class="wrap">
+    <span class="kicker">Why East Brainerd</span>
+    <h2>The Gentlemen Plumbers</h2>
+    <p class="lead">Founded by Edgar "Max" Lewis in 1960 and led today by Edgar M. Lewis Jr., we've built our name on courteous service and work that holds up.</p>
+    <div class="why-list">
+      <div class="why">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </span>
+        <div>
+          <h3>Over 60 years in Chattanooga</h3>
+          <p>Serving the same community since 1960 — that only happens when you treat people right.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </span>
+        <div>
+          <h3>Licensed &amp; fully insured</h3>
+          <p>Real credentials and real coverage, so you're protected on every job.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </span>
+        <div>
+          <h3>Work backed by warranties</h3>
+          <p>We stand behind what we fix and what we install.</p>
+        </div>
+      </div>
+      <div class="why">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07b2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        </span>
+        <div>
+          <h3>24-hour emergency service</h3>
+          <p>Plumbing problems don't keep business hours. Neither do we.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section id="area">
+  <div class="wrap">
+    <span class="kicker">Service area</span>
+    <h2>Proudly serving the Chattanooga area</h2>
+    <p class="lead">Based in East Brainerd, we've served homes and businesses across greater Chattanooga, Tennessee for more than six decades.</p>
+    <div class="area-box">
+      <span class="icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a1f30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <p><b>Chattanooga, TN 37421</b><br>Residential, commercial, and industrial service throughout the Chattanooga area. Not sure if we cover you? Call and ask — <a href="tel:+14238300922" style="color:#ffd9b8;font-weight:700;text-decoration:none">(423) 830-0922</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <span class="kicker">Contact</span>
+    <h2>Request service</h2>
+    <p class="lead">Call us any time, or send a message and we'll get back to you.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="c-item">
+          <span class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+          </span>
+          <div><b>Phone — 24-hour emergency</b><a href="tel:+14238300922">(423) 830-0922</a></div>
+        </div>
+        <div class="c-item">
+          <span class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </span>
+          <div><b>Email</b><a href="mailto:eastbrainerdplum@bellsouth.net">eastbrainerdplum@bellsouth.net</a></div>
+        </div>
+        <div class="c-item">
+          <span class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><b>Location</b><span>Chattanooga, TN 37421</span></div>
+        </div>
+        <div class="c-item">
+          <span class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4651c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <div><b>Emergencies</b><span>24 hours a day, 7 days a week</span></div>
+        </div>
+      </div>
+      <form id="serviceForm" novalidate>
+        <div class="form-row">
+          <div>
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+        </div>
+        <div>
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div>
+          <label for="f-msg">How can we help?</label>
+          <textarea id="f-msg" name="message" required></textarea>
+        </div>
+        <button class="btn btn-submit" type="submit">Send Request</button>
+        <p class="form-ok" id="formOk">Thank you — your request has been received. For emergencies, call (423) 830-0922 any time.</p>
+        <p class="form-note">Need help right now? Skip the form and call <a href="tel:+14238300922" style="color:var(--copper-dark);font-weight:700">(423) 830-0922</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <b>East Brainerd Plumbing &amp; Heating, Inc.</b>
+    <span>The Gentlemen Plumbers — serving Chattanooga since 1960</span>
+    <span><a href="tel:+14238300922">(423) 830-0922</a> &nbsp;|&nbsp; <a href="mailto:eastbrainerdplum@bellsouth.net">eastbrainerdplum@bellsouth.net</a></span>
+    <span>Chattanooga, TN 37421</span>
+    <span>&copy; 2026 East Brainerd Plumbing &amp; Heating, Inc. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- Fixed mobile call bar -->
+<a class="callbar" href="tel:+14238300922" aria-label="Call East Brainerd Plumbing and Heating">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+  Call Now — (423) 830-0922
+</a>
+
+<script>
+  // Demo form handler: show confirmation without a backend.
+  document.getElementById('serviceForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('f-name');
+    var phone = document.getElementById('f-phone');
+    var msg = document.getElementById('f-msg');
+    if (!name.value.trim() || !phone.value.trim() || !msg.value.trim()) {
+      [name, phone, msg].forEach(function (el) {
+        el.style.borderColor = el.value.trim() ? '' : '#c0392b';
+      });
+      return;
+    }
+    this.querySelectorAll('input, textarea, button').forEach(function (el) { el.disabled = true; });
+    document.getElementById('formOk').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
