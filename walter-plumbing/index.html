@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walter Plumbing & Heating | Cheyenne, WY</title>
+<style>
+  :root{
+    --navy:#0b2f45;
+    --navy-deep:#082234;
+    --teal:#0f6e78;
+    --steel:#3f6b8a;
+    --orange:#e0672a;
+    --ink:#0b1f2a;
+    --paper:#f6f8f9;
+    --white:#ffffff;
+    --line:#e2e8ec;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+    padding-bottom:78px; /* space for sticky call bar on mobile */
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:clamp(48px,8vw,96px) 0;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--navy-deep);
+    color:#cfe3ea;
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:8px;padding-bottom:8px;
+    gap:12px;flex-wrap:wrap;
+  }
+  .topbar a{color:#ffd7c2;font-weight:600;}
+  .topbar .emergency-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    color:#ffb38a;font-weight:700;letter-spacing:.02em;
+  }
+
+  /* ---------- Header ---------- */
+  header.site-header{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+  }
+  .brand-mark{width:42px;height:42px;flex-shrink:0;}
+  .brand-text{
+    display:flex;flex-direction:column;line-height:1.15;
+  }
+  .brand-text strong{font-size:18px;font-weight:800;letter-spacing:.01em;}
+  .brand-text span{font-size:11px;color:#a9c5d3;text-transform:uppercase;letter-spacing:.08em;}
+  .nav-call{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--orange);
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .nav-call svg{width:16px;height:16px;flex-shrink:0;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 65%,#061826 100%);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    padding-top:clamp(48px,8vw,88px);
+    padding-bottom:clamp(48px,8vw,88px);
+    display:grid;
+    gap:36px;
+    position:relative;
+    z-index:1;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    padding:7px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    color:#dfeef4;
+    width:fit-content;
+  }
+  .hero h1{
+    font-size:clamp(32px,6vw,54px);
+    font-weight:800;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    margin-top:18px;
+    max-width:15ch;
+  }
+  .hero h1 .accent{color:#ffb38a;}
+  .hero p.lead{
+    margin-top:16px;
+    font-size:clamp(16px,2.4vw,19px);
+    color:#c6dbe4;
+    max-width:52ch;
+  }
+  .hero-ctas{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 24px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:15px;
+    border:2px solid transparent;
+    transition:transform .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn svg{width:19px;height:19px;flex-shrink:0;}
+  .btn-primary{background:var(--orange);color:#fff;}
+  .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4);}
+  .hero-emergency{
+    margin-top:8px;
+    display:flex;align-items:flex-start;gap:12px;
+    background:rgba(224,103,42,0.12);
+    border:1px solid rgba(224,103,42,0.45);
+    padding:16px 18px;
+    border-radius:var(--radius);
+    max-width:560px;
+  }
+  .hero-emergency svg{width:26px;height:26px;flex-shrink:0;color:#ffb38a;}
+  .hero-emergency strong{display:block;font-size:15px;color:#fff;margin-bottom:2px;}
+  .hero-emergency a{color:#ffb38a;font-weight:800;text-decoration:underline;text-underline-offset:2px;}
+  .hero-emergency p{font-size:13.5px;color:#cfe3ea;}
+
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:8px;
+    max-width:560px;
+  }
+  .stat{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:12px;
+    padding:14px 10px;
+    text-align:center;
+  }
+  .stat strong{display:block;font-size:22px;font-weight:800;color:#fff;}
+  .stat span{font-size:11.5px;color:#a9c5d3;line-height:1.3;display:block;margin-top:2px;}
+
+  /* ---------- Section headings ---------- */
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--orange);
+  }
+  h2.section-title{
+    font-size:clamp(26px,4.2vw,38px);
+    font-weight:800;
+    color:var(--navy-deep);
+    margin-top:8px;
+    letter-spacing:-0.01em;
+  }
+  p.section-sub{
+    margin-top:12px;
+    color:#4c6172;
+    font-size:16px;
+    max-width:60ch;
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    margin-top:36px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  @media(min-width:720px){
+    .services-grid{grid-template-columns:repeat(4,1fr);}
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 18px;
+    text-align:center;
+    box-shadow:0 1px 2px rgba(11,47,69,0.04);
+  }
+  .service-icon{
+    width:52px;height:52px;
+    margin:0 auto 14px;
+    background:#eef5f6;
+    border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--teal);
+  }
+  .service-icon svg{width:26px;height:26px;}
+  .service-card h3{
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--navy-deep);
+    line-height:1.3;
+  }
+
+  /* ---------- Why us ---------- */
+  .why{background:var(--navy-deep);color:#fff;}
+  .why .eyebrow{color:#ffb38a;}
+  .why h2.section-title{color:#fff;}
+  .why p.section-sub{color:#b9d0da;}
+  .why-grid{
+    margin-top:36px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  @media(min-width:720px){
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  .why-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius);
+    padding:22px;
+    display:flex;
+    gap:16px;
+  }
+  .why-icon{
+    width:44px;height:44px;flex-shrink:0;
+    background:rgba(255,179,138,0.15);
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    color:#ffb38a;
+  }
+  .why-icon svg{width:22px;height:22px;}
+  .why-card h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+  .why-card p{font-size:14px;color:#c6dbe4;}
+
+  /* ---------- Service area ---------- */
+  .area{
+    display:grid;
+    gap:28px;
+    margin-top:32px;
+  }
+  @media(min-width:820px){
+    .area{grid-template-columns:1fr 1fr;align-items:center;}
+  }
+  .area-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+  }
+  .area-card h3{font-size:19px;font-weight:800;color:var(--navy-deep);margin-bottom:10px;}
+  .area-card p{color:#4c6172;font-size:15px;}
+  .map-graphic{
+    background:#eef5f6;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .map-graphic svg{width:100%;height:auto;max-width:340px;}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--paper);}
+  .contact-grid{
+    margin-top:36px;
+    display:grid;
+    gap:16px;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:720px){
+    .contact-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  .contact-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    display:flex;
+    gap:16px;
+  }
+  .contact-icon{
+    width:46px;height:46px;flex-shrink:0;
+    background:#eef5f6;
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--teal);
+  }
+  .contact-icon.warm{background:#fdece2;color:var(--orange);}
+  .contact-icon svg{width:22px;height:22px;}
+  .contact-card h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#7c8fa0;font-weight:700;margin-bottom:6px;}
+  .contact-card a.big-link,.contact-card p.big-link{
+    font-size:19px;font-weight:800;color:var(--navy-deep);
+  }
+  .contact-card p{font-size:14.5px;color:#4c6172;margin-top:2px;}
+  .contact-card .label{
+    display:inline-block;
+    font-size:11px;font-weight:700;
+    color:var(--orange);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin-bottom:2px;
+  }
+
+  .hours-table{
+    margin-top:14px;
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .hours-table td{padding:6px 0;color:#4c6172;border-bottom:1px solid var(--line);}
+  .hours-table td:last-child{text-align:right;font-weight:600;color:var(--navy-deep);}
+  .hours-table tr:last-child td{border-bottom:none;}
+
+  .payments{
+    margin-top:14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .payments span{
+    background:#eef5f6;
+    color:var(--navy-deep);
+    font-size:12.5px;
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:999px;
+    border:1px solid var(--line);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-deep);
+    color:#9db6c2;
+    text-align:center;
+    padding:28px 20px;
+    font-size:13px;
+  }
+  footer strong{color:#fff;}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .sticky-call{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:50;
+    background:var(--orange);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 20px;
+    font-weight:800;
+    font-size:16px;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.18);
+  }
+  .sticky-call svg{width:20px;height:20px;}
+  @media(min-width:900px){
+    .sticky-call{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Cheyenne, WY &middot; Family-owned since 1987</span>
+    <span class="emergency-tag">
+      24-Hour Emergency: <a href="tel:+13077721990">(307) 772-1990</a>
+    </span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="23" stroke="#ffb38a" stroke-width="2"/>
+        <path d="M16 30c0-6 4-9 4-14a6 6 0 0 1 12 0c0 3-2 4-2 7a4 4 0 0 1-8 0" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 33h8" stroke="#ffb38a" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <strong>Walter Plumbing &amp; Heating</strong>
+        <span>Cheyenne, Wyoming</span>
+      </div>
+    </div>
+    <a class="nav-call" href="tel:+13076383939">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (307) 638-3939
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l2.4 7.2H22l-6 4.6L18.4 21 12 16.4 5.6 21 8 13.8 2 9.2h7.6z"/></svg>
+      39 Years Serving Cheyenne, WY
+    </span>
+    <h1>Plumbing &amp; heating done right, <span class="accent">by Master Plumbers.</span></h1>
+    <p class="lead">Walter Plumbing &amp; Heating has served Cheyenne families and businesses for 39 years. Owners Mark Walter and Daniel Walter are both licensed Master Plumbers &mdash; the trade's highest credential.</p>
+
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:+13076383939">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (307) 638-3939
+      </a>
+      <a class="btn btn-outline" href="#services">
+        View Services
+      </a>
+    </div>
+
+    <div class="hero-emergency">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86l-8.18 14.16A1.5 1.5 0 0 0 3.4 20.5h17.2a1.5 1.5 0 0 0 1.3-2.48L13.71 3.86a1.5 1.5 0 0 0-2.42 0z"/></svg>
+      <div>
+        <strong>Pipe burst? No heat? We're here 24 hours a day.</strong>
+        <p>Call our after-hours emergency line anytime: <a href="tel:+13077721990">(307) 772-1990</a></p>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><strong>39</strong><span>Years in Business</span></div>
+      <div class="stat"><strong>2</strong><span>Master Plumbers on Staff</span></div>
+      <div class="stat"><strong>24/7</strong><span>Emergency Service</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <span class="eyebrow">What We Do</span>
+    <h2 class="section-title">Full-service plumbing &amp; heating</h2>
+    <p class="section-sub">From routine repairs to emergency calls, one experienced team handles it all.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2-4 4 8 2-4h4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>Plumbing &amp; Heating Services</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86l-8.18 14.16A1.5 1.5 0 0 0 3.4 20.5h17.2a1.5 1.5 0 0 0 1.3-2.48L13.71 3.86a1.5 1.5 0 0 0-2.42 0z"/></svg>
+        </div>
+        <h3>Emergency Plumbing &amp; Heating</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Home Plumbing &amp; Hot Water Inspections</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Certified Backflow Prevention Testing</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="eyebrow">Why Cheyenne Trusts Us</span>
+    <h2 class="section-title">Nearly four decades of straightforward work</h2>
+    <p class="section-sub">Two Master Plumbers, one family business, no shortcuts.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.6L18.4 21 12 16.4 5.6 21 8 13.8 2 9.2h7.6z"/></svg>
+        </div>
+        <div>
+          <h3>39 Years in Business</h3>
+          <p>Serving Cheyenne and the surrounding area since 1987.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div>
+          <h3>Owned by Two Master Plumbers</h3>
+          <p>Mark Walter and Daniel Walter both hold Master Plumber licensure.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div>
+          <h3>24-Hour Emergency Availability</h3>
+          <p>Burst pipes and no-heat calls don't wait for business hours &mdash; neither do we.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <h3>Certified Backflow Testing</h3>
+          <p>Certified backflow prevention testing to keep your water supply safe and compliant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap area">
+    <div class="area-card">
+      <span class="eyebrow">Service Area</span>
+      <h3 style="margin-top:10px;">Proudly serving Cheyenne, Wyoming</h3>
+      <p>Walter Plumbing &amp; Heating is based right in Cheyenne, ready to help homeowners and businesses throughout the area.</p>
+      <p style="margin-top:14px;font-weight:700;color:var(--navy-deep);">3912 Evans Ave, Cheyenne, WY 82001</p>
+    </div>
+    <div class="map-graphic">
+      <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="300" height="220" rx="12" fill="#e3edee"/>
+        <path d="M0 60 H300 M0 120 H300 M0 170 H300 M60 0 V220 M150 0 V220 M230 0 V220" stroke="#c8d9db" stroke-width="1.5"/>
+        <circle cx="150" cy="110" r="10" fill="#e0672a"/>
+        <path d="M150 92 c-12 0-20 8-20 19 0 14 20 34 20 34s20-20 20-34c0-11-8-19-20-19z" fill="none" stroke="#0f6e78" stroke-width="3"/>
+        <circle cx="150" cy="111" r="5" fill="#0f6e78"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow">Get In Touch</span>
+    <h2 class="section-title">Contact Walter Plumbing &amp; Heating</h2>
+    <p class="section-sub">Call, email, or stop by &mdash; we're easy to reach.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <span class="label">Main Line</span>
+          <a class="big-link" href="tel:+13076383939">(307) 638-3939</a>
+          <p>Mon&ndash;Fri, 8:00am&ndash;4:30pm</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon warm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86l-8.18 14.16A1.5 1.5 0 0 0 3.4 20.5h17.2a1.5 1.5 0 0 0 1.3-2.48L13.71 3.86a1.5 1.5 0 0 0-2.42 0z"/></svg>
+        </div>
+        <div>
+          <span class="label">24-Hour Emergency</span>
+          <a class="big-link" href="tel:+13077721990">(307) 772-1990</a>
+          <p>Available anytime, day or night</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+        </div>
+        <div>
+          <span class="label">Email</span>
+          <a class="big-link" href="mailto:walterplumbingheating@gmail.com" style="font-size:16px;">walterplumbingheating@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <span class="label">Address</span>
+          <p class="big-link" style="font-weight:700;">3912 Evans Ave</p>
+          <p>Cheyenne, WY 82001</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div style="width:100%;">
+          <span class="label">Hours</span>
+          <table class="hours-table">
+            <tr><td>Regular Hours (Mon&ndash;Fri)</td><td>8:00am&ndash;4:30pm</td></tr>
+            <tr><td>Office Hours (Mon&ndash;Fri)</td><td>8:00am&ndash;2:00pm</td></tr>
+            <tr><td>Saturday &amp; Sunday</td><td>Closed</td></tr>
+            <tr><td>Emergency Service</td><td>24 Hours</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        </div>
+        <div>
+          <span class="label">Payment Methods</span>
+          <div class="payments">
+            <span>Visa</span>
+            <span>Discover</span>
+            <span>American Express</span>
+            <span>Cash</span>
+            <span>Check</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Walter Plumbing &amp; Heating</strong> &mdash; 3912 Evans Ave, Cheyenne, WY 82001</p>
+  <p style="margin-top:6px;">Owned &amp; operated by Master Plumbers Mark Walter &amp; Daniel Walter &middot; 39 years serving Cheyenne</p>
+</footer>
+
+<a class="sticky-call" href="tel:+13076383939">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Call Now: (307) 638-3939
+</a>
+
+</body>
+</html>

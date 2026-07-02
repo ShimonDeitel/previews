@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Archuleta Sewer & Camera LLC | Cheyenne, WY Drain & Sewer Experts</title>
+<style>
+  :root{
+    --slate-900:#0f172a;
+    --slate-800:#16213a;
+    --slate-700:#1e2b4d;
+    --slate-600:#334463;
+    --slate-100:#eef1f6;
+    --slate-300:#c3ccdb;
+    --accent:#ff5a1f;
+    --accent-dark:#e2470f;
+    --teal:#0fb5ae;
+    --white:#ffffff;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(10,15,30,0.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--slate-900);
+    color:var(--slate-100);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:78px;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* NAV */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,23,42,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .navrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(0.95rem,2.5vw,1.15rem);letter-spacing:-0.01em;}
+  .brand svg{width:30px;height:30px;flex:none;}
+  .nav-call{
+    display:flex;align-items:center;gap:8px;
+    background:var(--accent);color:var(--white);
+    padding:9px 14px;border-radius:999px;font-weight:700;font-size:0.85rem;
+    white-space:nowrap;
+    box-shadow:0 4px 14px rgba(255,90,31,0.35);
+  }
+  .nav-call svg{width:16px;height:16px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:56px 20px 64px;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(15,181,174,0.18), transparent 55%),
+      radial-gradient(circle at 100% 30%, rgba(255,90,31,0.16), transparent 50%),
+      linear-gradient(180deg,var(--slate-900) 0%, var(--slate-800) 100%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size:36px 36px;
+    mask-image:radial-gradient(ellipse at 50% 0%, black 40%, transparent 75%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;max-width:760px;margin:0 auto;text-align:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(15,181,174,0.14);
+    border:1px solid rgba(15,181,174,0.4);
+    color:#5fe3db;
+    font-size:0.78rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;
+    padding:7px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  .badge svg{width:14px;height:14px;}
+  h1{
+    font-size:clamp(1.9rem,6vw,3.2rem);
+    font-weight:800;
+    letter-spacing:-0.02em;
+    line-height:1.08;
+    margin-bottom:18px;
+  }
+  h1 span{color:var(--accent);}
+  .hero p.sub{
+    font-size:clamp(1rem,2.6vw,1.15rem);
+    color:var(--slate-300);
+    max-width:560px;
+    margin:0 auto 32px;
+  }
+  .hero-ctas{
+    display:flex;flex-direction:column;gap:12px;
+    align-items:center;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:1.05rem;
+    padding:16px 28px;border-radius:14px;
+    width:100%;max-width:340px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn svg{width:20px;height:20px;flex:none;}
+  .btn-primary{
+    background:var(--accent);color:var(--white);
+    box-shadow:0 10px 24px rgba(255,90,31,0.4);
+  }
+  .btn-primary:active{transform:scale(0.98);}
+  .btn-secondary{
+    background:rgba(255,255,255,0.06);
+    color:var(--slate-100);
+    border:1px solid rgba(255,255,255,0.16);
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;
+    margin-top:28px;font-size:0.85rem;color:var(--slate-300);
+  }
+  .hero-meta span{display:flex;align-items:center;gap:6px;}
+  .hero-meta svg{width:15px;height:15px;color:var(--teal);flex:none;}
+
+  /* SECTION SHARED */
+  section{padding:56px 20px;}
+  .section-head{max-width:640px;margin:0 auto 36px;text-align:center;}
+  .eyebrow{
+    color:var(--accent);font-weight:700;font-size:0.78rem;
+    text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;
+  }
+  h2{font-size:clamp(1.5rem,4.2vw,2.1rem);font-weight:800;letter-spacing:-0.01em;margin-bottom:12px;}
+  .section-head p{color:var(--slate-300);font-size:1rem;}
+
+  /* SERVICES */
+  .services{background:var(--slate-800);}
+  .service-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;
+    max-width:1100px;margin:0 auto;
+  }
+  @media(min-width:640px){.service-grid{grid-template-columns:repeat(3,1fr);}}
+  .service-card{
+    background:var(--slate-700);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:var(--radius);
+    padding:28px 22px;
+    box-shadow:var(--shadow);
+    display:flex;flex-direction:column;align-items:flex-start;gap:16px;
+  }
+  .icon-tile{
+    width:56px;height:56px;border-radius:14px;
+    background:linear-gradient(135deg, rgba(255,90,31,0.22), rgba(15,181,174,0.18));
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .icon-tile svg{width:28px;height:28px;color:var(--accent);}
+  .service-card h3{font-size:1.1rem;font-weight:700;margin-bottom:6px;}
+  .service-card p{color:var(--slate-300);font-size:0.92rem;}
+
+  /* WHY US */
+  .why-grid{
+    display:grid;grid-template-columns:1fr;gap:18px;
+    max-width:900px;margin:0 auto;
+  }
+  @media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr;}}
+  .why-card{
+    display:flex;gap:16px;align-items:flex-start;
+    background:var(--slate-800);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .why-icon{
+    width:46px;height:46px;border-radius:12px;flex:none;
+    background:rgba(15,181,174,0.15);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-icon svg{width:24px;height:24px;color:var(--teal);}
+  .why-card h3{font-size:1.02rem;font-weight:700;margin-bottom:5px;}
+  .why-card p{color:var(--slate-300);font-size:0.9rem;}
+
+  /* SERVICE AREA */
+  .area{background:var(--slate-800);}
+  .area-list{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    max-width:760px;margin:0 auto;
+  }
+  .area-chip{
+    display:flex;align-items:center;gap:7px;
+    background:var(--slate-700);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:10px 16px;border-radius:999px;
+    font-size:0.9rem;font-weight:600;color:var(--slate-100);
+  }
+  .area-chip svg{width:15px;height:15px;color:var(--accent);flex:none;}
+
+  /* CONTACT */
+  .contact-card{
+    max-width:640px;margin:0 auto;
+    background:linear-gradient(160deg, var(--slate-700), var(--slate-800));
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:32px 24px;
+    box-shadow:var(--shadow);
+  }
+  .contact-row{
+    display:flex;align-items:flex-start;gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .ci{
+    width:40px;height:40px;border-radius:10px;flex:none;
+    background:rgba(255,90,31,0.15);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row .ci svg{width:20px;height:20px;color:var(--accent);}
+  .contact-row .ct h4{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--slate-300);margin-bottom:4px;}
+  .contact-row .ct a, .contact-row .ct div{font-size:1rem;font-weight:700;color:var(--slate-100);word-break:break-word;}
+  .pay-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .pay-pill{
+    background:var(--slate-600);
+    padding:5px 11px;border-radius:8px;
+    font-size:0.78rem;font-weight:600;color:var(--slate-100);
+  }
+  .contact-cta{
+    margin-top:24px;
+  }
+
+  /* FOOTER */
+  footer{
+    text-align:center;padding:28px 20px 100px;
+    color:var(--slate-300);font-size:0.82rem;
+  }
+  footer .fname{font-weight:700;color:var(--slate-100);display:block;margin-bottom:4px;}
+
+  /* STICKY MOBILE CALL BAR */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 20px;
+    padding-bottom:calc(16px + env(safe-area-inset-bottom));
+    font-weight:800;font-size:1rem;color:var(--white);
+    box-shadow:0 -6px 20px rgba(0,0,0,0.35);
+  }
+  .sticky-call svg{width:20px;height:20px;}
+
+  @media(min-width:900px){
+    .sticky-call{display:none;}
+    body{padding-bottom:0;}
+    .hero-ctas{flex-direction:row;justify-content:center;}
+    .btn{width:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="navrow">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="23" fill="#ff5a1f" opacity="0.15"/>
+        <circle cx="24" cy="24" r="16" stroke="#ff5a1f" stroke-width="2.5"/>
+        <circle cx="24" cy="24" r="5" fill="#ff5a1f"/>
+        <path d="M24 8V4M24 44v-4M8 24H4M44 24h-4" stroke="#0fb5ae" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span>Archuleta Sewer &amp; Camera</span>
+    </div>
+    <a href="tel:13072874500" class="nav-call">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+      Call
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 6.5L21 9l-5 4.6L17.4 21 12 17.3 6.6 21 8 13.6 3 9l6.6-.5L12 2z" fill="currentColor"/></svg>
+      20+ Years Serving Cheyenne, WY
+    </div>
+    <h1>Sewer &amp; Drain Problems, <span>Solved Right.</span></h1>
+    <p class="sub">Family-owned drain cleaning, sewer camera inspection, and plumbing installation. Over 20 years of hands-on experience — you talk directly to the owner, not a call center.</p>
+    <div class="hero-ctas">
+      <a href="tel:13072874500" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+        Call (307) 287-4500
+      </a>
+      <a href="#contact" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="2" opacity="0"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+        Email Us
+      </a>
+    </div>
+    <div class="hero-meta">
+      <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg> Cheyenne, WY</span>
+      <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Mon–Fri 8am–5pm</span>
+      <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z" stroke="currentColor" stroke-width="2"/></svg> Family-Owned</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-head">
+    <div class="eyebrow">What We Do</div>
+    <h2>Straightforward Sewer &amp; Drain Services</h2>
+    <p>No gimmicks — just the work done right, the first time.</p>
+  </div>
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="icon-tile">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 15l3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Drain Cleaning</h3>
+      <p>Fast, thorough clearing of clogged and slow drains using professional-grade equipment.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon-tile">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="2"/><path d="M15 11.5l6-3v9l-6-3" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="13" r="1.6" fill="currentColor"/></svg>
+      </div>
+      <h3>Sewer Camera Inspection</h3>
+      <p>Pinpoint the exact issue in your line before any digging — clear video, clear answers.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon-tile">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.7 6.3a1 1 0 010 1.4l-7 7a1 1 0 01-1.4 0L4 12.4a1 1 0 010-1.4l7-7a1 1 0 011.4 0l2.3 2.3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M17 9l3-3M9 17l-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Plumbing Installation</h3>
+      <p>Reliable installs handled by an experienced hand — done to last.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-head">
+    <div class="eyebrow">Why Archuleta</div>
+    <h2>Two Decades of Doing It Right</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 6.5L21 9l-5 4.6L17.4 21 12 17.3 6.6 21 8 13.6 3 9l6.6-.5L12 2z" fill="currentColor"/></svg>
+      </div>
+      <div>
+        <h3>20+ Years of Experience</h3>
+        <p>Deep, hands-on expertise in sewer/drain cleaning, video camera inspection, and plumbing installation.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+      </div>
+      <div>
+        <h3>Family-Owned</h3>
+        <p>You deal directly with the owner — real answers, no call center in between.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="section-head">
+    <div class="eyebrow">Service Area</div>
+    <h2>Proudly Serving Southeast Wyoming</h2>
+  </div>
+  <div class="area-list">
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Cheyenne</span>
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Laramie</span>
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Burns</span>
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Carpenter</span>
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Pine Bluffs</span>
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Albin</span>
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Chugwater</span>
+    <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="currentColor" stroke-width="2"/></svg>Wheatland</span>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-head">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Ready When You Are</h2>
+  </div>
+  <div class="contact-card">
+    <div class="contact-row">
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg></div>
+      <div class="ct"><h4>Phone</h4><a href="tel:13072874500">(307) 287-4500</a></div>
+    </div>
+    <div class="contact-row">
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ct"><h4>Email</h4><a href="mailto:archuleta.sewer.camera@gmail.com">archuleta.sewer.camera@gmail.com</a></div>
+    </div>
+    <div class="contact-row">
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div class="ct"><h4>Hours</h4><div>Mon–Fri: 8:00am – 5:00pm<br>Sat–Sun: Closed</div></div>
+    </div>
+    <div class="contact-row">
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="20" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10h20" stroke="currentColor" stroke-width="2"/></svg></div>
+      <div class="ct">
+        <h4>Payment Methods</h4>
+        <div class="pay-list">
+          <span class="pay-pill">Visa</span>
+          <span class="pay-pill">MasterCard</span>
+          <span class="pay-pill">Discover</span>
+          <span class="pay-pill">Cash</span>
+          <span class="pay-pill">Check</span>
+          <span class="pay-pill">Invoice</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-cta">
+      <a href="tel:13072874500" class="btn btn-primary" style="max-width:100%;">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+        Call Jesus Now: (307) 287-4500
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fname">Archuleta Sewer &amp; Camera LLC</span>
+  Owner: Jesus Archuleta &middot; Cheyenne, Wyoming &middot; Family-Owned &amp; Operated
+</footer>
+
+<a href="tel:13072874500" class="sticky-call">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+  Call Now: (307) 287-4500
+</a>
+
+</body>
+</html>

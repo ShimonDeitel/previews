@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Seasons Roofing | Bozeman, MT Roofing Contractor</title>
+<style>
+  :root{
+    --charcoal:#1b2128;
+    --charcoal-2:#242c35;
+    --slate:#5b6b7a;
+    --sky:#3d7ea6;
+    --sky-light:#e8f2f7;
+    --accent:#d9662b;
+    --accent-dark:#b8501e;
+    --paper:#f7f6f3;
+    --white:#ffffff;
+    --line:#e3e1db;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(20,25,30,.10);
+    --shadow-sm:0 4px 14px rgba(20,25,30,.08);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--charcoal);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:76px;
+  }
+  img,svg{display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+  section{padding:clamp(56px,9vw,104px) 0;}
+
+  /* ---------- NAV ---------- */
+  header.topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(27,33,40,.92);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  .topbar-inner{
+    max-width:1120px;margin:0 auto;
+    padding:14px clamp(20px,5vw,40px);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    color:var(--white);font-weight:700;font-size:16px;letter-spacing:.2px;
+  }
+  .brand svg{width:26px;height:26px;flex-shrink:0;}
+  .topbar a.callchip{
+    display:flex;align-items:center;gap:7px;
+    background:var(--accent);color:var(--white);
+    padding:9px 16px;border-radius:999px;
+    font-weight:600;font-size:14px;
+    box-shadow:0 4px 12px rgba(217,102,43,.35);
+    white-space:nowrap;
+  }
+  .topbar a.callchip svg{width:15px;height:15px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--charcoal) 0%,var(--charcoal-2) 55%,#2c3a45 100%);
+    color:var(--white);
+    padding:clamp(64px,12vw,120px) 0 clamp(72px,10vw,110px);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(115deg, transparent 0 42%, rgba(217,102,43,.10) 42% 46%, transparent 46% 100%),
+      linear-gradient(115deg, transparent 0 60%, rgba(61,126,166,.12) 60% 64%, transparent 64% 100%);
+    pointer-events:none;
+  }
+  .hero-mountains{
+    position:absolute;left:0;right:0;bottom:-2px;width:100%;
+    opacity:.5;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:680px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#f2b78c;
+    background:rgba(217,102,43,.15);
+    border:1px solid rgba(217,102,43,.35);
+    padding:6px 14px;border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem,6.5vw,3.4rem);
+    font-weight:800;
+    letter-spacing:-0.02em;
+    line-height:1.08;
+    margin-bottom:18px;
+  }
+  .hero h1 span{color:var(--accent);}
+  .hero p.lead{
+    font-size:clamp(1rem,2.4vw,1.15rem);
+    color:#c7d0d8;
+    max-width:520px;
+    margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:15.5px;
+    padding:16px 26px;border-radius:12px;
+    border:none;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{
+    background:var(--accent);color:var(--white);
+    box-shadow:0 10px 24px rgba(217,102,43,.4);
+  }
+  .btn-primary svg{width:19px;height:19px;}
+  .btn-ghost{
+    background:rgba(255,255,255,.06);
+    color:var(--white);
+    border:1px solid rgba(255,255,255,.25);
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:22px;
+    color:#a8b4bd;font-size:13.5px;
+  }
+  .hero-meta div{display:flex;align-items:center;gap:8px;}
+  .hero-meta svg{width:16px;height:16px;color:var(--accent);flex-shrink:0;}
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{max-width:600px;margin-bottom:44px;}
+  .kicker{
+    font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent-dark);margin-bottom:10px;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem,4vw,2.4rem);
+    font-weight:800;letter-spacing:-0.02em;
+    color:var(--charcoal);
+    line-height:1.15;
+  }
+  .section-head p{
+    margin-top:12px;color:var(--slate);font-size:16px;max-width:520px;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--white);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  @media(min-width:640px){.service-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:960px){.service-grid{grid-template-columns:repeat(4,1fr);}}
+  .service-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 16px;
+    text-align:left;
+    transition:box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+  }
+  .service-card:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);border-color:transparent;}
+  .service-icon{
+    width:44px;height:44px;border-radius:11px;
+    background:var(--sky-light);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .service-icon svg{width:23px;height:23px;color:var(--sky);}
+  .service-card h3{font-size:14.5px;font-weight:700;color:var(--charcoal);line-height:1.3;}
+
+  /* ---------- WHY US ---------- */
+  .whyus{
+    background:var(--charcoal);
+    color:var(--white);
+  }
+  .whyus .section-head h2{color:var(--white);}
+  .whyus .kicker{color:#f2b78c;}
+  .whyus .section-head p{color:#aeb9c1;}
+  .why-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;
+  }
+  @media(min-width:720px){.why-grid{grid-template-columns:repeat(3,1fr);}}
+  .why-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:var(--radius);
+    padding:26px 22px;
+  }
+  .why-icon{
+    width:46px;height:46px;border-radius:12px;
+    background:rgba(217,102,43,.18);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+  }
+  .why-icon svg{width:24px;height:24px;color:var(--accent);}
+  .why-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
+  .why-card p{font-size:14.5px;color:#b7c1c9;line-height:1.55;}
+
+  /* ---------- SERVICE AREA ---------- */
+  .area{background:var(--paper);}
+  .area-layout{display:grid;grid-template-columns:1fr;gap:36px;align-items:center;}
+  @media(min-width:800px){.area-layout{grid-template-columns:1.1fr .9fr;}}
+  .area-map{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    padding:30px;
+  }
+  .town-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+  .town-list li{
+    display:flex;align-items:center;gap:12px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-weight:600;font-size:16px;color:var(--charcoal);
+  }
+  .town-list li:last-child{border-bottom:none;}
+  .town-list svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;}
+  .area-text .section-head{margin-bottom:22px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:linear-gradient(160deg,var(--charcoal-2) 0%,var(--charcoal) 100%);
+    color:var(--white);
+  }
+  .contact-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    padding:clamp(28px,5vw,48px);
+    display:grid;grid-template-columns:1fr;gap:28px;
+  }
+  @media(min-width:760px){.contact-card{grid-template-columns:1.1fr .9fr;}}
+  .contact-card h2{
+    font-size:clamp(1.6rem,4vw,2.1rem);font-weight:800;letter-spacing:-0.02em;
+    margin-bottom:12px;
+  }
+  .contact-card > div:first-child p{color:#b7c1c9;font-size:15.5px;max-width:420px;}
+  .contact-links{display:flex;flex-direction:column;gap:12px;}
+  .contact-link{
+    display:flex;align-items:center;gap:14px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:16px 18px;
+    font-weight:600;font-size:15.5px;
+  }
+  .contact-link .ico{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-link .ico svg{width:18px;height:18px;color:#fff;}
+  .contact-link span.sub{display:block;font-weight:400;font-size:12.5px;color:#9aa6ae;margin-top:2px;}
+
+  footer{
+    text-align:center;padding:28px 20px 100px;
+    color:var(--slate);font-size:13px;
+    background:var(--charcoal);
+  }
+  footer .fbrand{color:#dfe4e8;font-weight:700;margin-bottom:4px;}
+
+  /* ---------- STICKY CALL BAR (mobile) ---------- */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    display:flex;
+    background:var(--accent);
+    box-shadow:0 -6px 20px rgba(0,0,0,.2);
+  }
+  .sticky-call a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:10px;
+    color:#fff;font-weight:700;font-size:16px;
+    padding:16px 10px;
+  }
+  .sticky-call svg{width:19px;height:19px;}
+  @media(min-width:860px){
+    .sticky-call{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      All Seasons Roofing
+    </div>
+    <a class="callchip" href="tel:4065485873">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Bozeman &amp; The Gallatin Valley
+    </span>
+    <h1>Roofing done right, <span>every season.</span></h1>
+    <p class="lead">All Seasons Roofing is a local roofing contractor serving the Bozeman area — from routine repairs to full replacements, storm damage to new metal roofs.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:4065485873">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+        (406) 548-5873
+      </a>
+      <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+    </div>
+    <div class="hero-meta">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Serving the Gallatin Valley
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Emergency Roofing Available
+      </div>
+    </div>
+  </div>
+  <svg class="hero-mountains" viewBox="0 0 1200 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 160 L140 70 L230 120 L360 40 L470 110 L610 55 L720 120 L860 60 L980 130 L1090 80 L1200 130 L1200 160 Z" fill="#2c3a45" opacity="0.6"/>
+    <path d="M0 160 L90 110 L200 140 L320 90 L430 150 L560 100 L680 150 L820 95 L940 150 L1060 115 L1200 150 L1200 160 Z" fill="#243039" opacity="0.8"/>
+  </svg>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Do</div>
+      <h2>Full-service roofing, all in one place</h2>
+      <p>From a single repair to a full replacement, we handle every part of the job.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Residential Roofing</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 11v9h4v-6h6v6h4v-9"/><path d="M9 4v4"/><path d="M15 4v4"/></svg></div>
+        <h3>Metal Roofing</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 12h6"/></svg></div>
+        <h3>Commercial Roofing</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M5 6l1 14h12l1-14"/><path d="M10 6V4h4v2"/><path d="M9 12v5"/><path d="M15 12v5"/></svg></div>
+        <h3>Gutter Installation</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 11v9h14v-9"/><path d="M9.5 14.5l2 2 3-3.5"/></svg></div>
+        <h3>Roof Repair</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 11v9h14v-9"/><path d="M12 4v16"/><path d="M12 12l6-4"/></svg></div>
+        <h3>Roof Replacement</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 11v9h14v-9"/><rect x="10" y="7" width="4" height="4"/></svg></div>
+        <h3>Skylight Installation</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Roof Inspections</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 5H9a4 4 0 0 0-4 4v9"/><path d="M13 2v6h6"/><path d="M22 16l-4 6h4l-4 6" transform="translate(-2 -8) scale(0.6)"/><path d="M13 13l-2.5 4h3L11 21"/></svg></div>
+        <h3>Storm Damage Repair</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16"/><path d="M4 8v11h16V8"/><path d="M4 8l3-4h10l3 4"/></svg></div>
+        <h3>Flat Roofing</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 11v9h14v-9"/><path d="M9 11l3 2 3-2"/><path d="M9 15l3 2 3-2"/></svg></div>
+        <h3>Asphalt Shingle Roofing</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 11v9h14v-9"/><path d="M8 13h2v2H8z"/><path d="M14 13h2v2h-2z"/><path d="M11 16h2v2h-2z"/></svg></div>
+        <h3>Tile Roofing</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 11v9h14v-9"/><path d="M9 11v9"/><path d="M15 11v9"/><path d="M12 11v9"/></svg></div>
+        <h3>Slate Roofing</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><circle cx="12" cy="12" r="6"/><path d="M12 9v3l2 2"/></svg></div>
+        <h3>Emergency Roofing Services</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus" id="why-us">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Why All Seasons Roofing</div>
+      <h2>Local, responsive, and easy to reach</h2>
+      <p>We're a Bozeman-based crew that covers the full range of roofing work homeowners and businesses need across the valley.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Local to the Gallatin Valley</h3>
+        <p>Based in Bozeman and familiar with the Montana weather this roof has to stand up to — from mountain snow loads to summer hail.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Easy to reach</h3>
+        <p>Call or email and talk to a real person about your project — no call centers, no runaround.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg></div>
+        <h3>One call for the whole roof</h3>
+        <p>Repairs, replacements, metal, flat, tile, gutters, and inspections — one contractor for whatever the roof needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area" id="area">
+  <div class="wrap area-layout">
+    <div class="area-text">
+      <div class="section-head">
+        <div class="kicker">Where We Work</div>
+        <h2>Proudly serving the Gallatin Valley</h2>
+        <p>Based in Bozeman, All Seasons Roofing serves homeowners and businesses throughout the surrounding area.</p>
+      </div>
+      <a class="btn btn-primary" href="tel:4065485873">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+        Ask About Your Area
+      </a>
+    </div>
+    <div class="area-map">
+      <ul class="town-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bozeman</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Belgrade</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Big Sky</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Four Corners</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Livingston</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div>
+        <h2>Get a quote on your roof</h2>
+        <p>Call or email All Seasons Roofing to talk through your project — residential, commercial, repair, or full replacement.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="tel:4065485873">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span>(406) 548-5873<span class="sub">Tap to call</span></span>
+        </a>
+        <a class="contact-link" href="mailto:roofinmt@gmail.com">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <span>roofinmt@gmail.com<span class="sub">Tap to email</span></span>
+        </a>
+        <a class="contact-link" href="#services">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span>Bozeman, MT<span class="sub">Serving the Gallatin Valley</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">All Seasons Roofing</div>
+  <div>Bozeman, MT &middot; Serving Bozeman, Belgrade, Big Sky, Four Corners &amp; Livingston</div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:4065485873">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now — (406) 548-5873
+  </a>
+</div>
+
+</body>
+</html>
