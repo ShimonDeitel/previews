@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carolina Plumbing of South Carolina, Inc. | Lexington, SC</title>
+<style>
+  :root{
+    --navy:#0b2545;
+    --blue:#1467d6;
+    --blue-dark:#0d4fa8;
+    --ink:#101828;
+    --gray:#5b6472;
+    --line:#e5e8ee;
+    --bg:#ffffff;
+    --bg-soft:#f5f7fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:64px 0;}
+
+  /* Top bar */
+  .topbar{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+    padding:8px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+  .topbar-item{display:flex;align-items:center;gap:6px;color:#cbd8ee;}
+  .topbar a.call-link{color:#fff;font-weight:600;}
+
+  /* Header */
+  header.site-header{
+    position:sticky;top:0;z-index:50;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+    gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--navy);}
+  .brand-icon{width:34px;height:34px;flex-shrink:0;}
+  .brand small{display:block;font-weight:600;font-size:11px;color:var(--gray);letter-spacing:.04em;}
+  nav.main-nav{display:flex;gap:24px;}
+  nav.main-nav a{font-size:14px;font-weight:600;color:var(--ink);}
+  nav.main-nav a:hover{color:var(--blue);}
+  .header-cta{
+    display:flex;align-items:center;gap:8px;
+    background:var(--blue);color:#fff;
+    padding:10px 18px;border-radius:8px;
+    font-weight:700;font-size:14px;white-space:nowrap;
+  }
+  .header-cta svg{width:16px;height:16px;}
+  .header-cta:hover{background:var(--blue-dark);}
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,#123a6b 55%,var(--blue-dark) 100%);
+    color:#fff;
+    padding:72px 0 64px;
+  }
+  .hero-grid{display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
+  .hero-copy{flex:1 1 420px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:7px 14px;border-radius:999px;
+    font-size:13px;font-weight:700;letter-spacing:.02em;
+    margin-bottom:20px;
+  }
+  .badge svg{width:14px;height:14px;}
+  .hero h1{
+    font-size:44px;line-height:1.12;font-weight:800;letter-spacing:-.01em;
+    margin-bottom:18px;
+  }
+  .hero h1 span{color:#7ec1ff;}
+  .hero p.lede{
+    font-size:18px;color:#d7e3f7;max-width:520px;margin-bottom:30px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 26px;border-radius:9px;
+    font-weight:700;font-size:16px;
+    border:2px solid transparent;
+  }
+  .btn svg{width:19px;height:19px;flex-shrink:0;}
+  .btn-primary{background:#fff;color:var(--blue-dark);}
+  .btn-primary:hover{background:#eaf2ff;}
+  .btn-outline{border-color:rgba(255,255,255,0.55);color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,0.1);}
+  .hero-stats{
+    flex:1 1 300px;
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  }
+  .stat-card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:14px;
+    padding:22px 18px;
+    text-align:center;
+  }
+  .stat-card .num{font-size:30px;font-weight:800;color:#fff;}
+  .stat-card .label{font-size:13px;color:#c9d9f2;margin-top:4px;}
+
+  /* Trust strip */
+  .trust-strip{
+    background:var(--bg-soft);
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+  }
+  .trust-strip .wrap{
+    display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:center;
+  }
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy);}
+  .trust-item svg{width:20px;height:20px;color:var(--blue);flex-shrink:0;}
+
+  /* Section headings */
+  .section-head{max-width:640px;margin:0 auto 40px;text-align:center;}
+  .eyebrow{
+    color:var(--blue);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;
+  }
+  .section-head h2{font-size:32px;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin-bottom:12px;}
+  .section-head p{color:var(--gray);font-size:16px;}
+
+  /* Services */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;
+  }
+  .service-card{
+    border:1px solid var(--line);border-radius:16px;
+    padding:28px 24px;
+    background:#fff;
+    transition:box-shadow .15s, transform .15s;
+  }
+  .service-card:hover{box-shadow:0 10px 30px rgba(20,103,214,0.12);transform:translateY(-2px);}
+  .service-icon{
+    width:48px;height:48px;border-radius:12px;
+    background:#eaf2ff;color:var(--blue);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .service-icon svg{width:24px;height:24px;}
+  .service-card h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+  .service-card p{font-size:14px;color:var(--gray);}
+
+  /* Emergency band */
+  .emergency-band{
+    background:var(--blue);
+    color:#fff;
+    padding:36px 0;
+  }
+  .emergency-band .wrap{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  }
+  .emergency-band .copy{display:flex;align-items:center;gap:16px;}
+  .emergency-band .copy svg{width:40px;height:40px;flex-shrink:0;}
+  .emergency-band h3{font-size:22px;font-weight:800;}
+  .emergency-band p{font-size:14px;color:#dcebff;margin-top:2px;}
+
+  /* Why us */
+  .why-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;
+  }
+  .why-item{text-align:left;}
+  .why-icon{
+    width:52px;height:52px;border-radius:50%;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .why-icon svg{width:26px;height:26px;}
+  .why-item h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* Service area */
+  .area-section{background:var(--bg-soft);}
+  .area-flex{display:flex;gap:48px;align-items:center;flex-wrap:wrap;}
+  .area-copy{flex:1 1 340px;}
+  .area-copy h2{font-size:30px;font-weight:800;color:var(--navy);margin-bottom:14px;}
+  .area-copy p{color:var(--gray);font-size:15px;margin-bottom:20px;}
+  .city-list{display:flex;flex-wrap:wrap;gap:10px;}
+  .city-chip{
+    background:#fff;border:1px solid var(--line);
+    padding:9px 16px;border-radius:999px;
+    font-size:14px;font-weight:600;color:var(--navy);
+    display:flex;align-items:center;gap:6px;
+  }
+  .city-chip svg{width:14px;height:14px;color:var(--blue);}
+  .area-visual{
+    flex:1 1 280px;
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:32px;text-align:center;
+  }
+  .area-visual svg{width:120px;height:120px;margin:0 auto 16px;color:var(--blue);}
+  .area-visual .addr{font-weight:700;color:var(--navy);font-size:16px;margin-bottom:4px;}
+  .area-visual .addr-sub{font-size:14px;color:var(--gray);}
+
+  /* Contact / CTA */
+  .contact-section{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--blue-dark) 100%);
+    color:#fff;
+  }
+  .contact-grid{display:flex;gap:40px;flex-wrap:wrap;}
+  .contact-main{flex:1 1 340px;}
+  .contact-main h2{font-size:32px;font-weight:800;margin-bottom:14px;}
+  .contact-main p{color:#d7e3f7;font-size:16px;margin-bottom:26px;max-width:480px;}
+  .contact-list{display:flex;flex-direction:column;gap:16px;margin-bottom:28px;}
+  .contact-row{display:flex;align-items:center;gap:14px;}
+  .contact-row .ic{
+    width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.12);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-row .ic svg{width:20px;height:20px;}
+  .contact-row .txt strong{display:block;font-size:15px;}
+  .contact-row .txt span{font-size:13px;color:#c9d9f2;}
+  .hours-card{
+    flex:1 1 260px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:18px;padding:28px;
+    height:fit-content;
+  }
+  .hours-card h3{font-size:16px;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+  .hours-card h3 svg{width:18px;height:18px;}
+  .hours-row{display:flex;justify-content:space-between;font-size:14px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.12);}
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:first-child{color:#d7e3f7;}
+  .hours-row span:last-child{font-weight:700;}
+
+  /* Footer */
+  footer{
+    background:var(--navy);
+    color:#a9bcda;
+    padding:34px 0;
+    font-size:13px;
+  }
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;}
+  .footer-row a{font-weight:700;color:#fff;}
+
+  /* Sticky mobile call bar */
+  .mobile-call-bar{
+    display:none;
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--blue);
+    padding:12px 16px;
+    box-shadow:0 -4px 20px rgba(0,0,0,0.2);
+  }
+  .mobile-call-bar a{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    color:#fff;font-weight:800;font-size:16px;
+  }
+  .mobile-call-bar svg{width:20px;height:20px;}
+
+  @media (max-width:600px){
+    section{padding:44px 0;}
+    .hero{padding:44px 0 40px;}
+    .hero h1{font-size:32px;}
+    .hero p.lede{font-size:16px;}
+    .section-head h2{font-size:26px;}
+    .header-cta span.cta-text{display:none;}
+    .header-cta{padding:10px;border-radius:50%;}
+    .mobile-call-bar{display:block;}
+    body{padding-bottom:64px;}
+    .emergency-band .wrap{flex-direction:column;text-align:center;}
+    .footer-row{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      1821 Two Notch Road, Lexington, SC 29073
+    </div>
+    <div class="topbar-item">
+      Mon&ndash;Fri 8:00 AM&ndash;5:00 PM &nbsp;&bull;&nbsp;
+      <a class="call-link" href="tel:8039575005">(803) 957-5005</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="23" fill="#0b2545"/>
+        <path d="M16 30c0-5 3-8 3-12a5 5 0 0 1 10 0c0 4 3 7 3 12a8 8 0 0 1-16 0Z" stroke="#7ec1ff" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+        <path d="M20 30a4 4 0 0 0 8 0" stroke="#7ec1ff" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        Carolina Plumbing
+        <small>OF SOUTH CAROLINA, INC.</small>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="tel:8039575005">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      <span class="cta-text">(803) 957-5005</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5Z"/><path d="m9 12 2 2 4-4"/></svg>
+        Family Owned Since 1991
+      </div>
+      <h1>Fast, Friendly Plumbing <span>Lexington &amp; Columbia Trust</span></h1>
+      <p class="lede">Carolina Plumbing of South Carolina has served the Midlands for over 30 years &mdash; residential and commercial work, done right, with customer satisfaction guaranteed.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:8039575005">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Call (803) 957-5005
+        </a>
+        <a class="btn btn-outline" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Request Free Consultation
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="num">30+</div><div class="label">Years in Business</div></div>
+      <div class="stat-card"><div class="num">1978</div><div class="label">Licensed Since</div></div>
+      <div class="stat-card"><div class="num">24/7</div><div class="label">Emergency Service</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="label">Family Owned</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5Z"/><path d="m9 12 2 2 4-4"/></svg>
+      Family Owned &amp; Operated
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Fast Friendly Service
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+      Customer Satisfaction Guaranteed
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Free Consultations
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Residential &amp; Commercial Plumbing</h2>
+      <p>A wide range of plumbing services for homes and businesses across the Midlands, using quality parts and cost-effective solutions.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+        </div>
+        <h3>Residential Plumbing</h3>
+        <p>Repairs, installations, and maintenance for homes throughout Lexington and the Columbia metro.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18"/><path d="M5 21V9l6-4 6 4v12"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+        </div>
+        <h3>Commercial Plumbing</h3>
+        <p>Reliable plumbing service for local businesses that keeps operations running smoothly.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6Z"/></svg>
+        </div>
+        <h3>Emergency Plumbing</h3>
+        <p>Burst pipe or major leak? Emergency plumbing service when you need it most.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Free Consultations</h3>
+        <p>Not sure what you need? Get a free consultation before any work begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="emergency-band">
+  <div class="wrap">
+    <div class="copy">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6Z"/></svg>
+      <div>
+        <h3>Plumbing emergency in the Midlands?</h3>
+        <p>Call now &mdash; fast, friendly service when it matters most.</p>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="tel:8039575005">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      (803) 957-5005
+    </a>
+  </div>
+</div>
+
+<section id="why-us">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2>Three Decades Serving the Midlands</h2>
+      <p>Owner William Davis has been a licensed plumber since 1978, and the family business has served the area since 1991.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Licensed Since 1978</h3>
+        <p>Decades of hands-on plumbing experience behind every job.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>Family Owned</h3>
+        <p>A locally owned and operated business, not a national chain.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Fast Response</h3>
+        <p>Fast, friendly service is the standard on every call.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>Quality parts, fair pricing, and work you can count on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area" class="area-section">
+  <div class="wrap area-flex">
+    <div class="area-copy">
+      <div class="eyebrow">Where We Work</div>
+      <h2>Proudly Serving the Greater Columbia Area</h2>
+      <p>Based in Lexington, Carolina Plumbing serves homeowners and businesses throughout the Midlands.</p>
+      <div class="city-list">
+        <span class="city-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Lexington</span>
+        <span class="city-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>West Columbia</span>
+        <span class="city-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Columbia</span>
+        <span class="city-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Gilbert</span>
+        <span class="city-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Batesburg</span>
+        <span class="city-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Saluda</span>
+        <span class="city-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Leesville</span>
+      </div>
+    </div>
+    <div class="area-visual">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div class="addr">1821 Two Notch Road</div>
+      <div class="addr-sub">Lexington, SC 29073</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="wrap contact-grid">
+    <div class="contact-main">
+      <h2>Get In Touch</h2>
+      <p>Reach out for a free consultation, or call directly for emergency plumbing service.</p>
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+          <div class="txt"><strong><a href="tel:8039575005">(803) 957-5005</a></strong><span>Call or tap to dial</span></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="txt"><strong>1821 Two Notch Road</strong><span>Lexington, SC 29073</span></div>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="tel:8039575005">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call Now
+      </a>
+    </div>
+    <div class="hours-card">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Business Hours
+      </h3>
+      <div class="hours-row"><span>Monday &ndash; Friday</span><span>8:00 AM &ndash; 5:00 PM</span></div>
+      <div class="hours-row"><span>Saturday</span><span>Closed</span></div>
+      <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>&copy; 2026 Carolina Plumbing of South Carolina, Inc. All rights reserved.</div>
+    <a href="tel:8039575005">(803) 957-5005</a>
+  </div>
+</footer>
+
+<div class="mobile-call-bar">
+  <a href="tel:8039575005">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    Call (803) 957-5005
+  </a>
+</div>
+
+</body>
+</html>
