@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ed Jones HVAC, Inc. | San Diego HVAC Contractor Since 1973</title>
+<style>
+  :root{
+    --navy:#12233d;
+    --navy-dark:#0b1830;
+    --blue:#1d6fd8;
+    --blue-dark:#1558ad;
+    --ink:#16202e;
+    --gray:#5b6675;
+    --line:#e6e9ee;
+    --bg:#ffffff;
+    --bg-soft:#f5f7fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;max-width:1120px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:36px;height:36px;flex:0 0 auto;}
+  .brand-text{font-weight:800;font-size:15px;letter-spacing:0.2px;line-height:1.15;color:var(--navy);}
+  .brand-text small{display:block;font-weight:600;font-size:10.5px;color:var(--gray);letter-spacing:0.6px;text-transform:uppercase;margin-top:1px;}
+  .call-btn{
+    display:flex;align-items:center;gap:7px;
+    background:var(--blue);color:#fff;
+    padding:10px 16px;border-radius:999px;
+    font-weight:700;font-size:14px;white-space:nowrap;
+    box-shadow:0 4px 14px rgba(29,111,216,0.35);
+  }
+  .call-btn svg{width:16px;height:16px;flex:0 0 auto;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;
+    padding:52px 20px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;top:-60px;right:-60px;
+    width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle, rgba(29,111,216,0.35), transparent 70%);
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;position:relative;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.18);
+    padding:6px 12px;border-radius:999px;
+    font-size:12.5px;font-weight:700;letter-spacing:0.3px;
+    margin-bottom:18px;color:#cfe0fb;
+  }
+  .badge svg{width:14px;height:14px;}
+  h1{
+    font-size:34px;line-height:1.14;font-weight:800;
+    letter-spacing:-0.5px;margin-bottom:14px;
+  }
+  h1 span{color:#7db3ff;}
+  .hero p.lead{
+    font-size:16.5px;color:#c3cfe3;max-width:520px;margin-bottom:26px;
+  }
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:340px;}
+  .btn-primary{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    background:var(--blue);color:#fff;
+    padding:16px 22px;border-radius:12px;
+    font-weight:700;font-size:16.5px;
+    box-shadow:0 8px 20px rgba(29,111,216,0.4);
+  }
+  .btn-primary svg{width:19px;height:19px;}
+  .btn-primary .num{opacity:0.92;font-weight:600;}
+  .btn-secondary{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.22);
+    color:#fff;padding:14px 22px;border-radius:12px;
+    font-weight:600;font-size:15px;
+  }
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:10px;margin-top:34px;
+    border-top:1px solid rgba(255,255,255,0.15);
+    padding-top:22px;
+  }
+  .stat b{display:block;font-size:22px;font-weight:800;color:#fff;}
+  .stat span{font-size:11.5px;color:#a9b8d1;letter-spacing:0.2px;}
+
+  /* Section shared */
+  section{padding:48px 20px;}
+  .eyebrow{
+    font-size:12.5px;font-weight:800;letter-spacing:1px;
+    text-transform:uppercase;color:var(--blue);margin-bottom:8px;
+  }
+  h2{font-size:25px;font-weight:800;letter-spacing:-0.3px;color:var(--navy);margin-bottom:10px;}
+  .section-sub{color:var(--gray);font-size:15px;margin-bottom:28px;max-width:560px;}
+
+  /* Services */
+  .services-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  .service-card{
+    border:1px solid var(--line);border-radius:16px;
+    padding:20px;background:var(--bg-soft);
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .service-icon{
+    width:46px;height:46px;border-radius:12px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    flex:0 0 auto;
+  }
+  .service-icon svg{width:24px;height:24px;stroke:#7db3ff;}
+  .service-card h3{font-size:16.5px;font-weight:700;margin-bottom:4px;color:var(--ink);}
+  .service-card p{font-size:14px;color:var(--gray);}
+
+  /* Why us */
+  .why-list{display:grid;grid-template-columns:1fr;gap:16px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-num{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:15px;flex:0 0 auto;
+  }
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:3px;}
+  .why-item p{font-size:14px;color:var(--gray);}
+
+  /* License strip */
+  .license-strip{
+    background:var(--bg-soft);border:1px solid var(--line);
+    border-radius:14px;padding:16px 18px;
+    display:flex;flex-wrap:wrap;gap:10px 22px;
+    font-size:13px;color:var(--gray);margin-top:8px;
+  }
+  .license-strip b{color:var(--ink);font-weight:700;}
+
+  /* Area */
+  .area-section{background:var(--navy);color:#fff;}
+  .area-section .eyebrow{color:#7db3ff;}
+  .area-section h2{color:#fff;}
+  .area-section .section-sub{color:#b7c3da;}
+  .area-box{
+    border:1px solid rgba(255,255,255,0.16);
+    border-radius:16px;padding:22px;
+    background:rgba(255,255,255,0.05);
+    display:flex;gap:16px;align-items:center;
+  }
+  .area-box svg{width:32px;height:32px;stroke:#7db3ff;flex:0 0 auto;}
+  .area-box p{font-size:15px;color:#d7dfee;}
+  .area-box b{color:#fff;}
+
+  /* Contact / CTA */
+  .contact-section{background:var(--bg-soft);}
+  .contact-card{
+    background:#fff;border:1px solid var(--line);
+    border-radius:18px;padding:26px 22px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(18,35,61,0.06);
+  }
+  .contact-card h2{font-size:22px;}
+  .contact-card p{color:var(--gray);font-size:14.5px;margin-bottom:20px;}
+  .contact-methods{display:flex;flex-direction:column;gap:12px;}
+  .contact-method{
+    display:flex;align-items:center;gap:12px;
+    border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;text-align:left;
+  }
+  .contact-method svg{width:20px;height:20px;stroke:var(--blue);flex:0 0 auto;}
+  .contact-method .label{font-size:11.5px;color:var(--gray);text-transform:uppercase;letter-spacing:0.4px;font-weight:700;}
+  .contact-method .value{font-size:15.5px;font-weight:700;color:var(--ink);}
+
+  footer{
+    background:var(--navy-dark);color:#8a9ab8;
+    padding:28px 20px;text-align:center;font-size:12.5px;
+  }
+  footer .fbrand{color:#fff;font-weight:700;font-size:14px;margin-bottom:6px;}
+  footer a{color:#7db3ff;}
+
+  /* sticky mobile call bar */
+  .sticky-call{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--blue);
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    padding:14px 20px;
+    font-weight:700;font-size:15.5px;color:#fff;
+    box-shadow:0 -6px 18px rgba(0,0,0,0.15);
+  }
+  .sticky-call svg{width:18px;height:18px;}
+  body{padding-bottom:60px;}
+
+  @media (min-width:640px){
+    h1{font-size:42px;}
+    .hero p.lead{font-size:18px;}
+    .hero-ctas{flex-direction:row;max-width:none;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-list{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .hero-inner{display:flex;justify-content:space-between;align-items:center;gap:40px;}
+    h1{font-size:46px;}
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="9" fill="#12233D"/>
+        <path d="M20 8L20 32M20 8L14 14M20 8L26 14M12 20H28M12 20L16 24M12 20L16 16M28 20L24 24M28 20L24 16" stroke="#7DB3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text">ED JONES HVAC<small>Since 1973 &middot; San Diego, CA</small></div>
+    </div>
+    <a class="call-btn" href="tel:6194549066">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" stroke="#7db3ff" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="#7db3ff" stroke-width="2"/></svg>
+        Licensed &amp; Serving San Diego Since 1973
+      </div>
+      <h1>Dependable HVAC service, <span>done right the first time.</span></h1>
+      <p class="lead">Ed Jones HVAC, Inc. has served San Diego homes and businesses for over 50 years — industrial installations, air purification, and filter maintenance from a name you already know.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:6194549066">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Call <span class="num">(619) 454-9066</span></span>
+        </a>
+        <a class="btn-secondary" href="#contact">Request a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>1973</b><span>Family-Run Since</span></div>
+        <div class="stat"><b>2</b><span>Active CA Licenses</span></div>
+        <div class="stat"><b>San Diego</b><span>Service Area</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2>HVAC Services</h2>
+    <p class="section-sub">Commercial and residential HVAC work for San Diego property owners.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="14" rx="2" stroke-width="2"/><path d="M6 3v4M12 3v4M18 3v4" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>Industrial HVAC Installation</h3>
+          <p>Full-scale heating and cooling system installs for commercial and industrial properties.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke-width="2"/></svg>
+        </div>
+        <div>
+          <h3>Air Purifier Installation</h3>
+          <p>Cleaner indoor air with professionally installed purification systems.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2"/><path d="M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>Filter Maintenance &amp; Replacement</h3>
+          <p>Routine filter service to keep your system running efficiently year-round.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="eyebrow">Why Ed Jones</div>
+    <h2>Over 50 Years in San Diego</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-num">1</div>
+        <div>
+          <h3>Established 1973</h3>
+          <p>Decades of continuous service to the San Diego community, commercial and residential.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">2</div>
+        <div>
+          <h3>Licensed Contractor</h3>
+          <p>Operating under California contractor license numbers 1057553 and 545817.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">3</div>
+        <div>
+          <h3>Commercial &amp; Residential</h3>
+          <p>Equipped to handle industrial-scale installs as well as everyday home HVAC needs.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">4</div>
+        <div>
+          <h3>Direct Local Contact</h3>
+          <p>Reach the business directly by phone or email — no call centers.</p>
+        </div>
+      </div>
+    </div>
+    <div class="license-strip">
+      <span><b>License:</b> 1057553</span>
+      <span><b>License:</b> 545817</span>
+      <span><b>Founded:</b> 1973</span>
+    </div>
+  </div>
+</section>
+
+<section class="area-section">
+  <div class="wrap">
+    <div class="eyebrow">Service Area</div>
+    <h2>Serving San Diego, California</h2>
+    <p class="section-sub">Ed Jones HVAC, Inc. provides commercial and residential HVAC services throughout the San Diego, CA area.</p>
+    <div class="area-box">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke-width="2"/></svg>
+      <p><b>San Diego, CA</b> and surrounding areas. Call to confirm service at your location.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Get In Touch</h2>
+      <p>Call or email Ed Jones HVAC, Inc. directly to discuss your project.</p>
+      <div class="contact-methods">
+        <a class="contact-method" href="tel:6194549066">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><span class="label">Phone</span><span class="value">(619) 454-9066</span></span>
+        </a>
+        <a class="contact-method" href="mailto:edjoneshvac@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4z" stroke-width="2" stroke-linejoin="round"/><path d="m22 6-10 7L2 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><span class="label">Email</span><span class="value">edjoneshvac@gmail.com</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">ED JONES HVAC, INC.</div>
+  <div>San Diego, CA &middot; Serving customers since 1973</div>
+  <div style="margin-top:8px;">CA Lic. #1057553 &amp; #545817 &middot; <a href="tel:6194549066">(619) 454-9066</a> &middot; <a href="mailto:edjoneshvac@gmail.com">edjoneshvac@gmail.com</a></div>
+</footer>
+
+<a class="sticky-call" href="tel:6194549066">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Call (619) 454-9066
+</a>
+
+</body>
+</html>
