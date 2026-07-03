@@ -1,0 +1,465 @@
+<!--
+  SHIP48 MASTER PROTOTYPE TEMPLATE
+  This page IS the business's new homepage — a finished, customer-facing site
+  the business could adopt tomorrow. The ONLY sales-pitch element is the slim
+  dismissible preview banner at the very top. Everything else speaks to the
+  business's own customers.
+
+  SWAP TOKENS a customizing agent must fill:
+    Town & Country Pest Solutions   - business name (appears in title, banner, hero, footer, mailto)
+    Pest Control           - trade/industry, e.g. "Roofing"
+    Rochester            - city/locality for the hero eyebrow
+    Pest control that treats your home like family.         - strong customer-facing hero tagline, e.g. "Roofs that outlast the weather."
+    Started by Matt and Colette in 1986, now with over thirty trained technicians across Upstate New York.    - one sentence on what the business does for its customers
+    585-426-5024           - phone number (used in tel: links and visible text)
+    service@townandcountrysolutions.com  - the business's own contact email
+    Serving Rochester, Buffalo, Niagara Falls, Syracuse and Utica    - service area, e.g. "Serving Austin and surrounding counties"
+    Mon–Fri 8am–5pm           - business hours, e.g. "Mon–Fri 7am–6pm"
+    Family owned since 1986.    - why-us section headline
+    Nearly 40 Years, One Family / Matt and Colette built this company from the ground up — today their son Caleb helps run bedbug detection statewide.   - trust point 1 (e.g. years in business)
+    Proprietary Bedbug Treatment / Our team continuously tests and refines our own bedbug protocol, backed by a trained detection dog.   - trust point 2 (e.g. guarantee)
+    30+ Trained Technicians / We grew from one truck to a statewide team without losing the personal touch our first customers got in 1986.   - trust point 3 (e.g. locally owned)
+    Residential Pest Control / Year-round protection against the pests that actually show up in Upstate New York homes.  \
+    Bedbug Detection & Treatment / Our own detection dog and proprietary treatment plan, refined over 15+ years.   \  4 services, customer-facing copy
+    Termite Control / Inspection and treatment plans built to protect the structure of your home.   /
+    Commercial Pest Management / Ongoing pest programs for restaurants, offices, and multi-unit properties.  /
+    GENERAL PEST .. COMMERCIAL   - short uppercase tag per service row
+    1986 / Family Founded  - e.g. "20+" / "Years in Business"
+    30+ / Trained Technicians  - e.g. "1,500+" / "Jobs Completed"
+    5 / NY Regions Served  - e.g. "4.9" / "Average Rating"
+    They found what three other companies missed, and Colette herself called to follow up a week later.           - a real customer testimonial quote
+    Rochester homeowner    - who said it, e.g. "Maria G., homeowner"
+    --accent (CSS var)  - single brand accent color (+ --accent-dim rgba)
+-->
+<meta charset="UTF-8">
+<title>Town & Country Pest Solutions — Pest Control in Rochester</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --accent: #0071e3;          /* SWAP PER BUSINESS: single brand accent color */
+    --accent-dim: rgba(0,113,227,0.12);
+    --ink: #1d1d1f;
+    --ink-soft: #6e6e73;
+    --bg: #ffffff;
+    --bg-alt: #f5f5f7;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    overflow-x:hidden;
+    line-height:1.5;
+  }
+
+  section{position:relative;padding:140px 24px;max-width:1200px;margin:0 auto;}
+
+  /* ---------- Preview banner (the ONLY pitch element on the page) ---------- */
+  .preview-banner{
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    min-height:44px;padding:6px 44px 6px 16px;
+    background:rgba(29,29,31,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    color:#f5f5f7;font-size:13px;line-height:1.3;text-align:center;
+  }
+  .preview-banner a.banner-btn{
+    flex:none;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font-size:12px;font-weight:600;padding:5px 14px;border-radius:980px;
+    transition:transform .3s var(--ease);
+  }
+  .preview-banner a.banner-btn:hover{transform:translateY(-1px);}
+  .preview-banner .banner-close{
+    position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#a1a1a6;font-size:16px;line-height:1;
+    cursor:pointer;padding:6px;
+  }
+  .preview-banner .banner-close:hover{color:#fff;}
+
+  /* ---------- Reveal-on-scroll base classes (toggled by IntersectionObserver) ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(48px);
+    transition:opacity 1s var(--ease), transform 1s var(--ease);
+    will-change:opacity, transform;
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .reveal-left{opacity:0;transform:translateX(-72px);transition:opacity 1s var(--ease), transform 1s var(--ease);}
+  .reveal-left.in{opacity:1;transform:translateX(0);}
+
+  .reveal-right{opacity:0;transform:translateX(72px);transition:opacity 1s var(--ease), transform 1s var(--ease);}
+  .reveal-right.in{opacity:1;transform:translateX(0);}
+
+  .reveal-scale{opacity:0;transform:scale(0.82);transition:opacity 1.1s var(--ease), transform 1.1s var(--ease);}
+  .reveal-scale.in{opacity:1;transform:scale(1);}
+
+  .delay-1{transition-delay:.12s;}
+  .delay-2{transition-delay:.24s;}
+  .delay-3{transition-delay:.36s;}
+  .delay-4{transition-delay:.48s;}
+
+  /* ================= HERO ================= */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding-top:80px;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-dim), transparent 70%),
+      var(--bg);
+  }
+  .hero-eyebrow{
+    font-size:15px;font-weight:600;letter-spacing:.02em;
+    color:var(--accent);text-transform:uppercase;margin-bottom:20px;
+    opacity:0;transform:translateY(24px);
+    animation:heroIn .9s var(--ease) .1s forwards;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem,7vw,5.2rem);
+    font-weight:700;letter-spacing:-0.03em;line-height:1.05;
+    max-width:920px;
+    opacity:0;transform:translateY(36px);
+    animation:heroIn 1s var(--ease) .25s forwards;
+  }
+  .hero h1 span{color:var(--accent);}
+  .hero p{
+    font-size:clamp(1.1rem,2vw,1.5rem);
+    color:var(--ink-soft);
+    max-width:640px;margin-top:26px;
+    opacity:0;transform:translateY(30px);
+    animation:heroIn 1s var(--ease) .45s forwards;
+  }
+  .hero-cta{
+    margin-top:44px;
+    opacity:0;transform:translateY(24px);
+    animation:heroIn 1s var(--ease) .62s forwards;
+  }
+  @keyframes heroIn{to{opacity:1;transform:translateY(0);}}
+
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;font-weight:600;font-size:17px;
+    padding:16px 36px;border-radius:980px;
+    text-decoration:none;border:none;cursor:pointer;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s ease;
+    box-shadow:0 8px 24px -8px var(--accent-dim);
+  }
+  .btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 32px -8px rgba(0,113,227,0.4);}
+  .btn-ghost{
+    display:inline-block;margin-left:18px;padding:16px 30px;
+    border-radius:980px;font-weight:600;font-size:17px;
+    color:var(--ink);text-decoration:none;border:1px solid #d2d2d7;
+    transition:border-color .3s ease, transform .3s var(--ease);
+  }
+  .btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px);}
+
+  .scroll-cue{
+    position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+    width:26px;height:42px;border:2px solid #d2d2d7;border-radius:16px;
+    opacity:0;animation:heroIn 1s ease .9s forwards;
+  }
+  .scroll-cue::before{
+    content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);
+    width:4px;height:8px;background:var(--accent);border-radius:2px;
+    animation:cueDrop 1.6s ease-in-out infinite;
+  }
+  @keyframes cueDrop{0%{opacity:1;top:8px;}70%{opacity:0;top:22px;}100%{opacity:0;top:8px;}}
+
+  /* ================= WHY US ================= */
+  .why{background:var(--bg-alt);border-radius:40px;margin:0 20px;padding:120px 40px;}
+  .why-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
+  .why > .why-inner > p.lead{font-size:1.25rem;color:var(--ink-soft);max-width:640px;margin:0 auto 60px;}
+
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;text-align:left;}
+  .why-card{
+    background:var(--bg);border-radius:20px;padding:32px 26px;
+    border:1px solid #e5e5e7;
+  }
+  .why-card .check{
+    width:40px;height:40px;border-radius:50%;background:var(--accent-dim);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:18px;
+  }
+  .why-card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+  .why-card p{font-size:.95rem;color:var(--ink-soft);}
+
+  /* ================= SERVICES ================= */
+  .services{text-align:center;}
+  .services > h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:16px;}
+  .services > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:600px;margin:0 auto 70px;}
+
+  .service-row{
+    display:flex;align-items:center;gap:60px;
+    margin-bottom:100px;text-align:left;
+  }
+  .service-row:nth-child(odd){flex-direction:row;}
+  .service-row:nth-child(even){flex-direction:row-reverse;}
+  .service-row:last-child{margin-bottom:0;}
+  .service-visual{
+    flex:1 1 40%;aspect-ratio:4/3;border-radius:28px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg, var(--accent-dim), var(--bg-alt));
+    overflow:hidden;position:relative;
+  }
+  .service-visual svg{width:55%;height:55%;position:relative;z-index:1;}
+  .service-text{flex:1 1 55%;}
+  .service-text .tag{
+    display:inline-block;font-size:13px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;
+  }
+  .service-text h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:16px;}
+  .service-text p{font-size:1.1rem;color:var(--ink-soft);max-width:460px;}
+
+  @media (max-width:760px){
+    .service-row, .service-row:nth-child(even){flex-direction:column;}
+    .service-visual{width:100%;}
+  }
+
+  /* ================= TRUST ================= */
+  .trust{
+    background:var(--ink);color:#fff;border-radius:40px;margin:0 20px;
+    padding:110px 40px;text-align:center;
+  }
+  .trust h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;margin-bottom:60px;letter-spacing:-0.02em;}
+  .trust-stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:40px;max-width:900px;margin:0 auto 70px;
+  }
+  .trust-stat .num{
+    font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:var(--accent);
+    letter-spacing:-0.02em;
+  }
+  .trust-stat .label{font-size:.95rem;color:#a1a1a6;margin-top:6px;}
+
+  .stars{font-size:1.8rem;color:#ffcc00;letter-spacing:6px;margin-bottom:26px;}
+  .quote{
+    font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:500;max-width:720px;
+    margin:0 auto 20px;line-height:1.4;
+  }
+  .quote-author{color:#a1a1a6;font-size:1rem;}
+
+  /* ================= CONTACT ================= */
+  .contact{
+    text-align:center;padding:160px 24px 140px;
+  }
+  .contact h2{
+    font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-0.03em;
+    max-width:780px;margin:0 auto 22px;
+  }
+  .contact > p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:520px;margin:0 auto 42px;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:28px;max-width:820px;margin:56px auto 0;text-align:center;
+  }
+  .contact-item{
+    background:var(--bg-alt);border-radius:20px;padding:30px 24px;
+  }
+  .contact-item .label{
+    font-size:12px;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+  }
+  .contact-item .value{font-size:1.05rem;font-weight:600;}
+  .contact-item .value a{color:var(--ink);text-decoration:none;}
+  .contact-item .value a:hover{color:var(--accent);}
+
+  footer{
+    text-align:center;padding:40px 24px;color:var(--ink-soft);font-size:.9rem;
+    border-top:1px solid #e5e5e7;
+  }
+</style>
+
+<!-- ============================================================= -->
+<!-- 0. PREVIEW BANNER — the only pitch element on the page -->
+<!-- ============================================================= -->
+<div class="preview-banner" id="previewBanner">
+  <span>Free preview built for Town & Country Pest Solutions — like it? It can be live in 48 hours.</span>
+  <a class="banner-btn" href="mailto:s0533495227@gmail.com?subject=Interested%20-%20Town & Country Pest Solutions&body=Hi%2C%20I%27m%20interested%20in%20getting%20this%20site%20live%20for%20Town & Country Pest Solutions.">I want this</a>
+  <button class="banner-close" aria-label="Dismiss" onclick="document.getElementById('previewBanner').style.display='none'">&#215;</button>
+</div>
+
+<!-- ============================================================= -->
+<!-- 1. HERO — the business's own homepage hero -->
+<!-- ============================================================= -->
+<section class="hero">
+  <div class="hero-eyebrow">Rochester · Pest Control</div>
+  <h1>Town & Country Pest Solutions<br><span>Pest control that treats your home like family.</span></h1>
+  <p>Started by Matt and Colette in 1986, now with over thirty trained technicians across Upstate New York.</p>
+  <div class="hero-cta">
+    <a href="tel:585-426-5024" class="btn">Call 585-426-5024</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
+  </div>
+  <div class="scroll-cue"></div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 2. WHY US — customer-facing trust points -->
+<!-- ============================================================= -->
+<section class="why">
+  <div class="why-inner">
+    <h2 class="reveal">Family owned since 1986.</h2>
+    <p class="lead reveal delay-1">When you hire Town & Country Pest Solutions, you're hiring people who stand behind their work.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="check">&#10003;</div>
+        <h3>Nearly 40 Years, One Family</h3>
+        <p>Matt and Colette built this company from the ground up — today their son Caleb helps run bedbug detection statewide.</p>
+      </div>
+      <div class="why-card reveal delay-2">
+        <div class="check">&#10003;</div>
+        <h3>Proprietary Bedbug Treatment</h3>
+        <p>Our team continuously tests and refines our own bedbug protocol, backed by a trained detection dog.</p>
+      </div>
+      <div class="why-card reveal delay-3">
+        <div class="check">&#10003;</div>
+        <h3>30+ Trained Technicians</h3>
+        <p>We grew from one truck to a statewide team without losing the personal touch our first customers got in 1986.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 3. SERVICES — what we do for you -->
+<!-- ============================================================= -->
+<section class="services" id="services">
+  <h2 class="reveal">What we do for you.</h2>
+  <p class="lead reveal delay-1">Pest Control services done right, by a team that treats your property like its own.</p>
+
+  <div class="service-row">
+    <div class="service-visual reveal-left">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M60 110 L100 60 L140 110 M75 105 V150 H125 V105" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="service-text reveal-right">
+      <span class="tag">GENERAL PEST</span>
+      <h3>Residential Pest Control</h3>
+      <p>Year-round protection against the pests that actually show up in Upstate New York homes.</p>
+    </div>
+  </div>
+
+  <div class="service-row">
+    <div class="service-visual reveal-right">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="55" y="70" width="90" height="60" rx="10" stroke="var(--accent)" stroke-width="8"/>
+        <path d="M55 85 L100 110 L145 85" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="service-text reveal-left">
+      <span class="tag">BEDBUGS</span>
+      <h3>Bedbug Detection & Treatment</h3>
+      <p>Our own detection dog and proprietary treatment plan, refined over 15+ years.</p>
+    </div>
+  </div>
+
+  <div class="service-row">
+    <div class="service-visual reveal-left">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <path d="M100 50 L115 85 L153 90 L125 115 L133 153 L100 133 L67 153 L75 115 L47 90 L85 85 Z" stroke="var(--accent)" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="service-text reveal-right">
+      <span class="tag">TERMITES</span>
+      <h3>Termite Control</h3>
+      <p>Inspection and treatment plans built to protect the structure of your home.</p>
+    </div>
+  </div>
+
+  <div class="service-row">
+    <div class="service-visual reveal-right">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.12"/>
+        <rect x="60" y="55" width="80" height="90" rx="12" stroke="var(--accent)" stroke-width="8"/>
+        <circle cx="100" cy="130" r="6" fill="var(--accent)"/>
+      </svg>
+    </div>
+    <div class="service-text reveal-left">
+      <span class="tag">COMMERCIAL</span>
+      <h3>Commercial Pest Management</h3>
+      <p>Ongoing pest programs for restaurants, offices, and multi-unit properties.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- 4. TRUST — the business speaking to its customers -->
+<!-- ============================================================= -->
+<section class="trust">
+  <h2 class="reveal-scale">Trusted by your neighbors.</h2>
+  <div class="trust-stats">
+    <div class="trust-stat reveal-scale delay-1">
+      <div class="num">1986</div>
+      <div class="label">Family Founded</div>
+    </div>
+    <div class="trust-stat reveal-scale delay-2">
+      <div class="num">30+</div>
+      <div class="label">Trained Technicians</div>
+    </div>
+    <div class="trust-stat reveal-scale delay-3">
+      <div class="num">5</div>
+      <div class="label">NY Regions Served</div>
+    </div>
+  </div>
+  <div class="stars reveal-scale delay-1">★★★★★</div>
+  <p class="quote reveal-scale delay-2">"They found what three other companies missed, and Colette herself called to follow up a week later."</p>
+  <p class="quote-author reveal-scale delay-3">— Rochester homeowner</p>
+</section>
+
+<!-- ============================================================= -->
+<!-- 5. CONTACT — the business's own contact info -->
+<!-- ============================================================= -->
+<section class="contact" id="contact">
+  <h2 class="reveal">Get in touch.</h2>
+  <p class="lead reveal delay-1">Tell us what you need — we'll get back to you the same day.</p>
+  <a href="tel:585-426-5024" class="btn reveal delay-2">Call 585-426-5024</a>
+  <div class="contact-grid">
+    <div class="contact-item reveal delay-1">
+      <div class="label">Phone</div>
+      <div class="value"><a href="tel:585-426-5024">585-426-5024</a></div>
+    </div>
+    <div class="contact-item reveal delay-2">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:service@townandcountrysolutions.com">service@townandcountrysolutions.com</a></div>
+    </div>
+    <div class="contact-item reveal delay-3">
+      <div class="label">Service Area</div>
+      <div class="value">Serving Rochester, Buffalo, Niagara Falls, Syracuse and Utica</div>
+    </div>
+    <div class="contact-item reveal delay-4">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Fri 8am–5pm</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; Town & Country Pest Solutions · Pest Control · Rochester</p>
+</footer>
+
+<script>
+(function(){
+  var targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
